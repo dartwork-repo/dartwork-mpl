@@ -557,7 +557,9 @@ legend.frameon:       False     # if True, draw the legend on a background patch
 #figure.titleweight: normal    # weight of the figure title
 #figure.labelsize:   large     # size of the figure label (``Figure.sup[x|y]label()``)
 #figure.labelweight: normal    # weight of the figure label
-#figure.figsize:     6.4, 4.8  # figure size in inches
+# For guidance, Nature's standard figure sizes are 89 mm wide (single column)
+# and 183 mm wide (double column). 89 mm ~ 3.5 inches.
+figure.figsize:     3.5, 3.5  # figure size in inches
 figure.dpi:         150       # figure dots per inch
 figure.facecolor:   white     # figure face color
 #figure.edgecolor:   white     # figure edge color
