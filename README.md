@@ -1,3 +1,3 @@
 # dartwork-mpl
 
-Utilities for plotting on matplotlib.
+Utility collection for plotting on matplotlib.
