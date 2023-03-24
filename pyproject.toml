@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "dartwork-mpl"
+version = "0.1.0"
+description = ""
+authors = ["Sangwon <lsw91.main@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "dartwork_mpl"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
