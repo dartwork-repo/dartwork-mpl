@@ -378,7 +378,7 @@ axes.grid:          True   # display grid or not
 #axes.labelpad:      4.0     # space between label and axis
 #axes.labelweight:   normal  # weight of the x and y labels
 #axes.labelcolor:    black
-#axes.axisbelow:     line    # draw axis gridlines and ticks:
+axes.axisbelow:     False    # draw axis gridlines and ticks:
                              #     - below patches (True)
                              #     - above patches but below lines ('line')
                              #     - above all (False)
@@ -559,7 +559,7 @@ legend.columnspacing: 0.75  # column separation
 #figure.labelweight: normal    # weight of the figure label
 # For guidance, Nature's standard figure sizes are 89 mm wide (single column)
 # and 183 mm wide (double column). 89 mm ~ 3.5 inches.
-figure.figsize:     3.5, 3.5  # figure size in inches
+figure.figsize:     3.5, 3.0  # figure size in inches
 figure.dpi:         150       # figure dots per inch
 figure.facecolor:   white     # figure face color
 #figure.edgecolor:   white     # figure edge color
@@ -680,11 +680,11 @@ figure.facecolor:   white     # figure face color
 ## The default savefig parameters can be different from the display parameters
 ## e.g., you may want a higher resolution, or to make the figure
 ## background white
-savefig.dpi:       300      # figure dots per inch or 'figure'
+savefig.dpi:       500      # figure dots per inch or 'figure'
 savefig.facecolor: white        # figure face color when saving
 #savefig.edgecolor: auto        # figure edge color when saving
 #savefig.format:    png         # {png, ps, pdf, svg}
-#savefig.bbox:      standard    # {tight, standard}
+savefig.bbox:      tight    # {tight, standard}
                                 # 'tight' is incompatible with pipe-based animation
                                 # backends (e.g. 'ffmpeg') but will work with those
                                 # based on temporary files (e.g. 'ffmpeg_file')
