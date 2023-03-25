@@ -128,9 +128,9 @@
 #lines.antialiased: True            # render lines in antialiased (no jaggies)
 
 ## The three standard dash patterns.  These are scaled by the linewidth.
-#lines.dashed_pattern: 3.7, 1.6
-#lines.dashdot_pattern: 6.4, 1.6, 1, 1.6
-#lines.dotted_pattern: 1, 1.65
+lines.dashed_pattern: 3, 1.5
+lines.dashdot_pattern: 1, 1.25, 4, 1.25
+lines.dotted_pattern: 1.0, 1.25
 #lines.scale_dashes: True
 
 #markers.fillstyle: full  # {full, left, right, bottom, top, none}
@@ -264,7 +264,7 @@ font.family:  TeX Gyre Heros
 #font.variant: normal
 #font.weight:  normal
 #font.stretch: normal
-#font.size:    10.0
+font.size:    8.0
 
 #font.serif:      DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 #font.sans-serif: DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
@@ -363,7 +363,7 @@ font.family:  TeX Gyre Heros
 ## https://matplotlib.org/stable/api/axes_api.html#module-matplotlib.axes
 #axes.facecolor:     white   # axes background color
 #axes.edgecolor:     black   # axes edge color
-#axes.linewidth:     0.8     # edge line width
+axes.linewidth:     0.5     # edge line width
 axes.grid:          True   # display grid or not
 #axes.grid.axis:     both    # which axis the grid should apply to
 #axes.grid.which:    major   # grid lines at {major, minor, both} ticks
@@ -473,10 +473,10 @@ axes.zmargin:   0.002  # z margin.  See `axes.Axes.margins`
 #xtick.bottom:        True    # draw ticks on the bottom side
 #xtick.labeltop:      False   # draw label on the top
 #xtick.labelbottom:   True    # draw label on the bottom
-#xtick.major.size:    3.5     # major tick size in points
-#xtick.minor.size:    2       # minor tick size in points
-#xtick.major.width:   0.8     # major tick width in points
-#xtick.minor.width:   0.6     # minor tick width in points
+xtick.major.size:    1.75     # major tick size in points
+xtick.minor.size:    1       # minor tick size in points
+xtick.major.width:   0.5     # major tick width in points
+xtick.minor.width:   0.25     # minor tick width in points
 #xtick.major.pad:     3.5     # distance to major tick label in points
 #xtick.minor.pad:     3.4     # distance to the minor tick label in points
 #xtick.color:         black   # color of the ticks
@@ -494,10 +494,10 @@ xtick.minor.visible: True   # visibility of minor ticks on x-axis
 #ytick.right:         False   # draw ticks on the right side
 #ytick.labelleft:     True    # draw tick labels on the left side
 #ytick.labelright:    False   # draw tick labels on the right side
-#ytick.major.size:    3.5     # major tick size in points
-#ytick.minor.size:    2       # minor tick size in points
-#ytick.major.width:   0.8     # major tick width in points
-#ytick.minor.width:   0.6     # minor tick width in points
+ytick.major.size:    1.75     # major tick size in points
+ytick.minor.size:    1       # minor tick size in points
+ytick.major.width:   0.5     # major tick width in points
+ytick.minor.width:   0.25     # minor tick width in points
 #ytick.major.pad:     3.5     # distance to major tick label in points
 #ytick.minor.pad:     3.4     # distance to the minor tick label in points
 #ytick.color:         black   # color of the ticks
@@ -515,9 +515,9 @@ ytick.minor.visible: True   # visibility of minor ticks on y-axis
 ## ***************************************************************************
 ## * GRIDS                                                                   *
 ## ***************************************************************************
-#grid.color:     "#b0b0b0"  # grid color
-grid.linestyle: --          # solid
-grid.linewidth: 0.3        # in points
+grid.color:    0.3        # grid color
+grid.linestyle: 0.7, 9      # solid
+grid.linewidth: 0.3         # in points
 #grid.alpha:     1.0        # transparency, between 0.0 and 1.0
 
 
@@ -525,14 +525,14 @@ grid.linewidth: 0.3        # in points
 ## * LEGEND                                                                  *
 ## ***************************************************************************
 #legend.loc:           best
-legend.frameon:       False     # if True, draw the legend on a background patch
+legend.frameon:       True     # if True, draw the legend on a background patch
 #legend.framealpha:    0.8      # legend patch transparency
 #legend.facecolor:     inherit  # inherit from axes.facecolor; or color spec
 #legend.edgecolor:     0.8      # background patch boundary color
-#legend.fancybox:      True     # if True, use a rounded box for the
+legend.fancybox:      False     # if True, use a rounded box for the
                                 # legend background, else a rectangle
 #legend.shadow:        False    # if True, give background a shadow effect
-#legend.numpoints:     1        # the number of marker points in the legend line
+legend.numpoints:     1        # the number of marker points in the legend line
 #legend.scatterpoints: 1        # number of scatter points
 #legend.markerscale:   1.0      # the relative size of legend markers vs. original
 #legend.fontsize:      medium
@@ -541,12 +541,12 @@ legend.frameon:       False     # if True, draw the legend on a background patch
 
 ## Dimensions as fraction of font size:
 #legend.borderpad:     0.4  # border whitespace
-#legend.labelspacing:  0.5  # the vertical space between the legend entries
+legend.labelspacing:  0.4  # the vertical space between the legend entries
 #legend.handlelength:  2.0  # the length of the legend lines
 #legend.handleheight:  0.7  # the height of the legend handle
-#legend.handletextpad: 0.8  # the space between the legend line and legend text
-#legend.borderaxespad: 0.5  # the border between the axes and legend edge
-#legend.columnspacing: 2.0  # column separation
+legend.handletextpad: 0.3  # the space between the legend line and legend text
+legend.borderaxespad: 0.4  # the border between the axes and legend edge
+legend.columnspacing: 0.75  # column separation
 
 
 ## ***************************************************************************
@@ -708,7 +708,7 @@ savefig.facecolor: white        # figure face color when saving
                             # xpdf intended for production of publication quality files,
                             # but requires ghostscript, xpdf and ps2eps
 #ps.distiller.res:  6000    # dpi
-#ps.fonttype:       3       # Output Type 3 (Type3) or Type 42 (TrueType)
+ps.fonttype:       42       # Output Type 3 (Type3) or Type 42 (TrueType)
 
 ### PDF backend params
 #pdf.compression:    6  # integer from 0 to 9
