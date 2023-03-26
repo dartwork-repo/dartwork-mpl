@@ -1,4 +1,2 @@
 from .font import *
-from .color import (
-    CD,
-)
+from .color import *

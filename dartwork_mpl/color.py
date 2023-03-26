@@ -1,23 +1,23 @@
 from pathlib import Path
-
-# Color dictionary.
-CD = {}
+import matplotlib.colors as mcolors
 
 
-def _load_color_dict(path):
+def _parse_color_data(path):
     color_dict = {}
     with open(path, 'r') as f:
-        for line in f.readlines():
-            # Neglect comment line.
-            if line.startswith('#'):
-                continue
+        lines = f.readlines()
 
-            # Neglect empty line.
-            if not line.strip():
-                continue
+    for line in lines:
+        # Neglect comment line.
+        if line.startswith('#'):
+            continue
 
-            k, v = line.split(':')
-            color_dict[k.strip()] = v.strip()
+        # Neglect empty line.
+        if not line.strip():
+            continue
+
+        k, v = line.split(':')
+        color_dict[k.strip()] = v.strip()
 
     return color_dict
 
@@ -27,9 +27,13 @@ def _load_colors():
 
     root_dir = Path(__file__).parent / 'asset/color'
     for path in root_dir.glob('*.txt'):
-        color_dict.update(_load_color_dict(path))
+        color_dict.update(_parse_color_data(path))
 
-    CD.update(color_dict)
+    # Append prefix to distinguish them from matplotlib colors.
+    color_dict = {f'dm:{k}': v for k, v in color_dict.items()}
+
+    # Add color dict to matplotlib internal color mapping.
+    mcolors.get_named_colors_mapping().update(color_dict)
 
 
 _load_colors()
