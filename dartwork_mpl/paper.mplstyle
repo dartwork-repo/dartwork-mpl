@@ -146,7 +146,7 @@ lines.dotted_pattern: 1.0, 1.25
 ## Patches are graphical objects that fill 2D space, like polygons or circles.
 ## See https://matplotlib.org/stable/api/artist_api.html#module-matplotlib.patches
 ## for more information on patch properties.
-#patch.linewidth:       1.0    # edge width in points.
+patch.linewidth:       0.5    # edge width in points.
 #patch.facecolor:       C0
 #patch.edgecolor:       black  # if forced, or patch is not filled
 #patch.force_edgecolor: False  # True to always use edgecolor
@@ -157,7 +157,7 @@ lines.dotted_pattern: 1.0, 1.25
 ## * HATCHES                                                                 *
 ## ***************************************************************************
 #hatch.color:     black
-#hatch.linewidth: 1.0
+# hatch.linewidth: 0.5
 
 
 ## ***************************************************************************
@@ -525,10 +525,10 @@ grid.linewidth: 0.3         # in points
 ## * LEGEND                                                                  *
 ## ***************************************************************************
 #legend.loc:           best
-legend.frameon:       True     # if True, draw the legend on a background patch
-#legend.framealpha:    0.8      # legend patch transparency
+legend.frameon:       False     # if True, draw the legend on a background patch
+legend.framealpha:    1.0      # legend patch transparency
 #legend.facecolor:     inherit  # inherit from axes.facecolor; or color spec
-#legend.edgecolor:     0.8      # background patch boundary color
+legend.edgecolor:     0.0      # background patch boundary color
 legend.fancybox:      False     # if True, use a rounded box for the
                                 # legend background, else a rectangle
 #legend.shadow:        False    # if True, give background a shadow effect
@@ -540,9 +540,9 @@ legend.numpoints:     1        # the number of marker points in the legend line
 #legend.title_fontsize: None    # None sets to the same as the default axes.
 
 ## Dimensions as fraction of font size:
-#legend.borderpad:     0.4  # border whitespace
+# legend.borderpad:     0.4  # border whitespace
 legend.labelspacing:  0.4  # the vertical space between the legend entries
-#legend.handlelength:  2.0  # the length of the legend lines
+# legend.handlelength:  2.0  # the length of the legend lines
 #legend.handleheight:  0.7  # the height of the legend handle
 legend.handletextpad: 0.3  # the space between the legend line and legend text
 legend.borderaxespad: 0.4  # the border between the axes and legend edge
