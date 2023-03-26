@@ -30,10 +30,11 @@ def _load_colors():
         color_dict.update(_parse_color_data(path))
 
     # Append prefix to distinguish them from matplotlib colors.
-    color_dict = {f'dm:{k}': v for k, v in color_dict.items()}
+    _color_dict = {f'dm.{k}': v for k, v in color_dict.items()}
+    _color_dict.update({f'dartwork_mpl.{k}': v for k, v in color_dict.items()})
 
     # Add color dict to matplotlib internal color mapping.
-    mcolors.get_named_colors_mapping().update(color_dict)
+    mcolors.get_named_colors_mapping().update(_color_dict)
 
 
 _load_colors()
