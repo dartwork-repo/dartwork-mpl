@@ -560,7 +560,7 @@ legend.columnspacing: 0.75  # column separation
 # For guidance, Nature's standard figure sizes are 89 mm wide (single column)
 # and 183 mm wide (double column). 89 mm ~ 3.5 inches.
 figure.figsize:     3.5, 3.0  # figure size in inches
-figure.dpi:         150       # figure dots per inch
+figure.dpi:         300       # figure dots per inch
 figure.facecolor:   white     # figure face color
 #figure.edgecolor:   white     # figure edge color
 #figure.frameon:     True      # enable figure frame
