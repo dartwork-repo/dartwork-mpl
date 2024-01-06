@@ -684,7 +684,7 @@ savefig.dpi:       500      # figure dots per inch or 'figure'
 savefig.facecolor: white        # figure face color when saving
 #savefig.edgecolor: auto        # figure edge color when saving
 #savefig.format:    png         # {png, ps, pdf, svg}
-savefig.bbox:      tight    # {tight, standard}
+savefig.bbox:      standard    # {tight, standard}
                                 # 'tight' is incompatible with pipe-based animation
                                 # backends (e.g. 'ffmpeg') but will work with those
                                 # based on temporary files (e.g. 'ffmpeg_file')
