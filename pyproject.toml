@@ -8,9 +8,11 @@ readme = "README.md"
 packages = [{include = "dartwork_mpl"}]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.9,<4.0"
 matplotlib = "^3.7.1"
 numpy = "^1.24.2"
+pandas = "^2.1.4"
+openpyxl = "^3.1.2"
 
 
 [tool.poetry.group.dev.dependencies]

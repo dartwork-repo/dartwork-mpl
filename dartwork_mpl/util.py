@@ -1,3 +1,5 @@
+import base64
+
 from xml.dom import minidom
 from tempfile import NamedTemporaryFile
 
