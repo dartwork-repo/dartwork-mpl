@@ -40,14 +40,15 @@ def show(image_path, size=600, unit='pt'):
 def save_and_show(fig, image_path=None, size=600, unit='pt'):
     if image_path is None:
         with NamedTemporaryFile(suffix='.svg') as f:
+            f.close()
             image_path = f.name
 
             fig.savefig(image_path, bbox_inches=None)
             plt.close(fig)
 
-            show(image_path)
+            show(image_path, size=size, unit=unit)
     else:
         fig.savefig(image_path, bbox_inches=None)
         plt.close(fig)
 
-        show(image_path)
+        show(image_path, size=size, unit=unit)
