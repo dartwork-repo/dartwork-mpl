@@ -2,14 +2,39 @@ import base64
 
 from xml.dom import minidom
 from tempfile import NamedTemporaryFile
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 
+from matplotlib.transforms import ScaledTranslation
 from IPython.display import display, HTML, SVG
+
+
+def fs(n):
+    """
+    Return base font size + n.
+    """
+    return plt.rcParams['font.size'] + n
+
+
+def use_dmpl_style():
+    plt.style.use(Path(__file__).parent / 'paper.mplstyle')    
 
 
 def cm2in(cm):
     return cm / 2.54
+
+
+def make_offset(x, y, fig):
+    dx, dy = x / 72, y / 72
+    offset = ScaledTranslation(dx, dy, fig.dpi_scale_trans)
+
+    return offset
+
+
+def save_formats(fig, image_stem, formats=('svg', 'png', 'pdf', 'eps'), bbox_inches=None, **kwargs):
+    for fmt in formats:
+        fig.savefig(f'{image_stem}.{fmt}', bbox_inches=bbox_inches, **kwargs)
 
 
 def show(image_path, size=600, unit='pt'):

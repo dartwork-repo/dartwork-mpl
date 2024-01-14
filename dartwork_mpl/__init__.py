@@ -7,4 +7,5 @@ from .color import *
 from .util import *
 from .constant import *
 
-plt.style.use(Path(__file__).parent / 'paper.mplstyle')
+
+use_dmpl_style()
