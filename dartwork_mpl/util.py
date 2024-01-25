@@ -5,6 +5,7 @@ from tempfile import NamedTemporaryFile
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 
 from matplotlib.transforms import ScaledTranslation
 from IPython.display import display, HTML, SVG
@@ -15,6 +16,23 @@ def fs(n):
     Return base font size + n.
     """
     return plt.rcParams['font.size'] + n
+
+
+def mix_colors(color1, color2, alpha=0.5):
+    """
+    Mix two colors.
+    """
+    color1 = mcolors.to_rgb(color1)
+    color2 = mcolors.to_rgb(color2)
+
+    return tuple(alpha * c1 + (1 - alpha) * c2 for c1, c2 in zip(color1, color2))
+
+
+def pseudo_alpha(color, alpha=0.5, background='white'):
+    """
+    Return a color with pseudo alpha.
+    """
+    return mix_colors(color, background, alpha=alpha)
 
 
 def use_dmpl_style():
