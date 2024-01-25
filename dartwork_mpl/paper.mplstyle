@@ -407,8 +407,8 @@ axes.axisbelow:     False    # draw axis gridlines and ticks:
 
 #axes.spines.left:   True  # display axis spines
 #axes.spines.bottom: True
-#axes.spines.top:    True
-#axes.spines.right:  True
+# axes.spines.top:    False
+# axes.spines.right:  False
 
 #axes.unicode_minus: True  # use Unicode for the minus symbol rather than hyphen.  See
                            # https://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
