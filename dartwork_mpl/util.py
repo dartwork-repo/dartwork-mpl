@@ -4,11 +4,106 @@ from xml.dom import minidom
 from tempfile import NamedTemporaryFile
 from pathlib import Path
 
+import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
 from matplotlib.transforms import ScaledTranslation
 from IPython.display import display, HTML, SVG
+from scipy.optimize import minimize
+
+# Will be replaced to rich print.
+PRINT = print
+
+
+def set_decimal(ax, xn=None, yn=None):
+    if xn is not None:
+        xticks = ax.get_xticks()
+        ax.set_xticks(xticks)
+        ax.set_xticklabels([f'{x:.{xn}f}' for x in xticks])
+        
+    if yn is not None:
+        yticks = ax.get_yticks()
+        ax.set_yticks(yticks)
+        ax.set_yticklabels([f'{y:.{yn}f}' for y in yticks])
+
+
+def get_bounding_box(boxes):
+    # Initialize extremes
+    min_x = float('inf')
+    min_y = float('inf')
+    max_x = float('-inf')
+    max_y = float('-inf')
+    
+    # Iterate through each box
+    for box in boxes:
+        # Update minimum x and y
+        min_x = min(min_x, box.p0[0])
+        min_y = min(min_y, box.p0[1])
+        
+        # Update maximum x and y
+        max_x = max(max_x, box.p0[0] + box.width)
+        max_y = max(max_y, box.p0[1] + box.height)
+    
+    # Calculate bounding box width and height
+    bbox_width = max_x - min_x
+    bbox_height = max_y - min_y
+    
+    return (min_x, min_y, bbox_width, bbox_height)
+
+
+def simple_layout(fig, margin=0.05, verbose=True):
+    """It works only for figure with single gird spec.
+    
+    Parameters
+    ----------
+    fig : matplotlib.figure.Figure
+        Figure object.
+    margin : int, optional
+        Margin size in inches, by default 0.05.
+    """
+    margin = margin * fig.get_dpi()
+
+    def fun(x):
+        gs = fig.axes[0].get_gridspec()
+        # print(gs.left, gs.right, gs.bottom, gs.top)
+        gs.update(left=x[0], right=x[1], bottom=x[2], top=x[3])
+
+        ax_bboxes = [ax.get_tightbbox() for ax in fig.axes]
+        all_bbox = get_bounding_box(ax_bboxes)
+
+        if verbose:
+            print('Grid spec parameters:', x)
+        values = np.array(all_bbox)
+
+        # Targets.
+        bbox = fig.bbox
+        targets = np.array([
+            margin,
+            margin,
+            bbox.width - 2*margin,
+            bbox.height - 2*margin,
+        ])
+ 
+        loss = np.square(values - targets).sum()
+ 
+        return loss
+    
+    # Order: left, right, bottom, top.
+    bounds = [
+        (0, 0.1),
+        (0.9, 1),
+        (0, 0.1),
+        (0.9, 1),
+    ]
+
+    result = minimize(
+        fun, x0=[0, 1, 0, 1],
+        bounds=bounds, method='L-BFGS-B'
+    )
+
+    return result
+
 
 
 def fs(n):
