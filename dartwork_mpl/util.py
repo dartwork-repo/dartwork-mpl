@@ -72,8 +72,6 @@ def simple_layout(fig, margin=0.05, verbose=True):
         ax_bboxes = [ax.get_tightbbox() for ax in fig.axes]
         all_bbox = get_bounding_box(ax_bboxes)
 
-        if verbose:
-            print('Grid spec parameters:', x)
         values = np.array(all_bbox)
 
         # Targets.
@@ -81,12 +79,22 @@ def simple_layout(fig, margin=0.05, verbose=True):
         targets = np.array([
             margin,
             margin,
-            bbox.width - 2*margin,
-            bbox.height - 2*margin,
+            bbox.width - 2 * margin,
+            bbox.height - 2 * margin,
         ])
  
-        loss = np.square(values - targets).sum()
+        scales = np.array([
+            bbox.width,
+            bbox.height,
+            bbox.width,
+            bbox.height,
+        ])
+
+        loss = np.square((values - targets) / scales).sum()
  
+        if verbose:
+            print('Grid spec parameters:', x, 'Loss', loss)
+
         return loss
     
     # Order: left, right, bottom, top.
@@ -99,7 +107,13 @@ def simple_layout(fig, margin=0.05, verbose=True):
 
     result = minimize(
         fun, x0=[0, 1, 0, 1],
-        bounds=bounds, method='L-BFGS-B'
+        bounds=bounds,
+        # # Gradient-free optimization.
+        # method='Nelder-Mead',    
+        # # Relax convergence criteria.
+        # options=dict(xatol=1e-3),
+        method='L-BFGS-B',
+        options=dict(gtol=1e-2),
     )
 
     return result
