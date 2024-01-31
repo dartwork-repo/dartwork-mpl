@@ -52,61 +52,89 @@ def get_bounding_box(boxes):
     return (min_x, min_y, bbox_width, bbox_height)
 
 
-def simple_layout(fig, margin=0.05, verbose=True):
-    """It works only for figure with single gird spec.
-    
+def simple_layout(
+    fig,
+    gs=None,
+    margins=(0.05, 0.05, 0.05, 0.05),
+    bbox=(0, 1, 0, 1),
+    verbose=True,
+):
+    """Apply simple layout to figure for given grid spec.
+
     Parameters
     ----------
     fig : matplotlib.figure.Figure
         Figure object.
-    margin : int, optional
-        Margin size in inches, by default 0.05.
+    gs : matplotlib.gridspec.GridSpec, optional(default=None)
+        Grid spec object. If None, use the first grid spec.
+    margins : tuple(float, float, float, float), optional(default=(0.05, 0.05, 0.05, 0.05))
+        Margins in inches, (left, right, bottom, top).
+    bbox : tuple(float, float, float, float), optional(default=(0, 1, 0, 1))
+        Bounding box in figure coordinates, (left, right, bottom, top).
+    verbose : bool, optional(default=True)
+        Print verbose.
+    
+    Returns
+    -------
+    result : scipy.optimize.OptimizeResult
+        Optimization result.
+
+    TODO
+    ----
+    - Upgrade bounds generation algorithm.
+    - Readable code.
     """
-    margin = margin * fig.get_dpi()
+    if gs is None:
+        gs = fig.axes[0].get_gridspec()
+
+    margins = np.array(margins) * fig.get_dpi()
 
     def fun(x):
-        gs = fig.axes[0].get_gridspec()
         # print(gs.left, gs.right, gs.bottom, gs.top)
         gs.update(left=x[0], right=x[1], bottom=x[2], top=x[3])
 
-        ax_bboxes = [ax.get_tightbbox() for ax in fig.axes]
+        ax_bboxes = [
+            ax.get_tightbbox() for ax in fig.axes
+            if id(ax.get_gridspec()) == id(gs)
+        ]
         all_bbox = get_bounding_box(ax_bboxes)
 
         values = np.array(all_bbox)
 
         # Targets.
-        bbox = fig.bbox
+        fbox = fig.bbox
         targets = np.array([
-            margin,
-            margin,
-            bbox.width - 2 * margin,
-            bbox.height - 2 * margin,
+            fbox.width * bbox[0] + margins[0],
+            fbox.height * bbox[2] + margins[2],
+            fbox.width * (bbox[1] - bbox[0]) - 2 * margins[1],
+            fbox.height * (bbox[3] - bbox[2]) - 2 * margins[3],
         ])
  
         scales = np.array([
-            bbox.width,
-            bbox.height,
-            bbox.width,
-            bbox.height,
+            fbox.width,
+            fbox.height,
+            fbox.width,
+            fbox.height,
         ])
 
         loss = np.square((values - targets) / scales).sum()
  
         if verbose:
             print('Grid spec parameters:', x, 'Loss', loss)
+            print(targets)
 
         return loss
     
     # Order: left, right, bottom, top.
     bounds = [
-        (0, 0.1),
-        (0.9, 1),
-        (0, 0.1),
-        (0.9, 1),
+        (bbox[0] + 0, bbox[0] + 0.1),
+        (bbox[1] - 0.1, bbox[1]),
+        (bbox[2] + 0, bbox[2] + 0.1),
+        (bbox[3] - 0.1, bbox[3]),
     ]
 
     result = minimize(
-        fun, x0=[0, 1, 0, 1],
+        fun, x0=np.array(bounds).mean(axis=1),
         bounds=bounds,
         # # Gradient-free optimization.
         # method='Nelder-Mead',    
