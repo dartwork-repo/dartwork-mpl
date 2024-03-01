@@ -32,5 +32,8 @@ def _load_colormaps():
         cmap = _parse_colormap(path)
         mpl.colormaps.register(cmap=cmap)
 
+        cmap_r = _parse_colormap(path, reverse=True)
+        mpl.colormaps.register(cmap=cmap_r)
+
 
 _load_colormaps()
