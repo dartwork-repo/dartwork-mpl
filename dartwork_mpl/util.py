@@ -1,10 +1,9 @@
-import base64
-
 from xml.dom import minidom
 from tempfile import NamedTemporaryFile
 from pathlib import Path
 
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
@@ -232,3 +231,44 @@ def save_and_show(fig, image_path=None, size=600, unit='pt'):
         plt.close(fig)
 
         show(image_path, size=size, unit=unit)
+
+
+def plot_colormaps(cmap_list=None):
+    """Plot a list of colormaps in a single figure.
+    Original source code: https://matplotlib.org/stable/users/explain/colors/colormaps.html
+
+    Parameters
+    ----------
+    cmap_list : list, optional(default=None)
+        List of colormap names.
+
+    Returns
+    -------
+    fig : matplotlib.figure.Figure
+        Figure object.
+    axs : list of matplotlib.axes.Axes
+    """
+    if cmap_list is None:
+        cmap_list = list(mpl.colormaps.keys())
+
+    gradient = np.linspace(0, 1, 256)
+    gradient = np.vstack((gradient, gradient))
+
+    # Create figure and adjust figure height to number of colormaps
+    nrows = len(cmap_list)
+    figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.22
+    fig, axs = plt.subplots(nrows=nrows + 1, figsize=(6.4, figh))
+    fig.subplots_adjust(top=1 - 0.35 / figh, bottom=0.15 / figh,
+                        left=0.2, right=0.99)
+    # axs[0].set_title(f'{category} colormaps', fontsize=14)
+
+    for ax, name in zip(axs, cmap_list):
+        ax.imshow(gradient, aspect='auto', cmap=mpl.colormaps[name])
+        ax.text(-0.01, 0.5, name, va='center', ha='right', fontsize=10,
+                transform=ax.transAxes)
+
+    # Turn off *all* ticks & spines, not just the ones with colormaps.
+    for ax in axs:
+        ax.set_axis_off()
+
+    return fig, axs

@@ -23,6 +23,7 @@ def _parse_color_data(path):
 
 
 def _load_colors():
+    print('Load colors...')
     color_dict = {}
 
     root_dir = Path(__file__).parent / 'asset/color'

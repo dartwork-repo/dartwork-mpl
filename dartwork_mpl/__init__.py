@@ -4,6 +4,7 @@ from pathlib import Path
 
 from .font import *
 from .color import *
+from .cmap import *
 from .util import *
 from .constant import *
 
