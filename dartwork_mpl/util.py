@@ -250,6 +250,7 @@ def plot_colormaps(cmap_list=None):
     """
     if cmap_list is None:
         cmap_list = list(mpl.colormaps.keys())
+        cmap_list = [c for c in cmap_list if not c.endswith('_r')]
 
     gradient = np.linspace(0, 1, 256)
     gradient = np.vstack((gradient, gradient))

@@ -3,7 +3,7 @@ import matplotlib as mpl
 import matplotlib.colors as mcolors
 
 
-def _parse_colormap(path):
+def _parse_colormap(path, reverse=False):
     path = Path(path)
 
     colors = []
@@ -16,7 +16,13 @@ def _parse_colormap(path):
             color = [float(v) for v in line.split()]
             colors.append(color)
 
-    return mcolors.ListedColormap(colors, name=f'dm.{path.stem}')
+    if reverse:
+        colors = colors[::-1]
+        name=f'dm.{path.stem}_r'
+    else:
+        name=f'dm.{path.stem}'
+
+    return mcolors.ListedColormap(colors, name=name)
 
 
 def _load_colormaps():
