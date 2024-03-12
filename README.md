@@ -1,7 +1,6 @@
-# dartwork-mpl
+# dartwork-mpl: matploblib wrapping library developed by dartwork
 
-`dartowrk-mpl` is a sophisticated utility collection designed to elevate matplotlib visuals to publication-level elegance with added convenience features. It is being developed to resolve personal inconveniences in visualization using matplotlib and to provide more intuitive customization especially to beginners. 
-
+`dartwork-mpl` is a sophisticated utility collection designed to elevate matplotlib visuals to publication-level elegance with added convenience features. It is being developed to resolve personal inconveniences in visualization using matplotlib and to provide more intuitive customization especially to beginners. 
 
 
 ## Features
@@ -20,7 +19,7 @@ To get started with `dartwork-mpl`, you can install it directly via pip:
 
 ```shell
 pip install git+https://github.com/BET-lab/dartwork-mpl
-
+```
 
 
 ## Reporting Issues
