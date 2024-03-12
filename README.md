@@ -1,6 +1,6 @@
 # dartwork-mpl
 
-'dartowrk-mpl' is a sophisticated utility collection designed to elevate matplotlib visuals to publication-level elegance with added convenience features. Our mission is to make high-quality data visualization accessible and intuitive for researchers, data scientists, and developers alike.
+`dartowrk-mpl` is a sophisticated utility collection designed to elevate matplotlib visuals to publication-level elegance with added convenience features. It is being developed to resolve personal inconveniences in visualization using matplotlib and to provide more intuitive customization especially to beginners. 
 
 
 
@@ -21,3 +21,7 @@ To get started with `dartwork-mpl`, you can install it directly via pip:
 ```shell
 pip install git+https://github.com/BET-lab/dartwork-mpl
 
+
+
+## Reporting Issues
+Encountered a bug or have a feature request? Please open an issue through our GitHub issue tracker. We appreciate your feedback and contributions.
