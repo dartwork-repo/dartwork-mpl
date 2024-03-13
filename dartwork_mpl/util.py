@@ -252,6 +252,9 @@ def plot_colormaps(cmap_list=None):
         cmap_list = list(mpl.colormaps.keys())
         cmap_list = [c for c in cmap_list if not c.endswith('_r')]
 
+    # Convert colormaps to matplotlib colormaps if cmap is a string.
+    cmap_list = [mpl.cm.get_cmap(c) if isinstance(c, str) else c for c in cmap_list]
+
     gradient = np.linspace(0, 1, 256)
     gradient = np.vstack((gradient, gradient))
 
@@ -263,9 +266,9 @@ def plot_colormaps(cmap_list=None):
                         left=0.2, right=0.99)
     # axs[0].set_title(f'{category} colormaps', fontsize=14)
 
-    for ax, name in zip(axs, cmap_list):
-        ax.imshow(gradient, aspect='auto', cmap=mpl.colormaps[name])
-        ax.text(-0.01, 0.5, name, va='center', ha='right', fontsize=10,
+    for ax, cmap in zip(axs, cmap_list):
+        ax.imshow(gradient, aspect='auto', cmap=cmap)
+        ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
                 transform=ax.transAxes)
 
     # Turn off *all* ticks & spines, not just the ones with colormaps.
