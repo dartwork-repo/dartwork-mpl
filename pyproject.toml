@@ -15,10 +15,13 @@ pandas = "^2.1.4"
 openpyxl = "^3.1.2"
 scipy = "^1.11.4"
 palettable = "^3.3.3"
+colorspacious = "^1.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.22.0"
+seaborn = "^0.13.2"
+salib = "^1.4.8"
 
 [build-system]
 requires = ["poetry-core"]
