@@ -3,3 +3,4 @@ __pycache__
 
 # To order to prevent commit of file of large size.
 *.csv
+example/heatmaps/multivariate_normal_*
