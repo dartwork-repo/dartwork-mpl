@@ -57,6 +57,8 @@ def simple_layout(
     margins=(0.05, 0.05, 0.05, 0.05),
     bbox=(0, 1, 0, 1),
     verbose=True,
+    gtol=1e-2,
+    bound_margin=0.2,
 ):
     """Apply simple layout to figure for given grid spec.
 
@@ -72,7 +74,12 @@ def simple_layout(
         Bounding box in figure coordinates, (left, right, bottom, top).
     verbose : bool, optional(default=True)
         Print verbose.
-    
+    gtol : float, optional(default=1e-2)
+        Gradient tolerance. If the maximum change in the objective function is
+        less than gtol, the optimization will stop.
+    bound_margin : float, optional(default=0.1)
+        Margin for bounds generation.
+
     Returns
     -------
     result : scipy.optimize.OptimizeResult
@@ -119,17 +126,19 @@ def simple_layout(
         loss = np.square((values - targets) / scales).sum()
  
         if verbose:
-            print('Grid spec parameters:', x, 'Loss', loss)
-            print(targets)
+            print('x', x)
+            print('Loss', loss)
+            print('Values: {0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*(values)))
+            print('Targets: {0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*(targets)))
 
         return loss
     
     # Order: left, right, bottom, top.
     bounds = [
-        (bbox[0] + 0, bbox[0] + 0.1),
-        (bbox[1] - 0.1, bbox[1]),
-        (bbox[2] + 0, bbox[2] + 0.1),
-        (bbox[3] - 0.1, bbox[3]),
+        (bbox[0], bbox[0] + bound_margin),
+        (bbox[1] - bound_margin, bbox[1]),
+        (bbox[2], bbox[2] + bound_margin),
+        (bbox[3] - bound_margin, bbox[3]),
     ]
 
     result = minimize(
@@ -140,7 +149,7 @@ def simple_layout(
         # # Relax convergence criteria.
         # options=dict(xatol=1e-3),
         method='L-BFGS-B',
-        options=dict(gtol=1e-2),
+        options=dict(gtol=gtol),
     )
 
     return result
