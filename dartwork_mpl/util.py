@@ -233,8 +233,17 @@ def show(image_path, size=600, unit='pt'):
     desired_height = int(desired_width * aspect_ratio)
 
     # 가로 폭과 세로 높이 설정
-    svg_obj.data = svg_obj.data.replace(f'width="{width}{unit}"', f'width="{desired_width}{unit}"')
-    svg_obj.data = svg_obj.data.replace(f'height="{height}{unit}"', f'height="{desired_height}{unit}"')
+    if f'width="{width}{unit}"' in svg_obj.data:
+        svg_obj.data = svg_obj.data.replace(f'width="{width}{unit}"', f'width="{desired_width}{unit}"')
+    else:
+        width = int(width)
+        svg_obj.data = svg_obj.data.replace(f'width="{width}{unit}"', f'width="{desired_width}{unit}"')
+
+    if f'height="{height}{unit}"' in svg_obj.data:
+        svg_obj.data = svg_obj.data.replace(f'height="{height}{unit}"', f'height="{desired_height}{unit}"')
+    else:
+        height = int(height)
+        svg_obj.data = svg_obj.data.replace(f'height="{height}{unit}"', f'height="{desired_height}{unit}"')
 
     # HTML을 사용하여 SVG 이미지 표시
     svg_code = svg_obj.data
