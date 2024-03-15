@@ -187,8 +187,16 @@ def pseudo_alpha(color, alpha=0.5, background='white'):
     return mix_colors(color, background, alpha=alpha)
 
 
+def use_style(name='dmpl'):
+    path = Path(__file__).parent / f'asset/mplstyle/{name}.mplstyle'
+    if not path.exists():
+        raise ValueError(f'Not found style: {name}')
+
+    plt.style.use(path)    
+
+
 def use_dmpl_style():
-    plt.style.use(Path(__file__).parent / 'paper.mplstyle')    
+    use_style('dmpl')
 
 
 def cm2in(cm):
