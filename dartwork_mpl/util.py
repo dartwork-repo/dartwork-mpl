@@ -15,6 +15,13 @@ from scipy.optimize import minimize
 PRINT = print
 
 
+def _create_parent_path_if_not_exists(path):
+    path = Path(path)
+    if not path.parent.exists():
+        path.parent.mkdir(parents=True)
+        print(f'Created a directory: {path.parent}')
+
+
 def set_decimal(ax, xn=None, yn=None):
     if xn is not None:
         xticks = ax.get_xticks()
@@ -196,6 +203,7 @@ def make_offset(x, y, fig):
 
 
 def save_formats(fig, image_stem, formats=('svg', 'png', 'pdf', 'eps'), bbox_inches=None, **kwargs):
+    _create_parent_path_if_not_exists(image_stem)
     for fmt in formats:
         fig.savefig(f'{image_stem}.{fmt}', bbox_inches=bbox_inches, **kwargs)
 
@@ -226,6 +234,8 @@ def show(image_path, size=600, unit='pt'):
 
 
 def save_and_show(fig, image_path=None, size=600, unit='pt'):
+    _create_parent_path_if_not_exists(image_path)
+
     if image_path is None:
         with NamedTemporaryFile(suffix='.svg') as f:
             f.close()
