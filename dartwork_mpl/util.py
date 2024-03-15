@@ -242,8 +242,6 @@ def show(image_path, size=600, unit='pt'):
 
 
 def save_and_show(fig, image_path=None, size=600, unit='pt'):
-    _create_parent_path_if_not_exists(image_path)
-
     if image_path is None:
         with NamedTemporaryFile(suffix='.svg') as f:
             f.close()
@@ -254,6 +252,7 @@ def save_and_show(fig, image_path=None, size=600, unit='pt'):
 
             show(image_path, size=size, unit=unit)
     else:
+        _create_parent_path_if_not_exists(image_path)
         fig.savefig(image_path, bbox_inches=None)
         plt.close(fig)
 
