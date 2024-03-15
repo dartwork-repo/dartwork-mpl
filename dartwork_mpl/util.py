@@ -56,7 +56,7 @@ def simple_layout(
     gs=None,
     margins=(0.05, 0.05, 0.05, 0.05),
     bbox=(0, 1, 0, 1),
-    verbose=True,
+    verbose=False,
     gtol=1e-2,
     bound_margin=0.2,
 ):
