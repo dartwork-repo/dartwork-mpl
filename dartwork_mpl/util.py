@@ -191,6 +191,7 @@ def pseudo_alpha(color, alpha=0.5, background='white'):
 
 
 def use_style(name='dmpl'):
+    plt.rcParams.update(plt.rcParamsDefault)
     path = Path(__file__).parent / f'asset/mplstyle/{name}.mplstyle'
     if not path.exists():
         raise ValueError(f'Not found style: {name}')
