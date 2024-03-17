@@ -70,6 +70,7 @@ def simple_layout(
     gtol=1e-2,
     bound_margin=0.2,
     use_all_axes=False,
+    importance_weights=(1, 1, 1, 1),
 ):
     """Apply simple layout to figure for given grid spec.
 
@@ -93,7 +94,9 @@ def simple_layout(
     use_all_axes : bool, optional(default=False)
         Use all axes in the figure. If False, use only axes in the given grid spec.
         IF True, use all axes in the figure.
-
+    importance_weights : tuple(float, float, float, float), optional(default=(1, 1, 1, 1))
+        Importance weights for each target. (left, right, bottom, top).
+        
     Returns
     -------
     result : scipy.optimize.OptimizeResult
@@ -110,6 +113,7 @@ def simple_layout(
     if use_all_axes and verbose:
         print('Use all axes in the figure. Given grid spec will be ignored.')
 
+    importance_weights = np.array(importance_weights)
     margins = np.array(margins) * fig.get_dpi()
 
     def fun(x):
@@ -123,7 +127,7 @@ def simple_layout(
                 ax.get_tightbbox() for ax in fig.axes
                 if id(ax.get_gridspec()) == id(gs)
             ]
-            
+
         all_bbox = get_bounding_box(ax_bboxes)
 
         values = np.array(all_bbox)
@@ -144,7 +148,7 @@ def simple_layout(
             fbox.height,
         ])
 
-        loss = np.square((values - targets) / scales).sum()
+        loss = np.square((values - targets) / scales * importance_weights).sum()
  
         if verbose:
             print('x', x)
@@ -265,19 +269,19 @@ def show(image_path, size=600, unit='pt'):
     display(HTML(svg_code))
 
 
-def save_and_show(fig, image_path=None, size=600, unit='pt'):
+def save_and_show(fig, image_path=None, size=600, unit='pt', **kwargs):
     if image_path is None:
         with NamedTemporaryFile(suffix='.svg') as f:
             f.close()
             image_path = f.name
 
-            fig.savefig(image_path, bbox_inches=None)
+            fig.savefig(image_path, bbox_inches=None, **kwargs)
             plt.close(fig)
 
             show(image_path, size=size, unit=unit)
     else:
         _create_parent_path_if_not_exists(image_path)
-        fig.savefig(image_path, bbox_inches=None)
+        fig.savefig(image_path, bbox_inches=None, **kwargs)
         plt.close(fig)
 
         show(image_path, size=size, unit=unit)
