@@ -69,6 +69,7 @@ def simple_layout(
     verbose=False,
     gtol=1e-2,
     bound_margin=0.2,
+    use_all_axes=False,
 ):
     """Apply simple layout to figure for given grid spec.
 
@@ -89,6 +90,9 @@ def simple_layout(
         less than gtol, the optimization will stop.
     bound_margin : float, optional(default=0.1)
         Margin for bounds generation.
+    use_all_axes : bool, optional(default=False)
+        Use all axes in the figure. If False, use only axes in the given grid spec.
+        IF True, use all axes in the figure.
 
     Returns
     -------
@@ -103,16 +107,23 @@ def simple_layout(
     if gs is None:
         gs = fig.axes[0].get_gridspec()
 
+    if use_all_axes and verbose:
+        print('Use all axes in the figure. Given grid spec will be ignored.')
+
     margins = np.array(margins) * fig.get_dpi()
 
     def fun(x):
         # print(gs.left, gs.right, gs.bottom, gs.top)
         gs.update(left=x[0], right=x[1], bottom=x[2], top=x[3])
 
-        ax_bboxes = [
-            ax.get_tightbbox() for ax in fig.axes
-            if id(ax.get_gridspec()) == id(gs)
-        ]
+        if use_all_axes:
+            ax_bboxes = [ax.get_tightbbox() for ax in fig.axes]
+        else:
+            ax_bboxes = [
+                ax.get_tightbbox() for ax in fig.axes
+                if id(ax.get_gridspec()) == id(gs)
+            ]
+            
         all_bbox = get_bounding_box(ax_bboxes)
 
         values = np.array(all_bbox)
