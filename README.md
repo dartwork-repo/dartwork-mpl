@@ -19,8 +19,7 @@
 To get started with `dartwork-mpl`, install it directly via pip:
 
 ```shell
-pip install git+https://github.com/BET-lab/dartwork-mpl
-
+pip install git+https://github.com/dartwork-repo/dartwork-mpl
 ```
 
 After installation, load `dartwork-mpl` with `matplotlib`: 
