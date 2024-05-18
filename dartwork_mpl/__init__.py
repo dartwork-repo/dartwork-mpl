@@ -9,4 +9,5 @@ from .util import *
 from .constant import *
 
 
-use_dmpl_style()
+# use_dmpl_style()
+use_style('dmpl_light')
