@@ -113,7 +113,7 @@
 ## ***************************************************************************
 ## See https://matplotlib.org/stable/api/artist_api.html#module-matplotlib.lines
 ## for more information on line properties.
-lines.linewidth: 1               # line width in points
+lines.linewidth: 0.5               # line width in points
 #lines.linestyle: -                 # solid line
 lines.color:     dm.blue4                # has no affect on plot(); see axes.prop_cycle
 #lines.marker:          None        # the default marker
@@ -261,10 +261,10 @@ patch.linewidth:       0.5    # edge width in points.
 
 # font.family:  TeX Gyre Heros
 # font.family:  Fira Sans
-font.family: Roboto
+font.family: noto sans
 #font.style:   normal
 #font.variant: normal
-font.weight:  normal
+font.weight:  300
 #font.stretch: normal
 font.size:    7.5
 
@@ -335,7 +335,7 @@ text.usetex: False  # use latex for all text handling. The following fonts
                         # loaded, depending on your font settings.
 
 ## The following settings allow you to select the fonts in math mode.
-mathtext.fontset: cm  # Should be 'dejavusans' (default),
+# mathtext.fontset: cm  # Should be 'dejavusans' (default),
                                # 'dejavuserif', 'cm' (Computer Modern), 'stix',
                                # 'stixsans' or 'custom'
 ## "mathtext.fontset: custom" is defined by the mathtext.bf, .cal, .it, ...
@@ -365,7 +365,7 @@ mathtext.fontset: cm  # Should be 'dejavusans' (default),
 ## https://matplotlib.org/stable/api/axes_api.html#module-matplotlib.axes
 #axes.facecolor:     white   # axes background color
 #axes.edgecolor:     black   # axes edge color
-axes.linewidth:     0.5     # edge line width
+axes.linewidth:     0.3     # edge line width
 axes.grid:          False   # display grid or not
 #axes.grid.axis:     both    # which axis the grid should apply to
 #axes.grid.which:    major   # grid lines at {major, minor, both} ticks
@@ -378,7 +378,7 @@ axes.grid:          False   # display grid or not
 #axes.titlepad:      6.0     # pad between axes and title in points
 #axes.labelsize:     medium  # font size of the x and y labels
 #axes.labelpad:      4.0     # space between label and axis
-#axes.labelweight:   normal  # weight of the x and y labels
+axes.labelweight:   300  # weight of the x and y labels
 #axes.labelcolor:    black
 axes.axisbelow:     False    # draw axis gridlines and ticks:
                              #     - below patches (True)
@@ -477,7 +477,7 @@ axes.zmargin:   0.0  # z margin.  See `axes.Axes.margins`
 #xtick.labelbottom:   True    # draw label on the bottom
 xtick.major.size:    2     # major tick size in points
 xtick.minor.size:    1       # minor tick size in points
-xtick.major.width:   0.5     # major tick width in points
+xtick.major.width:   0.3     # major tick width in points
 # xtick.minor.width:   0.20     # minor tick width in points
 #xtick.major.pad:     3.5     # distance to major tick label in points
 #xtick.minor.pad:     3.4     # distance to the minor tick label in points
@@ -498,7 +498,7 @@ xtick.minor.visible: False   # visibility of minor ticks on x-axis
 #ytick.labelright:    False   # draw tick labels on the right side
 ytick.major.size:    2     # major tick size in points
 ytick.minor.size:    1       # minor tick size in points
-ytick.major.width:   0.5     # major tick width in points
+ytick.major.width:   0.3     # major tick width in points
 # ytick.minor.width:   0.20     # minor tick width in points
 #ytick.major.pad:     3.5     # distance to major tick label in points
 #ytick.minor.pad:     3.4     # distance to the minor tick label in points
