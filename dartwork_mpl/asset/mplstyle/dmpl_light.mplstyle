@@ -261,7 +261,7 @@ patch.linewidth:       0.5    # edge width in points.
 
 # font.family:  TeX Gyre Heros
 # font.family:  Fira Sans
-font.family: noto sans
+font.family: roboto
 #font.style:   normal
 #font.variant: normal
 font.weight:  300
