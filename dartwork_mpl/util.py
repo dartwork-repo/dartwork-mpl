@@ -188,6 +188,14 @@ def fs(n):
     return plt.rcParams['font.size'] + n
 
 
+def fw(n):
+    """
+    Return base font weight + 100 * n. 
+    Only works for integer weights and n.
+    """
+    return plt.rcParams['font.weight'] + 100 * n
+
+
 def mix_colors(color1, color2, alpha=0.5):
     """
     Mix two colors.
