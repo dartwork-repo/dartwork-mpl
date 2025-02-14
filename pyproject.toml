@@ -1,27 +1,28 @@
-[tool.poetry]
+[project]
 name = "dartwork-mpl"
-version = "0.1.5"
-description = ""
-authors = ["Sangwon <lsw91.main@gmail.com>"]
-license = "MIT"
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
-packages = [{include = "dartwork_mpl"}]
-
-[tool.poetry.dependencies]
-python = ">=3.9,<4.0"
-matplotlib = "^3.7.1"
-numpy = "^1.24.2"
-scipy = "^1.11.4"
-palettable = "^3.3.3"
-colorspacious = "^1.1.2"
-
-
-[tool.poetry.group.dev.dependencies]
-ipykernel = "^6.22.0"
-seaborn = "^0.13.2"
-pandas = "^2.2.1"
-openpyxl = "^3.1.2"
+authors = [
+    { name = "Sangwon Lee", email = "lsw91.main@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "colorspacious>=1.1.2",
+    "matplotlib>=3.10.0",
+    "numpy>=2.2.3",
+    "palettable>=3.3.3",
+    "scipy>=1.15.1",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "notebook>=7.3.2",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.3",
+    "seaborn>=0.13.2",
+]
