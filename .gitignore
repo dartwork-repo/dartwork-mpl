@@ -5,6 +5,7 @@ __pycache__
 *.csv
 example/heatmaps/multivariate_normal_*
 
+# 예외 처리: examples 디렉토리의 CSV 파일 허용
+examples/**/*.csv
 
-# 예외 처리: examples\PMV_GSA 디렉토리의 CSV 파일은 허용
-!examples/*.csv
+
