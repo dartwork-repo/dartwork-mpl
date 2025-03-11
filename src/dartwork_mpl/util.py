@@ -1,5 +1,7 @@
+import os
 import math
 from xml.dom import minidom
+from collections import defaultdict
 from tempfile import NamedTemporaryFile
 from pathlib import Path
 
@@ -7,13 +9,14 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
+import matplotlib.font_manager as fm
 
 from matplotlib.patches import Rectangle
 from matplotlib.transforms import ScaledTranslation
 from IPython.display import display, HTML, SVG
 from scipy.optimize import minimize
-
-
+    
+    
 # Will be replaced to rich print.
 PRINT = print
 
@@ -689,4 +692,115 @@ def plot_colors(colors=None, *, ncols=4, sort_colors=True):
                       height=18, facecolor=colors[name], edgecolor='0.7')
         )
 
+    return fig
+
+
+def plot_fonts(font_dir=None, num_columns=3, font_size=11):
+    """Plot available fonts in the specified directory.
+    
+    Parameters
+    ----------
+    font_dir : str, optional
+        Directory path containing font files. If None, defaults to the 'asset/font' 
+        directory within the package.
+    num_columns : int, optional
+        Number of columns to display font families, by default 3
+    font_size : int, optional
+        Font size for sample text, by default 11
+        
+    Returns
+    -------
+    fig : matplotlib.figure.Figure
+        Figure object
+    """
+    if font_dir is None:
+        font_dir = os.path.join(os.path.dirname(__file__), 'asset', 'font')
+
+    # 폰트 파일 리스트 가져오기
+    font_files = [f for f in os.listdir(font_dir) if f.endswith('.ttf')]
+
+    # 폰트 패밀리별로 그룹화
+    font_families = defaultdict(list)
+    for font in font_files:
+        family = font.split('-')[0]
+        font_families[family].append(font)
+
+    # 각 패밀리 내에서 폰트 정렬 함수
+    def sort_fonts(fonts):
+        weight_order = {
+            'Thin': 1,
+            'ExtraLight': 2,
+            'Light': 3,
+            'Regular': 4,
+            'Medium': 5,
+            'SemiBold': 6,
+            'Bold': 7,
+            'ExtraBold': 8,
+            'Black': 9
+        }
+        
+        def get_weight_score(font):
+            base_weight = 4  # Regular 기본값
+            italic_score = 0.5 if 'Italic' in font else 0
+            
+            for weight, score in weight_order.items():
+                if weight in font:
+                    base_weight = score
+                    break
+                    
+            return (base_weight, italic_score)
+        
+        return sorted(fonts, key=get_weight_score)
+
+    # 패밀리별로 정렬
+    sorted_families = sorted(font_families.items())
+
+    # 전체 폰트 개수와 열 수 설정
+    total_families = len(sorted_families)
+    families_per_column = math.ceil(total_families / num_columns)
+
+    # 패밀리 간 간격 설정
+    family_spacing = 3  # 패밀리 간 간격
+    max_fonts_in_family = max(len(fonts) for _, fonts in sorted_families)
+
+    # 그래프 크기 설정 (패밀리 간 간격 포함)
+    total_height = families_per_column * (max_fonts_in_family + family_spacing)
+    fig, ax = plt.subplots(figsize=(14, total_height * 0.3))
+    
+    # 축 설정
+    ax.set_xlim(0, num_columns * 7)
+    ax.set_ylim(0, total_height)
+    ax.axis('off')
+
+    # 각 열별로 폰트 패밀리 출력
+    for family_idx, (family, fonts) in enumerate(sorted_families):
+        # 열과 행 위치 계산
+        column = family_idx // families_per_column
+        family_row = family_idx % families_per_column
+        
+        # x 위치는 열 번호에 따라 조정
+        x_pos = column * 7
+        
+        # y 위치 계산 (패밀리 간 간격 포함)
+        base_y_pos = family_row * (max_fonts_in_family + family_spacing)
+        
+        # 패밀리 제목 출력 (밑줄 추가)
+        title_y = base_y_pos + max_fonts_in_family + 0.5
+        ax.text(x_pos, title_y, f"Font Family: {family}", size=12, weight='bold')
+        ax.plot([x_pos, x_pos + 6], [title_y - 0.3, title_y - 0.3], 
+                color='lightgray', linestyle='-', linewidth=0.5)
+        
+        # 정렬된 폰트 출력
+        sorted_fonts = sort_fonts(fonts)
+        for font_idx, font_file in enumerate(sorted_fonts):
+            font_path = os.path.join(font_dir, font_file)
+            font_name = os.path.splitext(font_file)[0]
+            
+            font_prop = fm.FontProperties(fname=font_path)
+            
+            y_pos = base_y_pos + (max_fonts_in_family - font_idx - 1)
+            
+            ax.text(x_pos, y_pos, f'This font is "{font_name}"', 
+                    fontproperties=font_prop, size=font_size)
+    
     return fig
