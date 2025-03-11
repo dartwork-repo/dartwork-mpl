@@ -447,7 +447,7 @@ def classify_colormap(cmap):
             return "Sequential Multi-Hue"
 
 
-def plot_colormaps(cmap_list=None, ncols=1, group_by_type=False, group_spacing=0.5):
+def plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.5):
     """Plot a list of colormaps in a single figure.
     Original source code: https://matplotlib.org/stable/users/explain/colors/colormaps.html
 
@@ -455,9 +455,9 @@ def plot_colormaps(cmap_list=None, ncols=1, group_by_type=False, group_spacing=0
     ----------
     cmap_list : list, optional(default=None)
         List of colormap names.
-    ncols : int, optional(default=1)
+    ncols : int, optional(default=3)
         Number of columns to display colormaps.
-    group_by_type : bool, optional(default=False)
+    group_by_type : bool, optional(default=True)
         If True, group colormaps by their type.
     group_spacing : float, optional(default=0.5)
         Spacing between groups in inches.
@@ -610,6 +610,34 @@ def plot_colormaps(cmap_list=None, ncols=1, group_by_type=False, group_spacing=0
 
 
 def plot_colors(colors=None, *, ncols=4, sort_colors=True):
+    """Plot a grid of named colors with their names.
+    
+    Parameters
+    ----------
+    colors : dict, optional
+        Dictionary mapping color names to color specifications.
+        If None, uses all named colors from matplotlib except those
+        starting with 'dartwork_mpl.'.
+    ncols : int, optional
+        Number of columns in the color grid, default is 4.
+    sort_colors : bool, optional
+        If True, sorts colors by hue, saturation, and value.
+        If False, uses the order from the input dictionary.
+    
+    Returns
+    -------
+    fig : matplotlib.figure.Figure
+        The figure containing the color grid.
+        
+    Examples
+    --------
+    >>> fig = plot_colors()
+    >>> plt.show()
+    >>> # Custom colors
+    >>> custom_colors = {'red': '#FF0000', 'green': '#00FF00', 'blue': '#0000FF'}
+    >>> fig = plot_colors(custom_colors, ncols=3)
+    >>> plt.show()
+    """
     if colors is None:
         colors = {
             k: v for k, v in mcolors.get_named_colors_mapping().items()
