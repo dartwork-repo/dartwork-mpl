@@ -7,6 +7,12 @@ import matplotlib.ticker as ticker
 import dartwork_mpl as dm
 import os
 from matplotlib.path import Path
+import sys
+from pathlib import Path
+
+# 현재 스크립트 경로 가져오기
+script_path = Path(os.path.abspath(__file__))
+script_dir = script_path.parent
 
 # dartwork_mpl에서 제공하는 cm2in 함수와 pseudo_alpha 함수 사용
 from dartwork_mpl.util import cm2in, fw
@@ -30,8 +36,8 @@ plt.rcParams['axes.labelweight'] = dm.fw(1)
 
 #%% load data for occupancy duration probability
 # occup_ratio.csv 파일 불러오기
-data_path = "./measured_data/"  
-df_occup = pd.read_csv(data_path + "occup_ratio.csv")
+data_path = script_dir / "measured_data"
+df_occup = pd.read_csv(data_path / "occup_ratio.csv")
 
 # 데이터를 분 단위로 변환 
 df_occup = df_occup * 60
@@ -49,7 +55,7 @@ COLORS = {
     'edge': "dm.gray8"      # 테두리 색상
 }
 YLIM = (0, 0.35)      # y축 범위
-SAVE_PATH = "./figure_output/occupancy_duration_probability"  # 저장 경로
+SAVE_PATH = script_dir / "figure_output" / "occupancy_duration_probability"  # 저장 경로
 SAVE_FORMATS = ('pdf', 'png')  # 저장 형식
 DPI = 300             # 저장 해상도
 
@@ -131,7 +137,7 @@ if special_ratio > 0:
 
 # x축, y축 레이블 설정
 ax.set_xlabel("Occupancy duration [min]", fontsize=dm.fs(0))
-ax.set_ylabel("Probability mass", fontsize=dm.fs(0))
+ax.set_ylabel("Probability", fontsize=dm.fs(0))
 
 # x축 눈금 설정
 ax.set_xticks(range(len(bin_labels)))
@@ -168,12 +174,12 @@ ax.legend(loc='best', fontsize=dm.fs(-1.2))
 
 # 그래프 저장
 # 디렉토리 확인 및 생성
-output_dir = os.path.dirname(SAVE_PATH)
-if output_dir and not os.path.exists(output_dir):
-    os.makedirs(output_dir)
+output_dir = SAVE_PATH.parent
+if not output_dir.exists():
+    output_dir.mkdir(parents=True, exist_ok=True)
 
 # 저장
-dm.save_formats(fig, SAVE_PATH, formats=SAVE_FORMATS, bbox_inches="tight", dpi=DPI)
+dm.save_formats(fig, str(SAVE_PATH), formats=SAVE_FORMATS, bbox_inches="tight", dpi=DPI)
 
 # 그래프 표시
 plt.show()
@@ -197,8 +203,8 @@ print(
 
 #%% load data for occupancy duration probability
 # occup_ratio.csv 파일 불러오기
-data_path = "./measured_data/"  
-df_away_event = pd.read_csv(data_path + "away_event_count.csv")
+data_path = script_dir / "measured_data"
+df_away_event = pd.read_csv(data_path / "away_event_count.csv")
 
 
 #%% Plotting away event count histogram
@@ -210,7 +216,7 @@ COLORS = {
     'edge': "dm.gray8"      # 테두리 색상
 }
 YLIM = (0, 0.4)      # y축 범위
-SAVE_PATH = "./figure_output/away_event_count_histogram"  # 저장 경로
+SAVE_PATH = script_dir / "figure_output" / "away_event_count_histogram"  # 저장 경로
 SAVE_FORMATS = ('pdf', 'png')  # 저장 형식
 DPI = 300             # 저장 해상도
 
@@ -247,7 +253,7 @@ bars = ax.bar(
 )
 
 # x축, y축 레이블 설정
-ax.set_xlabel("Number of sit-to-stand events", fontsize=dm.fs(0))
+ax.set_xlabel("Number of seat-leaving events per hour", fontsize=dm.fs(0))
 ax.set_ylabel("Probability", fontsize=dm.fs(0))
 
 # x축 눈금 설정
@@ -283,12 +289,12 @@ dm.simple_layout(fig)
 
 # 그래프 저장
 # 디렉토리 확인 및 생성
-output_dir = os.path.dirname(SAVE_PATH)
-if output_dir and not os.path.exists(output_dir):
-    os.makedirs(output_dir)
+output_dir = SAVE_PATH.parent
+if not output_dir.exists():
+    output_dir.mkdir(parents=True, exist_ok=True)
 
 # 저장
-dm.save_formats(fig, SAVE_PATH, formats=SAVE_FORMATS, bbox_inches="tight", dpi=DPI)
+dm.save_formats(fig, str(SAVE_PATH), formats=SAVE_FORMATS, bbox_inches="tight", dpi=DPI)
 
 # 그래프 표시
 plt.show()
