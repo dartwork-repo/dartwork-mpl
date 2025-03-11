@@ -28,7 +28,7 @@ plt.rcParams['axes.labelweight'] = dm.fw(1)
 
 
 
-# %% load data
+#%% load data for occupancy duration probability
 # occup_ratio.csv 파일 불러오기
 data_path = "./measured_data/"  
 df_occup = pd.read_csv(data_path + "occup_ratio.csv")
@@ -37,7 +37,7 @@ df_occup = pd.read_csv(data_path + "occup_ratio.csv")
 df_occup = df_occup * 60
 
 
-# %% Plotting
+# %% Plotting occupancy duration probability
 
 # 그래프 설정값 (필요시 수정)
 FIGSIZE = (8.8, 7.0)  # 그래프 크기 (cm)
@@ -143,10 +143,12 @@ ax.grid(True, linestyle=":", axis="y", zorder=0)  # zorder를 낮게 설정하�
 # ylim 설정
 ax.set_ylim(YLIM)
 
+
 # xlim 설정 (막대 사이 간격 고려)
 left_margin = 0 - (BAR_WIDTH / 2) - BAR_SPACING
 right_margin = (len(bin_labels) - 1) + (BAR_WIDTH / 2) + BAR_SPACING
 ax.set_xlim(left_margin, right_margin)
+
 
 # x축 minor tick 제거
 ax.xaxis.set_minor_locator(ticker.NullLocator())
@@ -192,5 +194,113 @@ print(f"(50, 60] 구간 데이터 수: {special_bin_count}")
 print(
     f"(50, 60] 구간에서 정확히 60분인 데이터 비율: {special_ratio:.4f} ({special_ratio*100:.2f}%)"
 )
+
+#%% load data for occupancy duration probability
+# occup_ratio.csv 파일 불러오기
+data_path = "./measured_data/"  
+df_away_event = pd.read_csv(data_path + "away_event_count.csv")
+
+
+#%% Plotting away event count histogram
+# 그래프 설정값 (필요시 수정)
+FIGSIZE = (8.8, 7.0)  # 그래프 크기 (cm)
+BAR_WIDTH = 0.8       # 막대 너비 (마진 없이 설정)
+COLORS = {
+    'bar': "dm.teal3",      # 기본 막대 색상
+    'edge': "dm.gray8"      # 테두리 색상
+}
+YLIM = (0, 0.4)      # y축 범위
+SAVE_PATH = "./figure_output/away_event_count_histogram"  # 저장 경로
+SAVE_FORMATS = ('pdf', 'png')  # 저장 형식
+DPI = 300             # 저장 해상도
+
+# 정수 bin 설정 (0부터 12까지)
+bins = np.arange(0, 14)  # 0, 1, 2, ..., 13 (마지막 bin은 경계값으로만 사용)
+bin_labels = [str(i) for i in range(13)]  # 0, 1, 2, ..., 12
+
+# 히스토그램 계산 (정규화된 확률 분포)
+hist, bin_edges = np.histogram(df_away_event.values, bins=bins, density=True)
+
+# 각 bin의 너비 계산
+bin_widths = np.diff(bin_edges)
+
+# 각 bin의 확률 계산 (밀도 * 너비 = 확률)
+probabilities = hist * bin_widths
+
+# 확률 합이 1이 되도록 정규화
+probabilities = probabilities / np.sum(probabilities)
+
+# 그래프 그리기
+fig, ax = plt.subplots(figsize=(dm.cm2in(FIGSIZE[0]), dm.cm2in(FIGSIZE[1])))
+
+# 히스토그램 그리기 (확률 분포로 정규화)
+bars = ax.bar(
+    range(len(bin_labels)),
+    probabilities,
+    width=BAR_WIDTH,
+    color=COLORS['bar'],
+    linewidth=0.3,
+    edgecolor=COLORS['edge'],
+    bottom=0,
+    label="Probability",
+    zorder=3  # 그리드(zorder=0)보다 높은 값으로 설정
+)
+
+# x축, y축 레이블 설정
+ax.set_xlabel("Number of sit-to-stand events", fontsize=dm.fs(0))
+ax.set_ylabel("Probability", fontsize=dm.fs(0))
+
+# x축 눈금 설정
+ax.set_xticks(range(len(bin_labels)))
+ax.set_xticklabels(bin_labels, fontsize=dm.fs(0))
+
+# 그리드 추가
+ax.grid(True, linestyle=":", axis="y", zorder=0)  # zorder를 낮게 설정하여 뒤에 그려지도록 함
+
+# ylim 설정
+ax.set_ylim(YLIM)
+
+# xlim 설정 (막대 사이 간격 고려)
+left_margin = 0 - (BAR_WIDTH / 2) - BAR_SPACING
+right_margin = (len(bin_labels) - 1) + (BAR_WIDTH / 2) + BAR_SPACING
+ax.set_xlim(left_margin, right_margin)
+
+# x축 minor tick 제거
+ax.xaxis.set_minor_locator(ticker.NullLocator())
+
+# y축 minor tick 설정 (메이저 틱 사이에 하나씩)
+ax.yaxis.set_minor_locator(ticker.AutoMinorLocator(1))
+
+# 스파인 zorder 설정 (그리드보다 위에 그려지도록)
+for spine in ax.spines.values():
+    spine.set_zorder(5)
+
+# 레이아웃 최적화
+dm.simple_layout(fig)
+
+# 범례
+# ax.legend(loc='best', fontsize=dm.fs(-1.2))
+
+# 그래프 저장
+# 디렉토리 확인 및 생성
+output_dir = os.path.dirname(SAVE_PATH)
+if output_dir and not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# 저장
+dm.save_formats(fig, SAVE_PATH, formats=SAVE_FORMATS, bbox_inches="tight", dpi=DPI)
+
+# 그래프 표시
+plt.show()
+
+# 통계 정보 출력
+print(f"평균 이벤트 수: {df_away_event.values.mean():.3f}")
+print(f"최대 이벤트 수: {df_away_event.values.max():.0f}")
+print(f"최소 이벤트 수: {df_away_event.values.min():.0f}")
+
+# 각 구간별 확률 출력
+print("\n구간별 확률:")
+for i, (label, prob) in enumerate(zip(bin_labels, probabilities)):
+    print(f"{label}: {prob:.4f} ({prob*100:.2f}%)")
 
 # %%
