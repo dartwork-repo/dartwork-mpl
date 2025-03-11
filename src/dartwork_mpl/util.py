@@ -295,7 +295,7 @@ def save_and_show(fig, image_path=None, size=600, unit='pt', **kwargs):
         show(image_path, size=size, unit=unit)
 
 
-def plot_colormaps(cmap_list=None):
+def plot_colormaps(cmap_list=None, ncols=1):
     """Plot a list of colormaps in a single figure.
     Original source code: https://matplotlib.org/stable/users/explain/colors/colormaps.html
 
@@ -303,12 +303,20 @@ def plot_colormaps(cmap_list=None):
     ----------
     cmap_list : list, optional(default=None)
         List of colormap names.
+    ncols : int, optional(default=1)
+        Number of columns to display colormaps.
 
     Returns
     -------
     fig : matplotlib.figure.Figure
         Figure object.
-    axs : list of matplotlib.axes.Axes
+    axs : numpy.ndarray of matplotlib.axes.Axes
+        Array of Axes objects.
+    
+    Examples
+    --------
+    >>> fig, axs = plot_colormaps(['viridis', 'plasma', 'inferno'], ncols=3)
+    >>> plt.show()
     """
     if cmap_list is None:
         cmap_list = list(mpl.colormaps.keys())
@@ -320,23 +328,39 @@ def plot_colormaps(cmap_list=None):
     gradient = np.linspace(0, 1, 256)
     gradient = np.vstack((gradient, gradient))
 
-    # Create figure and adjust figure height to number of colormaps
-    nrows = len(cmap_list)
+    # Calculate number of rows based on number of colormaps and columns
+    nrows = (len(cmap_list) + ncols - 1) // ncols
+    
+    # Create figure and adjust figure dimensions based on layout
+    figw = 6.4 * ncols / 1.5  # Adjust width based on number of columns
     figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.22
-    fig, axs = plt.subplots(nrows=nrows + 1, figsize=(6.4, figh))
+    fig, axs = plt.subplots(nrows=nrows, ncols=ncols, figsize=(figw, figh))
     fig.subplots_adjust(top=1 - 0.35 / figh, bottom=0.15 / figh,
-                        left=0.2, right=0.99)
-    # axs[0].set_title(f'{category} colormaps', fontsize=14)
+                        left=0.2 / ncols, right=0.99)
+    
+    # Handle case when axs is a single Axes object (when nrows=ncols=1)
+    if nrows == 1 and ncols == 1:
+        axs = np.array([axs])
+    
+    # Flatten axs array for easier iteration
+    axs = axs.flatten()
 
-    for ax, cmap in zip(axs, cmap_list):
-        ax.imshow(gradient, aspect='auto', cmap=cmap)
-        ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
-                transform=ax.transAxes)
+    for i, cmap in enumerate(cmap_list):
+        if i < len(axs):
+            ax = axs[i]
+            ax.imshow(gradient, aspect='auto', cmap=cmap)
+            ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
+                    transform=ax.transAxes)
 
-    # Turn off *all* ticks & spines, not just the ones with colormaps.
+    # Turn off all ticks & spines
     for ax in axs:
         ax.set_axis_off()
+    
+    # Hide unused subplots
+    for i in range(len(cmap_list), len(axs)):
+        axs[i].set_visible(False)
 
+    plt.tight_layout()
     return fig, axs
 
 
