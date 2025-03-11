@@ -206,7 +206,7 @@ def mix_colors(color1, color2, alpha=0.5):
     return tuple(alpha * c1 + (1 - alpha) * c2 for c1, c2 in zip(color1, color2))
 
 
-def pseudo_alpha(color, alpha=0.5, background='white'):
+def pseudo_alpha(color, alpha=1.0, background='white'):
     """
     Return a color with pseudo alpha.
     """
