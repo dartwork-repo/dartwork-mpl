@@ -295,7 +295,159 @@ def save_and_show(fig, image_path=None, size=600, unit='pt', **kwargs):
         show(image_path, size=size, unit=unit)
 
 
-def plot_colormaps(cmap_list=None, ncols=1):
+def classify_colormap(cmap):
+    """Classify a colormap into one of the following categories:
+    - Categorical
+    - Sequential Single-Hue
+    - Sequential Multi-Hue
+    - Diverging
+    - Cyclical
+    
+    Parameters
+    ----------
+    cmap : matplotlib.colors.Colormap
+        Colormap to classify.
+        
+    Returns
+    -------
+    str
+        Category of the colormap.
+    """
+    # Get colormap samples
+    n_samples = 256
+    samples = cmap(np.linspace(0, 1, n_samples))[:, :3]  # Ignore alpha
+    
+    # Convert to HSV for easier analysis
+    hsv_samples = np.array([mcolors.rgb_to_hsv(rgb) for rgb in samples])
+    hues = hsv_samples[:, 0]
+    saturations = hsv_samples[:, 1]
+    values = hsv_samples[:, 2]
+    
+    # Calculate differences between consecutive samples
+    hue_diffs = np.abs(np.diff(hues))
+    # Handle circular nature of hue
+    hue_diffs = np.minimum(hue_diffs, 1 - hue_diffs)
+    sat_diffs = np.diff(saturations)
+    value_diffs = np.diff(values)
+    
+    # Known categorical colormaps (hardcoded for better accuracy)
+    categorical_cmaps = [
+        'Accent', 'Dark2', 'Paired', 'Pastel1', 'Pastel2', 
+        'Set1', 'Set2', 'Set3', 'tab10', 'tab20', 'tab20b', 'tab20c',
+        'Spectral', 'prism', 'hsv', 'gist_rainbow', 'rainbow', 'nipy_spectral'
+    ]
+    
+    if hasattr(cmap, 'name') and cmap.name in categorical_cmaps:
+        return "Categorical"
+    
+    # 1. Check if colormap is cyclical - stricter criteria
+    # Cyclical maps start and end with almost identical colors
+    start_end_diff = np.sqrt(np.sum((samples[0] - samples[-1])**2))
+    if start_end_diff < 0.01:  # Stricter threshold
+        # Also check if there's significant variation in the middle
+        mid_idx = n_samples // 2
+        mid_diff = np.sqrt(np.sum((samples[0] - samples[mid_idx])**2))
+        if mid_diff > 0.3:  # Ensure there's variation in the middle
+            return "Cyclical"
+    
+    # 2. Improved check for categorical colormaps based on repeated colors
+    # Calculate color differences (Euclidean distance in RGB space)
+    color_diffs = np.sqrt(np.sum(np.diff(samples, axis=0)**2, axis=1))
+    
+    # Find regions where colors are very similar (plateaus)
+    plateau_mask = color_diffs < 0.001
+    plateau_indices = np.where(plateau_mask)[0]
+    
+    # Find consecutive plateaus (runs of similar colors)
+    if len(plateau_indices) > 0:
+        # Split into runs of consecutive indices
+        plateau_runs = np.split(plateau_indices, np.where(np.diff(plateau_indices) != 1)[0] + 1)
+        
+        # Count significant plateaus (runs longer than a threshold)
+        significant_plateaus = [run for run in plateau_runs if len(run) >= 3]
+        
+        # If we have multiple significant plateaus, it's likely categorical
+        if len(significant_plateaus) >= 3:
+            # Check if plateaus are distributed throughout the colormap
+            plateau_positions = [np.mean(run) for run in significant_plateaus]
+            position_range = max(plateau_positions) - min(plateau_positions)
+            
+            if position_range > n_samples * 0.3:  # Plateaus are well distributed
+                return "Categorical"
+    
+    # Additional check for categorical: large jumps in color
+    large_color_jumps = np.where(color_diffs > 0.1)[0]
+    if len(large_color_jumps) > 3 and len(large_color_jumps) < n_samples // 8:
+        # Check if jumps are distributed (not all clustered)
+        jump_diffs = np.diff(large_color_jumps)
+        if np.std(jump_diffs) < np.mean(jump_diffs) * 0.8:  # Relatively evenly spaced jumps
+            return "Categorical"
+    
+    # 3. Check if colormap is diverging
+    # Diverging maps have a distinct middle with different values at ends
+    mid_idx = n_samples // 2
+    mid_value = values[mid_idx]
+    start_value = values[0]
+    end_value = values[-1]
+    
+    # Check if the middle is significantly different from the ends
+    if ((mid_value > start_value + 0.2 and mid_value > end_value + 0.2) or 
+        (mid_value < start_value - 0.2 and mid_value < end_value - 0.2)):
+        # Also check if the hue changes significantly from start to end
+        start_hue = hues[0]
+        end_hue = hues[-1]
+        hue_diff = min(abs(end_hue - start_hue), 1 - abs(end_hue - start_hue))
+        if hue_diff > 0.1:  # Significant hue change
+            return "Diverging"
+    
+    # 4. Improved check for sequential single-hue vs multi-hue
+    # Focus on high saturation regions for better hue analysis
+    high_sat_indices = np.where(saturations > 0.3)[0]
+    
+    # If we have enough high saturation samples
+    if len(high_sat_indices) > n_samples // 4:
+        high_sat_hues = hues[high_sat_indices]
+        
+        # Calculate hue range for high saturation colors
+        if len(high_sat_hues) > 1:
+            # Get the circular range of hues
+            hue_min = np.min(high_sat_hues)
+            hue_max = np.max(high_sat_hues)
+            hue_range = hue_max - hue_min
+            if hue_range > 0.5:  # Account for circular hue
+                hue_range = 1 - hue_range
+            
+            # Stricter criteria for single-hue: very narrow hue range
+            if hue_range < 0.01:  # Much stricter threshold
+                return "Sequential Single-Hue"
+            else:
+                return "Sequential Multi-Hue"
+    
+    # If we couldn't decide based on high saturation, look at overall pattern
+    
+    # Calculate overall hue variation, accounting for circularity
+    hue_min = np.min(hues)
+    hue_max = np.max(hues)
+    hue_range = hue_max - hue_min
+    if hue_range > 0.5:  # Account for circular hue
+        hue_range = 1 - hue_range
+    
+    # Check for monotonic value change (typical for sequential)
+    is_monotonic = np.all(np.diff(values[:n_samples//2]) * np.diff(values[n_samples//2:]) >= 0)
+    
+    if hue_range < 0.01 and is_monotonic:
+        return "Sequential Single-Hue"
+    elif hue_range > 0.01:
+        return "Sequential Multi-Hue"
+    else:
+        # For borderline cases, check the standard deviation of hue differences
+        if np.std(hue_diffs) < 0.02:  # Very consistent hue changes
+            return "Sequential Single-Hue"
+        else:
+            return "Sequential Multi-Hue"
+
+
+def plot_colormaps(cmap_list=None, ncols=1, group_by_type=False, group_spacing=0.5):
     """Plot a list of colormaps in a single figure.
     Original source code: https://matplotlib.org/stable/users/explain/colors/colormaps.html
 
@@ -305,7 +457,11 @@ def plot_colormaps(cmap_list=None, ncols=1):
         List of colormap names.
     ncols : int, optional(default=1)
         Number of columns to display colormaps.
-
+    group_by_type : bool, optional(default=False)
+        If True, group colormaps by their type.
+    group_spacing : float, optional(default=0.5)
+        Spacing between groups in inches.
+    
     Returns
     -------
     fig : matplotlib.figure.Figure
@@ -317,6 +473,9 @@ def plot_colormaps(cmap_list=None, ncols=1):
     --------
     >>> fig, axs = plot_colormaps(['viridis', 'plasma', 'inferno'], ncols=3)
     >>> plt.show()
+    >>> # Group by type
+    >>> fig, axs = plot_colormaps(ncols=3, group_by_type=True)
+    >>> plt.show()
     """
     if cmap_list is None:
         cmap_list = list(mpl.colormaps.keys())
@@ -324,41 +483,127 @@ def plot_colormaps(cmap_list=None, ncols=1):
 
     # Convert colormaps to matplotlib colormaps if cmap is a string.
     cmap_list = [mpl.cm.get_cmap(c) if isinstance(c, str) else c for c in cmap_list]
-
-    gradient = np.linspace(0, 1, 256)
-    gradient = np.vstack((gradient, gradient))
-
-    # Calculate number of rows based on number of colormaps and columns
-    nrows = (len(cmap_list) + ncols - 1) // ncols
     
-    # Create figure and adjust figure dimensions based on layout
-    figw = 6.4 * ncols / 1.5  # Adjust width based on number of columns
-    figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.22
-    fig, axs = plt.subplots(nrows=nrows, ncols=ncols, figsize=(figw, figh))
-    fig.subplots_adjust(top=1 - 0.35 / figh, bottom=0.15 / figh,
-                        left=0.2 / ncols, right=0.99)
-    
-    # Handle case when axs is a single Axes object (when nrows=ncols=1)
-    if nrows == 1 and ncols == 1:
-        axs = np.array([axs])
-    
-    # Flatten axs array for easier iteration
-    axs = axs.flatten()
+    if group_by_type:
+        # Define category order
+        category_order = [
+            "Sequential Single-Hue",
+            "Sequential Multi-Hue",
+            "Diverging",
+            "Cyclical",
+            "Categorical"
+        ]
+        
+        # Classify colormaps by type
+        categories = {category: [] for category in category_order}
+        
+        for cmap in cmap_list:
+            category = classify_colormap(cmap)
+            categories[category].append(cmap)
+        
+        # Remove empty categories
+        categories = {k: v for k, v in categories.items() if v}
+        
+        # Create a new figure
+        gradient = np.linspace(0, 1, 256)
+        gradient = np.vstack((gradient, gradient))
+        
+        # Calculate total number of colormaps and rows needed
+        total_rows = 0
+        category_rows = {}
+        
+        for category, cmaps in categories.items():
+            rows = (len(cmaps) + ncols - 1) // ncols
+            category_rows[category] = rows
+            total_rows += rows
+        
+        # Add extra rows for category titles and spacing
+        total_rows_with_titles = total_rows + len(categories)
+        
+        # Create figure with appropriate size
+        figw = 6.4 * ncols / 1.5  # Adjust width based on number of columns
+        # Add extra height for category titles and spacing
+        figh = 0.35 + 0.15 + (total_rows_with_titles + (total_rows_with_titles - 1) * 0.1) * 0.22 + len(categories) * group_spacing
+        
+        fig = plt.figure(figsize=(figw, figh))
+        
+        # Create a single GridSpec for the entire figure
+        gs = plt.GridSpec(total_rows_with_titles, ncols, figure=fig)
+        
+        # Start position for the first subplot
+        current_row = 0
+        axs = []
+        
+        # Sort categories according to the defined order
+        sorted_categories = [cat for cat in category_order if cat in categories]
+        
+        for category in sorted_categories:
+            cmaps = categories[category]
+            
+            # Add category title
+            title_ax = fig.add_subplot(gs[current_row, :])
+            title_ax.text(0.5, 0.5, category, fontsize=14, fontweight='bold',
+                         ha='center', va='center', transform=title_ax.transAxes)
+            title_ax.set_axis_off()
+            axs.append(title_ax)
+            current_row += 1
+            
+            # Calculate rows needed for this category
+            rows_needed = category_rows[category]
+            
+            # Add colormaps for this category
+            for i, cmap in enumerate(cmaps):
+                row = i // ncols
+                col = i % ncols
+                ax = fig.add_subplot(gs[current_row + row, col])
+                ax.imshow(gradient, aspect='auto', cmap=cmap)
+                ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
+                       transform=ax.transAxes)
+                ax.set_axis_off()
+                axs.append(ax)
+            
+            # Update current row
+            current_row += rows_needed
+        
+        # Convert axs to numpy array for consistency with non-grouped version
+        axs = np.array(axs)
+        
+    else:
+        # Original non-grouped implementation
+        gradient = np.linspace(0, 1, 256)
+        gradient = np.vstack((gradient, gradient))
 
-    for i, cmap in enumerate(cmap_list):
-        if i < len(axs):
-            ax = axs[i]
-            ax.imshow(gradient, aspect='auto', cmap=cmap)
-            ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
-                    transform=ax.transAxes)
+        # Calculate number of rows based on number of colormaps and columns
+        nrows = (len(cmap_list) + ncols - 1) // ncols
+        
+        # Create figure and adjust figure dimensions based on layout
+        figw = 6.4 * ncols / 1.5  # Adjust width based on number of columns
+        figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.22
+        fig, axs = plt.subplots(nrows=nrows, ncols=ncols, figsize=(figw, figh))
+        fig.subplots_adjust(top=1 - 0.35 / figh, bottom=0.15 / figh,
+                            left=0.2 / ncols, right=0.99)
+        
+        # Handle case when axs is a single Axes object (when nrows=ncols=1)
+        if nrows == 1 and ncols == 1:
+            axs = np.array([axs])
+        
+        # Flatten axs array for easier iteration
+        axs = axs.flatten()
 
-    # Turn off all ticks & spines
-    for ax in axs:
-        ax.set_axis_off()
-    
-    # Hide unused subplots
-    for i in range(len(cmap_list), len(axs)):
-        axs[i].set_visible(False)
+        for i, cmap in enumerate(cmap_list):
+            if i < len(axs):
+                ax = axs[i]
+                ax.imshow(gradient, aspect='auto', cmap=cmap)
+                ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
+                        transform=ax.transAxes)
+
+        # Turn off all ticks & spines
+        for ax in axs:
+            ax.set_axis_off()
+        
+        # Hide unused subplots
+        for i in range(len(cmap_list), len(axs)):
+            axs[i].set_visible(False)
 
     plt.tight_layout()
     return fig, axs
