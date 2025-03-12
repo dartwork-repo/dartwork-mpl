@@ -22,6 +22,14 @@ PRINT = print
 
 
 def _create_parent_path_if_not_exists(path):
+    """
+    Create parent directory if it doesn't exist.
+    
+    Parameters
+    ----------
+    path : str or Path
+        Path to check and create parent directory for.
+    """
     path = Path(path)
     if not path.parent.exists():
         path.parent.mkdir(parents=True)
@@ -29,6 +37,18 @@ def _create_parent_path_if_not_exists(path):
 
 
 def set_decimal(ax, xn=None, yn=None):
+    """
+    Set decimal places for tick labels.
+    
+    Parameters
+    ----------
+    ax : matplotlib.axes.Axes
+        Axes object to modify.
+    xn : int, optional
+        Number of decimal places for x-axis tick labels.
+    yn : int, optional
+        Number of decimal places for y-axis tick labels.
+    """
     if xn is not None:
         xticks = ax.get_xticks()
         ax.set_xticks(xticks)
@@ -41,6 +61,19 @@ def set_decimal(ax, xn=None, yn=None):
 
 
 def get_bounding_box(boxes):
+    """
+    Get the bounding box that contains all given boxes.
+    
+    Parameters
+    ----------
+    boxes : list
+        List of box objects with p0, width, and height attributes.
+        
+    Returns
+    -------
+    tuple
+        (min_x, min_y, bbox_width, bbox_height) of the bounding box.
+    """
     # Initialize extremes
     min_x = float('inf')
     min_y = float('inf')
@@ -187,6 +220,16 @@ def simple_layout(
 def fs(n):
     """
     Return base font size + n.
+    
+    Parameters
+    ----------
+    n : int or float
+        Value to add to base font size.
+        
+    Returns
+    -------
+    float
+        Base font size + n.
     """
     return plt.rcParams['font.size'] + n
 
@@ -195,6 +238,16 @@ def fw(n):
     """
     Return base font weight + 100 * n. 
     Only works for integer weights and n.
+    
+    Parameters
+    ----------
+    n : int
+        Value to multiply by 100 and add to base font weight.
+        
+    Returns
+    -------
+    int
+        Base font weight + 100 * n.
     """
     return plt.rcParams['font.weight'] + 100 * n
 
@@ -202,6 +255,20 @@ def fw(n):
 def mix_colors(color1, color2, alpha=0.5):
     """
     Mix two colors.
+    
+    Parameters
+    ----------
+    color1 : color
+        First color (any format accepted by matplotlib).
+    color2 : color
+        Second color (any format accepted by matplotlib).
+    alpha : float, optional
+        Weight of the first color, between 0 and 1.
+        
+    Returns
+    -------
+    tuple
+        RGB tuple of the mixed color.
     """
     color1 = mcolors.to_rgb(color1)
     color2 = mcolors.to_rgb(color2)
@@ -212,11 +279,33 @@ def mix_colors(color1, color2, alpha=0.5):
 def pseudo_alpha(color, alpha=0.5, background='white'):
     """
     Return a color with pseudo alpha.
+    
+    Parameters
+    ----------
+    color : color
+        Color to apply pseudo-transparency to.
+    alpha : float, optional
+        Alpha value between 0 and 1.
+    background : color, optional
+        Background color to mix with.
+        
+    Returns
+    -------
+    tuple
+        RGB tuple of the resulting color.
     """
     return mix_colors(color, background, alpha=alpha)
 
 
 def use_style(name='dmpl'):
+    """
+    Use a matplotlib style from the package's style library.
+    
+    Parameters
+    ----------
+    name : str, optional
+        Name of the style to use.
+    """
     plt.rcParams.update(plt.rcParamsDefault)
     path = style_path(name)
 
@@ -224,6 +313,24 @@ def use_style(name='dmpl'):
 
 
 def style_path(name):
+    """
+    Get the path to a style file.
+    
+    Parameters
+    ----------
+    name : str
+        Name of the style.
+        
+    Returns
+    -------
+    Path
+        Path to the style file.
+        
+    Raises
+    ------
+    ValueError
+        If the style is not found.
+    """
     path = Path(__file__).parent / f'asset/mplstyle/{name}.mplstyle'
     if not path.exists():
         raise ValueError(f'Not found style: {name}')
@@ -232,11 +339,32 @@ def style_path(name):
 
 
 def list_styles():
+    """
+    List all available styles.
+    
+    Returns
+    -------
+    list
+        List of style names.
+    """
     path = Path(__file__).parent / 'asset/mplstyle'
     return sorted([p.stem for p in path.glob('*.mplstyle')])
 
 
 def load_style_dict(name):
+    """
+    Load key, value pairs from a mplstyle file.
+    
+    Parameters
+    ----------
+    name : str
+        Name of the style.
+        
+    Returns
+    -------
+    dict
+        Dictionary of style parameters.
+    """
     # Load key, value pair from mplstyle files.
     path = style_path(name)
     with open(path, 'r') as f:
@@ -262,12 +390,23 @@ def load_style_dict(name):
                     
 
 def use_dmpl_style():
+    """
+    Use the default dmpl style.
+    """
     use_style('dmpl')
 
 
 class Style:
     @staticmethod
     def use(style_names):
+        """
+        Use multiple styles.
+        
+        Parameters
+        ----------
+        style_names : list
+            List of style names to use.
+        """
         plt.rcParams.update(plt.rcParamsDefault)
         plt.style.use(
             style_path(style_name)
@@ -279,10 +418,40 @@ style = Style()
 
 
 def cm2in(cm):
+    """
+    Convert centimeters to inches.
+    
+    Parameters
+    ----------
+    cm : float
+        Value in centimeters.
+        
+    Returns
+    -------
+    float
+        Value in inches.
+    """
     return cm / 2.54
 
 
 def make_offset(x, y, fig):
+    """
+    Create a translation offset for figure elements.
+    
+    Parameters
+    ----------
+    x : float
+        X offset in points.
+    y : float
+        Y offset in points.
+    fig : matplotlib.figure.Figure
+        Figure to create offset for.
+        
+    Returns
+    -------
+    matplotlib.transforms.ScaledTranslation
+        Offset transform.
+    """
     dx, dy = x / 72, y / 72
     offset = ScaledTranslation(dx, dy, fig.dpi_scale_trans)
 
@@ -290,12 +459,40 @@ def make_offset(x, y, fig):
 
 
 def save_formats(fig, image_stem, formats=('svg', 'png', 'pdf', 'eps'), bbox_inches=None, **kwargs):
+    """
+    Save a figure in multiple formats.
+    
+    Parameters
+    ----------
+    fig : matplotlib.figure.Figure
+        Figure to save.
+    image_stem : str
+        Base filename without extension.
+    formats : tuple, optional
+        Tuple of format extensions to save.
+    bbox_inches : str or Bbox, optional
+        Bounding box in inches.
+    **kwargs
+        Additional arguments passed to savefig.
+    """
     _create_parent_path_if_not_exists(image_stem)
     for fmt in formats:
         fig.savefig(f'{image_stem}.{fmt}', bbox_inches=bbox_inches, **kwargs)
 
 
 def show(image_path, size=600, unit='pt'):
+    """
+    Display an SVG image with specified size.
+    
+    Parameters
+    ----------
+    image_path : str
+        Path to the SVG image.
+    size : int, optional
+        Desired width in specified units.
+    unit : str, optional
+        Unit for size ('pt', 'px', etc.).
+    """
     # SVG 객체 생성
     svg_obj = SVG(data=image_path)
 
@@ -330,6 +527,22 @@ def show(image_path, size=600, unit='pt'):
 
 
 def save_and_show(fig, image_path=None, size=600, unit='pt', **kwargs):
+    """
+    Save a figure and display it.
+    
+    Parameters
+    ----------
+    fig : matplotlib.figure.Figure
+        Figure to save and display.
+    image_path : str, optional
+        Path to save the image. If None, uses a temporary file.
+    size : int, optional
+        Display size.
+    unit : str, optional
+        Unit for size.
+    **kwargs
+        Additional arguments passed to savefig.
+    """
     if image_path is None:
         with NamedTemporaryFile(suffix='.svg') as f:
             f.close()
