@@ -231,8 +231,51 @@ def style_path(name):
     return path
 
 
+def list_styles():
+    path = Path(__file__).parent / 'asset/mplstyle'
+    return sorted([p.stem for p in path.glob('*.mplstyle')])
+
+
+def load_style_dict(name):
+    # Load key, value pair from mplstyle files.
+    path = style_path(name)
+    with open(path, 'r') as f:
+        style_dict = {}
+        for line in f:
+            if line.strip().startswith('#'):
+                continue
+
+            if line.strip() == '':
+                continue
+
+            key = line.split(':')[0].strip()
+            value = line.split(':')[1].split()[0].strip()
+
+            try:
+                value = float(value)
+            except ValueError:
+                pass
+
+            style_dict[key] = value
+
+    return style_dict
+                    
+
 def use_dmpl_style():
     use_style('dmpl')
+
+
+class Style:
+    @staticmethod
+    def use(style_names):
+        plt.rcParams.update(plt.rcParamsDefault)
+        plt.style.use(
+            style_path(style_name)
+            for style_name in style_names
+        )
+
+
+style = Style()
 
 
 def cm2in(cm):
