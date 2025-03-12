@@ -695,7 +695,7 @@ def plot_colors(colors=None, *, ncols=4, sort_colors=True):
     return fig
 
 
-def plot_fonts(font_dir=None, num_columns=3, font_size=11):
+def plot_fonts(font_dir=None, ncols=3, font_size=11):
     """Plot available fonts in the specified directory.
     
     Parameters
@@ -703,7 +703,7 @@ def plot_fonts(font_dir=None, num_columns=3, font_size=11):
     font_dir : str, optional
         Directory path containing font files. If None, defaults to the 'asset/font' 
         directory within the package.
-    num_columns : int, optional
+    ncols : int, optional
         Number of columns to display font families, by default 3
     font_size : int, optional
         Font size for sample text, by default 11
@@ -757,7 +757,7 @@ def plot_fonts(font_dir=None, num_columns=3, font_size=11):
 
     # 전체 폰트 개수와 열 수 설정
     total_families = len(sorted_families)
-    families_per_column = math.ceil(total_families / num_columns)
+    families_per_column = math.ceil(total_families / ncols)
 
     # 패밀리 간 간격 설정
     family_spacing = 3  # 패밀리 간 간격
@@ -768,7 +768,7 @@ def plot_fonts(font_dir=None, num_columns=3, font_size=11):
     fig, ax = plt.subplots(figsize=(14, total_height * 0.3))
     
     # 축 설정
-    ax.set_xlim(0, num_columns * 7)
+    ax.set_xlim(0, ncols * 7)
     ax.set_ylim(0, total_height)
     ax.axis('off')
 
