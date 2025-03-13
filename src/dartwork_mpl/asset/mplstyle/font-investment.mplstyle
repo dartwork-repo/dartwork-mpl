@@ -1,9 +1,4 @@
 font.family: roboto
-#font.style:   normal
-#font.variant: normal
-font.weight:  300
-#font.stretch: normal
-font.size:    7.5
 
 mathtext.fontset: custom  # Should be 'dejavusans' (default),
 
@@ -22,14 +17,16 @@ mathtext.default: it  # The default font to use for math.
                        # the special name "regular" for the same font
                        # used in regular text.
 
+#font.style:   normal
+#font.variant: normal
+font.weight:  300
+#font.stretch: normal
+font.size:    7.5
+
 axes.titlesize:     8.5   # font size of the axes title
 axes.titleweight:   400  # font weight of title
 axes.labelsize:     7.5  # font size of the x and y labels
 axes.labelweight:   300  # weight of the x and y labels
-
-axes.xmargin:   0.0  # x margin.  See `axes.Axes.margins`
-axes.ymargin:   0.0  # y margin.  See `axes.Axes.margins`
-axes.zmargin:   0.0  # z margin.  See `axes.Axes.margins`
 
 xtick.labelsize:     7  # font size of the tick labels
 ytick.labelsize:     7  # font size of the tick labels
