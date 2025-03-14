@@ -26,7 +26,7 @@ font.size:    7.5
 axes.titlesize:     8.5   # font size of the axes title
 axes.titleweight:   400  # font weight of title
 axes.labelsize:     7.5  # font size of the x and y labels
-axes.labelweight:   300  # weight of the x and y labels
+axes.labelweight:   400  # weight of the x and y labels
 
 xtick.labelsize:     7  # font size of the tick labels
 ytick.labelsize:     7  # font size of the tick labels

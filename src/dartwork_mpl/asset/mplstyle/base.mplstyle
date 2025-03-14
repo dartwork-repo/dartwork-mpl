@@ -35,7 +35,7 @@ axes.grid:          False   # display grid or not
 axes.titlesize:     8.5   # font size of the axes title
 axes.titleweight:   400  # font weight of title
 axes.labelsize:     7.5  # font size of the x and y labels
-axes.labelweight:   300  # weight of the x and y labels
+axes.labelweight:   400  # weight of the x and y labels
 axes.axisbelow:     line    # draw axis gridlines and ticks:
                              #     - below patches (True)
                              #     - above patches but below lines ('line')
