@@ -516,7 +516,7 @@ COLORS = {
     'line': "dm.red5",      # KDE 라인 색상
     'edge': "dm.gray8"      # 테두리 색상
 }
-YLIM = (0, 0.7)      # y축 범위
+YLIM = (0, 0.6)      # y축 범위
 SAVE_PATH = script_dir / "figure_output" / "air_temperature_histogram"  # 저장 경로
 SAVE_FORMATS = ('pdf', 'png')  # 저장 형식
 DPI = 300             # 저장 해상도
@@ -528,9 +528,9 @@ data = df_temp_measured.values.flatten()  # 1차원 배열로 변환
 fig, ax = plt.subplots(figsize=(dm.cm2in(FIGSIZE[0]), dm.cm2in(FIGSIZE[1])))
 
 # 히스토그램 빈 설정
-min_temp = np.floor(data.min() * 5) / 5  # 0.2 단위로 내림
-max_temp = np.ceil(data.max() * 5) / 5   # 0.2 단위로 올림
-bins = np.arange(min_temp, max_temp + 0.2, 0.2)  # 0.2 간격으로 빈 설정
+min_temp = np.floor(data.min() * 4) / 4  # 0.25 단위로 내림
+max_temp = np.ceil(data.max() * 4) / 4   # 0.25 단위로 올림
+bins = np.arange(min_temp, max_temp + 0.25, 0.25)  # 0.25 간격으로 빈 설정
 
 # 히스토그램 그리기 (정규화된 확률 분포)
 n, bins, patches = ax.hist(
@@ -545,103 +545,149 @@ n, bins, patches = ax.hist(
     zorder=3
 )
 
-# SciPy를 사용한 Gaussian Mixture Model 구현
+# SciPy를 사용한 단일 가우시안 피팅
 from scipy import stats
-from scipy.optimize import minimize
 
-# 데이터 준비
-data_flat = data.flatten()
+# 데이터의 평균과 표준편차 계산
+mean = np.mean(data)
+std = np.std(data)
 
-# EM 알고리즘을 직접 구현하는 대신, 간단한 방법으로 GMM 파라미터 추정
-# 데이터를 n_components 개의 구간으로 나누어 각 구간에서 평균과 표준편차 계산
-n_components = 1
-weights = np.ones(n_components) / n_components  # 초기 가중치는 균등하게 설정
+# 여러 확률 분포 피팅 테스트
+# 테스트할 분포 목록
+distributions = [
+    ('norm', stats.norm, "Normal"),
+    ('gamma', stats.gamma, "Gamma"),
+    ('lognorm', stats.lognorm, "Log-normal"),
+    ('beta', stats.beta, "Beta"),
+    ('weibull_min', stats.weibull_min, "Weibull")
+]
 
-# 데이터 범위를 n_components 개의 구간으로 나누기
-data_min, data_max = min_temp, max_temp
-intervals = np.linspace(data_min, data_max, n_components + 1)
-means = []
-stds = []
+# 데이터 범위 조정 (베타 분포를 위해 0-1 사이로 스케일링)
+data_min = data.min()
+data_max = data.max()
+data_scaled = (data - data_min) / (data_max - data_min)
 
-# 각 구간에서 평균과 표준편차 계산
-for i in range(n_components):
-    # 구간 내 데이터 선택
-    mask = (data_flat >= intervals[i]) & (data_flat < intervals[i + 1])
-    if np.sum(mask) > 10:  # 충분한 데이터가 있는 경우
-        segment_data = data_flat[mask]
-        means.append(np.mean(segment_data))
-        stds.append(np.std(segment_data))
-    else:  # 데이터가 부족한 경우 전체 데이터의 통계량 사용
-        means.append(data_min + (i + 0.5) * (data_max - data_min) / n_components)
-        stds.append(np.std(data_flat) / 2)
+# 각 분포의 피팅 결과와 KS 검정 결과 저장
+fit_results = {}
 
-# 가중치 최적화 함수
-def gmm_nll(weights, x, means, stds):
-    """GMM의 음의 로그 가능도 계산"""
-    weights = weights / np.sum(weights)  # 정규화
-    pdf = np.zeros_like(x, dtype=float)
-    for i in range(len(means)):
-        pdf += weights[i] * stats.norm.pdf(x, means[i], stds[i])
-    return -np.sum(np.log(pdf + 1e-10))  # 수치 안정성을 위해 작은 값 추가
+# 각 분포에 대해 피팅 및 검정 수행
+for dist_name, dist_func, dist_label in distributions:
+    try:
+        if dist_name == 'beta':
+            # 베타 분포는 0-1 사이의 데이터에 적용
+            params = dist_func.fit(data_scaled)
+            ks_stat, p_value = stats.kstest(data_scaled, dist_name, params)
+            # 원래 데이터 범위로 변환하기 위한 정보 저장
+            fit_results[dist_name] = {
+                'params': params, 
+                'ks_stat': ks_stat, 
+                'p_value': p_value,
+                'label': dist_label,
+                'scaled': True
+            }
+        else:
+            # 다른 분포들은 원래 데이터에 적용
+            params = dist_func.fit(data)
+            ks_stat, p_value = stats.kstest(data, dist_name, params)
+            fit_results[dist_name] = {
+                'params': params, 
+                'ks_stat': ks_stat, 
+                'p_value': p_value,
+                'label': dist_label,
+                'scaled': False
+            }
+    except Exception as e:
+        print(f"피팅 실패 - {dist_label}: {e}")
+        continue
 
-# 가중치 최적화 (제약 조건: 합이 1)
-bounds = [(0, 1)] * n_components
-constraints = {'type': 'eq', 'fun': lambda w: np.sum(w) - 1}
-result = minimize(
-    gmm_nll, 
-    weights, 
-    args=(data_flat, means, stds),
-    bounds=bounds,
-    constraints=constraints
-)
-weights = result.x / np.sum(result.x)  # 정규화
+# 가장 적합한 분포 찾기 (p-value가 가장 높은 분포)
+best_dist = max(fit_results.items(), key=lambda x: x[1]['p_value'])
+best_dist_name, best_dist_info = best_dist
 
-# 예측을 위한 x 값 생성 (경계 밖으로 더 확장)
-x_extend = 0.05
-x_gmm = np.linspace(min_temp - x_extend, max_temp + x_extend, 1000)
+# 가우시안 PDF 계산을 위한 x 값 생성
+x_fit = np.linspace(min_temp - 0.5, max_temp + 0.5, 500)
 
-# GMM PDF 계산
-y_gmm = np.zeros_like(x_gmm)
-for i in range(n_components):
-    y_gmm += weights[i] * stats.norm.pdf(x_gmm, means[i], stds[i])
+# 최적 분포의 PDF 계산
+if best_dist_name == 'beta' and best_dist_info['scaled']:
+    # 베타 분포의 경우 스케일링된 x 값 사용
+    x_scaled = (x_fit - data_min) / (data_max - data_min)
+    # 유효한 범위(0-1)만 사용
+    valid_idx = (x_scaled >= 0) & (x_scaled <= 1)
+    x_valid = x_scaled[valid_idx]
+    # PDF 계산
+    dist_func = getattr(stats, best_dist_name)
+    y_valid = dist_func.pdf(x_valid, *best_dist_info['params'])
+    # 원래 스케일로 변환 (PDF 값 조정)
+    y_fit = np.zeros_like(x_fit)
+    y_fit[valid_idx] = y_valid / (data_max - data_min)
+else:
+    # 다른 분포들은 직접 PDF 계산
+    dist_func = getattr(stats, best_dist_name)
+    y_fit = dist_func.pdf(x_fit, *best_dist_info['params'])
 
-# 경계 근처에서 점진적으로 감소하는 가중치 적용
-boundary_weight = np.ones_like(x_gmm)
-transition_width = 0.3  # 전이 구간의 너비
+# 히스토그램 빈의 중앙값 계산
+bin_centers = 0.5 * (bins[1:] + bins[:-1])
 
-# 왼쪽 경계에서의 점진적 감소
-left_transition = (x_gmm >= min_temp - transition_width) & (x_gmm < min_temp)
-if np.any(left_transition):
-    # 선형 증가 (0에서 1로)
-    boundary_weight[left_transition] = (x_gmm[left_transition] - (min_temp - transition_width)) / transition_width
+# 각 빈 중앙에서의 최적 분포 PDF 값 계산
+if best_dist_name == 'beta' and best_dist_info['scaled']:
+    bin_centers_scaled = (bin_centers - data_min) / (data_max - data_min)
+    valid_bin_idx = (bin_centers_scaled >= 0) & (bin_centers_scaled <= 1)
+    y_bin_valid = dist_func.pdf(bin_centers_scaled[valid_bin_idx], *best_dist_info['params'])
+    y_bin_fit = np.zeros_like(bin_centers)
+    y_bin_fit[valid_bin_idx] = y_bin_valid / (data_max - data_min)
+else:
+    y_bin_fit = dist_func.pdf(bin_centers, *best_dist_info['params'])
 
-# 오른쪽 경계에서의 점진적 감소
-right_transition = (x_gmm > max_temp) & (x_gmm <= max_temp + transition_width)
-if np.any(right_transition):
-    # 선형 감소 (1에서 0으로)
-    boundary_weight[right_transition] = 1 - (x_gmm[right_transition] - max_temp) / transition_width
+# R-squared 계산 (결정 계수)
+ss_tot = np.sum((n - np.mean(n))**2)  # 총 제곱합
+ss_res = np.sum((n - y_bin_fit)**2)   # 잔차 제곱합
+r_squared = 1 - (ss_res / ss_tot)     # R-squared 값
 
-# 경계 밖의 먼 영역은 0으로 설정
-far_outside = (x_gmm < min_temp - transition_width) | (x_gmm > max_temp + transition_width)
-boundary_weight[far_outside] = 0
-
-# 가중치 적용
-y_gmm = y_gmm * boundary_weight
-
-# 정규화 (적분값이 1이 되도록)
-dx = x_gmm[1] - x_gmm[0]
-area = np.sum(y_gmm) * dx
-y_gmm = y_gmm / area
-
-# KDE 라인 그리기
+# 최적 분포 피팅 라인 그리기
 ax.plot(
-    x_gmm, 
-    y_gmm, 
+    x_fit, 
+    y_fit, 
     color=COLORS['line'], 
     linewidth=1.0, 
-    label=f"Gaussian mixture model ({n_components} components)",
+    label=f"{best_dist_info['label']} fit (R²={r_squared:.3f})",
     zorder=4
 )
+
+# 적합도 정보 텍스트 추가
+# fit_text = f"K-S test: D={best_dist_info['ks_stat']:.3f}, p={best_dist_info['p_value']:.3f}"
+# if best_dist_info['p_value'] > 0.05:
+#     fit_text += " (Good fit)"
+# else:
+#     fit_text += " (Better fit than Normal)"
+
+# ax.text(0.05, 0.95, fit_text, transform=ax.transAxes, 
+#         fontsize=dm.fs(-1), verticalalignment='top', 
+#         bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+
+# 최적 분포의 파라미터 표시
+params_text = f"Best distribution: {best_dist_info['label']}"
+y_pos = 0.98
+
+# 분포별 파라미터 표시 방식
+if best_dist_name == 'norm':
+    loc, scale = best_dist_info['params']
+    params_text += f"\nμ={loc:.3f}, σ={scale:.3f}"
+elif best_dist_name == 'gamma':
+    a, loc, scale = best_dist_info['params']
+    params_text += f"\nα={a:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+elif best_dist_name == 'lognorm':
+    s, loc, scale = best_dist_info['params']
+    params_text += f"\ns={s:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+elif best_dist_name == 'beta':
+    a, b, loc, scale = best_dist_info['params']
+    params_text += f"\nα={a:.3f}, β={b:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+elif best_dist_name == 'weibull_min':
+    c, loc, scale = best_dist_info['params']
+    params_text += f"\nc={c:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+
+# legend와 높이를 맞추기 위해 y_pos 위치 조정
+ax.text(0.05, y_pos, params_text, transform=ax.transAxes, 
+        fontsize=dm.fs(-2), verticalalignment='top')
 
 # x축, y축 레이블 설정
 ax.set_xlabel("Measured air temperature [°C]", fontsize=dm.fs(0))
@@ -654,7 +700,7 @@ ax.grid(True, linestyle=":", alpha=0.3, axis="both", zorder=0)  # zorder를 낮�
 ax.set_ylim(YLIM)
 
 # xlim 설정 (데이터 범위에 맞게 약간의 여백 추가)
-margin = (data.max() - data.min()) * 0.1  # 10% 여백
+margin = (data.max() - data.min()) * 0.15  # 10% 여백
 ax.set_xlim(data.min() - margin, data.max() + margin)
 
 # x축 minor tick 설정
@@ -686,10 +732,10 @@ dm.save_formats(fig, str(SAVE_PATH), formats=SAVE_FORMATS, bbox_inches="tight", 
 plt.show()
 
 # 통계 정보 출력
-print(f"평균 실내 온도: {data.mean():.3f} °C")
+print(f"평균 실내 온도: {mean:.3f} °C")
+print(f"표준편차: {std:.3f} °C")
 print(f"최대 실내 온도: {data.max():.3f} °C")
 print(f"최소 실내 온도: {data.min():.3f} °C")
-print(f"표준편차: {data.std():.3f} °C")
 
 
 
@@ -707,10 +753,10 @@ df_rh_measured = pd.read_csv(data_path / "rh_measured.csv")
 FIGSIZE = (8.8, 7.0)  # 그래프 크기 (cm)
 COLORS = {
     'bar': "dm.teal3",      # 히스토그램 색상
-    'line': "dm.red5",      # KDE 라인 색상
+    'line': "dm.red4",      # 가우시안 피팅 라인 색상
     'edge': "dm.gray8"      # 테두리 색상
 }
-YLIM = (0, 0.32)      # y축 범위
+YLIM = (0, 0.35)      # y축 범위
 SAVE_PATH = script_dir / "figure_output" / "relative_humidity_histogram"  # 저장 경로
 SAVE_FORMATS = ('pdf', 'png')  # 저장 형식
 DPI = 300             # 저장 해상도
@@ -739,103 +785,149 @@ n, bins, patches = ax.hist(
     zorder=3
 )
 
-# SciPy를 사용한 Gaussian Mixture Model 구현
+# 1개의 가우시안으로 피팅
 from scipy import stats
-from scipy.optimize import minimize
 
-# 데이터 준비
-data_flat = data.flatten()
+# 데이터의 평균과 표준편차 계산
+mean = np.mean(data)
+std = np.std(data)
 
-# EM 알고리즘을 직접 구현하는 대신, 간단한 방법으로 GMM 파라미터 추정
-# 데이터를 n_components 개의 구간으로 나누어 각 구간에서 평균과 표준편차 계산
-n_components = 3
-weights = np.ones(n_components) / n_components  # 초기 가중치는 균등하게 설정
+# 여러 확률 분포 피팅 테스트
+# 테스트할 분포 목록
+distributions = [
+    ('norm', stats.norm, "Normal"),
+    ('gamma', stats.gamma, "Gamma"),
+    ('lognorm', stats.lognorm, "Log-normal"),
+    ('beta', stats.beta, "Beta"),
+    ('weibull_min', stats.weibull_min, "Weibull")
+]
 
-# 데이터 범위를 n_components 개의 구간으로 나누기
-data_min, data_max = min_rh, max_rh
-intervals = np.linspace(data_min, data_max, n_components + 1)
-means = []
-stds = []
+# 데이터 범위 조정 (베타 분포를 위해 0-1 사이로 스케일링)
+data_min = data.min()
+data_max = data.max()
+data_scaled = (data - data_min) / (data_max - data_min)
 
-# 각 구간에서 평균과 표준편차 계산
-for i in range(n_components):
-    # 구간 내 데이터 선택
-    mask = (data_flat >= intervals[i]) & (data_flat < intervals[i + 1])
-    if np.sum(mask) > 10:  # 충분한 데이터가 있는 경우
-        segment_data = data_flat[mask]
-        means.append(np.mean(segment_data))
-        stds.append(np.std(segment_data))
-    else:  # 데이터가 부족한 경우 전체 데이터의 통계량 사용
-        means.append(data_min + (i + 0.5) * (data_max - data_min) / n_components)
-        stds.append(np.std(data_flat) / 2)
+# 각 분포의 피팅 결과와 KS 검정 결과 저장
+fit_results = {}
 
-# 가중치 최적화 함수
-def gmm_nll(weights, x, means, stds):
-    """GMM의 음의 로그 가능도 계산"""
-    weights = weights / np.sum(weights)  # 정규화
-    pdf = np.zeros_like(x, dtype=float)
-    for i in range(len(means)):
-        pdf += weights[i] * stats.norm.pdf(x, means[i], stds[i])
-    return -np.sum(np.log(pdf + 1e-10))  # 수치 안정성을 위해 작은 값 추가
+# 각 분포에 대해 피팅 및 검정 수행
+for dist_name, dist_func, dist_label in distributions:
+    try:
+        if dist_name == 'beta':
+            # 베타 분포는 0-1 사이의 데이터에 적용
+            params = dist_func.fit(data_scaled)
+            ks_stat, p_value = stats.kstest(data_scaled, dist_name, params)
+            # 원래 데이터 범위로 변환하기 위한 정보 저장
+            fit_results[dist_name] = {
+                'params': params, 
+                'ks_stat': ks_stat, 
+                'p_value': p_value,
+                'label': dist_label,
+                'scaled': True
+            }
+        else:
+            # 다른 분포들은 원래 데이터에 적용
+            params = dist_func.fit(data)
+            ks_stat, p_value = stats.kstest(data, dist_name, params)
+            fit_results[dist_name] = {
+                'params': params, 
+                'ks_stat': ks_stat, 
+                'p_value': p_value,
+                'label': dist_label,
+                'scaled': False
+            }
+    except Exception as e:
+        print(f"피팅 실패 - {dist_label}: {e}")
+        continue
 
-# 가중치 최적화 (제약 조건: 합이 1)
-bounds = [(0, 1)] * n_components
-constraints = {'type': 'eq', 'fun': lambda w: np.sum(w) - 1}
-result = minimize(
-    gmm_nll, 
-    weights, 
-    args=(data_flat, means, stds),
-    bounds=bounds,
-    constraints=constraints
-)
-weights = result.x / np.sum(result.x)  # 정규화
+# 가장 적합한 분포 찾기 (p-value가 가장 높은 분포)
+best_dist = max(fit_results.items(), key=lambda x: x[1]['p_value'])
+best_dist_name, best_dist_info = best_dist
 
-# 예측을 위한 x 값 생성 (경계 밖으로 더 확장)
-x_extend = 0.05
-x_gmm = np.linspace(min_rh - x_extend, max_rh + x_extend, 1000)
+# 가우시안 PDF 계산을 위한 x 값 생성
+x_fit = np.linspace(min_rh - 0.5, max_rh + 0.5, 500)
 
-# GMM PDF 계산
-y_gmm = np.zeros_like(x_gmm)
-for i in range(n_components):
-    y_gmm += weights[i] * stats.norm.pdf(x_gmm, means[i], stds[i])
+# 최적 분포의 PDF 계산
+if best_dist_name == 'beta' and best_dist_info['scaled']:
+    # 베타 분포의 경우 스케일링된 x 값 사용
+    x_scaled = (x_fit - data_min) / (data_max - data_min)
+    # 유효한 범위(0-1)만 사용
+    valid_idx = (x_scaled >= 0) & (x_scaled <= 1)
+    x_valid = x_scaled[valid_idx]
+    # PDF 계산
+    dist_func = getattr(stats, best_dist_name)
+    y_valid = dist_func.pdf(x_valid, *best_dist_info['params'])
+    # 원래 스케일로 변환 (PDF 값 조정)
+    y_fit = np.zeros_like(x_fit)
+    y_fit[valid_idx] = y_valid / (data_max - data_min)
+else:
+    # 다른 분포들은 직접 PDF 계산
+    dist_func = getattr(stats, best_dist_name)
+    y_fit = dist_func.pdf(x_fit, *best_dist_info['params'])
 
-# 경계 근처에서 점진적으로 감소하는 가중치 적용
-boundary_weight = np.ones_like(x_gmm)
-transition_width = 0.3  # 전이 구간의 너비
+# 히스토그램 빈의 중앙값 계산
+bin_centers = 0.5 * (bins[1:] + bins[:-1])
 
-# 왼쪽 경계에서의 점진적 감소
-left_transition = (x_gmm >= min_rh - transition_width) & (x_gmm < min_rh)
-if np.any(left_transition):
-    # 선형 증가 (0에서 1로)
-    boundary_weight[left_transition] = (x_gmm[left_transition] - (min_rh - transition_width)) / transition_width
+# 각 빈 중앙에서의 최적 분포 PDF 값 계산
+if best_dist_name == 'beta' and best_dist_info['scaled']:
+    bin_centers_scaled = (bin_centers - data_min) / (data_max - data_min)
+    valid_bin_idx = (bin_centers_scaled >= 0) & (bin_centers_scaled <= 1)
+    y_bin_valid = dist_func.pdf(bin_centers_scaled[valid_bin_idx], *best_dist_info['params'])
+    y_bin_fit = np.zeros_like(bin_centers)
+    y_bin_fit[valid_bin_idx] = y_bin_valid / (data_max - data_min)
+else:
+    y_bin_fit = dist_func.pdf(bin_centers, *best_dist_info['params'])
 
-# 오른쪽 경계에서의 점진적 감소
-right_transition = (x_gmm > max_rh) & (x_gmm <= max_rh + transition_width)
-if np.any(right_transition):
-    # 선형 감소 (1에서 0으로)
-    boundary_weight[right_transition] = 1 - (x_gmm[right_transition] - max_rh) / transition_width
+# R-squared 계산 (결정 계수)
+ss_tot = np.sum((n - np.mean(n))**2)  # 총 제곱합
+ss_res = np.sum((n - y_bin_fit)**2)   # 잔차 제곱합
+r_squared = 1 - (ss_res / ss_tot)     # R-squared 값
 
-# 경계 밖의 먼 영역은 0으로 설정
-far_outside = (x_gmm < min_rh - transition_width) | (x_gmm > max_rh + transition_width)
-boundary_weight[far_outside] = 0
-
-# 가중치 적용
-y_gmm = y_gmm * boundary_weight
-
-# 정규화 (적분값이 1이 되도록)
-dx = x_gmm[1] - x_gmm[0]
-area = np.sum(y_gmm) * dx
-y_gmm = y_gmm / area
-
-# KDE 라인 그리기
+# 최적 분포 피팅 라인 그리기
 ax.plot(
-    x_gmm, 
-    y_gmm, 
+    x_fit, 
+    y_fit, 
     color=COLORS['line'], 
     linewidth=1.0, 
-    label=f"Gaussian mixture model ({n_components} components)",
+    label=f"{best_dist_info['label']} fit (R²={r_squared:.3f})",
     zorder=4
 )
+
+# 적합도 정보 텍스트 추가
+fit_text = f"K-S test: D={best_dist_info['ks_stat']:.3f}, p={best_dist_info['p_value']:.3f}"
+if best_dist_info['p_value'] > 0.05:
+    fit_text += " (Good fit)"
+else:
+    fit_text += " (Better fit than Normal)"
+
+ax.text(0.05, 0.95, fit_text, transform=ax.transAxes, 
+        fontsize=dm.fs(-1), verticalalignment='top', 
+        bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+
+# 최적 분포의 파라미터 표시
+params_text = f"Best distribution: {best_dist_info['label']}"
+y_pos = 0.85
+
+# 분포별 파라미터 표시 방식
+if best_dist_name == 'norm':
+    loc, scale = best_dist_info['params']
+    params_text += f"\nμ={loc:.3f}, σ={scale:.3f}"
+elif best_dist_name == 'gamma':
+    a, loc, scale = best_dist_info['params']
+    params_text += f"\nα={a:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+elif best_dist_name == 'lognorm':
+    s, loc, scale = best_dist_info['params']
+    params_text += f"\ns={s:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+elif best_dist_name == 'beta':
+    a, b, loc, scale = best_dist_info['params']
+    params_text += f"\nα={a:.3f}, β={b:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+elif best_dist_name == 'weibull_min':
+    c, loc, scale = best_dist_info['params']
+    params_text += f"\nc={c:.3f}, loc={loc:.3f}, scale={scale:.3f}"
+
+ax.text(0.05, y_pos, params_text, transform=ax.transAxes, 
+        fontsize=dm.fs(-1), verticalalignment='top', 
+        bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
 
 # x축, y축 레이블 설정
 ax.set_xlabel("Measured relative humidity [%]", fontsize=dm.fs(0))
@@ -880,10 +972,10 @@ dm.save_formats(fig, str(SAVE_PATH), formats=SAVE_FORMATS, bbox_inches="tight", 
 plt.show()
 
 # 통계 정보 출력
-print(f"평균 상대 습도: {data.mean():.3f} %")
+print(f"평균 상대 습도: {mean:.3f} %")
+print(f"표준편차: {std:.3f} %")
 print(f"최대 상대 습도: {data.max():.3f} %")
 print(f"최소 상대 습도: {data.min():.3f} %")
-print(f"표준편차: {data.std():.3f} %")
 
 
 # %%
