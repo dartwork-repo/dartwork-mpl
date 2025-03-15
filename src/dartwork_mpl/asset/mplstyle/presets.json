@@ -1,0 +1,29 @@
+{
+    "scientific": [
+        "base",
+        "font-scientific"
+    ],
+    "investment": [
+        "base",
+        "font-investment"
+    ],
+    "presentation": [
+        "base",
+        "font-presentation"
+    ],
+    "scientific-kr": [
+        "base",
+        "font-scientific",
+        "lang-kr"
+    ],
+    "investment-kr": [
+        "base",
+        "font-investment",
+        "lang-kr"
+    ],
+    "presentation-kr": [
+        "base",
+        "font-presentation",
+        "lang-kr"
+    ]
+}

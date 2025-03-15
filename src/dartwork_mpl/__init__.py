@@ -8,6 +8,14 @@ from .cmap import *
 from .util import *
 from .constant import *
 
-
+from .style import (
+    use_style,
+    style_path,
+    list_styles,
+    load_style_dict,
+    use_dmpl_style,
+    Style,
+    style,
+)
 # use_dmpl_style()
 use_style('dmpl_light')
