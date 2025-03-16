@@ -472,8 +472,6 @@ def classify_colormap(cmap):
     hue_diffs = np.abs(np.diff(hues))
     # Handle circular nature of hue
     hue_diffs = np.minimum(hue_diffs, 1 - hue_diffs)
-    sat_diffs = np.diff(saturations)
-    value_diffs = np.diff(values)
     
     # Known categorical colormaps (hardcoded for better accuracy)
     categorical_cmaps = [
