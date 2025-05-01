@@ -10,10 +10,10 @@ authors = [
 requires-python = ">=3.10"
 dependencies = [
     "colorspacious>=1.1.2",
-    "matplotlib>=3.10.0",
+    "matplotlib>=3.10.1",
     "numpy>=2.2.5",
     "palettable>=3.3.3",
-    "scipy>=1.15.1",
+    "scipy>=1.15.2",
 ]
 
 [build-system]
@@ -22,7 +22,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "notebook>=7.3.2",
+    "notebook>=7.4.1",
     "openpyxl>=3.1.5",
     "pandas>=2.2.3",
 ]
