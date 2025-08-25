@@ -106,8 +106,15 @@ transparent = dm.pseudo_alpha('dm.red5', alpha=0.3, background='white')
 #### Figure 생성 권장 패턴
 ```python
 # 논문용 figure 생성 (단위: cm → inch 변환)
+# Single column figure: 9cm 너비
 fig = plt.figure(
-    figsize=(dm.cm2in(9), dm.cm2in(7)),  # Single column: 9cm
+    figsize=(dm.cm2in(9), dm.cm2in(7)),
+    dpi=200
+)
+
+# Double column figure: 17cm 너비
+fig = plt.figure(
+    figsize=(dm.cm2in(17), dm.cm2in(7)),
     dpi=200
 )
 
@@ -122,10 +129,44 @@ ax = fig.add_subplot(gs[0, 0])
 ```
 
 #### 자동 레이아웃 조정
+
+`simple_layout`은 `plt.tight_layout()`의 개선된 버전으로, 더 정밀한 여백 제어와 예측 가능한 결과를 제공합니다.
+
 ```python
-# simple_layout: tight_layout의 개선된 버전
-dm.simple_layout(fig, margins=(0.05, 0.05, 0.05, 0.05))
+# 기본 사용법 (권장)
+dm.simple_layout(fig)
+
+# 여백 조정 (인치 단위: left, right, bottom, top)
+dm.simple_layout(fig, margins=(0.1, 0.05, 0.1, 0.05))
+
+# 특정 GridSpec에 대해서만 적용
+dm.simple_layout(fig, gs=gs, margins=(0.08, 0.02, 0.08, 0.02))
+
+# bbox를 사용한 부분 영역 최적화 (figure 좌표계: left, right, bottom, top)
+# 전체 figure (기본값)
+dm.simple_layout(fig, bbox=(0, 1, 0, 1))
+
+# figure의 왼쪽 절반에만 최적화
+dm.simple_layout(fig, bbox=(0, 0.5, 0, 1))
+
+# figure의 오른쪽 절반에만 최적화  
+dm.simple_layout(fig, bbox=(0.5, 1, 0, 1))
+
+# figure의 상단 절반에만 최적화
+dm.simple_layout(fig, bbox=(0, 1, 0.5, 1))
+
+# 모든 axes에 적용 (복수 GridSpec이 있을 때)
+dm.simple_layout(fig, use_all_axes=True)
 ```
+
+**주요 매개변수:**
+- `margins`: 인치 단위의 여백 (left, right, bottom, top)
+- `bbox`: figure 좌표계에서의 최적화 대상 영역 (left, right, bottom, top)
+- `gs`: 특정 GridSpec 지정 (None이면 첫 번째 GridSpec 사용)
+- `use_all_axes`: True시 모든 axes를 고려 (기본값: False)
+
+**bbox 활용 예:**
+복수의 subplot이 있을 때 특정 영역의 레이아웃만 개별적으로 최적화할 수 있습니다. 예를 들어 `bbox=(0, 0.5, 0, 1)`로 설정하면 figure의 왼쪽 절반 영역에 대해서만 레이아웃 최적화가 수행됩니다.
 
 ### 2.4 폰트 유틸리티
 
@@ -150,15 +191,18 @@ ax.legend(fontsize=dm.fs(-2))
 dm.save_formats(
     fig, 
     'output/figure',  # 확장자 없이
-    formats=('svg', 'png', 'pdf'),
+    formats=('svg', 'png', 'pdf', 'eps'),
     bbox_inches='tight',
-    dpi=300
+    dpi=600
 )
 ```
 
 #### Jupyter에서 저장 후 표시
 ```python
-# 저장하고 바로 표시 (Jupyter용)
+# plt.show() 대신 사용 - 임시 파일로 저장 후 바로 표시 (권장)
+dm.save_and_show(fig, size=600)
+
+# 특정 경로에 저장하고 표시
 dm.save_and_show(fig, 'output/figure.svg', size=600)
 
 # 기존 파일 표시
@@ -171,7 +215,7 @@ dm.show('output/figure.svg', size=600)
 # 서브플롯 라벨 (a, b, c...) 추가
 axs = [ax1, ax2]
 for ax, label in zip(axs, 'ab'):
-    # 폰트 단위로 오프셋 설정
+    # 텍스트 오프셋 설정 시 반드시 make_offset 함수 사용
     offset = dm.make_offset(4, -4, fig)  # x=4pt, y=-4pt
     ax.text(
         0, 1, label, 
@@ -180,6 +224,8 @@ for ax, label in zip(axs, 'ab'):
         verticalalignment='top'
     )
 ```
+
+**중요**: 텍스트의 위치를 조정할 때는 항상 `dm.make_offset()` 함수를 사용해야 합니다. 이 함수는 포인트(pt) 단위로 정확한 오프셋을 제공하여 DPI와 무관하게 일관된 결과를 보장합니다.
 
 ### 2.7 컬러맵 시각화
 
@@ -239,8 +285,8 @@ ax.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 5. **저장 기준 확인**
 ```python
-# plt.show() 대신 저장된 파일 확인
-dm.save_and_show(fig, 'figure.svg')
+# plt.show() 대신 사용 - 실제 저장된 결과 확인 가능
+dm.save_and_show(fig)
 ```
 
 ## 4. 한국어 지원
@@ -328,6 +374,15 @@ ax.set_ylim(-1.2, 1.2)
 # 레이아웃 최적화
 dm.simple_layout(fig)
 
-# 저장 및 표시
-dm.save_and_show(fig, 'example_figure.svg')
+# Jupyter에서 미리보기
+dm.save_and_show(fig)
+
+# 논문 제출용 다중 포맷 저장
+dm.save_formats(
+    fig,
+    'figures/example_figure',  # 확장자 없이 base filename
+    formats=('svg', 'png', 'pdf', 'eps'),  # 4개 포맷 모두 저장
+    bbox_inches='tight',
+    dpi=600
+)
 ```
