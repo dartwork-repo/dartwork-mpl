@@ -1,0 +1,308 @@
+# dartwork-mpl 라이브러리 사용법
+
+## 1. 설치 및 기본 설정
+
+### 설치
+```python
+pip install git+https://github.com/dartwork-repo/dartwork-mpl
+```
+
+### 기본 임포트
+```python
+import dartwork_mpl as dm
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 기본 스타일 적용
+dm.use_style('dmpl_light')  # 또는 다른 스타일
+```
+
+## 2. 주요 기능
+
+### 2.1 스타일 관리
+
+#### 사용 가능한 스타일 확인
+```python
+# 모든 스타일 목록 보기
+dm.list_styles()
+# ['base', 'dmpl', 'dmpl_light', 'font-investment', 'font-presentation', 
+#  'font-scientific', 'lang-kr', 'spine-no', 'spine-yes']
+```
+
+#### 스타일 적용
+```python
+# 단일 스타일 적용
+dm.use_style('dmpl_light')
+
+# 복수 스타일 조합
+dm.style.use(['base', 'spine-no', 'font-presentation'])
+
+# 프리셋 사용
+dm.style.use_preset('scientific-kr')
+```
+
+#### 스타일 내용 확인
+```python
+# 스타일 파일의 내용 확인
+style_dict = dm.load_style_dict('font-presentation')
+
+# 스타일 파일 경로 확인
+path = dm.style_path('base')
+```
+
+### 2.2 색상 시스템
+
+#### dartwork-mpl 커스텀 색상
+```python
+# dm. 접두사로 사용
+ax.plot(x, y, color='dm.red5')
+ax.scatter(x, y, c='dm.blue2')
+```
+
+#### Tailwind CSS 색상
+```python
+# tw. 또는 tailwind. 접두사 사용
+# 형식: tw.{color}:{weight}
+ax.plot(x, y, color='tw.blue:500')
+ax.fill_between(x, y1, y2, color='tailwind.gray:200')
+```
+
+#### 색상 유틸리티
+```python
+# 두 색상 혼합
+mixed = dm.mix_colors('dm.red5', 'dm.blue5', alpha=0.5)
+
+# 가상 투명도 적용 (배경색과 혼합)
+transparent = dm.pseudo_alpha('dm.red5', alpha=0.3, background='white')
+```
+
+### 2.3 레이아웃 유틸리티
+
+#### Figure 생성 권장 패턴
+```python
+# 논문용 figure 생성 (단위: cm → inch 변환)
+fig = plt.figure(
+    figsize=(dm.cm2in(9), dm.cm2in(7)),  # Single column: 9cm
+    dpi=200
+)
+
+# GridSpec으로 레이아웃 설정
+gs = fig.add_gridspec(
+    nrows=1, ncols=1, 
+    left=0.17, right=0.95, 
+    top=0.95, bottom=0.17, 
+    hspace=0.3, wspace=0
+)
+ax = fig.add_subplot(gs[0, 0])
+```
+
+#### 자동 레이아웃 조정
+```python
+# simple_layout: tight_layout의 개선된 버전
+dm.simple_layout(fig, margins=(0.05, 0.05, 0.05, 0.05))
+```
+
+### 2.4 폰트 유틸리티
+
+```python
+# 상대적 폰트 크기 조정
+title_size = dm.fs(2)   # base font size + 2
+label_size = dm.fs(-1)  # base font size - 1
+
+# 폰트 weight 조정 (100 단위)
+bold_weight = dm.fw(2)  # base weight + 200
+
+# 사용 예
+ax.set_title('Title', fontsize=dm.fs(2), fontweight=dm.fw(1))
+ax.legend(fontsize=dm.fs(-2))
+```
+
+### 2.5 저장 및 표시
+
+#### 다중 포맷 저장
+```python
+# 여러 형식으로 동시 저장
+dm.save_formats(
+    fig, 
+    'output/figure',  # 확장자 없이
+    formats=('svg', 'png', 'pdf'),
+    bbox_inches='tight',
+    dpi=300
+)
+```
+
+#### Jupyter에서 저장 후 표시
+```python
+# 저장하고 바로 표시 (Jupyter용)
+dm.save_and_show(fig, 'output/figure.svg', size=600)
+
+# 기존 파일 표시
+dm.show('output/figure.svg', size=600)
+```
+
+### 2.6 서브플롯 라벨링
+
+```python
+# 서브플롯 라벨 (a, b, c...) 추가
+axs = [ax1, ax2]
+for ax, label in zip(axs, 'ab'):
+    # 폰트 단위로 오프셋 설정
+    offset = dm.make_offset(4, -4, fig)  # x=4pt, y=-4pt
+    ax.text(
+        0, 1, label, 
+        transform=ax.transAxes + offset,
+        weight='bold',
+        verticalalignment='top'
+    )
+```
+
+### 2.7 컬러맵 시각화
+
+```python
+# 사용 가능한 컬러맵 확인
+fig, axs = dm.plot_colormaps(
+    cmap_list=['viridis', 'dm.spectral'],  # None이면 전체
+    ncols=3,
+    group_by_type=True  # 타입별 그룹화
+)
+
+# 색상 팔레트 확인
+fig = dm.plot_colors()  # 모든 색상 표시
+
+# 폰트 확인
+fig = dm.plot_fonts()  # 사용 가능한 폰트 표시
+```
+
+## 3. 권장 워크플로우
+
+### 논문 품질 그래프 작성 단계
+
+1. **데이터 준비와 플롯 코드 분리**
+```python
+# 데이터 준비 셀
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# 플롯 셀 (별도)
+fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)))
+# ...
+```
+
+2. **GridSpec 기반 레이아웃**
+```python
+gs = fig.add_gridspec(
+    nrows=2, ncols=1,
+    left=0.17, right=0.95,
+    top=0.95, bottom=0.17,
+    hspace=0.3
+)
+```
+
+3. **핸들 기반 레전드**
+```python
+line1, = ax.plot(x, y1, color='dm.red5', lw=0.7)
+scatter1 = ax.scatter([], [], c='dm.red5', s=1)  # 더미 for legend
+ax.legend([scatter1, line1], ['Data', 'Model'])
+```
+
+4. **명시적 틱 설정**
+```python
+ax.set_xticks([0, 2, 4, 6, 8, 10])
+ax.set_yticks([-1, -0.5, 0, 0.5, 1])
+```
+
+5. **저장 기준 확인**
+```python
+# plt.show() 대신 저장된 파일 확인
+dm.save_and_show(fig, 'figure.svg')
+```
+
+## 4. 한국어 지원
+
+```python
+# 한국어 폰트 적용
+dm.style.use(['base', 'lang-kr'])
+
+# 또는 프리셋 사용
+dm.style.use_preset('scientific-kr')
+```
+
+## 5. 프리셋 스타일
+
+사용 가능한 프리셋:
+- `scientific`: 논문용 (작은 폰트)
+- `investment`: 투자 보고서용
+- `presentation`: 프레젠테이션용 (큰 폰트)
+- `scientific-kr`, `investment-kr`, `presentation-kr`: 한국어 버전
+
+## 6. 주의사항
+
+1. **tight_layout 피하기**: `dm.simple_layout()` 사용 권장
+2. **savefig 기준**: `plt.show()`가 아닌 저장된 파일 기준으로 작업
+3. **단위 확인**: matplotlib은 다양한 단위 사용 (inch, point, pixel)
+4. **색상 네이밍**: `dm.`, `tw.`, `tailwind.` 접두사 구분
+
+## 7. 완전한 예제
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+
+# 스타일 설정
+dm.style.use_preset('scientific')
+
+# 데이터 생성
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+y1_data = y1 + np.random.normal(0, 0.1, size=len(y1))
+y2_data = y2 + np.random.normal(0, 0.1, size=len(y2))
+
+# Figure 생성
+fig = plt.figure(
+    figsize=(dm.cm2in(9), dm.cm2in(7)),
+    dpi=200
+)
+
+# GridSpec 레이아웃
+gs = fig.add_gridspec(
+    nrows=1, ncols=1,
+    left=0.17, right=0.95,
+    top=0.95, bottom=0.17
+)
+ax = fig.add_subplot(gs[0, 0])
+
+# 데이터 플롯
+line1, = ax.plot(x, y1, c='dm.red5', lw=0.7)
+line2, = ax.plot(x, y2, c='dm.blue5', lw=0.7)
+ax.scatter(x, y1_data, c='dm.red2', s=0.7)
+ax.scatter(x, y2_data, c='dm.blue2', s=0.7)
+
+# 레전드용 더미 플롯
+scatter1 = ax.scatter([], [], c='dm.red5', s=10)
+scatter2 = ax.scatter([], [], c='dm.blue5', s=10)
+
+# 라벨 및 레전드
+ax.set_xlabel('X value [Hour]')
+ax.set_ylabel('Y value [kW]')
+ax.legend(
+    [scatter1, line1, scatter2, line2],
+    ['Sin data', 'Sin model', 'Cos data', 'Cos model'],
+    loc='upper right',
+    fontsize=dm.fs(-1),
+    ncol=2
+)
+
+# 틱 설정
+ax.set_xticks([0, 2, 4, 6, 8, 10])
+ax.set_yticks([-1, -0.5, 0, 0.5, 1])
+ax.set_ylim(-1.2, 1.2)
+
+# 레이아웃 최적화
+dm.simple_layout(fig)
+
+# 저장 및 표시
+dm.save_and_show(fig, 'example_figure.svg')
+```
