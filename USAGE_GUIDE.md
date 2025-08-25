@@ -3,8 +3,19 @@
 ## 1. 설치 및 기본 설정
 
 ### 설치
-```python
+
+#### pip 사용
+```bash
 pip install git+https://github.com/dartwork-repo/dartwork-mpl
+```
+
+#### uv 사용 (권장)
+```bash
+# 프로젝트에 추가
+uv add git+https://github.com/dartwork-repo/dartwork-mpl
+
+# 또는 특정 브랜치/태그 지정
+uv add git+https://github.com/dartwork-repo/dartwork-mpl@main
 ```
 
 ### 기본 임포트
@@ -13,8 +24,8 @@ import dartwork_mpl as dm
 import matplotlib.pyplot as plt
 import numpy as np
 
-# 기본 스타일 적용
-dm.use_style('dmpl_light')  # 또는 다른 스타일
+# 기본 스타일 적용 (권장)
+dm.style.use_preset('scientific')  # 논문용 기본 스타일
 ```
 
 ## 2. 주요 기능
@@ -23,22 +34,33 @@ dm.use_style('dmpl_light')  # 또는 다른 스타일
 
 #### 사용 가능한 스타일 확인
 ```python
-# 모든 스타일 목록 보기
+# 모든 개별 스타일 목록 보기
 dm.list_styles()
 # ['base', 'dmpl', 'dmpl_light', 'font-investment', 'font-presentation', 
 #  'font-scientific', 'lang-kr', 'spine-no', 'spine-yes']
+
+# 사용 가능한 프리셋 확인
+dm.style.presets_dict()
+# {'scientific': ['base', 'font-scientific'],
+#  'investment': ['base', 'font-investment'],
+#  'presentation': ['base', 'font-presentation'],
+#  'scientific-kr': ['base', 'font-scientific', 'lang-kr'],
+#  'investment-kr': ['base', 'font-investment', 'lang-kr'],
+#  'presentation-kr': ['base', 'font-presentation', 'lang-kr']}
 ```
 
 #### 스타일 적용
 ```python
-# 단일 스타일 적용
-dm.use_style('dmpl_light')
+# 프리셋 사용 (권장)
+dm.style.use_preset('scientific')  # 논문용
+dm.style.use_preset('presentation')  # 프레젠테이션용
+dm.style.use_preset('scientific-kr')  # 한국어 논문용
 
-# 복수 스타일 조합
+# 개별 스타일 조합 (고급 사용자용)
 dm.style.use(['base', 'spine-no', 'font-presentation'])
 
-# 프리셋 사용
-dm.style.use_preset('scientific-kr')
+# 레거시 API (backward compatibility)
+dm.use_style('dmpl')  # 이전 버전 호환용
 ```
 
 #### 스타일 내용 확인
@@ -48,6 +70,9 @@ style_dict = dm.load_style_dict('font-presentation')
 
 # 스타일 파일 경로 확인
 path = dm.style_path('base')
+
+# 프리셋 정의 파일 경로
+preset_path = dm.style.presets_path()
 ```
 
 ### 2.2 색상 시스템
