@@ -98,6 +98,9 @@ def load_style_dict(name):
 def use_dmpl_style():
     """
     Use the default dmpl style.
+    
+    This is a convenience function that applies the 'dmpl' style,
+    which is the default style provided by the dartwork_mpl package.
     """
     use_style('dmpl')
 
@@ -114,12 +117,21 @@ class Style:
     def presets_path():
         """
         Get the path to the presets file.
+        
+        Returns
+        -------
+        Path
+            Path to the presets.json file containing style preset 
+            definitions.
         """
         return Path(__file__).parent / 'asset/mplstyle/presets.json'
 
     def load_presets(self):
         """
-        Load presets from a JSON file.
+        Load style presets from the JSON file.
+        
+        This method reads the presets.json file and stores the preset
+        definitions in the instance's presets attribute.
         """
         with open(self.presets_path(), 'r') as f:
             self.presets = json.load(f)
@@ -142,13 +154,25 @@ class Style:
 
     def use_preset(self, preset_name):
         """
-        Use a preset.
+        Apply a preset style configuration.
+        
+        Parameters
+        ----------
+        preset_name : str
+            Name of the preset to apply. Must be a key in the loaded
+            presets dictionary.
         """
         self.use(self.presets[preset_name])
 
     def presets_dict(self):
         """
-        List all available presets.
+        Get all available presets as a dictionary.
+        
+        Returns
+        -------
+        dict
+            Dictionary mapping preset names to their style configuration
+            lists.
         """
         return {k: v for k, v in self.presets.items()}
 

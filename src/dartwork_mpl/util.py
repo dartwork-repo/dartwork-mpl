@@ -867,6 +867,20 @@ def plot_fonts(font_dir=None, ncols=3, font_size=11):
 
     # 각 패밀리 내에서 폰트 정렬 함수
     def sort_fonts(fonts):
+        """
+        Sort font files by weight and style within a font family.
+        
+        Parameters
+        ----------
+        fonts : list
+            List of font file names to sort.
+            
+        Returns
+        -------
+        list
+            Sorted list of font files, ordered by weight (Thin to Black)
+            and then by style (regular before italic).
+        """
         weight_order = {
             'Thin': 1,
             'ExtraLight': 2,

@@ -4,6 +4,20 @@ import matplotlib.colors as mcolors
 
 
 def _parse_color_data(path):
+    """
+    Parse color data from a text file.
+    
+    Parameters
+    ----------
+    path : str or Path
+        Path to the color data file. Each line should contain a 
+        color name and value separated by a colon.
+        
+    Returns
+    -------
+    dict
+        Dictionary mapping color names to color values.
+    """
     color_dict = {}
     with open(path, 'r') as f:
         lines = f.readlines()
@@ -24,6 +38,19 @@ def _parse_color_data(path):
 
 
 def _load_colors():
+    """
+    Load all color definitions from asset files and register them with 
+    matplotlib.
+    
+    This function loads colors from text files and JSON files in the 
+    asset/color directory. It adds 'dm.' and 'dartwork_mpl.' prefixes 
+    to distinguish them from matplotlib's built-in colors. 
+    
+    Tailwind CSS colors are loaded with 'tailwind.' and 'tw.' prefixes,
+    followed by the color name and weight (e.g., 'tw.blue:500', 
+    'tailwind.gray:200'). Weights range from 50 to 950 in increments 
+    of 50 or 100.
+    """
     print('Load colors...')
     color_dict = {}
 

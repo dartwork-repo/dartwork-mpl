@@ -4,6 +4,24 @@ import matplotlib.colors as mcolors
 
 
 def _parse_colormap(path, reverse=False):
+    """
+    Parse a colormap from a text file and create a matplotlib 
+    ListedColormap.
+    
+    Parameters
+    ----------
+    path : str or Path
+        Path to the colormap text file containing RGB values.
+    reverse : bool, optional
+        If True, reverse the colormap order. Default is False.
+        
+    Returns
+    -------
+    matplotlib.colors.ListedColormap
+        A ListedColormap object with the parsed colors.
+        The colormap name will be 'dm.{filename}' or 'dm.{filename}_r' 
+        if reversed.
+    """
     path = Path(path)
 
     colors = []
@@ -26,6 +44,14 @@ def _parse_colormap(path, reverse=False):
 
 
 def _load_colormaps():
+    """
+    Load all colormap files from the asset/cmap directory and register 
+    them with matplotlib.
+    
+    This function automatically discovers all .txt files in the 
+    asset/cmap directory, parses them as colormaps, and registers both 
+    normal and reversed versions with matplotlib's colormap registry.
+    """
     print('Load colormaps...')
     root_dir = Path(__file__).parent / 'asset/cmap'
     for path in root_dir.glob('*.txt'):
