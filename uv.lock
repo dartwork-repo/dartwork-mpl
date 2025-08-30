@@ -406,7 +406,7 @@ dev = [
 requires-dist = [
     { name = "colorspacious", specifier = ">=1.1.2" },
     { name = "matplotlib", specifier = ">=3.10.1" },
-    { name = "numpy", specifier = ">=2.2.5" },
+    { name = "numpy", specifier = ">=1.26" },
     { name = "palettable", specifier = ">=3.3.3" },
     { name = "scipy", specifier = ">=1.15.2" },
 ]
