@@ -4,18 +4,24 @@
 
 ### 설치
 
+#### uv 사용 (권장)
+
+[uv](https://github.com/astral-sh/uv)는 빠르고 효율적인 Python 패키지 매니저입니다.
+
+```bash
+# 프로젝트에 추가 (권장)
+uv add git+https://github.com/dartwork-repo/dartwork-mpl
+
+# 또는 직접 설치
+uv pip install git+https://github.com/dartwork-repo/dartwork-mpl
+
+# 특정 브랜치/태그 지정
+uv add git+https://github.com/dartwork-repo/dartwork-mpl@main
+```
+
 #### pip 사용
 ```bash
 pip install git+https://github.com/dartwork-repo/dartwork-mpl
-```
-
-#### uv 사용 (권장)
-```bash
-# 프로젝트에 추가
-uv add git+https://github.com/dartwork-repo/dartwork-mpl
-
-# 또는 특정 브랜치/태그 지정
-uv add git+https://github.com/dartwork-repo/dartwork-mpl@main
 ```
 
 ### 기본 임포트
