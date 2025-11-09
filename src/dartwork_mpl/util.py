@@ -1,5 +1,6 @@
 import os
 import math
+import re
 from xml.dom import minidom
 from collections import defaultdict
 from tempfile import NamedTemporaryFile
@@ -591,7 +592,8 @@ def classify_colormap(cmap):
 
 
 def plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.5):
-    """Plot a list of colormaps in a single figure.
+    """Plot a list of colormaps.
+    When group_by_type=True, creates separate figures for each category and displays them automatically.
     Original source code: https://matplotlib.org/stable/users/explain/colors/colormaps.html
 
     Parameters
@@ -601,24 +603,24 @@ def plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.
     ncols : int, optional(default=3)
         Number of columns to display colormaps.
     group_by_type : bool, optional(default=True)
-        If True, group colormaps by their type.
+        If True, group colormaps by their type and create separate figures for each category.
+        Each figure is automatically displayed.
     group_spacing : float, optional(default=0.5)
-        Spacing between groups in inches.
+        Spacing between groups in inches (unused when group_by_type=True).
     
     Returns
     -------
     fig : matplotlib.figure.Figure
-        Figure object.
+        Figure object. When group_by_type=True, returns the last category's figure.
     axs : numpy.ndarray of matplotlib.axes.Axes
-        Array of Axes objects.
+        Array of Axes objects. When group_by_type=True, returns the last category's axes.
     
     Examples
     --------
     >>> fig, axs = plot_colormaps(['viridis', 'plasma', 'inferno'], ncols=3)
     >>> plt.show()
-    >>> # Group by type
+    >>> # Group by type - creates separate figures for each category
     >>> fig, axs = plot_colormaps(ncols=3, group_by_type=True)
-    >>> plt.show()
     """
     if cmap_list is None:
         cmap_list = list(mpl.colormaps.keys())
@@ -647,81 +649,86 @@ def plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.
         # Remove empty categories
         categories = {k: v for k, v in categories.items() if v}
         
-        # Create a new figure
+        # Create gradient for colormap display
         gradient = np.linspace(0, 1, 256)
         gradient = np.vstack((gradient, gradient))
-        
-        # Calculate total number of colormaps and rows needed
-        total_rows = 0
-        category_rows = {}
-        
-        for category, cmaps in categories.items():
-            rows = (len(cmaps) + ncols - 1) // ncols
-            category_rows[category] = rows
-            total_rows += rows
-        
-        # Add extra rows for category titles and spacing
-        total_rows_with_titles = total_rows + len(categories)
-        
-        # Create figure with appropriate size
-        figw = 6.4 * ncols / 1.5  # Adjust width based on number of columns
-        # Add extra height for category titles and spacing
-        figh = 0.35 + 0.15 + (total_rows_with_titles + (total_rows_with_titles - 1) * 0.1) * 0.22 + len(categories) * group_spacing
-        
-        fig = plt.figure(figsize=(figw, figh))
-        
-        # Create a single GridSpec for the entire figure
-        gs = plt.GridSpec(total_rows_with_titles, ncols, figure=fig)
-        
-        # Start position for the first subplot
-        current_row = 0
-        axs = []
         
         # Sort categories according to the defined order
         sorted_categories = [cat for cat in category_order if cat in categories]
         
+        # Create a separate figure for each category
+        fig = None
+        axs = None
+        
         for category in sorted_categories:
             cmaps = categories[category]
             
+            # Sort colormaps: dm prefix first, then alphabetical order
+            cmaps.sort(key=lambda cmap: (0 if cmap.name.startswith('dm.') else 1, cmap.name.lower()))
+            
+            # Calculate number of rows needed for this category
+            nrows = (len(cmaps) + ncols - 1) // ncols
+            
+            # Create figure with appropriate size for this category
+            figw = 6.4 * ncols / 1.5  # Adjust width based on number of columns
+            # Add extra height for category title
+            figh = 0.35 + 0.15 + (nrows + 1 + (nrows + 1 - 1) * 0.1) * 0.44
+            
+            # Create a new figure for this category
+            fig = plt.figure(figsize=(figw, figh))
+            
+            # Create GridSpec with one extra row for the title
+            gs = plt.GridSpec(nrows + 1, ncols, figure=fig, height_ratios=[0.3] + [1] * nrows)
+            
+            axs = []
+            
             # Add category title
-            title_ax = fig.add_subplot(gs[current_row, :])
+            title_ax = fig.add_subplot(gs[0, :])
             title_ax.text(0.5, 0.5, category, fontsize=14, fontweight='bold',
                          ha='center', va='center', transform=title_ax.transAxes)
             title_ax.set_axis_off()
             axs.append(title_ax)
-            current_row += 1
             
-            # Calculate rows needed for this category
-            rows_needed = category_rows[category]
-            
-            # Add colormaps for this category
+            # Add colormaps for this category (column-major order: top to bottom)
             for i, cmap in enumerate(cmaps):
-                row = i // ncols
-                col = i % ncols
-                ax = fig.add_subplot(gs[current_row + row, col])
+                row = i % nrows
+                col = i // nrows
+                ax = fig.add_subplot(gs[row + 1, col])
                 ax.imshow(gradient, aspect='auto', cmap=cmap)
                 ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
                        transform=ax.transAxes)
                 ax.set_axis_off()
                 axs.append(ax)
             
-            # Update current row
-            current_row += rows_needed
+            # Hide unused subplots
+            total_subplots = (nrows + 1) * ncols
+            for i in range(len(axs), total_subplots):
+                ax = fig.add_subplot(gs[i // ncols, i % ncols])
+                ax.set_visible(False)
+            
+            plt.tight_layout()
+            
+            # Automatically display each category figure
+            plt.show()
         
         # Convert axs to numpy array for consistency with non-grouped version
-        axs = np.array(axs)
+        if axs is not None:
+            axs = np.array(axs)
         
     else:
         # Original non-grouped implementation
         gradient = np.linspace(0, 1, 256)
         gradient = np.vstack((gradient, gradient))
 
+        # Sort colormaps: dm prefix first, then alphabetical order
+        cmap_list.sort(key=lambda cmap: (0 if cmap.name.startswith('dm.') else 1, cmap.name.lower()))
+
         # Calculate number of rows based on number of colormaps and columns
         nrows = (len(cmap_list) + ncols - 1) // ncols
         
         # Create figure and adjust figure dimensions based on layout
         figw = 6.4 * ncols / 1.5  # Adjust width based on number of columns
-        figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.22
+        figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.44
         fig, axs = plt.subplots(nrows=nrows, ncols=ncols, figsize=(figw, figh))
         fig.subplots_adjust(top=1 - 0.35 / figh, bottom=0.15 / figh,
                             left=0.2 / ncols, right=0.99)
@@ -733,12 +740,18 @@ def plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.
         # Flatten axs array for easier iteration
         axs = axs.flatten()
 
+        # Map colormaps to subplots in column-major order (top to bottom)
         for i, cmap in enumerate(cmap_list):
             if i < len(axs):
-                ax = axs[i]
-                ax.imshow(gradient, aspect='auto', cmap=cmap)
-                ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
-                        transform=ax.transAxes)
+                # Calculate position in column-major order
+                row = i % nrows
+                col = i // nrows
+                ax_idx = row * ncols + col
+                if ax_idx < len(axs):
+                    ax = axs[ax_idx]
+                    ax.imshow(gradient, aspect='auto', cmap=cmap)
+                    ax.text(-0.01, 0.5, cmap.name, va='center', ha='right', fontsize=10,
+                            transform=ax.transAxes)
 
         # Turn off all ticks & spines
         for ax in axs:
@@ -747,13 +760,614 @@ def plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.
         # Hide unused subplots
         for i in range(len(cmap_list), len(axs)):
             axs[i].set_visible(False)
-
-    plt.tight_layout()
+        
+        plt.tight_layout()
+    
     return fig, axs
 
 
-def plot_colors(colors=None, *, ncols=4, sort_colors=True):
+def _load_color_library_names():
+    """Load color names from xkcd.txt and opencolor.txt files.
+    
+    Returns
+    -------
+    xkcd_names : set
+        Set of xkcd color names (without prefix).
+    opencolor_names : set
+        Set of opencolor color names (without prefix).
+    """
+    # Get the asset/color directory path
+    asset_dir = Path(__file__).parent / 'asset' / 'color'
+    
+    xkcd_names = set()
+    opencolor_names = set()
+    
+    # Load xkcd colors
+    xkcd_file = asset_dir / 'xkcd.txt'
+    if xkcd_file.exists():
+        with open(xkcd_file, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    if ':' in line:
+                        name = line.split(':')[0].strip()
+                        xkcd_names.add(name)
+    
+    # Load opencolor colors
+    opencolor_file = asset_dir / 'opencolor.txt'
+    if opencolor_file.exists():
+        with open(opencolor_file, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    if ':' in line:
+                        name = line.split(':')[0].strip()
+                        opencolor_names.add(name)
+    
+    return xkcd_names, opencolor_names
+
+
+# Cache the color library names
+_XKCD_NAMES, _OPENCOLOR_NAMES = _load_color_library_names()
+
+
+def _classify_color_library(color_name):
+    """Classify a color name into its library category.
+    
+    Parameters
+    ----------
+    color_name : str
+        Color name to classify.
+    
+    Returns
+    -------
+    str
+        Library category: 'xkcd', 'opencolor', 'tw', 'other'
+    """
+    # Check for xkcd: prefix (matplotlib's built-in xkcd colors)
+    if color_name.startswith('xkcd:'):
+        return 'xkcd'
+    
+    # Check for tw. prefix
+    if color_name.startswith('tw.'):
+        return 'tw'
+    
+    # Check for dm. prefix
+    if color_name.startswith('dm.'):
+        name_without_prefix = color_name[3:]  # Remove 'dm.' prefix
+        
+        # Check if it's an opencolor color (pattern: {color}{number})
+        # Match pattern like gray0, red1, blue2, etc.
+        if re.match(r'^[a-z]+\d+$', name_without_prefix):
+            if name_without_prefix in _OPENCOLOR_NAMES:
+                return 'opencolor'
+        
+        # Check if it's an xkcd color
+        if name_without_prefix in _XKCD_NAMES:
+            return 'xkcd'
+    
+    return 'other'
+
+
+def _detect_color_weight_system(color_names):
+    """Detect the weight system used in a group of color names.
+    
+    Parameters
+    ----------
+    color_names : list
+        List of color names (may contain prefix like 'dm.', 'tw.', etc.)
+    
+    Returns
+    -------
+    int or None
+        The minimum weight value (lightest color), or None if no numbers found.
+    """
+    weights = []
+    for color_name in color_names:
+        weight = _extract_number_from_color_name(color_name)
+        if weight is not None:
+            weights.append(weight)
+    
+    if weights:
+        return min(weights)
+    return None
+
+
+def _extract_base_color_name(color_name):
+    """Extract base color name from color name.
+    
+    Parameters
+    ----------
+    color_name : str
+        Color name (may contain prefix like 'dm.', 'tw.', etc.)
+    
+    Returns
+    -------
+    str
+        Base color name (e.g., 'neutral', 'red', 'dark blue')
+    """
+    # Remove prefixes
+    name = color_name
+    for prefix in ['dm.', 'tw.', 'xkcd:']:
+        if name.startswith(prefix):
+            name = name[len(prefix):]
+            break
+    
+    # Pattern 1: tailwind format (tw.blue:500) -> 'blue'
+    match = re.search(r'^([^:]+):', name)
+    if match:
+        return match.group(1)
+    
+    # Pattern 2: opencolor format (dm.red5) -> 'red'
+    match = re.search(r'^([a-z]+)\d+$', name)
+    if match:
+        return match.group(1)
+    
+    # Pattern 3: xkcd or other (xkcd:dark blue) -> 'dark blue' (keep full name)
+    return name
+
+
+def _extract_number_from_color_name(color_name):
+    """Extract number from color name if present.
+    
+    Parameters
+    ----------
+    color_name : str
+        Color name (may contain prefix like 'dm.', 'tw.', etc.)
+    
+    Returns
+    -------
+    int or None
+        Extracted number, or None if no number found.
+    """
+    # Remove prefixes
+    name = color_name
+    for prefix in ['dm.', 'tw.', 'xkcd:']:
+        if name.startswith(prefix):
+            name = name[len(prefix):]
+            break
+    
+    # Try to extract number from patterns like:
+    # - gray0, red1 (opencolor)
+    # - blue:500, gray:200 (tailwind)
+    # - red5, blue2 (opencolor)
+    
+    # Pattern 1: tailwind format (tw.blue:500)
+    match = re.search(r':(\d+)$', name)
+    if match:
+        return int(match.group(1))
+    
+    # Pattern 2: opencolor format (gray0, red1)
+    match = re.search(r'(\d+)$', name)
+    if match:
+        return int(match.group(1))
+    
+    return None
+
+
+def _remove_duplicate_colors(colors):
+    """Remove duplicate colors based on RGB values.
+    
+    Parameters
+    ----------
+    colors : dict
+        Dictionary mapping color names to color specifications.
+    
+    Returns
+    -------
+    dict
+        Dictionary with duplicate colors removed (keeps first occurrence).
+    """
+    seen_rgb = {}
+    result = {}
+    
+    for color_name, color_spec in colors.items():
+        try:
+            rgb = mcolors.to_rgb(color_spec)
+            # Convert RGB tuple to string for comparison
+            rgb_key = tuple(round(c, 6) for c in rgb)  # Round to avoid floating point issues
+            
+            if rgb_key not in seen_rgb:
+                seen_rgb[rgb_key] = color_name
+                result[color_name] = color_spec
+        except (ValueError, TypeError):
+            # If color conversion fails, keep it
+            result[color_name] = color_spec
+    
+    return result
+
+
+def _separate_colors_by_library(colors):
+    """Separate colors by library.
+    
+    Parameters
+    ----------
+    colors : dict
+        Dictionary mapping color names to color specifications.
+    
+    Returns
+    -------
+    dict
+        Dictionary mapping library names to color dictionaries.
+    """
+    library_groups = {
+        'xkcd': {},
+        'opencolor': {},
+        'tw': {},
+        'other': {}
+    }
+    
+    for color_name, color_spec in colors.items():
+        library = _classify_color_library(color_name)
+        library_groups[library][color_name] = color_spec
+    
+    # Remove empty libraries
+    return {lib: colors_dict for lib, colors_dict in library_groups.items() 
+            if colors_dict}
+
+
+def _sort_colors_by_library(colors):
+    """Sort colors by library, then by base color name and number/brightness.
+    
+    Parameters
+    ----------
+    colors : dict
+        Dictionary mapping color names to color specifications.
+    
+    Returns
+    -------
+    list
+        Sorted list of color names with library titles.
+    """
+    # Group colors by library
+    library_groups = {
+        'xkcd': [],
+        'opencolor': [],
+        'tw': [],
+        'other': []
+    }
+    
+    for color_name in colors:
+        library = _classify_color_library(color_name)
+        library_groups[library].append(color_name)
+    
+    # Sort each library group
+    sorted_names = []
+    
+    # Library order: xkcd -> opencolor -> tw -> other
+    library_labels = {
+        'xkcd': 'XKCD Colors',
+        'opencolor': 'OpenColor Colors',
+        'tw': 'Tailwind Colors',
+        'other': 'Other Colors'
+    }
+    
+    for library in ['xkcd', 'opencolor', 'tw', 'other']:
+        color_list = library_groups[library]
+        
+        if not color_list:
+            continue
+        
+        # Add library title
+        sorted_names.append(('__TITLE__', library_labels[library]))
+        
+        # Group by base color name (e.g., 'neutral', 'red', 'blue')
+        base_color_groups = defaultdict(list)
+        for color_name in color_list:
+            base_color = _extract_base_color_name(color_name)
+            try:
+                rgb = mcolors.to_rgb(colors[color_name])
+                hsv = mcolors.rgb_to_hsv(rgb)
+                base_color_groups[base_color].append((color_name, hsv))
+            except (ValueError, TypeError):
+                # If color conversion fails, put in a default group
+                base_color_groups[base_color].append((color_name, (0, 0, 0)))
+        
+        # Sort base color groups alphabetically
+        sorted_base_colors = sorted(base_color_groups.items())
+        
+        # Sort within each base color group
+        for base_color, color_items in sorted_base_colors:
+            # Sort by: number (if present), otherwise by HSV value (brightness)
+            def sort_key(x):
+                color_name, hsv = x
+                number = _extract_number_from_color_name(color_name)
+                if number is not None:
+                    # If number exists, sort by number only (small -> large)
+                    return (0, number)
+                else:
+                    # If no number, sort by HSV value (bright -> dark)
+                    return (1, -hsv[2])  # Negative value for descending order
+            
+            color_items.sort(key=sort_key)
+            
+            sorted_names.extend([(name, colors[name]) for name, _ in color_items])
+    
+    return sorted_names
+
+
+def _group_colors_by_hue(colors):
+    """Group colors by HSV hue ranges for better visual organization.
+    
+    Parameters
+    ----------
+    colors : dict
+        Dictionary mapping color names to color specifications.
+    
+    Returns
+    -------
+    list of dict
+        List of color groups, each containing 'base_color', 'colors', and 'min_weight'.
+        Groups are sorted by average hue.
+    """
+    # Define hue ranges for color groups (in degrees, 0-360)
+    # Hue wraps around, so we handle reds specially (0-30 and 330-360)
+    hue_ranges = [
+        ('red', [(0, 30), (330, 360)]),
+        ('orange', [(30, 50)]),
+        ('yellow', [(50, 90)]),
+        ('green', [(90, 150)]),
+        ('cyan', [(150, 180)]),
+        ('blue', [(180, 240)]),
+        ('purple', [(240, 270)]),
+        ('pink', [(270, 330)]),
+    ]
+    
+    # Also handle grayscale colors (low saturation)
+    color_items = []
+    for color_name, color_spec in colors.items():
+        try:
+            rgb = mcolors.to_rgb(color_spec)
+            hsv = mcolors.rgb_to_hsv(rgb)
+            color_items.append((color_name, color_spec, hsv))
+        except (ValueError, TypeError):
+            color_items.append((color_name, color_spec, (0, 0, 0)))
+    
+    # Separate grayscale colors (saturation < 0.1)
+    grayscale = []
+    colored = []
+    for name, spec, hsv in color_items:
+        if hsv[1] < 0.1:  # Low saturation = grayscale
+            grayscale.append((name, spec, hsv))
+        else:
+            colored.append((name, spec, hsv))
+    
+    # Group colored items by hue ranges
+    hue_groups = defaultdict(list)
+    for name, spec, hsv in colored:
+        hue = hsv[0] * 360  # Convert to degrees
+        assigned = False
+        for group_name, ranges in hue_ranges:
+            for min_hue, max_hue in ranges:
+                # Handle red group which spans 0-30 and 330-360
+                if group_name == 'red':
+                    if (0 <= hue < 30) or (330 <= hue < 360):
+                        hue_groups[group_name].append((name, spec, hsv))
+                        assigned = True
+                        break
+                elif min_hue <= hue < max_hue:
+                    hue_groups[group_name].append((name, spec, hsv))
+                    assigned = True
+                    break
+            if assigned:
+                break
+        if not assigned:
+            # Fallback: assign to nearest group
+            hue_groups['other'].append((name, spec, hsv))
+    
+    # Add grayscale group
+    if grayscale:
+        hue_groups['grayscale'] = grayscale
+    
+    # Sort groups by average hue, and colors within groups by brightness/value
+    color_groups = []
+    
+    for group_name, items in hue_groups.items():
+        if not items:
+            continue
+        
+        # Calculate average hue for group (for sorting)
+        if group_name == 'grayscale':
+            avg_hue = -1  # Grayscale goes first (negative to sort before others)
+        elif group_name == 'other':
+            avg_hue = 1000  # Other goes last
+        else:
+            hues = [hsv[0] * 360 for _, _, hsv in items]
+            # Normalize hues for red group (handle wrap-around)
+            if group_name == 'red':
+                normalized_hues = [h if h < 180 else h - 360 for h in hues]
+                avg_hue = sum(normalized_hues) / len(normalized_hues)
+            else:
+                avg_hue = sum(hues) / len(hues)
+        
+        # Sort within group by brightness/value (light to dark)
+        items.sort(key=lambda x: -x[2][2])  # Sort by value (brightness), descending
+        
+        color_groups.append({
+            'base_color': group_name,
+            'colors': [(name, spec) for name, spec, _ in items],
+            'min_weight': None,  # Not applicable for hue-based grouping
+            'avg_hue': avg_hue
+        })
+    
+    # Sort groups by average hue (grayscale first, then by hue order)
+    color_groups.sort(key=lambda g: g['avg_hue'])
+    
+    return color_groups
+
+
+def _plot_single_library(colors, library_name, ncols=6, sort_colors=True):
+    """Plot colors for a single library.
+    
+    Parameters
+    ----------
+    colors : dict
+        Dictionary mapping color names to color specifications.
+    library_name : str
+        Name of the library (for title).
+    ncols : int, optional
+        Number of columns in the color grid, default is 6.
+    sort_colors : bool, optional
+        If True, sorts colors by base color name and number/brightness.
+    
+    Returns
+    -------
+    fig : matplotlib.figure.Figure
+        The figure containing the color grid.
+    """
+    if not colors:
+        return None
+    
+    cell_width = 212
+    cell_height = 22
+    swatch_width = 48
+    margin = 12
+    
+    # Sort colors within library
+    if sort_colors:
+        # For xkcd colors, use hue-based grouping for better visual organization
+        # For other libraries (opencolor, tailwind), use name-based grouping
+        if library_name == 'xkcd':
+            color_groups = _group_colors_by_hue(colors)
+        else:
+            # Group by base color name (for opencolor, tailwind, etc.)
+            base_color_groups = defaultdict(list)
+            for color_name in colors:
+                base_color = _extract_base_color_name(color_name)
+                try:
+                    rgb = mcolors.to_rgb(colors[color_name])
+                    hsv = mcolors.rgb_to_hsv(rgb)
+                    base_color_groups[base_color].append((color_name, hsv))
+                except (ValueError, TypeError):
+                    base_color_groups[base_color].append((color_name, (0, 0, 0)))
+            
+            # Sort base color groups alphabetically
+            sorted_base_colors = sorted(base_color_groups.items())
+            
+            # Sort within each base color group and create groups with lightest color info
+            color_groups = []
+            for base_color, color_items in sorted_base_colors:
+                def sort_key(x):
+                    color_name, hsv = x
+                    number = _extract_number_from_color_name(color_name)
+                    if number is not None:
+                        return (0, number)
+                    else:
+                        return (1, -hsv[2])
+                
+                color_items.sort(key=sort_key)
+                sorted_names = [name for name, _ in color_items]
+                
+                # Detect weight system for this group
+                min_weight = _detect_color_weight_system(sorted_names)
+                
+                color_groups.append({
+                    'base_color': base_color,
+                    'colors': [(name, colors[name]) for name in sorted_names],
+                    'min_weight': min_weight
+                })
+    else:
+        # If not sorting, treat all colors as one group
+        color_groups = [{
+            'base_color': 'all',
+            'colors': [(name, colors[name]) for name in colors],
+            'min_weight': None
+        }]
+    
+    # Add space for title at the top
+    title_height = cell_height
+    
+    # Place colors group-by-group, ensuring each column starts with a group's lightest color
+    # and ends with its darkest color. Each group must be placed completely in one column.
+    color_grid = []  # List of (col, row, name, color_spec) tuples
+    column_heights = [0] * ncols  # Track current height of each column
+    
+    for group in color_groups:
+        group_colors = group['colors']
+        group_size = len(group_colors)
+        
+        # Find the column with the least height to place this entire group
+        # This ensures groups are not split across columns and each column
+        # starts with a group's lightest color (weight 0) and ends with its darkest color (weight 9)
+        min_height_col = min(range(ncols), key=lambda c: column_heights[c])
+        target_col = min_height_col
+        
+        # Place all colors from this group in the target column
+        # The first color (lightest, weight 0) will be at the start of the column
+        # The last color (darkest, weight 9) will be at the end of the column
+        for color_idx, (name, color_spec) in enumerate(group_colors):
+            row = column_heights[target_col]
+            color_grid.append((target_col, row, name, color_spec))
+            column_heights[target_col] += 1
+    
+    # Calculate actual number of rows needed based on column heights
+    nrows = max(column_heights) if column_heights else 0
+    
+    width = cell_width * ncols + 2 * margin
+    height = cell_height * nrows + 2 * margin + title_height
+    dpi = 72
+    
+    fig, ax = plt.subplots(figsize=(width / dpi, height / dpi), dpi=dpi)
+    fig.subplots_adjust(margin/width, margin/height,
+                        (width-margin)/width, (height-margin)/height)
+    ax.set_xlim(0, cell_width * ncols)
+    ax.set_ylim(-title_height, cell_height * nrows)
+    ax.invert_yaxis()  # Ensure smaller y-values render toward the top edge
+    ax.yaxis.set_visible(False)
+    ax.xaxis.set_visible(False)
+    ax.set_axis_off()
+    
+    # Add library title at the top (no background, like plot_colormaps)
+    library_labels = {
+        'xkcd': 'XKCD Colors',
+        'opencolor': 'OpenColor Colors',
+        'tw': 'Tailwind Colors',
+        'other': 'Other Colors'
+    }
+    title_text = library_labels.get(library_name, library_name)
+    title_y = -title_height / 2
+    ax.text(
+        cell_width * ncols / 2,
+        title_y,
+        title_text,
+        fontsize=14,
+        fontweight='bold',
+        horizontalalignment='center',
+        verticalalignment='center'
+    )
+    
+    # Draw the grid using the group-aware placement
+    for col, row, name, color_spec in color_grid:
+        y = (row + 0.5) * cell_height
+        swatch_start_x = cell_width * col
+        text_pos_x = cell_width * col + swatch_width + 7
+        
+        ax.text(
+            text_pos_x,
+            y,
+            name,
+            fontsize=14,
+            horizontalalignment='left',
+            verticalalignment='center'
+        )
+        
+        ax.add_patch(
+            Rectangle(
+                xy=(swatch_start_x, y - 9),
+                width=swatch_width,
+                height=18,
+                facecolor=color_spec,
+                edgecolor='0.7'
+            )
+        )
+    
+    return fig
+
+
+def plot_colors(colors=None, *, ncols=6, sort_colors=True):
     """Plot a grid of named colors with their names.
+    
+    Creates separate plots for each color library (xkcd, opencolor, tw/tailwind, other).
     
     Parameters
     ----------
@@ -762,77 +1376,66 @@ def plot_colors(colors=None, *, ncols=4, sort_colors=True):
         If None, uses all named colors from matplotlib except those
         starting with 'dartwork_mpl.'.
     ncols : int, optional
-        Number of columns in the color grid, default is 4.
+        Number of columns in the color grid, default is 6.
     sort_colors : bool, optional
-        If True, sorts colors by hue, saturation, and value.
+        If True, sorts colors by base color name (e.g., 'neutral', 'red', 'blue'),
+        and finally by number (small -> large) or HSV value (bright -> dark).
+        Duplicate colors (same RGB values) are automatically removed.
         If False, uses the order from the input dictionary.
     
     Returns
     -------
-    fig : matplotlib.figure.Figure
-        The figure containing the color grid.
+    list of matplotlib.figure.Figure
+        List of figures, one for each color library.
         
     Examples
     --------
-    >>> fig = plot_colors()
+    >>> figs = plot_colors()
     >>> plt.show()
     >>> # Custom colors
     >>> custom_colors = {'red': '#FF0000', 'green': '#00FF00', 'blue': '#0000FF'}
-    >>> fig = plot_colors(custom_colors, ncols=3)
+    >>> figs = plot_colors(custom_colors, ncols=3)
     >>> plt.show()
     """
+    # # Ensure ncols is 6 if not explicitly provided
+    # # This is a safeguard in case the default value isn't being used due to caching
+    # if ncols == 4:  # If somehow the old default is being used
+    #     ncols = 6
+    
     if colors is None:
         colors = {
             k: v for k, v in mcolors.get_named_colors_mapping().items()
             if not k.startswith('dartwork_mpl.')
         }
 
-    cell_width = 212
-    cell_height = 22
-    swatch_width = 48
-    margin = 12
-
-    # Sort colors by hue, saturation, value and name.
-    if sort_colors is True:
-        names = sorted(
-            colors, key=lambda c: tuple(mcolors.rgb_to_hsv(mcolors.to_rgb(c))))
-    else:
-        names = list(colors)
-
-    n = len(names)
-    nrows = math.ceil(n / ncols)
-
-    width = cell_width * ncols + 2 * margin
-    height = cell_height * nrows + 2 * margin
-    dpi = 72
-
-    fig, ax = plt.subplots(figsize=(width / dpi, height / dpi), dpi=dpi)
-    fig.subplots_adjust(margin/width, margin/height,
-                        (width-margin)/width, (height-margin)/height)
-    ax.set_xlim(0, cell_width * ncols)
-    ax.set_ylim(cell_height * (nrows-0.5), -cell_height/2.)
-    ax.yaxis.set_visible(False)
-    ax.xaxis.set_visible(False)
-    ax.set_axis_off()
-
-    for i, name in enumerate(names):
-        row = i % nrows
-        col = i // nrows
-        y = row * cell_height
-
-        swatch_start_x = cell_width * col
-        text_pos_x = cell_width * col + swatch_width + 7
-
-        ax.text(text_pos_x, y, name, fontsize=14,
-                horizontalalignment='left',
-                verticalalignment='center')
-
-        ax.add_patch(
-            Rectangle(xy=(swatch_start_x, y-9), width=swatch_width,
-                      height=18, facecolor=colors[name], edgecolor='0.7')
-        )
-
-    return fig
+    # Separate colors by library first, then remove duplicates within each library
+    # This preserves colors from different libraries even if they have the same RGB values
+    library_colors = _separate_colors_by_library(colors)
+    
+    # Remove duplicates within each library separately
+    # Note: For tailwind colors, we don't remove duplicates because different color names
+    # (e.g., zinc:50 and neutral:50) may have the same RGB values but serve different purposes
+    for library_name in library_colors:
+        if library_name != 'tw':  # Skip duplicate removal for tailwind colors
+            library_colors[library_name] = _remove_duplicate_colors(library_colors[library_name])
+    
+    # Library order: opencolor -> tw -> other -> xkcd (xkcd last)
+    library_order = ['opencolor', 'tw', 'other', 'xkcd']
+    
+    # Create a separate plot for each library
+    figures = []
+    for library_name in library_order:
+        if library_name in library_colors:
+            fig = _plot_single_library(
+                library_colors[library_name], 
+                library_name, 
+                ncols=ncols, 
+                sort_colors=sort_colors
+            )
+            if fig is not None:
+                figures.append(fig)
+    
+    return figures
 
 
 def plot_fonts(font_dir=None, ncols=3, font_size=11):
