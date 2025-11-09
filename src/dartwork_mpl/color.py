@@ -46,9 +46,9 @@ def _load_colors():
     asset/color directory. It adds 'dm.' and 'dartwork_mpl.' prefixes 
     to distinguish them from matplotlib's built-in colors. 
     
-    Tailwind CSS colors are loaded with 'tailwind.' and 'tw.' prefixes,
+    Tailwind CSS colors are loaded with 'tw.' prefix,
     followed by the color name and weight (e.g., 'tw.blue:500', 
-    'tailwind.gray:200'). Weights range from 50 to 950 in increments 
+    'tw.gray:200'). Weights range from 50 to 950 in increments 
     of 50 or 100.
     """
     print('Load colors...')
@@ -69,7 +69,7 @@ def _load_colors():
     for k, v in tailwind_colors.items():
         k = k.lower()
         for weight, hex in v:
-            _color_dict[f'tailwind.{k}:{weight}'] = f'#{hex}'
+            # Only use 'tw.' prefix, skip 'tailwind.' prefix since they are identical
             _color_dict[f'tw.{k}:{weight}'] = f'#{hex}'
 
     # Add color dict to matplotlib internal color mapping.
