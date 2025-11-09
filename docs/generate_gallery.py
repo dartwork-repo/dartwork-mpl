@@ -116,6 +116,9 @@ def save_colormaps_by_category():
         plt.close(fig)
         print(f"  Saved: {filename}")
 
+# Call the function to generate colormap images
+save_colormaps_by_category()
+
 print("Generating color images...")
 
 # Generate color images
