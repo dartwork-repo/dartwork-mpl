@@ -251,6 +251,74 @@ ax.fill_between(x, y1, y2, color='tailwind.gray:200')
 
 ---
 
+### Using Material Design Colors
+
+Full Material Design color palette with weights from 50 to 900.
+
+**Usage:**
+```python
+# Format: md.{color}:{weight}
+ax.plot(x, y, color='md.blue:500')
+ax.fill_between(x, y1, y2, color='md.red:700')
+```
+
+**Available colors:**
+- Colors: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue grey
+- Weights: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+---
+
+### Using Ant Design Colors
+
+Full Ant Design color palette with weights from 1 to 10.
+
+**Usage:**
+```python
+# Format: ant.{color}:{weight}
+ax.plot(x, y, color='ant.blue:5')
+ax.fill_between(x, y1, y2, color='ant.red:6')
+```
+
+**Available colors:**
+- Colors: red, volcano, orange, gold, yellow, lime, green, cyan, blue, geek blue, purple, magenta, grey
+- Weights: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+---
+
+### Using Chakra UI Colors
+
+Full Chakra UI color palette with weights from 50 to 900.
+
+**Usage:**
+```python
+# Format: chakra.{color}:{weight}
+ax.plot(x, y, color='chakra.blue:500')
+ax.fill_between(x, y1, y2, color='chakra.red:600')
+```
+
+**Available colors:**
+- Colors: red, orange, yellow, green, teal, blue, cyan, purple, pink, gray
+- Weights: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+---
+
+### Using Primer Colors
+
+Full Primer (GitHub Design System) color palette with weights from 0 to 9.
+
+**Usage:**
+```python
+# Format: primer.{color}:{weight}
+ax.plot(x, y, color='primer.blue:5')
+ax.fill_between(x, y1, y2, color='primer.red:6')
+```
+
+**Available colors:**
+- Colors: blue, green, yellow, orange, red, purple, pink, coral, gray
+- Weights: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+---
+
 ### `dm.mix_colors(color1, color2, alpha=0.5)`
 
 Mix two colors with specified weight.
@@ -716,6 +784,50 @@ Colors follow the pattern `tw.{color}:{weight}`:
 - `tw.blue:500` - Medium blue
 - `tw.gray:200` - Light gray
 - `tw.red:700` - Dark red
+
+### Material Design Color Naming
+
+Colors follow the pattern `md.{color}:{weight}`:
+- Common colors: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue grey
+- Weights: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+**Examples:**
+- `md.blue:500` - Medium blue
+- `md.red:700` - Dark red
+- `md.grey:200` - Light grey
+
+### Ant Design Color Naming
+
+Colors follow the pattern `ant.{color}:{weight}`:
+- Common colors: red, volcano, orange, gold, yellow, lime, green, cyan, blue, geek blue, purple, magenta, grey
+- Weights: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+**Examples:**
+- `ant.blue:5` - Medium blue
+- `ant.red:6` - Medium-dark red
+- `ant.grey:3` - Light grey
+
+### Chakra UI Color Naming
+
+Colors follow the pattern `chakra.{color}:{weight}`:
+- Common colors: red, orange, yellow, green, teal, blue, cyan, purple, pink, gray
+- Weights: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+**Examples:**
+- `chakra.blue:500` - Medium blue
+- `chakra.red:600` - Medium-dark red
+- `chakra.gray:200` - Light gray
+
+### Primer Color Naming
+
+Colors follow the pattern `primer.{color}:{weight}`:
+- Common colors: blue, green, yellow, orange, red, purple, pink, coral, gray
+- Weights: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+**Examples:**
+- `primer.blue:5` - Medium blue
+- `primer.red:6` - Medium-dark red
+- `primer.gray:2` - Light gray
 
 ---
 
