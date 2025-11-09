@@ -889,6 +889,30 @@ def _detect_color_weight_system(color_names):
     return None
 
 
+def _detect_weight_range(color_names):
+    """Detect the weight range used in a group of color names.
+    
+    Parameters
+    ----------
+    color_names : list
+        List of color names (may contain prefix like 'dm.', 'tw.', etc.)
+    
+    Returns
+    -------
+    tuple or None
+        Tuple of (min_weight, max_weight), or None if no weights found.
+    """
+    weights = []
+    for color_name in color_names:
+        weight = _extract_number_from_color_name(color_name)
+        if weight is not None:
+            weights.append(weight)
+    
+    if weights:
+        return (min(weights), max(weights))
+    return None
+
+
 def _extract_base_color_name(color_name):
     """Extract base color name from color name.
     
@@ -904,12 +928,12 @@ def _extract_base_color_name(color_name):
     """
     # Remove prefixes
     name = color_name
-    for prefix in ['dm.', 'tw.', 'xkcd:']:
+    for prefix in ['dm.', 'tw.', 'md.', 'ant.', 'chakra.', 'primer.', 'xkcd:']:
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
     
-    # Pattern 1: tailwind format (tw.blue:500) -> 'blue'
+    # Pattern 1: format with colon (tw.blue:500, md.blue:500, ant.blue:5, etc.) -> 'blue'
     match = re.search(r'^([^:]+):', name)
     if match:
         return match.group(1)
@@ -938,17 +962,18 @@ def _extract_number_from_color_name(color_name):
     """
     # Remove prefixes
     name = color_name
-    for prefix in ['dm.', 'tw.', 'xkcd:']:
+    for prefix in ['dm.', 'tw.', 'md.', 'ant.', 'chakra.', 'primer.', 'xkcd:']:
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
     
     # Try to extract number from patterns like:
     # - gray0, red1 (opencolor)
-    # - blue:500, gray:200 (tailwind)
+    # - blue:500, gray:200 (tailwind, material design, chakra)
+    # - blue:5, red:6 (ant design, primer)
     # - red5, blue2 (opencolor)
     
-    # Pattern 1: tailwind format (tw.blue:500)
+    # Pattern 1: format with colon (tw.blue:500, md.blue:500, ant.blue:5, etc.)
     match = re.search(r':(\d+)$', name)
     if match:
         return int(match.group(1))
@@ -1288,37 +1313,66 @@ def _plot_single_library(colors, library_name, ncols=6, sort_colors=True):
                 
                 # Detect weight system for this group
                 min_weight = _detect_color_weight_system(sorted_names)
+                weight_range = _detect_weight_range(sorted_names)
                 
                 color_groups.append({
                     'base_color': base_color,
                     'colors': [(name, colors[name]) for name in sorted_names],
-                    'min_weight': min_weight
+                    'min_weight': min_weight,
+                    'weight_range': weight_range
                 })
     else:
         # If not sorting, treat all colors as one group
         color_groups = [{
             'base_color': 'all',
             'colors': [(name, colors[name]) for name in colors],
-            'min_weight': None
+            'min_weight': None,
+            'weight_range': None
         }]
     
-    # Add space for title at the top
+    # Add space for title at the top with margin below title
     title_height = cell_height
+    title_margin = 0.5  # Margin below title (in cell_height units)
     
     # Place colors group-by-group, ensuring each column starts with a group's lightest color
     # and ends with its darkest color. Each group must be placed completely in one column.
+    # Add spacing between groups with different weight ranges or different base colors.
     color_grid = []  # List of (col, row, name, color_spec) tuples
     column_heights = [0] * ncols  # Track current height of each column
+    prev_weight_range = None  # Track previous group's weight range
+    prev_base_color_per_col = [None] * ncols  # Track previous base_color for each column
     
-    for group in color_groups:
+    for group_idx, group in enumerate(color_groups):
         group_colors = group['colors']
         group_size = len(group_colors)
+        current_weight_range = group.get('weight_range')
+        current_base_color = group.get('base_color')
         
         # Find the column with the least height to place this entire group
         # This ensures groups are not split across columns and each column
         # starts with a group's lightest color (weight 0) and ends with its darkest color (weight 9)
         min_height_col = min(range(ncols), key=lambda c: column_heights[c])
         target_col = min_height_col
+        
+        # Add spacing row when:
+        # 1. Transitioning between different weight ranges (in any column)
+        # 2. Transitioning between different base colors (in the target column)
+        should_add_spacing = False
+        
+        if prev_weight_range is not None and current_weight_range is not None:
+            if prev_weight_range != current_weight_range:
+                # Different weight ranges - add spacing in all columns
+                should_add_spacing = True
+        
+        if prev_base_color_per_col[target_col] is not None:
+            if prev_base_color_per_col[target_col] != current_base_color:
+                # Different base color in the same column - add spacing in target column
+                column_heights[target_col] += 1
+        
+        if should_add_spacing:
+            # Add empty row for spacing in all columns
+            for col in range(ncols):
+                column_heights[col] += 1
         
         # Place all colors from this group in the target column
         # The first color (lightest, weight 0) will be at the start of the column
@@ -1327,19 +1381,30 @@ def _plot_single_library(colors, library_name, ncols=6, sort_colors=True):
             row = column_heights[target_col]
             color_grid.append((target_col, row, name, color_spec))
             column_heights[target_col] += 1
+        
+        # Update previous values for next iteration
+        prev_weight_range = current_weight_range
+        prev_base_color_per_col[target_col] = current_base_color
     
     # Calculate actual number of rows needed based on column heights
     nrows = max(column_heights) if column_heights else 0
     
     width = cell_width * ncols + 2 * margin
-    height = cell_height * nrows + 2 * margin + title_height
+    # Add title margin to total height
+    total_title_height = title_height + title_margin * cell_height
+    # Add extra space at bottom to ensure last row is fully visible
+    bottom_extra_margin = 0.5 * cell_height
+    height = cell_height * nrows + 2 * margin + total_title_height + bottom_extra_margin
     dpi = 72
     
     fig, ax = plt.subplots(figsize=(width / dpi, height / dpi), dpi=dpi)
     fig.subplots_adjust(margin/width, margin/height,
                         (width-margin)/width, (height-margin)/height)
     ax.set_xlim(0, cell_width * ncols)
-    ax.set_ylim(-title_height, cell_height * nrows)
+    # Adjust y-axis limits to account for title margin
+    # Add extra space at bottom to ensure last row is fully visible
+    bottom_extra_margin = 0.5 * cell_height
+    ax.set_ylim(-total_title_height, cell_height * nrows + bottom_extra_margin)
     ax.invert_yaxis()  # Ensure smaller y-values render toward the top edge
     ax.yaxis.set_visible(False)
     ax.xaxis.set_visible(False)
@@ -1369,8 +1434,10 @@ def _plot_single_library(colors, library_name, ncols=6, sort_colors=True):
     )
     
     # Draw the grid using the group-aware placement
+    # Colors start after title margin
+    title_margin_offset = title_margin * cell_height
     for col, row, name, color_spec in color_grid:
-        y = (row + 0.5) * cell_height
+        y = title_margin_offset + (row + 0.5) * cell_height
         swatch_start_x = cell_width * col
         text_pos_x = cell_width * col + swatch_width + 7
         
