@@ -10,9 +10,8 @@ def install_llm_txt(project_dir=None):
     """
     Install dartwork-mpl usage guide to project's IDE integration folders.
     
-    This function creates appropriate instructions for different AI coding
-    assistants by installing the usage guide to:
-    - .claude/commands/ (for Claude Code)
+    This function creates appropriate instructions for AI coding assistants
+    by installing the usage guide to:
     - .cursor/ (for Cursor IDE)
     
     Parameters
@@ -32,11 +31,6 @@ def install_llm_txt(project_dir=None):
     else:
         project_dir = Path(project_dir)
     
-    # Install for Claude Code
-    claude_dir = project_dir / '.claude' / 'commands'
-    claude_dir.mkdir(parents=True, exist_ok=True)
-    claude_file = claude_dir / 'dartwork-mpl-usage.md'
-    
     # Install for Cursor IDE
     cursor_dir = project_dir / '.cursor'
     cursor_dir.mkdir(parents=True, exist_ok=True)
@@ -46,19 +40,6 @@ def install_llm_txt(project_dir=None):
     with open(usage_guide_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Create Claude Code version with command prefix
-    claude_content = f"""# dartwork-mpl Library Usage Command
-
-This command provides comprehensive usage guide for the dartwork-mpl library.
-
-## Usage
-Type `/dartwork-mpl` to get help with dartwork-mpl library usage.
-
----
-
-{content}
-"""
-    
     # Create Cursor IDE version with instruction format
     cursor_content = f"""// Cursor IDE Instructions for dartwork-mpl library
 // This file provides context about dartwork-mpl library usage
@@ -66,20 +47,15 @@ Type `/dartwork-mpl` to get help with dartwork-mpl library usage.
 {content}
 """
     
-    # Write files
-    with open(claude_file, 'w', encoding='utf-8') as f:
-        f.write(claude_content)
-    
+    # Write file
     with open(cursor_file, 'w', encoding='utf-8') as f:
         f.write(cursor_content)
     
     print(f"✅ dartwork-mpl usage guide installed successfully!")
     print(f"📁 Project: {project_dir}")
-    print(f"📁 Claude Code: {claude_file}")
     print(f"📁 Cursor IDE: {cursor_file}")
     print()
     print("🔧 Usage:")
-    print("- In Claude Code: Type '/dartwork-mpl' for help")
     print("- In Cursor IDE: The AI will automatically have access to dartwork-mpl context")
 
 
@@ -100,7 +76,6 @@ def uninstall_llm_txt(project_dir=None):
     
     # Files to remove
     files_to_remove = [
-        project_dir / '.claude' / 'commands' / 'dartwork-mpl-usage.md',
         project_dir / '.cursor' / 'dartwork-mpl-usage.md'
     ]
     
