@@ -106,7 +106,7 @@ def simple_layout(
     verbose=False,
     gtol=1e-2,
     bound_margin=0.2,
-    use_all_axes=False,
+    use_all_axes=True,
     importance_weights=(1, 1, 1, 1),
 ):
     """Apply simple layout to figure for given grid spec.
@@ -128,7 +128,7 @@ def simple_layout(
         less than gtol, the optimization will stop.
     bound_margin : float, optional(default=0.1)
         Margin for bounds generation.
-    use_all_axes : bool, optional(default=False)
+    use_all_axes : bool, optional(default=True)
         Use all axes in the figure. If False, use only axes in the given grid spec.
         IF True, use all axes in the figure.
     importance_weights : tuple(float, float, float, float), optional(default=(1, 1, 1, 1))
