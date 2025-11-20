@@ -124,6 +124,8 @@ dm.save_formats(fig, 'output/figure',
 
 ## Documentation
 
+**[Full Documentation](https://dartwork-repo.github.io/dartwork-mpl/)**
+
 For detailed documentation, see [USAGE_GUIDE.md](src/dartwork_mpl/asset/USAGE_GUIDE.md).
 
 For API reference, see [API_REFERENCE.md](docs/API_REFERENCE.md).
