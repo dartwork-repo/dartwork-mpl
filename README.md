@@ -124,11 +124,27 @@ dm.save_formats(fig, 'output/figure',
 
 ## Documentation
 
-**[Full Documentation](https://dartwork-repo.github.io/dartwork-mpl/)**
+📚 **[Full Documentation](https://dartwork-repo.github.io/dartwork-mpl/)** - Complete Sphinx documentation with:
+- **[Usage Guide](https://dartwork-repo.github.io/dartwork-mpl/DARTWORK_MPL_USAGE_GUIDE.html)** - Comprehensive guide to all features
+- **[Example Gallery](https://dartwork-repo.github.io/dartwork-mpl/gallery/index.html)** - Interactive examples with code and plots
+- **[Color Gallery](https://dartwork-repo.github.io/dartwork-mpl/COLOR_GALLERY.html)** - Complete color palette reference
+- **[API Reference](https://dartwork-repo.github.io/dartwork-mpl/API_REFERENCE.html)** - Detailed API documentation
 
-For detailed documentation, see [USAGE_GUIDE.md](src/dartwork_mpl/asset/USAGE_GUIDE.md).
+<br/>
 
-For API reference, see [API_REFERENCE.md](docs/API_REFERENCE.md).
+
+## Example Gallery
+
+Explore our comprehensive [example gallery](https://dartwork-repo.github.io/dartwork-mpl/gallery/index.html) featuring:
+
+- **Basic Usage** - Getting started with dartwork-mpl
+- **Color System** - Custom colors and Tailwind CSS integration
+- **Layout Optimization** - Advanced layout control with `simple_layout()`
+- **Scientific Figures** - Multi-panel publication-ready plots
+- **Statistical Plots** - Probability density, violin, and box plots
+- **Advanced Visualizations** - Heatmaps, contours, streamplots, and 3D plots
+
+Each example includes complete source code and rendered output.
 
 <br/>
 
