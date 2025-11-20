@@ -7,6 +7,7 @@ donut charts, and exploded pie charts using dartwork-mpl colors.
 """
 
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 import numpy as np
 import dartwork_mpl as dm
 
@@ -17,11 +18,15 @@ dm.style.use_preset('scientific')
 # Sample data
 sizes1 = [30, 25, 20, 15, 10]
 labels1 = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E']
-colors1 = ['dm.blue5', 'dm.red5', 'dm.green5', 'dm.orange5', 'dm.purple5']
+# Convert dartwork-mpl color strings to RGB tuples for pie() function
+colors1 = [mcolors.to_rgb('dm.blue5'), mcolors.to_rgb('dm.red5'), 
+           mcolors.to_rgb('dm.green5'), mcolors.to_rgb('dm.orange5'), 
+           mcolors.to_rgb('dm.purple5')]
 
 sizes2 = [35, 25, 20, 20]
 labels2 = ['Group 1', 'Group 2', 'Group 3', 'Group 4']
-colors2 = ['dm.blue5', 'dm.red5', 'dm.green5', 'dm.orange5']
+colors2 = [mcolors.to_rgb('dm.blue5'), mcolors.to_rgb('dm.red5'), 
+           mcolors.to_rgb('dm.green5'), mcolors.to_rgb('dm.orange5')]
 
 # Explode values
 explode1 = (0.05, 0, 0, 0, 0)
