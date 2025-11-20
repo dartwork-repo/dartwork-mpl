@@ -21,7 +21,7 @@ labels1 = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E']
 # Convert dartwork-mpl color strings to RGB tuples for pie() function
 colors1 = [mcolors.to_rgb('dm.blue5'), mcolors.to_rgb('dm.red5'), 
            mcolors.to_rgb('dm.green5'), mcolors.to_rgb('dm.orange5'), 
-           mcolors.to_rgb('dm.purple5')]
+           mcolors.to_rgb('dm.violet5')]
 
 sizes2 = [35, 25, 20, 20]
 labels2 = ['Group 1', 'Group 2', 'Group 3', 'Group 4']
