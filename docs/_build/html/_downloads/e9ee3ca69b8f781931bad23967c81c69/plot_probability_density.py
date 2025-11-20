@@ -21,7 +21,8 @@ data = np.concatenate([
 ])
 
 fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)))
-ax = fig.add_subplot(111)
+gs = fig.add_gridspec(1, 1)
+ax = fig.add_subplot(gs[0, 0])
 
 # Histogram
 # Use 'density=True' to normalize
@@ -39,10 +40,10 @@ mu, std = stats.norm.fit(data)
 p = stats.norm.pdf(x_grid, mu, std)
 ax.plot(x_grid, p, color='dm.red5', lw=1.5, linestyle='--', label='Normal Fit')
 
-ax.set_xlabel('Value')
-ax.set_ylabel('Probability Density')
-ax.set_title('Distribution Analysis')
-ax.legend()
+ax.set_xlabel('Value', fontsize=dm.fs(0))
+ax.set_ylabel('Probability Density', fontsize=dm.fs(0))
+ax.set_title('Distribution Analysis', fontsize=dm.fs(1))
+ax.legend(fontsize=dm.fs(-1))
 
-dm.simple_layout(fig)
+dm.simple_layout(fig, gs=gs)
 plt.show()

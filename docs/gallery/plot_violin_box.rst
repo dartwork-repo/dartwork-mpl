@@ -23,7 +23,7 @@ Violin and Box Plots
 
 This example compares Box plots and Violin plots for visualizing distributions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-54
+.. GENERATED FROM PYTHON SOURCE LINES 7-60
 
 
 
@@ -60,9 +60,9 @@ This example compares Box plots and Violin plots for visualizing distributions.
                 medianprops=dict(color='white'),
                 whiskerprops=dict(color='dm.gray7'),
                 capprops=dict(color='dm.gray7'))
-    ax1.set_title('Box Plot')
-    ax1.set_xlabel('Category')
-    ax1.set_ylabel('Value')
+    ax1.set_title('Box Plot', fontsize=dm.fs(1))
+    ax1.set_xlabel('Category', fontsize=dm.fs(0))
+    ax1.set_ylabel('Value', fontsize=dm.fs(0))
 
     # Violin Plot
     ax2 = fig.add_subplot(gs[1])
@@ -79,9 +79,15 @@ This example compares Box plots and Violin plots for visualizing distributions.
         vp.set_edgecolor('dm.gray7')
         vp.set_linewidth(1)
 
-    ax2.set_title('Violin Plot')
-    ax2.set_xlabel('Category')
-    ax2.set_ylabel('Value')
+    ax2.set_title('Violin Plot', fontsize=dm.fs(1))
+    ax2.set_xlabel('Category', fontsize=dm.fs(0))
+    ax2.set_ylabel('Value', fontsize=dm.fs(0))
+
+    # Add subplot labels
+    for ax, label in zip([ax1, ax2], 'ab'):
+        offset = dm.make_offset(4, -4, fig)
+        ax.text(0, 1, label, transform=ax.transAxes + offset,
+                weight='bold', va='top', fontsize=dm.fs(2))
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -89,7 +95,7 @@ This example compares Box plots and Violin plots for visualizing distributions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.532 seconds)
+   **Total running time of the script:** (0 minutes 0.565 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_violin_box.py:

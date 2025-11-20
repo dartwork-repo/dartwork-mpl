@@ -83,7 +83,7 @@ This example demonstrates how to create contour plots with labeled level lines a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.519 seconds)
+   **Total running time of the script:** (0 minutes 0.495 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_contour.py:

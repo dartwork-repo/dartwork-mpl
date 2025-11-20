@@ -83,6 +83,23 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create contour plots with labeled level lines and filled contours.">
+
+.. only:: html
+
+  .. image:: /gallery/images/thumb/sphx_glr_plot_contour_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_plot_contour.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Contour Plot</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create stylish bar charts using dartwork-mpl and Tailwind CSS colors.">
 
 .. only:: html
@@ -112,23 +129,6 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Dual Axis Plot</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create contour plots with labeled level lines and filled contours.">
-
-.. only:: html
-
-  .. image:: /gallery/images/thumb/sphx_glr_plot_contour_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_plot_contour.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Contour Plot</div>
     </div>
 
 
@@ -168,23 +168,6 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example compares Box plots and Violin plots for visualizing distributions.">
-
-.. only:: html
-
-  .. image:: /gallery/images/thumb/sphx_glr_plot_violin_box_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_plot_violin_box.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Violin and Box Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the extensive color system in dartwork-mpl, including custom colors, Tailwind CSS colors, and color utilities.">
 
 .. only:: html
@@ -197,6 +180,23 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Color System</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example compares Box plots and Violin plots for visualizing distributions.">
+
+.. only:: html
+
+  .. image:: /gallery/images/thumb/sphx_glr_plot_violin_box_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_plot_violin_box.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Violin and Box Plots</div>
     </div>
 
 
@@ -231,13 +231,13 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
    /gallery/plot_streamplot
    /gallery/plot_basic
    /gallery/plot_3d
+   /gallery/plot_contour
    /gallery/plot_bar_chart
    /gallery/plot_dual_axis
-   /gallery/plot_contour
    /gallery/plot_layout
    /gallery/plot_probability_density
-   /gallery/plot_violin_box
    /gallery/plot_colors
+   /gallery/plot_violin_box
    /gallery/plot_scientific_paper
 
 

@@ -1,4 +1,101 @@
 {
+ "ax": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes._axes",
+   "module_short": "matplotlib.axes",
+   "name": "Axes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes",
+   "module_short": "matplotlib.axes",
+   "name": "Axes"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Axes"
+  }
+ ],
+ "ax.text": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes._axes",
+   "module_short": "matplotlib.axes",
+   "name": "Axes.text"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes",
+   "module_short": "matplotlib.axes",
+   "name": "Axes.text"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Axes.text"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes._base",
+   "module_short": "matplotlib.axes._base",
+   "name": "_AxesBase.text"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes",
+   "module_short": "matplotlib.axes",
+   "name": "_AxesBase.text"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "_AxesBase.text"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.artist",
+   "module_short": "matplotlib.artist",
+   "name": "Artist.text"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Artist.text"
+  }
+ ],
+ "ax.transAxes": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.transforms",
+   "module_short": "matplotlib.transforms",
+   "name": "BboxTransformTo"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "BboxTransformTo"
+  }
+ ],
  "ax1": [
   {
    "is_class": false,
@@ -534,6 +631,38 @@
    "name": "cm2in"
   }
  ],
+ "dm.fs": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dartwork_mpl",
+   "module_short": "dartwork_mpl",
+   "name": "fs"
+  }
+ ],
+ "dm.make_offset": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dartwork_mpl",
+   "module_short": "dartwork_mpl",
+   "name": "make_offset"
+  }
+ ],
  "dm.simple_layout": [
   {
    "is_class": false,
@@ -693,6 +822,15 @@
    "name": "GridSpec"
   }
  ],
+ "label": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
  "np.random.normal": [
   {
    "is_class": false,
@@ -716,6 +854,22 @@
    "module": "numpy.random",
    "module_short": "numpy.random",
    "name": "seed"
+  }
+ ],
+ "offset": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.transforms",
+   "module_short": "matplotlib.transforms",
+   "name": "ScaledTranslation"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "ScaledTranslation"
   }
  ],
  "partname": [

@@ -108,7 +108,7 @@ This example simulates a comprehensive figure for a scientific paper, featuring 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.566 seconds)
+   **Total running time of the script:** (0 minutes 0.564 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_scientific_paper.py:

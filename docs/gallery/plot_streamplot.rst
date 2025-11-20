@@ -33,19 +33,8 @@ This example demonstrates how to create a streamplot to visualize vector fields.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -85,7 +74,7 @@ This example demonstrates how to create a streamplot to visualize vector fields.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.151 seconds)
+   **Total running time of the script:** (0 minutes 0.789 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_streamplot.py:

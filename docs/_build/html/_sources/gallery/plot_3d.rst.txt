@@ -46,7 +46,8 @@ This example demonstrates that dartwork-mpl styles also work well with 3D plots.
     dm.style.use_preset('presentation')
 
     fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)))
-    ax = fig.add_subplot(111, projection='3d')
+    gs = fig.add_gridspec(1, 1)
+    ax = fig.add_subplot(gs[0, 0], projection='3d')
 
     # Make data
     X = np.arange(-5, 5, 0.25)
@@ -59,24 +60,23 @@ This example demonstrates that dartwork-mpl styles also work well with 3D plots.
     surf = ax.plot_surface(X, Y, Z, cmap='dm.Spectral',
                            linewidth=0, antialiased=False)
 
-    # Customize axis labels
-    ax.set_xlabel('X Label')
-    ax.set_ylabel('Y Label')
-    ax.set_zlabel('Z Label')
-    ax.set_title('3D Surface Plot')
+    # Customize axis labels with font size utilities
+    ax.set_xlabel('X Label', fontsize=dm.fs(0))
+    ax.set_ylabel('Y Label', fontsize=dm.fs(0))
+    ax.set_zlabel('Z Label', fontsize=dm.fs(0))
+    ax.set_title('3D Surface Plot', fontsize=dm.fs(1))
 
     # Add a color bar which maps values to colors.
     fig.colorbar(surf, shrink=0.5, aspect=5)
 
-    # Note: dm.simple_layout might not work perfectly with 3D axes in all cases,
-    # but standard tight_layout usually works fine or manual adjustment.
+    # Note: Use tight_layout() for 3D plots as simple_layout() may not work well with 3D axes
     plt.tight_layout()
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.280 seconds)
+   **Total running time of the script:** (0 minutes 0.272 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_3d.py:

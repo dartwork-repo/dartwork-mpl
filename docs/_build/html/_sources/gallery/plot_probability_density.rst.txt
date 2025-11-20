@@ -23,7 +23,7 @@ Probability Density Plot
 
 This example demonstrates how to visualize probability distributions using histograms and Kernel Density Estimation (KDE).
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-49
+.. GENERATED FROM PYTHON SOURCE LINES 7-50
 
 
 
@@ -55,7 +55,8 @@ This example demonstrates how to visualize probability distributions using histo
     ])
 
     fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)))
-    ax = fig.add_subplot(111)
+    gs = fig.add_gridspec(1, 1)
+    ax = fig.add_subplot(gs[0, 0])
 
     # Histogram
     # Use 'density=True' to normalize
@@ -73,18 +74,18 @@ This example demonstrates how to visualize probability distributions using histo
     p = stats.norm.pdf(x_grid, mu, std)
     ax.plot(x_grid, p, color='dm.red5', lw=1.5, linestyle='--', label='Normal Fit')
 
-    ax.set_xlabel('Value')
-    ax.set_ylabel('Probability Density')
-    ax.set_title('Distribution Analysis')
-    ax.legend()
+    ax.set_xlabel('Value', fontsize=dm.fs(0))
+    ax.set_ylabel('Probability Density', fontsize=dm.fs(0))
+    ax.set_title('Distribution Analysis', fontsize=dm.fs(1))
+    ax.legend(fontsize=dm.fs(-1))
 
-    dm.simple_layout(fig)
+    dm.simple_layout(fig, gs=gs)
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.654 seconds)
+   **Total running time of the script:** (0 minutes 0.536 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_probability_density.py:

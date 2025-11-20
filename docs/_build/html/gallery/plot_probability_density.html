@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Violin and Box Plots" href="plot_violin_box.html"><link rel="prev" title="Layout Optimization" href="plot_layout.html">
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Color System" href="plot_colors.html"><link rel="prev" title="Layout Optimization" href="plot_layout.html">
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2025.09.25 -->
         <title>Probability Density Plot - dartwork-mpl 0.1.1 documentation</title>
@@ -205,13 +205,13 @@
 <li class="toctree-l2"><a class="reference internal" href="plot_streamplot.html">Streamplot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_basic.html">Basic Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_3d.html">3D Surface Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_contour.html">Contour Plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_bar_chart.html">Bar Chart Styling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_dual_axis.html">Dual Axis Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_contour.html">Contour Plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_layout.html">Layout Optimization</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Probability Density Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_violin_box.html">Violin and Box Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_colors.html">Color System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_violin_box.html">Violin and Box Plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_scientific_paper.html">Scientific Paper Figure</a></li>
 </ul>
 </li>
@@ -235,12 +235,16 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/gallery/plot_probability_density.rst.txt" title="View this page">
+  <a class="muted-link" href="https://github.com/dartwork-repo/dartwork-mpl/blob/main/docs/gallery/plot_probability_density.rst?plain=true" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
-</div>
-<div class="theme-toggle-container theme-toggle-content">
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/dartwork-repo/dartwork-mpl/edit/main/docs/gallery/plot_probability_density.rst" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
@@ -277,7 +281,8 @@ to download the full example code.</p>
 <span class="p">])</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># Histogram</span>
 <span class="c1"># Use &#39;density=True&#39; to normalize</span>
@@ -295,16 +300,16 @@ to download the full example code.</p>
 <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normal Fit&#39;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution Analysis&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution Analysis&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 
-<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="o">=</span><span class="n">gs</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.654 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.536 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-plot-probability-density-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/7c072e6144e49b3b99a3836a537a4874/plot_probability_density.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_probability_density.ipynb</span></code></a></p>
@@ -324,12 +329,12 @@ to download the full example code.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="plot_violin_box.html">
+          <a class="next-page" href="plot_colors.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Violin and Box Plots</div>
+                <div class="title">Color System</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

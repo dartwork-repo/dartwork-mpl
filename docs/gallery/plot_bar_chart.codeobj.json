@@ -502,6 +502,22 @@
    "name": "cm2in"
   }
  ],
+ "dm.fs": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "dartwork_mpl",
+   "module_short": "dartwork_mpl",
+   "name": "fs"
+  }
+ ],
  "dm.simple_layout": [
   {
    "is_class": false,
@@ -557,6 +573,50 @@
    "name": "Figure"
   }
  ],
+ "fig.add_gridspec": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.figure",
+   "module_short": "matplotlib.figure",
+   "name": "Figure.add_gridspec"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Figure.add_gridspec"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.figure",
+   "module_short": "matplotlib.figure",
+   "name": "FigureBase.add_gridspec"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "FigureBase.add_gridspec"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.artist",
+   "module_short": "matplotlib.artist",
+   "name": "Artist.add_gridspec"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Artist.add_gridspec"
+  }
+ ],
  "fig.add_subplot": [
   {
    "is_class": false,
@@ -599,6 +659,22 @@
    "module": "matplotlib",
    "module_short": "matplotlib",
    "name": "Artist.add_subplot"
+  }
+ ],
+ "gs": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.gridspec",
+   "module_short": "matplotlib.gridspec",
+   "name": "GridSpec"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "GridSpec"
   }
  ],
  "labels": [

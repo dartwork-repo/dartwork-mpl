@@ -23,7 +23,7 @@ Color System
 
 This example demonstrates the extensive color system in dartwork-mpl, including custom colors, Tailwind CSS colors, and color utilities.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-47
+.. GENERATED FROM PYTHON SOURCE LINES 7-48
 
 
 
@@ -48,7 +48,8 @@ This example demonstrates the extensive color system in dartwork-mpl, including 
 
     # Create figure
     fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)))
-    ax = fig.add_subplot(111)
+    gs = fig.add_gridspec(1, 1)
+    ax = fig.add_subplot(gs[0, 0])
 
     x = np.linspace(0, 10, 100)
 
@@ -71,18 +72,18 @@ This example demonstrates the extensive color system in dartwork-mpl, including 
     ax.fill_between(x, np.sin(x) + 4, 5.5, color=transparent_red, label='Pseudo-alpha Red')
 
     ax.set_ylim(-1.5, 6)
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
-    ax.set_title('dartwork-mpl Color System')
-    ax.legend(ncol=2, loc='upper center', bbox_to_anchor=(0.5, -0.15))
+    ax.set_xlabel('X', fontsize=dm.fs(0))
+    ax.set_ylabel('Y', fontsize=dm.fs(0))
+    ax.set_title('dartwork-mpl Color System', fontsize=dm.fs(1))
+    ax.legend(ncol=2, loc='upper center', bbox_to_anchor=(0.5, -0.15), fontsize=dm.fs(-1))
 
-    dm.simple_layout(fig)
+    dm.simple_layout(fig, gs=gs)
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.331 seconds)
+   **Total running time of the script:** (0 minutes 0.372 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_colors.py:
