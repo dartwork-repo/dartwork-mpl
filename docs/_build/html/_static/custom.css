@@ -10,31 +10,47 @@
 }
 
 /* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
+/* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
 .sphx-glr-download-python,
 .sphx-glr-download-jupyter,
 .sphx-glr-download-zip {
-    background-color: #f7f7f7 !important;
-    border: 1px solid #d0d0d0 !important;
-    border-radius: 2px;
+    background-color: #e7f2fa !important;
+    border: 1px solid #e7f2fa !important;
+    border-radius: 4px;
     padding: 10px 14px;
     box-shadow: none !important;
+    margin-bottom: 10px;
 }
 
 .sphx-glr-download-python:hover,
 .sphx-glr-download-jupyter:hover,
 .sphx-glr-download-zip:hover {
-    background-color: #ececec !important;
-    border-color: #c0c0c0 !important;
+    background-color: #dbebf6 !important;
+    border-color: #dbebf6 !important;
 }
 
 /* Style the download links */
 .sphx-glr-download a {
-    color: #1a1a1a !important;
+    color: #2c3e50 !important;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .sphx-glr-download a:hover {
-    color: #000 !important;
-    text-decoration: underline;
+    color: #1a252f !important;
+    text-decoration: none;
+}
+
+/* Remove background from the footer container */
+.sphx-glr-footer {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Add icon styling if needed, though usually handled by Sphinx Gallery text */
+.sphx-glr-download code.xref {
+    color: inherit !important;
 }
