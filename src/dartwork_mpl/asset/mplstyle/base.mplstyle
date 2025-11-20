@@ -16,7 +16,7 @@ font.size:    7.5
 mathtext.fontset: custom  # Should be 'dejavusans' (default),
 
 mathtext.bf:  Noto Sans Math:bold
-# mathtext.cal: cursive
+mathtext.cal: Noto Sans Math
 mathtext.it:  Noto Sans Math:italic
 mathtext.rm:  Noto Sans Math
 mathtext.sf:  Noto Sans Math

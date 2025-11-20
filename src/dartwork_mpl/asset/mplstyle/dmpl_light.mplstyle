@@ -342,7 +342,7 @@ mathtext.fontset: custom  # Should be 'dejavusans' (default),
 ## settings which map a TeX font name to a fontconfig font pattern.  (These
 ## settings are not used for other font sets.)
 mathtext.bf:  Noto Sans Math:bold
-# mathtext.cal: cursive
+mathtext.cal: Noto Sans Math
 mathtext.it:  Noto Sans Math:italic
 mathtext.rm:  Noto Sans Math
 mathtext.sf:  Noto Sans Math

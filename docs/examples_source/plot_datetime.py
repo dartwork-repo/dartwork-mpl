@@ -10,7 +10,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from datetime import datetime, timedelta
+import locale
 import dartwork_mpl as dm
+
+# Set locale to 'C' to prevent Korean date formatting
+locale.setlocale(locale.LC_TIME, 'C')
 
 # Apply scientific style preset
 # Default: font.size=7.5, lines.linewidth=0.5, axes.linewidth=0.3
