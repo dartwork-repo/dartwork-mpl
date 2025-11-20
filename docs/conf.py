@@ -33,6 +33,15 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'furo'
 html_static_path = ['_static']
 
+# -- Furo theme options ------------------------------------------------------
+html_theme_options = {
+    # Enable GitHub repository link and "Edit on GitHub" button
+    "source_repository": "https://github.com/dartwork-repo/dartwork-mpl",
+    "source_branch": "main",
+    "source_directory": "docs/",
+    "top_of_page_button": "edit",  # Shows "Edit on GitHub" button
+}
+
 # -- Sphinx Gallery configuration --------------------------------------------
 sphinx_gallery_conf = {
      'examples_dirs': 'examples_source',   # path to your example scripts
