@@ -23,7 +23,7 @@
 
 This example demonstrates that dartwork-mpl styles also work well with 3D plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-41
+.. GENERATED FROM PYTHON SOURCE LINES 7-45
 
 
 
@@ -33,8 +33,19 @@ This example demonstrates that dartwork-mpl styles also work well with 3D plots.
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/wonjun/Codes/dartwork-mpl/docs/examples_source/plot_3d.py:43: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+      plt.tight_layout()
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -45,8 +56,12 @@ This example demonstrates that dartwork-mpl styles also work well with 3D plots.
 
     dm.style.use_preset('presentation')
 
-    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)))
-    gs = fig.add_gridspec(1, 1)
+    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)), dpi=200)
+    gs = fig.add_gridspec(
+        1, 1,
+        left=0.05, right=0.95,
+        top=0.95, bottom=0.05
+    )
     ax = fig.add_subplot(gs[0, 0], projection='3d')
 
     # Make data
@@ -76,7 +91,7 @@ This example demonstrates that dartwork-mpl styles also work well with 3D plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.272 seconds)
+   **Total running time of the script:** (0 minutes 0.254 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_3d.py:

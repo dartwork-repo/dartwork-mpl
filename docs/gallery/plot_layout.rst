@@ -23,7 +23,7 @@ Layout Optimization
 
 This example demonstrates the `simple_layout` function for optimizing figure layout, which offers more control than `tight_layout`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-48
+.. GENERATED FROM PYTHON SOURCE LINES 7-53
 
 
 
@@ -46,44 +46,49 @@ This example demonstrates the `simple_layout` function for optimizing figure lay
     dm.style.use_preset('scientific')
 
     # Create a figure with multiple subplots
-    fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)))
-    gs = fig.add_gridspec(2, 2, hspace=0.4)
+    fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=200)
+    gs = fig.add_gridspec(
+        2, 2,
+        left=0.1, right=0.95,
+        top=0.95, bottom=0.1,
+        hspace=0.4, wspace=0.3
+    )
 
     ax1 = fig.add_subplot(gs[0, 0])
     ax2 = fig.add_subplot(gs[0, 1])
     ax3 = fig.add_subplot(gs[1, :])
 
-    ax1.plot([1, 2, 3], [1, 2, 3], color='dm.red5')
-    ax1.set_title('Subplot 1')
-    ax1.set_xlabel('X')
-    ax1.set_ylabel('Y')
+    ax1.plot([1, 2, 3], [1, 2, 3], color='dm.red5', lw=0.7)
+    ax1.set_title('Subplot 1', fontsize=dm.fs(1))
+    ax1.set_xlabel('X', fontsize=dm.fs(0))
+    ax1.set_ylabel('Y', fontsize=dm.fs(0))
 
-    ax2.plot([1, 2, 3], [3, 2, 1], color='dm.blue5')
-    ax2.set_title('Subplot 2')
-    ax2.set_xlabel('X')
-    ax2.set_ylabel('Y')
+    ax2.plot([1, 2, 3], [3, 2, 1], color='dm.blue5', lw=0.7)
+    ax2.set_title('Subplot 2', fontsize=dm.fs(1))
+    ax2.set_xlabel('X', fontsize=dm.fs(0))
+    ax2.set_ylabel('Y', fontsize=dm.fs(0))
 
-    ax3.plot([1, 2, 3], [1, 1, 1], color='tw.green:500')
-    ax3.set_title('Subplot 3 (Wide)')
-    ax3.set_xlabel('X')
-    ax3.set_ylabel('Y')
+    ax3.plot([1, 2, 3], [1, 1, 1], color='tw.green:500', lw=0.7)
+    ax3.set_title('Subplot 3 (Wide)', fontsize=dm.fs(1))
+    ax3.set_xlabel('X', fontsize=dm.fs(0))
+    ax3.set_ylabel('Y', fontsize=dm.fs(0))
 
     # Add subplot labels (a, b, c)
     for ax, label in zip([ax1, ax2, ax3], 'abc'):
         offset = dm.make_offset(4, -4, fig)
         ax.text(0, 1, label, transform=ax.transAxes + offset,
-                weight='bold', va='top')
+                weight='bold', va='top', fontsize=dm.fs(2))
 
     # Optimize layout
     # You can adjust margins explicitly
-    dm.simple_layout(fig, margins=(0.1, 0.1, 0.1, 0.1))
+    dm.simple_layout(fig, gs=gs, margins=(0.1, 0.1, 0.1, 0.1))
 
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.766 seconds)
+   **Total running time of the script:** (0 minutes 0.745 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_layout.py:

@@ -49,6 +49,23 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates that dartwork-mpl styles also work well with 3D plots.">
+
+.. only:: html
+
+  .. image:: /gallery/images/thumb/sphx_glr_plot_3d_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_plot_3d.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">3D Surface Plot</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the basic usage of dartwork-mpl, including applying style presets and creating a simple plot.">
 
 .. only:: html
@@ -66,18 +83,18 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates that dartwork-mpl styles also work well with 3D plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a plot with two y-axes, a common requirement in scientific visualization.">
 
 .. only:: html
 
-  .. image:: /gallery/images/thumb/sphx_glr_plot_3d_thumb.png
+  .. image:: /gallery/images/thumb/sphx_glr_plot_dual_axis_thumb.png
     :alt:
 
-  :ref:`sphx_glr_gallery_plot_3d.py`
+  :ref:`sphx_glr_gallery_plot_dual_axis.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">3D Surface Plot</div>
+      <div class="sphx-glr-thumbnail-title">Dual Axis Plot</div>
     </div>
 
 
@@ -112,23 +129,6 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Bar Chart Styling</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a plot with two y-axes, a common requirement in scientific visualization.">
-
-.. only:: html
-
-  .. image:: /gallery/images/thumb/sphx_glr_plot_dual_axis_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_plot_dual_axis.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Dual Axis Plot</div>
     </div>
 
 
@@ -229,11 +229,11 @@ This gallery contains examples demonstrating the usage of dartwork-mpl.
 
    /gallery/plot_heatmap
    /gallery/plot_streamplot
-   /gallery/plot_basic
    /gallery/plot_3d
+   /gallery/plot_basic
+   /gallery/plot_dual_axis
    /gallery/plot_contour
    /gallery/plot_bar_chart
-   /gallery/plot_dual_axis
    /gallery/plot_layout
    /gallery/plot_probability_density
    /gallery/plot_colors

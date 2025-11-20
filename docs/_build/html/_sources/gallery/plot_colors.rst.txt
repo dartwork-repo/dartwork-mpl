@@ -23,7 +23,7 @@ Color System
 
 This example demonstrates the extensive color system in dartwork-mpl, including custom colors, Tailwind CSS colors, and color utilities.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-48
+.. GENERATED FROM PYTHON SOURCE LINES 7-52
 
 
 
@@ -47,8 +47,12 @@ This example demonstrates the extensive color system in dartwork-mpl, including 
     dm.style.use_preset('scientific')
 
     # Create figure
-    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)))
-    gs = fig.add_gridspec(1, 1)
+    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+    gs = fig.add_gridspec(
+        1, 1,
+        left=0.12, right=0.95,
+        top=0.88, bottom=0.17
+    )
     ax = fig.add_subplot(gs[0, 0])
 
     x = np.linspace(0, 10, 100)
@@ -83,7 +87,7 @@ This example demonstrates the extensive color system in dartwork-mpl, including 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.372 seconds)
+   **Total running time of the script:** (0 minutes 0.359 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_colors.py:

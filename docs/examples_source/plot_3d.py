@@ -11,8 +11,12 @@ import dartwork_mpl as dm
 
 dm.style.use_preset('presentation')
 
-fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)))
-gs = fig.add_gridspec(1, 1)
+fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)), dpi=200)
+gs = fig.add_gridspec(
+    1, 1,
+    left=0.05, right=0.95,
+    top=0.95, bottom=0.05
+)
 ax = fig.add_subplot(gs[0, 0], projection='3d')
 
 # Make data

@@ -23,7 +23,7 @@ Violin and Box Plots
 
 This example compares Box plots and Violin plots for visualizing distributions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-60
+.. GENERATED FROM PYTHON SOURCE LINES 7-65
 
 
 
@@ -50,8 +50,13 @@ This example compares Box plots and Violin plots for visualizing distributions.
     np.random.seed(10)
     data = [np.random.normal(0, std, 100) for std in range(1, 5)]
 
-    fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(8)))
-    gs = fig.add_gridspec(1, 2, wspace=0.3)
+    fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(8)), dpi=200)
+    gs = fig.add_gridspec(
+        1, 2,
+        left=0.08, right=0.98,
+        top=0.92, bottom=0.12,
+        wspace=0.3
+    )
 
     # Box Plot
     ax1 = fig.add_subplot(gs[0])
@@ -95,7 +100,7 @@ This example compares Box plots and Violin plots for visualizing distributions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.565 seconds)
+   **Total running time of the script:** (0 minutes 0.550 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_violin_box.py:

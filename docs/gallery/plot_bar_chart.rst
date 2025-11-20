@@ -23,7 +23,7 @@ Bar Chart Styling
 
 This example demonstrates how to create stylish bar charts using dartwork-mpl and Tailwind CSS colors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-47
+.. GENERATED FROM PYTHON SOURCE LINES 7-51
 
 
 
@@ -54,8 +54,12 @@ This example demonstrates how to create stylish bar charts using dartwork-mpl an
     x = np.arange(len(labels))
     width = 0.35
 
-    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)))
-    gs = fig.add_gridspec(1, 1)
+    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+    gs = fig.add_gridspec(
+        1, 1,
+        left=0.12, right=0.95,
+        top=0.92, bottom=0.12
+    )
     ax = fig.add_subplot(gs[0, 0])
 
     # Plotting with Tailwind colors
@@ -67,11 +71,11 @@ This example demonstrates how to create stylish bar charts using dartwork-mpl an
     ax.set_title('Scores by group and gender', fontsize=dm.fs(1))
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
-    ax.legend(fontsize=dm.fs(0))
+    ax.legend(loc='upper left', fontsize=dm.fs(0), ncol=1)
 
     # Add value labels
-    ax.bar_label(rects1, padding=3)
-    ax.bar_label(rects2, padding=3)
+    ax.bar_label(rects1, padding=3, fontsize=dm.fs(-1))
+    ax.bar_label(rects2, padding=3, fontsize=dm.fs(-1))
 
     ax.set_ylim(0, 45)
 
@@ -82,7 +86,7 @@ This example demonstrates how to create stylish bar charts using dartwork-mpl an
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.374 seconds)
+   **Total running time of the script:** (0 minutes 0.380 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_bar_chart.py:

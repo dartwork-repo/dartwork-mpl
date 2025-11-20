@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:06.153** total execution time for 12 files **from gallery**:
+**00:05.934** total execution time for 12 files **from gallery**:
 
 .. container::
 
@@ -32,39 +32,39 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_plot_heatmap.py` (``plot_heatmap.py``)
-     - 00:00.793
-     - 0.0
    * - :ref:`sphx_glr_gallery_plot_streamplot.py` (``plot_streamplot.py``)
-     - 00:00.789
+     - 00:00.837
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_heatmap.py` (``plot_heatmap.py``)
+     - 00:00.759
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_layout.py` (``plot_layout.py``)
-     - 00:00.766
+     - 00:00.745
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_violin_box.py` (``plot_violin_box.py``)
-     - 00:00.565
+     - 00:00.550
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_scientific_paper.py` (``plot_scientific_paper.py``)
-     - 00:00.564
-     - 0.0
-   * - :ref:`sphx_glr_gallery_plot_probability_density.py` (``plot_probability_density.py``)
-     - 00:00.536
+     - 00:00.531
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_contour.py` (``plot_contour.py``)
-     - 00:00.495
+     - 00:00.506
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_probability_density.py` (``plot_probability_density.py``)
+     - 00:00.405
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_bar_chart.py` (``plot_bar_chart.py``)
-     - 00:00.374
+     - 00:00.380
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_colors.py` (``plot_colors.py``)
-     - 00:00.372
+     - 00:00.359
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_dual_axis.py` (``plot_dual_axis.py``)
-     - 00:00.368
-     - 0.0
-   * - :ref:`sphx_glr_gallery_plot_3d.py` (``plot_3d.py``)
-     - 00:00.272
+     - 00:00.350
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_basic.py` (``plot_basic.py``)
-     - 00:00.259
+     - 00:00.257
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_3d.py` (``plot_3d.py``)
+     - 00:00.254
      - 0.0

@@ -20,8 +20,12 @@ data = np.concatenate([
     np.random.normal(4, 1.5, 500)
 ])
 
-fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)))
-gs = fig.add_gridspec(1, 1)
+fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=200)
+gs = fig.add_gridspec(
+    1, 1,
+    left=0.15, right=0.95,
+    top=0.92, bottom=0.15
+)
 ax = fig.add_subplot(gs[0, 0])
 
 # Histogram
@@ -43,7 +47,7 @@ ax.plot(x_grid, p, color='dm.red5', lw=1.5, linestyle='--', label='Normal Fit')
 ax.set_xlabel('Value', fontsize=dm.fs(0))
 ax.set_ylabel('Probability Density', fontsize=dm.fs(0))
 ax.set_title('Distribution Analysis', fontsize=dm.fs(1))
-ax.legend(fontsize=dm.fs(-1))
+ax.legend(fontsize=dm.fs(-1), loc='upper right', ncol=1)
 
 dm.simple_layout(fig, gs=gs)
 plt.show()

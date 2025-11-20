@@ -23,7 +23,7 @@ Contour Plot
 
 This example demonstrates how to create contour plots with labeled level lines and filled contours.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-48
+.. GENERATED FROM PYTHON SOURCE LINES 7-52
 
 
 
@@ -55,8 +55,12 @@ This example demonstrates how to create contour plots with labeled level lines a
     Z2 = np.exp(-(X - 1)**2 - (Y - 1)**2)
     Z = (Z1 - Z2) * 2
 
-    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)))
-    gs = fig.add_gridspec(1, 1)
+    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=200)
+    gs = fig.add_gridspec(
+        1, 1,
+        left=0.15, right=0.88,
+        top=0.92, bottom=0.12
+    )
     ax = fig.add_subplot(gs[0, 0])
 
     # Filled contour
@@ -67,15 +71,15 @@ This example demonstrates how to create contour plots with labeled level lines a
     line_cs = ax.contour(X, Y, Z, levels=20, colors='k', linewidths=0.5, alpha=0.5)
 
     # Add labels to contour lines
-    ax.clabel(line_cs, inline=True, fontsize=8, fmt='%1.1f')
+    ax.clabel(line_cs, inline=True, fontsize=dm.fs(-2), fmt='%1.1f')
 
     # Add colorbar
     cbar = fig.colorbar(cs, ax=ax)
-    cbar.set_label('Z Value')
+    cbar.set_label('Z Value', fontsize=dm.fs(0))
 
-    ax.set_title('Contour Plot with Labels')
-    ax.set_xlabel('X Coordinate')
-    ax.set_ylabel('Y Coordinate')
+    ax.set_title('Contour Plot with Labels', fontsize=dm.fs(1))
+    ax.set_xlabel('X Coordinate', fontsize=dm.fs(0))
+    ax.set_ylabel('Y Coordinate', fontsize=dm.fs(0))
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -83,7 +87,7 @@ This example demonstrates how to create contour plots with labeled level lines a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.495 seconds)
+   **Total running time of the script:** (0 minutes 0.506 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_contour.py:

@@ -13,8 +13,12 @@ import dartwork_mpl as dm
 dm.style.use_preset('scientific')
 
 # Create figure
-fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)))
-gs = fig.add_gridspec(1, 1)
+fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+gs = fig.add_gridspec(
+    1, 1,
+    left=0.12, right=0.95,
+    top=0.88, bottom=0.17
+)
 ax = fig.add_subplot(gs[0, 0])
 
 x = np.linspace(0, 10, 100)

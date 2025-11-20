@@ -20,8 +20,12 @@ women_means = [25, 32, 34, 20]
 x = np.arange(len(labels))
 width = 0.35
 
-fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)))
-gs = fig.add_gridspec(1, 1)
+fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+gs = fig.add_gridspec(
+    1, 1,
+    left=0.12, right=0.95,
+    top=0.92, bottom=0.12
+)
 ax = fig.add_subplot(gs[0, 0])
 
 # Plotting with Tailwind colors
@@ -33,11 +37,11 @@ ax.set_ylabel('Scores', fontsize=dm.fs(0))
 ax.set_title('Scores by group and gender', fontsize=dm.fs(1))
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
-ax.legend(fontsize=dm.fs(0))
+ax.legend(loc='upper left', fontsize=dm.fs(0), ncol=1)
 
 # Add value labels
-ax.bar_label(rects1, padding=3)
-ax.bar_label(rects2, padding=3)
+ax.bar_label(rects1, padding=3, fontsize=dm.fs(-1))
+ax.bar_label(rects2, padding=3, fontsize=dm.fs(-1))
 
 ax.set_ylim(0, 45)
 
