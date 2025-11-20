@@ -1,51 +1,51 @@
-# dartwork-mpl 라이브러리 사용법
+# dartwork-mpl Usage Guide
 
-## 1. 설치 및 기본 설정
+## 1. Installation and Basic Setup
 
-### 설치
+### Installation
 
-#### uv 사용 (권장)
+#### Using uv (Recommended)
 
-[uv](https://github.com/astral-sh/uv)는 빠르고 효율적인 Python 패키지 매니저입니다.
+[uv](https://github.com/astral-sh/uv) is a fast and efficient Python package manager.
 
 ```bash
-# 프로젝트에 추가 (권장)
+# Add to project (Recommended)
 uv add git+https://github.com/dartwork-repo/dartwork-mpl
 
-# 또는 직접 설치
+# Or install directly
 uv pip install git+https://github.com/dartwork-repo/dartwork-mpl
 
-# 특정 브랜치/태그 지정
+# Specify branch/tag
 uv add git+https://github.com/dartwork-repo/dartwork-mpl@main
 ```
 
-#### pip 사용
+#### Using pip
 ```bash
 pip install git+https://github.com/dartwork-repo/dartwork-mpl
 ```
 
-### 기본 임포트
+### Basic Import
 ```python
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
 import numpy as np
 
-# 기본 스타일 적용 (권장)
-dm.style.use_preset('scientific')  # 논문용 기본 스타일
+# Apply basic style (Recommended)
+dm.style.use_preset('scientific')  # Basic style for academic papers
 ```
 
-## 2. 주요 기능
+## 2. Key Features
 
-### 2.1 스타일 관리
+### 2.1 Style Management
 
-#### 사용 가능한 스타일 확인
+#### Check Available Styles
 ```python
-# 모든 개별 스타일 목록 보기
+# List all individual styles
 dm.list_styles()
 # ['base', 'dmpl', 'dmpl_light', 'font-investment', 'font-presentation', 
 #  'font-scientific', 'lang-kr', 'spine-no', 'spine-yes']
 
-# 사용 가능한 프리셋 확인
+# Check available presets
 dm.style.presets_dict()
 # {'scientific': ['base', 'font-scientific'],
 #  'investment': ['base', 'font-investment'],
@@ -55,76 +55,76 @@ dm.style.presets_dict()
 #  'presentation-kr': ['base', 'font-presentation', 'lang-kr']}
 ```
 
-#### 스타일 적용
+#### Apply Style
 ```python
-# 프리셋 사용 (권장)
-dm.style.use_preset('scientific')  # 논문용
-dm.style.use_preset('presentation')  # 프레젠테이션용
-dm.style.use_preset('scientific-kr')  # 한국어 논문용
+# Use preset (Recommended)
+dm.style.use_preset('scientific')  # For papers
+dm.style.use_preset('presentation')  # For presentations
+dm.style.use_preset('scientific-kr')  # For Korean papers
 
-# 개별 스타일 조합 (고급 사용자용)
+# Combine individual styles (Advanced)
 dm.style.use(['base', 'spine-no', 'font-presentation'])
 
-# 레거시 API (backward compatibility)
-dm.use_style('dmpl')  # 이전 버전 호환용
+# Legacy API (backward compatibility)
+dm.use_style('dmpl')
 ```
 
-#### 스타일 내용 확인
+#### Inspect Style Content
 ```python
-# 스타일 파일의 내용 확인
+# Check content of a style file
 style_dict = dm.load_style_dict('font-presentation')
 
-# 스타일 파일 경로 확인
+# Check path of a style file
 path = dm.style_path('base')
 
-# 프리셋 정의 파일 경로
+# Check path of presets definition file
 preset_path = dm.style.presets_path()
 ```
 
-### 2.2 색상 시스템
+### 2.2 Color System
 
-#### dartwork-mpl 커스텀 색상
+#### dartwork-mpl Custom Colors
 ```python
-# dm. 접두사로 사용
+# Use with dm. prefix
 ax.plot(x, y, color='dm.red5')
 ax.scatter(x, y, c='dm.blue2')
 ```
 
-#### Tailwind CSS 색상
+#### Tailwind CSS Colors
 ```python
-# tw. 또는 tailwind. 접두사 사용
-# 형식: tw.{color}:{weight}
+# Use tw. or tailwind. prefix
+# Format: tw.{color}:{weight}
 ax.plot(x, y, color='tw.blue:500')
 ax.fill_between(x, y1, y2, color='tailwind.gray:200')
 ```
 
-#### 색상 유틸리티
+#### Color Utilities
 ```python
-# 두 색상 혼합
+# Mix two colors
 mixed = dm.mix_colors('dm.red5', 'dm.blue5', alpha=0.5)
 
-# 가상 투명도 적용 (배경색과 혼합)
+# Apply pseudo-transparency (mix with background)
 transparent = dm.pseudo_alpha('dm.red5', alpha=0.3, background='white')
 ```
 
-### 2.3 레이아웃 유틸리티
+### 2.3 Layout Utilities
 
-#### Figure 생성 권장 패턴
+#### Recommended Figure Creation Pattern
 ```python
-# 논문용 figure 생성 (단위: cm → inch 변환)
-# Single column figure: 9cm 너비
+# Create figure for papers (Unit: cm -> inch conversion)
+# Single column figure: 9cm width
 fig = plt.figure(
     figsize=(dm.cm2in(9), dm.cm2in(7)),
     dpi=200
 )
 
-# Double column figure: 17cm 너비
+# Double column figure: 17cm width
 fig = plt.figure(
     figsize=(dm.cm2in(17), dm.cm2in(7)),
     dpi=200
 )
 
-# GridSpec으로 레이아웃 설정
+# Set layout with GridSpec
 gs = fig.add_gridspec(
     nrows=1, ncols=1, 
     left=0.17, right=0.95, 
@@ -134,94 +134,94 @@ gs = fig.add_gridspec(
 ax = fig.add_subplot(gs[0, 0])
 ```
 
-#### 자동 레이아웃 조정
+#### Automatic Layout Adjustment
 
-`simple_layout`은 `plt.tight_layout()`의 개선된 버전으로, 더 정밀한 여백 제어와 예측 가능한 결과를 제공합니다.
+`simple_layout` is an improved version of `plt.tight_layout()`, providing more precise margin control and predictable results.
 
 ```python
-# 기본 사용법 (권장)
+# Basic usage (Recommended)
 dm.simple_layout(fig)
 
-# 여백 조정 (인치 단위: left, right, bottom, top)
+# Adjust margins (Unit: inch, left, right, bottom, top)
 dm.simple_layout(fig, margins=(0.1, 0.05, 0.1, 0.05))
 
-# 특정 GridSpec에 대해서만 적용
+# Apply only to specific GridSpec
 dm.simple_layout(fig, gs=gs, margins=(0.08, 0.02, 0.08, 0.02))
 
-# bbox를 사용한 부분 영역 최적화 (figure 좌표계: left, right, bottom, top)
-# 전체 figure (기본값)
+# Optimize partial area using bbox (Figure coordinates: left, right, bottom, top)
+# Entire figure (Default)
 dm.simple_layout(fig, bbox=(0, 1, 0, 1))
 
-# figure의 왼쪽 절반에만 최적화
+# Optimize only left half
 dm.simple_layout(fig, bbox=(0, 0.5, 0, 1))
 
-# figure의 오른쪽 절반에만 최적화  
+# Optimize only right half
 dm.simple_layout(fig, bbox=(0.5, 1, 0, 1))
 
-# figure의 상단 절반에만 최적화
+# Optimize only top half
 dm.simple_layout(fig, bbox=(0, 1, 0.5, 1))
 
-# 모든 axes에 적용 (복수 GridSpec이 있을 때)
+# Apply to all axes (When multiple GridSpecs exist)
 dm.simple_layout(fig, use_all_axes=True)
 ```
 
-**주요 매개변수:**
-- `margins`: 인치 단위의 여백 (left, right, bottom, top)
-- `bbox`: figure 좌표계에서의 최적화 대상 영역 (left, right, bottom, top)
-- `gs`: 특정 GridSpec 지정 (None이면 첫 번째 GridSpec 사용)
-- `use_all_axes`: True시 모든 axes를 고려 (기본값: False)
+**Key Parameters:**
+- `margins`: Margins in inches (left, right, bottom, top)
+- `bbox`: Optimization target area in figure coordinates (left, right, bottom, top)
+- `gs`: Specific GridSpec (Uses first GridSpec if None)
+- `use_all_axes`: Consider all axes if True (Default: False)
 
-**bbox 활용 예:**
-복수의 subplot이 있을 때 특정 영역의 레이아웃만 개별적으로 최적화할 수 있습니다. 예를 들어 `bbox=(0, 0.5, 0, 1)`로 설정하면 figure의 왼쪽 절반 영역에 대해서만 레이아웃 최적화가 수행됩니다.
+**bbox Usage Example:**
+When multiple subplots exist, you can optimize layout for specific areas individually. For example, `bbox=(0, 0.5, 0, 1)` optimizes layout only for the left half of the figure.
 
-### 2.4 폰트 유틸리티
+### 2.4 Font Utilities
 
 ```python
-# 상대적 폰트 크기 조정
+# Relative font size adjustment
 title_size = dm.fs(2)   # base font size + 2
 label_size = dm.fs(-1)  # base font size - 1
 
-# 폰트 weight 조정 (100 단위)
+# Font weight adjustment (100 units)
 bold_weight = dm.fw(2)  # base weight + 200
 
-# 사용 예
+# Usage example
 ax.set_title('Title', fontsize=dm.fs(2), fontweight=dm.fw(1))
 ax.legend(fontsize=dm.fs(-2))
 ```
 
-### 2.5 저장 및 표시
+### 2.5 Save and Display
 
-#### 다중 포맷 저장
+#### Multi-format Save
 ```python
-# 여러 형식으로 동시 저장
+# Save in multiple formats simultaneously
 dm.save_formats(
     fig, 
-    'output/figure',  # 확장자 없이
+    'output/figure',  # Without extension
     formats=('svg', 'png', 'pdf', 'eps'),
     bbox_inches='tight',
     dpi=600
 )
 ```
 
-#### Jupyter에서 저장 후 표시
+#### Save and Display in Jupyter
 ```python
-# plt.show() 대신 사용 - 임시 파일로 저장 후 바로 표시 (권장)
+# Use instead of plt.show() - Save to temp file and display (Recommended)
 dm.save_and_show(fig, size=600)
 
-# 특정 경로에 저장하고 표시
+# Save to specific path and display
 dm.save_and_show(fig, 'output/figure.svg', size=600)
 
-# 기존 파일 표시
+# Display existing file
 dm.show('output/figure.svg', size=600)
 ```
 
-### 2.6 서브플롯 라벨링
+### 2.6 Subplot Labeling
 
 ```python
-# 서브플롯 라벨 (a, b, c...) 추가
+# Add subplot labels (a, b, c...)
 axs = [ax1, ax2]
 for ax, label in zip(axs, 'ab'):
-    # 텍스트 오프셋 설정 시 반드시 make_offset 함수 사용
+    # Must use make_offset for text offset
     offset = dm.make_offset(4, -4, fig)  # x=4pt, y=-4pt
     ax.text(
         0, 1, label, 
@@ -231,42 +231,42 @@ for ax, label in zip(axs, 'ab'):
     )
 ```
 
-**중요**: 텍스트의 위치를 조정할 때는 항상 `dm.make_offset()` 함수를 사용해야 합니다. 이 함수는 포인트(pt) 단위로 정확한 오프셋을 제공하여 DPI와 무관하게 일관된 결과를 보장합니다.
+**Important**: Always use `dm.make_offset()` when adjusting text position. This function provides precise offsets in points (pt), ensuring consistent results regardless of DPI.
 
-### 2.7 컬러맵 시각화
+### 2.7 Colormap Visualization
 
 ```python
-# 사용 가능한 컬러맵 확인
+# Check available colormaps
 fig, axs = dm.plot_colormaps(
-    cmap_list=['viridis', 'dm.spectral'],  # None이면 전체
+    cmap_list=['viridis', 'dm.spectral'],  # All if None
     ncols=3,
-    group_by_type=True  # 타입별 그룹화
+    group_by_type=True  # Group by type
 )
 
-# 색상 팔레트 확인
-fig = dm.plot_colors()  # 모든 색상 표시
+# Check color palette
+fig = dm.plot_colors()  # Show all colors
 
-# 폰트 확인
-fig = dm.plot_fonts()  # 사용 가능한 폰트 표시
+# Check fonts
+fig = dm.plot_fonts()  # Show available fonts
 ```
 
-## 3. 권장 워크플로우
+## 3. Recommended Workflow
 
-### 논문 품질 그래프 작성 단계
+### Steps for Publication-Quality Graphs
 
-1. **데이터 준비와 플롯 코드 분리**
+1. **Separate Data Preparation and Plotting Code**
 ```python
-# 데이터 준비 셀
+# Data preparation cell
 x = np.linspace(0, 10, 100)
 y1 = np.sin(x)
 y2 = np.cos(x)
 
-# 플롯 셀 (별도)
+# Plot cell (Separate)
 fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)))
 # ...
 ```
 
-2. **GridSpec 기반 레이아웃**
+2. **GridSpec Based Layout**
 ```python
 gs = fig.add_gridspec(
     nrows=2, ncols=1,
@@ -276,74 +276,74 @@ gs = fig.add_gridspec(
 )
 ```
 
-3. **핸들 기반 레전드**
+3. **Handle Based Legend**
 ```python
 line1, = ax.plot(x, y1, color='dm.red5', lw=0.7)
-scatter1 = ax.scatter([], [], c='dm.red5', s=1)  # 더미 for legend
+scatter1 = ax.scatter([], [], c='dm.red5', s=1)  # Dummy for legend
 ax.legend([scatter1, line1], ['Data', 'Model'])
 ```
 
-4. **명시적 틱 설정**
+4. **Explicit Tick Setting**
 ```python
 ax.set_xticks([0, 2, 4, 6, 8, 10])
 ax.set_yticks([-1, -0.5, 0, 0.5, 1])
 ```
 
-5. **저장 기준 확인**
+5. **Check Save Result**
 ```python
-# plt.show() 대신 사용 - 실제 저장된 결과 확인 가능
+# Use instead of plt.show() - Check actual saved result
 dm.save_and_show(fig)
 ```
 
-## 4. 한국어 지원
+## 4. Korean Support
 
 ```python
-# 한국어 폰트 적용
+# Apply Korean font
 dm.style.use(['base', 'lang-kr'])
 
-# 또는 프리셋 사용
+# Or use preset
 dm.style.use_preset('scientific-kr')
 ```
 
-## 5. 프리셋 스타일
+## 5. Preset Styles
 
-사용 가능한 프리셋:
-- `scientific`: 논문용 (작은 폰트)
-- `investment`: 투자 보고서용
-- `presentation`: 프레젠테이션용 (큰 폰트)
-- `scientific-kr`, `investment-kr`, `presentation-kr`: 한국어 버전
+Available Presets:
+- `scientific`: For academic papers (Small fonts)
+- `investment`: For investment reports
+- `presentation`: For presentations (Large fonts)
+- `scientific-kr`, `investment-kr`, `presentation-kr`: Korean versions
 
-## 6. 주의사항
+## 6. Precautions
 
-1. **tight_layout 피하기**: `dm.simple_layout()` 사용 권장
-2. **savefig 기준**: `plt.show()`가 아닌 저장된 파일 기준으로 작업
-3. **단위 확인**: matplotlib은 다양한 단위 사용 (inch, point, pixel)
-4. **색상 네이밍**: `dm.`, `tw.`, `tailwind.` 접두사 구분
+1. **Avoid tight_layout**: Recommend using `dm.simple_layout()`
+2. **Savefig Criteria**: Work based on saved files, not `plt.show()`
+3. **Check Units**: matplotlib uses various units (inch, point, pixel)
+4. **Color Naming**: Distinguish `dm.`, `tw.`, `tailwind.` prefixes
 
-## 7. 완전한 예제
+## 7. Complete Example
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
-# 스타일 설정
+# Set style
 dm.style.use_preset('scientific')
 
-# 데이터 생성
+# Generate data
 x = np.linspace(0, 10, 100)
 y1 = np.sin(x)
 y2 = np.cos(x)
 y1_data = y1 + np.random.normal(0, 0.1, size=len(y1))
 y2_data = y2 + np.random.normal(0, 0.1, size=len(y2))
 
-# Figure 생성
+# Create Figure
 fig = plt.figure(
     figsize=(dm.cm2in(9), dm.cm2in(7)),
     dpi=200
 )
 
-# GridSpec 레이아웃
+# GridSpec Layout
 gs = fig.add_gridspec(
     nrows=1, ncols=1,
     left=0.17, right=0.95,
@@ -351,17 +351,17 @@ gs = fig.add_gridspec(
 )
 ax = fig.add_subplot(gs[0, 0])
 
-# 데이터 플롯
+# Plot Data
 line1, = ax.plot(x, y1, c='dm.red5', lw=0.7)
 line2, = ax.plot(x, y2, c='dm.blue5', lw=0.7)
 ax.scatter(x, y1_data, c='dm.red2', s=0.7)
 ax.scatter(x, y2_data, c='dm.blue2', s=0.7)
 
-# 레전드용 더미 플롯
+# Dummy plots for legend
 scatter1 = ax.scatter([], [], c='dm.red5', s=10)
 scatter2 = ax.scatter([], [], c='dm.blue5', s=10)
 
-# 라벨 및 레전드
+# Labels and Legend
 ax.set_xlabel('X value [Hour]')
 ax.set_ylabel('Y value [kW]')
 ax.legend(
@@ -372,22 +372,22 @@ ax.legend(
     ncol=2
 )
 
-# 틱 설정
+# Set Ticks
 ax.set_xticks([0, 2, 4, 6, 8, 10])
 ax.set_yticks([-1, -0.5, 0, 0.5, 1])
 ax.set_ylim(-1.2, 1.2)
 
-# 레이아웃 최적화
+# Optimize Layout
 dm.simple_layout(fig)
 
-# Jupyter에서 미리보기
+# Preview in Jupyter
 dm.save_and_show(fig)
 
-# 논문 제출용 다중 포맷 저장
+# Save in multiple formats for submission
 dm.save_formats(
     fig,
-    'figures/example_figure',  # 확장자 없이 base filename
-    formats=('svg', 'png', 'pdf', 'eps'),  # 4개 포맷 모두 저장
+    'figures/example_figure',  # Base filename without extension
+    formats=('svg', 'png', 'pdf', 'eps'),  # Save all 4 formats
     bbox_inches='tight',
     dpi=600
 )
