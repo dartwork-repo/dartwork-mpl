@@ -1,0 +1,37 @@
+/* Hide the "CONTENTS:" label in the sidebar */
+.sidebar-tree .caption-text {
+    display: none;
+}
+
+/* Make all sidebar items expandable (show chevron icons) */
+.sidebar-tree li>a {
+    display: flex;
+    align-items: center;
+}
+
+/* Change download button colors from yellow to brighter blue/cyan */
+.sphx-glr-download-python,
+.sphx-glr-download-jupyter {
+    background-color: #e3f2fd !important;
+    border: 1px solid #90caf9 !important;
+    border-radius: 4px;
+    padding: 12px 16px;
+}
+
+.sphx-glr-download-python:hover,
+.sphx-glr-download-jupyter:hover {
+    background-color: #bbdefb !important;
+    border-color: #64b5f6 !important;
+}
+
+/* Style the download links */
+.sphx-glr-download a {
+    color: #1976d2 !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sphx-glr-download a:hover {
+    color: #1565c0 !important;
+    text-decoration: underline;
+}

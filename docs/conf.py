@@ -32,6 +32,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'furo'
 html_static_path = ['_static']
+html_css_files = ['custom.css']
+
+# Remove version from the sidebar title
+html_title = f"{project} documentation"
 
 # -- Furo theme options ------------------------------------------------------
 html_theme_options = {
@@ -40,6 +44,10 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "top_of_page_button": "edit",  # Shows "Edit on GitHub" button
+    "footer_icons": [],  # Remove "Made with Sphinx and Furo" footer
+    "navigation_with_keys": True,  # Enable keyboard navigation
+    "globaltoc_collapse": False,  # Keep all sections expanded in sidebar
+    "globaltoc_maxdepth": 4,  # Show all levels of subsections
 }
 
 # -- Sphinx Gallery configuration --------------------------------------------

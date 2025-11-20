@@ -8,7 +8,6 @@ Welcome to dartwork-mpl's documentation!
 
 .. toctree::
    :maxdepth: 4
-   :caption: Contents:
 
    DARTWORK_MPL_USAGE_GUIDE.md
    COLOR_GALLERY.md
