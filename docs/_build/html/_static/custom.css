@@ -1,0 +1,40 @@
+/* Hide the "CONTENTS:" label in the sidebar */
+.sidebar-tree .caption-text {
+    display: none;
+}
+
+/* Make all sidebar items expandable (show chevron icons) */
+.sidebar-tree li>a {
+    display: flex;
+    align-items: center;
+}
+
+/* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
+.sphx-glr-download-python,
+.sphx-glr-download-jupyter,
+.sphx-glr-download-zip {
+    background-color: #f7f7f7 !important;
+    border: 1px solid #d0d0d0 !important;
+    border-radius: 2px;
+    padding: 10px 14px;
+    box-shadow: none !important;
+}
+
+.sphx-glr-download-python:hover,
+.sphx-glr-download-jupyter:hover,
+.sphx-glr-download-zip:hover {
+    background-color: #ececec !important;
+    border-color: #c0c0c0 !important;
+}
+
+/* Style the download links */
+.sphx-glr-download a {
+    color: #1a1a1a !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sphx-glr-download a:hover {
+    color: #000 !important;
+    text-decoration: underline;
+}
