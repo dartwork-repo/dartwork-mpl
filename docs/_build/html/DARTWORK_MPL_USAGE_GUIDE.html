@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dartwork-mpl 라이브러리 사용법 &mdash; dartwork-mpl 0.1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=a58bc63e"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Color and Colormap Gallery" href="COLOR_GALLERY.html" />
+    <link rel="prev" title="Welcome to dartwork-mpl’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            dartwork-mpl
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dartwork-mpl 라이브러리 사용법</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1. 설치 및 기본 설정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">설치</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#uv">uv 사용 (권장)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pip">pip 사용</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">기본 임포트</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">2. 주요 기능</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.1 스타일 관리</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">사용 가능한 스타일 확인</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">스타일 적용</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">스타일 내용 확인</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">2.2 색상 시스템</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">dartwork-mpl 커스텀 색상</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tailwind-css">Tailwind CSS 색상</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">색상 유틸리티</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">2.3 레이아웃 유틸리티</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#figure">Figure 생성 권장 패턴</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">자동 레이아웃 조정</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">2.4 폰트 유틸리티</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">2.5 저장 및 표시</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id16">다중 포맷 저장</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jupyter">Jupyter에서 저장 후 표시</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">2.6 서브플롯 라벨링</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">2.7 컬러맵 시각화</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id19">3. 권장 워크플로우</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id20">논문 품질 그래프 작성 단계</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id21">4. 한국어 지원</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id22">5. 프리셋 스타일</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id23">6. 주의사항</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id24">7. 완전한 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="COLOR_GALLERY.html">Color and Colormap Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API_REFERENCE.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">dartwork_mpl</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dartwork-mpl</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">dartwork-mpl 라이브러리 사용법</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/DARTWORK_MPL_USAGE_GUIDE.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dartwork-mpl">
+<h1>dartwork-mpl 라이브러리 사용법<a class="headerlink" href="#dartwork-mpl" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>1. 설치 및 기본 설정<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>설치<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="uv">
+<h4>uv 사용 (권장)<a class="headerlink" href="#uv" title="Link to this heading"></a></h4>
+<p><a class="reference external" href="https://github.com/astral-sh/uv">uv</a>는 빠르고 효율적인 Python 패키지 매니저입니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 프로젝트에 추가 (권장)</span>
+uv<span class="w"> </span>add<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+
+<span class="c1"># 또는 직접 설치</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+
+<span class="c1"># 특정 브랜치/태그 지정</span>
+uv<span class="w"> </span>add<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl@main
+</pre></div>
+</div>
+</section>
+<section id="pip">
+<h4>pip 사용<a class="headerlink" href="#pip" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h3>기본 임포트<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># 기본 스타일 적용 (권장)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>  <span class="c1"># 논문용 기본 스타일</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>2. 주요 기능<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id5">
+<h3>2.1 스타일 관리<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<section id="id6">
+<h4>사용 가능한 스타일 확인<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 모든 개별 스타일 목록 보기</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">list_styles</span><span class="p">()</span>
+<span class="c1"># [&#39;base&#39;, &#39;dmpl&#39;, &#39;dmpl_light&#39;, &#39;font-investment&#39;, &#39;font-presentation&#39;, </span>
+<span class="c1">#  &#39;font-scientific&#39;, &#39;lang-kr&#39;, &#39;spine-no&#39;, &#39;spine-yes&#39;]</span>
+
+<span class="c1"># 사용 가능한 프리셋 확인</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">presets_dict</span><span class="p">()</span>
+<span class="c1"># {&#39;scientific&#39;: [&#39;base&#39;, &#39;font-scientific&#39;],</span>
+<span class="c1">#  &#39;investment&#39;: [&#39;base&#39;, &#39;font-investment&#39;],</span>
+<span class="c1">#  &#39;presentation&#39;: [&#39;base&#39;, &#39;font-presentation&#39;],</span>
+<span class="c1">#  &#39;scientific-kr&#39;: [&#39;base&#39;, &#39;font-scientific&#39;, &#39;lang-kr&#39;],</span>
+<span class="c1">#  &#39;investment-kr&#39;: [&#39;base&#39;, &#39;font-investment&#39;, &#39;lang-kr&#39;],</span>
+<span class="c1">#  &#39;presentation-kr&#39;: [&#39;base&#39;, &#39;font-presentation&#39;, &#39;lang-kr&#39;]}</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h4>스타일 적용<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 프리셋 사용 (권장)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>  <span class="c1"># 논문용</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;presentation&#39;</span><span class="p">)</span>  <span class="c1"># 프레젠테이션용</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific-kr&#39;</span><span class="p">)</span>  <span class="c1"># 한국어 논문용</span>
+
+<span class="c1"># 개별 스타일 조합 (고급 사용자용)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="s1">&#39;spine-no&#39;</span><span class="p">,</span> <span class="s1">&#39;font-presentation&#39;</span><span class="p">])</span>
+
+<span class="c1"># 레거시 API (backward compatibility)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s1">&#39;dmpl&#39;</span><span class="p">)</span>  <span class="c1"># 이전 버전 호환용</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h4>스타일 내용 확인<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 스타일 파일의 내용 확인</span>
+<span class="n">style_dict</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">load_style_dict</span><span class="p">(</span><span class="s1">&#39;font-presentation&#39;</span><span class="p">)</span>
+
+<span class="c1"># 스타일 파일 경로 확인</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">style_path</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span>
+
+<span class="c1"># 프리셋 정의 파일 경로</span>
+<span class="n">preset_path</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">presets_path</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h3>2.2 색상 시스템<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="id10">
+<h4>dartwork-mpl 커스텀 색상<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dm. 접두사로 사용</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tailwind-css">
+<h4>Tailwind CSS 색상<a class="headerlink" href="#tailwind-css" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># tw. 또는 tailwind. 접두사 사용</span>
+<span class="c1"># 형식: tw.{color}:{weight}</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tw.blue:500&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tailwind.gray:200&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h4>색상 유틸리티<a class="headerlink" href="#id11" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 두 색상 혼합</span>
+<span class="n">mixed</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">mix_colors</span><span class="p">(</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="s1">&#39;dm.blue5&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># 가상 투명도 적용 (배경색과 혼합)</span>
+<span class="n">transparent</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">pseudo_alpha</span><span class="p">(</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id12">
+<h3>2.3 레이아웃 유틸리티<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<section id="figure">
+<h4>Figure 생성 권장 패턴<a class="headerlink" href="#figure" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 논문용 figure 생성 (단위: cm → inch 변환)</span>
+<span class="c1"># Single column figure: 9cm 너비</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)),</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span>
+<span class="p">)</span>
+
+<span class="c1"># Double column figure: 17cm 너비</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">17</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)),</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span>
+<span class="p">)</span>
+
+<span class="c1"># GridSpec으로 레이아웃 설정</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">left</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> 
+    <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> 
+    <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="id13">
+<h4>자동 레이아웃 조정<a class="headerlink" href="#id13" title="Link to this heading"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">simple_layout</span></code>은 <code class="docutils literal notranslate"><span class="pre">plt.tight_layout()</span></code>의 개선된 버전으로, 더 정밀한 여백 제어와 예측 가능한 결과를 제공합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 기본 사용법 (권장)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="c1"># 여백 조정 (인치 단위: left, right, bottom, top)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">))</span>
+
+<span class="c1"># 특정 GridSpec에 대해서만 적용</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="o">=</span><span class="n">gs</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">))</span>
+
+<span class="c1"># bbox를 사용한 부분 영역 최적화 (figure 좌표계: left, right, bottom, top)</span>
+<span class="c1"># 전체 figure (기본값)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># figure의 왼쪽 절반에만 최적화</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># figure의 오른쪽 절반에만 최적화  </span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># figure의 상단 절반에만 최적화</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># 모든 axes에 적용 (복수 GridSpec이 있을 때)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">use_all_axes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>주요 매개변수:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">margins</span></code>: 인치 단위의 여백 (left, right, bottom, top)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bbox</span></code>: figure 좌표계에서의 최적화 대상 영역 (left, right, bottom, top)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gs</span></code>: 특정 GridSpec 지정 (None이면 첫 번째 GridSpec 사용)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_all_axes</span></code>: True시 모든 axes를 고려 (기본값: False)</p></li>
+</ul>
+<p><strong>bbox 활용 예:</strong>
+복수의 subplot이 있을 때 특정 영역의 레이아웃만 개별적으로 최적화할 수 있습니다. 예를 들어 <code class="docutils literal notranslate"><span class="pre">bbox=(0,</span> <span class="pre">0.5,</span> <span class="pre">0,</span> <span class="pre">1)</span></code>로 설정하면 figure의 왼쪽 절반 영역에 대해서만 레이아웃 최적화가 수행됩니다.</p>
+</section>
+</section>
+<section id="id14">
+<h3>2.4 폰트 유틸리티<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 상대적 폰트 크기 조정</span>
+<span class="n">title_size</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># base font size + 2</span>
+<span class="n">label_size</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># base font size - 1</span>
+
+<span class="c1"># 폰트 weight 조정 (100 단위)</span>
+<span class="n">bold_weight</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">fw</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># base weight + 200</span>
+
+<span class="c1"># 사용 예</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">fontweight</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fw</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h3>2.5 저장 및 표시<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<section id="id16">
+<h4>다중 포맷 저장<a class="headerlink" href="#id16" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 여러 형식으로 동시 저장</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">save_formats</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span> 
+    <span class="s1">&#39;output/figure&#39;</span><span class="p">,</span>  <span class="c1"># 확장자 없이</span>
+    <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">),</span>
+    <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="jupyter">
+<h4>Jupyter에서 저장 후 표시<a class="headerlink" href="#jupyter" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># plt.show() 대신 사용 - 임시 파일로 저장 후 바로 표시 (권장)</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+
+<span class="c1"># 특정 경로에 저장하고 표시</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">&#39;output/figure.svg&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+
+<span class="c1"># 기존 파일 표시</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;output/figure.svg&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id17">
+<h3>2.6 서브플롯 라벨링<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 서브플롯 라벨 (a, b, c...) 추가</span>
+<span class="n">axs</span> <span class="o">=</span> <span class="p">[</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">):</span>
+    <span class="c1"># 텍스트 오프셋 설정 시 반드시 make_offset 함수 사용</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">make_offset</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>  <span class="c1"># x=4pt, y=-4pt</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> 
+        <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span>
+        <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+        <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>중요</strong>: 텍스트의 위치를 조정할 때는 항상 <code class="docutils literal notranslate"><span class="pre">dm.make_offset()</span></code> 함수를 사용해야 합니다. 이 함수는 포인트(pt) 단위로 정확한 오프셋을 제공하여 DPI와 무관하게 일관된 결과를 보장합니다.</p>
+</section>
+<section id="id18">
+<h3>2.7 컬러맵 시각화<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 사용 가능한 컬러맵 확인</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">plot_colormaps</span><span class="p">(</span>
+    <span class="n">cmap_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;dm.spectral&#39;</span><span class="p">],</span>  <span class="c1"># None이면 전체</span>
+    <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">group_by_type</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># 타입별 그룹화</span>
+<span class="p">)</span>
+
+<span class="c1"># 색상 팔레트 확인</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">()</span>  <span class="c1"># 모든 색상 표시</span>
+
+<span class="c1"># 폰트 확인</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">plot_fonts</span><span class="p">()</span>  <span class="c1"># 사용 가능한 폰트 표시</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id19">
+<h2>3. 권장 워크플로우<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<section id="id20">
+<h3>논문 품질 그래프 작성 단계<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>데이터 준비와 플롯 코드 분리</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 데이터 준비 셀</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 플롯 셀 (별도)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>GridSpec 기반 레이아웃</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">left</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span>
+    <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>핸들 기반 레전드</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">scatter1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 더미 for legend</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">scatter1</span><span class="p">,</span> <span class="n">line1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;Model&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>명시적 틱 설정</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>저장 기준 확인</strong></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># plt.show() 대신 사용 - 실제 저장된 결과 확인 가능</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id21">
+<h2>4. 한국어 지원<a class="headerlink" href="#id21" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 한국어 폰트 적용</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="s1">&#39;lang-kr&#39;</span><span class="p">])</span>
+
+<span class="c1"># 또는 프리셋 사용</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific-kr&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id22">
+<h2>5. 프리셋 스타일<a class="headerlink" href="#id22" title="Link to this heading"></a></h2>
+<p>사용 가능한 프리셋:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scientific</span></code>: 논문용 (작은 폰트)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">investment</span></code>: 투자 보고서용</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">presentation</span></code>: 프레젠테이션용 (큰 폰트)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scientific-kr</span></code>, <code class="docutils literal notranslate"><span class="pre">investment-kr</span></code>, <code class="docutils literal notranslate"><span class="pre">presentation-kr</span></code>: 한국어 버전</p></li>
+</ul>
+</section>
+<section id="id23">
+<h2>6. 주의사항<a class="headerlink" href="#id23" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>tight_layout 피하기</strong>: <code class="docutils literal notranslate"><span class="pre">dm.simple_layout()</span></code> 사용 권장</p></li>
+<li><p><strong>savefig 기준</strong>: <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>가 아닌 저장된 파일 기준으로 작업</p></li>
+<li><p><strong>단위 확인</strong>: matplotlib은 다양한 단위 사용 (inch, point, pixel)</p></li>
+<li><p><strong>색상 네이밍</strong>: <code class="docutils literal notranslate"><span class="pre">dm.</span></code>, <code class="docutils literal notranslate"><span class="pre">tw.</span></code>, <code class="docutils literal notranslate"><span class="pre">tailwind.</span></code> 접두사 구분</p></li>
+</ol>
+</section>
+<section id="id24">
+<h2>7. 완전한 예제<a class="headerlink" href="#id24" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
+
+<span class="c1"># 스타일 설정</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>
+
+<span class="c1"># 데이터 생성</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y1_data</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">))</span>
+<span class="n">y2_data</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">y2</span><span class="p">))</span>
+
+<span class="c1"># Figure 생성</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)),</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span>
+<span class="p">)</span>
+
+<span class="c1"># GridSpec 레이아웃</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">left</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.17</span>
+<span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># 데이터 플롯</span>
+<span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">line2</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1_data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red2&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2_data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue2&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># 레전드용 더미 플롯</span>
+<span class="n">scatter1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">scatter2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue5&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># 라벨 및 레전드</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X value [Hour]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y value [kW]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">scatter1</span><span class="p">,</span> <span class="n">line1</span><span class="p">,</span> <span class="n">scatter2</span><span class="p">,</span> <span class="n">line2</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Sin data&#39;</span><span class="p">,</span> <span class="s1">&#39;Sin model&#39;</span><span class="p">,</span> <span class="s1">&#39;Cos data&#39;</span><span class="p">,</span> <span class="s1">&#39;Cos model&#39;</span><span class="p">],</span>
+    <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="c1"># 틱 설정</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+
+<span class="c1"># 레이아웃 최적화</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="c1"># Jupyter에서 미리보기</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+<span class="c1"># 논문 제출용 다중 포맷 저장</span>
+<span class="n">dm</span><span class="o">.</span><span class="n">save_formats</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="s1">&#39;figures/example_figure&#39;</span><span class="p">,</span>  <span class="c1"># 확장자 없이 base filename</span>
+    <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">),</span>  <span class="c1"># 4개 포맷 모두 저장</span>
+    <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to dartwork-mpl’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="COLOR_GALLERY.html" class="btn btn-neutral float-right" title="Color and Colormap Gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sangwon Lee, Wonjun Choi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
