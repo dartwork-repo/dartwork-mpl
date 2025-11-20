@@ -58,7 +58,7 @@ This example simulates a comprehensive figure for a scientific paper, featuring 
 
     # Create figure (Double column width for papers: ~17cm)
     fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(8)))
-    gs = fig.add_gridspec(1, 2, width_ratios=[1.5, 1])
+    gs = fig.add_gridspec(1, 2, width_ratios=[1.5, 1], wspace=0.3)
 
     # Panel A: Regression with Error Bars
     ax1 = fig.add_subplot(gs[0])
@@ -108,7 +108,7 @@ This example simulates a comprehensive figure for a scientific paper, featuring 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.536 seconds)
+   **Total running time of the script:** (0 minutes 0.566 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_scientific_paper.py:

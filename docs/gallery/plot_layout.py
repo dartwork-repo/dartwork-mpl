@@ -13,7 +13,7 @@ dm.style.use_preset('scientific')
 
 # Create a figure with multiple subplots
 fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)))
-gs = fig.add_gridspec(2, 2)
+gs = fig.add_gridspec(2, 2, hspace=0.4)
 
 ax1 = fig.add_subplot(gs[0, 0])
 ax2 = fig.add_subplot(gs[0, 1])

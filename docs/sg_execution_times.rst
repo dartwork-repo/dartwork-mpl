@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.752** total execution time for 8 files **from all galleries**:
+**00:01.670** total execution time for 12 files **from all galleries**:
 
 .. container::
 
@@ -32,8 +32,11 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_plot_heatmap.py` (``examples_source/plot_heatmap.py``)
-     - 00:00.752
+   * - :ref:`sphx_glr_gallery_plot_streamplot.py` (``examples_source/plot_streamplot.py``)
+     - 00:01.151
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_contour.py` (``examples_source/plot_contour.py``)
+     - 00:00.519
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_3d.py` (``examples_source/plot_3d.py``)
      - 00:00.000
@@ -50,9 +53,18 @@ Computation times
    * - :ref:`sphx_glr_gallery_plot_dual_axis.py` (``examples_source/plot_dual_axis.py``)
      - 00:00.000
      - 0.0
+   * - :ref:`sphx_glr_gallery_plot_heatmap.py` (``examples_source/plot_heatmap.py``)
+     - 00:00.000
+     - 0.0
    * - :ref:`sphx_glr_gallery_plot_layout.py` (``examples_source/plot_layout.py``)
      - 00:00.000
      - 0.0
+   * - :ref:`sphx_glr_gallery_plot_probability_density.py` (``examples_source/plot_probability_density.py``)
+     - 00:00.000
+     - 0.0
    * - :ref:`sphx_glr_gallery_plot_scientific_paper.py` (``examples_source/plot_scientific_paper.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_violin_box.py` (``examples_source/plot_violin_box.py``)
      - 00:00.000
      - 0.0
