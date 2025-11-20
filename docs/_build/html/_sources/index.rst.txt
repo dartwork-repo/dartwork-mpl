@@ -13,7 +13,7 @@ Welcome to dartwork-mpl's documentation!
    DARTWORK_MPL_USAGE_GUIDE.md
    COLOR_GALLERY.md
    API_REFERENCE.md
-   api/modules
+   api/dartwork_mpl
    gallery/index
 
 Indices and tables

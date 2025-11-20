@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:01.657** total execution time for 3 files **from gallery**:
+**00:00.752** total execution time for 8 files **from gallery**:
 
 .. container::
 
@@ -32,12 +32,27 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_plot_layout.py` (``plot_layout.py``)
-     - 00:00.747
+   * - :ref:`sphx_glr_gallery_plot_heatmap.py` (``plot_heatmap.py``)
+     - 00:00.752
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_3d.py` (``plot_3d.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_bar_chart.py` (``plot_bar_chart.py``)
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_basic.py` (``plot_basic.py``)
-     - 00:00.579
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_plot_colors.py` (``plot_colors.py``)
-     - 00:00.331
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_dual_axis.py` (``plot_dual_axis.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_layout.py` (``plot_layout.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_plot_scientific_paper.py` (``plot_scientific_paper.py``)
+     - 00:00.000
      - 0.0
