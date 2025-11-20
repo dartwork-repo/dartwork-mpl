@@ -9,29 +9,32 @@
     align-items: center;
 }
 
-/* Change download button colors from yellow to brighter blue/cyan */
+/* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
 .sphx-glr-download-python,
-.sphx-glr-download-jupyter {
-    background-color: #e3f2fd !important;
-    border: 1px solid #90caf9 !important;
-    border-radius: 4px;
-    padding: 12px 16px;
+.sphx-glr-download-jupyter,
+.sphx-glr-download-zip {
+    background-color: #f7f7f7 !important;
+    border: 1px solid #d0d0d0 !important;
+    border-radius: 2px;
+    padding: 10px 14px;
+    box-shadow: none !important;
 }
 
 .sphx-glr-download-python:hover,
-.sphx-glr-download-jupyter:hover {
-    background-color: #bbdefb !important;
-    border-color: #64b5f6 !important;
+.sphx-glr-download-jupyter:hover,
+.sphx-glr-download-zip:hover {
+    background-color: #ececec !important;
+    border-color: #c0c0c0 !important;
 }
 
 /* Style the download links */
 .sphx-glr-download a {
-    color: #1976d2 !important;
+    color: #1a1a1a !important;
     text-decoration: none;
     font-weight: 500;
 }
 
 .sphx-glr-download a:hover {
-    color: #1565c0 !important;
+    color: #000 !important;
     text-decoration: underline;
 }
