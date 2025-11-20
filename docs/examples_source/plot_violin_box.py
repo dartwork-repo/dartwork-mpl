@@ -26,9 +26,9 @@ ax1.boxplot(data, patch_artist=True,
             medianprops=dict(color='white'),
             whiskerprops=dict(color='dm.gray7'),
             capprops=dict(color='dm.gray7'))
-ax1.set_title('Box Plot')
-ax1.set_xlabel('Category')
-ax1.set_ylabel('Value')
+ax1.set_title('Box Plot', fontsize=dm.fs(1))
+ax1.set_xlabel('Category', fontsize=dm.fs(0))
+ax1.set_ylabel('Value', fontsize=dm.fs(0))
 
 # Violin Plot
 ax2 = fig.add_subplot(gs[1])
@@ -45,9 +45,15 @@ for partname in ('cbars', 'cmins', 'cmaxes', 'cmedians'):
     vp.set_edgecolor('dm.gray7')
     vp.set_linewidth(1)
 
-ax2.set_title('Violin Plot')
-ax2.set_xlabel('Category')
-ax2.set_ylabel('Value')
+ax2.set_title('Violin Plot', fontsize=dm.fs(1))
+ax2.set_xlabel('Category', fontsize=dm.fs(0))
+ax2.set_ylabel('Value', fontsize=dm.fs(0))
+
+# Add subplot labels
+for ax, label in zip([ax1, ax2], 'ab'):
+    offset = dm.make_offset(4, -4, fig)
+    ax.text(0, 1, label, transform=ax.transAxes + offset,
+            weight='bold', va='top', fontsize=dm.fs(2))
 
 dm.simple_layout(fig, gs=gs)
 plt.show()

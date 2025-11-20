@@ -14,7 +14,8 @@ dm.style.use_preset('scientific')
 
 # Create figure
 fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)))
-ax = fig.add_subplot(111)
+gs = fig.add_gridspec(1, 1)
+ax = fig.add_subplot(gs[0, 0])
 
 x = np.linspace(0, 10, 100)
 
@@ -37,10 +38,10 @@ transparent_red = dm.pseudo_alpha('dm.red5', alpha=0.3, background='white')
 ax.fill_between(x, np.sin(x) + 4, 5.5, color=transparent_red, label='Pseudo-alpha Red')
 
 ax.set_ylim(-1.5, 6)
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_title('dartwork-mpl Color System')
-ax.legend(ncol=2, loc='upper center', bbox_to_anchor=(0.5, -0.15))
+ax.set_xlabel('X', fontsize=dm.fs(0))
+ax.set_ylabel('Y', fontsize=dm.fs(0))
+ax.set_title('dartwork-mpl Color System', fontsize=dm.fs(1))
+ax.legend(ncol=2, loc='upper center', bbox_to_anchor=(0.5, -0.15), fontsize=dm.fs(-1))
 
-dm.simple_layout(fig)
+dm.simple_layout(fig, gs=gs)
 plt.show()
