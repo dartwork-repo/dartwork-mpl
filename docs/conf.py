@@ -21,6 +21,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'myst_parser',
+    'sphinx_gallery.gen_gallery',
 ]
 
 templates_path = ['_templates']
@@ -31,6 +32,13 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'furo'
 html_static_path = ['_static']
+
+# -- Sphinx Gallery configuration --------------------------------------------
+sphinx_gallery_conf = {
+     'examples_dirs': 'examples_source',   # path to your example scripts
+     'gallery_dirs': 'gallery',  # path to where to save gallery generated output
+     'filename_pattern': '/plot_',
+}
 
 # -- MyST Parser configuration -----------------------------------------------
 myst_enable_extensions = [

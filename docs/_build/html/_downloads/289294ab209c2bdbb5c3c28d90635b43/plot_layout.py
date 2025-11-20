@@ -1,0 +1,47 @@
+"""
+Layout Optimization
+===================
+
+This example demonstrates the `simple_layout` function for optimizing figure layout, which offers more control than `tight_layout`.
+"""
+
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+
+# Apply style
+dm.style.use_preset('scientific')
+
+# Create a figure with multiple subplots
+fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)))
+gs = fig.add_gridspec(2, 2)
+
+ax1 = fig.add_subplot(gs[0, 0])
+ax2 = fig.add_subplot(gs[0, 1])
+ax3 = fig.add_subplot(gs[1, :])
+
+ax1.plot([1, 2, 3], [1, 2, 3], color='dm.red5')
+ax1.set_title('Subplot 1')
+ax1.set_xlabel('X')
+ax1.set_ylabel('Y')
+
+ax2.plot([1, 2, 3], [3, 2, 1], color='dm.blue5')
+ax2.set_title('Subplot 2')
+ax2.set_xlabel('X')
+ax2.set_ylabel('Y')
+
+ax3.plot([1, 2, 3], [1, 1, 1], color='tw.green:500')
+ax3.set_title('Subplot 3 (Wide)')
+ax3.set_xlabel('X')
+ax3.set_ylabel('Y')
+
+# Add subplot labels (a, b, c)
+for ax, label in zip([ax1, ax2, ax3], 'abc'):
+    offset = dm.make_offset(4, -4, fig)
+    ax.text(0, 1, label, transform=ax.transAxes + offset,
+            weight='bold', va='top')
+
+# Optimize layout
+# You can adjust margins explicitly
+dm.simple_layout(fig, margins=(0.1, 0.1, 0.1, 0.1))
+
+plt.show()

@@ -14,6 +14,7 @@ Welcome to dartwork-mpl's documentation!
    COLOR_GALLERY.md
    API_REFERENCE.md
    api/modules
+   gallery/index
 
 Indices and tables
 ==================
