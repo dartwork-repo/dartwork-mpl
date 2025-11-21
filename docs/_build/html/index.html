@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="./">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dartwork-mpl documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="dartwork-mpl Usage Guide" href="DARTWORK_MPL_USAGE_GUIDE.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dartwork-mpl documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Usage Guide" href="DARTWORK_MPL_USAGE_GUIDE.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=2e593b64" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7ea007c2" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
   --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
 }
 </style>
-    <meta property="og:type" content="website"/><meta property="og:title" content="Welcome to dartwork-mpl’s documentation!"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="dartwork-mpl"/>
     <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="sy-head">
@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="#">Install</a></li><li class="link"><a href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="gallery/index.html">Gallery</a></li><li class="link"><a href="api/index.html">API</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="#">Install</a></li><li class="link"><a href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="gallery/index.html">Gallery</a></li><li class="link"><a href="API_REFERENCE.html">API</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -65,10 +65,8 @@ data-aria-dark="Switch to auto color mode">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="1"><ul>
-<li class="toctree-l1 _expand"><a class="reference internal" href="DARTWORK_MPL_USAGE_GUIDE.html">dartwork-mpl Usage Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="COLOR_GALLERY.html">Color and Colormap Gallery</a></li>
-<li class="toctree-l1 _expand"><a class="reference internal" href="API_REFERENCE.html">API Reference</a></li>
-<li class="toctree-l1 _expand"><a class="reference internal" href="api/dartwork_mpl.html">dartwork_mpl package</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="gallery/index.html">Examples Gallery</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gallery/plot_heatmap.html">Heatmap Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gallery/plot_streamplot.html">Streamplot</a></li>
@@ -102,6 +100,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="gallery/plot_stem.html">Stem Plots</a></li>
 </ul>
 </li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="API_REFERENCE.html">API Reference</a></li>
 </ul>
         </div>
       </div>
@@ -113,8 +112,12 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#">Welcome to dartwork-mpl’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#using-uv-recommended">Using uv (Recommended)</a></li>
+<li><a class="reference internal" href="#using-pip">Using pip</a></li>
+<li><a class="reference internal" href="#basic-import">Basic Import</a></li>
+</ul>
+</li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -129,11 +132,7 @@ data-aria-dark="Switch to auto color mode">
     </div>
     <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a itemprop="item" href="#"><span itemprop="name">dartwork-mpl</span></a>
-        <span>/</span>
         <meta itemprop="position" content="1" />
-      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Welcome to dartwork-mpl’s documentation!</strong>
-        <meta itemprop="position" content="2" />
       </li></ol>
     <div class="xl:hidden ml-1">
       <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
@@ -145,25 +144,45 @@ data-aria-dark="Switch to auto color mode">
 </div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue dark-code" role="main">
-          <section id="welcome-to-dartwork-mpl-s-documentation">
-<h1>Welcome to dartwork-mpl’s documentation!<a class="headerlink" href="#welcome-to-dartwork-mpl-s-documentation" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="DARTWORK_MPL_USAGE_GUIDE.html">dartwork-mpl Usage Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="COLOR_GALLERY.html">Color and Colormap Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="API_REFERENCE.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/dartwork_mpl.html">dartwork_mpl package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery/index.html">Examples Gallery</a></li>
-</ul>
+          <section id="dartwork-mpl">
+<h1>dartwork-mpl<a class="headerlink" href="#dartwork-mpl" title="Link to this heading">¶</a></h1>
+<p><strong>dartwork-mpl</strong> is a matplotlib wrapper for creating publication-quality figures with ease.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<section id="using-uv-recommended">
+<h3>Using uv (Recommended)<a class="headerlink" href="#using-uv-recommended" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://github.com/astral-sh/uv">uv</a> is a fast and efficient Python package manager.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Add to project (Recommended)</span>
+</span><span data-line="2">uv<span class="w"> </span>add<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+</span><span data-line="3">
+</span><span data-line="4"><span class="c1"># Or install directly</span>
+</span><span data-line="5">uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+</span><span data-line="6">
+</span><span data-line="7"><span class="c1"># Specify branch/tag</span>
+</span><span data-line="8">uv<span class="w"> </span>add<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl@main
+</span></pre></div>
 </div>
 </section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
+<section id="using-pip">
+<h3>Using pip<a class="headerlink" href="#using-pip" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+</span></pre></div>
+</div>
+</section>
+<section id="basic-import">
+<h3>Basic Import<a class="headerlink" href="#basic-import" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
+</span><span data-line="2"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span data-line="3"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="c1"># Apply basic style (Recommended)</span>
+</span><span data-line="6"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>  <span class="c1"># Basic style for academic papers</span>
+</span></pre></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
 </section>
 
         </article><button class="back-to-top" type="button">
@@ -175,7 +194,7 @@ data-aria-dark="Switch to auto color mode">
     <a href="DARTWORK_MPL_USAGE_GUIDE.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">dartwork-mpl Usage Guide</div>
+        <div class="title">Usage Guide</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>

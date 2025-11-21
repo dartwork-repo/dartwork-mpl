@@ -42,10 +42,9 @@ div[class^="highlight"] {
 .sphx-glr-download-python:hover,
 .sphx-glr-download-jupyter:hover,
 .sphx-glr-download-zip:hover {
-    background-color: var(--sy-c-link) !important;
+    background-color: transparent !important;
     border-color: var(--sy-c-link) !important;
-    color: var(--sy-c-bg) !important;
-    /* Usually white or dark depending on mode */
+    color: var(--sy-c-link) !important;
 }
 
 /* Style the download links */

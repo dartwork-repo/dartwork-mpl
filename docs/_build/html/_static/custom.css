@@ -25,30 +25,32 @@ div[class^="highlight"] {
 
 /* Furo sidebar styles removed */
 
-/* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
+/* Flatten the Sphinx-Gallery download buttons to match Shibuya theme */
 .sphx-glr-download-python,
 .sphx-glr-download-jupyter,
 .sphx-glr-download-zip {
-    background-color: var(--accent-3) !important;
-    /* Use Shibuya accent color */
-    border: 1px solid var(--accent-3) !important;
-    border-radius: 4px;
+    background-color: var(--sy-c-bg-weak) !important;
+    border: 1px solid var(--sy-c-bg-weak) !important;
+    border-radius: 6px;
     padding: 10px 14px;
     box-shadow: none !important;
     margin-bottom: 10px;
-    color: var(--accent-11) !important;
+    color: var(--sy-c-text) !important;
+    transition: all 0.2s ease;
 }
 
 .sphx-glr-download-python:hover,
 .sphx-glr-download-jupyter:hover,
 .sphx-glr-download-zip:hover {
     background-color: transparent !important;
-    border-color: var(--accent-8) !important;
+    border-color: var(--sy-c-link) !important;
+    color: var(--sy-c-link) !important;
 }
 
 /* Style the download links */
 .sphx-glr-download a {
-    color: var(--accent-11) !important;
+    color: inherit !important;
+    /* Inherit from the button container */
     text-decoration: none;
     font-weight: 600;
     display: flex;
@@ -56,7 +58,7 @@ div[class^="highlight"] {
 }
 
 .sphx-glr-download a:hover {
-    color: var(--accent-12) !important;
+    color: inherit !important;
     text-decoration: none;
 }
 

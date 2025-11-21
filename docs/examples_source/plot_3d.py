@@ -1,8 +1,8 @@
 """
-3D Surface Plot
-===============
+3D Plots
+========
 
-This example demonstrates that dartwork-mpl styles also work well with 3D plots.
+3D surface and scatter plots.
 """
 
 import matplotlib.pyplot as plt

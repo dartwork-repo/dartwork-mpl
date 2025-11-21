@@ -1,40 +1,6 @@
-# dartwork-mpl Usage Guide
+# Usage Guide
 
-## 1. Installation and Basic Setup
-
-### Installation
-
-#### Using uv (Recommended)
-
-[uv](https://github.com/astral-sh/uv) is a fast and efficient Python package manager.
-
-```bash
-# Add to project (Recommended)
-uv add git+https://github.com/dartwork-repo/dartwork-mpl
-
-# Or install directly
-uv pip install git+https://github.com/dartwork-repo/dartwork-mpl
-
-# Specify branch/tag
-uv add git+https://github.com/dartwork-repo/dartwork-mpl@main
-```
-
-#### Using pip
-```bash
-pip install git+https://github.com/dartwork-repo/dartwork-mpl
-```
-
-### Basic Import
-```python
-import dartwork_mpl as dm
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Apply basic style (Recommended)
-dm.style.use_preset('scientific')  # Basic style for academic papers
-```
-
-## 2. Key Features
+## 1. Key Features
 
 ### 2.1 Style Management
 
