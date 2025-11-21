@@ -150,13 +150,22 @@ main :is(h1, h2, h3)[id] {
 /* Gallery: three-up grid on wide screens without shrinking the tiles */
 .sphx-glr-thumbnails {
     display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
     gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    justify-items: center;
 }
 
 .sphx-glr-thumbcontainer {
     width: 100%;
     max-width: none;
+    background: #fff;
+    border: 1px solid #ece8e1;
+    box-shadow: 0 10px 30px rgba(24, 31, 41, 0.06);
+    overflow: hidden;
+    padding: 12px;
+    gap: 12px;
 }
 
 @media (max-width: 1100px) {
@@ -169,4 +178,19 @@ main :is(h1, h2, h3)[id] {
     .sphx-glr-thumbnails {
         grid-template-columns: 1fr;
     }
+}
+
+.sphx-glr-thumbcontainer img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.sphx-glr-thumbnail-title {
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.25;
+    padding: 4px 6px 2px;
 }
