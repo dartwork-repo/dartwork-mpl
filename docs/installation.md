@@ -63,16 +63,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Apply a style preset (Recommended)
-dm.style.use_preset('scientific')  # Optimized for academic papers and publications
+dm.style.use_preset('scientific')  # Academic papers
 ```
 
-The `scientific` preset automatically configures:
-- **Font sizes** optimized for readability in papers
-- **Line widths** and marker sizes suitable for print
-- **Color schemes** that work well in both color and grayscale
-- **Grid and axis** styling for professional appearance
+Available presets (from `presets.json`) are:
+- `scientific`, `investment`, `presentation`
+- `scientific-kr`, `investment-kr`, `presentation-kr`
 
-> **Tip:** You can also try other presets like `'minimal'` or `'poster'` depending on your use case. See the [Usage Guide](DARTWORK_MPL_USAGE_GUIDE.md) for all available presets.
+Each preset layers one or more of the bundled styles from `asset/mplstyle`
+(e.g., `base`, `dmpl`, `dmpl_light`, `font-*`, `lang-kr`). See the
+[Usage Guide](DARTWORK_MPL_USAGE_GUIDE.md) for the exact mappings.
 
 ## Verify Installation
 
@@ -86,8 +86,8 @@ import dartwork_mpl as dm
 # Check installed version
 print(dm.__version__)  # Should print something like '0.1.1'
 
-# List all available style presets
-dm.list_styles()  # Shows: ['scientific', 'minimal', 'poster', ...]
+# List all available style files
+dm.list_styles()  # ['base', 'dmpl', 'dmpl_light', 'font-investment', ...]
 
 # Verify color palettes are available
 print(len(dm.colors.PALETTES))  # Should show available color collections
