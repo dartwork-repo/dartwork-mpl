@@ -10,3 +10,16 @@ examples/**/*.csv
 
 
 _build/
+
+# Sphinx documentation build artifacts
+docs/_build/
+docs/gallery/*/images/
+docs/gallery/*/*.zip
+docs/gallery/*/*.ipynb
+docs/gallery/*/*.rst
+docs/gallery/*/*.codeobj.json
+docs/gallery/*/*.py.md5
+docs/gallery/*/sg_execution_times.rst
+docs/gallery/sg_execution_times.rst
+docs/gallery/gallery_*.zip
+docs/images/*.png
