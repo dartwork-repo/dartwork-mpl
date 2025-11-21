@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="teal" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Computation times - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=14737038" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7ea007c2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/><meta property="og:title" content="Computation times"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../index.html">
+      
+      
+      <strong>dartwork-mpl</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"><ul><li class="link"><a href="../../index.html">Install</a></li><li class="link"><a href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../index.html">Gallery</a></li><li class="link"><a href="../../api/index.html">API</a></li></ul></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials">
+  <a href="https://github.com/dartwork-repo/dartwork-mpl" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="1"><ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../COLOR_GALLERY.html">Color and Colormap Gallery</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html">Examples Gallery</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#basic-plots">Basic Plots</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#statistical-plots">Statistical Plots</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#bar-charts">Bar Charts</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#scientific-plots">Scientific Plots</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#time-series">Time Series</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#specialized-plots">Specialized Plots</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#layout-styling">Layout &amp; Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../index.html#colors-images">Colors &amp; Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_basic_plots/index.html">Basic Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_basic.html">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_scatter.html">Scatter Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_line_advanced.html">Advanced Line Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_area_plots.html">Area Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_multiple_lines.html">Multiple Line Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_markers.html">Marker Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_line_styles.html">Line Styles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02_statistical_plots/index.html">Statistical Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_probability_density.html">Probability Density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_violin_box.html">Violin and Box Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_correlation_matrix.html">Correlation Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_errorbars.html">Error Bars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_regression.html">Regression Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_kde_plots.html">Kernel Density Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_distribution.html">Probability Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_statistical_plots/plot_histogram.html">Histograms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03_bar_charts/index.html">Bar Charts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_bar_chart.html">Bar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_horizontal_bar.html">Horizontal Bar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_diverging_bar.html">Diverging Bar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_lollipop.html">Lollipop Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_stacked_bar.html">Stacked Bar Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_waterfall.html">Waterfall Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_grouped_bar.html">Grouped Bar Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../04_scientific_plots/index.html">Scientific Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_heatmap.html">Heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_streamplot.html">Streamplot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_contour.html">Contour Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_quiver.html">Quiver Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_scientific_paper.html">Scientific Paper Figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_vector_field_advanced.html">Advanced Vector Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_spectral_analysis.html">Spectral Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_3d_surface.html">3D Surface Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_phase_diagram.html">Phase Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../05_time_series/index.html">Time Series</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_step.html">Step Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_rolling_stats.html">Rolling Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_autocorrelation.html">Autocorrelation Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_time_comparison.html">Time Series Comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_trend_analysis.html">Trend Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_datetime.html">Datetime Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_forecast.html">Time Series Forecasting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_time_series/plot_stem.html">Stem Plots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../06_specialized_plots/index.html">Specialized Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_3d.html">3D Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_dual_axis.html">Dual Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_polar.html">Polar Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_ridgeline.html">Ridgeline Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_pie.html">Pie Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_filled.html">Filled Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_radar_chart.html">Radar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../07_layout_styling/index.html">Layout &amp; Styling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_shared_axes.html">Shared Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_layout.html">Layout Optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_complex_grid.html">Complex Grid Layouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_mixed_subplots.html">Mixed Subplot Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_subplots.html">Subplots Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_custom_ticks.html">Custom Ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_inset_axes.html">Inset Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_legend.html">Legends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_annotations.html">Annotations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Colors &amp; Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot_colors.html">Colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_diverging_sequential.html">Diverging and Sequential Colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_color_cycles.html">Color Cycles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_image.html">Image Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_custom_colormap.html">Custom Colormaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_color_perception.html">Color Perception</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../api/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/style.html">Style Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/layout.html">Layout Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/color.html">Color Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/font.html">Font Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/io.html">File I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/visualization.html">Visualization Tools</a></li>
+</ul>
+</li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../index.html"><span itemprop="name">dartwork-mpl</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Computation times</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+        <article class="yue dark-code" role="main">
+          <section id="computation-times">
+<span id="sphx-glr-gallery-08-colors-images-sg-execution-times"></span><h1>Computation times<a class="headerlink" href="#computation-times" title="Link to this heading">¶</a></h1>
+<p><strong>00:04.750</strong> total execution time for 6 files <strong>from gallery/08_colors_images</strong>:</p>
+<div class="docutils container">
+<style scoped>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+</style>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" class="init">
+$(document).ready( function () {
+    $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+} );
+</script><div class="table-wrapper table table-striped sg-datatable docutils container">
+<table class="table table-striped sg-datatable docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+<th class="head"><p>Time</p></th>
+<th class="head"><p>Mem (MB)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="plot_image.html#sphx-glr-gallery-08-colors-images-plot-image-py"><span class="std std-ref">Image Display</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_image.py</span></code>)</p></td>
+<td><p>00:01.121</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot_color_cycles.html#sphx-glr-gallery-08-colors-images-plot-color-cycles-py"><span class="std std-ref">Color Cycles</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_color_cycles.py</span></code>)</p></td>
+<td><p>00:01.053</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot_diverging_sequential.html#sphx-glr-gallery-08-colors-images-plot-diverging-sequential-py"><span class="std std-ref">Diverging and Sequential Colors</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_diverging_sequential.py</span></code>)</p></td>
+<td><p>00:00.914</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot_custom_colormap.html#sphx-glr-gallery-08-colors-images-plot-custom-colormap-py"><span class="std std-ref">Custom Colormaps</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_custom_colormap.py</span></code>)</p></td>
+<td><p>00:00.824</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="plot_color_perception.html#sphx-glr-gallery-08-colors-images-plot-color-perception-py"><span class="std std-ref">Color Perception</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_color_perception.py</span></code>)</p></td>
+<td><p>00:00.457</p></td>
+<td><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="plot_colors.html#sphx-glr-gallery-08-colors-images-plot-colors-py"><span class="std std-ref">Colors</span></a> (<code class="docutils literal notranslate"><span class="pre">plot_colors.py</span></code>)</p></td>
+<td><p>00:00.381</p></td>
+<td><p>0.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2025, Sangwon Lee, Wonjun Choi</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+<a href="https://github.com/dartwork-repo/dartwork-mpl" aria-label="GitHub">
+  <iconify-icon icon="simple-icons:github"></iconify-icon>
+</a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=a58bc63e"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../../_static/shibuya.js?v=c1cf1a6b"></script></body>
+</html>
