@@ -1,22 +1,14 @@
 # Examples Gallery
 
-모든 카테고리의 썸네일을 한 페이지에서 바로 볼 수 있도록 갤러리를
-인라인으로 표시합니다. 왼쪽 사이드바의 하위 메뉴를 누르면 이 페이지 안의
-해당 섹션으로 스크롤됩니다.
+Browse every category’s thumbnails on a single page. Use the left sidebar to jump
+to a section; the page will scroll to that spot.
 
 ```{toctree}
 :hidden:
 :maxdepth: 1
 :titlesonly:
 
-Basic Plots <gallery/01_basic_plots/index>
-Statistical Plots <gallery/02_statistical_plots/index>
-Bar Charts <gallery/03_bar_charts/index>
-Scientific Plots <gallery/04_scientific_plots/index>
-Time Series <gallery/05_time_series/index>
-Specialized Plots <gallery/06_specialized_plots/index>
-Layout & Styling <gallery/07_layout_styling/index>
-Colors & Images <gallery/08_colors_images/index>
+Examples Gallery (full page) <gallery/index>
 ```
 
 ```{eval-rst}

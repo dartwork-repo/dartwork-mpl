@@ -239,70 +239,48 @@ investment, presentation, and Korean variants) from <cite>presets.json</cite>, r
 <cite>rcParams</cite>, and stacks multiple style files when needed. Use the helpers below
 to pick a single style, layer several, or inspect what a preset changes before
 you commit it to a figure.</p>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">use_style(name=&quot;dmpl&quot;)</span></code></dt><dd><p>Loads one style file from <code class="docutils literal notranslate"><span class="pre">asset/mplstyle</span></code> after resetting <code class="docutils literal notranslate"><span class="pre">rcParams</span></code>.
-- Parameters:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: style stem (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;dmpl_light&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;font-presentation&quot;</span></code>).</p></li>
-</ul>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">use_style(name=&quot;dmpl&quot;)</span></code>
+Loads one style file from <code class="docutils literal notranslate"><span class="pre">asset/mplstyle</span></code> after resetting <code class="docutils literal notranslate"><span class="pre">rcParams</span></code>.</p>
 <ul class="simple">
+<li><p>Parameters:
+- <code class="docutils literal notranslate"><span class="pre">name</span></code>: style stem (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;dmpl_light&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;font-presentation&quot;</span></code>).</p></li>
 <li><p>Returns:
 - <code class="docutils literal notranslate"><span class="pre">None</span></code>; updates matplotlib state.</p></li>
 </ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">Style.use(style_names)</span></code></dt><dd><p>Stack multiple style files in order.
-- Parameters:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">style_names</span></code>: list/tuple of style stems; later styles override earlier ones.</p></li>
-</ul>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Style.use(style_names)</span></code>
+Stack multiple style files in order.</p>
 <ul class="simple">
+<li><p>Parameters:
+- <code class="docutils literal notranslate"><span class="pre">style_names</span></code>: list/tuple of style stems; later styles override earlier ones.</p></li>
 <li><p>Returns:
 - <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">Style.use_preset(preset_name)</span></code></dt><dd><p>Applies a preset key from <code class="docutils literal notranslate"><span class="pre">presets.json</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;scientific&quot;</span></code>,
-<code class="docutils literal notranslate"><span class="pre">&quot;investment&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;presentation&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;korean.presentation&quot;</span></code>).
-- Parameters:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">preset_name</span></code>: string looked up in the presets mapping.</p></li>
-</ul>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">Style.use_preset(preset_name)</span></code>
+Applies a preset key from <code class="docutils literal notranslate"><span class="pre">presets.json</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;scientific&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;investment&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;presentation&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;korean.presentation&quot;</span></code>).</p>
 <ul class="simple">
+<li><p>Parameters:
+- <code class="docutils literal notranslate"><span class="pre">preset_name</span></code>: string looked up in the presets mapping.</p></li>
 <li><p>Returns:
 - <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">list_styles()</span></code></dt><dd><p>Lists every <code class="docutils literal notranslate"><span class="pre">*.mplstyle</span></code> file bundled with the package.
-- Parameters:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>none.</p></li>
-</ul>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">list_styles()</span></code>
+Lists every <code class="docutils literal notranslate"><span class="pre">*.mplstyle</span></code> file bundled with the package.</p>
 <ul class="simple">
+<li><p>Parameters:
+- none.</p></li>
 <li><p>Returns:
 - <code class="docutils literal notranslate"><span class="pre">list[str]</span></code> sorted by filename.</p></li>
 </ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">load_style_dict(name)</span></code></dt><dd><p>Reads a single style file into a <code class="docutils literal notranslate"><span class="pre">dict</span></code> so you can inspect or tweak rcParams
-programmatically.
-- Parameters:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: style stem.</p></li>
-</ul>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">load_style_dict(name)</span></code>
+Reads a single style file into a <code class="docutils literal notranslate"><span class="pre">dict</span></code> so you can inspect or tweak rcParams
+programmatically.</p>
 <ul class="simple">
+<li><p>Parameters:
+- <code class="docutils literal notranslate"><span class="pre">name</span></code>: style stem.</p></li>
 <li><p>Returns:
 - <code class="docutils literal notranslate"><span class="pre">dict</span></code> mapping rcParam keys to values.</p></li>
 </ul>
-</dd>
-</dl>
 <p>Typical usage</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
 </span><span data-line="2">
