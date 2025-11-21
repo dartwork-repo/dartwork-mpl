@@ -21,9 +21,9 @@
 Multiple Line Plots
 ====================
 
-Demonstrating multiple line plots with different colors and styles.
+Stack several series with coordinated colors and labels to learn quick defaults for multi-line comparisons.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-95
+.. GENERATED FROM PYTHON SOURCE LINES 7-119
 
 
 
@@ -74,7 +74,13 @@ Demonstrating multiple line plots with different colors and styles.
     ax1.set_xlabel('X value', fontsize=dm.fs(0))
     ax1.set_ylabel('Y value', fontsize=dm.fs(0))
     ax1.set_title('Multiple Lines', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-2), ncol=2)
+    ax1.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.08),
+        fontsize=dm.fs(-2),
+        ncol=2,
+        frameon=False,
+    )
     ax1.set_xticks([0, 2, 4, 6, 8, 10])
     ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
     ax1.set_ylim(-1.2, 1.2)
@@ -88,7 +94,13 @@ Demonstrating multiple line plots with different colors and styles.
     ax2.set_xlabel('X value', fontsize=dm.fs(0))
     ax2.set_ylabel('Y value', fontsize=dm.fs(0))
     ax2.set_title('Different Line Widths', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-2), ncol=2)
+    ax2.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.08),
+        fontsize=dm.fs(-2),
+        ncol=2,
+        frameon=False,
+    )
     ax2.set_xticks([0, 2, 4, 6, 8, 10])
     ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
     ax2.set_ylim(-1.2, 1.2)
@@ -102,7 +114,13 @@ Demonstrating multiple line plots with different colors and styles.
     ax3.set_xlabel('X value', fontsize=dm.fs(0))
     ax3.set_ylabel('Y value', fontsize=dm.fs(0))
     ax3.set_title('Tailwind CSS Colors', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-2), ncol=2)
+    ax3.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.08),
+        fontsize=dm.fs(-2),
+        ncol=2,
+        frameon=False,
+    )
     ax3.set_xticks([0, 2, 4, 6, 8, 10])
     ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
     ax3.set_ylim(-1.2, 1.2)
@@ -116,7 +134,13 @@ Demonstrating multiple line plots with different colors and styles.
     ax4.set_xlabel('X value', fontsize=dm.fs(0))
     ax4.set_ylabel('Y value', fontsize=dm.fs(0))
     ax4.set_title('Color Gradients', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-2), ncol=2)
+    ax4.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.08),
+        fontsize=dm.fs(-2),
+        ncol=2,
+        frameon=False,
+    )
     ax4.set_xticks([0, 2, 4, 6, 8, 10])
     ax4.set_yticks([-1, -0.5, 0, 0.5, 1])
     ax4.set_ylim(-1.2, 1.2)
@@ -130,7 +154,7 @@ Demonstrating multiple line plots with different colors and styles.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.909 seconds)
+   **Total running time of the script:** (0 minutes 0.912 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_multiple_lines.py:

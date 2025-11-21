@@ -2,7 +2,7 @@
 Custom Colormaps
 ================
 
-Creating and using custom colormaps for visualization.
+Build sequential, diverging, and discrete colormaps and compare them side by side.
 """
 
 import numpy as np

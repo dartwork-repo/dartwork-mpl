@@ -21,7 +21,7 @@
 Rolling Statistics
 ==================
 
-Moving averages and rolling window statistics.
+Track rolling means and variances with window markers to show stability and volatility over time.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-77
 
@@ -112,7 +112,7 @@ Moving averages and rolling window statistics.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.190 seconds)
+   **Total running time of the script:** (0 minutes 1.177 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_rolling_stats.py:

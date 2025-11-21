@@ -21,7 +21,7 @@
 Mixed Subplot Types
 ===================
 
-Combining different plot types in a unified figure.
+Mix bars, lines, histograms, and tabular panels on one page with consistent sizing.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-61
 
@@ -96,7 +96,7 @@ Combining different plot types in a unified figure.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.074 seconds)
+   **Total running time of the script:** (0 minutes 1.091 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_mixed_subplots.py:

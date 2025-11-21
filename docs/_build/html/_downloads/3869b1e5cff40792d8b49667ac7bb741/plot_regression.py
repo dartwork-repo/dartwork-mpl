@@ -2,7 +2,7 @@
 Regression Analysis
 ===================
 
-Linear and polynomial regression visualization with confidence intervals.
+Visualize linear and polynomial fits plus confidence bands to make model quality and spread visible.
 """
 
 import numpy as np

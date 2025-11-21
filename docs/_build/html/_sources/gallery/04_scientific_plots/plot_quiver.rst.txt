@@ -21,7 +21,7 @@
 Quiver Plots
 ============
 
-Quiver plots for vector fields: circular, radial, and spiraling flows.
+Compare radial, circular, and spiral vector fields with clear arrow scaling and color magnitude.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-102
 
@@ -137,7 +137,7 @@ Quiver plots for vector fields: circular, radial, and spiraling flows.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.747 seconds)
+   **Total running time of the script:** (0 minutes 0.751 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_quiver.py:

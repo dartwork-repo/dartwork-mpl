@@ -21,7 +21,7 @@
 Flow Diagrams
 =============
 
-Visualizing flows and connections between elements.
+Draw compact Sankey diagrams to explain flows between stages with tidy labels.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-175
 
@@ -33,19 +33,8 @@ Visualizing flows and connections between elements.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -221,7 +210,7 @@ Visualizing flows and connections between elements.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.824 seconds)
+   **Total running time of the script:** (0 minutes 0.522 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_sankey_simple.py:

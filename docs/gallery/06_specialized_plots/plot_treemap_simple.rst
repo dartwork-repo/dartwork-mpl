@@ -21,7 +21,7 @@
 Hierarchical Visualization
 ==========================
 
-Visualizing hierarchical and nested data structures.
+Lay out treemaps with nested rectangles and inline labels for hierarchical shares.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-119
 
@@ -154,7 +154,7 @@ Visualizing hierarchical and nested data structures.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.481 seconds)
+   **Total running time of the script:** (0 minutes 0.459 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_treemap_simple.py:

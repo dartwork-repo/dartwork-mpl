@@ -61,8 +61,6 @@ html_theme_options = {
         {"title": "Installation", "url": "installation"},
         {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
         {"title": "Color System", "url": "COLOR_SYSTEM"},
-        {"title": "Colors", "url": "COLORS"},
-        {"title": "Colormaps", "url": "COLORMAPS"},
         {"title": "Examples Gallery", "url": "gallery/index"},
         {"title": "API Reference", "url": "api/index"},
     ]

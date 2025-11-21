@@ -21,7 +21,7 @@
 Datetime Plots
 ==============
 
-Time series plotting with multiple date formats, rolling trends, and spans.
+Use date-aware axes with rolling trends, spans, and multiple granularities on one canvas.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-100
 
@@ -135,7 +135,7 @@ Time series plotting with multiple date formats, rolling trends, and spans.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.326 seconds)
+   **Total running time of the script:** (0 minutes 1.301 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_datetime.py:

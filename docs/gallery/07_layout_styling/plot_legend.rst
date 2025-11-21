@@ -21,7 +21,7 @@
 Legends
 =======
 
-Legend customization.
+Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-85
 
@@ -120,7 +120,7 @@ Legend customization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.621 seconds)
+   **Total running time of the script:** (0 minutes 0.589 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_legend.py:

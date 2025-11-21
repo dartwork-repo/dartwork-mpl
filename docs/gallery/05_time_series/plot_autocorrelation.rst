@@ -21,7 +21,7 @@
 Autocorrelation Analysis
 ========================
 
-ACF and PACF plots for time series analysis.
+Plot ACF and PACF with significance bounds to quickly judge lag structure.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-88
 
@@ -123,7 +123,7 @@ ACF and PACF plots for time series analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.168 seconds)
+   **Total running time of the script:** (0 minutes 1.150 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_autocorrelation.py:

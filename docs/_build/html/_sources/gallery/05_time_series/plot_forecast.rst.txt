@@ -21,7 +21,7 @@
 Time Series Forecasting
 =======================
 
-Visualizing time series forecasts with confidence intervals.
+Show forecasts with past-versus-future shading, ribbons, and quantile fans to communicate uncertainty.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-99
 
@@ -134,7 +134,7 @@ Visualizing time series forecasts with confidence intervals.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.885 seconds)
+   **Total running time of the script:** (0 minutes 1.820 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_forecast.py:

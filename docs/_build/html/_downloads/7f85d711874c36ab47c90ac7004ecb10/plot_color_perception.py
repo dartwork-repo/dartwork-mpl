@@ -2,7 +2,7 @@
 Color Perception
 ================
 
-Color choices for accessibility and perceptual uniformity.
+Check contrast, color-blind safety, and luminance ramps before you pick a palette.
 """
 
 import numpy as np

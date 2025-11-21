@@ -21,7 +21,7 @@
 Color Perception
 ================
 
-Color choices for accessibility and perceptual uniformity.
+Check contrast, color-blind safety, and luminance ramps before you pick a palette.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-78
 
@@ -113,7 +113,7 @@ Color choices for accessibility and perceptual uniformity.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.589 seconds)
+   **Total running time of the script:** (0 minutes 0.600 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_color_perception.py:

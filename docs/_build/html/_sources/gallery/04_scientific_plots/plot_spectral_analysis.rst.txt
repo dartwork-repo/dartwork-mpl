@@ -21,7 +21,7 @@
 Spectral Analysis
 =================
 
-Frequency domain analysis and spectral plots.
+Move from signals to frequency domain with windows, PSDs, spectrograms, and labelled peaks.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-86
 
@@ -121,7 +121,7 @@ Frequency domain analysis and spectral plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.109 seconds)
+   **Total running time of the script:** (0 minutes 1.041 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_spectral_analysis.py:

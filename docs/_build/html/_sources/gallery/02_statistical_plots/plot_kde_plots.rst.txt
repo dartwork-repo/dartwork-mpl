@@ -21,7 +21,7 @@
 Kernel Density Estimation
 ==========================
 
-KDE plots for probability density estimation and comparison.
+Use kernel density estimates for single and grouped data to highlight smooth probability ridges.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-102
 
@@ -137,7 +137,7 @@ KDE plots for probability density estimation and comparison.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.989 seconds)
+   **Total running time of the script:** (0 minutes 1.012 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_kde_plots.py:

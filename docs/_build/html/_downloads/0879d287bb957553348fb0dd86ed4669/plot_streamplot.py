@@ -2,7 +2,7 @@
 Streamplot
 ==========
 
-Streamplots for vector fields.
+Draw dense vector flows with streamplot spacing, color by speed, and helpful start points.
 """
 
 import numpy as np

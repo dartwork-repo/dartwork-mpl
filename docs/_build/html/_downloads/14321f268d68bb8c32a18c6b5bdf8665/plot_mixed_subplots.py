@@ -2,7 +2,7 @@
 Mixed Subplot Types
 ===================
 
-Combining different plot types in a unified figure.
+Mix bars, lines, histograms, and tabular panels on one page with consistent sizing.
 """
 
 import numpy as np

@@ -2,7 +2,7 @@
 Probability Density
 ===================
 
-Probability density functions.
+Plot analytic PDFs with shading and annotations so you can introduce distributions without heavy math.
 """
 
 import numpy as np

@@ -21,7 +21,7 @@
 Ridgeline Plots
 ===============
 
-Visualizing distributions across categories with ridgeline plots.
+Use ridgeline (joy) plots with baseline offsets and smooth fills to compare distributions across categories.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-92
 
@@ -127,7 +127,7 @@ Visualizing distributions across categories with ridgeline plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.171 seconds)
+   **Total running time of the script:** (0 minutes 1.072 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_ridgeline.py:

@@ -21,7 +21,7 @@
 Waterfall Charts
 ================
 
-Waterfall charts for showing cumulative effects of sequential values.
+Walk through stepwise gains and losses with helper lines and colors that keep running totals obvious.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-112
 
@@ -147,7 +147,7 @@ Waterfall charts for showing cumulative effects of sequential values.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.636 seconds)
+   **Total running time of the script:** (0 minutes 0.630 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_waterfall.py:

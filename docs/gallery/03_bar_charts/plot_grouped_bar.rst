@@ -21,7 +21,7 @@
 Grouped Bar Chart
 =================
 
-Grouped bar charts.
+Lay out grouped bars with shared baselines, tuned spacing, and legends that scale to many categories.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-127
 
@@ -162,7 +162,7 @@ Grouped bar charts.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.876 seconds)
+   **Total running time of the script:** (0 minutes 0.872 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_grouped_bar.py:

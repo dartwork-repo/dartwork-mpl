@@ -21,7 +21,7 @@
 Polar Plots
 ===========
 
-Polar coordinate plots, scatter distributions, and radial bars.
+Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-82
 
@@ -117,7 +117,7 @@ Polar coordinate plots, scatter distributions, and radial bars.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.637 seconds)
+   **Total running time of the script:** (0 minutes 1.533 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_polar.py:

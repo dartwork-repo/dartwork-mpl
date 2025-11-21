@@ -2,7 +2,7 @@
 Rolling Statistics
 ==================
 
-Moving averages and rolling window statistics.
+Track rolling means and variances with window markers to show stability and volatility over time.
 """
 
 import numpy as np

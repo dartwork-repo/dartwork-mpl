@@ -2,7 +2,7 @@
 Autocorrelation Analysis
 ========================
 
-ACF and PACF plots for time series analysis.
+Plot ACF and PACF with significance bounds to quickly judge lag structure.
 """
 
 import numpy as np

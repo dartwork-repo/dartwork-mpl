@@ -105,3 +105,28 @@ div[class^="highlight"] {
 .globaltoc .toctree-l4 {
     display: none;
 }
+
+/* Keep anchor targets from hiding behind the fixed header */
+main :is(h1, h2, h3)[id] {
+    scroll-margin-top: 80px;
+}
+
+/* Gallery: use three columns on desktop so thumbnails stay larger */
+.sphx-glr-thumbcontainer {
+    flex: 0 0 32%;
+    max-width: 32%;
+}
+
+@media (max-width: 1100px) {
+    .sphx-glr-thumbcontainer {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+}
+
+@media (max-width: 720px) {
+    .sphx-glr-thumbcontainer {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

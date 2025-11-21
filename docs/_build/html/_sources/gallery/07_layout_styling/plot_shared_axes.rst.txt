@@ -21,7 +21,7 @@
 Shared Axes
 ===========
 
-Subplots with shared x or y axes for comparison.
+Share axes for fair comparisons and control label visibility to avoid duplication.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-47
 
@@ -82,7 +82,7 @@ Subplots with shared x or y axes for comparison.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.951 seconds)
+   **Total running time of the script:** (0 minutes 0.985 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_shared_axes.py:

@@ -21,7 +21,7 @@
 Filled Plots
 ============
 
-Filled area plots: confidence bands, stacked areas, and layered regions.
+Layer confidence bands, stacked areas, and smooth fills to emphasize ranges instead of lines.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-115
 
@@ -150,7 +150,7 @@ Filled area plots: confidence bands, stacked areas, and layered regions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.907 seconds)
+   **Total running time of the script:** (0 minutes 0.892 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_filled.py:

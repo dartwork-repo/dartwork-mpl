@@ -21,7 +21,7 @@
 Stem Plots
 ==========
 
-Stem plots for spikes, grouped series, and categorical stems.
+Use stem plots for impulses, grouped spikes, and categorical events with careful labeling.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-133
 
@@ -168,7 +168,7 @@ Stem plots for spikes, grouped series, and categorical stems.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.837 seconds)
+   **Total running time of the script:** (0 minutes 0.829 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_stem.py:

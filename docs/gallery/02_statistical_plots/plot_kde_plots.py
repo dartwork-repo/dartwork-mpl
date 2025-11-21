@@ -2,7 +2,7 @@
 Kernel Density Estimation
 ==========================
 
-KDE plots for probability density estimation and comparison.
+Use kernel density estimates for single and grouped data to highlight smooth probability ridges.
 """
 
 import numpy as np

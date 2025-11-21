@@ -2,7 +2,7 @@
 Scientific Paper Figure
 =======================
 
-Publication-quality scientific figure.
+Use a full scientific figure template with multi-panels, shared colorbars, inset annotations, and consistent typography.
 """
 
 import numpy as np

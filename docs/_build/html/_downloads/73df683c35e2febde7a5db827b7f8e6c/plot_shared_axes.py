@@ -2,7 +2,7 @@
 Shared Axes
 ===========
 
-Subplots with shared x or y axes for comparison.
+Share axes for fair comparisons and control label visibility to avoid duplication.
 """
 
 import numpy as np

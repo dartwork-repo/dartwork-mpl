@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:07.311** total execution time for 8 files **from gallery/02_statistical_plots**:
+**00:07.299** total execution time for 8 files **from gallery/02_statistical_plots**:
 
 .. container::
 
@@ -33,26 +33,26 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_regression.py` (``plot_regression.py``)
-     - 00:01.438
+     - 00:01.403
      - 0.0
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_histogram.py` (``plot_histogram.py``)
-     - 00:01.123
+     - 00:01.124
      - 0.0
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_kde_plots.py` (``plot_kde_plots.py``)
-     - 00:00.989
+     - 00:01.012
      - 0.0
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_errorbars.py` (``plot_errorbars.py``)
-     - 00:00.961
+     - 00:00.957
      - 0.0
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_distribution.py` (``plot_distribution.py``)
-     - 00:00.935
+     - 00:00.940
      - 0.0
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_correlation_matrix.py` (``plot_correlation_matrix.py``)
-     - 00:00.755
+     - 00:00.783
      - 0.0
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_violin_box.py` (``plot_violin_box.py``)
-     - 00:00.627
+     - 00:00.613
      - 0.0
    * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_probability_density.py` (``plot_probability_density.py``)
-     - 00:00.483
+     - 00:00.468
      - 0.0

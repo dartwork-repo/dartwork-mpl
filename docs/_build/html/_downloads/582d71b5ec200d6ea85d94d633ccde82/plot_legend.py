@@ -2,7 +2,7 @@
 Legends
 =======
 
-Legend customization.
+Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.
 """
 
 import numpy as np

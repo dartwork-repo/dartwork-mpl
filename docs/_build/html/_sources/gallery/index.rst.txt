@@ -35,7 +35,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Basic usage with style presets.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacing on a single stylized line plot.">
 
 .. only:: html
 
@@ -52,7 +52,24 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots and combinations with lines.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Combine baseline trends, goal bands, annotations, and highlights to show how dartwork-mpl styles compose on a single axes.">
+
+.. only:: html
+
+  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_reference_lines_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_01_basic_plots_plot_reference_lines.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Reference Lines</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Layer filled regions and crisp lines to highlight ranges, uncertainty bands, and stacked totals without losing clarity.">
 
 .. only:: html
 
@@ -69,7 +86,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Demonstrating multiple line plots with different colors and styles.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Stack several series with coordinated colors and labels to learn quick defaults for multi-line comparisons.">
 
 .. only:: html
 
@@ -86,7 +103,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Various marker styles and combinations with lines.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Mix markers with strokes, fills, and offsets to encode categories or emphasis without clutter.">
 
 .. only:: html
 
@@ -103,7 +120,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Different line styles and dash patterns for data visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Preview dashes, caps, and joins side by side to choose line styles that stay legible once printed or projected.">
 
 .. only:: html
 
@@ -120,7 +137,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Scatter plots with varying markers, color encodings, and density overlays to compare clustering patterns.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Contrast marker shapes, color encodings, and density shading to show clusters and overlaps more clearly.">
 
 .. only:: html
 
@@ -137,7 +154,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Advanced line plot styles, banded intervals, and rolling smoothing for publication-ready comparisons.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare styling tricks for lines (bands, smoothing, markers) so you can pick a publication-ready look for noisy series.">
 
 .. only:: html
 
@@ -174,7 +191,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Probability density functions.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot analytic PDFs with shading and annotations so you can introduce distributions without heavy math.">
 
 .. only:: html
 
@@ -191,7 +208,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Violin and box plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Pair boxplots and violins to show summary stats and full distributions in one glance.">
 
 .. only:: html
 
@@ -208,7 +225,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Correlation matrix visualization and scatter plot matrices.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build correlation heatmaps and scatter matrices with consistent ticks and color mapping to explain relationships quickly.">
 
 .. only:: html
 
@@ -225,7 +242,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Linear and polynomial regression visualization with confidence intervals.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Visualize linear and polynomial fits plus confidence bands to make model quality and spread visible.">
 
 .. only:: html
 
@@ -242,7 +259,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Error bars and confidence intervals in multiple orientations and scales.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Draw vertical, horizontal, and log-scale error bars with caps and intervals to report uncertainty clearly.">
 
 .. only:: html
 
@@ -259,7 +276,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="KDE plots for probability density estimation and comparison.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use kernel density estimates for single and grouped data to highlight smooth probability ridges.">
 
 .. only:: html
 
@@ -276,7 +293,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Various probability distribution visualizations.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumulative behavior at a glance.">
 
 .. only:: html
 
@@ -293,7 +310,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Histograms and density plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare binning choices and overlays (density curves, step histograms) to pick a truthful view of your data.">
 
 .. only:: html
 
@@ -330,7 +347,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Basic and grouped bar charts.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Start from basic, grouped, and labeled bars with gentle spacing so categories stay readable.">
 
 .. only:: html
 
@@ -347,7 +364,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Horizontal bar chart variations for categorical data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Rotate to horizontal bars, ranking views, and long labels that would otherwise collide.">
 
 .. only:: html
 
@@ -364,7 +381,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Diverging bar charts for showing positive and negative values.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Show positive and negative swings around a midpoint with color cues for direction.">
 
 .. only:: html
 
@@ -381,7 +398,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Lollipop charts as an alternative to bar charts.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.">
 
 .. only:: html
 
@@ -398,7 +415,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Waterfall charts for showing cumulative effects of sequential values.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Walk through stepwise gains and losses with helper lines and colors that keep running totals obvious.">
 
 .. only:: html
 
@@ -415,7 +432,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stacked bar charts in vertical, horizontal, percentage, and cumulative views.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Stack categories vertically or horizontally, switch to 100% shares, and add cumulative views to tell composition stories.">
 
 .. only:: html
 
@@ -432,7 +449,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Grouped bar charts.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Lay out grouped bars with shared baselines, tuned spacing, and legends that scale to many categories.">
 
 .. only:: html
 
@@ -469,7 +486,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Streamplots for vector fields.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Draw dense vector flows with streamplot spacing, color by speed, and helpful start points.">
 
 .. only:: html
 
@@ -486,7 +503,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Contour plots with labels.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Label contour maps with filled and line levels plus colorbars tuned for small multiples.">
 
 .. only:: html
 
@@ -503,7 +520,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Heatmap visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build heatmaps with annotations, diverging palettes, and tight grids for correlation or matrix data.">
 
 .. only:: html
 
@@ -520,7 +537,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Publication-quality scientific figure.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use a full scientific figure template with multi-panels, shared colorbars, inset annotations, and consistent typography.">
 
 .. only:: html
 
@@ -537,7 +554,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Vector field visualizations with streamlines and contours.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Blend streamlines, contour backgrounds, and reference arrows to explain complex vector fields.">
 
 .. only:: html
 
@@ -554,7 +571,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Frequency domain analysis and spectral plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Move from signals to frequency domain with windows, PSDs, spectrograms, and labelled peaks.">
 
 .. only:: html
 
@@ -571,7 +588,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Three-dimensional surface visualizations for scientific data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Render smooth 3D surfaces with contours and lighting tweaks that photograph well in papers.">
 
 .. only:: html
 
@@ -588,7 +605,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Quiver plots for vector fields: circular, radial, and spiraling flows.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare radial, circular, and spiral vector fields with clear arrow scaling and color magnitude.">
 
 .. only:: html
 
@@ -605,7 +622,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Phase space and trajectory plots for dynamical systems.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Trace trajectories and vector fields to explain stability and cycles in dynamical systems.">
 
 .. only:: html
 
@@ -642,7 +659,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Moving averages and rolling window statistics.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Track rolling means and variances with window markers to show stability and volatility over time.">
 
 .. only:: html
 
@@ -659,7 +676,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="ACF and PACF plots for time series analysis.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot ACF and PACF with significance bounds to quickly judge lag structure.">
 
 .. only:: html
 
@@ -676,7 +693,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Comparing multiple time series with different visualization techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare several series with dual axes, panel splits, and color harmonies meant for dashboards.">
 
 .. only:: html
 
@@ -693,7 +710,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Detecting and visualizing trends in time series data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Highlight local and global trends with smoothing, break annotations, and slope callouts.">
 
 .. only:: html
 
@@ -710,7 +727,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing time series forecasts with confidence intervals.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Show forecasts with past-versus-future shading, ribbons, and quantile fans to communicate uncertainty.">
 
 .. only:: html
 
@@ -727,7 +744,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Step plots for change detection, shift timing, and rolling summaries.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build step charts that expose change points, holding periods, and cumulative shifts.">
 
 .. only:: html
 
@@ -744,7 +761,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Time series plotting with multiple date formats, rolling trends, and spans.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use date-aware axes with rolling trends, spans, and multiple granularities on one canvas.">
 
 .. only:: html
 
@@ -761,7 +778,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stem plots for spikes, grouped series, and categorical stems.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use stem plots for impulses, grouped spikes, and categorical events with careful labeling.">
 
 .. only:: html
 
@@ -798,7 +815,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="3D surface and scatter plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Combine 3D surfaces and scatters with consistent lighting and projection choices for presentations.">
 
 .. only:: html
 
@@ -815,7 +832,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Dual y-axis plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Align two y-axes with matching grids, offsets, and legends to reduce reader confusion.">
 
 .. only:: html
 
@@ -832,7 +849,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Polar coordinate plots, scatter distributions, and radial bars.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.">
 
 .. only:: html
 
@@ -849,7 +866,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing distributions across categories with ridgeline plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use ridgeline (joy) plots with baseline offsets and smooth fills to compare distributions across categories.">
 
 .. only:: html
 
@@ -866,7 +883,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Radar/spider charts for multivariate data visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Design radar/spider charts with normalization, group fills, and label offsets that avoid overlaps.">
 
 .. only:: html
 
@@ -883,7 +900,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Pie charts, donut plots, and nested variants for share comparisons.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build pies, donuts, and nested rings with centered labels and contrast so proportions stay legible.">
 
 .. only:: html
 
@@ -900,7 +917,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing hierarchical and nested data structures.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Lay out treemaps with nested rectangles and inline labels for hierarchical shares.">
 
 .. only:: html
 
@@ -917,7 +934,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots: confidence bands, stacked areas, and layered regions.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Layer confidence bands, stacked areas, and smooth fills to emphasize ranges instead of lines.">
 
 .. only:: html
 
@@ -934,7 +951,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing flows and connections between elements.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Draw compact Sankey diagrams to explain flows between stages with tidy labels.">
 
 .. only:: html
 
@@ -971,7 +988,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Subplots with shared x or y axes for comparison.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Share axes for fair comparisons and control label visibility to avoid duplication.">
 
 .. only:: html
 
@@ -988,7 +1005,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Layout optimization techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec helpers.">
 
 .. only:: html
 
@@ -1005,7 +1022,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Advanced GridSpec layouts for complex figure arrangements.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build dense GridSpec layouts with shared colorbars and aligned labels for multi-panel figures.">
 
 .. only:: html
 
@@ -1022,7 +1039,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Combining different plot types in a unified figure.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Mix bars, lines, histograms, and tabular panels on one page with consistent sizing.">
 
 .. only:: html
 
@@ -1039,7 +1056,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Subplot layout techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing.">
 
 .. only:: html
 
@@ -1056,7 +1073,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Legend customization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.">
 
 .. only:: html
 
@@ -1073,7 +1090,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting: positions, labels, and log scales.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Control tick placement and formatting, from numeric to log scales, with custom formatters.">
 
 .. only:: html
 
@@ -1090,7 +1107,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Creating inset axes for zoomed views and detail plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Add inset zooms and overview boxes with connectors that keep context clear.">
 
 .. only:: html
 
@@ -1107,7 +1124,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Advanced annotation techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts aligned to data or axes coords.">
 
 .. only:: html
 
@@ -1144,7 +1161,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Color palette visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Browse dartwork color libraries with labeled swatches you can drop into figures.">
 
 .. only:: html
 
@@ -1161,7 +1178,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Using and customizing color cycles for multi-series plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Preview built-in color cycles and learn how to swap or extend them for multi-series plots.">
 
 .. only:: html
 
@@ -1178,7 +1195,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Choosing appropriate color schemes for different data types.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Choose good color schemes for diverging versus sequential data and see when to use each.">
 
 .. only:: html
 
@@ -1195,7 +1212,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Color choices for accessibility and perceptual uniformity.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Check contrast, color-blind safety, and luminance ramps before you pick a palette.">
 
 .. only:: html
 
@@ -1212,7 +1229,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Creating and using custom colormaps for visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build sequential, diverging, and discrete colormaps and compare them side by side.">
 
 .. only:: html
 
@@ -1229,7 +1246,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Image display with multiple colormaps, interpolation modes, and edge overlays.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Render images with different colormaps, interpolation, outlines, and grid overlays for quick QA.">
 
 .. only:: html
 

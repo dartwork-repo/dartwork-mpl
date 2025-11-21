@@ -2,7 +2,7 @@
 Quiver Plots
 ============
 
-Quiver plots for vector fields: circular, radial, and spiraling flows.
+Compare radial, circular, and spiral vector fields with clear arrow scaling and color magnitude.
 """
 
 import numpy as np

@@ -21,7 +21,7 @@
 Contour Plots
 =============
 
-Contour plots with labels.
+Label contour maps with filled and line levels plus colorbars tuned for small multiples.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-52
 
@@ -87,7 +87,7 @@ Contour plots with labels.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.534 seconds)
+   **Total running time of the script:** (0 minutes 0.527 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_contour.py:

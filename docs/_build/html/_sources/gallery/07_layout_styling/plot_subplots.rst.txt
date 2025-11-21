@@ -21,7 +21,7 @@
 Subplots Layout
 ===============
 
-Subplot layout techniques.
+Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-80
 
@@ -115,7 +115,7 @@ Subplot layout techniques.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.807 seconds)
+   **Total running time of the script:** (0 minutes 0.801 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_subplots.py:

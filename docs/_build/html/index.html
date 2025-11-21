@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=47ff0250" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=2f450e35" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="installation.html">Installation</a></li><li class="link"><a href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="COLOR_GALLERY.html">Colors</a></li><li class="link"><a href="gallery/index.html">Examples Gallery</a></li><li class="link"><a href="api/index.html">API Reference</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="installation.html">Installation</a></li><li class="link"><a href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="COLOR_SYSTEM.html">Color System</a></li><li class="link"><a href="gallery/index.html">Examples Gallery</a></li><li class="link"><a href="api/index.html">API Reference</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -67,7 +67,7 @@ data-aria-dark="Switch to auto color mode">
         <div class="globaltoc" data-expand-depth="0"><ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="COLOR_GALLERY.html">Colors</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="COLOR_SYSTEM.html">Color System</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="COLORS.html">Colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="COLORMAPS.html">Colormaps</a></li>
 </ul>
@@ -75,6 +75,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="examples_gallery.html">Examples Gallery</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gallery/01_basic_plots/index.html">Basic Plots</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_basic.html">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_reference_lines.html">Reference Lines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_area_plots.html">Area Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_multiple_lines.html">Multiple Line Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_markers.html">Marker Styles</a></li>
@@ -214,7 +215,7 @@ opinionated styles, curated color libraries, and layout utilities.</p>
 <ul class="simple">
 <li><p>Head to <strong>Installation</strong> to get the package and assets.</p></li>
 <li><p>The <strong>Usage Guide</strong> walks through common workflows and styling presets.</p></li>
-<li><p>Explore the <strong>Colors</strong> gallery for swatches and colormaps.</p></li>
+<li><p>Explore the <strong>Color System</strong> for swatches and colormaps (with separate Colors and Colormaps pages).</p></li>
 <li><p>Browse the <strong>Examples Gallery</strong> for ready-to-use patterns.</p></li>
 <li><p>See <strong>API Reference</strong> for function-level details.</p></li>
 </ul>
@@ -222,31 +223,9 @@ opinionated styles, curated color libraries, and layout utilities.</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="COLOR_GALLERY.html">Colors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="COLORS.html">Colors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="COLORMAPS.html">Colormaps</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples_gallery.html">Examples Gallery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gallery/01_basic_plots/index.html">Basic Plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gallery/02_statistical_plots/index.html">Statistical Plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gallery/03_bar_charts/index.html">Bar Charts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gallery/04_scientific_plots/index.html">Scientific Plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gallery/05_time_series/index.html">Time Series</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gallery/06_specialized_plots/index.html">Specialized Plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gallery/07_layout_styling/index.html">Layout &amp; Styling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gallery/08_colors_images/index.html">Colors &amp; Images</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api/index.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/style.html">Style Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/layout.html">Layout Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/color.html">Color Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/font.html">Font Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/io.html">File I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/visualization.html">Visualization Tools</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="COLOR_SYSTEM.html">Color System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_gallery.html">Examples Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">API Reference</a></li>
 </ul>
 </div>
 </section>
@@ -271,7 +250,7 @@ opinionated styles, curated color libraries, and layout utilities.</p>
 <footer class="sy-foot">
   <div class="sy-foot-inner sy-container mx-auto">
     <div class="sy-foot-reserved md:flex justify-between items-center">
-      <div class="sy-foot-copyright"><p>2025, Sangwon Lee, Wonjun Choi</p>
+      <div class="sy-foot-copyright"><p>2025 Sangwon Lee & Wonjun Choi</p>
   
   <p>
     Made with
@@ -294,5 +273,6 @@ opinionated styles, curated color libraries, and layout utilities.</p>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="_static/copybutton.js?v=f281be69"></script>
       <script src="_static/design-tabs.js?v=f930bc37"></script>
-      <script src="_static/shibuya.js?v=c1cf1a6b"></script></body>
+      <script src="_static/shibuya.js?v=c1cf1a6b"></script>
+      <script src="_static/custom.js?v=7ad07d3c"></script></body>
 </html>

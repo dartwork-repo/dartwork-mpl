@@ -18,7 +18,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Subplots with shared x or y axes for comparison.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Share axes for fair comparisons and control label visibility to avoid duplication.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Layout optimization techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec helpers.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Advanced GridSpec layouts for complex figure arrangements.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build dense GridSpec layouts with shared colorbars and aligned labels for multi-panel figures.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Combining different plot types in a unified figure.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Mix bars, lines, histograms, and tabular panels on one page with consistent sizing.">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Subplot layout techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing.">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Legend customization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.">
 
 .. only:: html
 
@@ -120,7 +120,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting: positions, labels, and log scales.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Control tick placement and formatting, from numeric to log scales, with custom formatters.">
 
 .. only:: html
 
@@ -137,7 +137,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Creating inset axes for zoomed views and detail plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Add inset zooms and overview boxes with connectors that keep context clear.">
 
 .. only:: html
 
@@ -154,7 +154,7 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Advanced annotation techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts aligned to data or axes coords.">
 
 .. only:: html
 

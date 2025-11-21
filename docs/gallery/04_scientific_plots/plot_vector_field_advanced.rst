@@ -21,7 +21,7 @@
 Advanced Vector Fields
 ======================
 
-Vector field visualizations with streamlines and contours.
+Blend streamlines, contour backgrounds, and reference arrows to explain complex vector fields.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-95
 
@@ -33,19 +33,8 @@ Vector field visualizations with streamlines and contours.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -141,7 +130,7 @@ Vector field visualizations with streamlines and contours.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.224 seconds)
+   **Total running time of the script:** (0 minutes 1.009 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_vector_field_advanced.py:

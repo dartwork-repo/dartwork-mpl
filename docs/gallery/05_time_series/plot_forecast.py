@@ -2,7 +2,7 @@
 Time Series Forecasting
 =======================
 
-Visualizing time series forecasts with confidence intervals.
+Show forecasts with past-versus-future shading, ribbons, and quantile fans to communicate uncertainty.
 """
 
 import numpy as np

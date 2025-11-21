@@ -21,7 +21,7 @@
 Regression Analysis
 ===================
 
-Linear and polynomial regression visualization with confidence intervals.
+Visualize linear and polynomial fits plus confidence bands to make model quality and spread visible.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-87
 
@@ -122,7 +122,7 @@ Linear and polynomial regression visualization with confidence intervals.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.438 seconds)
+   **Total running time of the script:** (0 minutes 1.403 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_regression.py:

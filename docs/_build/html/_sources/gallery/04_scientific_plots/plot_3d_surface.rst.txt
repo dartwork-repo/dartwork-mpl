@@ -21,7 +21,7 @@
 3D Surface Plots
 ================
 
-Three-dimensional surface visualizations for scientific data.
+Render smooth 3D surfaces with contours and lighting tweaks that photograph well in papers.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-87
 
@@ -122,7 +122,7 @@ Three-dimensional surface visualizations for scientific data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.722 seconds)
+   **Total running time of the script:** (0 minutes 0.688 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_3d_surface.py:

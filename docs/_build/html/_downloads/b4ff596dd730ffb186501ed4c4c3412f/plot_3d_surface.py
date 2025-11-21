@@ -2,7 +2,7 @@
 3D Surface Plots
 ================
 
-Three-dimensional surface visualizations for scientific data.
+Render smooth 3D surfaces with contours and lighting tweaks that photograph well in papers.
 """
 
 import numpy as np

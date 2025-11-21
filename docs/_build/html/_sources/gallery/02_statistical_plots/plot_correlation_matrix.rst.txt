@@ -21,7 +21,7 @@
 Correlation Matrix
 ==================
 
-Correlation matrix visualization and scatter plot matrices.
+Build correlation heatmaps and scatter matrices with consistent ticks and color mapping to explain relationships quickly.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-86
 
@@ -121,7 +121,7 @@ Correlation matrix visualization and scatter plot matrices.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.755 seconds)
+   **Total running time of the script:** (0 minutes 0.783 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_correlation_matrix.py:

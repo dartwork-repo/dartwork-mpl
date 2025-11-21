@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=d7c7ad49" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2f450e35" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="../../installation.html">Installation</a></li><li class="link"><a href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../../COLOR_GALLERY.html">Colors</a></li><li class="link"><a href="../index.html">Examples Gallery</a></li><li class="link"><a href="../../api/index.html">API Reference</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="../../installation.html">Installation</a></li><li class="link"><a href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../../COLOR_SYSTEM.html">Color System</a></li><li class="link"><a href="../index.html">Examples Gallery</a></li><li class="link"><a href="../../api/index.html">API Reference</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -67,7 +67,7 @@ data-aria-dark="Switch to auto color mode">
         <div class="globaltoc" data-expand-depth="0"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../COLOR_GALLERY.html">Colors</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../COLOR_SYSTEM.html">Color System</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../COLORS.html">Colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../COLORMAPS.html">Colormaps</a></li>
 </ul>
@@ -75,6 +75,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1 current"><a class="reference internal" href="../../examples_gallery.html">Examples Gallery</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../01_basic_plots/index.html">Basic Plots</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_basic.html">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_reference_lines.html">Reference Lines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_area_plots.html">Area Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_multiple_lines.html">Multiple Line Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_markers.html">Marker Styles</a></li>
@@ -105,9 +106,9 @@ data-aria-dark="Switch to auto color mode">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../04_scientific_plots/index.html">Scientific Plots</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_heatmap.html">Heatmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_streamplot.html">Streamplot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_contour.html">Contour Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_heatmap.html">Heatmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_scientific_paper.html">Scientific Paper Figure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_vector_field_advanced.html">Advanced Vector Fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_spectral_analysis.html">Spectral Analysis</a></li>
@@ -133,8 +134,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_polar.html">Polar Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_ridgeline.html">Ridgeline Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_radar_chart.html">Radar Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_pie.html">Pie Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_filled.html">Filled Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
 </ul>
@@ -219,31 +220,31 @@ data-aria-dark="Switch to auto color mode">
 <span id="sphx-glr-gallery-07-layout-styling"></span><h1>Layout &amp; Styling<a class="headerlink" href="#layout-styling" title="Link to this heading">¶</a></h1>
 <p>Layout optimization, subplot arrangement, legend customization, annotations,
 and advanced styling techniques for publication-quality figures.</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Subplots with shared x or y axes for comparison."><img alt="" src="../../_images/sphx_glr_plot_shared_axes_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Share axes for fair comparisons and control label visibility to avoid duplication."><img alt="" src="../../_images/sphx_glr_plot_shared_axes_thumb.png" />
 <p><a class="reference internal" href="plot_shared_axes.html#sphx-glr-gallery-07-layout-styling-plot-shared-axes-py"><span class="std std-ref">Shared Axes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Shared Axes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Layout optimization techniques."><img alt="" src="../../_images/sphx_glr_plot_layout_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec helpers."><img alt="" src="../../_images/sphx_glr_plot_layout_thumb.png" />
 <p><a class="reference internal" href="plot_layout.html#sphx-glr-gallery-07-layout-styling-plot-layout-py"><span class="std std-ref">Layout Optimization</span></a></p>
   <div class="sphx-glr-thumbnail-title">Layout Optimization</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Advanced GridSpec layouts for complex figure arrangements."><img alt="" src="../../_images/sphx_glr_plot_complex_grid_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Build dense GridSpec layouts with shared colorbars and aligned labels for multi-panel figures."><img alt="" src="../../_images/sphx_glr_plot_complex_grid_thumb.png" />
 <p><a class="reference internal" href="plot_complex_grid.html#sphx-glr-gallery-07-layout-styling-plot-complex-grid-py"><span class="std std-ref">Complex Grid Layouts</span></a></p>
   <div class="sphx-glr-thumbnail-title">Complex Grid Layouts</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Combining different plot types in a unified figure."><img alt="" src="../../_images/sphx_glr_plot_mixed_subplots_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Mix bars, lines, histograms, and tabular panels on one page with consistent sizing."><img alt="" src="../../_images/sphx_glr_plot_mixed_subplots_thumb.png" />
 <p><a class="reference internal" href="plot_mixed_subplots.html#sphx-glr-gallery-07-layout-styling-plot-mixed-subplots-py"><span class="std std-ref">Mixed Subplot Types</span></a></p>
   <div class="sphx-glr-thumbnail-title">Mixed Subplot Types</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Subplot layout techniques."><img alt="" src="../../_images/sphx_glr_plot_subplots_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing."><img alt="" src="../../_images/sphx_glr_plot_subplots_thumb.png" />
 <p><a class="reference internal" href="plot_subplots.html#sphx-glr-gallery-07-layout-styling-plot-subplots-py"><span class="std std-ref">Subplots Layout</span></a></p>
   <div class="sphx-glr-thumbnail-title">Subplots Layout</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Legend customization."><img alt="" src="../../_images/sphx_glr_plot_legend_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles."><img alt="" src="../../_images/sphx_glr_plot_legend_thumb.png" />
 <p><a class="reference internal" href="plot_legend.html#sphx-glr-gallery-07-layout-styling-plot-legend-py"><span class="std std-ref">Legends</span></a></p>
   <div class="sphx-glr-thumbnail-title">Legends</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting: positions, labels, and log scales."><img alt="" src="../../_images/sphx_glr_plot_custom_ticks_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Control tick placement and formatting, from numeric to log scales, with custom formatters."><img alt="" src="../../_images/sphx_glr_plot_custom_ticks_thumb.png" />
 <p><a class="reference internal" href="plot_custom_ticks.html#sphx-glr-gallery-07-layout-styling-plot-custom-ticks-py"><span class="std std-ref">Custom Ticks</span></a></p>
   <div class="sphx-glr-thumbnail-title">Custom Ticks</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Creating inset axes for zoomed views and detail plots."><img alt="" src="../../_images/sphx_glr_plot_inset_axes_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Add inset zooms and overview boxes with connectors that keep context clear."><img alt="" src="../../_images/sphx_glr_plot_inset_axes_thumb.png" />
 <p><a class="reference internal" href="plot_inset_axes.html#sphx-glr-gallery-07-layout-styling-plot-inset-axes-py"><span class="std std-ref">Inset Axes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Inset Axes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Advanced annotation techniques."><img alt="" src="../../_images/sphx_glr_plot_annotations_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts aligned to data or axes coords."><img alt="" src="../../_images/sphx_glr_plot_annotations_thumb.png" />
 <p><a class="reference internal" href="plot_annotations.html#sphx-glr-gallery-07-layout-styling-plot-annotations-py"><span class="std std-ref">Annotations</span></a></p>
   <div class="sphx-glr-thumbnail-title">Annotations</div>
 </div></div><div class="toctree-wrapper compound">
@@ -276,7 +277,7 @@ and advanced styling techniques for publication-quality figures.</p>
 <footer class="sy-foot">
   <div class="sy-foot-inner sy-container mx-auto">
     <div class="sy-foot-reserved md:flex justify-between items-center">
-      <div class="sy-foot-copyright"><p>2025, Sangwon Lee, Wonjun Choi</p>
+      <div class="sy-foot-copyright"><p>2025 Sangwon Lee & Wonjun Choi</p>
   
   <p>
     Made with
@@ -299,5 +300,6 @@ and advanced styling techniques for publication-quality figures.</p>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f281be69"></script>
       <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../../_static/shibuya.js?v=c1cf1a6b"></script></body>
+      <script src="../../_static/shibuya.js?v=c1cf1a6b"></script>
+      <script src="../../_static/custom.js?v=7ad07d3c"></script></body>
 </html>

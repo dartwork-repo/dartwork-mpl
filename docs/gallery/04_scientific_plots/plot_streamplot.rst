@@ -21,7 +21,7 @@
 Streamplot
 ==========
 
-Streamplots for vector fields.
+Draw dense vector flows with streamplot spacing, color by speed, and helpful start points.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-43
 
@@ -78,7 +78,7 @@ Streamplots for vector fields.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.908 seconds)
+   **Total running time of the script:** (0 minutes 0.849 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_streamplot.py:

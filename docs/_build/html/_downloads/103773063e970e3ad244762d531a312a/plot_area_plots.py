@@ -2,7 +2,7 @@
 Area Plots
 ==========
 
-Filled area plots and combinations with lines.
+Layer filled regions and crisp lines to highlight ranges, uncertainty bands, and stacked totals without losing clarity.
 """
 
 import numpy as np
@@ -39,9 +39,15 @@ ax1.plot(x, y1, color='dm.blue7', lw=0.7, label='Upper bound')
 ax1.set_xlabel('X value', fontsize=dm.fs(0))
 ax1.set_ylabel('Y value', fontsize=dm.fs(0))
 ax1.set_title('Basic Fill Between', fontsize=dm.fs(1))
-ax1.legend(loc='upper right', fontsize=dm.fs(-1))
+ax1.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.1),
+    fontsize=dm.fs(-1),
+    frameon=False,
+)
 ax1.set_xticks([0, 2, 4, 6, 8, 10])
 ax1.set_yticks([0, 1, 2, 3])
+ax1.set_ylim(-0.1, 3.3)
 
 # Panel B: Confidence interval style
 ax2 = fig.add_subplot(gs[0, 1])
@@ -52,9 +58,15 @@ ax2.plot(x, y_mean, color='dm.red5', lw=0.7, label='Mean')
 ax2.set_xlabel('X value', fontsize=dm.fs(0))
 ax2.set_ylabel('Y value', fontsize=dm.fs(0))
 ax2.set_title('Confidence Interval', fontsize=dm.fs(1))
-ax2.legend(loc='upper right', fontsize=dm.fs(-1))
+ax2.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.1),
+    fontsize=dm.fs(-1),
+    frameon=False,
+)
 ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([0, 1, 2, 3])
+ax2.set_ylim(0, 3.4)
 
 # Panel C: Multiple overlapping areas
 ax3 = fig.add_subplot(gs[1, 0])
@@ -65,9 +77,15 @@ ax3.plot(x, y2, color='dm.red7', lw=0.5)
 ax3.set_xlabel('X value', fontsize=dm.fs(0))
 ax3.set_ylabel('Y value', fontsize=dm.fs(0))
 ax3.set_title('Overlapping Areas', fontsize=dm.fs(1))
-ax3.legend(loc='upper right', fontsize=dm.fs(-1))
+ax3.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.1),
+    fontsize=dm.fs(-1),
+    frameon=False,
+)
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([0, 1, 2, 3])
+ax3.set_ylim(-0.1, 3.3)
 
 # Panel D: Stacked areas
 ax4 = fig.add_subplot(gs[1, 1])
@@ -82,9 +100,16 @@ ax4.fill_between(x, y_stack2, y_stack3, color='dm.orange5', alpha=0.6, label='La
 ax4.set_xlabel('X value', fontsize=dm.fs(0))
 ax4.set_ylabel('Y value', fontsize=dm.fs(0))
 ax4.set_title('Stacked Areas', fontsize=dm.fs(1))
-ax4.legend(loc='upper left', fontsize=dm.fs(-2), ncol=2)
+ax4.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.12),
+    fontsize=dm.fs(-2),
+    ncol=2,
+    frameon=False,
+)
 ax4.set_xticks([0, 2, 4, 6, 8, 10])
 ax4.set_yticks([0, 0.5, 1, 1.5, 2, 2.5])
+ax4.set_ylim(0, 2.7)
 
 # Optimize layout
 dm.simple_layout(fig, gs=gs)

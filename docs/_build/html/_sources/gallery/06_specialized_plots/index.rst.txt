@@ -18,7 +18,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="3D surface and scatter plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Combine 3D surfaces and scatters with consistent lighting and projection choices for presentations.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Dual y-axis plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Align two y-axes with matching grids, offsets, and legends to reduce reader confusion.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Polar coordinate plots, scatter distributions, and radial bars.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing distributions across categories with ridgeline plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use ridgeline (joy) plots with baseline offsets and smooth fills to compare distributions across categories.">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Radar/spider charts for multivariate data visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Design radar/spider charts with normalization, group fills, and label offsets that avoid overlaps.">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Pie charts, donut plots, and nested variants for share comparisons.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build pies, donuts, and nested rings with centered labels and contrast so proportions stay legible.">
 
 .. only:: html
 
@@ -120,7 +120,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing hierarchical and nested data structures.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Lay out treemaps with nested rectangles and inline labels for hierarchical shares.">
 
 .. only:: html
 
@@ -137,7 +137,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots: confidence bands, stacked areas, and layered regions.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Layer confidence bands, stacked areas, and smooth fills to emphasize ranges instead of lines.">
 
 .. only:: html
 
@@ -154,7 +154,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing flows and connections between elements.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Draw compact Sankey diagrams to explain flows between stages with tidy labels.">
 
 .. only:: html
 

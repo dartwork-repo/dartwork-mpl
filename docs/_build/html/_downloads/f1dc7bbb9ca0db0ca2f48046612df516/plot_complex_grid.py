@@ -2,7 +2,7 @@
 Complex Grid Layouts
 ====================
 
-Advanced GridSpec layouts for complex figure arrangements.
+Build dense GridSpec layouts with shared colorbars and aligned labels for multi-panel figures.
 """
 
 import numpy as np

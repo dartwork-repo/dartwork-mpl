@@ -21,7 +21,7 @@
 Scientific Paper Figure
 =======================
 
-Publication-quality scientific figure.
+Use a full scientific figure template with multi-panels, shared colorbars, inset annotations, and consistent typography.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-79
 
@@ -33,19 +33,8 @@ Publication-quality scientific figure.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -125,7 +114,7 @@ Publication-quality scientific figure.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.811 seconds)
+   **Total running time of the script:** (0 minutes 0.558 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_scientific_paper.py:

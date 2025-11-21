@@ -2,7 +2,7 @@
 Correlation Matrix
 ==================
 
-Correlation matrix visualization and scatter plot matrices.
+Build correlation heatmaps and scatter matrices with consistent ticks and color mapping to explain relationships quickly.
 """
 
 import numpy as np

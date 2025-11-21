@@ -18,7 +18,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Moving averages and rolling window statistics.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Track rolling means and variances with window markers to show stability and volatility over time.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="ACF and PACF plots for time series analysis.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot ACF and PACF with significance bounds to quickly judge lag structure.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Comparing multiple time series with different visualization techniques.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare several series with dual axes, panel splits, and color harmonies meant for dashboards.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Detecting and visualizing trends in time series data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Highlight local and global trends with smoothing, break annotations, and slope callouts.">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing time series forecasts with confidence intervals.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Show forecasts with past-versus-future shading, ribbons, and quantile fans to communicate uncertainty.">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Step plots for change detection, shift timing, and rolling summaries.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build step charts that expose change points, holding periods, and cumulative shifts.">
 
 .. only:: html
 
@@ -120,7 +120,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Time series plotting with multiple date formats, rolling trends, and spans.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use date-aware axes with rolling trends, spans, and multiple granularities on one canvas.">
 
 .. only:: html
 
@@ -137,7 +137,7 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stem plots for spikes, grouped series, and categorical stems.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use stem plots for impulses, grouped spikes, and categorical events with careful labeling.">
 
 .. only:: html
 

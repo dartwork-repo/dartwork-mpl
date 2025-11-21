@@ -21,7 +21,7 @@
 Custom Colormaps
 ================
 
-Creating and using custom colormaps for visualization.
+Build sequential, diverging, and discrete colormaps and compare them side by side.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-81
 
@@ -116,7 +116,7 @@ Creating and using custom colormaps for visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.052 seconds)
+   **Total running time of the script:** (0 minutes 1.008 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_custom_colormap.py:

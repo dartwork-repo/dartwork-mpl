@@ -21,7 +21,7 @@
 Time Series Comparison
 ======================
 
-Comparing multiple time series with different visualization techniques.
+Compare several series with dual axes, panel splits, and color harmonies meant for dashboards.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-76
 
@@ -111,7 +111,7 @@ Comparing multiple time series with different visualization techniques.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.135 seconds)
+   **Total running time of the script:** (0 minutes 1.097 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_time_comparison.py:

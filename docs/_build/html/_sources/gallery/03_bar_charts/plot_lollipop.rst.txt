@@ -21,7 +21,7 @@
 Lollipop Charts
 ===============
 
-Lollipop charts as an alternative to bar charts.
+Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-99
 
@@ -134,7 +134,7 @@ Lollipop charts as an alternative to bar charts.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.739 seconds)
+   **Total running time of the script:** (0 minutes 0.753 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_lollipop.py:

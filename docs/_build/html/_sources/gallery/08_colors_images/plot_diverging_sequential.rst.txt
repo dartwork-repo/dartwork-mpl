@@ -21,7 +21,7 @@
 Diverging and Sequential Colors
 ================================
 
-Choosing appropriate color schemes for different data types.
+Choose good color schemes for diverging versus sequential data and see when to use each.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-76
 
@@ -111,7 +111,7 @@ Choosing appropriate color schemes for different data types.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.156 seconds)
+   **Total running time of the script:** (0 minutes 1.117 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_diverging_sequential.py:

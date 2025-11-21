@@ -18,7 +18,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Streamplots for vector fields.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Draw dense vector flows with streamplot spacing, color by speed, and helpful start points.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Contour plots with labels.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Label contour maps with filled and line levels plus colorbars tuned for small multiples.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Heatmap visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build heatmaps with annotations, diverging palettes, and tight grids for correlation or matrix data.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Publication-quality scientific figure.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use a full scientific figure template with multi-panels, shared colorbars, inset annotations, and consistent typography.">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Vector field visualizations with streamlines and contours.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Blend streamlines, contour backgrounds, and reference arrows to explain complex vector fields.">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Frequency domain analysis and spectral plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Move from signals to frequency domain with windows, PSDs, spectrograms, and labelled peaks.">
 
 .. only:: html
 
@@ -120,7 +120,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Three-dimensional surface visualizations for scientific data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Render smooth 3D surfaces with contours and lighting tweaks that photograph well in papers.">
 
 .. only:: html
 
@@ -137,7 +137,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Quiver plots for vector fields: circular, radial, and spiraling flows.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare radial, circular, and spiral vector fields with clear arrow scaling and color magnitude.">
 
 .. only:: html
 
@@ -154,7 +154,7 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Phase space and trajectory plots for dynamical systems.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Trace trajectories and vector fields to explain stability and cycles in dynamical systems.">
 
 .. only:: html
 

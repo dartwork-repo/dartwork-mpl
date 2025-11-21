@@ -2,7 +2,7 @@
 3D Plots
 ========
 
-3D surface and scatter plots.
+Combine 3D surfaces and scatters with consistent lighting and projection choices for presentations.
 """
 
 import matplotlib.pyplot as plt

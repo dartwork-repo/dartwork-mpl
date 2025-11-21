@@ -2,7 +2,7 @@
 Filled Plots
 ============
 
-Filled area plots: confidence bands, stacked areas, and layered regions.
+Layer confidence bands, stacked areas, and smooth fills to emphasize ranges instead of lines.
 """
 
 import numpy as np

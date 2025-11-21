@@ -21,7 +21,7 @@
 Probability Density
 ===================
 
-Probability density functions.
+Plot analytic PDFs with shading and annotations so you can introduce distributions without heavy math.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-54
 
@@ -89,7 +89,7 @@ Probability density functions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.483 seconds)
+   **Total running time of the script:** (0 minutes 0.468 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_probability_density.py:

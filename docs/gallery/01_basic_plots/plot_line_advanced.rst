@@ -21,10 +21,9 @@
 Advanced Line Plots
 ===================
 
-Advanced line plot styles, banded intervals, and rolling smoothing for
-publication-ready comparisons.
+Compare styling tricks for lines (bands, smoothing, markers) so you can pick a publication-ready look for noisy series.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-106
+.. GENERATED FROM PYTHON SOURCE LINES 7-133
 
 
 
@@ -82,10 +81,17 @@ publication-ready comparisons.
     ax1.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax1.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax1.set_title('Lines with Markers', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.1),
+        fontsize=dm.fs(-1),
+        ncol=2,
+        frameon=False,
+    )
     # Set explicit ticks
     ax1.set_xticks([0, 2, 4, 6, 8, 10])
     ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
+    ax1.set_ylim(-1.2, 1.2)
 
     # Panel B: Different line styles
     ax2 = fig.add_subplot(gs[0, 1])
@@ -96,10 +102,17 @@ publication-ready comparisons.
     ax2.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax2.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax2.set_title('Line Styles', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.1),
+        fontsize=dm.fs(-1),
+        ncol=2,
+        frameon=False,
+    )
     # Set explicit ticks
     ax2.set_xticks([0, 2, 4, 6, 8, 10])
     ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
+    ax2.set_ylim(-1.2, 1.2)
 
     # Panel C: Line with error band
     ax3 = fig.add_subplot(gs[1, 0])
@@ -111,10 +124,17 @@ publication-ready comparisons.
     ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax3.set_title('Error Band', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.1),
+        fontsize=dm.fs(-1),
+        ncol=2,
+        frameon=False,
+    )
     # Set explicit ticks
     ax3.set_xticks([0, 2, 4, 6, 8, 10])
     ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
+    ax3.set_ylim(-1.2, 1.2)
 
     # Panel D: Smoothed trend with step overlay
     ax4 = fig.add_subplot(gs[1, 1])
@@ -128,9 +148,16 @@ publication-ready comparisons.
     ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax4.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax4.set_title('Smoothed & Stepped Signal', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax4.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.1),
+        fontsize=dm.fs(-1),
+        ncol=2,
+        frameon=False,
+    )
     ax4.set_xticks([0, 2, 4, 6, 8, 10])
     ax4.set_yticks([-2, -1, 0, 1, 2])
+    ax4.set_ylim(-2.2, 2.2)
 
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
@@ -141,7 +168,7 @@ publication-ready comparisons.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.865 seconds)
+   **Total running time of the script:** (0 minutes 0.848 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_line_advanced.py:

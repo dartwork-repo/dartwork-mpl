@@ -21,7 +21,7 @@
 Step Plots
 ==========
 
-Step plots for change detection, shift timing, and rolling summaries.
+Build step charts that expose change points, holding periods, and cumulative shifts.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-100
 
@@ -135,7 +135,7 @@ Step plots for change detection, shift timing, and rolling summaries.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.824 seconds)
+   **Total running time of the script:** (0 minutes 0.821 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_step.py:

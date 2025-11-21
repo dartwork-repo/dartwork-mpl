@@ -18,7 +18,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Color palette visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Browse dartwork color libraries with labeled swatches you can drop into figures.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Using and customizing color cycles for multi-series plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Preview built-in color cycles and learn how to swap or extend them for multi-series plots.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Choosing appropriate color schemes for different data types.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Choose good color schemes for diverging versus sequential data and see when to use each.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Color choices for accessibility and perceptual uniformity.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Check contrast, color-blind safety, and luminance ramps before you pick a palette.">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Creating and using custom colormaps for visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build sequential, diverging, and discrete colormaps and compare them side by side.">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Image display with multiple colormaps, interpolation modes, and edge overlays.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Render images with different colormaps, interpolation, outlines, and grid overlays for quick QA.">
 
 .. only:: html
 

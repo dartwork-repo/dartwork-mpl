@@ -2,7 +2,7 @@
 Violin and Box Plots
 ====================
 
-Violin and box plots.
+Pair boxplots and violins to show summary stats and full distributions in one glance.
 """
 
 import numpy as np

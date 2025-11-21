@@ -2,7 +2,7 @@
 Subplots Layout
 ===============
 
-Subplot layout techniques.
+Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing.
 """
 
 import numpy as np

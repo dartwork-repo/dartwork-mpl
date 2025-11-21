@@ -21,7 +21,7 @@
 Heatmap
 =======
 
-Heatmap visualization.
+Build heatmaps with annotations, diverging palettes, and tight grids for correlation or matrix data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-52
 
@@ -33,19 +33,8 @@ Heatmap visualization.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -63,13 +52,13 @@ Heatmap visualization.
     cov[:, 4:] += cov[:, :4] * 0.6  # induce correlation structure
     corr = np.corrcoef(cov, rowvar=False)
 
-    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(10)), dpi=300)
+    fig = plt.figure(figsize=(dm.cm2in(18), dm.cm2in(9)), dpi=300)
     gs = fig.add_gridspec(
-        2, 1,
-        height_ratios=[1, 1],
-        left=0.10, right=0.85,
-        top=0.95, bottom=0.10,
-        hspace=0.32
+        1, 2,
+        width_ratios=[1, 1],
+        left=0.08, right=0.94,
+        top=0.92, bottom=0.12,
+        wspace=0.28
     )
 
     # Panel A: Diverging heatmap
@@ -82,7 +71,7 @@ Heatmap visualization.
     ax1.set_ylabel('Y Axis', fontsize=dm.fs(0))
 
     # Panel B: Correlation matrix
-    ax2 = fig.add_subplot(gs[1, 0])
+    ax2 = fig.add_subplot(gs[0, 1])
     im2 = ax2.imshow(corr, cmap='dm.Spectral', vmin=-1, vmax=1)
     cbar2 = fig.colorbar(im2, ax=ax2, fraction=0.04, pad=0.02)
     cbar2.set_label('Correlation', fontsize=dm.fs(0))
@@ -98,7 +87,7 @@ Heatmap visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.709 seconds)
+   **Total running time of the script:** (0 minutes 1.039 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_heatmap.py:

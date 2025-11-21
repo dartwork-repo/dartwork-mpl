@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="../../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Basic Plots - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Basic Usage" href="plot_basic.html" /><link rel="prev" title="Examples Gallery" href="../index.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Basic Plots - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Basic Usage" href="plot_basic.html" /><link rel="prev" title="Examples Gallery" href="../../examples_gallery.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=d7c7ad49" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2f450e35" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="../../installation.html">Installation</a></li><li class="link"><a href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../../COLOR_GALLERY.html">Colors</a></li><li class="link"><a href="../index.html">Examples Gallery</a></li><li class="link"><a href="../../api/index.html">API Reference</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="../../installation.html">Installation</a></li><li class="link"><a href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../../COLOR_SYSTEM.html">Color System</a></li><li class="link"><a href="../index.html">Examples Gallery</a></li><li class="link"><a href="../../api/index.html">API Reference</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -67,24 +67,15 @@ data-aria-dark="Switch to auto color mode">
         <div class="globaltoc" data-expand-depth="0"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../COLOR_GALLERY.html">Color System</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../COLOR_SYSTEM.html">Color System</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../COLORS.html">Colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../COLORMAPS.html">Colormaps</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../COLORS.html">Colors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../COLORMAPS.html">Colormaps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Examples Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#basic-plots">Basic Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#statistical-plots">Statistical Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#bar-charts">Bar Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#scientific-plots">Scientific Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#time-series">Time Series</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#specialized-plots">Specialized Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#layout-styling">Layout &amp; Styling</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#colors-images">Colors &amp; Images</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples_gallery.html">Examples Gallery</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Basic Plots</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="plot_basic.html">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_reference_lines.html">Reference Lines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_area_plots.html">Area Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_multiple_lines.html">Multiple Line Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_markers.html">Marker Styles</a></li>
@@ -115,9 +106,9 @@ data-aria-dark="Switch to auto color mode">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../04_scientific_plots/index.html">Scientific Plots</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_heatmap.html">Heatmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_streamplot.html">Streamplot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_contour.html">Contour Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_heatmap.html">Heatmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_scientific_paper.html">Scientific Paper Figure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_vector_field_advanced.html">Advanced Vector Fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../04_scientific_plots/plot_spectral_analysis.html">Spectral Analysis</a></li>
@@ -143,8 +134,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_polar.html">Polar Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_ridgeline.html">Ridgeline Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_radar_chart.html">Radar Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_pie.html">Pie Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_filled.html">Filled Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
 </ul>
@@ -155,9 +146,9 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_complex_grid.html">Complex Grid Layouts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_mixed_subplots.html">Mixed Subplot Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_subplots.html">Subplots Layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_inset_axes.html">Inset Axes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_legend.html">Legends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_custom_ticks.html">Custom Ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_inset_axes.html">Inset Axes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_annotations.html">Annotations</a></li>
 </ul>
 </li>
@@ -208,7 +199,7 @@ data-aria-dark="Switch to auto color mode">
         <span>/</span>
         <meta itemprop="position" content="1" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="../index.html"><span itemprop="name">Examples Gallery</span></a>
+        <a itemprop="item" href="../../examples_gallery.html"><span itemprop="name">Examples Gallery</span></a>
         <span>/</span>
         <meta itemprop="position" content="2" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -229,25 +220,28 @@ data-aria-dark="Switch to auto color mode">
 <span id="sphx-glr-gallery-01-basic-plots"></span><h1>Basic Plots<a class="headerlink" href="#basic-plots" title="Link to this heading">¶</a></h1>
 <p>Fundamental plotting examples demonstrating core dartwork-mpl features.
 These examples show basic line plots, scatter plots, and essential styling techniques.</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Basic usage with style presets."><img alt="" src="../../_images/sphx_glr_plot_basic_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacing on a single stylized line plot."><img alt="" src="../../_images/sphx_glr_plot_basic_thumb.png" />
 <p><a class="reference internal" href="plot_basic.html#sphx-glr-gallery-01-basic-plots-plot-basic-py"><span class="std std-ref">Basic Usage</span></a></p>
   <div class="sphx-glr-thumbnail-title">Basic Usage</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Filled area plots and combinations with lines."><img alt="" src="../../_images/sphx_glr_plot_area_plots_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Combine baseline trends, goal bands, annotations, and highlights to show how dartwork-mpl styles compose on a single axes."><img alt="" src="../../_images/sphx_glr_plot_reference_lines_thumb.png" />
+<p><a class="reference internal" href="plot_reference_lines.html#sphx-glr-gallery-01-basic-plots-plot-reference-lines-py"><span class="std std-ref">Reference Lines</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Reference Lines</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Layer filled regions and crisp lines to highlight ranges, uncertainty bands, and stacked totals without losing clarity."><img alt="" src="../../_images/sphx_glr_plot_area_plots_thumb.png" />
 <p><a class="reference internal" href="plot_area_plots.html#sphx-glr-gallery-01-basic-plots-plot-area-plots-py"><span class="std std-ref">Area Plots</span></a></p>
   <div class="sphx-glr-thumbnail-title">Area Plots</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Demonstrating multiple line plots with different colors and styles."><img alt="" src="../../_images/sphx_glr_plot_multiple_lines_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Stack several series with coordinated colors and labels to learn quick defaults for multi-line comparisons."><img alt="" src="../../_images/sphx_glr_plot_multiple_lines_thumb.png" />
 <p><a class="reference internal" href="plot_multiple_lines.html#sphx-glr-gallery-01-basic-plots-plot-multiple-lines-py"><span class="std std-ref">Multiple Line Plots</span></a></p>
   <div class="sphx-glr-thumbnail-title">Multiple Line Plots</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Various marker styles and combinations with lines."><img alt="" src="../../_images/sphx_glr_plot_markers_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Mix markers with strokes, fills, and offsets to encode categories or emphasis without clutter."><img alt="" src="../../_images/sphx_glr_plot_markers_thumb.png" />
 <p><a class="reference internal" href="plot_markers.html#sphx-glr-gallery-01-basic-plots-plot-markers-py"><span class="std std-ref">Marker Styles</span></a></p>
   <div class="sphx-glr-thumbnail-title">Marker Styles</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Different line styles and dash patterns for data visualization."><img alt="" src="../../_images/sphx_glr_plot_line_styles_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Preview dashes, caps, and joins side by side to choose line styles that stay legible once printed or projected."><img alt="" src="../../_images/sphx_glr_plot_line_styles_thumb.png" />
 <p><a class="reference internal" href="plot_line_styles.html#sphx-glr-gallery-01-basic-plots-plot-line-styles-py"><span class="std std-ref">Line Styles</span></a></p>
   <div class="sphx-glr-thumbnail-title">Line Styles</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Scatter plots with varying markers, color encodings, and density overlays to compare clustering patterns."><img alt="" src="../../_images/sphx_glr_plot_scatter_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Contrast marker shapes, color encodings, and density shading to show clusters and overlaps more clearly."><img alt="" src="../../_images/sphx_glr_plot_scatter_thumb.png" />
 <p><a class="reference internal" href="plot_scatter.html#sphx-glr-gallery-01-basic-plots-plot-scatter-py"><span class="std std-ref">Scatter Plots</span></a></p>
   <div class="sphx-glr-thumbnail-title">Scatter Plots</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Advanced line plot styles, banded intervals, and rolling smoothing for publication-ready comparisons."><img alt="" src="../../_images/sphx_glr_plot_line_advanced_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Compare styling tricks for lines (bands, smoothing, markers) so you can pick a publication-ready look for noisy series."><img alt="" src="../../_images/sphx_glr_plot_line_advanced_thumb.png" />
 <p><a class="reference internal" href="plot_line_advanced.html#sphx-glr-gallery-01-basic-plots-plot-line-advanced-py"><span class="std std-ref">Advanced Line Plots</span></a></p>
   <div class="sphx-glr-thumbnail-title">Advanced Line Plots</div>
 </div></div><div class="toctree-wrapper compound">
@@ -260,7 +254,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="../index.html">
+    <a href="../../examples_gallery.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
         <span>Previous</span><div class="title">Examples Gallery</div></div>
@@ -280,7 +274,7 @@ These examples show basic line plots, scatter plots, and essential styling techn
 <footer class="sy-foot">
   <div class="sy-foot-inner sy-container mx-auto">
     <div class="sy-foot-reserved md:flex justify-between items-center">
-      <div class="sy-foot-copyright"><p>2025, Sangwon Lee, Wonjun Choi</p>
+      <div class="sy-foot-copyright"><p>2025 Sangwon Lee & Wonjun Choi</p>
   
   <p>
     Made with
@@ -303,5 +297,6 @@ These examples show basic line plots, scatter plots, and essential styling techn
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f281be69"></script>
       <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../../_static/shibuya.js?v=c1cf1a6b"></script></body>
+      <script src="../../_static/shibuya.js?v=c1cf1a6b"></script>
+      <script src="../../_static/custom.js?v=7ad07d3c"></script></body>
 </html>

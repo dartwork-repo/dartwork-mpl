@@ -21,7 +21,7 @@
 Diverging Bar Charts
 ====================
 
-Diverging bar charts for showing positive and negative values.
+Show positive and negative swings around a midpoint with color cues for direction.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-101
 
@@ -136,7 +136,7 @@ Diverging bar charts for showing positive and negative values.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.733 seconds)
+   **Total running time of the script:** (0 minutes 0.721 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_diverging_bar.py:

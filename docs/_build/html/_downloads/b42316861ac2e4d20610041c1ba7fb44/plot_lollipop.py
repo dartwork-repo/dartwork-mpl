@@ -2,7 +2,7 @@
 Lollipop Charts
 ===============
 
-Lollipop charts as an alternative to bar charts.
+Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.
 """
 
 import numpy as np

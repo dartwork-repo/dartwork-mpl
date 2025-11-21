@@ -21,7 +21,7 @@
 Bar Charts
 ==========
 
-Basic and grouped bar charts.
+Start from basic, grouped, and labeled bars with gentle spacing so categories stay readable.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-51
 
@@ -86,7 +86,7 @@ Basic and grouped bar charts.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.360 seconds)
+   **Total running time of the script:** (0 minutes 0.343 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_bar_chart.py:

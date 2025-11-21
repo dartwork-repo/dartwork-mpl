@@ -18,7 +18,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Probability density functions.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Plot analytic PDFs with shading and annotations so you can introduce distributions without heavy math.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Violin and box plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Pair boxplots and violins to show summary stats and full distributions in one glance.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Correlation matrix visualization and scatter plot matrices.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Build correlation heatmaps and scatter matrices with consistent ticks and color mapping to explain relationships quickly.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Linear and polynomial regression visualization with confidence intervals.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Visualize linear and polynomial fits plus confidence bands to make model quality and spread visible.">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Error bars and confidence intervals in multiple orientations and scales.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Draw vertical, horizontal, and log-scale error bars with caps and intervals to report uncertainty clearly.">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="KDE plots for probability density estimation and comparison.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use kernel density estimates for single and grouped data to highlight smooth probability ridges.">
 
 .. only:: html
 
@@ -120,7 +120,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Various probability distribution visualizations.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumulative behavior at a glance.">
 
 .. only:: html
 
@@ -137,7 +137,7 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Histograms and density plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare binning choices and overlays (density curves, step histograms) to pick a truthful view of your data.">
 
 .. only:: html
 

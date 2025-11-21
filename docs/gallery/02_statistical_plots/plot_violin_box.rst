@@ -21,7 +21,7 @@
 Violin and Box Plots
 ====================
 
-Violin and box plots.
+Pair boxplots and violins to show summary stats and full distributions in one glance.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-65
 
@@ -100,7 +100,7 @@ Violin and box plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.627 seconds)
+   **Total running time of the script:** (0 minutes 0.613 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_violin_box.py:

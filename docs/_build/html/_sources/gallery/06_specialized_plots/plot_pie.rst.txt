@@ -21,7 +21,7 @@
 Pie Charts
 ==========
 
-Pie charts, donut plots, and nested variants for share comparisons.
+Build pies, donuts, and nested rings with centered labels and contrast so proportions stay legible.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-116
 
@@ -151,7 +151,7 @@ Pie charts, donut plots, and nested variants for share comparisons.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.599 seconds)
+   **Total running time of the script:** (0 minutes 0.592 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_pie.py:

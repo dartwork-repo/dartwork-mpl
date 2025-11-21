@@ -2,7 +2,7 @@
 Grouped Bar Chart
 =================
 
-Grouped bar charts.
+Lay out grouped bars with shared baselines, tuned spacing, and legends that scale to many categories.
 """
 
 import numpy as np

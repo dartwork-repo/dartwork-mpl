@@ -2,7 +2,7 @@
 Probability Distributions
 =========================
 
-Various probability distribution visualizations.
+Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumulative behavior at a glance.
 """
 
 import numpy as np

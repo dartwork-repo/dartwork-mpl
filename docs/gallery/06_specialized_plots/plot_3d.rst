@@ -21,7 +21,7 @@
 3D Plots
 ========
 
-3D surface and scatter plots.
+Combine 3D surfaces and scatters with consistent lighting and projection choices for presentations.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-45
 
@@ -91,7 +91,7 @@
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.279 seconds)
+   **Total running time of the script:** (0 minutes 0.248 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_3d.py:

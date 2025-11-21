@@ -2,7 +2,7 @@
 Spectral Analysis
 =================
 
-Frequency domain analysis and spectral plots.
+Move from signals to frequency domain with windows, PSDs, spectrograms, and labelled peaks.
 """
 
 import numpy as np

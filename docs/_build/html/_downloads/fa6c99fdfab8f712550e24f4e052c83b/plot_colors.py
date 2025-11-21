@@ -2,7 +2,7 @@
 Colors
 ======
 
-Color palette visualization.
+Browse dartwork color libraries with labeled swatches you can drop into figures.
 """
 
 import numpy as np

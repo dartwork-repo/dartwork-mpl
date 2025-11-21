@@ -18,7 +18,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Basic and grouped bar charts.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Start from basic, grouped, and labeled bars with gentle spacing so categories stay readable.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Horizontal bar chart variations for categorical data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Rotate to horizontal bars, ranking views, and long labels that would otherwise collide.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Diverging bar charts for showing positive and negative values.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Show positive and negative swings around a midpoint with color cues for direction.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Lollipop charts as an alternative to bar charts.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Waterfall charts for showing cumulative effects of sequential values.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Walk through stepwise gains and losses with helper lines and colors that keep running totals obvious.">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stacked bar charts in vertical, horizontal, percentage, and cumulative views.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Stack categories vertically or horizontally, switch to 100% shares, and add cumulative views to tell composition stories.">
 
 .. only:: html
 
@@ -120,7 +120,7 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Grouped bar charts.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Lay out grouped bars with shared baselines, tuned spacing, and legends that scale to many categories.">
 
 .. only:: html
 

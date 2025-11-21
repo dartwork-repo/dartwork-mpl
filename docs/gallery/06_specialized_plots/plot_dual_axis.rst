@@ -21,7 +21,7 @@
 Dual Axis
 =========
 
-Dual y-axis plots.
+Align two y-axes with matching grids, offsets, and legends to reduce reader confusion.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-49
 
@@ -84,7 +84,7 @@ Dual y-axis plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.388 seconds)
+   **Total running time of the script:** (0 minutes 0.376 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_dual_axis.py:

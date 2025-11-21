@@ -2,7 +2,7 @@
 Stem Plots
 ==========
 
-Stem plots for spikes, grouped series, and categorical stems.
+Use stem plots for impulses, grouped spikes, and categorical events with careful labeling.
 """
 
 import numpy as np

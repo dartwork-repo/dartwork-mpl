@@ -21,7 +21,7 @@
 Colors
 ======
 
-Color palette visualization.
+Browse dartwork color libraries with labeled swatches you can drop into figures.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-58
 
@@ -33,19 +33,8 @@ Color palette visualization.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -104,7 +93,7 @@ Color palette visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.656 seconds)
+   **Total running time of the script:** (0 minutes 0.391 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_colors.py:

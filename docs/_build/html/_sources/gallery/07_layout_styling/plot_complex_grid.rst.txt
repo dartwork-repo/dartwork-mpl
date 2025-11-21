@@ -21,7 +21,7 @@
 Complex Grid Layouts
 ====================
 
-Advanced GridSpec layouts for complex figure arrangements.
+Build dense GridSpec layouts with shared colorbars and aligned labels for multi-panel figures.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-64
 
@@ -99,7 +99,7 @@ Advanced GridSpec layouts for complex figure arrangements.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.247 seconds)
+   **Total running time of the script:** (0 minutes 1.201 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_complex_grid.py:

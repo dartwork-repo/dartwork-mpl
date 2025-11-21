@@ -21,7 +21,7 @@
 Annotations
 ===========
 
-Advanced annotation techniques.
+Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts aligned to data or axes coords.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-134
 
@@ -37,8 +37,6 @@ Advanced annotation techniques.
 
  .. code-block:: none
 
-    Load colors...
-    Load colormaps...
     /home/wonjun/Codes/dartwork-mpl/docs/examples_source/07_layout_styling/plot_annotations.py:102: UserWarning: Setting the 'color' property will override the edgecolor or facecolor properties.
       ax4.axvspan(3, 7, color='dm.purple1', alpha=0.35, edgecolor='dm.purple6', lw=0.4)
 
@@ -182,7 +180,7 @@ Advanced annotation techniques.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.154 seconds)
+   **Total running time of the script:** (0 minutes 0.922 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_annotations.py:

@@ -2,12 +2,12 @@
 Scatter Plots
 =============
 
-Scatter plots with varying markers, color encodings, and density overlays to
-compare clustering patterns.
+Contrast marker shapes, color encodings, and density shading to show clusters and overlaps more clearly.
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -55,6 +55,8 @@ ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 # Set explicit ticks
 ax1.set_xticks([-3, -1, 1, 3])
 ax1.set_yticks([-3, -1, 1, 3])
+ax1.set_xlim(-3, 3)
+ax1.set_ylim(-3, 3)
 
 # Panel B: Scatter with color mapping
 ax2 = fig.add_subplot(gs[0, 1])
@@ -64,13 +66,17 @@ scatter2 = ax2.scatter(x1, y1, c=colors, s=20, cmap='dm.Spectral',
 ax2.set_xlabel('X value', fontsize=dm.fs(0))
 ax2.set_ylabel('Y value', fontsize=dm.fs(0))
 ax2.set_title('Color Mapping', fontsize=dm.fs(1))
-# Add colorbar with explicit fontsize
-cbar2 = fig.colorbar(scatter2, ax=ax2)
+# Add colorbar with dedicated side axis
+divider = make_axes_locatable(ax2)
+cax2 = divider.append_axes("right", size="5%", pad=0.12)
+cbar2 = fig.colorbar(scatter2, cax=cax2)
 cbar2.set_label('Intensity', fontsize=dm.fs(-1))
 cbar2.ax.tick_params(labelsize=dm.fs(-1))
-# Set explicit ticks
+# Set explicit ticks/limits
 ax2.set_xticks([-3, -1, 1, 3])
 ax2.set_yticks([-3, -1, 1, 3])
+ax2.set_xlim(-3, 3)
+ax2.set_ylim(-3, 3)
 
 # Panel C: Scatter with size mapping
 ax3 = fig.add_subplot(gs[1, 0])
@@ -83,12 +89,14 @@ ax3.set_title('Size Mapping', fontsize=dm.fs(1))
 # Set explicit ticks
 ax3.set_xticks([-3, -1, 1, 3])
 ax3.set_yticks([-3, -1, 1, 3])
+ax3.set_xlim(-3, 3)
+ax3.set_ylim(-3, 3)
 
 # Panel D: Density background + contour overlays
 ax4 = fig.add_subplot(gs[1, 1])
 grid_x, grid_y = np.meshgrid(
-    np.linspace(-3.5, 3.5, 80),
-    np.linspace(-3.5, 3.5, 80),
+    np.linspace(-3, 3, 80),
+    np.linspace(-3, 3, 80),
 )
 dens = (
     np.exp(-((grid_x - 1) ** 2 + (grid_y + 0.5) ** 2))
@@ -102,6 +110,8 @@ ax4.set_ylabel('Y value', fontsize=dm.fs(0))
 ax4.set_title('Density + Scatter Overlay', fontsize=dm.fs(1))
 ax4.set_xticks([-3, -1, 1, 3])
 ax4.set_yticks([-3, -1, 1, 3])
+ax4.set_xlim(-3, 3)
+ax4.set_ylim(-3, 3)
 
 # Optimize layout
 dm.simple_layout(fig, gs=gs)

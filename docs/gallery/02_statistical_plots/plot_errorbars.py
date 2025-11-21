@@ -2,7 +2,7 @@
 Error Bars
 ==========
 
-Error bars and confidence intervals in multiple orientations and scales.
+Draw vertical, horizontal, and log-scale error bars with caps and intervals to report uncertainty clearly.
 """
 
 import numpy as np

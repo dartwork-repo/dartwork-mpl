@@ -2,7 +2,7 @@
 Time Series Comparison
 ======================
 
-Comparing multiple time series with different visualization techniques.
+Compare several series with dual axes, panel splits, and color harmonies meant for dashboards.
 """
 
 import numpy as np

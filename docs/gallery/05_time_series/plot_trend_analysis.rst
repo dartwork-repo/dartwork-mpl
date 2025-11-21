@@ -21,7 +21,7 @@
 Trend Analysis
 ==============
 
-Detecting and visualizing trends in time series data.
+Highlight local and global trends with smoothing, break annotations, and slope callouts.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-88
 
@@ -123,7 +123,7 @@ Detecting and visualizing trends in time series data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.104 seconds)
+   **Total running time of the script:** (0 minutes 1.055 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_trend_analysis.py:

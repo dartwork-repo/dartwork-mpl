@@ -21,9 +21,9 @@
 Histograms
 ==========
 
-Histograms and density plots.
+Compare binning choices and overlays (density curves, step histograms) to pick a truthful view of your data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-110
+.. GENERATED FROM PYTHON SOURCE LINES 7-109
 
 
 
@@ -142,10 +142,9 @@ Histograms and density plots.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.123 seconds)
+   **Total running time of the script:** (0 minutes 1.124 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_histogram.py:

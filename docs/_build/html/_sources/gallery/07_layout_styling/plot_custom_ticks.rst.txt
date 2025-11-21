@@ -21,7 +21,7 @@
 Custom Ticks
 ============
 
-Custom tick formatting: positions, labels, and log scales.
+Control tick placement and formatting, from numeric to log scales, with custom formatters.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-95
 
@@ -130,7 +130,7 @@ Custom tick formatting: positions, labels, and log scales.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.107 seconds)
+   **Total running time of the script:** (0 minutes 1.119 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_custom_ticks.py:

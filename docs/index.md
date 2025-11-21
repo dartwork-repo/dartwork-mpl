@@ -16,8 +16,6 @@ opinionated styles, curated color libraries, and layout utilities.
 Installation <installation>
 Usage Guide <DARTWORK_MPL_USAGE_GUIDE>
 Color System <COLOR_SYSTEM>
-Colors <COLORS>
-Colormaps <COLORMAPS>
 Examples Gallery <examples_gallery>
 API Reference <api/index>
 ```

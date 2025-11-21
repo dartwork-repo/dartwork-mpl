@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.709** total execution time for 9 files **from gallery/04_scientific_plots**:
+**00:07.477** total execution time for 9 files **from gallery/04_scientific_plots**:
 
 .. container::
 
@@ -32,30 +32,30 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``plot_spectral_analysis.py``)
+     - 00:01.041
+     - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_heatmap.py` (``plot_heatmap.py``)
-     - 00:00.709
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_3d_surface.py` (``plot_3d_surface.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_contour.py` (``plot_contour.py``)
-     - 00:00.000
+     - 00:01.039
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_phase_diagram.py` (``plot_phase_diagram.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``plot_quiver.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``plot_scientific_paper.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``plot_spectral_analysis.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_streamplot.py` (``plot_streamplot.py``)
-     - 00:00.000
+     - 00:01.016
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_vector_field_advanced.py` (``plot_vector_field_advanced.py``)
-     - 00:00.000
+     - 00:01.009
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_streamplot.py` (``plot_streamplot.py``)
+     - 00:00.849
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``plot_quiver.py``)
+     - 00:00.751
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_3d_surface.py` (``plot_3d_surface.py``)
+     - 00:00.688
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``plot_scientific_paper.py``)
+     - 00:00.558
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_contour.py` (``plot_contour.py``)
+     - 00:00.527
      - 0.0

@@ -2,7 +2,7 @@
 Phase Diagrams
 ==============
 
-Phase space and trajectory plots for dynamical systems.
+Trace trajectories and vector fields to explain stability and cycles in dynamical systems.
 """
 
 import numpy as np

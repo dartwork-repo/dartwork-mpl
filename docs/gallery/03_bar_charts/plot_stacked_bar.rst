@@ -21,7 +21,7 @@
 Stacked Bar Chart
 =================
 
-Stacked bar charts in vertical, horizontal, percentage, and cumulative views.
+Stack categories vertically or horizontally, switch to 100% shares, and add cumulative views to tell composition stories.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-119
 
@@ -154,7 +154,7 @@ Stacked bar charts in vertical, horizontal, percentage, and cumulative views.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.848 seconds)
+   **Total running time of the script:** (0 minutes 0.861 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_stacked_bar.py:

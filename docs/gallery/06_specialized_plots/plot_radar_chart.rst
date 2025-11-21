@@ -21,7 +21,7 @@
 Radar Charts
 ============
 
-Radar/spider charts for multivariate data visualization.
+Design radar/spider charts with normalization, group fills, and label offsets that avoid overlaps.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-99
 
@@ -134,7 +134,7 @@ Radar/spider charts for multivariate data visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.156 seconds)
+   **Total running time of the script:** (0 minutes 1.154 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_radar_chart.py:

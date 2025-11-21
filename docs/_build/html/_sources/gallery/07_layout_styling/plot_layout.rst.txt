@@ -21,7 +21,7 @@
 Layout Optimization
 ===================
 
-Layout optimization techniques.
+Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec helpers.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-53
 
@@ -88,7 +88,7 @@ Layout optimization techniques.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.770 seconds)
+   **Total running time of the script:** (0 minutes 0.765 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_layout.py:

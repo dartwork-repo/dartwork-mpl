@@ -21,7 +21,7 @@
 Inset Axes
 ==========
 
-Creating inset axes for zoomed views and detail plots.
+Add inset zooms and overview boxes with connectors that keep context clear.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-100
 
@@ -146,7 +146,7 @@ Creating inset axes for zoomed views and detail plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.768 seconds)
+   **Total running time of the script:** (0 minutes 1.765 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_inset_axes.py:

@@ -2,7 +2,7 @@
 Stacked Bar Chart
 =================
 
-Stacked bar charts in vertical, horizontal, percentage, and cumulative views.
+Stack categories vertically or horizontally, switch to 100% shares, and add cumulative views to tell composition stories.
 """
 
 import numpy as np

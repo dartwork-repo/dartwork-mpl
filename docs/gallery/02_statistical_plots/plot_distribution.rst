@@ -21,7 +21,7 @@
 Probability Distributions
 =========================
 
-Various probability distribution visualizations.
+Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumulative behavior at a glance.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-103
 
@@ -138,7 +138,7 @@ Various probability distribution visualizations.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.935 seconds)
+   **Total running time of the script:** (0 minutes 0.940 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_distribution.py:

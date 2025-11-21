@@ -21,7 +21,7 @@
 Error Bars
 ==========
 
-Error bars and confidence intervals in multiple orientations and scales.
+Draw vertical, horizontal, and log-scale error bars with caps and intervals to report uncertainty clearly.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-101
 
@@ -136,7 +136,7 @@ Error bars and confidence intervals in multiple orientations and scales.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.961 seconds)
+   **Total running time of the script:** (0 minutes 0.957 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_errorbars.py:

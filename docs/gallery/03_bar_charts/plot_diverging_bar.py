@@ -2,7 +2,7 @@
 Diverging Bar Charts
 ====================
 
-Diverging bar charts for showing positive and negative values.
+Show positive and negative swings around a midpoint with color cues for direction.
 """
 
 import numpy as np

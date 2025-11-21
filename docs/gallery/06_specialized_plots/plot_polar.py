@@ -2,7 +2,7 @@
 Polar Plots
 ===========
 
-Polar coordinate plots, scatter distributions, and radial bars.
+Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.
 """
 
 import numpy as np

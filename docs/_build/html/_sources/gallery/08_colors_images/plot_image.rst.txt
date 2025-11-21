@@ -21,7 +21,7 @@
 Image Display
 =============
 
-Image display with multiple colormaps, interpolation modes, and edge overlays.
+Render images with different colormaps, interpolation, outlines, and grid overlays for quick QA.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-88
 
@@ -123,7 +123,7 @@ Image display with multiple colormaps, interpolation modes, and edge overlays.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.790 seconds)
+   **Total running time of the script:** (0 minutes 1.769 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_image.py:

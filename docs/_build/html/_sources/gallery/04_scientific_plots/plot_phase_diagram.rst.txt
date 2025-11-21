@@ -21,7 +21,7 @@
 Phase Diagrams
 ==============
 
-Phase space and trajectory plots for dynamical systems.
+Trace trajectories and vector fields to explain stability and cycles in dynamical systems.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-105
 
@@ -140,7 +140,7 @@ Phase space and trajectory plots for dynamical systems.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.061 seconds)
+   **Total running time of the script:** (0 minutes 1.016 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_phase_diagram.py:
