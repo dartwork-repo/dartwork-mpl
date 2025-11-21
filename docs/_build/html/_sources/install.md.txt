@@ -1,8 +1,6 @@
-# Install
+# Installation
 
-Set up dartwork-mpl locally using your preferred Python tool. The package ships
-with curated matplotlib styles and color libraries, so a clean install ensures
-those assets are available.
+**dartwork-mpl** is a matplotlib wrapper for creating publication-quality figures with ease.
 
 ## Using uv (Recommended)
 
@@ -34,4 +32,18 @@ import numpy as np
 
 # Apply basic style (Recommended)
 dm.style.use_preset('scientific')  # Basic style for academic papers
+```
+
+## Verify Installation
+
+After installation, verify that everything works:
+
+```python
+import dartwork_mpl as dm
+
+# Check version
+print(dm.__version__)
+
+# List available styles
+dm.list_styles()
 ```

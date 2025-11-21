@@ -24,6 +24,7 @@ extensions = [
     'sphinx_gallery.gen_gallery',
     'sphinx_copybutton',
     'sphinx_design',
+    'sphinx_tabs.tabs',
 ]
 
 templates_path = ['_templates']
@@ -53,7 +54,7 @@ html_theme_options = {
     "github_url": "https://github.com/dartwork-repo/dartwork-mpl",
     "accent_color": "teal",
     "globaltoc_expand_depth": 1,  # Allow expanding sidebar items
-    "dark_code": True,  # Use dark code blocks in light mode
+    "dark_code": False,  # Use light code blocks (default Shibuya style)
     "nav_links": [
         {"title": "Install", "url": "install"},
         {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
