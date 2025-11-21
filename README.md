@@ -127,7 +127,7 @@ dm.save_formats(fig, 'output/figure',
 📚 **[Full Documentation](https://dartwork-repo.github.io/dartwork-mpl/)** - Complete Sphinx documentation with:
 - **[Usage Guide](https://dartwork-repo.github.io/dartwork-mpl/DARTWORK_MPL_USAGE_GUIDE.html)** - Comprehensive guide to all features
 - **[Example Gallery](https://dartwork-repo.github.io/dartwork-mpl/gallery/index.html)** - Interactive examples with code and plots
-- **[Color System](https://dartwork-repo.github.io/dartwork-mpl/COLOR_GALLERY.html)** - Full-width Colors and Colormaps reference
+- **[Color System](https://dartwork-repo.github.io/dartwork-mpl/COLOR_SYSTEM.html)** - Full-width Colors and Colormaps reference
 - **[API Reference](https://dartwork-repo.github.io/dartwork-mpl/API_REFERENCE.html)** - Detailed API documentation
 
 <br/>

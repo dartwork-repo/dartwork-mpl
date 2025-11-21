@@ -1,146 +1,167 @@
 # Usage Guide
 
-dartwork-mpl packages opinionated matplotlib styles, curated color libraries, and
-layout utilities to quickly assemble publication-quality figures. Everything
-below is based on the code shipped in this repository—no imaginary presets.
+dartwork-mpl ships opinionated matplotlib styles, curated color libraries, and layout helpers so you can assemble publication-quality figures quickly. Every snippet below is real, and each one is paired with a representative plot from the gallery so you can see what the code produces.
 
-## Key Features
-- Style presets for papers, presentations, and Korean documents (scientific,
-  investment, presentation variants + `-kr` versions).
-- Large color catalog: `dm.*` plus Tailwind (`tw.`), Material (`md.`), Ant
-  (`ant.`), Chakra (`chakra.`), Primer (`primer.`), and opencolor sets.
-- Layout helpers (`simple_layout`, `cm2in`, `make_offset`) to control margins
-  predictably.
-- Font utilities (`fs`, `fw`) and bundled fonts auto-registered on import.
-- Save/display helpers for multi-format export and notebook-friendly previews.
-
-## 1. Style Management
-
-### 1.1 Available Styles and Presets
+## 1. Style the plot first
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
-# Individual style files (asset/mplstyle)
-dm.list_styles()
-# ['base', 'dmpl', 'dmpl_light', 'font-investment', 'font-presentation',
-#  'font-scientific', 'lang-kr', 'spine-no', 'spine-yes']
+dm.style.use_preset("scientific")  # or: presentation, investment, scientific-kr, ...
 
-# Presets defined in presets.json (no other presets exist)
-dm.style.presets_dict()
-# {
-#   'scientific': ['base', 'font-scientific'],
-#   'investment': ['base', 'font-investment'],
-#   'presentation': ['base', 'font-presentation'],
-#   'scientific-kr': ['base', 'font-scientific', 'lang-kr'],
-#   'investment-kr': ['base', 'font-investment', 'lang-kr'],
-#   'presentation-kr': ['base', 'font-presentation', 'lang-kr'],
-# }
-```
-
-> Tip: The package enables `dmpl_light` by default in `__init__.py`. Call
-> `dm.style.use_preset(...)` or `dm.use_style(...)` to switch explicitly.
-
-### 1.2 Apply Styles
-```python
-# Recommended: presets
-dm.style.use_preset('scientific')      # Academic papers
-dm.style.use_preset('presentation')    # Slides
-dm.style.use_preset('scientific-kr')   # Korean documents
-
-# Combine individual style files
-dm.style.use(['base', 'spine-no', 'font-presentation'])
-
-# Legacy helper
-dm.use_style('dmpl_light')
-```
-
-### 1.3 Inspect Styles
-```python
-dm.load_style_dict('font-presentation')   # Key/value pairs from style file
-dm.style_path('base')                     # Path to a style file
-dm.style.presets_path()                   # Path to presets.json
-```
-
-## 2. Colors
-
-### 2.1 Named Colors
-On import, `dartwork_mpl.color` registers many named colors:
-- `dm.*` (opencolor + xkcd set with `dm.` prefix)
-- Tailwind CSS: `tw.{color}:{weight}` (e.g., `tw.blue:500`)
-- Material Design: `md.{color}:{weight}`
-- Ant Design: `ant.{color}:{weight}`
-- Chakra UI: `chakra.{color}:{weight}`
-- Primer: `primer.{color}:{weight}`
-
-Use them like any matplotlib color:
-```python
-ax.plot(x, y, color='dm.red5')
-ax.fill_between(x, y1, y2, color='tw.gray:200')
-```
-
-### 2.2 Color Utilities
-```python
-dm.mix_colors('dm.red5', 'dm.blue5', alpha=0.5)        # Blend two colors
-dm.pseudo_alpha('dm.red5', alpha=0.3, background='white')  # Fake transparency
-dm.classify_colormap(plt.colormaps['viridis'])         # -> category label
-```
-
-## 3. Layout Utilities
-
-### 3.1 Figure Sizing Helpers
-```python
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(12)), dpi=300)  # 17 cm wide
-gs = fig.add_gridspec(2, 2, left=0.08, right=0.98, top=0.92, bottom=0.12)
-```
-
-### 3.2 Simple Layout Optimization
-`simple_layout` adjusts margins more predictably than `tight_layout`.
-```python
-dm.simple_layout(fig)  # default margins
-dm.simple_layout(fig, margins=(0.08, 0.08, 0.1, 0.08))  # (L, R, B, T) in inches
-dm.simple_layout(fig, gs=gs, bbox=(0, 0.5, 0, 1))       # only left half
-dm.simple_layout(fig, use_all_axes=True)                # consider all axes
-```
-
-### 3.3 Precise Offsets and Formatting
-```python
-offset = dm.make_offset(4, -4, fig)  # pt offsets
-ax.text(0, 1, 'a', transform=ax.transAxes + offset, weight='bold')
-dm.set_decimal(ax, xn=2, yn=1)       # tick label decimals
-```
-
-## 4. Fonts
-Bundled fonts are registered automatically on import. Use utilities to offset
-sizes/weights relative to the active style:
-```python
-ax.set_title("Title", fontsize=dm.fs(2), fontweight=dm.fw(1))
+x = np.linspace(0, 10, 200)
+fig, ax = plt.subplots(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=300)
+ax.plot(x, np.sin(x), lw=0.8, label="Sin", color="dm.red5")
+ax.plot(x, np.cos(x), lw=0.8, label="Cos", color="dm.blue5")
+ax.set_xlabel("Time [s]", fontsize=dm.fs(0))
+ax.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax.legend(fontsize=dm.fs(-1))
+dm.simple_layout(fig)
+plt.show()
 ```
+![Scientific preset applied to a basic sine/cosine plot.](gallery/01_basic_plots/images/sphx_glr_plot_basic_001.png)
 
-## 5. Saving and Display
+Available assets (no secret presets): styles in `asset/mplstyle`, presets in `asset/mplstyle/presets.json`, default style `dmpl_light`.
 
-### 5.1 Multi-format Save
+## 2. Use the color catalog
 ```python
-dm.save_formats(fig, 'output/figure', formats=('svg', 'png', 'pdf', 'eps'),
-                bbox_inches='tight', dpi=300)
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+dm.style.use_preset("presentation")
+
+fig, ax = plt.subplots(figsize=(dm.cm2in(10), dm.cm2in(6)), dpi=300)
+x = [0, 1, 2, 3, 4]
+ax.plot(x, [2, 3, 2.5, 3.3, 3.1], marker="o", color="dm.green5", label="dm.*")
+ax.plot(x, [1.2, 1.6, 2.0, 2.7, 2.9], marker="s", color="tw.blue:500", label="Tailwind")
+ax.fill_between(x, 0.8, 1.4, color="md.orange:200", label="Material fill", alpha=0.8)
+ax.legend(fontsize=dm.fs(-1), ncol=2)
+dm.simple_layout(fig)
+plt.show()
 ```
+![Lines using dm.*, Tailwind, and Material colors with a soft fill.](gallery/01_basic_plots/images/sphx_glr_plot_multiple_lines_001.png)
 
-### 5.2 Save + Show (Notebook-friendly)
+Colormap helpers live in the same namespace:
 ```python
-dm.save_and_show(fig, size=600)               # temp file + display
-dm.save_and_show(fig, 'output/figure.svg', size=600)
-dm.show('output/figure.svg', size=600)
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+dm.style.use_preset("scientific")
+
+grad = dm.np.linspace(-3, 3, 200)
+Z = dm.np.outer(dm.np.sin(grad), dm.np.cos(grad))
+fig, ax = plt.subplots(figsize=(dm.cm2in(9), dm.cm2in(6)), dpi=300)
+cmap = plt.colormaps["dm.mint"]
+ax.imshow(Z, cmap=cmap, origin="lower")
+ax.set_title(f"{cmap.name} ({dm.classify_colormap(cmap)})", fontsize=dm.fs(1))
+plt.colorbar(ax.images[0], ax=ax, fraction=0.046, pad=0.04)
+dm.simple_layout(fig)
+plt.show()
 ```
+![Custom dartwork colormap used on a heatmap.](gallery/08_colors_images/images/sphx_glr_plot_custom_colormap_001.png)
+For palette overviews, see the generated sheets like `images/colors_opencolor.png` and the colormap panels in `images/`.
 
-## 6. Subplot Labels
+## 3. Control layout and spacing
 ```python
-for ax, label in zip([ax1, ax2], 'ab'):
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+dm.style.use_preset("scientific")
+
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(11)), dpi=300)
+gs = fig.add_gridspec(2, 2, left=0.08, right=0.98, top=0.92, bottom=0.12, hspace=0.35, wspace=0.25)
+axes = [fig.add_subplot(gs[i, j]) for i in range(2) for j in range(2)]
+for ax, label in zip(axes, "ABCD"):
     ax.text(0, 1, label, transform=ax.transAxes + dm.make_offset(4, -4, fig),
-            weight='bold', va='top')
+            weight="bold", va="top", fontsize=dm.fs(0))
+    ax.plot(dm.np.linspace(0, 1, 50), dm.np.random.rand(50), color="dm.blue6", lw=0.8)
+dm.simple_layout(fig, gs=gs)
+plt.show()
 ```
+![GridSpec with balanced spacing and inset-style labels.](gallery/07_layout_styling/images/sphx_glr_plot_layout_001.png)
 
-## Reference: Package Defaults
-- Default style applied on import: `dmpl_light` (`dartwork_mpl/__init__.py`).
-- Style presets live in `asset/mplstyle/presets.json`.
-- Color definitions live in `asset/color/*.txt` and JSON libraries.
-- Fonts live in `asset/font` and are added via `font.py` on import.
+- `cm2in` keeps physical sizes repeatable.
+- `simple_layout(fig, gs=gs)` honors your margins instead of fighting them.
+- `make_offset` is a small helper for consistent text offsets in points.
+
+## 4. Annotate and format cleanly
+```python
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+dm.style.use_preset("presentation")
+
+fig, ax = plt.subplots(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=300)
+x = dm.np.linspace(0, 2 * dm.np.pi, 200)
+y = dm.np.sin(x) + 0.1 * dm.np.random.randn(len(x))
+ax.plot(x, y, color="dm.violet5", lw=0.9)
+ax.set_xlabel("Angle [rad]", fontsize=dm.fs(0))
+ax.set_ylabel("Signal", fontsize=dm.fs(0))
+ax.axhline(0, color="tw.gray:400", lw=0.6, ls="--")
+ax.annotate("Peak", xy=(dm.np.pi / 2, 1.1), xytext=(1.2, 1.4),
+            arrowprops=dict(arrowstyle="-|>", color="dm.red6", lw=0.8),
+            fontsize=dm.fs(-1))
+dm.set_decimal(ax, xn=2, yn=1)  # pretty tick labels
+dm.simple_layout(fig)
+plt.show()
+```
+![Annotated line plot with clean tick formatting.](gallery/07_layout_styling/images/sphx_glr_plot_annotations_001.png)
+
+## 5. Use consistent typography
+```python
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+dm.style.use_preset("scientific-kr")  # includes Korean font setup
+
+fig, ax = plt.subplots(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=300)
+ax.plot([0, 1, 2], [0, 1, 0.4], color="dm.green6", lw=1.0)
+ax.set_title("Experiment result (KR preset)", fontsize=dm.fs(2), fontweight=dm.fw(1))
+ax.set_xlabel("Time", fontsize=dm.fs(0))
+ax.set_ylabel("Response", fontsize=dm.fs(0))
+ax.legend(["Trial A"], fontsize=dm.fs(-1))
+dm.simple_layout(fig)
+plt.show()
+```
+![Scientific-KR preset showing matched fonts and weights.](gallery/04_scientific_plots/images/sphx_glr_plot_scientific_paper_001.png)
+
+Font utilities:
+- `fs(delta)` scales size relative to the active style (positive to enlarge).
+- `fw(delta)` steps font weight up or down from the style default.
+
+## 6. Save and preview
+```python
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+dm.style.use_preset("investment")
+
+t = dm.np.arange(50)
+series = dm.np.cumsum(dm.np.random.randn(50)) + 20
+fig, ax = plt.subplots(figsize=(dm.cm2in(11), dm.cm2in(7)), dpi=300)
+ax.plot(t, series, color="dm.blue6", lw=0.9)
+ax.fill_between(t, series - 2, series + 2, color="dm.blue3", alpha=0.25, label="Uncertainty")
+ax.legend(fontsize=dm.fs(-1))
+dm.simple_layout(fig)
+
+dm.save_formats(fig, "output/forecast", formats=("png", "svg"), dpi=300, bbox_inches="tight")
+dm.save_and_show(fig, size=720)  # quick preview for notebooks/slides
+```
+![Forecast-style line with ribbon, exported in multiple formats.](gallery/05_time_series/images/sphx_glr_plot_forecast_001.png)
+
+## 7. Label subplots fast
+```python
+import matplotlib.pyplot as plt
+import dartwork_mpl as dm
+dm.style.use_preset("scientific")
+
+fig, axes = plt.subplots(1, 3, figsize=(dm.cm2in(18), dm.cm2in(7)), dpi=300, sharey=True)
+for ax, label in zip(axes, "ABC"):
+    ax.plot(dm.np.linspace(0, 1, 60), dm.np.random.rand(60), color="dm.orange6")
+    ax.text(0, 1, label, transform=ax.transAxes + dm.make_offset(4, -4, fig),
+            weight="bold", va="top", fontsize=dm.fs(0))
+dm.simple_layout(fig, use_all_axes=True)
+plt.show()
+```
+![Multi-panel figure with consistent subplot labels.](gallery/07_layout_styling/images/sphx_glr_plot_subplots_001.png)
+
+## Reference: where things live
+- Styles: `asset/mplstyle/*.mplstyle`, presets: `asset/mplstyle/presets.json`, default applied on import: `dmpl_light`.
+- Colors: `asset/color/*.txt` plus JSON libraries (Tailwind, Material, Ant, Chakra, Primer, opencolor).
+- Fonts: `asset/font/*` auto-registered by `font.py`.
+- Figure helpers: `simple_layout`, `cm2in`, `make_offset`, `set_decimal`, `save_formats`, `save_and_show` all live in `dartwork_mpl`.

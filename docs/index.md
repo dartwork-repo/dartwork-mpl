@@ -5,7 +5,7 @@ opinionated styles, curated color libraries, and layout utilities.
 
 - Head to **Installation** to get the package and assets.
 - The **Usage Guide** walks through common workflows and styling presets.
-- Explore the **Colors** gallery for swatches and colormaps.
+- Explore the **Color System** for swatches and colormaps (with separate Colors and Colormaps pages).
 - Browse the **Examples Gallery** for ready-to-use patterns.
 - See **API Reference** for function-level details.
 
@@ -15,7 +15,9 @@ opinionated styles, curated color libraries, and layout utilities.
 
 Installation <installation>
 Usage Guide <DARTWORK_MPL_USAGE_GUIDE>
-Colors <COLOR_GALLERY>
+Color System <COLOR_SYSTEM>
+Colors <COLORS>
+Colormaps <COLORMAPS>
 Examples Gallery <examples_gallery>
 API Reference <api/index>
 ```

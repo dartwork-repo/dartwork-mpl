@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.resolve()))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'dartwork-mpl'
-copyright = '2025, Sangwon Lee, Wonjun Choi'
+copyright = '2025 Sangwon Lee & Wonjun Choi'
 author = ' Sangwon Lee, Wonjun Choi'
 
 version = '0.1.1'
@@ -59,7 +59,9 @@ html_theme_options = {
     "nav_links": [
         {"title": "Installation", "url": "installation"},
         {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
-        {"title": "Colors", "url": "COLOR_GALLERY"},
+        {"title": "Color System", "url": "COLOR_SYSTEM"},
+        {"title": "Colors", "url": "COLORS"},
+        {"title": "Colormaps", "url": "COLORMAPS"},
         {"title": "Examples Gallery", "url": "gallery/index"},
         {"title": "API Reference", "url": "api/index"},
     ]
