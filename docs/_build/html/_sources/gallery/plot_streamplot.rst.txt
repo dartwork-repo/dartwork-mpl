@@ -21,7 +21,7 @@
 Streamplot
 ==========
 
-This example demonstrates how to create a streamplot to visualize vector fields.
+Streamplots for vector fields.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-43
 
@@ -78,7 +78,7 @@ This example demonstrates how to create a streamplot to visualize vector fields.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.893 seconds)
+   **Total running time of the script:** (0 minutes 0.847 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_streamplot.py:

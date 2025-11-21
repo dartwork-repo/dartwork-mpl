@@ -2,8 +2,7 @@
 Subplots Layout
 ===============
 
-This example demonstrates various subplot layout techniques including
-2x2 grids, custom GridSpec layouts, and shared axes.
+Subplot layout techniques.
 """
 
 import numpy as np

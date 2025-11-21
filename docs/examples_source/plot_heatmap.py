@@ -1,8 +1,8 @@
 """
-Heatmap Visualization
-=====================
+Heatmap
+=======
 
-This example demonstrates how to create heatmaps using dartwork-mpl's custom colormaps.
+Heatmap visualization.
 """
 
 import matplotlib.pyplot as plt

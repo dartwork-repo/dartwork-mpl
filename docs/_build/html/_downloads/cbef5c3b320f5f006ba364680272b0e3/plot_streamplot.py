@@ -2,7 +2,7 @@
 Streamplot
 ==========
 
-This example demonstrates how to create a streamplot to visualize vector fields.
+Streamplots for vector fields.
 """
 
 import numpy as np

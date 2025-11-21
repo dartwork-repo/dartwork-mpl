@@ -1,9 +1,8 @@
 """
-Filled Areas
+Filled Plots
 ============
 
-This example demonstrates various filled area plotting techniques including
-fill_between, stacked area plots, and multiple filled regions.
+Filled area plots.
 """
 
 import numpy as np

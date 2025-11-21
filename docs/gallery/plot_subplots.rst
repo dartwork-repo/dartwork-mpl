@@ -21,10 +21,9 @@
 Subplots Layout
 ===============
 
-This example demonstrates various subplot layout techniques including
-2x2 grids, custom GridSpec layouts, and shared axes.
+Subplot layout techniques.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-82
+.. GENERATED FROM PYTHON SOURCE LINES 7-81
 
 
 
@@ -117,7 +116,7 @@ This example demonstrates various subplot layout techniques including
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.796 seconds)
+   **Total running time of the script:** (0 minutes 0.781 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_subplots.py:

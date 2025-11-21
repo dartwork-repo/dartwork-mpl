@@ -2,8 +2,7 @@
 Step Plots
 ==========
 
-This example demonstrates step plot techniques including basic step plots,
-pre/post/mid step styles, and multiple step series.
+Step plots.
 """
 
 import numpy as np

@@ -18,13 +18,12 @@
 .. _sphx_glr_gallery_plot_histogram.py:
 
 
-Histogram Variations
-====================
+Histograms
+==========
 
-This example demonstrates various histogram plotting techniques including
-basic histograms, stacked histograms, and histograms with KDE overlay.
+Histograms and density plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-91
+.. GENERATED FROM PYTHON SOURCE LINES 7-90
 
 
 
@@ -126,7 +125,7 @@ basic histograms, stacked histograms, and histograms with KDE overlay.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.840 seconds)
+   **Total running time of the script:** (0 minutes 0.773 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_histogram.py:

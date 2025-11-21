@@ -21,7 +21,7 @@
 Layout Optimization
 ===================
 
-This example demonstrates the `simple_layout` function for optimizing figure layout, which offers more control than `tight_layout`.
+Layout optimization techniques.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-53
 
@@ -88,7 +88,7 @@ This example demonstrates the `simple_layout` function for optimizing figure lay
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.783 seconds)
+   **Total running time of the script:** (0 minutes 0.745 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_layout.py:

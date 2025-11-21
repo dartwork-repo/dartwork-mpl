@@ -18,10 +18,10 @@
 .. _sphx_glr_gallery_plot_contour.py:
 
 
-Contour Plot
-============
+Contour Plots
+=============
 
-This example demonstrates how to create contour plots with labeled level lines and filled contours.
+Contour plots with labels.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-52
 
@@ -87,7 +87,7 @@ This example demonstrates how to create contour plots with labeled level lines a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.535 seconds)
+   **Total running time of the script:** (0 minutes 0.538 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_contour.py:

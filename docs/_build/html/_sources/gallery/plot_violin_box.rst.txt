@@ -21,7 +21,7 @@
 Violin and Box Plots
 ====================
 
-This example compares Box plots and Violin plots for visualizing distributions.
+Violin and box plots.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-65
 
@@ -100,7 +100,7 @@ This example compares Box plots and Violin plots for visualizing distributions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.602 seconds)
+   **Total running time of the script:** (0 minutes 0.572 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_violin_box.py:

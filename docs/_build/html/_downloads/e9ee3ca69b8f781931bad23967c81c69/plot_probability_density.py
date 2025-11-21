@@ -1,8 +1,8 @@
 """
-Probability Density Plot
-========================
+Probability Density
+===================
 
-This example demonstrates how to visualize probability distributions using histograms and Kernel Density Estimation (KDE).
+Probability density functions.
 """
 
 import numpy as np

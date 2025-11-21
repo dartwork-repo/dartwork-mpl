@@ -2,8 +2,7 @@
 Error Bars
 ==========
 
-This example demonstrates various error bar plotting techniques including
-vertical error bars, horizontal error bars, and asymmetric error bars.
+Error bars and confidence intervals.
 """
 
 import numpy as np

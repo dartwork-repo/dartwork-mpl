@@ -18,13 +18,12 @@
 .. _sphx_glr_gallery_plot_stacked_bar.py:
 
 
-Stacked Bar Charts
-==================
+Stacked Bar Chart
+=================
 
-This example demonstrates stacked bar chart techniques including horizontal
-stacked bars, vertical stacked bars, and percentage stacked bars.
+Stacked bar charts.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-103
+.. GENERATED FROM PYTHON SOURCE LINES 7-102
 
 
 
@@ -138,7 +137,7 @@ stacked bars, vertical stacked bars, and percentage stacked bars.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.564 seconds)
+   **Total running time of the script:** (0 minutes 0.565 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_stacked_bar.py:

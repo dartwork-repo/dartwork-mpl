@@ -18,13 +18,12 @@
 .. _sphx_glr_gallery_plot_datetime.py:
 
 
-Date/Time Plots
-===============
+Datetime Plots
+==============
 
-This example demonstrates time series plotting with date/time formatting,
-custom date ticks, and explicit date formatters.
+Time series plotting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-87
+.. GENERATED FROM PYTHON SOURCE LINES 7-86
 
 
 
@@ -122,7 +121,7 @@ custom date ticks, and explicit date formatters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.778 seconds)
+   **Total running time of the script:** (0 minutes 0.763 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_datetime.py:

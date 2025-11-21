@@ -2,8 +2,7 @@
 Custom Ticks
 ============
 
-This example demonstrates custom tick techniques including custom tick positions,
-custom tick labels, and log scale ticks with explicit formatting.
+Custom tick formatting.
 """
 
 import numpy as np

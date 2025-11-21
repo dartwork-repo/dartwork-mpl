@@ -1,8 +1,8 @@
 """
-Dual Axis Plot
-==============
+Dual Axis
+=========
 
-This example demonstrates how to create a plot with two y-axes, a common requirement in scientific visualization.
+Dual y-axis plots.
 """
 
 import matplotlib.pyplot as plt

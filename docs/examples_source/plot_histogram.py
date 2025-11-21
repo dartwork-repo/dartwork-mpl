@@ -1,9 +1,8 @@
 """
-Histogram Variations
-====================
+Histograms
+==========
 
-This example demonstrates various histogram plotting techniques including
-basic histograms, stacked histograms, and histograms with KDE overlay.
+Histograms and density plots.
 """
 
 import numpy as np

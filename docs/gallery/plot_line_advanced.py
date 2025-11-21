@@ -2,8 +2,7 @@
 Advanced Line Plots
 ===================
 
-This example demonstrates advanced line plot features including multiple lines
-with markers, different line styles, and error bands using fill_between.
+Advanced line plot styles.
 """
 
 import numpy as np

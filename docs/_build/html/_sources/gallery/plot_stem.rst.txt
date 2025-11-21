@@ -21,10 +21,9 @@
 Stem Plots
 ==========
 
-This example demonstrates stem plot techniques including basic stem plots,
-stem plots with markers, and multiple stem series.
+Stem plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-115
+.. GENERATED FROM PYTHON SOURCE LINES 7-114
 
 
 
@@ -150,7 +149,7 @@ stem plots with markers, and multiple stem series.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.554 seconds)
+   **Total running time of the script:** (0 minutes 0.517 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_stem.py:

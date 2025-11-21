@@ -21,10 +21,9 @@
 Annotations
 ===========
 
-This example demonstrates various annotation techniques including text annotations,
-arrow annotations, and custom markers with labels.
+Advanced annotation techniques.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-107
+.. GENERATED FROM PYTHON SOURCE LINES 7-106
 
 
 
@@ -142,7 +141,7 @@ arrow annotations, and custom markers with labels.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.631 seconds)
+   **Total running time of the script:** (0 minutes 0.609 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_annotations.py:

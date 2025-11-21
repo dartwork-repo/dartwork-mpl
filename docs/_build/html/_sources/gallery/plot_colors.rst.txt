@@ -18,10 +18,10 @@
 .. _sphx_glr_gallery_plot_colors.py:
 
 
-Color System
-============
+Colors
+======
 
-This example demonstrates the extensive color system in dartwork-mpl, including custom colors, Tailwind CSS colors, and color utilities.
+Color palette visualization.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-52
 
@@ -87,7 +87,7 @@ This example demonstrates the extensive color system in dartwork-mpl, including 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.401 seconds)
+   **Total running time of the script:** (0 minutes 0.389 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_colors.py:

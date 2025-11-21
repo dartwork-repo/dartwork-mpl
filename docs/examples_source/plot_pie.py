@@ -2,8 +2,7 @@
 Pie Charts
 ==========
 
-This example demonstrates various pie chart styles including basic pie charts,
-donut charts, and exploded pie charts using dartwork-mpl colors.
+Pie charts and donut plots.
 """
 
 import matplotlib.pyplot as plt

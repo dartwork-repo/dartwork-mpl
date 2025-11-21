@@ -21,10 +21,9 @@
 Scatter Plots
 =============
 
-This example demonstrates various scatter plot techniques using dartwork-mpl,
-including basic scatter plots, color mapping, and size mapping.
+Scatter plots with varying markers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-93
+.. GENERATED FROM PYTHON SOURCE LINES 7-92
 
 
 
@@ -128,7 +127,7 @@ including basic scatter plots, color mapping, and size mapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.617 seconds)
+   **Total running time of the script:** (0 minutes 0.576 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_scatter.py:

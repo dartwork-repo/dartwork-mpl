@@ -2,7 +2,7 @@
 Layout Optimization
 ===================
 
-This example demonstrates the `simple_layout` function for optimizing figure layout, which offers more control than `tight_layout`.
+Layout optimization techniques.
 """
 
 import matplotlib.pyplot as plt

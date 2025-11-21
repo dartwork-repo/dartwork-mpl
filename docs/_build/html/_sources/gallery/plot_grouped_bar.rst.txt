@@ -18,13 +18,12 @@
 .. _sphx_glr_gallery_plot_grouped_bar.py:
 
 
-Grouped Bar Charts
-==================
+Grouped Bar Chart
+=================
 
-This example demonstrates grouped bar chart techniques including multiple groups,
-custom spacing, and value labels.
+Grouped bar charts.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-104
+.. GENERATED FROM PYTHON SOURCE LINES 7-103
 
 
 
@@ -139,7 +138,7 @@ custom spacing, and value labels.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.633 seconds)
+   **Total running time of the script:** (0 minutes 0.593 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_grouped_bar.py:

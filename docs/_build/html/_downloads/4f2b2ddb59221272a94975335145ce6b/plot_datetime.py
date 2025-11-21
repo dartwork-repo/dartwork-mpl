@@ -1,9 +1,8 @@
 """
-Date/Time Plots
-===============
+Datetime Plots
+==============
 
-This example demonstrates time series plotting with date/time formatting,
-custom date ticks, and explicit date formatters.
+Time series plotting.
 """
 
 import numpy as np

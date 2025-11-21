@@ -2,7 +2,7 @@
 Scientific Paper Figure
 =======================
 
-This example simulates a comprehensive figure for a scientific paper, featuring multiple panels, error bars, annotations, and a clean layout.
+Publication-quality scientific figure.
 """
 
 import numpy as np

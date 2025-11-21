@@ -21,10 +21,9 @@
 Error Bars
 ==========
 
-This example demonstrates various error bar plotting techniques including
-vertical error bars, horizontal error bars, and asymmetric error bars.
+Error bars and confidence intervals.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-88
+.. GENERATED FROM PYTHON SOURCE LINES 7-87
 
 
 
@@ -123,7 +122,7 @@ vertical error bars, horizontal error bars, and asymmetric error bars.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.588 seconds)
+   **Total running time of the script:** (0 minutes 0.555 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_errorbars.py:

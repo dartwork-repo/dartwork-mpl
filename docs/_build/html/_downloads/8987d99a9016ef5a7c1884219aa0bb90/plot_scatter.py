@@ -2,8 +2,7 @@
 Scatter Plots
 =============
 
-This example demonstrates various scatter plot techniques using dartwork-mpl,
-including basic scatter plots, color mapping, and size mapping.
+Scatter plots with varying markers.
 """
 
 import numpy as np

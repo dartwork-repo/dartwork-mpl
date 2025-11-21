@@ -1,8 +1,8 @@
 """
-Color System
-============
+Colors
+======
 
-This example demonstrates the extensive color system in dartwork-mpl, including custom colors, Tailwind CSS colors, and color utilities.
+Color palette visualization.
 """
 
 import numpy as np

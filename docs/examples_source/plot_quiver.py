@@ -1,9 +1,8 @@
 """
-Quiver/Vector Fields
-====================
+Quiver Plots
+============
 
-This example demonstrates vector field visualization using quiver plots
-with explicit arrow scale and width parameters.
+Quiver plots for vector fields.
 """
 
 import numpy as np

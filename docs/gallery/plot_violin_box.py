@@ -2,7 +2,7 @@
 Violin and Box Plots
 ====================
 
-This example compares Box plots and Violin plots for visualizing distributions.
+Violin and box plots.
 """
 
 import numpy as np

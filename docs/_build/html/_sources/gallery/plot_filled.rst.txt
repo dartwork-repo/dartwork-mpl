@@ -18,13 +18,12 @@
 .. _sphx_glr_gallery_plot_filled.py:
 
 
-Filled Areas
+Filled Plots
 ============
 
-This example demonstrates various filled area plotting techniques including
-fill_between, stacked area plots, and multiple filled regions.
+Filled area plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-103
+.. GENERATED FROM PYTHON SOURCE LINES 7-102
 
 
 
@@ -138,7 +137,7 @@ fill_between, stacked area plots, and multiple filled regions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.623 seconds)
+   **Total running time of the script:** (0 minutes 0.570 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_filled.py:

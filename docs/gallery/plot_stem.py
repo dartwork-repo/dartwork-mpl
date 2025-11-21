@@ -2,8 +2,7 @@
 Stem Plots
 ==========
 
-This example demonstrates stem plot techniques including basic stem plots,
-stem plots with markers, and multiple stem series.
+Stem plots.
 """
 
 import numpy as np

@@ -21,7 +21,7 @@
 Basic Usage
 ===========
 
-This example demonstrates the basic usage of dartwork-mpl, including applying style presets and creating a simple plot.
+Basic usage with style presets.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-50
 
@@ -85,7 +85,7 @@ This example demonstrates the basic usage of dartwork-mpl, including applying st
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.282 seconds)
+   **Total running time of the script:** (0 minutes 0.254 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_basic.py:

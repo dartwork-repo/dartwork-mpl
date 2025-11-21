@@ -21,7 +21,7 @@
 Scientific Paper Figure
 =======================
 
-This example simulates a comprehensive figure for a scientific paper, featuring multiple panels, error bars, annotations, and a clean layout.
+Publication-quality scientific figure.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-79
 
@@ -114,7 +114,7 @@ This example simulates a comprehensive figure for a scientific paper, featuring 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.564 seconds)
+   **Total running time of the script:** (0 minutes 0.551 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_scientific_paper.py:

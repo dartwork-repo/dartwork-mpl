@@ -21,10 +21,9 @@
 Step Plots
 ==========
 
-This example demonstrates step plot techniques including basic step plots,
-pre/post/mid step styles, and multiple step series.
+Step plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-84
+.. GENERATED FROM PYTHON SOURCE LINES 7-83
 
 
 
@@ -119,7 +118,7 @@ pre/post/mid step styles, and multiple step series.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.561 seconds)
+   **Total running time of the script:** (0 minutes 0.556 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_step.py:

@@ -1,9 +1,8 @@
 """
-Legend Customization
-====================
+Legends
+=======
 
-This example demonstrates legend customization techniques including multiple
-legend locations, custom legend handles, and legends outside axes.
+Legend customization.
 """
 
 import numpy as np

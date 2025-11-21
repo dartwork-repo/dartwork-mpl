@@ -21,10 +21,9 @@
 Image Display
 =============
 
-This example demonstrates image display techniques including imshow with colormaps,
-images with colorbars, and multiple images side by side.
+Image display and colorbars.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-79
+.. GENERATED FROM PYTHON SOURCE LINES 7-78
 
 
 
@@ -114,7 +113,7 @@ images with colorbars, and multiple images side by side.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.187 seconds)
+   **Total running time of the script:** (0 minutes 1.130 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_image.py:

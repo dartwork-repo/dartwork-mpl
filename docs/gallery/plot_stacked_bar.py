@@ -1,9 +1,8 @@
 """
-Stacked Bar Charts
-==================
+Stacked Bar Chart
+=================
 
-This example demonstrates stacked bar chart techniques including horizontal
-stacked bars, vertical stacked bars, and percentage stacked bars.
+Stacked bar charts.
 """
 
 import numpy as np

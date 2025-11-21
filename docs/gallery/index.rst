@@ -15,7 +15,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create heatmaps using dartwork-mpl&#x27;s custom colormaps.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Heatmap visualization.">
 
 .. only:: html
 
@@ -26,13 +26,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Heatmap Visualization</div>
+      <div class="sphx-glr-thumbnail-title">Heatmap</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a streamplot to visualize vector fields.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Streamplots for vector fields.">
 
 .. only:: html
 
@@ -49,7 +49,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates that dartwork-mpl styles also work well with 3D plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="3D surface and scatter plots.">
 
 .. only:: html
 
@@ -60,13 +60,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">3D Surface Plot</div>
+      <div class="sphx-glr-thumbnail-title">3D Plots</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the basic usage of dartwork-mpl, including applying style presets and creating a simple plot.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Basic usage with style presets.">
 
 .. only:: html
 
@@ -83,7 +83,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a plot with two y-axes, a common requirement in scientific visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Dual y-axis plots.">
 
 .. only:: html
 
@@ -94,13 +94,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Dual Axis Plot</div>
+      <div class="sphx-glr-thumbnail-title">Dual Axis</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create contour plots with labeled level lines and filled contours.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Contour plots with labels.">
 
 .. only:: html
 
@@ -111,13 +111,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Contour Plot</div>
+      <div class="sphx-glr-thumbnail-title">Contour Plots</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create stylish bar charts using dartwork-mpl and Tailwind CSS colors.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Basic and grouped bar charts.">
 
 .. only:: html
 
@@ -128,13 +128,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Bar Chart Styling</div>
+      <div class="sphx-glr-thumbnail-title">Bar Charts</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the simple_layout function for optimizing figure layout, which offers more control than tight_layout.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Layout optimization techniques.">
 
 .. only:: html
 
@@ -151,7 +151,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to visualize probability distributions using histograms and Kernel Density Estimation (KDE).">
+    <div class="sphx-glr-thumbcontainer" tooltip="Probability density functions.">
 
 .. only:: html
 
@@ -162,13 +162,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Probability Density Plot</div>
+      <div class="sphx-glr-thumbnail-title">Probability Density</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the extensive color system in dartwork-mpl, including custom colors, Tailwind CSS colors, and color utilities.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Color palette visualization.">
 
 .. only:: html
 
@@ -179,13 +179,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Color System</div>
+      <div class="sphx-glr-thumbnail-title">Colors</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example compares Box plots and Violin plots for visualizing distributions.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Violin and box plots.">
 
 .. only:: html
 
@@ -202,7 +202,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates polar coordinate plotting including basic polar plots, polar scatter plots, and polar bar charts using dartwork-mpl.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Polar coordinate plots.">
 
 .. only:: html
 
@@ -219,7 +219,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates various subplot layout techniques including 2x2 grids, custom GridSpec layouts, and shared axes.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Subplot layout techniques.">
 
 .. only:: html
 
@@ -236,7 +236,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates vector field visualization using quiver plots with explicit arrow scale and width parameters.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Quiver plots for vector fields.">
 
 .. only:: html
 
@@ -247,13 +247,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Quiver/Vector Fields</div>
+      <div class="sphx-glr-thumbnail-title">Quiver Plots</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates image display techniques including imshow with colormaps, images with colorbars, and multiple images side by side.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Image display and colorbars.">
 
 .. only:: html
 
@@ -270,7 +270,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example simulates a comprehensive figure for a scientific paper, featuring multiple panels, error bars, annotations, and a clean layout.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Publication-quality scientific figure.">
 
 .. only:: html
 
@@ -287,7 +287,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates various scatter plot techniques using dartwork-mpl, including basic scatter plots, color mapping, and size mapping.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Scatter plots with varying markers.">
 
 .. only:: html
 
@@ -304,7 +304,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates custom tick techniques including custom tick positions, custom tick labels, and log scale ticks with explicit formatting.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting.">
 
 .. only:: html
 
@@ -321,7 +321,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates step plot techniques including basic step plots, pre/post/mid step styles, and multiple step series.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Step plots.">
 
 .. only:: html
 
@@ -338,7 +338,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates various error bar plotting techniques including vertical error bars, horizontal error bars, and asymmetric error bars.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Error bars and confidence intervals.">
 
 .. only:: html
 
@@ -355,7 +355,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates legend customization techniques including multiple legend locations, custom legend handles, and legends outside axes.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Legend customization.">
 
 .. only:: html
 
@@ -366,13 +366,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Legend Customization</div>
+      <div class="sphx-glr-thumbnail-title">Legends</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates advanced line plot features including multiple lines with markers, different line styles, and error bands using fill_between.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Advanced line plot styles.">
 
 .. only:: html
 
@@ -389,7 +389,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates various histogram plotting techniques including basic histograms, stacked histograms, and histograms with KDE overlay.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Histograms and density plots.">
 
 .. only:: html
 
@@ -400,13 +400,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Histogram Variations</div>
+      <div class="sphx-glr-thumbnail-title">Histograms</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates time series plotting with date/time formatting, custom date ticks, and explicit date formatters.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Time series plotting.">
 
 .. only:: html
 
@@ -417,13 +417,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Date/Time Plots</div>
+      <div class="sphx-glr-thumbnail-title">Datetime Plots</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates various pie chart styles including basic pie charts, donut charts, and exploded pie charts using dartwork-mpl colors.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Pie charts and donut plots.">
 
 .. only:: html
 
@@ -440,7 +440,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates various filled area plotting techniques including fill_between, stacked area plots, and multiple filled regions.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots.">
 
 .. only:: html
 
@@ -451,13 +451,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Filled Areas</div>
+      <div class="sphx-glr-thumbnail-title">Filled Plots</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates stacked bar chart techniques including horizontal stacked bars, vertical stacked bars, and percentage stacked bars.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Stacked bar charts.">
 
 .. only:: html
 
@@ -468,13 +468,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Stacked Bar Charts</div>
+      <div class="sphx-glr-thumbnail-title">Stacked Bar Chart</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates grouped bar chart techniques including multiple groups, custom spacing, and value labels.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Grouped bar charts.">
 
 .. only:: html
 
@@ -485,13 +485,13 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Grouped Bar Charts</div>
+      <div class="sphx-glr-thumbnail-title">Grouped Bar Chart</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates various annotation techniques including text annotations, arrow annotations, and custom markers with labels.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Advanced annotation techniques.">
 
 .. only:: html
 
@@ -508,7 +508,7 @@ This gallery contains examples demonstrating the features and capabilities of da
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates stem plot techniques including basic stem plots, stem plots with markers, and multiple stem series.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Stem plots.">
 
 .. only:: html
 

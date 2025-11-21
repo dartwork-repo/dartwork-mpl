@@ -18,13 +18,12 @@
 .. _sphx_glr_gallery_plot_legend.py:
 
 
-Legend Customization
-====================
+Legends
+=======
 
-This example demonstrates legend customization techniques including multiple
-legend locations, custom legend handles, and legends outside axes.
+Legend customization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-86
+.. GENERATED FROM PYTHON SOURCE LINES 7-85
 
 
 
@@ -121,7 +120,7 @@ legend locations, custom legend handles, and legends outside axes.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.588 seconds)
+   **Total running time of the script:** (0 minutes 0.573 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_legend.py:

@@ -2,8 +2,7 @@
 Polar Plots
 ===========
 
-This example demonstrates polar coordinate plotting including basic polar plots,
-polar scatter plots, and polar bar charts using dartwork-mpl.
+Polar coordinate plots.
 """
 
 import numpy as np

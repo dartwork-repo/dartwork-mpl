@@ -21,10 +21,9 @@
 Advanced Line Plots
 ===================
 
-This example demonstrates advanced line plot features including multiple lines
-with markers, different line styles, and error bands using fill_between.
+Advanced line plot styles.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-91
+.. GENERATED FROM PYTHON SOURCE LINES 7-90
 
 
 
@@ -126,7 +125,7 @@ with markers, different line styles, and error bands using fill_between.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.595 seconds)
+   **Total running time of the script:** (0 minutes 0.563 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_line_advanced.py:

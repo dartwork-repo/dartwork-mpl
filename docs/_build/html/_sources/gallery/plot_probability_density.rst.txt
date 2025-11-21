@@ -18,10 +18,10 @@
 .. _sphx_glr_gallery_plot_probability_density.py:
 
 
-Probability Density Plot
-========================
+Probability Density
+===================
 
-This example demonstrates how to visualize probability distributions using histograms and Kernel Density Estimation (KDE).
+Probability density functions.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-54
 
@@ -89,7 +89,7 @@ This example demonstrates how to visualize probability distributions using histo
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.433 seconds)
+   **Total running time of the script:** (0 minutes 0.440 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_probability_density.py:

@@ -18,10 +18,10 @@
 .. _sphx_glr_gallery_plot_bar_chart.py:
 
 
-Bar Chart Styling
-=================
+Bar Charts
+==========
 
-This example demonstrates how to create stylish bar charts using dartwork-mpl and Tailwind CSS colors.
+Basic and grouped bar charts.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-51
 
@@ -86,7 +86,7 @@ This example demonstrates how to create stylish bar charts using dartwork-mpl an
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.403 seconds)
+   **Total running time of the script:** (0 minutes 0.384 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_bar_chart.py:

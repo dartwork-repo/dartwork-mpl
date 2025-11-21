@@ -18,10 +18,10 @@
 .. _sphx_glr_gallery_plot_dual_axis.py:
 
 
-Dual Axis Plot
-==============
+Dual Axis
+=========
 
-This example demonstrates how to create a plot with two y-axes, a common requirement in scientific visualization.
+Dual y-axis plots.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-49
 
@@ -84,7 +84,7 @@ This example demonstrates how to create a plot with two y-axes, a common require
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.392 seconds)
+   **Total running time of the script:** (0 minutes 0.397 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_dual_axis.py:

@@ -18,13 +18,12 @@
 .. _sphx_glr_gallery_plot_quiver.py:
 
 
-Quiver/Vector Fields
-====================
+Quiver Plots
+============
 
-This example demonstrates vector field visualization using quiver plots
-with explicit arrow scale and width parameters.
+Quiver plots for vector fields.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-91
+.. GENERATED FROM PYTHON SOURCE LINES 7-90
 
 
 
@@ -126,7 +125,7 @@ with explicit arrow scale and width parameters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.474 seconds)
+   **Total running time of the script:** (0 minutes 0.440 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_quiver.py:

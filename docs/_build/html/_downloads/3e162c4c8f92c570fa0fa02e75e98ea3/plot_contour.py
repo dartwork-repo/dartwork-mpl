@@ -1,8 +1,8 @@
 """
-Contour Plot
-============
+Contour Plots
+=============
 
-This example demonstrates how to create contour plots with labeled level lines and filled contours.
+Contour plots with labels.
 """
 
 import numpy as np

@@ -2,8 +2,7 @@
 Annotations
 ===========
 
-This example demonstrates various annotation techniques including text annotations,
-arrow annotations, and custom markers with labels.
+Advanced annotation techniques.
 """
 
 import numpy as np

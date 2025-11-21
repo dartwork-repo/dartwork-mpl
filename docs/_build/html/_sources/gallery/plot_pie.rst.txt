@@ -21,10 +21,9 @@
 Pie Charts
 ==========
 
-This example demonstrates various pie chart styles including basic pie charts,
-donut charts, and exploded pie charts using dartwork-mpl colors.
+Pie charts and donut plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-94
+.. GENERATED FROM PYTHON SOURCE LINES 7-93
 
 
 
@@ -129,7 +128,7 @@ donut charts, and exploded pie charts using dartwork-mpl colors.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.297 seconds)
+   **Total running time of the script:** (0 minutes 0.304 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_pie.py:

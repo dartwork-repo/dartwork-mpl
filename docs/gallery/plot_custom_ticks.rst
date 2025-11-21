@@ -21,10 +21,9 @@
 Custom Ticks
 ============
 
-This example demonstrates custom tick techniques including custom tick positions,
-custom tick labels, and log scale ticks with explicit formatting.
+Custom tick formatting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-86
+.. GENERATED FROM PYTHON SOURCE LINES 7-85
 
 
 
@@ -121,7 +120,7 @@ custom tick labels, and log scale ticks with explicit formatting.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.753 seconds)
+   **Total running time of the script:** (0 minutes 0.669 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_custom_ticks.py:

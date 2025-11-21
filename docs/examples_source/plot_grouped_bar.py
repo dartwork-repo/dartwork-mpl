@@ -1,9 +1,8 @@
 """
-Grouped Bar Charts
-==================
+Grouped Bar Chart
+=================
 
-This example demonstrates grouped bar chart techniques including multiple groups,
-custom spacing, and value labels.
+Grouped bar charts.
 """
 
 import numpy as np

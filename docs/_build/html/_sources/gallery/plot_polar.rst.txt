@@ -21,10 +21,9 @@
 Polar Plots
 ===========
 
-This example demonstrates polar coordinate plotting including basic polar plots,
-polar scatter plots, and polar bar charts using dartwork-mpl.
+Polar coordinate plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-71
+.. GENERATED FROM PYTHON SOURCE LINES 7-70
 
 
 
@@ -106,7 +105,7 @@ polar scatter plots, and polar bar charts using dartwork-mpl.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.722 seconds)
+   **Total running time of the script:** (0 minutes 0.687 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_polar.py:

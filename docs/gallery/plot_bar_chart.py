@@ -1,8 +1,8 @@
 """
-Bar Chart Styling
-=================
+Bar Charts
+==========
 
-This example demonstrates how to create stylish bar charts using dartwork-mpl and Tailwind CSS colors.
+Basic and grouped bar charts.
 """
 
 import matplotlib.pyplot as plt

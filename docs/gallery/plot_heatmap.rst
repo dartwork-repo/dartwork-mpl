@@ -18,10 +18,10 @@
 .. _sphx_glr_gallery_plot_heatmap.py:
 
 
-Heatmap Visualization
-=====================
+Heatmap
+=======
 
-This example demonstrates how to create heatmaps using dartwork-mpl's custom colormaps.
+Heatmap visualization.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-39
 
@@ -85,7 +85,7 @@ This example demonstrates how to create heatmaps using dartwork-mpl's custom col
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.803 seconds)
+   **Total running time of the script:** (0 minutes 0.747 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_heatmap.py:

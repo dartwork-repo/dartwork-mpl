@@ -2,8 +2,7 @@
 Image Display
 =============
 
-This example demonstrates image display techniques including imshow with colormaps,
-images with colorbars, and multiple images side by side.
+Image display and colorbars.
 """
 
 import numpy as np

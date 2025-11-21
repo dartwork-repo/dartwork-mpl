@@ -18,10 +18,10 @@
 .. _sphx_glr_gallery_plot_3d.py:
 
 
-3D Surface Plot
-===============
+3D Plots
+========
 
-This example demonstrates that dartwork-mpl styles also work well with 3D plots.
+3D surface and scatter plots.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-45
 
@@ -91,7 +91,7 @@ This example demonstrates that dartwork-mpl styles also work well with 3D plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.258 seconds)
+   **Total running time of the script:** (0 minutes 0.261 seconds)
 
 
 .. _sphx_glr_download_gallery_plot_3d.py:
