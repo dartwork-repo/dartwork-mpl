@@ -1,6 +1,6 @@
 # Installation
 
-**dartwork-mpl** is a matplotlib wrapper for creating publication-quality figures with ease.
+**dartwork-mpl** is a library of utilities and assets for matplotlib that makes creating publication-quality figures easier.
 
 ## Quick Install
 

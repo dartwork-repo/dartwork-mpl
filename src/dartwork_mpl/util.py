@@ -839,10 +839,6 @@ def _classify_color_library(color_name):
         if re.match(r'^[a-z]+\d+$', name_without_prefix):
             if name_without_prefix in _OPENCOLOR_NAMES:
                 return 'opencolor'
-        
-        # Check if it's an xkcd color
-        if name_without_prefix in _XKCD_NAMES:
-            return 'xkcd'
     
     return 'other'
 
