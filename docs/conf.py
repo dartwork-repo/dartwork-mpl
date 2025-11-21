@@ -58,7 +58,7 @@ html_theme_options = {
     "globaltoc_expand_depth": 0,  # Start with collapsed sidebar items
     "dark_code": False,  # Use light code blocks (default Shibuya style)
     "nav_links": [
-        {"title": "Install", "url": "install"},
+        {"title": "Installation", "url": "installation"},
         {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
         {"title": "Colors", "url": "COLOR_GALLERY"},
         {"title": "Examples Gallery", "url": "gallery/index"},
