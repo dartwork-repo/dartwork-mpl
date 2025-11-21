@@ -10,7 +10,6 @@
 }
 
 /* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
-/* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
 .sphx-glr-download-python,
 .sphx-glr-download-jupyter,
 .sphx-glr-download-zip {
@@ -25,8 +24,8 @@
 .sphx-glr-download-python:hover,
 .sphx-glr-download-jupyter:hover,
 .sphx-glr-download-zip:hover {
-    background-color: #dbebf6 !important;
-    border-color: #dbebf6 !important;
+    background-color: transparent !important;
+    border-color: #c5dae8 !important;
 }
 
 /* Style the download links */
@@ -53,4 +52,19 @@
 /* Add icon styling if needed, though usually handled by Sphinx Gallery text */
 .sphx-glr-download code.xref {
     color: inherit !important;
+}
+
+/* Override sphinx-gallery default button gradient colors */
+:root {
+    --sg-download-a-background-image: linear-gradient(to bottom, #f0f7fc, #e7f2fa) !important;
+    --sg-download-a-hover-background-color: transparent !important;
+    --sg-download-a-hover-background-image: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --sg-download-a-background-image: linear-gradient(to bottom, #2c3e50, #34495e) !important;
+        --sg-download-a-hover-background-color: transparent !important;
+        --sg-download-a-hover-background-image: none !important;
+    }
 }
