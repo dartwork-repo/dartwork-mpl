@@ -76,7 +76,7 @@ Use a full scientific figure template with multi-panels, shared colorbars, inset
     ax1.set_xlabel('Time [hours]', fontsize=dm.fs(0))
     ax1.set_ylabel('Response [a.u.]', fontsize=dm.fs(0))
     ax1.set_title('Temporal Response Analysis', fontsize=dm.fs(1))
-    ax1.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 
     # Annotation
     ax1.annotate('Peak Response', xy=(1.5, 1.5), xytext=(3, 3),
@@ -114,7 +114,7 @@ Use a full scientific figure template with multi-panels, shared colorbars, inset
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.558 seconds)
+   **Total running time of the script:** (0 minutes 0.609 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_scientific_paper.py:

@@ -18,199 +18,87 @@
 .. _sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py:
 
 
-Flow Diagrams
-=============
+Sankey Diagram
+==============
 
-Draw compact Sankey diagrams to explain flows between stages with tidy labels.
+Show a single, clear Sankey diagram that illustrates how inputs split into several outputs.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-175
+.. GENERATED FROM PYTHON SOURCE LINES 7-52
 
 
 
 .. image-sg:: /gallery/06_specialized_plots/images/sphx_glr_plot_sankey_simple_001.png
-   :alt: Linear Pipeline, Branch & Merge, Circular Loop, Decision Tree
+   :alt: Simple Sankey Diagram
    :srcset: /gallery/06_specialized_plots/images/sphx_glr_plot_sankey_simple_001.png
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+    Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
 
-    import numpy as np
     import matplotlib.pyplot as plt
-    from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+    from matplotlib.sankey import Sankey
     import dartwork_mpl as dm
 
+    # Apply consistent styling
     dm.style.use_preset('scientific')
 
-    # Consistent node sizing/spacing so arrows align cleanly.
-    NODE_W, NODE_H = 0.2, 0.10
-
-
-    def add_node(ax, center, label, face='dm.blue1', edge='dm.blue6'):
-        """Draw a rounded node and its label."""
-        x, y = center
-        box = FancyBboxPatch(
-            (x - NODE_W / 2, y - NODE_H / 2),
-            NODE_W,
-            NODE_H,
-            boxstyle="round,pad=0.025",
-            linewidth=1.2,
-            edgecolor=edge,
-            facecolor=face,
-        )
-        ax.add_patch(box)
-        ax.text(x, y, label, ha='center', va='center', fontsize=dm.fs(-1), color='dm.gray9')
-
-
-    def anchor(point, dx=0.0, dy=0.0):
-        """Return a point on a node boundary (dx, dy are fractions of width/height)."""
-        return (point[0] + dx * NODE_W / 2, point[1] + dy * NODE_H / 2)
-
-
-    def directional_anchor(point, target, pad=0.9):
-        """Anchor on the side of `point` that faces `target`."""
-        dx = np.sign(target[0] - point[0])
-        dy = np.sign(target[1] - point[1])
-        return anchor(point, dx=pad * dx, dy=pad * dy)
-
-
-    def add_flow(ax, start, end, curve=0.0, color='dm.gray7'):
-        """Add a clean arrow between two anchored points."""
-        ax.add_patch(
-            FancyArrowPatch(
-                start,
-                end,
-                arrowstyle='-|>',
-                connectionstyle=f"arc3,rad={curve}",
-                mutation_scale=10,
-                linewidth=1.0,
-                color=color,
-                shrinkA=6,
-                shrinkB=6,
-            )
-        )
-
-
-    fig = plt.figure(figsize=(dm.cm2in(18), dm.cm2in(12)), dpi=300)
-    gs = fig.add_gridspec(
-        nrows=2,
-        ncols=2,
-        left=0.07,
-        right=0.98,
-        top=0.96,
-        bottom=0.08,
-        wspace=0.24,
-        hspace=0.36,
-    )
-
-    # Panel A: Straight pipeline
-    ax1 = fig.add_subplot(gs[0, 0])
-    pipeline_steps = ['Capture', 'Clean', 'Process', 'Deliver']
-    pipeline_x = np.linspace(0.14, 0.86, len(pipeline_steps))
-    pipeline_y = 0.56
-    for x, label in zip(pipeline_x, pipeline_steps):
-        add_node(ax1, (x, pipeline_y), label)
-    for i in range(len(pipeline_x) - 1):
-        start = anchor((pipeline_x[i], pipeline_y), dx=1)
-        end = anchor((pipeline_x[i + 1], pipeline_y), dx=-1)
-        add_flow(ax1, start, end)
-    ax1.set_xlim(0, 1)
-    ax1.set_ylim(0.3, 0.82)
-    ax1.axis('off')
-    ax1.set_title('Linear Pipeline', fontsize=dm.fs(1))
-
-    # Panel B: Branching and merge
-    ax2 = fig.add_subplot(gs[0, 1])
-    start = (0.16, 0.64)
-    branches = [(0.52, 0.78, 'Path A'), (0.52, 0.64, 'Path B'), (0.52, 0.50, 'Path C')]
-    merge = (0.82, 0.64)
-    add_node(ax2, start, 'Start', face='dm.green1', edge='dm.green6')
-    for x, y, label in branches:
-        add_node(ax2, (x, y), label)
-        curve = 0.18 if y > start[1] else -0.18 if y < start[1] else 0.0
-        add_flow(ax2, anchor(start, dx=1), anchor((x, y), dx=-1), curve=curve)
-    add_node(ax2, merge, 'Merge', face='dm.violet1', edge='dm.violet6')
-    for x, y, _ in branches:
-        curve = -0.12 if y > merge[1] else 0.12 if y < merge[1] else 0.0
-        add_flow(ax2, anchor((x, y), dx=1), anchor(merge, dx=-1), curve=curve)
-    add_flow(ax2, anchor(merge, dx=1), (0.96, 0.64), curve=0.0)
-    ax2.set_xlim(0.02, 1.02)
-    ax2.set_ylim(0.38, 0.86)
-    ax2.axis('off')
-    ax2.set_title('Branch & Merge', fontsize=dm.fs(1))
-
-    # Panel C: Circular loop
-    ax3 = fig.add_subplot(gs[1, 0])
-    angles = np.linspace(0, 2 * np.pi, 5, endpoint=False)[:-1]
-    r = 0.32
-    center = np.array([0.5, 0.5])
-    loop_labels = ['Discover', 'Design', 'Build', 'Review']
-    loop_points = []
-    for angle, label in zip(angles, loop_labels):
-        pt = center + r * np.array([np.cos(angle), np.sin(angle)])
-        loop_points.append(pt)
-        add_node(ax3, pt, label, face='dm.orange1', edge='dm.orange6')
-
-    for i, pt in enumerate(loop_points):
-        nxt = loop_points[(i + 1) % len(loop_points)]
-        start = directional_anchor(pt, nxt)
-        end = directional_anchor(nxt, pt)
-        add_flow(ax3, start, end, curve=0.18)
-
-    ax3.text(
-        center[0],
-        center[1],
-        'Iterate',
-        ha='center',
-        va='center',
-        fontsize=dm.fs(-1),
-        color='dm.gray6',
-    )
-    ax3.set_xlim(0.08, 0.92)
-    ax3.set_ylim(0.08, 0.92)
-    ax3.set_aspect('equal')
-    ax3.axis('off')
-    ax3.set_title('Circular Loop', fontsize=dm.fs(1))
-
-    # Panel D: Balanced decision tree
-    ax4 = fig.add_subplot(gs[1, 1])
-    root = (0.5, 0.86)
-    mid_left, mid_right = (0.30, 0.66), (0.70, 0.66)
-    leafs = [
-        (0.18, 0.44, 'Refine'),
-        (0.42, 0.44, 'Ship'),
-        (0.58, 0.44, 'Explore'),
-        (0.82, 0.44, 'Drop'),
+    # Flows sum to zero: inflow = 100, outflows = -40, -25, -20, -15
+    flows = [100, -40, -25, -20, -15]
+    labels = [
+        'Total Inflow',
+        'Storage',
+        'Processing',
+        'Losses',
+        'Delivered',
     ]
-    add_node(ax4, root, 'Decision', face='dm.violet2', edge='dm.violet6')
-    add_node(ax4, mid_left, 'Go Left', face='dm.blue1', edge='dm.blue6')
-    add_node(ax4, mid_right, 'Go Right', face='dm.blue1', edge='dm.blue6')
-    add_flow(ax4, anchor(root, dy=-1), anchor(mid_left, dy=1), curve=0.0)
-    add_flow(ax4, anchor(root, dy=-1), anchor(mid_right, dy=1), curve=0.0)
+    # Orientation controls label/arrow direction for readability
+    orientations = [0, 1, -1, 1, -1]
 
-    for x, y, label in leafs:
-        add_node(ax4, (x, y), label, face='dm.gray1', edge='dm.gray7')
-    add_flow(ax4, anchor(mid_left, dy=-1), anchor(leafs[0][:2], dy=1), curve=0.0)
-    add_flow(ax4, anchor(mid_left, dy=-1), anchor(leafs[1][:2], dy=1), curve=-0.05)
-    add_flow(ax4, anchor(mid_right, dy=-1), anchor(leafs[2][:2], dy=1), curve=0.05)
-    add_flow(ax4, anchor(mid_right, dy=-1), anchor(leafs[3][:2], dy=1), curve=0.0)
+    fig, ax = plt.subplots(figsize=(dm.cm2in(16), dm.cm2in(9)), dpi=300)
 
-    ax4.set_xlim(0.06, 0.94)
-    ax4.set_ylim(0.32, 0.92)
-    ax4.axis('off')
-    ax4.set_title('Decision Tree', fontsize=dm.fs(1))
+    sankey = Sankey(
+        ax=ax,
+        unit='%',
+        format='%.0f%%',
+        scale=1.0,      # keep values literal (100 == 100%)
+        gap=0.5,        # breathing room between flows
+        shoulder=0.02,  # tighter joints
+    )
+    sankey.add(
+        flows=flows,
+        labels=labels,
+        orientations=orientations,
+        trunklength=1.0,
+        pathlengths=[0.0, 0.1, 0.1, 0.1, 0.1],
+        alpha=0.9,
+    )
+    sankey.finish()
 
-    dm.simple_layout(fig, gs=gs)
+    ax.set_title('Simple Sankey Diagram', fontsize=dm.fs(1))
+    ax.axis('off')
+    dm.simple_layout(fig)
+
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.522 seconds)
+   **Total running time of the script:** (0 minutes 0.454 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_sankey_simple.py:

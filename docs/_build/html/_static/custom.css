@@ -23,6 +23,42 @@ div[class^="highlight"] {
     border-radius: 6px;
 }
 
+/* Keep code blocks readable without hovering */
+:root {
+    --dm-code-bg-light: #f6f8fa;
+    --dm-code-bg-dark: #111827;
+    --dm-code-border-light: #e5e7eb;
+    --dm-code-border-dark: #1f2937;
+}
+
+html.light,
+body[data-theme="light"] {
+    --dm-code-bg: var(--dm-code-bg-light);
+    --dm-code-border: var(--dm-code-border-light);
+}
+
+html.dark,
+body[data-theme="dark"] {
+    --dm-code-bg: var(--dm-code-bg-dark);
+    --dm-code-border: var(--dm-code-border-dark);
+}
+
+.yue div.highlight,
+.yue div.highlight pre {
+    background-color: var(--dm-code-bg) !important;
+}
+
+.yue div.highlight {
+    border: 1px solid var(--dm-code-border) !important;
+}
+
+.yue :not(pre) > code {
+    background-color: var(--dm-code-bg);
+    border: 1px solid var(--dm-code-border);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+}
+
 /* Furo sidebar styles removed */
 
 /* Flatten the Sphinx-Gallery download buttons to match Shibuya theme */
@@ -111,22 +147,26 @@ main :is(h1, h2, h3)[id] {
     scroll-margin-top: 80px;
 }
 
-/* Gallery: use three columns on desktop so thumbnails stay larger */
+/* Gallery: three-up grid on wide screens without shrinking the tiles */
+.sphx-glr-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+}
+
 .sphx-glr-thumbcontainer {
-    flex: 0 0 32%;
-    max-width: 32%;
+    width: 100%;
+    max-width: none;
 }
 
 @media (max-width: 1100px) {
-    .sphx-glr-thumbcontainer {
-        flex: 0 0 48%;
-        max-width: 48%;
+    .sphx-glr-thumbnails {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
 }
 
 @media (max-width: 720px) {
-    .sphx-glr-thumbcontainer {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .sphx-glr-thumbnails {
+        grid-template-columns: 1fr;
     }
 }

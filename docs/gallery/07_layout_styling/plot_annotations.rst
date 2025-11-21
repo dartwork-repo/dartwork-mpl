@@ -23,7 +23,7 @@ Annotations
 
 Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts aligned to data or axes coords.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-134
+.. GENERATED FROM PYTHON SOURCE LINES 7-136
 
 
 
@@ -37,7 +37,7 @@ Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts al
 
  .. code-block:: none
 
-    /home/wonjun/Codes/dartwork-mpl/docs/examples_source/07_layout_styling/plot_annotations.py:102: UserWarning: Setting the 'color' property will override the edgecolor or facecolor properties.
+    /home/wonjun/Codes/dartwork-mpl/docs/examples_source/07_layout_styling/plot_annotations.py:104: UserWarning: Setting the 'color' property will override the edgecolor or facecolor properties.
       ax4.axvspan(3, 7, color='dm.purple1', alpha=0.35, edgecolor='dm.purple6', lw=0.4)
 
 
@@ -63,7 +63,7 @@ Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts al
     y = np.sin(x)
 
     # Create figure (2 x 2 layout, with generous top/bottom margins)
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=300)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
     gs = fig.add_gridspec(
         nrows=2, ncols=2,
         left=0.08, right=0.98,
@@ -75,11 +75,13 @@ Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts al
     ax1 = fig.add_subplot(gs[0, 0])
     ax1.plot(x, y, color='dm.blue5', lw=0.7, alpha=0.8)
     # Text annotation: fontsize=dm.fs(-1), bbox with explicit parameters
-    ax1.text(2, 0.5, 'Peak', fontsize=dm.fs(-1), 
+    peak_x = x[np.argmax(y)]
+    valley_x = x[np.argmin(y)]
+    ax1.text(peak_x, np.sin(peak_x), 'Peak', fontsize=dm.fs(-1), 
              bbox=dict(boxstyle='round', facecolor='dm.blue2', alpha=0.5, 
                        edgecolor='dm.blue7', linewidth=0.3),
              ha='center', va='center')
-    ax1.text(8, -0.5, 'Valley', fontsize=dm.fs(-1),
+    ax1.text(valley_x, np.sin(valley_x), 'Valley', fontsize=dm.fs(-1),
              bbox=dict(boxstyle='round', facecolor='dm.red2', alpha=0.5,
                        edgecolor='dm.red7', linewidth=0.3),
              ha='center', va='center')
@@ -135,7 +137,7 @@ Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts al
     ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax3.set_title('Custom Markers', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax3.set_xticks([0, 2, 4, 6, 8, 10])
     ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 
@@ -180,7 +182,7 @@ Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts al
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.922 seconds)
+   **Total running time of the script:** (0 minutes 0.936 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_annotations.py:

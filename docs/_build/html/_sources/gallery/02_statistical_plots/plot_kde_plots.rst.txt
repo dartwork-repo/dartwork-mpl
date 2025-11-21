@@ -76,7 +76,7 @@ Use kernel density estimates for single and grouped data to highlight smooth pro
     ax1.set_xlabel('Value', fontsize=dm.fs(0))
     ax1.set_ylabel('Density', fontsize=dm.fs(0))
     ax1.set_title('KDE vs Histogram', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax1.legend(loc='best', fontsize=dm.fs(-1))
     ax1.set_xticks([-4, -2, 0, 2, 4])
     ax1.set_yticks([0, 0.1, 0.2, 0.3, 0.4])
 
@@ -92,7 +92,7 @@ Use kernel density estimates for single and grouped data to highlight smooth pro
     ax2.set_xlabel('Value', fontsize=dm.fs(0))
     ax2.set_ylabel('Density', fontsize=dm.fs(0))
     ax2.set_title('Different Bandwidths', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax2.legend(loc='best', fontsize=dm.fs(-1))
     ax2.set_xticks([-4, -2, 0, 2, 4])
     ax2.set_yticks([0, 0.2, 0.4, 0.6])
 
@@ -110,7 +110,7 @@ Use kernel density estimates for single and grouped data to highlight smooth pro
     ax3.set_xlabel('Value', fontsize=dm.fs(0))
     ax3.set_ylabel('Density', fontsize=dm.fs(0))
     ax3.set_title('Distribution Comparison', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax3.legend(loc='best', fontsize=dm.fs(-1))
     ax3.set_xticks([-4, -2, 0, 2, 4, 6, 8])
     ax3.set_yticks([0, 0.1, 0.2, 0.3])
 
@@ -124,7 +124,7 @@ Use kernel density estimates for single and grouped data to highlight smooth pro
     ax4.set_xlabel('Value', fontsize=dm.fs(0))
     ax4.set_ylabel('Density', fontsize=dm.fs(0))
     ax4.set_title('Bimodal Distribution', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.set_xticks([-4, -2, 0, 2, 4])
     ax4.set_yticks([0, 0.2, 0.4, 0.6])
 
@@ -137,7 +137,7 @@ Use kernel density estimates for single and grouped data to highlight smooth pro
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.012 seconds)
+   **Total running time of the script:** (0 minutes 1.015 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_kde_plots.py:

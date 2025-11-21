@@ -23,7 +23,7 @@ Basic Usage
 
 Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacing on a single stylized line plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-81
+.. GENERATED FROM PYTHON SOURCE LINES 7-80
 
 
 
@@ -99,9 +99,8 @@ Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacin
 
     # Legend placed above the plot to avoid overlaps
     ax.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.16),
-        ncol=3,
+        loc='best',
+        ncol=2,
         fontsize=dm.fs(-1),
         frameon=False,
         columnspacing=1.3,
@@ -116,7 +115,7 @@ Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacin
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.610 seconds)
+   **Total running time of the script:** (0 minutes 0.614 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_basic.py:

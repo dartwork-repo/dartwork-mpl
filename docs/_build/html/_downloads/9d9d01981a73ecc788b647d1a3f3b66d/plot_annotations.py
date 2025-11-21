@@ -18,7 +18,7 @@ x = np.linspace(0, 10, 100)
 y = np.sin(x)
 
 # Create figure (2 x 2 layout, with generous top/bottom margins)
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=300)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 gs = fig.add_gridspec(
     nrows=2, ncols=2,
     left=0.08, right=0.98,
@@ -30,11 +30,13 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 ax1.plot(x, y, color='dm.blue5', lw=0.7, alpha=0.8)
 # Text annotation: fontsize=dm.fs(-1), bbox with explicit parameters
-ax1.text(2, 0.5, 'Peak', fontsize=dm.fs(-1), 
+peak_x = x[np.argmax(y)]
+valley_x = x[np.argmin(y)]
+ax1.text(peak_x, np.sin(peak_x), 'Peak', fontsize=dm.fs(-1), 
          bbox=dict(boxstyle='round', facecolor='dm.blue2', alpha=0.5, 
                    edgecolor='dm.blue7', linewidth=0.3),
          ha='center', va='center')
-ax1.text(8, -0.5, 'Valley', fontsize=dm.fs(-1),
+ax1.text(valley_x, np.sin(valley_x), 'Valley', fontsize=dm.fs(-1),
          bbox=dict(boxstyle='round', facecolor='dm.red2', alpha=0.5,
                    edgecolor='dm.red7', linewidth=0.3),
          ha='center', va='center')
@@ -90,7 +92,7 @@ ax3.text(x[valley_idx] + 0.5, y[valley_idx] - 0.2, 'Valley',
 ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax3.set_title('Custom Markers', fontsize=dm.fs(1))
-ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 

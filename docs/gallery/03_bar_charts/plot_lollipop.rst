@@ -23,7 +23,7 @@ Lollipop Charts
 
 Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-99
+.. GENERATED FROM PYTHON SOURCE LINES 7-102
 
 
 
@@ -122,8 +122,11 @@ Swap solid bars for stems and dots to lighten dense comparisons while keeping pr
     ax4.set_yticklabels(categories, fontsize=dm.fs(-1))
     ax4.set_xlabel('Value', fontsize=dm.fs(0))
     ax4.set_title('Comparison Lollipop', fontsize=dm.fs(1))
-    ax4.legend(loc='lower right', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.set_xticks([0, 20, 40, 60])
+
+    for ax in (ax1, ax2, ax3, ax4):
+        ax.margins(x=0.05, y=0.05)
 
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
@@ -134,7 +137,7 @@ Swap solid bars for stems and dots to lighten dense comparisons while keeping pr
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.753 seconds)
+   **Total running time of the script:** (0 minutes 0.701 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_lollipop.py:

@@ -23,7 +23,7 @@ Line Styles
 
 Preview dashes, caps, and joins side by side to choose line styles that stay legible once printed or projected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-120
+.. GENERATED FROM PYTHON SOURCE LINES 7-116
 
 
 
@@ -75,8 +75,7 @@ Preview dashes, caps, and joins side by side to choose line styles that stay leg
     ax1.set_ylabel('Y value', fontsize=dm.fs(0))
     ax1.set_title('Basic Line Styles', fontsize=dm.fs(1))
     ax1.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -94,8 +93,7 @@ Preview dashes, caps, and joins side by side to choose line styles that stay leg
     ax2.set_ylabel('Y value', fontsize=dm.fs(0))
     ax2.set_title('Custom Dash Patterns', fontsize=dm.fs(1))
     ax2.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -118,8 +116,7 @@ Preview dashes, caps, and joins side by side to choose line styles that stay leg
     ax3.set_ylabel('Y value', fontsize=dm.fs(0))
     ax3.set_title('Lines with Markers', fontsize=dm.fs(1))
     ax3.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -137,8 +134,7 @@ Preview dashes, caps, and joins side by side to choose line styles that stay leg
     ax4.set_ylabel('Y value', fontsize=dm.fs(0))
     ax4.set_title('Same Color Variants', fontsize=dm.fs(1))
     ax4.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -155,7 +151,7 @@ Preview dashes, caps, and joins side by side to choose line styles that stay leg
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.867 seconds)
+   **Total running time of the script:** (0 minutes 0.933 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_line_styles.py:

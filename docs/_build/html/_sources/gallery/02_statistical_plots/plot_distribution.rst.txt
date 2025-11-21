@@ -74,7 +74,7 @@ Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumu
     ax1.set_xlabel('X value', fontsize=dm.fs(0))
     ax1.set_ylabel('Probability density', fontsize=dm.fs(0))
     ax1.set_title('Normal Distributions', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-2), ncol=2)
+    ax1.legend(loc='best', fontsize=dm.fs(-2), ncol=2)
     ax1.set_xticks([-4, -2, 0, 2, 4])
     ax1.set_yticks([0, 0.2, 0.4, 0.6, 0.8])
 
@@ -91,7 +91,7 @@ Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumu
     ax2.set_xlabel('X value', fontsize=dm.fs(0))
     ax2.set_ylabel('Probability density', fontsize=dm.fs(0))
     ax2.set_title('t-Distributions', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-2), ncol=2)
+    ax2.legend(loc='best', fontsize=dm.fs(-2), ncol=2)
     ax2.set_xticks([-4, -2, 0, 2, 4])
     ax2.set_yticks([0, 0.1, 0.2, 0.3, 0.4])
 
@@ -107,7 +107,7 @@ Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumu
     ax3.set_xlabel('X value', fontsize=dm.fs(0))
     ax3.set_ylabel('Probability density', fontsize=dm.fs(0))
     ax3.set_title('Chi-Square Distributions', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-2), ncol=2)
+    ax3.legend(loc='best', fontsize=dm.fs(-2), ncol=2)
     ax3.set_xticks([0, 3, 6, 9, 12, 15])
     ax3.set_yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5])
 
@@ -125,7 +125,7 @@ Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumu
     ax4.set_xlabel('X value', fontsize=dm.fs(0))
     ax4.set_ylabel('Probability density', fontsize=dm.fs(0))
     ax4.set_title('Distribution Comparison', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.set_xticks([-2, -1, 0, 1, 2])
     ax4.set_yticks([0, 0.2, 0.4, 0.6])
 
@@ -138,7 +138,7 @@ Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumu
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.940 seconds)
+   **Total running time of the script:** (0 minutes 0.975 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_distribution.py:

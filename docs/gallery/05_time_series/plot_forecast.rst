@@ -86,7 +86,7 @@ Show forecasts with past-versus-future shading, ribbons, and quantile fans to co
     ax1.set_xlabel('Date', fontsize=dm.fs(0))
     ax1.set_ylabel('Value', fontsize=dm.fs(0))
     ax1.set_title('Forecast with CI', fontsize=dm.fs(1))
-    ax1.legend(loc='upper left', fontsize=dm.fs(-2))
+    ax1.legend(loc='best', fontsize=dm.fs(-2))
     ax1.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
 
     # Panel B: Components decomposition
@@ -96,7 +96,7 @@ Show forecasts with past-versus-future shading, ribbons, and quantile fans to co
     ax2.set_xlabel('Date', fontsize=dm.fs(0))
     ax2.set_ylabel('Component value', fontsize=dm.fs(0))
     ax2.set_title('Decomposition', fontsize=dm.fs(1))
-    ax2.legend(loc='upper left', fontsize=dm.fs(-1))
+    ax2.legend(loc='best', fontsize=dm.fs(-1))
     ax2.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
 
     # Panel C: Residuals
@@ -122,7 +122,7 @@ Show forecasts with past-versus-future shading, ribbons, and quantile fans to co
     ax4.set_xlabel('Date', fontsize=dm.fs(0))
     ax4.set_ylabel('Value', fontsize=dm.fs(0))
     ax4.set_title('Forecast Scenarios', fontsize=dm.fs(1))
-    ax4.legend(loc='upper left', fontsize=dm.fs(-2))
+    ax4.legend(loc='best', fontsize=dm.fs(-2))
     ax4.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
 
     # Optimize layout
@@ -134,7 +134,7 @@ Show forecasts with past-versus-future shading, ribbons, and quantile fans to co
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.820 seconds)
+   **Total running time of the script:** (0 minutes 1.815 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_forecast.py:

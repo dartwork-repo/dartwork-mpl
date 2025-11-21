@@ -23,6 +23,42 @@ div[class^="highlight"] {
     border-radius: 6px;
 }
 
+/* Keep code blocks readable without hovering */
+:root {
+    --dm-code-bg-light: #f6f8fa;
+    --dm-code-bg-dark: #111827;
+    --dm-code-border-light: #e5e7eb;
+    --dm-code-border-dark: #1f2937;
+}
+
+html.light,
+body[data-theme="light"] {
+    --dm-code-bg: var(--dm-code-bg-light);
+    --dm-code-border: var(--dm-code-border-light);
+}
+
+html.dark,
+body[data-theme="dark"] {
+    --dm-code-bg: var(--dm-code-bg-dark);
+    --dm-code-border: var(--dm-code-border-dark);
+}
+
+.yue div.highlight,
+.yue div.highlight pre {
+    background-color: var(--dm-code-bg) !important;
+}
+
+.yue div.highlight {
+    border: 1px solid var(--dm-code-border) !important;
+}
+
+.yue :not(pre) > code {
+    background-color: var(--dm-code-bg);
+    border: 1px solid var(--dm-code-border);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+}
+
 /* Furo sidebar styles removed */
 
 /* Flatten the Sphinx-Gallery download buttons to match Shibuya theme */

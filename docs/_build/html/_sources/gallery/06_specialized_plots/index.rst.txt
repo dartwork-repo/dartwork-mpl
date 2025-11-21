@@ -18,6 +18,23 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Show a single, clear Sankey diagram that illustrates how inputs split into several outputs.">
+
+.. only:: html
+
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_sankey_simple_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sankey Diagram</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Combine 3D surfaces and scatters with consistent lighting and projection choices for presentations.">
 
 .. only:: html
@@ -52,18 +69,18 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Show a clean, proportional treemap for a single hierarchy using a slice-and-dice layout.">
 
 .. only:: html
 
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_polar_thumb.png
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_treemap_simple_thumb.png
     :alt:
 
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_polar.py`
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Polar Plots</div>
+      <div class="sphx-glr-thumbnail-title">Treemap</div>
     </div>
 
 
@@ -103,6 +120,23 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.">
+
+.. only:: html
+
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_polar_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_polar.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Polar Plots</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Build pies, donuts, and nested rings with centered labels and contrast so proportions stay legible.">
 
 .. only:: html
@@ -115,23 +149,6 @@ pie charts, and other unique plot types for specific use cases.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Pie Charts</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Lay out treemaps with nested rectangles and inline labels for hierarchical shares.">
-
-.. only:: html
-
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_treemap_simple_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Hierarchical Visualization</div>
     </div>
 
 
@@ -152,23 +169,6 @@ pie charts, and other unique plot types for specific use cases.
     </div>
 
 
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Draw compact Sankey diagrams to explain flows between stages with tidy labels.">
-
-.. only:: html
-
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_sankey_simple_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Flow Diagrams</div>
-    </div>
-
-
 .. thumbnail-parent-div-close
 
 .. raw:: html
@@ -179,13 +179,13 @@ pie charts, and other unique plot types for specific use cases.
 .. toctree::
    :hidden:
 
+   /gallery/06_specialized_plots/plot_sankey_simple
    /gallery/06_specialized_plots/plot_3d
    /gallery/06_specialized_plots/plot_dual_axis
-   /gallery/06_specialized_plots/plot_polar
+   /gallery/06_specialized_plots/plot_treemap_simple
    /gallery/06_specialized_plots/plot_ridgeline
    /gallery/06_specialized_plots/plot_radar_chart
+   /gallery/06_specialized_plots/plot_polar
    /gallery/06_specialized_plots/plot_pie
-   /gallery/06_specialized_plots/plot_treemap_simple
    /gallery/06_specialized_plots/plot_filled
-   /gallery/06_specialized_plots/plot_sankey_simple
 

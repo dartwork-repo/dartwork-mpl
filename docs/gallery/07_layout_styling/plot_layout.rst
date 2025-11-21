@@ -75,7 +75,7 @@ Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec help
 
     # Add subplot labels (a, b, c)
     for ax, label in zip([ax1, ax2, ax3], 'abc'):
-        offset = dm.make_offset(4, -4, fig)
+        offset = dm.make_offset(0, 8, fig)
         ax.text(0, 1, label, transform=ax.transAxes + offset,
                 weight='bold', va='top', fontsize=dm.fs(2))
 
@@ -88,7 +88,7 @@ Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec help
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.765 seconds)
+   **Total running time of the script:** (0 minutes 0.748 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_layout.py:

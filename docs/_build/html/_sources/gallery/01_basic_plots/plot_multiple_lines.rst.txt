@@ -23,7 +23,7 @@ Multiple Line Plots
 
 Stack several series with coordinated colors and labels to learn quick defaults for multi-line comparisons.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-119
+.. GENERATED FROM PYTHON SOURCE LINES 7-115
 
 
 
@@ -75,8 +75,7 @@ Stack several series with coordinated colors and labels to learn quick defaults 
     ax1.set_ylabel('Y value', fontsize=dm.fs(0))
     ax1.set_title('Multiple Lines', fontsize=dm.fs(1))
     ax1.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -95,8 +94,7 @@ Stack several series with coordinated colors and labels to learn quick defaults 
     ax2.set_ylabel('Y value', fontsize=dm.fs(0))
     ax2.set_title('Different Line Widths', fontsize=dm.fs(1))
     ax2.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -115,8 +113,7 @@ Stack several series with coordinated colors and labels to learn quick defaults 
     ax3.set_ylabel('Y value', fontsize=dm.fs(0))
     ax3.set_title('Tailwind CSS Colors', fontsize=dm.fs(1))
     ax3.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -135,8 +132,7 @@ Stack several series with coordinated colors and labels to learn quick defaults 
     ax4.set_ylabel('Y value', fontsize=dm.fs(0))
     ax4.set_title('Color Gradients', fontsize=dm.fs(1))
     ax4.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -154,7 +150,7 @@ Stack several series with coordinated colors and labels to learn quick defaults 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.912 seconds)
+   **Total running time of the script:** (0 minutes 0.951 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_multiple_lines.py:

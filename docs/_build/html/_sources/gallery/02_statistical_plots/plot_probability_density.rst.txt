@@ -81,7 +81,7 @@ Plot analytic PDFs with shading and annotations so you can introduce distributio
     ax.set_xlabel('Value', fontsize=dm.fs(0))
     ax.set_ylabel('Probability Density', fontsize=dm.fs(0))
     ax.set_title('Distribution Analysis', fontsize=dm.fs(1))
-    ax.legend(fontsize=dm.fs(-1), loc='upper right', ncol=1)
+    ax.legend(fontsize=dm.fs(-1), loc='best', ncol=1)
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -89,7 +89,7 @@ Plot analytic PDFs with shading and annotations so you can introduce distributio
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.468 seconds)
+   **Total running time of the script:** (0 minutes 0.508 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_probability_density.py:

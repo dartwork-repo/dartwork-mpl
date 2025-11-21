@@ -23,7 +23,7 @@ Marker Styles
 
 Mix markers with strokes, fills, and offsets to encode categories or emphasis without clutter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-120
+.. GENERATED FROM PYTHON SOURCE LINES 7-116
 
 
 
@@ -76,8 +76,7 @@ Mix markers with strokes, fills, and offsets to encode categories or emphasis wi
     ax1.set_ylabel('Y value', fontsize=dm.fs(0))
     ax1.set_title('Basic Markers', fontsize=dm.fs(1))
     ax1.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -95,8 +94,7 @@ Mix markers with strokes, fills, and offsets to encode categories or emphasis wi
     ax2.set_ylabel('Y value', fontsize=dm.fs(0))
     ax2.set_title('Markers Only', fontsize=dm.fs(1))
     ax2.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -118,8 +116,7 @@ Mix markers with strokes, fills, and offsets to encode categories or emphasis wi
     ax3.set_ylabel('Y value', fontsize=dm.fs(0))
     ax3.set_title('Filled vs Empty', fontsize=dm.fs(1))
     ax3.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -137,8 +134,7 @@ Mix markers with strokes, fills, and offsets to encode categories or emphasis wi
     ax4.set_ylabel('Y value', fontsize=dm.fs(0))
     ax4.set_title('Different Sizes', fontsize=dm.fs(1))
     ax4.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.08),
+        loc='best',
         fontsize=dm.fs(-2),
         ncol=2,
         frameon=False,
@@ -155,7 +151,7 @@ Mix markers with strokes, fills, and offsets to encode categories or emphasis wi
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.865 seconds)
+   **Total running time of the script:** (0 minutes 0.920 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_markers.py:

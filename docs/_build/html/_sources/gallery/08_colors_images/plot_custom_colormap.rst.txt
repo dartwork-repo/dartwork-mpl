@@ -23,7 +23,7 @@ Custom Colormaps
 
 Build sequential, diverging, and discrete colormaps and compare them side by side.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-81
+.. GENERATED FROM PYTHON SOURCE LINES 7-83
 
 
 
@@ -98,17 +98,19 @@ Build sequential, diverging, and discrete colormaps and compare them side by sid
         ('cividis', 'Cividis'),
     ]
     n_gradients = len(cmaps_demo)
+    # Extend gradient length to match the axes width and add label column outside the axes.
+    for spine in ax4.spines.values():
+        spine.set_visible(True)
     for i, (cmap, label) in enumerate(cmaps_demo):
         ax4.imshow(gradient, aspect='auto', cmap=cmap,
                    extent=[0, 1, i, i + 1], origin='lower')
-        ax4.text(1.05, i + 0.5, label, ha='left', va='center', fontsize=dm.fs(-1))
-    ax4.set_xlim(0, 1.25)
+        ax4.text(1.02, i + 0.5, label, ha='left', va='center', fontsize=dm.fs(-1))
+    ax4.set_xlim(0, 1.1)
     ax4.set_ylim(0, n_gradients)
-    ax4.set_xlabel('Value', fontsize=dm.fs(0))
-    ax4.set_title('Colormap Comparison', fontsize=dm.fs(1))
+    ax4.set_xticks([])
+    ax4.set_xlabel('')
+    ax4.set_title('Colormap Comparison', fontsize=dm.fs(1), pad=10)
     ax4.set_yticks([])
-    for spine in ax4.spines.values():
-        spine.set_visible(False)
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -116,7 +118,7 @@ Build sequential, diverging, and discrete colormaps and compare them side by sid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.008 seconds)
+   **Total running time of the script:** (0 minutes 0.931 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_custom_colormap.py:

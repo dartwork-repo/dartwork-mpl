@@ -14,7 +14,7 @@ dm.style.use_preset('scientific')
 
 def slice_dice(values, x=0.0, y=0.0, w=1.0, h=1.0, vertical=True):
     """Simple slice-and-dice treemap layout."""
-    total = sum(val for _, val in values)
+    total = sum(val for _, val, _ in values)
     cursor = x if vertical else y
     for name, val, color in values:
         frac = val / total if total else 0

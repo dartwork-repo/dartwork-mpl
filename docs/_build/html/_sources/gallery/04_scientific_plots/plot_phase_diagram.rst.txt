@@ -93,7 +93,7 @@ Trace trajectories and vector fields to explain stability and cycles in dynamica
     ax2.set_xlabel('Prey population', fontsize=dm.fs(0))
     ax2.set_ylabel('Predator population', fontsize=dm.fs(0))
     ax2.set_title('Predator-Prey Dynamics', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax2.legend(loc='best', fontsize=dm.fs(-1))
 
     # Panel C: Vector field with trajectory
     ax3 = fig.add_subplot(gs[1, 0])
@@ -113,7 +113,7 @@ Trace trajectories and vector fields to explain stability and cycles in dynamica
     ax3.set_xlabel('θ [rad]', fontsize=dm.fs(0))
     ax3.set_ylabel('ω [rad/s]', fontsize=dm.fs(0))
     ax3.set_title('Phase Space with Vector Field', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax3.legend(loc='best', fontsize=dm.fs(-1))
     ax3.set_xlim(-3, 3)
     ax3.set_ylim(-3, 3)
 
@@ -140,7 +140,7 @@ Trace trajectories and vector fields to explain stability and cycles in dynamica
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.016 seconds)
+   **Total running time of the script:** (0 minutes 1.023 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_phase_diagram.py:

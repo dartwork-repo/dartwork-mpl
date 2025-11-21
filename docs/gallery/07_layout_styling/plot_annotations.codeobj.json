@@ -2169,6 +2169,15 @@
    "name": "int64"
   }
  ],
+ "peak_x": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float64"
+  }
+ ],
  "plt.figure": [
   {
    "is_class": false,
@@ -2208,6 +2217,15 @@
    "module": "numpy",
    "module_short": "numpy",
    "name": "int64"
+  }
+ ],
+ "valley_x": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "float64"
   }
  ],
  "x": [

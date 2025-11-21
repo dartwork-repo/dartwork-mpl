@@ -1,103 +1,94 @@
 # Colors
 
-A high-contrast, full-width view of every named palette that ships with
-dartwork-mpl. Use the cards below to jump to the set you need; each PNG is
-exported at high DPI so the labels stay readable in the browser or a slide deck.
+Wide, single-column sheets for every named palette in dartwork-mpl. Each preview
+below is full-width so the swatch labels stay readable on both desktop and
+mobile.
 
-## How the names work
-- Colors follow `library.base:weight` (for example `tw.blue:500`, `md.red:700`).
-- Libraries mirror the design systems they come from, so weights and hue names
-  feel familiar if you already use those systems.
-- All names are available through matplotlib directly—no custom APIs required.
+## How to read the labels
+- Format: `library.base:weight` (`tw.blue:500`, `md.red:700`, `opencolor.gray:6`).
+- Works anywhere matplotlib accepts a color—no extra API layer required.
+- `dm.use()` loads the dartwork style so these names look consistent across
+  lines, fills, markers, and legends.
 
 ```python
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
+import numpy as np
 
 dm.use()
-plt.plot(signal, color="opencolor.indigo:6", linewidth=2.4, label="Indigo 6")
-plt.scatter(x, y, color="tw.rose:500")
+t = np.linspace(0, 2 * np.pi, 200)
+plt.plot(t, np.sin(t), color="opencolor.indigo:6", linewidth=2.4, label="Indigo 6")
+plt.scatter(t[::12], np.cos(t[::12]), color="tw.rose:500", edgecolor="none")
+plt.legend()
 plt.show()
 ```
 
-## Palette explorer
+## Palette sheets (single column)
 
-::::{grid} 2
-:gutter: 1.3
-:margin: 0 0 1.2rem 0
+:::{figure} images/colors_opencolor.png
+:alt: OpenColor palette sheet with labeled swatches
+:width: 100%
 
-:::{grid-item-card} OpenColor
-:class-card: color-card
-:img-top: images/colors_opencolor.png
-:img-style: width: 100%
-:img-alt: OpenColor palette
-- Balanced neutrals and calm hues; great for dashboards and UI framing
-- Subtle, even weight steps for layered backgrounds
+**OpenColor.** Balanced neutrals and calm hues for dashboards and UI frames. Even
+weight steps make layered backgrounds straightforward.
 :::
 
-:::{grid-item-card} Tailwind (tw)
-:class-card: color-card
-:img-top: images/colors_tw.png
-:img-style: width: 100%
-:img-alt: Tailwind palette
-- Broadest weight range (50–950) to tune contrast precisely
-- Mirrors Tailwind naming for easy jump from CSS to matplotlib
+:::{figure} images/colors_tw.png
+:alt: Tailwind palette sheet with labeled swatches
+:width: 100%
+
+**Tailwind.** The broadest weight range (50–950) for precise contrast tuning.
+Perfect when you already think in Tailwind classes.
 :::
 
-:::{grid-item-card} Material Design (md)
-:class-card: color-card
-:img-top: images/colors_md.png
-:img-style: width: 100%
-:img-alt: Material Design palette
-- Saturated primaries and secondaries that pop on white backgrounds
-- Consistent 50–900 weight steps for accessible pairings
+:::{figure} images/colors_md.png
+:alt: Material Design palette sheet with labeled swatches
+:width: 100%
+
+**Material Design.** Saturated primaries and secondaries that read clearly on
+white backgrounds, with consistent 50–900 steps.
 :::
 
-:::{grid-item-card} Ant Design (ant)
-:class-card: color-card
-:img-top: images/colors_ant.png
-:img-style: width: 100%
-:img-alt: Ant Design palette
-- Compact 1–10 weight system tuned for data-heavy UIs
-- Warm and cool tracks that stay legible in small marks
+:::{figure} images/colors_ant.png
+:alt: Ant Design palette sheet with labeled swatches
+:width: 100%
+
+**Ant Design.** Compact 1–10 weight system tuned for dense, data-heavy UIs with
+both warm and cool tracks that stay legible in small marks.
 :::
 
-:::{grid-item-card} Chakra UI (chakra)
-:class-card: color-card
-:img-top: images/colors_chakra.png
-:img-style: width: 100%
-:img-alt: Chakra palette
-- Friendly, soft ramps for product illustrations and UI fills
-- Excellent defaults for backgrounds and soft accents
+:::{figure} images/colors_chakra.png
+:alt: Chakra UI palette sheet with labeled swatches
+:width: 100%
+
+**Chakra UI.** Soft, friendly ramps ideal for product illustrations, covers, and
+muted backgrounds that do not overpower overlays.
 :::
 
-:::{grid-item-card} Primer (primer)
-:class-card: color-card
-:img-top: images/colors_primer.png
-:img-style: width: 100%
-:img-alt: Primer palette
-- GitHub-inspired neutrals with lightweight tints and shadows
-- Useful when you need desaturated accents with strong contrast
+:::{figure} images/colors_primer.png
+:alt: Primer palette sheet with labeled swatches
+:width: 100%
+
+**Primer.** GitHub-inspired neutrals with subtle tints and shadows—great when
+you need desaturated accents with strong contrast.
 :::
 
-:::{grid-item-card} Other & Matplotlib
-:class-card: color-card
-:img-top: images/colors_other.png
-:img-style: width: 100%
-:img-alt: Matplotlib named colors
-- All remaining named colors, including matplotlib defaults and xkcd set
-- Handy for quick sketches or when you need a familiar `C0`–`C9` cycle
+:::{figure} images/colors_other.png
+:alt: Other and matplotlib palettes sheet with labeled swatches
+:width: 100%
+
+**Other & Matplotlib.** Everything else, including matplotlib defaults and the
+xkcd set, for quick sketches or when you want the familiar `C0`–`C9` cycle.
 :::
-::::
 
-## Picking weights that work
-- Aim for weights 400–600 for primary lines and markers; 50–200 for backgrounds.
-- Keep related elements on adjacent weights (e.g., line at 600, fill at 200).
-- Prefer a single library per figure for cohesion; mix libraries only for
-  intentional contrast (e.g., background from Primer, accents from Tailwind).
+## Rendering guidance
+- Use weights 400–600 for lines and markers; 50–200 for fills and backgrounds.
+- Pair adjacent weights for related elements (e.g., line at 600, fill at 200).
+- Keep a single library per figure unless you need deliberate contrast (Primer
+  background with Tailwind accents, for example).
+- Turn off `edgecolor` on dense scatters to keep swatches clean in exports.
 
-## Regenerate the sheets
-- The PNGs above live in `docs/images/` and are regenerated automatically during
-  a Sphinx build.
-- Regenerate manually with `python docs/generate_gallery.py` if you are editing
-  just the assets.
+## Refreshing the sheets
+- All PNGs live in `docs/images/`.
+- A Sphinx build runs `python docs/generate_gallery.py`; run it directly if you
+  tweak palette data and want to update only the assets.

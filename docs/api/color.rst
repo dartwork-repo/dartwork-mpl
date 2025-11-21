@@ -9,20 +9,30 @@ colormaps before plotting. Each helper lists its parameters and return value
 before jumping into examples.
 
 ``mix_colors(color1, color2, alpha=0.5)``
-   - Parameters: two matplotlib-compatible colors (named strings or RGB tuples);
-     ``alpha`` weights ``color1`` between 0 (all ``color2``) and 1 (all ``color1``).
-   - Returns: blended RGB tuple.
+
+- Parameters:
+  - ``color1``: matplotlib-compatible color (name or RGB tuple).
+  - ``color2``: second color to blend toward.
+  - ``alpha``: weight for ``color1`` between 0 (all ``color2``) and 1 (all ``color1``).
+- Returns:
+  - blended RGB tuple.
 
 ``pseudo_alpha(color, alpha=1.0, background="white")``
-   - Parameters: foreground ``color`` to soften, ``alpha`` for how transparent it
-     should feel, and ``background`` color to mix toward when you cannot rely on
-     real transparency (e.g., PDF export).
-   - Returns: RGB tuple mixed against ``background``.
+
+- Parameters:
+  - ``color``: foreground color to soften.
+  - ``alpha``: perceived transparency level.
+  - ``background``: color to mix toward when true transparency is unavailable (e.g., PDF export).
+- Returns:
+  - RGB tuple mixed against ``background``.
 
 ``classify_colormap(cmap)``
-   - Parameters: colormap instance or name.
-   - Returns: string label: ``"Categorical"``, ``"Sequential Single-Hue"``,
-     ``"Sequential Multi-Hue"``, ``"Diverging"``, or ``"Cyclical"``.
+
+- Parameters:
+  - ``cmap``: colormap instance or name.
+- Returns:
+  - string label: ``"Categorical"``, ``"Sequential Single-Hue"``,
+    ``"Sequential Multi-Hue"``, ``"Diverging"``, or ``"Cyclical"``.
 
 Example
 

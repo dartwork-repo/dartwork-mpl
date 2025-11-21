@@ -23,7 +23,7 @@ Advanced Line Plots
 
 Compare styling tricks for lines (bands, smoothing, markers) so you can pick a publication-ready look for noisy series.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-133
+.. GENERATED FROM PYTHON SOURCE LINES 7-129
 
 
 
@@ -82,8 +82,7 @@ Compare styling tricks for lines (bands, smoothing, markers) so you can pick a p
     ax1.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax1.set_title('Lines with Markers', fontsize=dm.fs(1))
     ax1.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.1),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -103,8 +102,7 @@ Compare styling tricks for lines (bands, smoothing, markers) so you can pick a p
     ax2.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax2.set_title('Line Styles', fontsize=dm.fs(1))
     ax2.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.1),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -125,8 +123,7 @@ Compare styling tricks for lines (bands, smoothing, markers) so you can pick a p
     ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax3.set_title('Error Band', fontsize=dm.fs(1))
     ax3.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.1),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -149,8 +146,7 @@ Compare styling tricks for lines (bands, smoothing, markers) so you can pick a p
     ax4.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax4.set_title('Smoothed & Stepped Signal', fontsize=dm.fs(1))
     ax4.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.1),
+        loc='best',
         fontsize=dm.fs(-1),
         ncol=2,
         frameon=False,
@@ -168,7 +164,7 @@ Compare styling tricks for lines (bands, smoothing, markers) so you can pick a p
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.848 seconds)
+   **Total running time of the script:** (0 minutes 0.850 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_line_advanced.py:

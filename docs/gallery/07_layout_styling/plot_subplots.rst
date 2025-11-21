@@ -72,7 +72,7 @@ Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spac
     ax1.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax1.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax1.set_title('Subplot 1', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax1.set_xticks([0, 2, 4, 6, 8, 10])
     ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
 
@@ -82,7 +82,7 @@ Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spac
     ax2.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax2.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax2.set_title('Subplot 2', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax2.set_xticks([0, 2, 4, 6, 8, 10])
     ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
@@ -92,7 +92,7 @@ Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spac
     ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax3.set_title('Subplot 3', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax3.set_xticks([0, 2, 4, 6, 8, 10])
     ax3.set_yticks([-0.5, 0, 0.5])
 
@@ -102,7 +102,7 @@ Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spac
     ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax4.set_ylabel('Amplitude', fontsize=dm.fs(0))
     ax4.set_title('Subplot 4', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax4.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax4.set_xticks([0, 2, 4, 6, 8, 10])
     ax4.set_yticks([-1, -0.5, 0, 0.5, 1])
 
@@ -115,7 +115,7 @@ Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spac
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.801 seconds)
+   **Total running time of the script:** (0 minutes 0.791 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_subplots.py:

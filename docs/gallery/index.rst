@@ -381,23 +381,6 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Show positive and negative swings around a midpoint with color cues for direction.">
-
-.. only:: html
-
-  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_diverging_bar_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_03_bar_charts_plot_diverging_bar.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Diverging Bar Charts</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.">
 
 .. only:: html
@@ -410,6 +393,23 @@ for categorical data visualization and comparisons.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Lollipop Charts</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Show positive and negative swings around a midpoint with color cues for direction.">
+
+.. only:: html
+
+  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_diverging_bar_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_03_bar_charts_plot_diverging_bar.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Diverging Bar Charts</div>
     </div>
 
 
@@ -815,6 +815,23 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Show a single, clear Sankey diagram that illustrates how inputs split into several outputs.">
+
+.. only:: html
+
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_sankey_simple_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sankey Diagram</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Combine 3D surfaces and scatters with consistent lighting and projection choices for presentations.">
 
 .. only:: html
@@ -849,18 +866,18 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Show a clean, proportional treemap for a single hierarchy using a slice-and-dice layout.">
 
 .. only:: html
 
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_polar_thumb.png
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_treemap_simple_thumb.png
     :alt:
 
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_polar.py`
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Polar Plots</div>
+      <div class="sphx-glr-thumbnail-title">Treemap</div>
     </div>
 
 
@@ -900,6 +917,23 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.">
+
+.. only:: html
+
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_polar_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_polar.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Polar Plots</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Build pies, donuts, and nested rings with centered labels and contrast so proportions stay legible.">
 
 .. only:: html
@@ -917,23 +951,6 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Lay out treemaps with nested rectangles and inline labels for hierarchical shares.">
-
-.. only:: html
-
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_treemap_simple_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Hierarchical Visualization</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Layer confidence bands, stacked areas, and smooth fills to emphasize ranges instead of lines.">
 
 .. only:: html
@@ -946,23 +963,6 @@ pie charts, and other unique plot types for specific use cases.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Filled Plots</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Draw compact Sankey diagrams to explain flows between stages with tidy labels.">
-
-.. only:: html
-
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_sankey_simple_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Flow Diagrams</div>
     </div>
 
 
@@ -1056,6 +1056,23 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Two concise examples: a zoomed transient in a time series, and a cluster detail inset for a scatter plot.">
+
+.. only:: html
+
+  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_inset_axes_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Inset Axes</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing.">
 
 .. only:: html
@@ -1068,23 +1085,6 @@ and advanced styling techniques for publication-quality figures.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Subplots Layout</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.">
-
-.. only:: html
-
-  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_legend_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_07_layout_styling_plot_legend.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Legends</div>
     </div>
 
 
@@ -1107,18 +1107,18 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Add inset zooms and overview boxes with connectors that keep context clear.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.">
 
 .. only:: html
 
-  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_inset_axes_thumb.png
+  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_legend_thumb.png
     :alt:
 
-  :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py`
+  :ref:`sphx_glr_gallery_07_layout_styling_plot_legend.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Inset Axes</div>
+      <div class="sphx-glr-thumbnail-title">Legends</div>
     </div>
 
 
@@ -1229,23 +1229,6 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Build sequential, diverging, and discrete colormaps and compare them side by side.">
-
-.. only:: html
-
-  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_custom_colormap_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_08_colors_images_plot_custom_colormap.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Custom Colormaps</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Render images with different colormaps, interpolation, outlines, and grid overlays for quick QA.">
 
 .. only:: html
@@ -1258,6 +1241,23 @@ techniques showcasing dartwork-mpl's color system.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Image Display</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Build sequential, diverging, and discrete colormaps and compare them side by side.">
+
+.. only:: html
+
+  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_custom_colormap_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_08_colors_images_plot_custom_colormap.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Custom Colormaps</div>
     </div>
 
 

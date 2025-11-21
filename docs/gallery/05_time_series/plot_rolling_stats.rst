@@ -68,7 +68,7 @@ Track rolling means and variances with window markers to show stability and vola
     ax1.set_xlabel('Time', fontsize=dm.fs(0))
     ax1.set_ylabel('Value', fontsize=dm.fs(0))
     ax1.set_title('Moving Averages', fontsize=dm.fs(1))
-    ax1.legend(loc='upper left', fontsize=dm.fs(-2), ncol=2)
+    ax1.legend(loc='best', fontsize=dm.fs(-2), ncol=2)
 
     # Panel B: Rolling standard deviation
     ax2 = fig.add_subplot(gs[0, 1])
@@ -90,7 +90,7 @@ Track rolling means and variances with window markers to show stability and vola
     ax3.set_xlabel('Time', fontsize=dm.fs(0))
     ax3.set_ylabel('Value', fontsize=dm.fs(0))
     ax3.set_title('Exponential Moving Average', fontsize=dm.fs(1))
-    ax3.legend(loc='upper left', fontsize=dm.fs(-1))
+    ax3.legend(loc='best', fontsize=dm.fs(-1))
 
     # Panel D: Bollinger bands
     ax4 = fig.add_subplot(gs[1, 1])
@@ -104,7 +104,7 @@ Track rolling means and variances with window markers to show stability and vola
     ax4.set_xlabel('Time', fontsize=dm.fs(0))
     ax4.set_ylabel('Value', fontsize=dm.fs(0))
     ax4.set_title('Bollinger Bands', fontsize=dm.fs(1))
-    ax4.legend(loc='upper left', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -112,7 +112,7 @@ Track rolling means and variances with window markers to show stability and vola
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.177 seconds)
+   **Total running time of the script:** (0 minutes 1.150 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_rolling_stats.py:

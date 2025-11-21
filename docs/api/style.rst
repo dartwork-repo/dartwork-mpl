@@ -9,33 +9,46 @@ to pick a single style, layer several, or inspect what a preset changes before
 you commit it to a figure.
 
 ``use_style(name="dmpl")``
-   Loads one style file from ``asset/mplstyle`` after resetting ``rcParams``.
-   - Parameters: ``name`` is the style stem (e.g., ``"dmpl_light"``,
-     ``"font-presentation"``). Use a single name for a clean slate.
-   - Returns: ``None`` (updates matplotlib state).
+Loads one style file from ``asset/mplstyle`` after resetting ``rcParams``.
+
+- Parameters:
+  - ``name``: style stem (e.g., ``"dmpl_light"``, ``"font-presentation"``).
+- Returns:
+  - ``None``; updates matplotlib state.
 
 ``Style.use(style_names)``
-   Stack multiple style files in order.
-   - Parameters: ``style_names`` list/tuple of style stems; later styles override
-     earlier ones.
-   - Returns: ``None``.
+Stack multiple style files in order.
+
+- Parameters:
+  - ``style_names``: list/tuple of style stems; later styles override earlier ones.
+- Returns:
+  - ``None``.
 
 ``Style.use_preset(preset_name)``
-   Applies a preset key from ``presets.json`` (e.g., ``"scientific"``,
-   ``"investment"``, ``"presentation"``, ``"korean.presentation"``).
-   - Parameters: ``preset_name`` string looked up in the presets mapping.
-   - Returns: ``None``.
+Applies a preset key from ``presets.json`` (e.g., ``"scientific"``,
+``"investment"``, ``"presentation"``, ``"korean.presentation"``).
+
+- Parameters:
+  - ``preset_name``: string looked up in the presets mapping.
+- Returns:
+  - ``None``.
 
 ``list_styles()``
-   Lists every ``*.mplstyle`` file bundled with the package.
-   - Parameters: none.
-   - Returns: ``list[str]`` sorted by filename.
+Lists every ``*.mplstyle`` file bundled with the package.
+
+- Parameters:
+  - none.
+- Returns:
+  - ``list[str]`` sorted by filename.
 
 ``load_style_dict(name)``
-   Reads a single style file into a ``dict`` so you can inspect or tweak rcParams
-   programmatically.
-   - Parameters: ``name`` style stem.
-   - Returns: ``dict`` mapping rcParam keys to values.
+Reads a single style file into a ``dict`` so you can inspect or tweak rcParams
+programmatically.
+
+- Parameters:
+  - ``name``: style stem.
+- Returns:
+  - ``dict`` mapping rcParam keys to values.
 
 Typical usage
 

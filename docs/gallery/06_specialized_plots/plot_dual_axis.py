@@ -42,7 +42,7 @@ ax1.set_title('Dual Axis Example', fontsize=dm.fs(1))
 # Combine legends (Optional)
 # lines1, labels1 = ax1.get_legend_handles_labels()
 # lines2, labels2 = ax2.get_legend_handles_labels()
-# ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
+# ax1.legend(lines1 + lines2, labels1 + labels2, loc='best')
 
 dm.simple_layout(fig, gs=gs)
 plt.show()

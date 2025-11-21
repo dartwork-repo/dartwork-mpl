@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="../../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Subplots Layout - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Legends" href="plot_legend.html" /><link rel="prev" title="Mixed Subplot Types" href="plot_mixed_subplots.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Subplots Layout - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Custom Ticks" href="plot_custom_ticks.html" /><link rel="prev" title="Inset Axes" href="plot_inset_axes.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2f450e35" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=196abb11" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -98,8 +98,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="../03_bar_charts/index.html">Bar Charts</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_bar_chart.html">Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_horizontal_bar.html">Horizontal Bar Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_diverging_bar.html">Diverging Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_lollipop.html">Lollipop Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_diverging_bar.html">Diverging Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_waterfall.html">Waterfall Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_stacked_bar.html">Stacked Bar Chart</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_grouped_bar.html">Grouped Bar Chart</a></li>
@@ -129,15 +129,15 @@ data-aria-dark="Switch to auto color mode">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../06_specialized_plots/index.html">Specialized Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Sankey Diagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_3d.html">3D Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_dual_axis.html">Dual Axis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_polar.html">Polar Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Treemap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_ridgeline.html">Ridgeline Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_radar_chart.html">Radar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_polar.html">Polar Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_pie.html">Pie Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_filled.html">Filled Plots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Layout &amp; Styling</a><ul class="current">
@@ -145,10 +145,10 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="plot_layout.html">Layout Optimization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_complex_grid.html">Complex Grid Layouts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_mixed_subplots.html">Mixed Subplot Types</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Subplots Layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plot_legend.html">Legends</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plot_custom_ticks.html">Custom Ticks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_inset_axes.html">Inset Axes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Subplots Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_custom_ticks.html">Custom Ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_legend.html">Legends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_annotations.html">Annotations</a></li>
 </ul>
 </li>
@@ -157,8 +157,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_cycles.html">Color Cycles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_diverging_sequential.html">Diverging and Sequential Colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_perception.html">Color Perception</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_image.html">Image Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
 </ul>
 </li>
 </ul>
@@ -261,7 +261,7 @@ to download the full example code.</p>
 </span><span data-line="31"><span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="32"><span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="33"><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Subplot 1&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="34"><span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span data-line="34"><span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span data-line="35"><span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </span><span data-line="36"><span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </span><span data-line="37">
@@ -271,7 +271,7 @@ to download the full example code.</p>
 </span><span data-line="41"><span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="42"><span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="43"><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Subplot 2&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="44"><span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span data-line="44"><span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span data-line="45"><span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </span><span data-line="46"><span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </span><span data-line="47">
@@ -281,7 +281,7 @@ to download the full example code.</p>
 </span><span data-line="51"><span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="52"><span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="53"><span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Subplot 3&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="54"><span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span data-line="54"><span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span data-line="55"><span class="n">ax3</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </span><span data-line="56"><span class="n">ax3</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
 </span><span data-line="57">
@@ -291,7 +291,7 @@ to download the full example code.</p>
 </span><span data-line="61"><span class="n">ax4</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="62"><span class="n">ax4</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </span><span data-line="63"><span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Subplot 4&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="64"><span class="n">ax4</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span data-line="64"><span class="n">ax4</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span data-line="65"><span class="n">ax4</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </span><span data-line="66"><span class="n">ax4</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </span><span data-line="67">
@@ -302,7 +302,7 @@ to download the full example code.</p>
 </span><span data-line="72"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.801 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.791 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-07-layout-styling-plot-subplots-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/1f5b70a992e7f959b3470547c6acfab6/plot_subplots.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_subplots.ipynb</span></code></a></p>
@@ -323,16 +323,16 @@ to download the full example code.</p>
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="plot_mixed_subplots.html">
+    <a href="plot_inset_axes.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>Previous</span><div class="title">Mixed Subplot Types</div></div>
+        <span>Previous</span><div class="title">Inset Axes</div></div>
     </a>
   </div><div class="navigation-next">
-    <a href="plot_legend.html">
+    <a href="plot_custom_ticks.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">Legends</div>
+        <div class="title">Custom Ticks</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>

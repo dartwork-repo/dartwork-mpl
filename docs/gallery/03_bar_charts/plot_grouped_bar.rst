@@ -81,7 +81,7 @@ Lay out grouped bars with shared baselines, tuned spacing, and legends that scal
     ax1.set_title('Basic Grouped Bars', fontsize=dm.fs(1))
     ax1.set_xticks(x_pos)
     ax1.set_xticklabels(categories, fontsize=dm.fs(-1))
-    ax1.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax1.set_yticks([0, 10, 20, 30])
 
     # Panel B: Grouped bars with value labels
@@ -102,7 +102,7 @@ Lay out grouped bars with shared baselines, tuned spacing, and legends that scal
     ax2.set_title('With Value Labels', fontsize=dm.fs(1))
     ax2.set_xticks(x_pos)
     ax2.set_xticklabels(categories, fontsize=dm.fs(-1))
-    ax2.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax2.set_yticks([0, 10, 20, 30])
 
     # Panel C: Custom spacing
@@ -125,7 +125,7 @@ Lay out grouped bars with shared baselines, tuned spacing, and legends that scal
     ax3.set_title('Custom Spacing', fontsize=dm.fs(1))
     ax3.set_xticks(x_pos_custom)
     ax3.set_xticklabels(categories, fontsize=dm.fs(-1))
-    ax3.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax3.set_yticks([0, 10, 20, 30])
 
     # Panel D: Grouped bars with error bars
@@ -149,7 +149,7 @@ Lay out grouped bars with shared baselines, tuned spacing, and legends that scal
     ax4.set_title('With Error Bars', fontsize=dm.fs(1))
     ax4.set_xticks(x_pos)
     ax4.set_xticklabels(categories, fontsize=dm.fs(-1))
-    ax4.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax4.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax4.set_yticks([0, 10, 20, 30, 40])
 
     # Optimize layout
@@ -162,7 +162,7 @@ Lay out grouped bars with shared baselines, tuned spacing, and legends that scal
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.872 seconds)
+   **Total running time of the script:** (0 minutes 0.912 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_grouped_bar.py:

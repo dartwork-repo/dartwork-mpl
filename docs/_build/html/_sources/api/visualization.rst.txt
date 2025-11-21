@@ -6,21 +6,28 @@ review palettes, pick colormaps by category, or validate fonts before building
 plots. Parameters and return values are spelled out so you can skim and run.
 
 ``plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.5)``
-   - Parameters: optional ``cmap_list`` of names/objects (defaults to all
-     non-reversed maps); ``ncols`` grid width; ``group_by_type`` to split into
-     Sequential/Diverging/etc. figures; ``group_spacing`` extra padding when
-     showing a single grid.
-   - Returns: ``(fig, axs)`` from the last rendered figure.
+   - Parameters:
+     - ``cmap_list``: optional names/objects (defaults to all non-reversed maps).
+     - ``ncols``: grid width.
+     - ``group_by_type``: split into Sequential/Diverging/etc. figures when ``True``.
+     - ``group_spacing``: extra padding when showing a single grid.
+   - Returns:
+     - ``(fig, axs)`` from the last rendered figure.
 
 ``plot_colors(ncols=5, sort_colors=True)``
-   - Parameters: grid ``ncols``; ``sort_colors`` to order by hue/weight within
-     each library.
-   - Returns: list of ``matplotlib.figure.Figure`` objects (one per library).
+   - Parameters:
+     - ``ncols``: number of columns per grid.
+     - ``sort_colors``: order by hue/weight within each library.
+   - Returns:
+     - list of ``matplotlib.figure.Figure`` objects (one per library).
 
 ``plot_fonts(font_dir=None, ncols=3, font_size=11)``
-   - Parameters: optional font directory, grid ``ncols``, and sample ``font_size``.
-   - Returns: ``matplotlib.figure.Figure`` previewing the bundled or provided
-     fonts.
+   - Parameters:
+     - ``font_dir``: optional font directory.
+     - ``ncols``: number of columns in the preview grid.
+     - ``font_size``: sample size used in the preview.
+   - Returns:
+     - ``matplotlib.figure.Figure`` previewing the bundled or provided fonts.
 
 Example
 

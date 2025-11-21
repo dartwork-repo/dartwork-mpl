@@ -77,7 +77,7 @@ Draw vertical, horizontal, and log-scale error bars with caps and intervals to r
     ax1.set_xlabel('X value', fontsize=dm.fs(0))
     ax1.set_ylabel('Y value', fontsize=dm.fs(0))
     ax1.set_title('Vertical Error Bars', fontsize=dm.fs(1))
-    ax1.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax1.set_xticks([1, 2, 3, 4, 5])
     ax1.set_yticks([0, 1, 2, 3, 4, 5])
@@ -91,7 +91,7 @@ Draw vertical, horizontal, and log-scale error bars with caps and intervals to r
     ax2.set_xlabel('X value', fontsize=dm.fs(0))
     ax2.set_ylabel('Y value', fontsize=dm.fs(0))
     ax2.set_title('Horizontal Error Bars', fontsize=dm.fs(1))
-    ax2.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax2.set_xticks([1, 2, 3, 4, 5])
     ax2.set_yticks([0, 1, 2, 3, 4, 5])
@@ -106,7 +106,7 @@ Draw vertical, horizontal, and log-scale error bars with caps and intervals to r
     ax3.set_xlabel('X value', fontsize=dm.fs(0))
     ax3.set_ylabel('Y value', fontsize=dm.fs(0))
     ax3.set_title('Asymmetric Error Bars', fontsize=dm.fs(1))
-    ax3.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax3.set_xticks([1, 2, 3, 4, 5])
     ax3.set_yticks([0, 1, 2, 3, 4, 5])
@@ -124,7 +124,7 @@ Draw vertical, horizontal, and log-scale error bars with caps and intervals to r
     ax4.set_xlabel('Log-scaled X', fontsize=dm.fs(0))
     ax4.set_ylabel('Y value', fontsize=dm.fs(0))
     ax4.set_title('Horizontal Error (log scale)', fontsize=dm.fs(1))
-    ax4.legend(loc='upper left', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.set_yticks([1, 2, 3, 4])
 
     # Optimize layout

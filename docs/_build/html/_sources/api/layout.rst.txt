@@ -14,21 +14,33 @@ box; ``make_offset`` nudges text/legends in point units; and
      - ``bbox``: figure-relative target box; shrink to reserve space for headers.
      - ``importance_weights``: emphasize specific sides during optimization.
      - ``bound_margin``: how far each side may move away from ``bbox``.
-     - ``gtol`` / ``verbose``: optimizer tolerance and logging toggle.
+     - ``gtol``: optimizer tolerance.
+     - ``verbose``: toggle optimizer logging.
      - ``use_all_axes``: ``True`` considers every axes; ``False`` limits to ``gs``.
-   - Returns: ``scipy.optimize.OptimizeResult``; layout changes are applied in-place.
+   - Returns:
+     - ``scipy.optimize.OptimizeResult``; layout changes are applied in-place.
 
 ``make_offset(x, y, fig)``
-   - Parameters: ``x``/``y`` offsets in points; ``fig`` supplies DPI scaling.
-   - Returns: ``matplotlib.transforms.ScaledTranslation`` to add to an axes transform.
+   - Parameters:
+     - ``x``: horizontal offset in points.
+     - ``y``: vertical offset in points.
+     - ``fig``: figure providing DPI scaling.
+   - Returns:
+     - ``matplotlib.transforms.ScaledTranslation`` to add to an axes transform.
 
 ``set_decimal(ax, xn=None, yn=None)``
-   - Parameters: ``ax`` plus desired decimal places for x/y ticks. Leave ``None`` to skip an axis.
-   - Returns: ``None`` (tick labels are replaced).
+   - Parameters:
+     - ``ax``: axes object to update.
+     - ``xn``: decimal places for x ticks; ``None`` leaves them unchanged.
+     - ``yn``: decimal places for y ticks; ``None`` leaves them unchanged.
+   - Returns:
+     - ``None``; tick labels are replaced.
 
 ``get_bounding_box(boxes)``
-   - Parameters: iterable of boxes with ``p0``, ``width``, ``height`` (e.g., from ``get_tightbbox``).
-   - Returns: tuple ``(min_x, min_y, width, height)`` covering them all.
+   - Parameters:
+     - ``boxes``: iterable with ``p0``, ``width``, ``height`` (e.g., from ``get_tightbbox``).
+   - Returns:
+     - tuple ``(min_x, min_y, width, height)`` covering them all.
 
 Example
 

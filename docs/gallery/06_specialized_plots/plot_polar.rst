@@ -23,7 +23,7 @@ Polar Plots
 
 Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-82
+.. GENERATED FROM PYTHON SOURCE LINES 7-94
 
 
 
@@ -53,16 +53,24 @@ Create polar lines, scatters, and radial bars tuned for angle grids and clear ra
     r2 = np.random.rand(20) * 5
     theta2 = np.linspace(0, 2 * np.pi, 20, endpoint=False)
 
-    # Create figure (square-ish): 16 cm wide, 12 cm tall
-    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(13)), dpi=300)
+    # Create figure (roomier to avoid clipped titles): ~17 cm wide, 14 cm tall
+    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(14)), dpi=300)
 
     # Create GridSpec for 4 subplots with polar projection (2x2)
     gs = fig.add_gridspec(
         nrows=2, ncols=2,
-        left=0.07, right=0.94,
-        top=0.93, bottom=0.10,
-        wspace=0.18, hspace=0.42
+        left=0.07, right=0.95,
+        top=0.96, bottom=0.08,
+        wspace=0.16, hspace=0.34
     )
+
+    theta_labels_deg = np.arange(0, 360, 45)
+
+
+    def apply_theta_labels(ax, frac=1.04, pad=2):
+        """Place all theta tick labels at a consistent distance from the rim."""
+        ax.set_thetagrids(theta_labels_deg)
+        ax.tick_params(axis='x', labelsize=dm.fs(-1), pad=pad)
 
     # Panel A: Basic polar plot
     ax1 = fig.add_subplot(gs[0, 0], projection='polar')
@@ -73,6 +81,7 @@ Create polar lines, scatters, and radial bars tuned for angle grids and clear ra
     ax1.set_theta_zero_location('N')
     ax1.set_theta_direction(-1)
     ax1.grid(True, linestyle='--', linewidth=0.3, alpha=0.5)
+    apply_theta_labels(ax1)
 
     # Panel B: Polar scatter plot
     ax2 = fig.add_subplot(gs[0, 1], projection='polar')
@@ -82,6 +91,7 @@ Create polar lines, scatters, and radial bars tuned for angle grids and clear ra
     ax2.set_theta_zero_location('N')
     ax2.set_theta_direction(-1)
     ax2.grid(True, linestyle='--', linewidth=0.3, alpha=0.5)
+    apply_theta_labels(ax2)
 
     # Panel C: Polar bar chart
     ax3 = fig.add_subplot(gs[1, 0], projection='polar')
@@ -93,6 +103,7 @@ Create polar lines, scatters, and radial bars tuned for angle grids and clear ra
     ax3.set_theta_zero_location('N')
     ax3.set_theta_direction(-1)
     ax3.grid(True, linestyle='--', linewidth=0.3, alpha=0.5)
+    apply_theta_labels(ax3)
 
     # Panel D: Multi-group radial comparison
     ax4 = fig.add_subplot(gs[1, 1], projection='polar')
@@ -103,10 +114,11 @@ Create polar lines, scatters, and radial bars tuned for angle grids and clear ra
     ax4.plot(theta_groups, group_b, color='dm.orange5', lw=1.1, marker='s', markersize=4, label='Group B')
     ax4.fill(theta_groups, group_a, color='dm.purple2', alpha=0.25)
     ax4.set_title('Radial Multi-Series', fontsize=dm.fs(1), pad=20)
-    ax4.legend(loc='lower left', bbox_to_anchor=(1.05, 0.1), fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.set_theta_zero_location('N')
     ax4.set_theta_direction(-1)
     ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.5)
+    apply_theta_labels(ax4)
 
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
@@ -117,7 +129,7 @@ Create polar lines, scatters, and radial bars tuned for angle grids and clear ra
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.533 seconds)
+   **Total running time of the script:** (0 minutes 1.285 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_polar.py:

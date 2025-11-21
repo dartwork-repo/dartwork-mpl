@@ -86,6 +86,23 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Two concise examples: a zoomed transient in a time series, and a cluster detail inset for a scatter plot.">
+
+.. only:: html
+
+  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_inset_axes_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Inset Axes</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing.">
 
 .. only:: html
@@ -98,23 +115,6 @@ and advanced styling techniques for publication-quality figures.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Subplots Layout</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.">
-
-.. only:: html
-
-  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_legend_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_07_layout_styling_plot_legend.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Legends</div>
     </div>
 
 
@@ -137,18 +137,18 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Add inset zooms and overview boxes with connectors that keep context clear.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.">
 
 .. only:: html
 
-  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_inset_axes_thumb.png
+  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_legend_thumb.png
     :alt:
 
-  :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py`
+  :ref:`sphx_glr_gallery_07_layout_styling_plot_legend.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Inset Axes</div>
+      <div class="sphx-glr-thumbnail-title">Legends</div>
     </div>
 
 
@@ -183,9 +183,9 @@ and advanced styling techniques for publication-quality figures.
    /gallery/07_layout_styling/plot_layout
    /gallery/07_layout_styling/plot_complex_grid
    /gallery/07_layout_styling/plot_mixed_subplots
-   /gallery/07_layout_styling/plot_subplots
-   /gallery/07_layout_styling/plot_legend
-   /gallery/07_layout_styling/plot_custom_ticks
    /gallery/07_layout_styling/plot_inset_axes
+   /gallery/07_layout_styling/plot_subplots
+   /gallery/07_layout_styling/plot_custom_ticks
+   /gallery/07_layout_styling/plot_legend
    /gallery/07_layout_styling/plot_annotations
 

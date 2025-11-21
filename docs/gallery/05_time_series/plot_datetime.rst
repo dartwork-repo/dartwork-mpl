@@ -80,7 +80,7 @@ Use date-aware axes with rolling trends, spans, and multiple granularities on on
     ax1.set_xlabel('Date', fontsize=dm.fs(0))
     ax1.set_ylabel('Value', fontsize=dm.fs(0))
     ax1.set_title('Basic Time Series', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax1.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
     # Panel B: Multiple time series
@@ -94,7 +94,7 @@ Use date-aware axes with rolling trends, spans, and multiple granularities on on
     ax2.set_xlabel('Date', fontsize=dm.fs(0))
     ax2.set_ylabel('Value', fontsize=dm.fs(0))
     ax2.set_title('Multiple Time Series', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax2.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
     # Panel C: Custom date ticks
@@ -107,7 +107,7 @@ Use date-aware axes with rolling trends, spans, and multiple granularities on on
     ax3.set_xlabel('Date', fontsize=dm.fs(0))
     ax3.set_ylabel('Value', fontsize=dm.fs(0))
     ax3.set_title('Custom Date Format', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax3.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
     # Panel D: Rolling mean + span highlighting
@@ -120,7 +120,7 @@ Use date-aware axes with rolling trends, spans, and multiple granularities on on
     ax4.set_xlabel('Date', fontsize=dm.fs(0))
     ax4.set_ylabel('Smoothed Value', fontsize=dm.fs(0))
     ax4.set_title('Rolling Trend & Highlight', fontsize=dm.fs(1))
-    ax4.legend(loc='upper left', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
     ax4.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
     ax4.tick_params(axis='x', rotation=30)
@@ -135,7 +135,7 @@ Use date-aware axes with rolling trends, spans, and multiple granularities on on
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.301 seconds)
+   **Total running time of the script:** (0 minutes 1.300 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_datetime.py:

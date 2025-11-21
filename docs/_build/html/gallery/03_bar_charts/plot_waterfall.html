@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="../../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Waterfall Charts - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Stacked Bar Chart" href="plot_stacked_bar.html" /><link rel="prev" title="Lollipop Charts" href="plot_lollipop.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Waterfall Charts - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Stacked Bar Chart" href="plot_stacked_bar.html" /><link rel="prev" title="Diverging Bar Charts" href="plot_diverging_bar.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2f450e35" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=196abb11" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -98,8 +98,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Bar Charts</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="plot_bar_chart.html">Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_horizontal_bar.html">Horizontal Bar Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plot_diverging_bar.html">Diverging Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_lollipop.html">Lollipop Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_diverging_bar.html">Diverging Bar Charts</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Waterfall Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_stacked_bar.html">Stacked Bar Chart</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_grouped_bar.html">Grouped Bar Chart</a></li>
@@ -129,15 +129,15 @@ data-aria-dark="Switch to auto color mode">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../06_specialized_plots/index.html">Specialized Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Sankey Diagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_3d.html">3D Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_dual_axis.html">Dual Axis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_polar.html">Polar Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Treemap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_ridgeline.html">Ridgeline Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_radar_chart.html">Radar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_polar.html">Polar Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_pie.html">Pie Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_filled.html">Filled Plots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../07_layout_styling/index.html">Layout &amp; Styling</a><ul>
@@ -145,10 +145,10 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_layout.html">Layout Optimization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_complex_grid.html">Complex Grid Layouts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_mixed_subplots.html">Mixed Subplot Types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_subplots.html">Subplots Layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_legend.html">Legends</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_custom_ticks.html">Custom Ticks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_inset_axes.html">Inset Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_subplots.html">Subplots Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_custom_ticks.html">Custom Ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_legend.html">Legends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_annotations.html">Annotations</a></li>
 </ul>
 </li>
@@ -157,8 +157,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_cycles.html">Color Cycles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_diverging_sequential.html">Diverging and Sequential Colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_perception.html">Color Perception</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_image.html">Image Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
 </ul>
 </li>
 </ul>
@@ -355,10 +355,10 @@ to download the full example code.</p>
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="plot_lollipop.html">
+    <a href="plot_diverging_bar.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>Previous</span><div class="title">Lollipop Charts</div></div>
+        <span>Previous</span><div class="title">Diverging Bar Charts</div></div>
     </a>
   </div><div class="navigation-next">
     <a href="plot_stacked_bar.html">

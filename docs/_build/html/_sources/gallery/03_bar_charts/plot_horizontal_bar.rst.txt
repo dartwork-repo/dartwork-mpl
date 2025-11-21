@@ -99,7 +99,7 @@ Rotate to horizontal bars, ranking views, and long labels that would otherwise c
     ax3.set_yticklabels(categories, fontsize=dm.fs(-1))
     ax3.set_xlabel('Value', fontsize=dm.fs(0))
     ax3.set_title('Grouped Horizontal Bars', fontsize=dm.fs(1))
-    ax3.legend(loc='lower right', fontsize=dm.fs(-1))
+    ax3.legend(loc='best', fontsize=dm.fs(-1))
     ax3.set_xticks([0, 20, 40, 60])
 
     # Panel D: Horizontal bar with value labels
@@ -124,7 +124,7 @@ Rotate to horizontal bars, ranking views, and long labels that would otherwise c
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.739 seconds)
+   **Total running time of the script:** (0 minutes 0.715 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_horizontal_bar.py:

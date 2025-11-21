@@ -86,7 +86,7 @@ Stack categories vertically or horizontally, switch to 100% shares, and add cumu
     ax1.set_title('Vertical Stacked Bars', fontsize=dm.fs(1))
     ax1.set_xticks(x_pos)
     ax1.set_xticklabels(categories, fontsize=dm.fs(-1))
-    ax1.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax1.set_yticks([0, 20, 40, 60])
 
     # Panel B: Horizontal stacked bars
@@ -105,7 +105,7 @@ Stack categories vertically or horizontally, switch to 100% shares, and add cumu
     ax2.set_title('Horizontal Stacked Bars', fontsize=dm.fs(1))
     ax2.set_yticks(y_pos)
     ax2.set_yticklabels(categories, fontsize=dm.fs(-1))
-    ax2.legend(loc='lower right', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax2.set_xticks([0, 20, 40, 60])
 
     # Panel C: Percentage stacked bars
@@ -122,7 +122,7 @@ Stack categories vertically or horizontally, switch to 100% shares, and add cumu
     ax3.set_title('Percentage Stacked Bars', fontsize=dm.fs(1))
     ax3.set_xticks(x_pos)
     ax3.set_xticklabels(categories, fontsize=dm.fs(-1))
-    ax3.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax3.set_yticks([0, 25, 50, 75, 100])
     ax3.set_ylim(0, 100)
 
@@ -143,7 +143,7 @@ Stack categories vertically or horizontally, switch to 100% shares, and add cumu
         ax4.text(bar.get_x() + bar.get_width() / 2, height + 1, f'{height:.0f}',
                  ha='center', va='bottom', fontsize=dm.fs(-2))
     ax4.set_ylim(0, max(total_values) * 1.2)
-    ax4.legend(fontsize=dm.fs(-1), loc='upper left')
+    ax4.legend(fontsize=dm.fs(-1), loc='best')
 
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
@@ -154,7 +154,7 @@ Stack categories vertically or horizontally, switch to 100% shares, and add cumu
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.861 seconds)
+   **Total running time of the script:** (0 minutes 0.858 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_stacked_bar.py:

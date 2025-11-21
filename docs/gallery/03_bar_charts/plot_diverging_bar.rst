@@ -23,7 +23,7 @@ Diverging Bar Charts
 
 Show positive and negative swings around a midpoint with color cues for direction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-101
+.. GENERATED FROM PYTHON SOURCE LINES 7-105
 
 
 
@@ -70,11 +70,12 @@ Show positive and negative swings around a midpoint with color cues for directio
     ax1.barh(y_pos, values, color=colors, alpha=0.7,
              edgecolor='black', linewidth=0.3)
     ax1.axvline(x=0, color='black', linewidth=0.5)
+    ax1.set_xlim(-30, 30)
     ax1.set_yticks(y_pos)
     ax1.set_yticklabels(categories, fontsize=dm.fs(-1))
     ax1.set_xlabel('Change (%)', fontsize=dm.fs(0))
     ax1.set_title('Basic Diverging Bar', fontsize=dm.fs(1))
-    ax1.set_xticks([-15, 0, 15, 30])
+    ax1.set_xticks([-30, -15, 0, 15, 30])
 
     # Panel B: Vertical diverging bar
     ax2 = fig.add_subplot(gs[0, 1])
@@ -93,6 +94,7 @@ Show positive and negative swings around a midpoint with color cues for directio
     bars = ax3.barh(y_pos, values, color=colors, alpha=0.7,
                     edgecolor='black', linewidth=0.3)
     ax3.axvline(x=0, color='black', linewidth=0.5)
+    ax3.set_xlim(-30, 30)
     # Add value labels
     for i, (bar, val) in enumerate(zip(bars, values)):
         x_pos_label = val + (1 if val > 0 else -1)
@@ -103,7 +105,7 @@ Show positive and negative swings around a midpoint with color cues for directio
     ax3.set_yticklabels(categories, fontsize=dm.fs(-1))
     ax3.set_xlabel('Change (%)', fontsize=dm.fs(0))
     ax3.set_title('With Value Labels', fontsize=dm.fs(1))
-    ax3.set_xticks([-15, 0, 15, 30])
+    ax3.set_xticks([-30, -15, 0, 15, 30])
 
     # Panel D: Satisfaction survey style
     ax4 = fig.add_subplot(gs[1, 1])
@@ -124,8 +126,10 @@ Show positive and negative swings around a midpoint with color cues for directio
     ax4.set_title('Satisfaction Survey', fontsize=dm.fs(1))
     ax4.set_xticks([-50, -25, 0, 25, 50])
     # Add labels for negative and positive sides
-    ax4.text(-48, -0.7, 'Dissatisfied', fontsize=dm.fs(-1), ha='left')
-    ax4.text(48, -0.7, 'Satisfied', fontsize=dm.fs(-1), ha='right')
+    label_y = len(categories) + 0.4
+    ax4.set_ylim(-0.5, label_y + 0.5)
+    ax4.text(-48, label_y, 'Dissatisfied', fontsize=dm.fs(-1), ha='left')
+    ax4.text(48, label_y, 'Satisfied', fontsize=dm.fs(-1), ha='right')
 
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
@@ -136,7 +140,7 @@ Show positive and negative swings around a midpoint with color cues for directio
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.721 seconds)
+   **Total running time of the script:** (0 minutes 0.719 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_diverging_bar.py:

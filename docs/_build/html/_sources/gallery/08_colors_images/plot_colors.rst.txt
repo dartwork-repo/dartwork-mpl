@@ -23,7 +23,7 @@ Colors
 
 Browse dartwork color libraries with labeled swatches you can drop into figures.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-58
+.. GENERATED FROM PYTHON SOURCE LINES 7-57
 
 
 
@@ -80,9 +80,8 @@ Browse dartwork color libraries with labeled swatches you can drop into figures.
     ax.set_ylabel('Y', fontsize=dm.fs(0))
     ax.set_title('dartwork-mpl Color System', fontsize=dm.fs(1))
     ax.legend(
-        ncol=1,
-        loc='center left',
-        bbox_to_anchor=(1.02, 0.5),
+        ncol=2,
+        loc='best',
         frameon=False,
         fontsize=dm.fs(-1),
     )
@@ -93,7 +92,7 @@ Browse dartwork color libraries with labeled swatches you can drop into figures.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.391 seconds)
+   **Total running time of the script:** (0 minutes 0.402 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_colors.py:

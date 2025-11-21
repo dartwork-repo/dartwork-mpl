@@ -33,22 +33,29 @@ explode2 = (0.1, 0, 0, 0)
 
 # Create figure
 # Square layout for even slices
-fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
+fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(12.5)), dpi=300)
 
 # Create GridSpec for 3 subplots
 gs = fig.add_gridspec(
     nrows=2, ncols=2,
-    left=0.07, right=0.93,
-    top=0.93, bottom=0.10,
-    wspace=0.16, hspace=0.38
+    left=0.06, right=0.96,
+    top=0.94, bottom=0.10,
+    wspace=0.12, hspace=0.34
 )
 
 # Panel A: Basic pie chart
 ax1 = fig.add_subplot(gs[0, 0])
 # Explicit parameters: startangle=90, autopct='%1.1f%%', textprops fontsize
-wedges1, texts1, autotexts1 = ax1.pie(sizes1, labels=labels1, colors=colors1,
-                                       autopct='%1.1f%%', startangle=90,
-                                       textprops={'fontsize': dm.fs(-1)})
+wedges1, texts1, autotexts1 = ax1.pie(
+    sizes1,
+    labels=labels1,
+    colors=colors1,
+    autopct='%1.1f%%',
+    startangle=90,
+    labeldistance=1.04,
+    pctdistance=0.72,
+    textprops={'fontsize': dm.fs(-1)},
+)
 # Set autopct text color and size
 for autotext in autotexts1:
     autotext.set_color('white')
@@ -59,10 +66,17 @@ ax1.set_title('Basic Pie Chart', fontsize=dm.fs(1))
 # Panel B: Donut chart (pie with hole)
 ax2 = fig.add_subplot(gs[0, 1])
 # Explicit parameters: startangle=90, autopct='%1.1f%%', wedgeprops for donut
-wedges2, texts2, autotexts2 = ax2.pie(sizes2, labels=labels2, colors=colors2,
-                                       autopct='%1.1f%%', startangle=90,
-                                       textprops={'fontsize': dm.fs(-1)},
-                                       wedgeprops=dict(width=0.5, edgecolor='white', linewidth=0.5))
+wedges2, texts2, autotexts2 = ax2.pie(
+    sizes2,
+    labels=labels2,
+    colors=colors2,
+    autopct='%1.1f%%',
+    startangle=90,
+    labeldistance=1.04,
+    pctdistance=0.72,
+    textprops={'fontsize': dm.fs(-1)},
+    wedgeprops=dict(width=0.5, edgecolor='white', linewidth=0.5),
+)
 # Set autopct text color and size
 for autotext in autotexts2:
     autotext.set_color('white')
@@ -73,10 +87,18 @@ ax2.set_title('Donut Chart', fontsize=dm.fs(1))
 # Panel C: Exploded pie chart
 ax3 = fig.add_subplot(gs[1, 0])
 # Explicit parameters: explode, shadow=True, startangle=90
-wedges3, texts3, autotexts3 = ax3.pie(sizes2, labels=labels2, colors=colors2,
-                                       explode=explode2, shadow=True,
-                                       autopct='%1.1f%%', startangle=90,
-                                       textprops={'fontsize': dm.fs(-1)})
+wedges3, texts3, autotexts3 = ax3.pie(
+    sizes2,
+    labels=labels2,
+    colors=colors2,
+    explode=explode2,
+    shadow=True,
+    autopct='%1.1f%%',
+    startangle=90,
+    labeldistance=1.04,
+    pctdistance=0.72,
+    textprops={'fontsize': dm.fs(-1)},
+)
 # Set autopct text color and size
 for autotext in autotexts3:
     autotext.set_color('white')
@@ -108,8 +130,12 @@ ax4.pie(
 ax4.set_title('Nested Donut Variations', fontsize=dm.fs(1))
 ax4.axis('equal')
 
+# Keep all pies perfectly circular and visible
+for ax in (ax1, ax2, ax3, ax4):
+    ax.set_aspect('equal', adjustable='box')
+
 # Optimize layout
-dm.simple_layout(fig, gs=gs)
+dm.simple_layout(fig, gs=gs, margins=(0.08, 0.08, 0.08, 0.12))
 
 # Show plot
 plt.show()

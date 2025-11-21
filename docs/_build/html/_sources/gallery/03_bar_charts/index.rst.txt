@@ -52,23 +52,6 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Show positive and negative swings around a midpoint with color cues for direction.">
-
-.. only:: html
-
-  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_diverging_bar_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_03_bar_charts_plot_diverging_bar.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Diverging Bar Charts</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.">
 
 .. only:: html
@@ -81,6 +64,23 @@ for categorical data visualization and comparisons.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Lollipop Charts</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Show positive and negative swings around a midpoint with color cues for direction.">
+
+.. only:: html
+
+  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_diverging_bar_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_03_bar_charts_plot_diverging_bar.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Diverging Bar Charts</div>
     </div>
 
 
@@ -147,8 +147,8 @@ for categorical data visualization and comparisons.
 
    /gallery/03_bar_charts/plot_bar_chart
    /gallery/03_bar_charts/plot_horizontal_bar
-   /gallery/03_bar_charts/plot_diverging_bar
    /gallery/03_bar_charts/plot_lollipop
+   /gallery/03_bar_charts/plot_diverging_bar
    /gallery/03_bar_charts/plot_waterfall
    /gallery/03_bar_charts/plot_stacked_bar
    /gallery/03_bar_charts/plot_grouped_bar

@@ -6,6 +6,7 @@ Show a single, clear Sankey diagram that illustrates how inputs split into sever
 """
 
 import matplotlib.pyplot as plt
+from matplotlib.sankey import Sankey
 import dartwork_mpl as dm
 
 # Apply consistent styling
@@ -25,7 +26,7 @@ orientations = [0, 1, -1, 1, -1]
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(16), dm.cm2in(9)), dpi=300)
 
-sankey = plt.sankey(
+sankey = Sankey(
     ax=ax,
     unit='%',
     format='%.0f%%',

@@ -76,7 +76,7 @@ Align two y-axes with matching grids, offsets, and legends to reduce reader conf
     # Combine legends (Optional)
     # lines1, labels1 = ax1.get_legend_handles_labels()
     # lines2, labels2 = ax2.get_legend_handles_labels()
-    # ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
+    # ax1.legend(lines1 + lines2, labels1 + labels2, loc='best')
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -84,7 +84,7 @@ Align two y-axes with matching grids, offsets, and legends to reduce reader conf
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.376 seconds)
+   **Total running time of the script:** (0 minutes 0.366 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_dual_axis.py:

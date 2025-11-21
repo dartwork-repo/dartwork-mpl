@@ -83,7 +83,7 @@ Layer confidence bands, stacked areas, and smooth fills to emphasize ranges inst
     ax1.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax1.set_ylabel('Value', fontsize=dm.fs(0))
     ax1.set_title('Fill Between', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax1.set_xticks([0, 2, 4, 6, 8, 10])
     ax1.set_yticks([0, 1, 2, 3, 4])
@@ -100,7 +100,7 @@ Layer confidence bands, stacked areas, and smooth fills to emphasize ranges inst
     ax2.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax2.set_ylabel('Cumulative Value', fontsize=dm.fs(0))
     ax2.set_title('Stacked Area Plot', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax2.set_xticks([0, 2, 4, 6, 8, 10])
     ax2.set_yticks([0, 1, 2, 3, 4, 5])
@@ -121,7 +121,7 @@ Layer confidence bands, stacked areas, and smooth fills to emphasize ranges inst
     ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax3.set_ylabel('Value', fontsize=dm.fs(0))
     ax3.set_title('Multiple Filled Regions', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax3.set_xticks([0, 2, 4, 6, 8, 10])
     ax3.set_yticks([0, 1, 2, 3, 4])
@@ -137,7 +137,7 @@ Layer confidence bands, stacked areas, and smooth fills to emphasize ranges inst
     ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
     ax4.set_ylabel('Value', fontsize=dm.fs(0))
     ax4.set_title('Layered Bands with Baseline', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax4.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax4.set_xticks([0, 2, 4, 6, 8, 10])
     ax4.set_yticks([1, 2, 3, 4])
 
@@ -150,7 +150,7 @@ Layer confidence bands, stacked areas, and smooth fills to emphasize ranges inst
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.892 seconds)
+   **Total running time of the script:** (0 minutes 0.870 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_filled.py:

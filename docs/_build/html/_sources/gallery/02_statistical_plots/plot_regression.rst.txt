@@ -74,7 +74,7 @@ Visualize linear and polynomial fits plus confidence bands to make model quality
     ax1.set_xlabel('X value', fontsize=dm.fs(0))
     ax1.set_ylabel('Y value', fontsize=dm.fs(0))
     ax1.set_title('Linear Regression', fontsize=dm.fs(1))
-    ax1.legend(loc='upper left', fontsize=dm.fs(-1))
+    ax1.legend(loc='best', fontsize=dm.fs(-1))
     ax1.set_xticks([0, 2, 4, 6, 8, 10])
 
     # Panel B: Polynomial regression
@@ -86,7 +86,7 @@ Visualize linear and polynomial fits plus confidence bands to make model quality
     ax2.set_xlabel('X value', fontsize=dm.fs(0))
     ax2.set_ylabel('Y value', fontsize=dm.fs(0))
     ax2.set_title('Polynomial Regression', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax2.legend(loc='best', fontsize=dm.fs(-1))
     ax2.set_xticks([0, 2, 4, 6, 8, 10])
 
     # Panel C: Residuals plot
@@ -110,7 +110,7 @@ Visualize linear and polynomial fits plus confidence bands to make model quality
     ax4.set_xlabel('X value', fontsize=dm.fs(0))
     ax4.set_ylabel('Y value', fontsize=dm.fs(0))
     ax4.set_title('With Confidence Interval', fontsize=dm.fs(1))
-    ax4.legend(loc='upper left', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.set_xticks([0, 2, 4, 6, 8, 10])
 
     # Optimize layout
@@ -122,7 +122,7 @@ Visualize linear and polynomial fits plus confidence bands to make model quality
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.403 seconds)
+   **Total running time of the script:** (0 minutes 1.769 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_regression.py:

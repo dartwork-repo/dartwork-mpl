@@ -35,7 +35,7 @@ theta_labels_deg = np.arange(0, 360, 45)
 
 def apply_theta_labels(ax, frac=1.04, pad=2):
     """Place all theta tick labels at a consistent distance from the rim."""
-    ax.set_thetagrids(theta_labels_deg, frac=frac)
+    ax.set_thetagrids(theta_labels_deg)
     ax.tick_params(axis='x', labelsize=dm.fs(-1), pad=pad)
 
 # Panel A: Basic polar plot

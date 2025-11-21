@@ -1,4 +1,13 @@
 {
+ "apply_theta_labels": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ],
  "ax1": [
   {
    "is_class": false,
@@ -2133,6 +2142,22 @@
    "name": "GridSpec"
   }
  ],
+ "np.arange": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "arange"
+  }
+ ],
  "np.array": [
   {
    "is_class": false,
@@ -2266,6 +2291,15 @@
   }
  ],
  "theta_groups": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "theta_labels_deg": [
   {
    "is_class": false,
    "is_explicit": false,

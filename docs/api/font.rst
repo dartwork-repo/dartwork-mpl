@@ -7,18 +7,24 @@ helpers for offsetting the global rcParams font size/weight, and the gallery
 utility ``plot_fonts`` previews every installed family.
 
 ``fs(n)``
-   - Parameters: ``n`` number of points to add to ``plt.rcParams["font.size"]``.
-   - Returns: new font size (float) for use in labels/titles.
+   - Parameters:
+     - ``n``: number of points to add to ``plt.rcParams["font.size"]``.
+   - Returns:
+     - new font size (float) for use in labels/titles.
 
 ``fw(n)``
-   - Parameters: ``n`` integer weight step; multiplied by 100 and added to
-     ``plt.rcParams["font.weight"]``.
-   - Returns: integer font weight.
+   - Parameters:
+     - ``n``: integer weight step multiplied by 100 and added to ``plt.rcParams["font.weight"]``.
+   - Returns:
+     - integer font weight.
 
 ``plot_fonts(font_dir=None, ncols=3, font_size=11)``
-   - Parameters: optional ``font_dir`` of ``.ttf`` files (defaults to bundled
-     fonts), grid ``ncols``, and sample ``font_size``.
-   - Returns: ``matplotlib.figure.Figure`` containing the preview grid.
+   - Parameters:
+     - ``font_dir``: optional directory of ``.ttf`` files (defaults to bundled fonts).
+     - ``ncols``: number of columns in the preview grid.
+     - ``font_size``: sample size used in the preview.
+   - Returns:
+     - ``matplotlib.figure.Figure`` containing the preview grid.
 
 Example
 

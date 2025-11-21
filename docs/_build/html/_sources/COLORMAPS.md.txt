@@ -1,8 +1,16 @@
 # Colormaps
 
-High-DPI panels for every colormap bundled with dartwork-mpl, grouped by how
-they should be used. Each gradient is wide enough to show subtle shifts, and
-dartwork-specific maps are tagged directly on the image.
+Single-column, wide gradients for every colormap bundled with dartwork-mpl. The
+panels below stay legible on narrow viewports and match the naming used inside
+matplotlib.
+
+## Use them at a glance
+- Any matplotlib name works (`viridis`, `plasma`, `twilight`, etc.) plus the
+  dartwork-specific set prefixed with `dm.`.
+- Add `_r` to reverse a map (`dm.sunset_r`) when dark-to-light needs flipping.
+- Set `vmin`/`vmax` yourself for stable colorbars across facets or animations.
+- `dm.use()` keeps colorbar labels and ticks consistent with the rest of the
+  style.
 
 ```python
 import dartwork_mpl as dm
@@ -10,74 +18,67 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 dm.use()
-data = np.random.randn(30, 30).cumsum(axis=0)
-plt.imshow(data, cmap="dm.sunset")
-plt.colorbar(label="signal strength")
+data = np.random.randn(50, 50).cumsum(axis=0)
+im = plt.imshow(data, cmap="dm.sunset", vmin=-8, vmax=8)
+cb = plt.colorbar(im, extend="both", shrink=0.9, pad=0.02)
+cb.set_label("normalized signal")
+cb.outline.set_visible(False)
 plt.show()
 ```
 
-## Category overview
+## Gradient panels (single column)
 
-::::{grid} 2
-:gutter: 1.2
-:margin: 0 0 1.2rem 0
+:::{figure} images/colormaps_sequential_single-hue.png
+:alt: Sequential single-hue colormaps shown as wide horizontal gradients
+:width: 100%
 
-:::{grid-item-card} Sequential • Single-Hue
-:class-card: colormap-card
-:img-top: images/colormaps_sequential_single-hue.png
-:img-style: width: 100%
-:img-alt: Sequential single-hue colormaps
-- Monochrome ramps with clean value progression
-- Choose for density, intensity, and anything that only moves “up”
+**Sequential · Single-Hue.** Monochrome ramps with clean value progression for
+density plots, intensity maps, and anything that only moves upward.
 :::
 
-:::{grid-item-card} Sequential • Multi-Hue
-:class-card: colormap-card
-:img-top: images/colormaps_sequential_multi-hue.png
-:img-style: width: 100%
-:img-alt: Sequential multi-hue colormaps
-- Adds hue shifts for extra separation while staying perceptually smooth
-- Use for heatmaps, continuous gradients, and scientific figures
+:::{figure} images/colormaps_sequential_multi-hue.png
+:alt: Sequential multi-hue colormaps shown as wide horizontal gradients
+:width: 100%
+
+**Sequential · Multi-Hue.** Adds subtle hue shifts for extra separation while
+staying perceptually smooth—ideal for heatmaps and continuous fields.
 :::
 
-:::{grid-item-card} Diverging
-:class-card: colormap-card
-:img-top: images/colormaps_diverging.png
-:img-style: width: 100%
-:img-alt: Diverging colormaps
-- Two anchored hues split around a neutral midpoint
-- Best for deltas, anomalies, and any data with a meaningful zero
+:::{figure} images/colormaps_diverging.png
+:alt: Diverging colormaps shown as wide horizontal gradients
+:width: 100%
+
+**Diverging.** Two anchored hues split around a neutral midpoint. Use for deltas
+and anomalies where zero has meaning; set symmetric `vmin`/`vmax` when possible.
 :::
 
-:::{grid-item-card} Cyclical
-:class-card: colormap-card
-:img-top: images/colormaps_cyclical.png
-:img-style: width: 100%
-:img-alt: Cyclical colormaps
-- Start equals end; perfect for angles, phases, or circular domains
-- Prevents false “edges” in periodic data
+:::{figure} images/colormaps_cyclical.png
+:alt: Cyclical colormaps shown as wide horizontal gradients
+:width: 100%
+
+**Cyclical.** Start equals end, so there are no false edges. Perfect for angles,
+phases, or any periodic domain.
 :::
 
-:::{grid-item-card} Categorical
-:class-card: colormap-card
-:img-top: images/colormaps_categorical.png
-:img-style: width: 100%
-:img-alt: Categorical colormaps
-- Distinct, stepwise colors for class labels or clusters
-- Use when values are discrete and order does not matter
-:::
-::::
+:::{figure} images/colormaps_categorical.png
+:alt: Categorical colormaps shown as wide horizontal gradients
+:width: 100%
 
-## Naming, reversal, and fairness
-- Any matplotlib colormap name works (`viridis`, `plasma`, `twilight`, etc.),
-  plus the dartwork-specific set prefixed with `dm.`.
-- Append `_r` to reverse direction (`dm.sunset_r`), helpful when your values read
-  better with dark at the bottom or vice versa.
+**Categorical.** Distinct, stepwise colors for class labels or clusters where
+order does not matter.
+:::
+
+## Colorbar and rendering notes
 - Prefer perceptually uniform ramps for quantitative data; reserve categorical
-  maps for truly discrete labels.
+  bars for truly discrete labels.
+- Align colorbars with the plot width and hide outlines to keep the single
+  column clean (`cb.outline.set_visible(False)`).
+- For diverging data, pick symmetric limits and set `extend="both"` so extreme
+  values remain visible without clipping.
+- Use `imshow(..., interpolation="nearest")` when you want hard edges; drop the
+  argument for smooth gradients.
 
-## Regenerate the panels
-- Panels live in `docs/images/` and are regenerated automatically during a
-  Sphinx build.
-- To refresh manually, run `python docs/generate_gallery.py`; new PNGs will
-  replace the existing ones.
+## Refreshing the panels
+- PNGs live in `docs/images/`.
+- Sphinx runs `python docs/generate_gallery.py` during a build; run it directly
+  after editing the colormap set to regenerate just these assets.

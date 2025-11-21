@@ -50,7 +50,7 @@ plt.setp(markerline1, markersize=4, markeredgewidth=0.3,
 ax1.set_xlabel('Index', fontsize=dm.fs(0))
 ax1.set_ylabel('Value', fontsize=dm.fs(0))
 ax1.set_title('Basic Stem Plot', fontsize=dm.fs(1))
-ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax1.set_xticks([0, 2, 4, 6, 8])
 ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
 
@@ -70,7 +70,7 @@ plt.setp(markerline2, markersize=4, markeredgewidth=0.3,
 ax2.set_xlabel('Index', fontsize=dm.fs(0))
 ax2.set_ylabel('Value', fontsize=dm.fs(0))
 ax2.set_title('Stem with Markers', fontsize=dm.fs(1))
-ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax2.set_xticks([0, 2, 4, 6, 8])
 ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
@@ -100,7 +100,7 @@ plt.setp(baseline3a, linewidth=0.5, color=mcolors.to_rgb('dm.gray5'))
 ax3.set_xlabel('Index', fontsize=dm.fs(0))
 ax3.set_ylabel('Value', fontsize=dm.fs(0))
 ax3.set_title('Multiple Stem Series', fontsize=dm.fs(1))
-ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax3.set_xticks([0, 2, 4, 6, 8])
 ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 
@@ -122,7 +122,7 @@ ax4.set_xticklabels(cats, fontsize=dm.fs(0))
 ax4.set_ylabel('Value', fontsize=dm.fs(0))
 ax4.set_title('Categorical Stem Plot', fontsize=dm.fs(1))
 ax4.set_ylim(0, 4.5)
-ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax4.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
 # Optimize layout

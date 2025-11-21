@@ -31,8 +31,8 @@ theta_labels_deg = np.degrees(angles[:-1])
 
 def apply_theta_labels(ax, frac=1.05):
     """Place category labels at a consistent distance from the rim."""
-    ax.set_thetagrids(theta_labels_deg, labels=categories, frac=frac)
-    ax.tick_params(axis='x', labelsize=dm.fs(-1))
+    ax.set_thetagrids(theta_labels_deg, labels=categories)
+    ax.tick_params(axis='x', labelsize=dm.fs(-1), pad=8)
 
 fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 gs = fig.add_gridspec(

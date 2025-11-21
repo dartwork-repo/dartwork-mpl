@@ -23,7 +23,7 @@ Reference Lines
 
 Combine baseline trends, goal bands, annotations, and highlights to show how dartwork-mpl styles compose on a single axes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-81
+.. GENERATED FROM PYTHON SOURCE LINES 7-80
 
 
 
@@ -100,8 +100,7 @@ Combine baseline trends, goal bands, annotations, and highlights to show how dar
     ax.grid(axis='y', linestyle=':', color='dm.gray3', alpha=0.6)
 
     ax.legend(
-        loc='upper center',
-        bbox_to_anchor=(0.5, 1.14),
+        loc='best',
         ncol=3,
         fontsize=dm.fs(-1),
         frameon=False,
@@ -116,7 +115,7 @@ Combine baseline trends, goal bands, annotations, and highlights to show how dar
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.357 seconds)
+   **Total running time of the script:** (0 minutes 0.366 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_reference_lines.py:

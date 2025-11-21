@@ -18,17 +18,17 @@
 .. _sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py:
 
 
-Hierarchical Visualization
-==========================
+Treemap
+=======
 
-Lay out treemaps with nested rectangles and inline labels for hierarchical shares.
+Show a clean, proportional treemap for a single hierarchy using a slice-and-dice layout.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-119
+.. GENERATED FROM PYTHON SOURCE LINES 7-88
 
 
 
 .. image-sg:: /gallery/06_specialized_plots/images/sphx_glr_plot_treemap_simple_001.png
-   :alt: Market Share Treemap, Nested Categories, Icicle (Rectangular), Side-by-side Treemaps
+   :alt: Business Mix Treemap
    :srcset: /gallery/06_specialized_plots/images/sphx_glr_plot_treemap_simple_001.png
    :class: sphx-glr-single-img
 
@@ -45,116 +45,85 @@ Lay out treemaps with nested rectangles and inline labels for hierarchical share
 
     dm.style.use_preset('scientific')
 
-    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
-    gs = fig.add_gridspec(
-        nrows=2,
-        ncols=2,
-        left=0.06,
-        right=0.96,
-        top=0.95,
-        bottom=0.08,
-        wspace=0.16,
-        hspace=0.36,
-    )
+
+    def slice_dice(values, x=0.0, y=0.0, w=1.0, h=1.0, vertical=True):
+        """Simple slice-and-dice treemap layout."""
+        total = sum(val for _, val, _ in values)
+        cursor = x if vertical else y
+        for name, val, color in values:
+            frac = val / total if total else 0
+            if vertical:
+                width = w * frac
+                rng = (cursor, y, width, h)
+                cursor += width
+            else:
+                height = h * frac
+                rng = (x, cursor, w, height)
+                cursor += height
+            yield name, val, color, rng
 
 
-    def add_rect(ax, xy, w, h, color, text, fontsize=None, weight='bold'):
-        rect = Rectangle(xy, w, h, facecolor=color, edgecolor='white', linewidth=1.1)
-        ax.add_patch(rect)
-        ax.text(
-            xy[0] + w / 2,
-            xy[1] + h / 2,
-            text,
-            ha='center',
-            va='center',
-            fontsize=dm.fs(-1 if fontsize is None else fontsize),
-            color='white',
-            weight=weight,
-        )
+    def draw_treemap(ax, values):
+        """Draw a single-level treemap with subtle padding and labels."""
+        padding = 0.01
+        for i, (name, val, color, (x, y, w, h)) in enumerate(
+            slice_dice(values, vertical=True)
+        ):
+            # Alternate slice direction for a balanced look
+            inner_values = [(name, val, color)]
+            if i % 2:
+                for _name, _val, _color, inner in slice_dice(
+                    inner_values, x, y, w, h, vertical=False
+                ):
+                    x, y, w, h = inner
+            x += padding
+            y += padding
+            w -= 2 * padding
+            h -= 2 * padding
+            ax.add_patch(
+                Rectangle(
+                    (x, y),
+                    w,
+                    h,
+                    facecolor=color,
+                    edgecolor="white",
+                    linewidth=1.0,
+                )
+            )
+            ax.text(
+                x + w / 2,
+                y + h / 2,
+                f"{name}\n{val}%",
+                ha="center",
+                va="center",
+                color="white",
+                fontsize=dm.fs(-1),
+                weight="bold",
+            )
 
 
-    # Panel A: Market share treemap
-    ax1 = fig.add_subplot(gs[0, 0])
-    blocks = [
-        ("Infrastructure", 0.0, 0.0, 0.55, 0.60, 'dm.blue5', 34),
-        ("Platform", 0.55, 0.0, 0.45, 0.42, 'dm.violet5', 28),
-        ("AI/ML", 0.55, 0.42, 0.45, 0.18, 'dm.green5', 12),
-        ("Security", 0.0, 0.60, 0.35, 0.40, 'dm.orange5', 16),
-        ("Other", 0.35, 0.60, 0.20, 0.40, 'dm.gray5', 10),
+    values = [
+        ("Product", 35, "dm.blue6"),
+        ("Services", 22, "dm.green6"),
+        ("Platform", 18, "dm.violet6"),
+        ("Research", 15, "dm.orange6"),
+        ("Other", 10, "dm.gray6"),
     ]
-    for label, x, y, w, h, color, pct in blocks:
-        add_rect(ax1, (x, y), w, h, color, f"{label}\n{pct}%")
-    ax1.set_xlim(0, 1)
-    ax1.set_ylim(0, 1)
-    ax1.axis('off')
-    ax1.set_title('Market Share Treemap', fontsize=dm.fs(1))
 
-    # Panel B: Nested categories (Department -> Teams)
-    ax2 = fig.add_subplot(gs[0, 1])
-    add_rect(ax2, (0, 0), 1, 1, 'dm.blue2', 'Department', weight='bold', fontsize=0)
-    team_sizes = [('Data', 0.05, 0.55, 0.55, 0.40, 'dm.blue5', 40),
-                  ('Product', 0.62, 0.55, 0.33, 0.40, 'dm.blue4', 24),
-                  ('Ops', 0.05, 0.05, 0.45, 0.45, 'dm.blue6', 20),
-                  ('QA', 0.53, 0.05, 0.42, 0.45, 'dm.blue3', 16)]
-    for name, x, y, w, h, c, pct in team_sizes:
-        add_rect(ax2, (x, y), w, h, c, f"{name}\n{pct}%")
-    ax2.set_xlim(0, 1)
-    ax2.set_ylim(0, 1)
-    ax2.axis('off')
-    ax2.set_title('Nested Categories', fontsize=dm.fs(1))
+    fig, ax = plt.subplots(figsize=(dm.cm2in(16), dm.cm2in(10)), dpi=300)
+    draw_treemap(ax, values)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis("off")
+    ax.set_title("Business Mix Treemap", fontsize=dm.fs(1))
 
-    # Panel C: Icicle view (top to bottom)
-    ax3 = fig.add_subplot(gs[1, 0])
-    levels = [
-        (0.05, 0.70, 0.90, 0.25, 'dm.green5', 'Portfolio'),
-        (0.05, 0.45, 0.55, 0.22, 'dm.green4', 'Consumer'),
-        (0.62, 0.45, 0.33, 0.22, 'dm.green6', 'Enterprise'),
-        (0.05, 0.18, 0.35, 0.22, 'dm.orange5', 'Mobile'),
-        (0.42, 0.18, 0.18, 0.22, 'dm.orange4', 'Web'),
-        (0.62, 0.18, 0.33, 0.22, 'dm.orange6', 'Services'),
-    ]
-    for x, y, w, h, c, label in levels:
-        add_rect(ax3, (x, y), w, h, c, label, fontsize=-2)
-    ax3.set_xlim(0, 1)
-    ax3.set_ylim(0, 1)
-    ax3.axis('off')
-    ax3.set_title('Icicle (Rectangular)', fontsize=dm.fs(1))
-
-    # Panel D: Side-by-side treemaps (Year-over-year)
-    ax4 = fig.add_subplot(gs[1, 1])
-    ax4.add_patch(Rectangle((0.02, 0.05), 0.46, 0.90, facecolor='dm.gray1', edgecolor='dm.gray6', linewidth=0.6))
-    ax4.add_patch(Rectangle((0.52, 0.05), 0.46, 0.90, facecolor='dm.gray1', edgecolor='dm.gray6', linewidth=0.6))
-    yoY_blocks = [
-        ('Infra', 0.04, 0.55, 0.26, 0.38, 'dm.blue5', '35%'),
-        ('Platform', 0.31, 0.55, 0.15, 0.38, 'dm.violet5', '18%'),
-        ('Apps', 0.04, 0.08, 0.20, 0.42, 'dm.green5', '22%'),
-        ('Other', 0.26, 0.08, 0.20, 0.42, 'dm.gray5', '12%'),
-    ]
-    for label, x, y, w, h, c, pct in yoY_blocks:
-        add_rect(ax4, (x, y), w, h, c, f"{label}\n{pct}")
-    shift = 0.50
-    yoY_blocks2 = [
-        ('Infra', 0.04 + shift, 0.55, 0.22, 0.38, 'dm.blue5', '28%'),
-        ('Platform', 0.27 + shift, 0.55, 0.21, 0.38, 'dm.violet5', '26%'),
-        ('Apps', 0.04 + shift, 0.08, 0.18, 0.42, 'dm.green5', '24%'),
-        ('Data', 0.23 + shift, 0.08, 0.25, 0.42, 'dm.orange5', '16%'),
-    ]
-    for label, x, y, w, h, c, pct in yoY_blocks2:
-        add_rect(ax4, (x, y), w, h, c, f"{label}\n{pct}")
-    ax4.text(0.25, 0.96, 'Year 1', ha='center', va='center', fontsize=dm.fs(-1), weight='bold', color='dm.gray8')
-    ax4.text(0.75, 0.96, 'Year 2', ha='center', va='center', fontsize=dm.fs(-1), weight='bold', color='dm.gray8')
-    ax4.set_xlim(0, 1)
-    ax4.set_ylim(0, 1)
-    ax4.axis('off')
-    ax4.set_title('Side-by-side Treemaps', fontsize=dm.fs(1))
-
-    dm.simple_layout(fig, gs=gs)
+    dm.simple_layout(fig)
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.459 seconds)
+   **Total running time of the script:** (0 minutes 0.221 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_treemap_simple.py:

@@ -71,7 +71,7 @@ Start from basic, grouped, and labeled bars with gentle spacing so categories st
     ax.set_title('Scores by group and gender', fontsize=dm.fs(1))
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
-    ax.legend(loc='upper left', fontsize=dm.fs(0), ncol=1)
+    ax.legend(loc='best', fontsize=dm.fs(0), ncol=1)
 
     # Add value labels
     ax.bar_label(rects1, padding=3, fontsize=dm.fs(-1))
@@ -86,7 +86,7 @@ Start from basic, grouped, and labeled bars with gentle spacing so categories st
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.343 seconds)
+   **Total running time of the script:** (0 minutes 0.376 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_bar_chart.py:

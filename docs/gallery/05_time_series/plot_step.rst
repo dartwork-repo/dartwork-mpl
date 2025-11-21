@@ -72,7 +72,7 @@ Build step charts that expose change points, holding periods, and cumulative shi
     ax1.set_xlabel('Index', fontsize=dm.fs(0))
     ax1.set_ylabel('Value', fontsize=dm.fs(0))
     ax1.set_title('Step: Pre', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax1.set_xticks([0, 2, 4, 6, 8, 10])
     ax1.set_yticks([0, 1, 2, 3, 4])
     ax1.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
@@ -85,7 +85,7 @@ Build step charts that expose change points, holding periods, and cumulative shi
     ax2.set_xlabel('Index', fontsize=dm.fs(0))
     ax2.set_ylabel('Value', fontsize=dm.fs(0))
     ax2.set_title('Step: Post', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax2.set_xticks([0, 2, 4, 6, 8, 10])
     ax2.set_yticks([0, 1, 2, 3, 4])
     ax2.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
@@ -102,7 +102,7 @@ Build step charts that expose change points, holding periods, and cumulative shi
     ax3.set_xlabel('Index', fontsize=dm.fs(0))
     ax3.set_ylabel('Value', fontsize=dm.fs(0))
     ax3.set_title('Multiple Step Series', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     ax3.set_xticks([0, 2, 4, 6, 8, 10])
     ax3.set_yticks([0, 1, 2, 3, 4])
     ax3.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
@@ -121,7 +121,7 @@ Build step charts that expose change points, holding periods, and cumulative shi
     ax4.set_xlabel('Index', fontsize=dm.fs(0))
     ax4.set_ylabel('Rolling Value', fontsize=dm.fs(0))
     ax4.set_title('Smoothed & Highlighted', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax4.legend(loc='best', fontsize=dm.fs(-1))
     ax4.set_xticks([0, 2, 4, 6, 8, 10])
     ax4.set_yticks([0, 1, 2, 3, 4])
     ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
@@ -135,7 +135,7 @@ Build step charts that expose change points, holding periods, and cumulative shi
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.821 seconds)
+   **Total running time of the script:** (0 minutes 0.844 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_step.py:

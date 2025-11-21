@@ -85,7 +85,7 @@ Contrast marker shapes, color encodings, and density shading to show clusters an
     ax1.set_xlabel('X value', fontsize=dm.fs(0))
     ax1.set_ylabel('Y value', fontsize=dm.fs(0))
     ax1.set_title('Basic Scatter Plot', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax1.set_xticks([-3, -1, 1, 3])
     ax1.set_yticks([-3, -1, 1, 3])
@@ -156,7 +156,7 @@ Contrast marker shapes, color encodings, and density shading to show clusters an
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.654 seconds)
+   **Total running time of the script:** (0 minutes 0.651 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_scatter.py:

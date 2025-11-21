@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="../../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Flow Diagrams - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Layout &amp; Styling" href="../07_layout_styling/index.html" /><link rel="prev" title="Filled Plots" href="plot_filled.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sankey Diagram - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="3D Plots" href="plot_3d.html" /><link rel="prev" title="Specialized Plots" href="index.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2f450e35" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=196abb11" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
   --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
 }
 </style>
-    <meta property="og:type" content="website"/><meta property="og:title" content="Flow Diagrams"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="Sankey Diagram"/>
     <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="sy-head">
@@ -98,8 +98,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="../03_bar_charts/index.html">Bar Charts</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_bar_chart.html">Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_horizontal_bar.html">Horizontal Bar Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_diverging_bar.html">Diverging Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_lollipop.html">Lollipop Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_diverging_bar.html">Diverging Bar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_waterfall.html">Waterfall Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_stacked_bar.html">Stacked Bar Chart</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../03_bar_charts/plot_grouped_bar.html">Grouped Bar Chart</a></li>
@@ -129,15 +129,15 @@ data-aria-dark="Switch to auto color mode">
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Specialized Plots</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sankey Diagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_3d.html">3D Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_dual_axis.html">Dual Axis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plot_polar.html">Polar Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_treemap_simple.html">Treemap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_ridgeline.html">Ridgeline Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_radar_chart.html">Radar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_polar.html">Polar Plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_pie.html">Pie Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_filled.html">Filled Plots</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Flow Diagrams</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../07_layout_styling/index.html">Layout &amp; Styling</a><ul>
@@ -145,10 +145,10 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_layout.html">Layout Optimization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_complex_grid.html">Complex Grid Layouts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_mixed_subplots.html">Mixed Subplot Types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_subplots.html">Subplots Layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_legend.html">Legends</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_custom_ticks.html">Custom Ticks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_inset_axes.html">Inset Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_subplots.html">Subplots Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_custom_ticks.html">Custom Ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_legend.html">Legends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../07_layout_styling/plot_annotations.html">Annotations</a></li>
 </ul>
 </li>
@@ -157,8 +157,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_cycles.html">Color Cycles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_diverging_sequential.html">Diverging and Sequential Colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_perception.html">Color Perception</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_image.html">Image Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
 </ul>
 </li>
 </ul>
@@ -207,7 +207,7 @@ data-aria-dark="Switch to auto color mode">
         <span>/</span>
         <meta itemprop="position" content="3" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Flow Diagrams</strong>
+        <strong itemprop="name">Sankey Diagram</strong>
         <meta itemprop="position" content="4" />
       </li></ol>
     <div class="xl:hidden ml-1">
@@ -225,179 +225,63 @@ data-aria-dark="Switch to auto color mode">
 <p><a class="reference internal" href="#sphx-glr-download-gallery-06-specialized-plots-plot-sankey-simple-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code.</p>
 </div>
-<section class="sphx-glr-example-title" id="flow-diagrams">
-<span id="sphx-glr-gallery-06-specialized-plots-plot-sankey-simple-py"></span><h1>Flow Diagrams<a class="headerlink" href="#flow-diagrams" title="Link to this heading">¶</a></h1>
-<p>Draw compact Sankey diagrams to explain flows between stages with tidy labels.</p>
-<img src="../../_images/sphx_glr_plot_sankey_simple_001.png" srcset="../../_images/sphx_glr_plot_sankey_simple_001.png" alt="Linear Pipeline, Branch & Merge, Circular Loop, Decision Tree" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</span><span data-line="2"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">FancyBboxPatch</span><span class="p">,</span> <span class="n">FancyArrowPatch</span>
-</span><span data-line="4"><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
-</span><span data-line="5">
-</span><span data-line="6"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>
-</span><span data-line="7">
-</span><span data-line="8"><span class="c1"># Consistent node sizing/spacing so arrows align cleanly.</span>
-</span><span data-line="9"><span class="n">NODE_W</span><span class="p">,</span> <span class="n">NODE_H</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.10</span>
-</span><span data-line="10">
-</span><span data-line="11">
-</span><span data-line="12"><span class="k">def</span><span class="w"> </span><span class="nf">add_node</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.blue1&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.blue6&#39;</span><span class="p">):</span>
-</span><span data-line="13"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Draw a rounded node and its label.&quot;&quot;&quot;</span>
-</span><span data-line="14">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">center</span>
-</span><span data-line="15">    <span class="n">box</span> <span class="o">=</span> <span class="n">FancyBboxPatch</span><span class="p">(</span>
-</span><span data-line="16">        <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">NODE_W</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">NODE_H</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
-</span><span data-line="17">        <span class="n">NODE_W</span><span class="p">,</span>
-</span><span data-line="18">        <span class="n">NODE_H</span><span class="p">,</span>
-</span><span data-line="19">        <span class="n">boxstyle</span><span class="o">=</span><span class="s2">&quot;round,pad=0.025&quot;</span><span class="p">,</span>
-</span><span data-line="20">        <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span>
-</span><span data-line="21">        <span class="n">edgecolor</span><span class="o">=</span><span class="n">edge</span><span class="p">,</span>
-</span><span data-line="22">        <span class="n">facecolor</span><span class="o">=</span><span class="n">face</span><span class="p">,</span>
-</span><span data-line="23">    <span class="p">)</span>
-</span><span data-line="24">    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
-</span><span data-line="25">    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.gray9&#39;</span><span class="p">)</span>
-</span><span data-line="26">
-</span><span data-line="27">
-</span><span data-line="28"><span class="k">def</span><span class="w"> </span><span class="nf">anchor</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-</span><span data-line="29"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a point on a node boundary (dx, dy are fractions of width/height).&quot;&quot;&quot;</span>
-</span><span data-line="30">    <span class="k">return</span> <span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">NODE_W</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">NODE_H</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-</span><span data-line="31">
-</span><span data-line="32">
-</span><span data-line="33"><span class="k">def</span><span class="w"> </span><span class="nf">directional_anchor</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
-</span><span data-line="34"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Anchor on the side of `point` that faces `target`.&quot;&quot;&quot;</span>
-</span><span data-line="35">    <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</span><span data-line="36">    <span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</span><span data-line="37">    <span class="k">return</span> <span class="n">anchor</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">pad</span> <span class="o">*</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="n">pad</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
-</span><span data-line="38">
-</span><span data-line="39">
-</span><span data-line="40"><span class="k">def</span><span class="w"> </span><span class="nf">add_flow</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.gray7&#39;</span><span class="p">):</span>
-</span><span data-line="41"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a clean arrow between two anchored points.&quot;&quot;&quot;</span>
-</span><span data-line="42">    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span>
-</span><span data-line="43">        <span class="n">FancyArrowPatch</span><span class="p">(</span>
-</span><span data-line="44">            <span class="n">start</span><span class="p">,</span>
-</span><span data-line="45">            <span class="n">end</span><span class="p">,</span>
-</span><span data-line="46">            <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span>
-</span><span data-line="47">            <span class="n">connectionstyle</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;arc3,rad=</span><span class="si">{</span><span class="n">curve</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-</span><span data-line="48">            <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-</span><span data-line="49">            <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-</span><span data-line="50">            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
-</span><span data-line="51">            <span class="n">shrinkA</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-</span><span data-line="52">            <span class="n">shrinkB</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-</span><span data-line="53">        <span class="p">)</span>
-</span><span data-line="54">    <span class="p">)</span>
-</span><span data-line="55">
-</span><span data-line="56">
-</span><span data-line="57"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">18</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">12</span><span class="p">)),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-</span><span data-line="58"><span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span>
-</span><span data-line="59">    <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-</span><span data-line="60">    <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-</span><span data-line="61">    <span class="n">left</span><span class="o">=</span><span class="mf">0.07</span><span class="p">,</span>
-</span><span data-line="62">    <span class="n">right</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span>
-</span><span data-line="63">    <span class="n">top</span><span class="o">=</span><span class="mf">0.96</span><span class="p">,</span>
-</span><span data-line="64">    <span class="n">bottom</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span>
-</span><span data-line="65">    <span class="n">wspace</span><span class="o">=</span><span class="mf">0.24</span><span class="p">,</span>
-</span><span data-line="66">    <span class="n">hspace</span><span class="o">=</span><span class="mf">0.36</span><span class="p">,</span>
-</span><span data-line="67"><span class="p">)</span>
-</span><span data-line="68">
-</span><span data-line="69"><span class="c1"># Panel A: Straight pipeline</span>
-</span><span data-line="70"><span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-</span><span data-line="71"><span class="n">pipeline_steps</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Capture&#39;</span><span class="p">,</span> <span class="s1">&#39;Clean&#39;</span><span class="p">,</span> <span class="s1">&#39;Process&#39;</span><span class="p">,</span> <span class="s1">&#39;Deliver&#39;</span><span class="p">]</span>
-</span><span data-line="72"><span class="n">pipeline_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.14</span><span class="p">,</span> <span class="mf">0.86</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pipeline_steps</span><span class="p">))</span>
-</span><span data-line="73"><span class="n">pipeline_y</span> <span class="o">=</span> <span class="mf">0.56</span>
-</span><span data-line="74"><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pipeline_x</span><span class="p">,</span> <span class="n">pipeline_steps</span><span class="p">):</span>
-</span><span data-line="75">    <span class="n">add_node</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pipeline_y</span><span class="p">),</span> <span class="n">label</span><span class="p">)</span>
-</span><span data-line="76"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pipeline_x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-</span><span data-line="77">    <span class="n">start</span> <span class="o">=</span> <span class="n">anchor</span><span class="p">((</span><span class="n">pipeline_x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pipeline_y</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span data-line="78">    <span class="n">end</span> <span class="o">=</span> <span class="n">anchor</span><span class="p">((</span><span class="n">pipeline_x</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">pipeline_y</span><span class="p">),</span> <span class="n">dx</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-</span><span data-line="79">    <span class="n">add_flow</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-</span><span data-line="80"><span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span><span data-line="81"><span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">)</span>
-</span><span data-line="82"><span class="n">ax1</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-</span><span data-line="83"><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Linear Pipeline&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="84">
-</span><span data-line="85"><span class="c1"># Panel B: Branching and merge</span>
-</span><span data-line="86"><span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</span><span data-line="87"><span class="n">start</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">)</span>
-</span><span data-line="88"><span class="n">branches</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.52</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">,</span> <span class="s1">&#39;Path A&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.52</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="s1">&#39;Path B&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.52</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="s1">&#39;Path C&#39;</span><span class="p">)]</span>
-</span><span data-line="89"><span class="n">merge</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">)</span>
-</span><span data-line="90"><span class="n">add_node</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="s1">&#39;Start&#39;</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.green1&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.green6&#39;</span><span class="p">)</span>
-</span><span data-line="91"><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">:</span>
-</span><span data-line="92">    <span class="n">add_node</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="p">)</span>
-</span><span data-line="93">    <span class="n">curve</span> <span class="o">=</span> <span class="mf">0.18</span> <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="o">-</span><span class="mf">0.18</span> <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="mf">0.0</span>
-</span><span data-line="94">    <span class="n">add_flow</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">dx</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="n">curve</span><span class="p">)</span>
-</span><span data-line="95"><span class="n">add_node</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">merge</span><span class="p">,</span> <span class="s1">&#39;Merge&#39;</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.violet1&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.violet6&#39;</span><span class="p">)</span>
-</span><span data-line="96"><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">:</span>
-</span><span data-line="97">    <span class="n">curve</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.12</span> <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">merge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="mf">0.12</span> <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">merge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">else</span> <span class="mf">0.0</span>
-</span><span data-line="98">    <span class="n">add_flow</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">anchor</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">(</span><span class="n">merge</span><span class="p">,</span> <span class="n">dx</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="n">curve</span><span class="p">)</span>
-</span><span data-line="99"><span class="n">add_flow</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">merge</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
-</span><span data-line="100"><span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">)</span>
-</span><span data-line="101"><span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.86</span><span class="p">)</span>
-</span><span data-line="102"><span class="n">ax2</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-</span><span data-line="103"><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Branch &amp; Merge&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="104">
-</span><span data-line="105"><span class="c1"># Panel C: Circular loop</span>
-</span><span data-line="106"><span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-</span><span data-line="107"><span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span><span data-line="108"><span class="n">r</span> <span class="o">=</span> <span class="mf">0.32</span>
-</span><span data-line="109"><span class="n">center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
-</span><span data-line="110"><span class="n">loop_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Discover&#39;</span><span class="p">,</span> <span class="s1">&#39;Design&#39;</span><span class="p">,</span> <span class="s1">&#39;Build&#39;</span><span class="p">,</span> <span class="s1">&#39;Review&#39;</span><span class="p">]</span>
-</span><span data-line="111"><span class="n">loop_points</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span data-line="112"><span class="k">for</span> <span class="n">angle</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">loop_labels</span><span class="p">):</span>
-</span><span data-line="113">    <span class="n">pt</span> <span class="o">=</span> <span class="n">center</span> <span class="o">+</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)])</span>
-</span><span data-line="114">    <span class="n">loop_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
-</span><span data-line="115">    <span class="n">add_node</span><span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.orange1&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.orange6&#39;</span><span class="p">)</span>
-</span><span data-line="116">
-</span><span data-line="117"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">loop_points</span><span class="p">):</span>
-</span><span data-line="118">    <span class="n">nxt</span> <span class="o">=</span> <span class="n">loop_points</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">loop_points</span><span class="p">)]</span>
-</span><span data-line="119">    <span class="n">start</span> <span class="o">=</span> <span class="n">directional_anchor</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">nxt</span><span class="p">)</span>
-</span><span data-line="120">    <span class="n">end</span> <span class="o">=</span> <span class="n">directional_anchor</span><span class="p">(</span><span class="n">nxt</span><span class="p">,</span> <span class="n">pt</span><span class="p">)</span>
-</span><span data-line="121">    <span class="n">add_flow</span><span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.18</span><span class="p">)</span>
-</span><span data-line="122">
-</span><span data-line="123"><span class="n">ax3</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-</span><span data-line="124">    <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-</span><span data-line="125">    <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-</span><span data-line="126">    <span class="s1">&#39;Iterate&#39;</span><span class="p">,</span>
-</span><span data-line="127">    <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
-</span><span data-line="128">    <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
-</span><span data-line="129">    <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>
-</span><span data-line="130">    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.gray6&#39;</span><span class="p">,</span>
-</span><span data-line="131"><span class="p">)</span>
-</span><span data-line="132"><span class="n">ax3</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">)</span>
-</span><span data-line="133"><span class="n">ax3</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">)</span>
-</span><span data-line="134"><span class="n">ax3</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-</span><span data-line="135"><span class="n">ax3</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-</span><span data-line="136"><span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Circular Loop&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="137">
-</span><span data-line="138"><span class="c1"># Panel D: Balanced decision tree</span>
-</span><span data-line="139"><span class="n">ax4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</span><span data-line="140"><span class="n">root</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.86</span><span class="p">)</span>
-</span><span data-line="141"><span class="n">mid_left</span><span class="p">,</span> <span class="n">mid_right</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.66</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.70</span><span class="p">,</span> <span class="mf">0.66</span><span class="p">)</span>
-</span><span data-line="142"><span class="n">leafs</span> <span class="o">=</span> <span class="p">[</span>
-</span><span data-line="143">    <span class="p">(</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.44</span><span class="p">,</span> <span class="s1">&#39;Refine&#39;</span><span class="p">),</span>
-</span><span data-line="144">    <span class="p">(</span><span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.44</span><span class="p">,</span> <span class="s1">&#39;Ship&#39;</span><span class="p">),</span>
-</span><span data-line="145">    <span class="p">(</span><span class="mf">0.58</span><span class="p">,</span> <span class="mf">0.44</span><span class="p">,</span> <span class="s1">&#39;Explore&#39;</span><span class="p">),</span>
-</span><span data-line="146">    <span class="p">(</span><span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.44</span><span class="p">,</span> <span class="s1">&#39;Drop&#39;</span><span class="p">),</span>
-</span><span data-line="147"><span class="p">]</span>
-</span><span data-line="148"><span class="n">add_node</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="s1">&#39;Decision&#39;</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.violet2&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.violet6&#39;</span><span class="p">)</span>
-</span><span data-line="149"><span class="n">add_node</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">mid_left</span><span class="p">,</span> <span class="s1">&#39;Go Left&#39;</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.blue1&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.blue6&#39;</span><span class="p">)</span>
-</span><span data-line="150"><span class="n">add_node</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">mid_right</span><span class="p">,</span> <span class="s1">&#39;Go Right&#39;</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.blue1&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.blue6&#39;</span><span class="p">)</span>
-</span><span data-line="151"><span class="n">add_flow</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">(</span><span class="n">mid_left</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
-</span><span data-line="152"><span class="n">add_flow</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">(</span><span class="n">mid_right</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
-</span><span data-line="153">
-</span><span data-line="154"><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">leafs</span><span class="p">:</span>
-</span><span data-line="155">    <span class="n">add_node</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s1">&#39;dm.gray1&#39;</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="s1">&#39;dm.gray7&#39;</span><span class="p">)</span>
-</span><span data-line="156"><span class="n">add_flow</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">mid_left</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">(</span><span class="n">leafs</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dy</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
-</span><span data-line="157"><span class="n">add_flow</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">mid_left</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">(</span><span class="n">leafs</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dy</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=-</span><span class="mf">0.05</span><span class="p">)</span>
-</span><span data-line="158"><span class="n">add_flow</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">mid_right</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">(</span><span class="n">leafs</span><span class="p">[</span><span class="mi">2</span><span class="p">][:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dy</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
-</span><span data-line="159"><span class="n">add_flow</span><span class="p">(</span><span class="n">ax4</span><span class="p">,</span> <span class="n">anchor</span><span class="p">(</span><span class="n">mid_right</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">anchor</span><span class="p">(</span><span class="n">leafs</span><span class="p">[</span><span class="mi">3</span><span class="p">][:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dy</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">curve</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
-</span><span data-line="160">
-</span><span data-line="161"><span class="n">ax4</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">)</span>
-</span><span data-line="162"><span class="n">ax4</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">)</span>
-</span><span data-line="163"><span class="n">ax4</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-</span><span data-line="164"><span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Decision Tree&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="165">
-</span><span data-line="166"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="o">=</span><span class="n">gs</span><span class="p">)</span>
-</span><span data-line="167"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<section class="sphx-glr-example-title" id="sankey-diagram">
+<span id="sphx-glr-gallery-06-specialized-plots-plot-sankey-simple-py"></span><h1>Sankey Diagram<a class="headerlink" href="#sankey-diagram" title="Link to this heading">¶</a></h1>
+<p>Show a single, clear Sankey diagram that illustrates how inputs split into several outputs.</p>
+<img src="../../_images/sphx_glr_plot_sankey_simple_001.png" srcset="../../_images/sphx_glr_plot_sankey_simple_001.png" alt="Simple Sankey Diagram" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span><span data-line="1">Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+</span><span data-line="2">Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
 </span></pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.522 seconds)</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.sankey</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sankey</span>
+</span><span data-line="3"><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="c1"># Apply consistent styling</span>
+</span><span data-line="6"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="c1"># Flows sum to zero: inflow = 100, outflows = -40, -25, -20, -15</span>
+</span><span data-line="9"><span class="n">flows</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">]</span>
+</span><span data-line="10"><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span>
+</span><span data-line="11">    <span class="s1">&#39;Total Inflow&#39;</span><span class="p">,</span>
+</span><span data-line="12">    <span class="s1">&#39;Storage&#39;</span><span class="p">,</span>
+</span><span data-line="13">    <span class="s1">&#39;Processing&#39;</span><span class="p">,</span>
+</span><span data-line="14">    <span class="s1">&#39;Losses&#39;</span><span class="p">,</span>
+</span><span data-line="15">    <span class="s1">&#39;Delivered&#39;</span><span class="p">,</span>
+</span><span data-line="16"><span class="p">]</span>
+</span><span data-line="17"><span class="c1"># Orientation controls label/arrow direction for readability</span>
+</span><span data-line="18"><span class="n">orientations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span data-line="19">
+</span><span data-line="20"><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">9</span><span class="p">)),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span data-line="21">
+</span><span data-line="22"><span class="n">sankey</span> <span class="o">=</span> <span class="n">Sankey</span><span class="p">(</span>
+</span><span data-line="23">    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+</span><span data-line="24">    <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="p">,</span>
+</span><span data-line="25">    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.0f%%</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span data-line="26">    <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>      <span class="c1"># keep values literal (100 == 100%)</span>
+</span><span data-line="27">    <span class="n">gap</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>        <span class="c1"># breathing room between flows</span>
+</span><span data-line="28">    <span class="n">shoulder</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>  <span class="c1"># tighter joints</span>
+</span><span data-line="29"><span class="p">)</span>
+</span><span data-line="30"><span class="n">sankey</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+</span><span data-line="31">    <span class="n">flows</span><span class="o">=</span><span class="n">flows</span><span class="p">,</span>
+</span><span data-line="32">    <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+</span><span data-line="33">    <span class="n">orientations</span><span class="o">=</span><span class="n">orientations</span><span class="p">,</span>
+</span><span data-line="34">    <span class="n">trunklength</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+</span><span data-line="35">    <span class="n">pathlengths</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+</span><span data-line="36">    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+</span><span data-line="37"><span class="p">)</span>
+</span><span data-line="38"><span class="n">sankey</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+</span><span data-line="39">
+</span><span data-line="40"><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Simple Sankey Diagram&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</span><span data-line="41"><span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</span><span data-line="42"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</span><span data-line="43">
+</span><span data-line="44"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.454 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-06-specialized-plots-plot-sankey-simple-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/fffcab8c1ca47f9de5085b30046554ca/plot_sankey_simple.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_sankey_simple.ipynb</span></code></a></p>
@@ -418,16 +302,16 @@ to download the full example code.</p>
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="plot_filled.html">
+    <a href="index.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>Previous</span><div class="title">Filled Plots</div></div>
+        <span>Previous</span><div class="title">Specialized Plots</div></div>
     </a>
   </div><div class="navigation-next">
-    <a href="../07_layout_styling/index.html">
+    <a href="plot_3d.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">Layout &amp; Styling</div>
+        <div class="title">3D Plots</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>

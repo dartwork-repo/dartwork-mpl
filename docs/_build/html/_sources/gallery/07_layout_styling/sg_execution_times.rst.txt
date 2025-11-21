@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:09.239** total execution time for 9 files **from gallery/07_layout_styling**:
+**00:05.194** total execution time for 9 files **from gallery/07_layout_styling**:
 
 .. container::
 
@@ -32,30 +32,30 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py` (``plot_inset_axes.py``)
-     - 00:01.765
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_complex_grid.py` (``plot_complex_grid.py``)
-     - 00:01.201
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py` (``plot_custom_ticks.py``)
-     - 00:01.119
-     - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_mixed_subplots.py` (``plot_mixed_subplots.py``)
-     - 00:01.091
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_shared_axes.py` (``plot_shared_axes.py``)
-     - 00:00.985
+     - 00:01.027
      - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_annotations.py` (``plot_annotations.py``)
-     - 00:00.922
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_subplots.py` (``plot_subplots.py``)
-     - 00:00.801
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_layout.py` (``plot_layout.py``)
-     - 00:00.765
+     - 00:00.936
      - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_legend.py` (``plot_legend.py``)
-     - 00:00.589
+     - 00:00.915
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_subplots.py` (``plot_subplots.py``)
+     - 00:00.791
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py` (``plot_inset_axes.py``)
+     - 00:00.778
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_layout.py` (``plot_layout.py``)
+     - 00:00.748
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_complex_grid.py` (``plot_complex_grid.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py` (``plot_custom_ticks.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_shared_axes.py` (``plot_shared_axes.py``)
+     - 00:00.000
      - 0.0

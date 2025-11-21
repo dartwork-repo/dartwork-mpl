@@ -75,7 +75,7 @@ Compare binning choices and overlays (density curves, step histograms) to pick a
     ax1.set_xlabel('Value', fontsize=dm.fs(0))
     ax1.set_ylabel('Frequency', fontsize=dm.fs(0))
     ax1.set_title('Basic Histogram', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax1.set_xticks([-4, -2, 0, 2, 4])
     ax1.set_yticks([0, 50, 100, 150])
@@ -91,7 +91,7 @@ Compare binning choices and overlays (density curves, step histograms) to pick a
     ax2.set_xlabel('Value', fontsize=dm.fs(0))
     ax2.set_ylabel('Frequency', fontsize=dm.fs(0))
     ax2.set_title('Stacked Histogram', fontsize=dm.fs(1))
-    ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax2.set_xticks([-4, -2, 0, 2, 4, 6])
 
@@ -110,7 +110,7 @@ Compare binning choices and overlays (density curves, step histograms) to pick a
     ax3.set_xlabel('Value', fontsize=dm.fs(0))
     ax3.set_ylabel('Density', fontsize=dm.fs(0))
     ax3.set_title('Histogram with KDE', fontsize=dm.fs(1))
-    ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax3.set_xticks([-4, -2, 0, 2, 4])
     ax3.set_yticks([0, 0.1, 0.2, 0.3, 0.4])
@@ -130,7 +130,7 @@ Compare binning choices and overlays (density curves, step histograms) to pick a
     ax4.set_xlabel('Value', fontsize=dm.fs(0))
     ax4.set_ylabel('Frequency', fontsize=dm.fs(0))
     ax4.set_title('Overlaid Histograms', fontsize=dm.fs(1))
-    ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax4.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
     # Set explicit ticks
     ax4.set_xticks([-4, -2, 0, 2, 4, 6])
     ax4.set_yticks([0, 50, 100, 150])
@@ -144,7 +144,7 @@ Compare binning choices and overlays (density curves, step histograms) to pick a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.124 seconds)
+   **Total running time of the script:** (0 minutes 1.194 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_histogram.py:

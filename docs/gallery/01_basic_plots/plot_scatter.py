@@ -51,7 +51,7 @@ ax1.scatter(x2, y2, c='dm.red5', s=20, marker='s',
 ax1.set_xlabel('X value', fontsize=dm.fs(0))
 ax1.set_ylabel('Y value', fontsize=dm.fs(0))
 ax1.set_title('Basic Scatter Plot', fontsize=dm.fs(1))
-ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 # Set explicit ticks
 ax1.set_xticks([-3, -1, 1, 3])
 ax1.set_yticks([-3, -1, 1, 3])

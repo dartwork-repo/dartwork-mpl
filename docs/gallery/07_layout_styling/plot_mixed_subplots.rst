@@ -59,7 +59,7 @@ Mix bars, lines, histograms, and tabular panels on one page with consistent sizi
     ax1.set_xlabel('X', fontsize=dm.fs(0))
     ax1.set_ylabel('Y', fontsize=dm.fs(0))
     ax1.set_title('Line Plot', fontsize=dm.fs(1))
-    ax1.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax1.legend(loc='best', fontsize=dm.fs(-1))
 
     # Panel B: Scatter with regression
     ax2 = fig.add_subplot(gs[0, 1])
@@ -96,7 +96,7 @@ Mix bars, lines, histograms, and tabular panels on one page with consistent sizi
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.091 seconds)
+   **Total running time of the script:** (0 minutes 1.027 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_mixed_subplots.py:
