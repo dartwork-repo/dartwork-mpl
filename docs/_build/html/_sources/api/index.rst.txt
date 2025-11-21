@@ -7,11 +7,12 @@ assets. Each section below links to functions and classes you can import
 directly from `dartwork_mpl`.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :titlesonly:
 
-   style
-   layout
-   color
-   font
-   io
-   visualization
+   Style Management <style>
+   Layout Utilities <layout>
+   Color Utilities <color>
+   Font Utilities <font>
+   File I/O <io>
+   Visualization Tools <visualization>

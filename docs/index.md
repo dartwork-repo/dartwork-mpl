@@ -12,9 +12,9 @@ opinionated styles, curated color libraries, and layout utilities.
 :maxdepth: 2
 :titlesonly:
 
-install
-DARTWORK_MPL_USAGE_GUIDE
-COLOR_GALLERY
-gallery/index
-api/index
+Install <install>
+Usage Guide <DARTWORK_MPL_USAGE_GUIDE>
+Color and Colormap Gallery <COLOR_GALLERY>
+Examples Gallery <gallery/index>
+API Reference <api/index>
 ```
