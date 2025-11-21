@@ -43,5 +43,5 @@ dm.style.use_preset('scientific')  # Basic style for academic papers
 DARTWORK_MPL_USAGE_GUIDE
 COLOR_GALLERY
 gallery/index
-API_REFERENCE
+api/index
 ```

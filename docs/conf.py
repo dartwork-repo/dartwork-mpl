@@ -49,9 +49,10 @@ html_theme_options = {
         {"title": "Install", "url": "index"},
         {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
         {"title": "Gallery", "url": "gallery/index"},
-        {"title": "API", "url": "API_REFERENCE"},
+        {"title": "API", "url": "api/index"},
     ]
 }
+
 
 # -- Sphinx Gallery configuration --------------------------------------------
 sphinx_gallery_conf = {
