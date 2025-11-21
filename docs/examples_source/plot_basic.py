@@ -2,7 +2,7 @@
 Basic Usage
 ===========
 
-This example demonstrates the basic usage of dartwork-mpl, including applying style presets and creating a simple plot.
+Basic usage with style presets.
 """
 
 import numpy as np
