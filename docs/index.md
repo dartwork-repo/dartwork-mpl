@@ -10,7 +10,7 @@ opinionated styles, curated color libraries, and layout utilities.
 
 ```{toctree}
 :maxdepth: 2
-:hidden:
+:titlesonly:
 
 install
 DARTWORK_MPL_USAGE_GUIDE
