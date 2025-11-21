@@ -91,6 +91,9 @@ ax4.set_title('Comparison Lollipop', fontsize=dm.fs(1))
 ax4.legend(loc='lower right', fontsize=dm.fs(-1))
 ax4.set_xticks([0, 20, 40, 60])
 
+for ax in (ax1, ax2, ax3, ax4):
+    ax.margins(x=0.05, y=0.05)
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 

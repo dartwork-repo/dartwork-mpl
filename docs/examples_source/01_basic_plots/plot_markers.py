@@ -42,8 +42,7 @@ ax1.set_xlabel('X value', fontsize=dm.fs(0))
 ax1.set_ylabel('Y value', fontsize=dm.fs(0))
 ax1.set_title('Basic Markers', fontsize=dm.fs(1))
 ax1.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.08),
+    loc='upper right',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,
@@ -61,8 +60,7 @@ ax2.set_xlabel('X value', fontsize=dm.fs(0))
 ax2.set_ylabel('Y value', fontsize=dm.fs(0))
 ax2.set_title('Markers Only', fontsize=dm.fs(1))
 ax2.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.08),
+    loc='upper right',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,
@@ -84,8 +82,7 @@ ax3.set_xlabel('X value', fontsize=dm.fs(0))
 ax3.set_ylabel('Y value', fontsize=dm.fs(0))
 ax3.set_title('Filled vs Empty', fontsize=dm.fs(1))
 ax3.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.08),
+    loc='upper right',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,
@@ -103,8 +100,7 @@ ax4.set_xlabel('X value', fontsize=dm.fs(0))
 ax4.set_ylabel('Y value', fontsize=dm.fs(0))
 ax4.set_title('Different Sizes', fontsize=dm.fs(1))
 ax4.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.08),
+    loc='upper right',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,

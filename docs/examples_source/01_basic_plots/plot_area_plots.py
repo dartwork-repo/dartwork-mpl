@@ -40,8 +40,7 @@ ax1.set_xlabel('X value', fontsize=dm.fs(0))
 ax1.set_ylabel('Y value', fontsize=dm.fs(0))
 ax1.set_title('Basic Fill Between', fontsize=dm.fs(1))
 ax1.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.1),
+    loc='upper right',
     fontsize=dm.fs(-1),
     frameon=False,
 )
@@ -59,8 +58,7 @@ ax2.set_xlabel('X value', fontsize=dm.fs(0))
 ax2.set_ylabel('Y value', fontsize=dm.fs(0))
 ax2.set_title('Confidence Interval', fontsize=dm.fs(1))
 ax2.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.1),
+    loc='upper right',
     fontsize=dm.fs(-1),
     frameon=False,
 )
@@ -78,8 +76,7 @@ ax3.set_xlabel('X value', fontsize=dm.fs(0))
 ax3.set_ylabel('Y value', fontsize=dm.fs(0))
 ax3.set_title('Overlapping Areas', fontsize=dm.fs(1))
 ax3.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.1),
+    loc='upper right',
     fontsize=dm.fs(-1),
     frameon=False,
 )
@@ -101,8 +98,7 @@ ax4.set_xlabel('X value', fontsize=dm.fs(0))
 ax4.set_ylabel('Y value', fontsize=dm.fs(0))
 ax4.set_title('Stacked Areas', fontsize=dm.fs(1))
 ax4.legend(
-    loc='upper center',
-    bbox_to_anchor=(0.5, 1.12),
+    loc='upper left',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,

@@ -111,22 +111,26 @@ main :is(h1, h2, h3)[id] {
     scroll-margin-top: 80px;
 }
 
-/* Gallery: use three columns on desktop so thumbnails stay larger */
+/* Gallery: three-up grid on wide screens without shrinking the tiles */
+.sphx-glr-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+}
+
 .sphx-glr-thumbcontainer {
-    flex: 0 0 32%;
-    max-width: 32%;
+    width: 100%;
+    max-width: none;
 }
 
 @media (max-width: 1100px) {
-    .sphx-glr-thumbcontainer {
-        flex: 0 0 48%;
-        max-width: 48%;
+    .sphx-glr-thumbnails {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
 }
 
 @media (max-width: 720px) {
-    .sphx-glr-thumbcontainer {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .sphx-glr-thumbnails {
+        grid-template-columns: 1fr;
     }
 }
