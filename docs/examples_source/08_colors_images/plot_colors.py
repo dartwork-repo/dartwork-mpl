@@ -46,9 +46,8 @@ ax.set_xlabel('X', fontsize=dm.fs(0))
 ax.set_ylabel('Y', fontsize=dm.fs(0))
 ax.set_title('dartwork-mpl Color System', fontsize=dm.fs(1))
 ax.legend(
-    ncol=1,
-    loc='center left',
-    bbox_to_anchor=(1.02, 0.5),
+    ncol=2,
+    loc='upper left',
     frameon=False,
     fontsize=dm.fs(-1),
 )

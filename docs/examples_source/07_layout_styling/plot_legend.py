@@ -62,13 +62,13 @@ ax2.set_title('Custom Legend Handles', fontsize=dm.fs(1))
 ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
-# Panel C: Legend outside axes
+# Panel C: Legend inside axes (kept compact for thumbnails)
 ax3 = fig.add_subplot(gs[0, 2])
 ax3.plot(x, y1, color='dm.blue5', lw=0.7, label='Sin', alpha=0.8)
 ax3.plot(x, y2, color='dm.red5', lw=0.7, label='Cos', alpha=0.8)
 ax3.plot(x, y3, color='dm.green5', lw=0.7, label='Sin×Cos', alpha=0.8)
-# Legend outside: bbox_to_anchor=(1.05, 1), loc='upper left'
-ax3.legend(bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=dm.fs(-1), 
+# Legend tucked inside to avoid overflow
+ax3.legend(loc='lower left', fontsize=dm.fs(-1),
            ncol=1, framealpha=0.9)
 ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
@@ -81,4 +81,3 @@ dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-
