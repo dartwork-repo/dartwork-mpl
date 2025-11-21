@@ -69,23 +69,6 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Image display and colorbars.">
-
-.. only:: html
-
-  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_image_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_08_colors_images_plot_image.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Image Display</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Creating and using custom colormaps for visualization.">
 
 .. only:: html
@@ -118,6 +101,23 @@ techniques showcasing dartwork-mpl's color system.
     </div>
 
 
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Image display with multiple colormaps, interpolation modes, and edge overlays.">
+
+.. only:: html
+
+  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_image_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_08_colors_images_plot_image.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Image Display</div>
+    </div>
+
+
 .. thumbnail-parent-div-close
 
 .. raw:: html
@@ -131,7 +131,7 @@ techniques showcasing dartwork-mpl's color system.
    /gallery/08_colors_images/plot_colors
    /gallery/08_colors_images/plot_diverging_sequential
    /gallery/08_colors_images/plot_color_cycles
-   /gallery/08_colors_images/plot_image
    /gallery/08_colors_images/plot_custom_colormap
    /gallery/08_colors_images/plot_color_perception
+   /gallery/08_colors_images/plot_image
 

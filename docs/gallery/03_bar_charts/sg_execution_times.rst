@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:03.469** total execution time for 7 files **from gallery/03_bar_charts**:
+**00:00.838** total execution time for 7 files **from gallery/03_bar_charts**:
 
 .. container::
 
@@ -32,24 +32,24 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_grouped_bar.py` (``plot_grouped_bar.py``)
-     - 00:00.792
-     - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_lollipop.py` (``plot_lollipop.py``)
-     - 00:00.690
-     - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_horizontal_bar.py` (``plot_horizontal_bar.py``)
-     - 00:00.690
-     - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_diverging_bar.py` (``plot_diverging_bar.py``)
-     - 00:00.682
-     - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_waterfall.py` (``plot_waterfall.py``)
-     - 00:00.615
+   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_stacked_bar.py` (``plot_stacked_bar.py``)
+     - 00:00.838
      - 0.0
    * - :ref:`sphx_glr_gallery_03_bar_charts_plot_bar_chart.py` (``plot_bar_chart.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_stacked_bar.py` (``plot_stacked_bar.py``)
+   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_diverging_bar.py` (``plot_diverging_bar.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_grouped_bar.py` (``plot_grouped_bar.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_horizontal_bar.py` (``plot_horizontal_bar.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_lollipop.py` (``plot_lollipop.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_waterfall.py` (``plot_waterfall.py``)
      - 00:00.000
      - 0.0

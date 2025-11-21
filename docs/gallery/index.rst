@@ -52,40 +52,6 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Scatter plots with varying markers.">
-
-.. only:: html
-
-  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_scatter_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_01_basic_plots_plot_scatter.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Scatter Plots</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Advanced line plot styles.">
-
-.. only:: html
-
-  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_line_advanced_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_01_basic_plots_plot_line_advanced.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Advanced Line Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots and combinations with lines.">
 
 .. only:: html
@@ -149,6 +115,40 @@ These examples show basic line plots, scatter plots, and essential styling techn
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Line Styles</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Scatter plots with varying markers, color encodings, and density overlays to compare clustering patterns.">
+
+.. only:: html
+
+  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_scatter_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_01_basic_plots_plot_scatter.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Scatter Plots</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Advanced line plot styles, banded intervals, and rolling smoothing for publication-ready comparisons.">
+
+.. only:: html
+
+  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_line_advanced_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_01_basic_plots_plot_line_advanced.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Advanced Line Plots</div>
     </div>
 
 
@@ -225,23 +225,6 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Error bars and confidence intervals.">
-
-.. only:: html
-
-  .. image:: /gallery/02_statistical_plots/images/thumb/sphx_glr_plot_errorbars_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_02_statistical_plots_plot_errorbars.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Error Bars</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Linear and polynomial regression visualization with confidence intervals.">
 
 .. only:: html
@@ -254,6 +237,23 @@ and probability density functions for data analysis and scientific research.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Regression Analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Error bars and confidence intervals in multiple orientations and scales.">
+
+.. only:: html
+
+  .. image:: /gallery/02_statistical_plots/images/thumb/sphx_glr_plot_errorbars_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_02_statistical_plots_plot_errorbars.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Error Bars</div>
     </div>
 
 
@@ -398,23 +398,6 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stacked bar charts.">
-
-.. only:: html
-
-  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_stacked_bar_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_03_bar_charts_plot_stacked_bar.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Stacked Bar Chart</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Waterfall charts for showing cumulative effects of sequential values.">
 
 .. only:: html
@@ -427,6 +410,23 @@ for categorical data visualization and comparisons.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Waterfall Charts</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Stacked bar charts in vertical, horizontal, percentage, and cumulative views.">
+
+.. only:: html
+
+  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_stacked_bar_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_03_bar_charts_plot_stacked_bar.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Stacked Bar Chart</div>
     </div>
 
 
@@ -520,23 +520,6 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Quiver plots for vector fields.">
-
-.. only:: html
-
-  .. image:: /gallery/04_scientific_plots/images/thumb/sphx_glr_plot_quiver_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Quiver Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Publication-quality scientific figure.">
 
 .. only:: html
@@ -605,6 +588,23 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Quiver plots for vector fields: circular, radial, and spiraling flows.">
+
+.. only:: html
+
+  .. image:: /gallery/04_scientific_plots/images/thumb/sphx_glr_plot_quiver_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Quiver Plots</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Phase space and trajectory plots for dynamical systems.">
 
 .. only:: html
@@ -639,23 +639,6 @@ seasonal decomposition, and financial charts.
     <div class="sphx-glr-thumbnails">
 
 .. thumbnail-parent-div-open
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Step plots.">
-
-.. only:: html
-
-  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_step_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_05_time_series_plot_step.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Step Plots</div>
-    </div>
-
 
 .. raw:: html
 
@@ -727,23 +710,6 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Time series plotting.">
-
-.. only:: html
-
-  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_datetime_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_05_time_series_plot_datetime.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Datetime Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Visualizing time series forecasts with confidence intervals.">
 
 .. only:: html
@@ -761,7 +727,41 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stem plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Step plots for change detection, shift timing, and rolling summaries.">
+
+.. only:: html
+
+  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_step_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_05_time_series_plot_step.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Step Plots</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Time series plotting with multiple date formats, rolling trends, and spans.">
+
+.. only:: html
+
+  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_datetime_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_05_time_series_plot_datetime.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Datetime Plots</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Stem plots for spikes, grouped series, and categorical stems.">
 
 .. only:: html
 
@@ -832,7 +832,7 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Polar coordinate plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Polar coordinate plots, scatter distributions, and radial bars.">
 
 .. only:: html
 
@@ -861,40 +861,6 @@ pie charts, and other unique plot types for specific use cases.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Ridgeline Plots</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Pie charts and donut plots.">
-
-.. only:: html
-
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_pie_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_pie.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Pie Charts</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots.">
-
-.. only:: html
-
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_filled_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_filled.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Filled Plots</div>
     </div>
 
 
@@ -934,6 +900,23 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Pie charts, donut plots, and nested variants for share comparisons.">
+
+.. only:: html
+
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_pie_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_pie.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pie Charts</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Visualizing flows and connections between elements.">
 
 .. only:: html
@@ -946,6 +929,23 @@ pie charts, and other unique plot types for specific use cases.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Flow Diagrams</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots: confidence bands, stacked areas, and layered regions.">
+
+.. only:: html
+
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_filled_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_filled.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Filled Plots</div>
     </div>
 
 
@@ -1056,23 +1056,6 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting.">
-
-.. only:: html
-
-  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_custom_ticks_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Custom Ticks</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Creating inset axes for zoomed views and detail plots.">
 
 .. only:: html
@@ -1102,6 +1085,23 @@ and advanced styling techniques for publication-quality figures.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Legends</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting: positions, labels, and log scales.">
+
+.. only:: html
+
+  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_custom_ticks_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Custom Ticks</div>
     </div>
 
 
@@ -1195,23 +1195,6 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Image display and colorbars.">
-
-.. only:: html
-
-  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_image_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_08_colors_images_plot_image.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Image Display</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Creating and using custom colormaps for visualization.">
 
 .. only:: html
@@ -1241,6 +1224,23 @@ techniques showcasing dartwork-mpl's color system.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Color Perception</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Image display with multiple colormaps, interpolation modes, and edge overlays.">
+
+.. only:: html
+
+  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_image_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_08_colors_images_plot_image.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Image Display</div>
     </div>
 
 

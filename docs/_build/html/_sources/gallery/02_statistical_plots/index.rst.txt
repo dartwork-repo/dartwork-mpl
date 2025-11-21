@@ -69,23 +69,6 @@ and probability density functions for data analysis and scientific research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Error bars and confidence intervals.">
-
-.. only:: html
-
-  .. image:: /gallery/02_statistical_plots/images/thumb/sphx_glr_plot_errorbars_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_02_statistical_plots_plot_errorbars.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Error Bars</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Linear and polynomial regression visualization with confidence intervals.">
 
 .. only:: html
@@ -98,6 +81,23 @@ and probability density functions for data analysis and scientific research.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Regression Analysis</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Error bars and confidence intervals in multiple orientations and scales.">
+
+.. only:: html
+
+  .. image:: /gallery/02_statistical_plots/images/thumb/sphx_glr_plot_errorbars_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_02_statistical_plots_plot_errorbars.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Error Bars</div>
     </div>
 
 
@@ -165,8 +165,8 @@ and probability density functions for data analysis and scientific research.
    /gallery/02_statistical_plots/plot_probability_density
    /gallery/02_statistical_plots/plot_violin_box
    /gallery/02_statistical_plots/plot_correlation_matrix
-   /gallery/02_statistical_plots/plot_errorbars
    /gallery/02_statistical_plots/plot_regression
+   /gallery/02_statistical_plots/plot_errorbars
    /gallery/02_statistical_plots/plot_kde_plots
    /gallery/02_statistical_plots/plot_distribution
    /gallery/02_statistical_plots/plot_histogram

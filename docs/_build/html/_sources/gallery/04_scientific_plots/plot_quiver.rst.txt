@@ -21,20 +21,31 @@
 Quiver Plots
 ============
 
-Quiver plots for vector fields.
+Quiver plots for vector fields: circular, radial, and spiraling flows.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-90
+.. GENERATED FROM PYTHON SOURCE LINES 7-102
 
 
 
 .. image-sg:: /gallery/04_scientific_plots/images/sphx_glr_plot_quiver_001.png
-   :alt: Circular Flow, Radial Flow, Spiral Flow
+   :alt: Circular Flow, Radial Flow, Spiral Flow, Divergence Patterns
    :srcset: /gallery/04_scientific_plots/images/sphx_glr_plot_quiver_001.png
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Load colors...
+    Load colormaps...
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -64,16 +75,15 @@ Quiver plots for vector fields.
     U3 = -Y + 0.3 * X
     V3 = X + 0.3 * Y
 
-    # Create figure
-    # Double column figure: 17cm width
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+    # Create figure (square-ish): 16 cm wide, 12 cm tall
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-    # Create GridSpec for 3 subplots
+    # Create GridSpec for 4 subplots (2x2)
     gs = fig.add_gridspec(
-        nrows=1, ncols=3,
+        nrows=2, ncols=2,
         left=0.08, right=0.98,
-        top=0.92, bottom=0.15,
-        wspace=0.3
+        top=0.92, bottom=0.12,
+        wspace=0.25, hspace=0.3
     )
 
     # Panel A: Basic quiver plot
@@ -103,7 +113,7 @@ Quiver plots for vector fields.
     ax2.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
     # Panel C: Spiral flow
-    ax3 = fig.add_subplot(gs[0, 2])
+    ax3 = fig.add_subplot(gs[1, 0])
     # Explicit parameters: scale=6, width=0.003
     ax3.quiver(X, Y, U3, V3, color='dm.green5', scale=6, width=0.003,
                angles='xy', scale_units='xy')
@@ -115,6 +125,20 @@ Quiver plots for vector fields.
     ax3.set_yticks([-3, -1, 1, 3])
     ax3.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
+    # Panel D: Divergence field (sinks/sources)
+    ax4 = fig.add_subplot(gs[1, 1])
+    U4 = np.cos(X) - Y / 3
+    V4 = np.sin(Y) - X / 3
+    ax4.quiver(X, Y, U4, V4, color='dm.purple5', scale=8, width=0.003,
+               angles='xy', scale_units='xy')
+    ax4.set_xlabel('X', fontsize=dm.fs(0))
+    ax4.set_ylabel('Y', fontsize=dm.fs(0))
+    ax4.set_title('Divergence Patterns', fontsize=dm.fs(1))
+    ax4.set_aspect('equal')
+    ax4.set_xticks([-3, -1, 1, 3])
+    ax4.set_yticks([-3, -1, 1, 3])
+    ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
+
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
 
@@ -122,10 +146,9 @@ Quiver plots for vector fields.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.466 seconds)
+   **Total running time of the script:** (0 minutes 1.104 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_quiver.py:

@@ -21,20 +21,32 @@
 Scatter Plots
 =============
 
-Scatter plots with varying markers.
+Scatter plots with varying markers, color encodings, and density overlays to
+compare clustering patterns.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-92
+.. GENERATED FROM PYTHON SOURCE LINES 8-111
 
 
 
 .. image-sg:: /gallery/01_basic_plots/images/sphx_glr_plot_scatter_001.png
-   :alt: Basic Scatter Plot, Color Mapping, Size Mapping
+   :alt: Basic Scatter Plot, Color Mapping, Size Mapping, Density + Scatter Overlay
    :srcset: /gallery/01_basic_plots/images/sphx_glr_plot_scatter_001.png
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Load colors...
+    Load colormaps...
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -63,15 +75,15 @@ Scatter plots with varying markers.
     sizes = 100 * np.random.rand(n)
 
     # Create figure
-    # Single column figure: 9cm width
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+    # Square-ish layout: 16 cm wide, 12 cm tall, 2x2 grid
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-    # Create GridSpec for 3 subplots
+    # Create GridSpec for 4 subplots (2x2)
     gs = fig.add_gridspec(
-        nrows=1, ncols=3,
+        nrows=2, ncols=2,
         left=0.08, right=0.98,
-        top=0.92, bottom=0.15,
-        wspace=0.3
+        top=0.92, bottom=0.12,
+        wspace=0.25, hspace=0.3
     )
 
     # Panel A: Basic scatter with different markers
@@ -106,7 +118,7 @@ Scatter plots with varying markers.
     ax2.set_yticks([-3, -1, 1, 3])
 
     # Panel C: Scatter with size mapping
-    ax3 = fig.add_subplot(gs[0, 2])
+    ax3 = fig.add_subplot(gs[1, 0])
     # Size mapping: s=sizes, c='dm.green5', alpha=0.6
     scatter3 = ax3.scatter(x1, y1, s=sizes, c='dm.green5', 
                            edgecolors='dm.green7', linewidths=0.3, alpha=0.6)
@@ -117,6 +129,25 @@ Scatter plots with varying markers.
     ax3.set_xticks([-3, -1, 1, 3])
     ax3.set_yticks([-3, -1, 1, 3])
 
+    # Panel D: Density background + contour overlays
+    ax4 = fig.add_subplot(gs[1, 1])
+    grid_x, grid_y = np.meshgrid(
+        np.linspace(-3.5, 3.5, 80),
+        np.linspace(-3.5, 3.5, 80),
+    )
+    dens = (
+        np.exp(-((grid_x - 1) ** 2 + (grid_y + 0.5) ** 2))
+        + 0.6 * np.exp(-((grid_x + 1) ** 2 + (grid_y - 0.5) ** 2))
+    )
+    ax4.contourf(grid_x, grid_y, dens, cmap='dm.Spectral', alpha=0.7, levels=12)
+    ax4.contour(grid_x, grid_y, dens, colors='dm.gray6', linewidths=0.3, levels=12)
+    ax4.scatter(x2, y2, c='white', s=12, edgecolors='dm.gray7', linewidths=0.4, alpha=0.8)
+    ax4.set_xlabel('X value', fontsize=dm.fs(0))
+    ax4.set_ylabel('Y value', fontsize=dm.fs(0))
+    ax4.set_title('Density + Scatter Overlay', fontsize=dm.fs(1))
+    ax4.set_xticks([-3, -1, 1, 3])
+    ax4.set_yticks([-3, -1, 1, 3])
+
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
 
@@ -124,10 +155,9 @@ Scatter plots with varying markers.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.608 seconds)
+   **Total running time of the script:** (0 minutes 1.214 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_scatter.py:

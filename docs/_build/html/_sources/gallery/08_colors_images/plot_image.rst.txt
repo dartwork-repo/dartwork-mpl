@@ -21,20 +21,31 @@
 Image Display
 =============
 
-Image display and colorbars.
+Image display with multiple colormaps, interpolation modes, and edge overlays.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-78
+.. GENERATED FROM PYTHON SOURCE LINES 7-88
 
 
 
 .. image-sg:: /gallery/08_colors_images/images/sphx_glr_plot_image_001.png
-   :alt: Colormap: Spectral, Colormap: Coolwarm, Colormap: Viridis
+   :alt: Colormap: Spectral, Colormap: Coolwarm, Colormap: Viridis, Edge Map Overlay
    :srcset: /gallery/08_colors_images/images/sphx_glr_plot_image_001.png
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Load colors...
+    Load colormaps...
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -53,15 +64,15 @@ Image display and colorbars.
     data3 = np.random.rand(20, 20)
 
     # Create figure
-    # Double column figure: 17cm width
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+    # Square layout for balanced comparisons
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-    # Create GridSpec for 3 subplots
+    # Create GridSpec for 4 subplots
     gs = fig.add_gridspec(
-        nrows=1, ncols=3,
+        nrows=2, ncols=2,
         left=0.08, right=0.98,
-        top=0.92, bottom=0.15,
-        wspace=0.3
+        top=0.92, bottom=0.12,
+        wspace=0.2, hspace=0.25
     )
 
     # Panel A: imshow with colormap
@@ -91,7 +102,7 @@ Image display and colorbars.
     cbar2.ax.tick_params(labelsize=dm.fs(-1))
 
     # Panel C: Multiple images comparison
-    ax3 = fig.add_subplot(gs[0, 2])
+    ax3 = fig.add_subplot(gs[1, 0])
     # Explicit parameters: cmap='viridis', interpolation='bicubic'
     im3 = ax3.imshow(data3, cmap='viridis', interpolation='bicubic',
                      aspect='auto', origin='lower')
@@ -103,6 +114,17 @@ Image display and colorbars.
     cbar3.set_label('Intensity', fontsize=dm.fs(-1))
     cbar3.ax.tick_params(labelsize=dm.fs(-1))
 
+
+    # Panel D: Edge detection overlay
+    ax4 = fig.add_subplot(gs[1, 1])
+    edges = np.abs(np.gradient(data1, axis=0)) + np.abs(np.gradient(data1, axis=1))
+    im4 = ax4.imshow(edges, cmap='dm.Greys', interpolation='nearest',
+                     aspect='auto', origin='lower')
+    ax4.set_title('Edge Map Overlay', fontsize=dm.fs(1))
+    ax4.set_xlabel('X index', fontsize=dm.fs(0))
+    ax4.set_ylabel('Y index', fontsize=dm.fs(0))
+    fig.colorbar(im4, ax=ax4).set_label('Edge strength', fontsize=dm.fs(-1))
+
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
 
@@ -110,10 +132,9 @@ Image display and colorbars.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.121 seconds)
+   **Total running time of the script:** (0 minutes 2.019 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_image.py:

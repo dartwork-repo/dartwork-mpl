@@ -2,7 +2,7 @@
 Filled Plots
 ============
 
-Filled area plots.
+Filled area plots: confidence bands, stacked areas, and layered regions.
 """
 
 import numpy as np
@@ -28,16 +28,15 @@ y_stack1 = np.sin(x) + 1
 y_stack2 = np.cos(x) + 1
 y_stack3 = 0.5 * np.sin(2 * x) + 1
 
-# Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Create figure (square-ish): 16 cm wide, 12 cm tall
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-# Create GridSpec for 3 subplots
+# Create GridSpec for 4 subplots (2x2)
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.92, bottom=0.12,
+    wspace=0.25, hspace=0.3
 )
 
 # Panel A: fill_between
@@ -73,7 +72,7 @@ ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([0, 1, 2, 3, 4, 5])
 
 # Panel C: Multiple filled regions
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 # Multiple fills: alpha=0.3 for each
 ax3.fill_between(x, 0, y1, color='dm.blue5', alpha=0.3, 
                  edgecolors='dm.blue7', linewidth=0.3, label='Region 1')
@@ -93,9 +92,23 @@ ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([0, 1, 2, 3, 4])
 
+# Panel D: Baseline comparison with hatching
+ax4 = fig.add_subplot(gs[1, 1])
+baseline = 1.5 + 0.2 * np.sin(0.8 * x)
+ax4.fill_between(x, baseline, baseline + 0.8, color='dm.gray3', alpha=0.3,
+                 edgecolors='dm.gray6', linewidth=0.3, label='Band A')
+ax4.fill_between(x, baseline + 0.8, baseline + 1.6, color='dm.orange5', alpha=0.25,
+                 edgecolors='dm.orange7', linewidth=0.3, hatch='//', label='Band B')
+ax4.plot(x, baseline, color='0.1', lw=0.7, label='Baseline')
+ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
+ax4.set_ylabel('Value', fontsize=dm.fs(0))
+ax4.set_title('Layered Bands with Baseline', fontsize=dm.fs(1))
+ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax4.set_xticks([0, 2, 4, 6, 8, 10])
+ax4.set_yticks([1, 2, 3, 4])
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

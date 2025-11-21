@@ -18,23 +18,6 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Step plots.">
-
-.. only:: html
-
-  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_step_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_05_time_series_plot_step.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Step Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Moving averages and rolling window statistics.">
 
 .. only:: html
@@ -103,23 +86,6 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Time series plotting.">
-
-.. only:: html
-
-  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_datetime_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_05_time_series_plot_datetime.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Datetime Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Visualizing time series forecasts with confidence intervals.">
 
 .. only:: html
@@ -137,7 +103,41 @@ seasonal decomposition, and financial charts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stem plots.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Step plots for change detection, shift timing, and rolling summaries.">
+
+.. only:: html
+
+  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_step_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_05_time_series_plot_step.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Step Plots</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Time series plotting with multiple date formats, rolling trends, and spans.">
+
+.. only:: html
+
+  .. image:: /gallery/05_time_series/images/thumb/sphx_glr_plot_datetime_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_05_time_series_plot_datetime.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Datetime Plots</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Stem plots for spikes, grouped series, and categorical stems.">
 
 .. only:: html
 
@@ -162,12 +162,12 @@ seasonal decomposition, and financial charts.
 .. toctree::
    :hidden:
 
-   /gallery/05_time_series/plot_step
    /gallery/05_time_series/plot_rolling_stats
    /gallery/05_time_series/plot_autocorrelation
    /gallery/05_time_series/plot_time_comparison
    /gallery/05_time_series/plot_trend_analysis
-   /gallery/05_time_series/plot_datetime
    /gallery/05_time_series/plot_forecast
+   /gallery/05_time_series/plot_step
+   /gallery/05_time_series/plot_datetime
    /gallery/05_time_series/plot_stem
 

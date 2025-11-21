@@ -2,7 +2,7 @@
 Error Bars
 ==========
 
-Error bars and confidence intervals.
+Error bars and confidence intervals in multiple orientations and scales.
 """
 
 import numpy as np
@@ -23,16 +23,15 @@ xerr = np.array([0.1, 0.15, 0.1, 0.2, 0.15])
 yerr_lower = np.array([0.2, 0.3, 0.15, 0.4, 0.25])
 yerr_upper = np.array([0.4, 0.5, 0.25, 0.6, 0.35])
 
-# Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Create figure (square-ish): 16 cm wide, 12 cm tall
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-# Create GridSpec for 3 subplots
+# Create GridSpec for 4 subplots (2x2)
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.92, bottom=0.12,
+    wspace=0.25, hspace=0.3
 )
 
 # Panel A: Vertical error bars
@@ -64,7 +63,7 @@ ax2.set_xticks([1, 2, 3, 4, 5])
 ax2.set_yticks([0, 1, 2, 3, 4, 5])
 
 # Panel C: Asymmetric error bars
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 # Explicit parameters: yerr=[yerr_lower, yerr_upper] for asymmetric
 ax3.errorbar(x, y, yerr=[yerr_lower, yerr_upper], fmt='^', 
              color='dm.green5', ecolor='dm.green7', 
@@ -78,9 +77,24 @@ ax3.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
 ax3.set_xticks([1, 2, 3, 4, 5])
 ax3.set_yticks([0, 1, 2, 3, 4, 5])
 
+# Panel D: Error bars on log-scale
+ax4 = fig.add_subplot(gs[1, 1])
+log_x = np.array([0.5, 1, 2, 4, 8])
+log_y = np.array([1.2, 1.6, 2.0, 2.8, 3.2])
+log_err = np.array([0.1, 0.15, 0.2, 0.25, 0.35])
+ax4.errorbar(log_x, log_y, xerr=log_err, fmt='o',
+             color='dm.purple5', ecolor='dm.purple7',
+             elinewidth=0.7, capsize=2, capthick=0.7,
+             markersize=4, label='Log-scale x-error')
+ax4.set_xscale('log')
+ax4.set_xlabel('Log-scaled X', fontsize=dm.fs(0))
+ax4.set_ylabel('Y value', fontsize=dm.fs(0))
+ax4.set_title('Horizontal Error (log scale)', fontsize=dm.fs(1))
+ax4.legend(loc='upper left', fontsize=dm.fs(-1))
+ax4.set_yticks([1, 2, 3, 4])
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

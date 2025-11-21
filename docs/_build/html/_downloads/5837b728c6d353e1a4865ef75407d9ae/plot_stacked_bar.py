@@ -2,7 +2,7 @@
 Stacked Bar Chart
 =================
 
-Stacked bar charts.
+Stacked bar charts in vertical, horizontal, percentage, and cumulative views.
 """
 
 import numpy as np
@@ -25,16 +25,15 @@ pct1 = values1 / total * 100
 pct2 = values2 / total * 100
 pct3 = values3 / total * 100
 
-# Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Create figure (square-ish): 16 cm wide, 12 cm tall
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-# Create GridSpec for 3 subplots
+# Create GridSpec for 4 subplots (2x2)
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.92, bottom=0.12,
+    wspace=0.25, hspace=0.3
 )
 
 # Panel A: Vertical stacked bars
@@ -76,7 +75,7 @@ ax2.legend(loc='lower right', fontsize=dm.fs(-1), ncol=1)
 ax2.set_xticks([0, 20, 40, 60])
 
 # Panel C: Percentage stacked bars
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 # Explicit parameters: width=0.6, alpha=0.7
 bars3a = ax3.bar(x_pos, pct1, width, color='dm.blue5', alpha=0.7,
                   edgecolor='dm.blue7', linewidth=0.3, label='Category A')
@@ -93,9 +92,27 @@ ax3.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
 ax3.set_yticks([0, 25, 50, 75, 100])
 ax3.set_ylim(0, 100)
 
+# Panel D: Cumulative totals with annotations
+ax4 = fig.add_subplot(gs[1, 1])
+cumulative = np.cumsum(np.vstack([values1, values2, values3]), axis=0)
+total_values = cumulative[-1]
+bars4 = ax4.bar(categories, total_values, color='dm.gray3', alpha=0.8,
+                edgecolor='dm.gray7', linewidth=0.3, label='Total')
+ax4.plot(categories, cumulative[0], color='dm.blue7', lw=1.1, marker='o',
+         label='A cumulative', alpha=0.9)
+ax4.plot(categories, cumulative[1], color='dm.red7', lw=1.1, marker='s',
+         label='A+B cumulative', alpha=0.9)
+ax4.set_ylabel('Cumulative Value', fontsize=dm.fs(0))
+ax4.set_title('Cumulative Story', fontsize=dm.fs(1))
+for bar in bars4:
+    height = bar.get_height()
+    ax4.text(bar.get_x() + bar.get_width() / 2, height + 1, f'{height:.0f}',
+             ha='center', va='bottom', fontsize=dm.fs(-2))
+ax4.set_ylim(0, max(total_values) * 1.2)
+ax4.legend(fontsize=dm.fs(-1), loc='upper left')
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

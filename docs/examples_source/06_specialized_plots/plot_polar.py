@@ -2,7 +2,7 @@
 Polar Plots
 ===========
 
-Polar coordinate plots.
+Polar coordinate plots, scatter distributions, and radial bars.
 """
 
 import numpy as np
@@ -19,16 +19,15 @@ r1 = np.array([3, 5, 2, 4, 6, 3, 5, 4])
 r2 = np.random.rand(20) * 5
 theta2 = np.linspace(0, 2 * np.pi, 20, endpoint=False)
 
-# Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Create figure (square-ish): 16 cm wide, 12 cm tall
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-# Create GridSpec for 3 subplots with polar projection
+# Create GridSpec for 4 subplots with polar projection (2x2)
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.92, bottom=0.12,
+    wspace=0.25, hspace=0.3
 )
 
 # Panel A: Basic polar plot
@@ -51,7 +50,7 @@ ax2.set_theta_direction(-1)
 ax2.grid(True, linestyle='--', linewidth=0.3, alpha=0.5)
 
 # Panel C: Polar bar chart
-ax3 = fig.add_subplot(gs[0, 2], projection='polar')
+ax3 = fig.add_subplot(gs[1, 0], projection='polar')
 # Explicit parameters: width=0.5, alpha=0.7, edgecolor, linewidth=0.3
 width = 2 * np.pi / len(theta)
 bars = ax3.bar(theta, r1, width=width, color='dm.green5', 
@@ -61,9 +60,22 @@ ax3.set_theta_zero_location('N')
 ax3.set_theta_direction(-1)
 ax3.grid(True, linestyle='--', linewidth=0.3, alpha=0.5)
 
+# Panel D: Multi-group radial comparison
+ax4 = fig.add_subplot(gs[1, 1], projection='polar')
+theta_groups = np.linspace(0, 2 * np.pi, 12, endpoint=False)
+group_a = 2 + np.random.rand(len(theta_groups)) * 2
+group_b = 1.5 + np.random.rand(len(theta_groups)) * 2.5
+ax4.plot(theta_groups, group_a, color='dm.purple5', lw=1.1, marker='o', markersize=4, label='Group A')
+ax4.plot(theta_groups, group_b, color='dm.orange5', lw=1.1, marker='s', markersize=4, label='Group B')
+ax4.fill(theta_groups, group_a, color='dm.purple2', alpha=0.25)
+ax4.set_title('Radial Multi-Series', fontsize=dm.fs(1), pad=20)
+ax4.legend(loc='lower left', bbox_to_anchor=(1.05, 0.1), fontsize=dm.fs(-1))
+ax4.set_theta_zero_location('N')
+ax4.set_theta_direction(-1)
+ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.5)
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

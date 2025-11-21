@@ -35,40 +35,6 @@ These examples show basic line plots, scatter plots, and essential styling techn
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Scatter plots with varying markers.">
-
-.. only:: html
-
-  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_scatter_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_01_basic_plots_plot_scatter.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Scatter Plots</div>
-    </div>
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Advanced line plot styles.">
-
-.. only:: html
-
-  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_line_advanced_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_01_basic_plots_plot_line_advanced.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Advanced Line Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Filled area plots and combinations with lines.">
 
 .. only:: html
@@ -135,6 +101,40 @@ These examples show basic line plots, scatter plots, and essential styling techn
     </div>
 
 
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Scatter plots with varying markers, color encodings, and density overlays to compare clustering patterns.">
+
+.. only:: html
+
+  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_scatter_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_01_basic_plots_plot_scatter.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Scatter Plots</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Advanced line plot styles, banded intervals, and rolling smoothing for publication-ready comparisons.">
+
+.. only:: html
+
+  .. image:: /gallery/01_basic_plots/images/thumb/sphx_glr_plot_line_advanced_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_01_basic_plots_plot_line_advanced.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Advanced Line Plots</div>
+    </div>
+
+
 .. thumbnail-parent-div-close
 
 .. raw:: html
@@ -146,10 +146,10 @@ These examples show basic line plots, scatter plots, and essential styling techn
    :hidden:
 
    /gallery/01_basic_plots/plot_basic
-   /gallery/01_basic_plots/plot_scatter
-   /gallery/01_basic_plots/plot_line_advanced
    /gallery/01_basic_plots/plot_area_plots
    /gallery/01_basic_plots/plot_multiple_lines
    /gallery/01_basic_plots/plot_markers
    /gallery/01_basic_plots/plot_line_styles
+   /gallery/01_basic_plots/plot_scatter
+   /gallery/01_basic_plots/plot_line_advanced
 

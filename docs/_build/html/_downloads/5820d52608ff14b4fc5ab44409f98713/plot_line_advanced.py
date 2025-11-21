@@ -2,7 +2,8 @@
 Advanced Line Plots
 ===================
 
-Advanced line plot styles.
+Advanced line plot styles, banded intervals, and rolling smoothing for
+publication-ready comparisons.
 """
 
 import numpy as np
@@ -18,21 +19,21 @@ x = np.linspace(0, 10, 50)
 y1 = np.sin(x) + 0.1 * np.random.randn(len(x))
 y2 = np.cos(x) + 0.1 * np.random.randn(len(x))
 y3 = np.sin(x) * np.cos(x) + 0.1 * np.random.randn(len(x))
+y4 = np.sin(0.4 * np.pi * x) + 0.15 * np.random.randn(len(x))
 
 # Error band data
 y_upper = y1 + 0.3
 y_lower = y1 - 0.3
 
-# Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Create figure (square-ish): 16 cm wide, 12 cm tall
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-# Create GridSpec for 3 subplots
+# Create GridSpec for 4 subplots (2x2)
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.92, bottom=0.12,
+    wspace=0.25, hspace=0.3
 )
 
 # Panel A: Multiple lines with markers
@@ -67,7 +68,7 @@ ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel C: Line with error band
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 # Main line: lw=0.7
 ax3.plot(x, y1, color='dm.blue5', lw=0.7, label='Mean', alpha=0.8)
 # Error band: alpha=0.2, edgecolors='none'
@@ -81,9 +82,24 @@ ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 
+# Panel D: Smoothed trend with step overlay
+ax4 = fig.add_subplot(gs[1, 1])
+# Rolling mean (5-point window) for y4
+window = 5
+kernel = np.ones(window) / window
+y4_smooth = np.convolve(y4, kernel, mode='same')
+ax4.plot(x, y4, color='dm.orange5', lw=0.6, alpha=0.4, label='Raw signal')
+ax4.plot(x, y4_smooth, color='dm.orange7', lw=1.2, label='Smoothed')
+ax4.step(x, np.round(y4_smooth, 1), where='mid', color='dm.gray6', lw=0.6, label='Step (rounded)')
+ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
+ax4.set_ylabel('Amplitude', fontsize=dm.fs(0))
+ax4.set_title('Smoothed & Stepped Signal', fontsize=dm.fs(1))
+ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax4.set_xticks([0, 2, 4, 6, 8, 10])
+ax4.set_yticks([-2, -1, 0, 1, 2])
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

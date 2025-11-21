@@ -2,7 +2,7 @@
 Datetime Plots
 ==============
 
-Time series plotting.
+Time series plotting with multiple date formats, rolling trends, and spans.
 """
 
 import numpy as np
@@ -25,16 +25,15 @@ dates = [start_date + timedelta(days=i) for i in range(100)]
 values1 = np.sin(np.linspace(0, 4 * np.pi, 100)) + np.random.randn(100) * 0.2
 values2 = np.cos(np.linspace(0, 4 * np.pi, 100)) + np.random.randn(100) * 0.2
 
-# Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Create figure (square-ish): 16 cm wide, 12 cm tall
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-# Create GridSpec for 3 subplots
+# Create GridSpec for 4 subplots (2x2)
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.92, bottom=0.12,
+    wspace=0.28, hspace=0.35
 )
 
 # Panel A: Basic time series
@@ -65,7 +64,7 @@ ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 ax2.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
 # Panel C: Custom date ticks
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 ax3.plot(dates, values1, color='dm.green5', lw=0.7, label='Series A', alpha=0.8)
 # Custom date formatting: day-month format
 ax3.xaxis.set_major_formatter(mdates.DateFormatter('%d-%m'))
@@ -77,9 +76,24 @@ ax3.set_title('Custom Date Format', fontsize=dm.fs(1))
 ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 ax3.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
+# Panel D: Rolling mean + span highlighting
+ax4 = fig.add_subplot(gs[1, 1])
+rolling = np.convolve(values1, np.ones(7)/7, mode='same')
+ax4.plot(dates, values1, color='dm.gray5', lw=0.6, alpha=0.4, label='Raw')
+ax4.plot(dates, rolling, color='dm.orange7', lw=1.4, label='7-day mean')
+ax4.axvspan(dates[20], dates[45], color='dm.orange3', alpha=0.2,
+            label='Event span')
+ax4.set_xlabel('Date', fontsize=dm.fs(0))
+ax4.set_ylabel('Smoothed Value', fontsize=dm.fs(0))
+ax4.set_title('Rolling Trend & Highlight', fontsize=dm.fs(1))
+ax4.legend(loc='upper left', fontsize=dm.fs(-1))
+ax4.xaxis.set_major_locator(mdates.WeekdayLocator(interval=3))
+ax4.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
+ax4.tick_params(axis='x', rotation=30)
+ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

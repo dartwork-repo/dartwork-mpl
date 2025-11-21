@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:05.792** total execution time for 8 files **from gallery/05_time_series**:
+**00:00.885** total execution time for 8 files **from gallery/05_time_series**:
 
 .. container::
 
@@ -32,27 +32,27 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_forecast.py` (``plot_forecast.py``)
-     - 00:01.526
-     - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_rolling_stats.py` (``plot_rolling_stats.py``)
-     - 00:01.176
+   * - :ref:`sphx_glr_gallery_05_time_series_plot_stem.py` (``plot_stem.py``)
+     - 00:00.885
      - 0.0
    * - :ref:`sphx_glr_gallery_05_time_series_plot_autocorrelation.py` (``plot_autocorrelation.py``)
-     - 00:01.054
-     - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_time_comparison.py` (``plot_time_comparison.py``)
-     - 00:01.040
-     - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_trend_analysis.py` (``plot_trend_analysis.py``)
-     - 00:00.997
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_05_time_series_plot_datetime.py` (``plot_datetime.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_stem.py` (``plot_stem.py``)
+   * - :ref:`sphx_glr_gallery_05_time_series_plot_forecast.py` (``plot_forecast.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_05_time_series_plot_rolling_stats.py` (``plot_rolling_stats.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_05_time_series_plot_step.py` (``plot_step.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_05_time_series_plot_time_comparison.py` (``plot_time_comparison.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_05_time_series_plot_trend_analysis.py` (``plot_trend_analysis.py``)
      - 00:00.000
      - 0.0

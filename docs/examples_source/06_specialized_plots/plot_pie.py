@@ -2,7 +2,7 @@
 Pie Charts
 ==========
 
-Pie charts and donut plots.
+Pie charts, donut plots, and nested variants for share comparisons.
 """
 
 import matplotlib.pyplot as plt
@@ -32,15 +32,15 @@ explode1 = (0.05, 0, 0, 0, 0)
 explode2 = (0.1, 0, 0, 0)
 
 # Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Square layout for even slices
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec for 3 subplots
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.92, bottom=0.12,
+    wspace=0.2, hspace=0.3
 )
 
 # Panel A: Basic pie chart
@@ -71,7 +71,7 @@ for autotext in autotexts2:
 ax2.set_title('Donut Chart', fontsize=dm.fs(1))
 
 # Panel C: Exploded pie chart
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 # Explicit parameters: explode, shadow=True, startangle=90
 wedges3, texts3, autotexts3 = ax3.pie(sizes2, labels=labels2, colors=colors2,
                                        explode=explode2, shadow=True,
@@ -83,6 +83,30 @@ for autotext in autotexts3:
     autotext.set_fontweight('bold')
     autotext.set_fontsize(dm.fs(-1))
 ax3.set_title('Exploded Pie Chart', fontsize=dm.fs(1))
+
+
+# Panel D: Nested donut comparison
+ax4 = fig.add_subplot(gs[1, 1])
+outer_sizes = [0.5, 0.3, 0.2]
+inner_sizes = [0.6, 0.4]
+colors_outer = ['dm.blue5', 'dm.orange5', 'dm.gray3']
+colors_inner = ['dm.purple5', 'dm.purple2']
+ax4.pie(
+    outer_sizes,
+    radius=1.0,
+    colors=colors_outer,
+    wedgeprops=dict(width=0.4, edgecolor='white'),
+    startangle=60
+)
+ax4.pie(
+    inner_sizes,
+    radius=0.6,
+    colors=colors_inner,
+    wedgeprops=dict(width=0.4, edgecolor='white'),
+    startangle=-30
+)
+ax4.set_title('Nested Donut Variations', fontsize=dm.fs(1))
+ax4.axis('equal')
 
 # Optimize layout
 dm.simple_layout(fig, gs=gs)

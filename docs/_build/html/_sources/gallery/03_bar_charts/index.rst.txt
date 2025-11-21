@@ -86,23 +86,6 @@ for categorical data visualization and comparisons.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stacked bar charts.">
-
-.. only:: html
-
-  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_stacked_bar_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_03_bar_charts_plot_stacked_bar.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Stacked Bar Chart</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Waterfall charts for showing cumulative effects of sequential values.">
 
 .. only:: html
@@ -115,6 +98,23 @@ for categorical data visualization and comparisons.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Waterfall Charts</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Stacked bar charts in vertical, horizontal, percentage, and cumulative views.">
+
+.. only:: html
+
+  .. image:: /gallery/03_bar_charts/images/thumb/sphx_glr_plot_stacked_bar_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_03_bar_charts_plot_stacked_bar.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Stacked Bar Chart</div>
     </div>
 
 
@@ -149,7 +149,7 @@ for categorical data visualization and comparisons.
    /gallery/03_bar_charts/plot_horizontal_bar
    /gallery/03_bar_charts/plot_diverging_bar
    /gallery/03_bar_charts/plot_lollipop
-   /gallery/03_bar_charts/plot_stacked_bar
    /gallery/03_bar_charts/plot_waterfall
+   /gallery/03_bar_charts/plot_stacked_bar
    /gallery/03_bar_charts/plot_grouped_bar
 

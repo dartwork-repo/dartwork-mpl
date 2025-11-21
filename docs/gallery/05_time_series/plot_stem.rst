@@ -21,14 +21,14 @@
 Stem Plots
 ==========
 
-Stem plots.
+Stem plots for spikes, grouped series, and categorical stems.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-114
+.. GENERATED FROM PYTHON SOURCE LINES 7-133
 
 
 
 .. image-sg:: /gallery/05_time_series/images/sphx_glr_plot_stem_001.png
-   :alt: Basic Stem Plot, Stem with Markers, Multiple Stem Series
+   :alt: Basic Stem Plot, Stem with Markers, Multiple Stem Series, Categorical Stem Plot
    :srcset: /gallery/05_time_series/images/sphx_glr_plot_stem_001.png
    :class: sphx-glr-single-img
 
@@ -54,16 +54,15 @@ Stem plots.
     y2 = np.cos(x)
     y3 = 0.5 * np.sin(2 * x)
 
-    # Create figure
-    # Double column figure: 17cm width
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+    # Create figure (square-ish): 16 cm wide, 12 cm tall
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-    # Create GridSpec for 3 subplots
+    # Create GridSpec for 4 subplots (2x2)
     gs = fig.add_gridspec(
-        nrows=1, ncols=3,
+        nrows=2, ncols=2,
         left=0.08, right=0.98,
-        top=0.92, bottom=0.15,
-        wspace=0.3
+        top=0.92, bottom=0.12,
+        wspace=0.25, hspace=0.3
     )
 
     # Panel A: Basic stem plot
@@ -110,7 +109,7 @@ Stem plots.
     ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
     # Panel C: Multiple stem series
-    ax3 = fig.add_subplot(gs[0, 2])
+    ax3 = fig.add_subplot(gs[1, 0])
     # First stem: lw=0.7
     markerline3a, stemlines3a, baseline3a = ax3.stem(x, y1,
                                                       linefmt='-',
@@ -139,6 +138,27 @@ Stem plots.
     ax3.set_xticks([0, 2, 4, 6, 8])
     ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 
+    # Panel D: Categorical stems with jitter
+    ax4 = fig.add_subplot(gs[1, 1])
+    cats = np.array(['A', 'B', 'C', 'D'])
+    cat_values = np.array([2.5, 3.8, 1.9, 3.1])
+    jitter_x = np.arange(len(cats))
+    markerline4, stemlines4, baseline4 = ax4.stem(jitter_x, cat_values,
+                                                   linefmt='-', markerfmt='o', basefmt='-',
+                                                   label='Category stems')
+    plt.setp(stemlines4, linewidth=0.7, color=mcolors.to_rgb('dm.purple5'))
+    plt.setp(markerline4, markersize=5, markeredgewidth=0.3,
+             markerfacecolor=mcolors.to_rgb('dm.purple7'),
+             markeredgecolor=mcolors.to_rgb('dm.purple7'))
+    plt.setp(baseline4, linewidth=0.5, color=mcolors.to_rgb('dm.gray5'))
+    ax4.set_xticks(jitter_x)
+    ax4.set_xticklabels(cats, fontsize=dm.fs(0))
+    ax4.set_ylabel('Value', fontsize=dm.fs(0))
+    ax4.set_title('Categorical Stem Plot', fontsize=dm.fs(1))
+    ax4.set_ylim(0, 4.5)
+    ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+    ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
+
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
 
@@ -146,10 +166,9 @@ Stem plots.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.527 seconds)
+   **Total running time of the script:** (0 minutes 0.885 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_stem.py:

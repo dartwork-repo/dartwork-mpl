@@ -69,23 +69,6 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Quiver plots for vector fields.">
-
-.. only:: html
-
-  .. image:: /gallery/04_scientific_plots/images/thumb/sphx_glr_plot_quiver_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Quiver Plots</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Publication-quality scientific figure.">
 
 .. only:: html
@@ -154,6 +137,23 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Quiver plots for vector fields: circular, radial, and spiraling flows.">
+
+.. only:: html
+
+  .. image:: /gallery/04_scientific_plots/images/thumb/sphx_glr_plot_quiver_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Quiver Plots</div>
+    </div>
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Phase space and trajectory plots for dynamical systems.">
 
 .. only:: html
@@ -182,10 +182,10 @@ and publication-quality figures for academic research.
    /gallery/04_scientific_plots/plot_heatmap
    /gallery/04_scientific_plots/plot_streamplot
    /gallery/04_scientific_plots/plot_contour
-   /gallery/04_scientific_plots/plot_quiver
    /gallery/04_scientific_plots/plot_scientific_paper
    /gallery/04_scientific_plots/plot_vector_field_advanced
    /gallery/04_scientific_plots/plot_spectral_analysis
    /gallery/04_scientific_plots/plot_3d_surface
+   /gallery/04_scientific_plots/plot_quiver
    /gallery/04_scientific_plots/plot_phase_diagram
 

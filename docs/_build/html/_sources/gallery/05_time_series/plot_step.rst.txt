@@ -21,20 +21,31 @@
 Step Plots
 ==========
 
-Step plots.
+Step plots for change detection, shift timing, and rolling summaries.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-83
+.. GENERATED FROM PYTHON SOURCE LINES 7-100
 
 
 
 .. image-sg:: /gallery/05_time_series/images/sphx_glr_plot_step_001.png
-   :alt: Step: Pre, Step: Post, Multiple Step Series
+   :alt: Step: Pre, Step: Post, Multiple Step Series, Smoothed & Highlighted
    :srcset: /gallery/05_time_series/images/sphx_glr_plot_step_001.png
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Load colors...
+    Load colormaps...
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -53,16 +64,15 @@ Step plots.
     y2 = np.array([1, 2, 1, 3, 2, 4, 3, 2, 1, 2, 1])
     y3 = np.array([2, 1, 3, 2, 4, 3, 2, 1, 2, 1, 2])
 
-    # Create figure
-    # Double column figure: 17cm width
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+    # Create figure (square-ish): 16 cm wide, 12 cm tall
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
-    # Create GridSpec for 3 subplots
+    # Create GridSpec for 4 subplots (2x2)
     gs = fig.add_gridspec(
-        nrows=1, ncols=3,
+        nrows=2, ncols=2,
         left=0.08, right=0.98,
-        top=0.92, bottom=0.15,
-        wspace=0.3
+        top=0.92, bottom=0.12,
+        wspace=0.25, hspace=0.3
     )
 
     # Panel A: Basic step plot (default: 'pre')
@@ -92,7 +102,7 @@ Step plots.
     ax2.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
     # Panel C: Multiple step series
-    ax3 = fig.add_subplot(gs[0, 2])
+    ax3 = fig.add_subplot(gs[1, 0])
     # Explicit parameters: where='mid', lw=0.7 for each
     ax3.step(x, y1, where='mid', color='dm.blue5', lw=0.7,
              marker='o', markersize=3, label='Series A', alpha=0.8)
@@ -108,6 +118,25 @@ Step plots.
     ax3.set_yticks([0, 1, 2, 3, 4])
     ax3.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
 
+    # Panel D: Rolling mean with highlights
+    ax4 = fig.add_subplot(gs[1, 1])
+    window = 3
+    kernel = np.ones(window) / window
+    rolling = np.convolve(y1, kernel, mode='same')
+    ax4.step(x, y1, where='mid', color='dm.gray5', lw=0.7, alpha=0.4, label='Raw')
+    ax4.plot(x, rolling, color='dm.orange7', lw=1.2, marker='o',
+             markersize=3, label='Rolling mean (3)')
+    ax4.fill_between(x, rolling, where=rolling >= 2.5,
+                     color='dm.orange3', alpha=0.3, interpolate=True,
+                     label='Above 2.5')
+    ax4.set_xlabel('Index', fontsize=dm.fs(0))
+    ax4.set_ylabel('Rolling Value', fontsize=dm.fs(0))
+    ax4.set_title('Smoothed & Highlighted', fontsize=dm.fs(1))
+    ax4.legend(loc='upper right', fontsize=dm.fs(-1))
+    ax4.set_xticks([0, 2, 4, 6, 8, 10])
+    ax4.set_yticks([0, 1, 2, 3, 4])
+    ax4.grid(True, linestyle='--', linewidth=0.3, alpha=0.3)
+
     # Optimize layout
     dm.simple_layout(fig, gs=gs)
 
@@ -115,10 +144,9 @@ Step plots.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.553 seconds)
+   **Total running time of the script:** (0 minutes 1.203 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_step.py:

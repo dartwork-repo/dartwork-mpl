@@ -103,23 +103,6 @@ and advanced styling techniques for publication-quality figures.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting.">
-
-.. only:: html
-
-  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_custom_ticks_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Custom Ticks</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Creating inset axes for zoomed views and detail plots.">
 
 .. only:: html
@@ -149,6 +132,23 @@ and advanced styling techniques for publication-quality figures.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Legends</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting: positions, labels, and log scales.">
+
+.. only:: html
+
+  .. image:: /gallery/07_layout_styling/images/thumb/sphx_glr_plot_custom_ticks_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Custom Ticks</div>
     </div>
 
 
@@ -184,8 +184,8 @@ and advanced styling techniques for publication-quality figures.
    /gallery/07_layout_styling/plot_complex_grid
    /gallery/07_layout_styling/plot_mixed_subplots
    /gallery/07_layout_styling/plot_subplots
-   /gallery/07_layout_styling/plot_custom_ticks
    /gallery/07_layout_styling/plot_inset_axes
    /gallery/07_layout_styling/plot_legend
+   /gallery/07_layout_styling/plot_custom_ticks
    /gallery/07_layout_styling/plot_annotations
 
