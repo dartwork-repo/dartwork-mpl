@@ -56,14 +56,14 @@ Three-dimensional surface visualizations for scientific data.
     Z3 = X**2 - Y**2
 
     # Create figure
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
     # Create GridSpec for 2x2 subplots
     gs = fig.add_gridspec(
         nrows=2, ncols=2,
         left=0.02, right=0.98,
         top=0.95, bottom=0.05,
-        wspace=0.15, hspace=0.25
+        wspace=0.15, hspace=0.45
     )
 
     # Panel A: Surface plot
@@ -122,7 +122,7 @@ Three-dimensional surface visualizations for scientific data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.699 seconds)
+   **Total running time of the script:** (0 minutes 0.722 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_3d_surface.py:

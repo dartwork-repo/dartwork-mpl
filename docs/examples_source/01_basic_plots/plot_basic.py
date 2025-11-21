@@ -19,7 +19,7 @@ y2 = np.cos(x)
 
 # Create figure
 # Use dm.cm2in to convert centimeters to inches for precise sizing
-fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=300)
 
 # Create axes using GridSpec with explicit margins
 gs = fig.add_gridspec(

@@ -22,7 +22,7 @@ y3 = np.sin(x) * np.cos(x)
 
 # Create figure
 # Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=300)
 
 # Create GridSpec for 3 subplots
 gs = fig.add_gridspec(

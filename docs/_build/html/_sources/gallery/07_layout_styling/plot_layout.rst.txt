@@ -46,7 +46,7 @@ Layout optimization techniques.
     dm.style.use_preset('scientific')
 
     # Create a figure with multiple subplots
-    fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=300)
     gs = fig.add_gridspec(
         2, 2,
         left=0.1, right=0.95,
@@ -88,7 +88,7 @@ Layout optimization techniques.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.740 seconds)
+   **Total running time of the script:** (0 minutes 0.770 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_layout.py:

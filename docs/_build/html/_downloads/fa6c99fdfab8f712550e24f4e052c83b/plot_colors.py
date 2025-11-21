@@ -13,7 +13,7 @@ import dartwork_mpl as dm
 dm.style.use_preset('scientific')
 
 # Create figure
-fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=300)
 gs = fig.add_gridspec(
     1, 1,
     left=0.12, right=0.95,

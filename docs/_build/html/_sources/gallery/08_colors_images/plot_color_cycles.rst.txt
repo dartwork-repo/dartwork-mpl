@@ -49,7 +49,7 @@ Using and customizing color cycles for multi-series plots.
     np.random.seed(42)
     x = np.linspace(0, 10, 100)
 
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
     gs = fig.add_gridspec(nrows=2, ncols=2, left=0.08, right=0.98,
                           top=0.95, bottom=0.08, wspace=0.3, hspace=0.4)
 
@@ -106,7 +106,7 @@ Using and customizing color cycles for multi-series plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.207 seconds)
+   **Total running time of the script:** (0 minutes 1.202 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_color_cycles.py:

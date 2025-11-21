@@ -13,7 +13,7 @@ dm.style.use_preset('scientific')
 
 np.random.seed(42)
 
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create complex GridSpec
 gs = fig.add_gridspec(nrows=3, ncols=3, left=0.08, right=0.98,

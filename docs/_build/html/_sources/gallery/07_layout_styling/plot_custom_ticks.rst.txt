@@ -62,7 +62,7 @@ Custom tick formatting: positions, labels, and log scales.
         nrows=2, ncols=2,
         left=0.08, right=0.98,
         top=0.92, bottom=0.12,
-        wspace=0.25, hspace=0.3
+        wspace=0.25, hspace=0.5
     )
 
     # Panel A: Custom tick positions
@@ -130,7 +130,7 @@ Custom tick formatting: positions, labels, and log scales.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.182 seconds)
+   **Total running time of the script:** (0 minutes 1.107 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_custom_ticks.py:

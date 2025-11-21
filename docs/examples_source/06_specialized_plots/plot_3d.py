@@ -11,7 +11,7 @@ import dartwork_mpl as dm
 
 dm.style.use_preset('presentation')
 
-fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)), dpi=300)
 gs = fig.add_gridspec(
     1, 1,
     left=0.05, right=0.95,

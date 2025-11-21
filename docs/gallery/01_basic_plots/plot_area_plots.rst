@@ -33,19 +33,8 @@ Filled area plots and combinations with lines.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -67,7 +56,7 @@ Filled area plots and combinations with lines.
 
     # Create figure
     # Double column figure: 17cm width, 2x2 layout
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
     # Create GridSpec for 2x2 subplots
     gs = fig.add_gridspec(
@@ -140,7 +129,7 @@ Filled area plots and combinations with lines.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.172 seconds)
+   **Total running time of the script:** (0 minutes 0.887 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_area_plots.py:

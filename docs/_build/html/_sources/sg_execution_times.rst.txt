@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:01.218** total execution time for 63 files **from all galleries**:
+**00:00.811** total execution time for 63 files **from all galleries**:
 
 .. container::
 
@@ -32,8 +32,8 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_filled.py` (``examples_source/06_specialized_plots/plot_filled.py``)
-     - 00:01.218
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``examples_source/04_scientific_plots/plot_scientific_paper.py``)
+     - 00:00.811
      - 0.0
    * - :ref:`sphx_glr_gallery_01_basic_plots_plot_area_plots.py` (``examples_source/01_basic_plots/plot_area_plots.py``)
      - 00:00.000
@@ -116,9 +116,6 @@ Computation times
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``examples_source/04_scientific_plots/plot_quiver.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``examples_source/04_scientific_plots/plot_scientific_paper.py``)
-     - 00:00.000
-     - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``examples_source/04_scientific_plots/plot_spectral_analysis.py``)
      - 00:00.000
      - 0.0
@@ -156,6 +153,9 @@ Computation times
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_dual_axis.py` (``examples_source/06_specialized_plots/plot_dual_axis.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_filled.py` (``examples_source/06_specialized_plots/plot_filled.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_pie.py` (``examples_source/06_specialized_plots/plot_pie.py``)

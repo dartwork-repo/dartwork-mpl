@@ -28,7 +28,7 @@ seasonal_trend = 30 + 0.3*t + 8*np.sin(2*np.pi*t/20) + np.random.randn(n)*2
 # Changepoint
 change_trend = np.concatenate([30 + 0.2*t[:50], 40 + 0.8*t[50:]]) + np.random.randn(n)*2
 
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 gs = fig.add_gridspec(nrows=2, ncols=2, left=0.08, right=0.98,
                       top=0.95, bottom=0.08, wspace=0.3, hspace=0.4)
 

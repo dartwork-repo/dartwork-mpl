@@ -33,8 +33,19 @@ Publication-quality scientific figure.
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Load colors...
+    Load colormaps...
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -57,7 +68,7 @@ Publication-quality scientific figure.
     errors = [1.5, 2.0, 1.8, 2.5]
 
     # Create figure (Double column width for papers: ~17cm)
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(8)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(8)), dpi=300)
     gs = fig.add_gridspec(
         1, 2,
         width_ratios=[1.5, 1],
@@ -80,7 +91,7 @@ Publication-quality scientific figure.
 
     # Annotation
     ax1.annotate('Peak Response', xy=(1.5, 1.5), xytext=(3, 3),
-                 arrowprops=dict(arrowstyle='->', color='dm.black', lw=0.7),
+                 arrowprops=dict(arrowstyle='->', color='black', lw=0.7),
                  fontsize=dm.fs(-1))
 
     # Panel B: Bar Chart Comparison
@@ -114,7 +125,7 @@ Publication-quality scientific figure.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.555 seconds)
+   **Total running time of the script:** (0 minutes 0.811 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_scientific_paper.py:

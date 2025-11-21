@@ -25,7 +25,7 @@ def lotka_volterra(y, t, a, b, c, d):
     return dydt
 
 # Create figure
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(

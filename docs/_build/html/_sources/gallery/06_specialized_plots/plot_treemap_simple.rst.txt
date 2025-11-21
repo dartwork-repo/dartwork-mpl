@@ -46,9 +46,9 @@ Visualizing hierarchical and nested data structures.
 
     dm.style.use_preset('scientific')
 
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
     gs = fig.add_gridspec(nrows=2, ncols=2, left=0.05, right=0.98,
-                          top=0.95, bottom=0.05, wspace=0.15, hspace=0.2)
+                          top=0.95, bottom=0.05, wspace=0.15, hspace=0.4)
 
     # Panel A: Simple rectangles (treemap-like)
     ax1 = fig.add_subplot(gs[0, 0])
@@ -134,7 +134,7 @@ Visualizing hierarchical and nested data structures.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.525 seconds)
+   **Total running time of the script:** (0 minutes 0.441 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_treemap_simple.py:

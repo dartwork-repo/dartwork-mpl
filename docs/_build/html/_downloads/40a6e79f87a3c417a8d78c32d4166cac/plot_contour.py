@@ -21,7 +21,7 @@ Z1 = np.exp(-X**2 - Y**2)
 Z2 = np.exp(-(X - 1)**2 - (Y - 1)**2)
 Z = (Z1 - Z2) * 2
 
-fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=300)
 gs = fig.add_gridspec(
     1, 1,
     left=0.15, right=0.88,

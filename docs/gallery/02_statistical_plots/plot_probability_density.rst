@@ -54,7 +54,7 @@ Probability density functions.
         np.random.normal(4, 1.5, 500)
     ])
 
-    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
         left=0.15, right=0.95,
@@ -89,7 +89,7 @@ Probability density functions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.444 seconds)
+   **Total running time of the script:** (0 minutes 0.483 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_probability_density.py:

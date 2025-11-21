@@ -2,7 +2,21 @@
 
 **dartwork-mpl** is a matplotlib wrapper for creating publication-quality figures with ease.
 
-## Using uv (Recommended)
+## Quick Install
+
+::::{tab-set}
+
+:::{tab-item} pip
+:sync: pip
+
+```bash
+pip install git+https://github.com/dartwork-repo/dartwork-mpl
+```
+
+:::
+
+:::{tab-item} uv
+:sync: uv
 
 [uv](https://github.com/astral-sh/uv) is a fast and efficient Python package manager.
 
@@ -17,15 +31,15 @@ uv pip install git+https://github.com/dartwork-repo/dartwork-mpl
 uv add git+https://github.com/dartwork-repo/dartwork-mpl@main
 ```
 
-## Using pip
+:::
 
-```bash
-pip install git+https://github.com/dartwork-repo/dartwork-mpl
-```
+::::
 
 ## Basic Import
 
-```python
+```{code-block} python
+:caption: example.py
+
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
 import numpy as np
@@ -38,7 +52,9 @@ dm.style.use_preset('scientific')  # Basic style for academic papers
 
 After installation, verify that everything works:
 
-```python
+```{code-block} python
+:caption: verify.py
+
 import dartwork_mpl as dm
 
 # Check version

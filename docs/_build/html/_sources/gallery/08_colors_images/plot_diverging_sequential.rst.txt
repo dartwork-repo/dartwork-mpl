@@ -62,7 +62,7 @@ Choosing appropriate color schemes for different data types.
     Z_seq = np.sqrt(X**2 + Y**2)  # Sequential (0 to max)
     Z_div = X * Y  # Diverging (negative to positive)
 
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
     gs = fig.add_gridspec(nrows=2, ncols=2, left=0.08, right=0.92,
                           top=0.95, bottom=0.08, wspace=0.35, hspace=0.4)
 
@@ -104,7 +104,7 @@ Choosing appropriate color schemes for different data types.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.038 seconds)
+   **Total running time of the script:** (0 minutes 1.146 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_diverging_sequential.py:

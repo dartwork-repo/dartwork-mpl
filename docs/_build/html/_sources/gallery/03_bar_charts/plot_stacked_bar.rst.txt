@@ -67,7 +67,7 @@ Stacked bar charts in vertical, horizontal, percentage, and cumulative views.
         nrows=2, ncols=2,
         left=0.08, right=0.98,
         top=0.92, bottom=0.12,
-        wspace=0.25, hspace=0.3
+        wspace=0.25, hspace=0.5
     )
 
     # Panel A: Vertical stacked bars
@@ -154,7 +154,7 @@ Stacked bar charts in vertical, horizontal, percentage, and cumulative views.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.838 seconds)
+   **Total running time of the script:** (0 minutes 0.848 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_stacked_bar.py:

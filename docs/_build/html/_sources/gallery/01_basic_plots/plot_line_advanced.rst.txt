@@ -67,7 +67,7 @@ publication-ready comparisons.
         nrows=2, ncols=2,
         left=0.08, right=0.98,
         top=0.92, bottom=0.12,
-        wspace=0.25, hspace=0.3
+        wspace=0.25, hspace=0.5
     )
 
     # Panel A: Multiple lines with markers
@@ -141,7 +141,7 @@ publication-ready comparisons.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.842 seconds)
+   **Total running time of the script:** (0 minutes 0.865 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_line_advanced.py:

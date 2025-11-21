@@ -18,7 +18,7 @@ U = -1 - X**2 + Y
 V = 1 + X - Y**2
 speed = np.sqrt(U**2 + V**2)
 
-fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=300)
 gs = fig.add_gridspec(
     1, 1,
     left=0.12, right=0.88,

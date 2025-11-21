@@ -33,19 +33,8 @@ Image display with multiple colormaps, interpolation modes, and edge overlays.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -72,7 +61,7 @@ Image display with multiple colormaps, interpolation modes, and edge overlays.
         nrows=2, ncols=2,
         left=0.08, right=0.98,
         top=0.92, bottom=0.12,
-        wspace=0.2, hspace=0.25
+        wspace=0.2, hspace=0.45
     )
 
     # Panel A: imshow with colormap
@@ -134,7 +123,7 @@ Image display with multiple colormaps, interpolation modes, and edge overlays.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.019 seconds)
+   **Total running time of the script:** (0 minutes 1.790 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_image.py:

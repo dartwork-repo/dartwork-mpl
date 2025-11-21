@@ -56,7 +56,7 @@ Legend customization.
 
     # Create figure
     # Double column figure: 17cm width
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=300)
 
     # Create GridSpec for 3 subplots
     gs = fig.add_gridspec(
@@ -120,7 +120,7 @@ Legend customization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.583 seconds)
+   **Total running time of the script:** (0 minutes 0.621 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_legend.py:

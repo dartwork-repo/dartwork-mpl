@@ -22,14 +22,14 @@ y4 = np.sin(2 * x)
 
 # Create figure
 # Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(12)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(
     nrows=2, ncols=2,
     left=0.08, right=0.98,
     top=0.95, bottom=0.08,
-    hspace=0.3, wspace=0.3
+    hspace=0.5, wspace=0.3
 )
 
 # Panel A: Top-left

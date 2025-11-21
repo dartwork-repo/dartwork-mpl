@@ -61,7 +61,7 @@ Correlation matrix visualization and scatter plot matrices.
 
     # Create figure
     # Double column figure: 17cm width, 2x2 layout
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
     # Create GridSpec for 2x2 subplots
     gs = fig.add_gridspec(
@@ -121,7 +121,7 @@ Correlation matrix visualization and scatter plot matrices.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.714 seconds)
+   **Total running time of the script:** (0 minutes 0.755 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_correlation_matrix.py:

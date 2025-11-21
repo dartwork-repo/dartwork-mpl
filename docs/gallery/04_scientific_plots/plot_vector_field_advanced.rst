@@ -60,7 +60,7 @@ Vector field visualizations with streamlines and contours.
     V3 = -np.cos(X) * np.sin(Y)
 
     # Create figure
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
     # Create GridSpec for 2x2 subplots
     gs = fig.add_gridspec(
@@ -130,7 +130,7 @@ Vector field visualizations with streamlines and contours.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.079 seconds)
+   **Total running time of the script:** (0 minutes 1.021 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_vector_field_advanced.py:

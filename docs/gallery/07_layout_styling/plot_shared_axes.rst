@@ -48,9 +48,9 @@ Subplots with shared x or y axes for comparison.
     np.random.seed(42)
     x = np.linspace(0, 10, 100)
 
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
     gs = fig.add_gridspec(nrows=2, ncols=2, left=0.10, right=0.98,
-                          top=0.95, bottom=0.08, wspace=0.25, hspace=0.25)
+                          top=0.95, bottom=0.08, wspace=0.25, hspace=0.45)
 
     # Panel A & B: Shared x-axis
     ax1 = fig.add_subplot(gs[0, 0])
@@ -82,7 +82,7 @@ Subplots with shared x or y axes for comparison.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.844 seconds)
+   **Total running time of the script:** (0 minutes 0.951 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_shared_axes.py:

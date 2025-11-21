@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:01.104** total execution time for 9 files **from gallery/04_scientific_plots**:
+**00:00.811** total execution time for 9 files **from gallery/04_scientific_plots**:
 
 .. container::
 
@@ -32,8 +32,8 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``plot_quiver.py``)
-     - 00:01.104
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``plot_scientific_paper.py``)
+     - 00:00.811
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_3d_surface.py` (``plot_3d_surface.py``)
      - 00:00.000
@@ -47,7 +47,7 @@ Computation times
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_phase_diagram.py` (``plot_phase_diagram.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``plot_scientific_paper.py``)
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``plot_quiver.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``plot_spectral_analysis.py``)

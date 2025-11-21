@@ -21,7 +21,7 @@ y_poly = 0.5 * x**2 - 2 * x + 5 + np.random.normal(0, 2, len(x))
 
 # Create figure
 # Double column figure: 17cm width, 2x2 layout
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(

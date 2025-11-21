@@ -55,7 +55,7 @@ Contour plots with labels.
     Z2 = np.exp(-(X - 1)**2 - (Y - 1)**2)
     Z = (Z1 - Z2) * 2
 
-    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
         left=0.15, right=0.88,
@@ -87,7 +87,7 @@ Contour plots with labels.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.524 seconds)
+   **Total running time of the script:** (0 minutes 0.534 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_contour.py:

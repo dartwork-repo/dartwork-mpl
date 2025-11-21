@@ -33,7 +33,7 @@ forecast_upper = forecast + 5 + 0.1 * (t_future - 100)
 forecast_lower = forecast - 5 - 0.1 * (t_future - 100)
 
 # Create figure
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec
 gs = fig.add_gridspec(

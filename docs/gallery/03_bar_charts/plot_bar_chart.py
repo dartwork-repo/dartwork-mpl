@@ -20,7 +20,7 @@ women_means = [25, 32, 34, 20]
 x = np.arange(len(labels))
 width = 0.35
 
-fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=300)
 gs = fig.add_gridspec(
     1, 1,
     left=0.12, right=0.95,

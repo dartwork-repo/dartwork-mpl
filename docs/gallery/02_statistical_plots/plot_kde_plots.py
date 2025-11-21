@@ -22,7 +22,7 @@ data_bimodal = np.concatenate([np.random.normal(-2, 0.5, 250),
 
 # Create figure
 # Double column figure: 17cm width, 2x2 layout
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(

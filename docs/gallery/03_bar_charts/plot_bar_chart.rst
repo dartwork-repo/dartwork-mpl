@@ -54,7 +54,7 @@ Basic and grouped bar charts.
     x = np.arange(len(labels))
     width = 0.35
 
-    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
         left=0.12, right=0.95,
@@ -86,7 +86,7 @@ Basic and grouped bar charts.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.388 seconds)
+   **Total running time of the script:** (0 minutes 0.360 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_bar_chart.py:

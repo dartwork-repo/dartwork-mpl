@@ -47,7 +47,7 @@ Advanced GridSpec layouts for complex figure arrangements.
 
     np.random.seed(42)
 
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
     # Create complex GridSpec
     gs = fig.add_gridspec(nrows=3, ncols=3, left=0.08, right=0.98,
@@ -99,7 +99,7 @@ Advanced GridSpec layouts for complex figure arrangements.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.151 seconds)
+   **Total running time of the script:** (0 minutes 1.247 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_complex_grid.py:

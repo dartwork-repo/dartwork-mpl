@@ -33,19 +33,8 @@ Filled area plots: confidence bands, stacked areas, and layered regions.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    Load colors...
-    Load colormaps...
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -81,7 +70,7 @@ Filled area plots: confidence bands, stacked areas, and layered regions.
         nrows=2, ncols=2,
         left=0.08, right=0.98,
         top=0.92, bottom=0.12,
-        wspace=0.25, hspace=0.3
+        wspace=0.25, hspace=0.5
     )
 
     # Panel A: fill_between
@@ -161,7 +150,7 @@ Filled area plots: confidence bands, stacked areas, and layered regions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.218 seconds)
+   **Total running time of the script:** (0 minutes 0.907 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_filled.py:

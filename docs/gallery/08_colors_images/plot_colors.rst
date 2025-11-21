@@ -47,7 +47,7 @@ Color palette visualization.
     dm.style.use_preset('scientific')
 
     # Create figure
-    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
         left=0.12, right=0.95,
@@ -87,7 +87,7 @@ Color palette visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.381 seconds)
+   **Total running time of the script:** (0 minutes 0.404 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_colors.py:

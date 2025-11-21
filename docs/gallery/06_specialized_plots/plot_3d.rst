@@ -56,7 +56,7 @@
 
     dm.style.use_preset('presentation')
 
-    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
         left=0.05, right=0.95,
@@ -91,7 +91,7 @@
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.294 seconds)
+   **Total running time of the script:** (0 minutes 0.279 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_3d.py:

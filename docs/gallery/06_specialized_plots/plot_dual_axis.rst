@@ -49,7 +49,7 @@ Dual y-axis plots.
     y1 = np.exp(x / 3)
     y2 = np.sin(x)
 
-    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
         left=0.15, right=0.85,
@@ -84,7 +84,7 @@ Dual y-axis plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.369 seconds)
+   **Total running time of the script:** (0 minutes 0.388 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_dual_axis.py:

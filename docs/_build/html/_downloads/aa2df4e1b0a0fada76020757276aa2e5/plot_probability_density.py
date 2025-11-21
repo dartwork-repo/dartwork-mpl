@@ -20,7 +20,7 @@ data = np.concatenate([
     np.random.normal(4, 1.5, 500)
 ])
 
-fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=300)
 gs = fig.add_gridspec(
     1, 1,
     left=0.15, right=0.95,

@@ -15,7 +15,7 @@ x = np.arange(0, 10, 0.1)
 y1 = np.exp(x / 3)
 y2 = np.sin(x)
 
-fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=300)
 gs = fig.add_gridspec(
     1, 1,
     left=0.15, right=0.85,

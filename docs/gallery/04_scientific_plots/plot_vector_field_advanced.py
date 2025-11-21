@@ -26,7 +26,7 @@ U3 = np.sin(X) * np.cos(Y)
 V3 = -np.cos(X) * np.sin(Y)
 
 # Create figure
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(

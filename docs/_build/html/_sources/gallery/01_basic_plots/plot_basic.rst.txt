@@ -64,7 +64,7 @@ Basic usage with style presets.
 
     # Create figure
     # Use dm.cm2in to convert centimeters to inches for precise sizing
-    fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=300)
 
     # Create axes using GridSpec with explicit margins
     gs = fig.add_gridspec(
@@ -96,7 +96,7 @@ Basic usage with style presets.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.582 seconds)
+   **Total running time of the script:** (0 minutes 0.561 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_basic.py:

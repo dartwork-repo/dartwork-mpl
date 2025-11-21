@@ -16,7 +16,7 @@ dm.style.use_preset('scientific')
 np.random.seed(10)
 data = [np.random.normal(0, std, 100) for std in range(1, 5)]
 
-fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(8)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(8)), dpi=300)
 gs = fig.add_gridspec(
     1, 2,
     left=0.08, right=0.98,

@@ -27,7 +27,7 @@ gs = fig.add_gridspec(
     nrows=2, ncols=2,
     left=0.08, right=0.98,
     top=0.92, bottom=0.12,
-    wspace=0.25, hspace=0.3
+    wspace=0.25, hspace=0.5
 )
 
 # Panel A: Basic polar plot

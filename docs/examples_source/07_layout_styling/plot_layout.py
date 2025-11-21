@@ -12,7 +12,7 @@ import dartwork_mpl as dm
 dm.style.use_preset('scientific')
 
 # Create a figure with multiple subplots
-fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=200)
+fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=300)
 gs = fig.add_gridspec(
     2, 2,
     left=0.1, right=0.95,

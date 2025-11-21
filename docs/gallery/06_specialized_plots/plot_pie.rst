@@ -74,7 +74,7 @@ Pie charts, donut plots, and nested variants for share comparisons.
         nrows=2, ncols=2,
         left=0.08, right=0.98,
         top=0.92, bottom=0.12,
-        wspace=0.2, hspace=0.3
+        wspace=0.2, hspace=0.5
     )
 
     # Panel A: Basic pie chart
@@ -152,7 +152,7 @@ Pie charts, donut plots, and nested variants for share comparisons.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.592 seconds)
+   **Total running time of the script:** (0 minutes 0.605 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_pie.py:

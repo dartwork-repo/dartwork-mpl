@@ -48,7 +48,7 @@ Heatmap visualization.
     # Generate data
     data = np.random.rand(10, 10)
 
-    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(8)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
         left=0.15, right=0.88,
@@ -74,7 +74,7 @@ Heatmap visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.436 seconds)
+   **Total running time of the script:** (0 minutes 0.398 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_heatmap.py:

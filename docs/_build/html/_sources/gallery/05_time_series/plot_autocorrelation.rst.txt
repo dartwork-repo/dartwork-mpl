@@ -69,7 +69,7 @@ ACF and PACF plots for time series analysis.
     acf_ar = acf(ar1, lags)
     acf_ma = acf(ma1, lags)
 
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
     gs = fig.add_gridspec(nrows=2, ncols=2, left=0.08, right=0.98,
                           top=0.95, bottom=0.08, wspace=0.3, hspace=0.4)
 
@@ -123,7 +123,7 @@ ACF and PACF plots for time series analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.054 seconds)
+   **Total running time of the script:** (0 minutes 1.168 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_autocorrelation.py:
