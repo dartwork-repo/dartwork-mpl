@@ -1,8 +1,8 @@
 # Color System
 
-The original “Color Gallery” is now a dedicated **Color System** hub with space
-for both the named colors and the colormap collection. Jump into whichever view
-you need, or skim both for a quick sense of what ships with dartwork-mpl.
+A single, scrollable hub for everything color-related in dartwork-mpl. Each
+section below is a full-width preview; click through to the dedicated page if
+you want the complete sheets and usage details.
 
 ```{toctree}
 :maxdepth: 1
@@ -13,50 +13,47 @@ Colors <COLORS>
 Colormaps <COLORMAPS>
 ```
 
-::::{grid} 2
-:gutter: 1.2
-:margin: 0 0 1.5rem 0
+:::{figure} images/colors_opencolor.png
+:alt: OpenColor palette preview with labeled swatches
+:width: 100%
 
-:::{grid-item-card} Colors
-:link: COLORS
-:class-card: color-card
-:img-top: images/colors_opencolor.png
-:img-style: width: 100%
-:img-alt: OpenColor palette preview
-- Named palettes from OpenColor, Tailwind, Material, Ant Design, Chakra, Primer
-- Weight-aware names like `tw.blue:500` or `md.red:700`
-- Larger swatches so you can actually read the labels
+**Colors.** All named palettes ship as weight-aware labels you can drop straight
+into matplotlib (`tw.blue:500`, `md.red:700`, `opencolor.gray:6`, and more).
+Every sheet uses generous spacing so labels stay legible.  
+[Open the full color sheets →](COLORS)
 :::
 
-:::{grid-item-card} Colormaps
-:link: COLORMAPS
-:class-card: colormap-card
-:img-top: images/colormaps_sequential_multi-hue.png
-:img-style: width: 100%
-:img-alt: Sequential multi-hue colormaps
-- Grouped views for Sequential, Diverging, Cyclical, and Categorical ramps
-- Highlights dartwork-specific maps directly in the panels
-- Wide gradients sized for presentations and exported figures
-:::
-::::
+:::{figure} images/colormaps_sequential_multi-hue.png
+:alt: Sequential multi-hue colormap preview
+:width: 100%
 
-## Quick recipe
+**Colormaps.** Sequential, diverging, cyclical, and categorical ramps—plus the
+dartwork-specific set prefixed with `dm.`—rendered as wide gradients sized for
+slides and exports.  
+[Browse the colormap panels →](COLORMAPS)
+:::
+
+## Quick start
 
 ```python
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
+import numpy as np
 
 dm.use()  # style + fonts
-plt.plot([0, 1, 2], color="tw.emerald:500", label="Tailwind emerald")
-plt.imshow(data, cmap="dm.sunset")  # any matplotlib colormap name works
+x = np.linspace(0, 10, 200)
+signal = np.sin(x) * np.exp(-0.08 * x)
+
+plt.plot(x, signal, color="tw.emerald:500", linewidth=2.6, label="Emerald 500")
+plt.imshow(np.outer(signal, signal), cmap="dm.sunset")
+plt.colorbar(label="normalized response")
 plt.legend()
 plt.show()
 ```
 
-## Regenerating assets
+## Regenerating the visuals
 
-- The gallery PNGs live in `docs/images/`.
-- Sphinx now runs `docs/generate_gallery.py` automatically during a build, or run
-  it directly with `python docs/generate_gallery.py` if you just want the assets.
-- Generated panels are high-DPI and designed to be embedded at full width in the
-  new Colors and Colormaps pages.
+- All preview PNGs live in `docs/images/`.
+- Sphinx runs `docs/generate_gallery.py` during a build; run it manually to
+  refresh assets after editing colors or colormaps.
+- Exports are high-DPI so the single-column layouts remain crisp when embedded.

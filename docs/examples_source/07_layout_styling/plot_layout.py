@@ -41,7 +41,7 @@ ax3.set_ylabel('Y', fontsize=dm.fs(0))
 
 # Add subplot labels (a, b, c)
 for ax, label in zip([ax1, ax2, ax3], 'abc'):
-    offset = dm.make_offset(4, -4, fig)
+    offset = dm.make_offset(0, 8, fig)
     ax.text(0, 1, label, transform=ax.transAxes + offset,
             weight='bold', va='top', fontsize=dm.fs(2))
 

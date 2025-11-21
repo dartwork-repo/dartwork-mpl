@@ -26,6 +26,13 @@ values1 += values1[:1]
 values2 += values2[:1]
 values3 += values3[:1]
 angles += angles[:1]
+theta_labels_deg = np.degrees(angles[:-1])
+
+
+def apply_theta_labels(ax, frac=1.05):
+    """Place category labels at a consistent distance from the rim."""
+    ax.set_thetagrids(theta_labels_deg, labels=categories, frac=frac)
+    ax.tick_params(axis='x', labelsize=dm.fs(-1))
 
 fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 gs = fig.add_gridspec(
@@ -43,8 +50,7 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0], projection='polar')
 ax1.plot(angles, values1, 'o-', color='dm.blue5', lw=0.7, label='Model A')
 ax1.fill(angles, values1, color='dm.blue5', alpha=0.25)
-ax1.set_xticks(angles[:-1])
-ax1.set_xticklabels(categories, fontsize=dm.fs(-1))
+apply_theta_labels(ax1)
 ax1.set_ylim(0, 100)
 ax1.set_title('Basic Radar Chart', fontsize=dm.fs(1), pad=15)
 ax1.legend(loc='best', fontsize=dm.fs(-1))
@@ -56,8 +62,7 @@ ax2.plot(angles, values1, 'o-', color='dm.blue5', lw=0.7, ms=3, label='Model A')
 ax2.fill(angles, values1, color='dm.blue5', alpha=0.15)
 ax2.plot(angles, values2, 's-', color='dm.red5', lw=0.7, ms=3, label='Model B')
 ax2.fill(angles, values2, color='dm.red5', alpha=0.15)
-ax2.set_xticks(angles[:-1])
-ax2.set_xticklabels(categories, fontsize=dm.fs(-1))
+apply_theta_labels(ax2)
 ax2.set_ylim(0, 100)
 ax2.set_title('Comparison', fontsize=dm.fs(1), pad=15)
 ax2.legend(loc='best', fontsize=dm.fs(-2))
@@ -71,8 +76,7 @@ ax3.plot(angles, values3, color='dm.green5', lw=0.7, label='C')
 ax3.fill(angles, values1, color='dm.blue5', alpha=0.1)
 ax3.fill(angles, values2, color='dm.red5', alpha=0.1)
 ax3.fill(angles, values3, color='dm.green5', alpha=0.1)
-ax3.set_xticks(angles[:-1])
-ax3.set_xticklabels(categories, fontsize=dm.fs(-1))
+apply_theta_labels(ax3)
 ax3.set_ylim(0, 100)
 ax3.set_title('Multi-series', fontsize=dm.fs(1), pad=15)
 ax3.legend(loc='best', fontsize=dm.fs(-2))
@@ -87,8 +91,7 @@ max_idx = values1[:-1].index(max(values1[:-1]))
 min_idx = values1[:-1].index(min(values1[:-1]))
 ax4.plot(angles[max_idx], values1[max_idx], 'o', color='dm.green5', ms=6, label='Max')
 ax4.plot(angles[min_idx], values1[min_idx], 'o', color='dm.red5', ms=6, label='Min')
-ax4.set_xticks(angles[:-1])
-ax4.set_xticklabels(categories, fontsize=dm.fs(-1))
+apply_theta_labels(ax4)
 ax4.set_ylim(0, 100)
 ax4.set_title('Highlighted', fontsize=dm.fs(1), pad=15)
 ax4.legend(loc='best', fontsize=dm.fs(-2))
