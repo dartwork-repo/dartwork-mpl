@@ -34,6 +34,8 @@ exclude_patterns = [
     '.DS_Store',
     # Sphinx-Gallery backfill files we don't want in the toctree
     'gallery/plot_*',
+    # Gallery subfolder index files (prevent them from appearing as top-level items)
+    'gallery/*/index.rst',
     # Helper READMEs inside example sources
     'examples_source/README.rst',
     'examples_source/*/README.rst',
@@ -53,7 +55,7 @@ html_title = f"{project} documentation"
 html_theme_options = {
     "github_url": "https://github.com/dartwork-repo/dartwork-mpl",
     "accent_color": "teal",
-    "globaltoc_expand_depth": 1,  # Allow expanding sidebar items
+    "globaltoc_expand_depth": 0,  # Start with collapsed sidebar items
     "dark_code": False,  # Use light code blocks (default Shibuya style)
     "nav_links": [
         {"title": "Install", "url": "install"},
