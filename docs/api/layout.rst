@@ -5,58 +5,30 @@ Utilities for tightening layouts without juggling ``plt.subplots_adjust``.
 ``simple_layout`` optimizes margins with L-BFGS-B so axes fit inside a bounding
 box; ``make_offset`` nudges text/legends in point units; and
 ``set_decimal``/``get_bounding_box`` provide quick helpers when formatting axes.
-Tables below call out the arguments you are most likely to tweak.
 
-.. list-table:: ``simple_layout`` arguments
-   :header-rows: 1
-   :widths: 23 60
+``simple_layout(fig, gs=None, margins=(0.05, 0.05, 0.05, 0.05), bbox=(0, 1, 0, 1), verbose=False, gtol=1e-2, bound_margin=0.2, use_all_axes=True, importance_weights=(1, 1, 1, 1))``
+   - Parameters:
+     - ``fig``: target figure (required).
+     - ``gs``: GridSpec to adjust; ``None`` picks the first axes' GridSpec.
+     - ``margins``: padding in inches ``(left, right, bottom, top)``.
+     - ``bbox``: figure-relative target box; shrink to reserve space for headers.
+     - ``importance_weights``: emphasize specific sides during optimization.
+     - ``bound_margin``: how far each side may move away from ``bbox``.
+     - ``gtol`` / ``verbose``: optimizer tolerance and logging toggle.
+     - ``use_all_axes``: ``True`` considers every axes; ``False`` limits to ``gs``.
+   - Returns: ``scipy.optimize.OptimizeResult``; layout changes are applied in-place.
 
-   * - Parameter
-     - Purpose
-   * - ``fig`` (required)
-     - Figure to optimize—usually from ``plt.subplots``.
-   * - ``gs`` (optional)
-     - GridSpec to solve for. Leave ``None`` to target the first axes' GridSpec;
-       pass a specific one when the figure has multiple grids.
-   * - ``margins`` (default ``(0.05, 0.05, 0.05, 0.05)``)
-     - Desired padding in inches ordered ``(left, right, bottom, top)``. Increase
-       values to loosen whitespace around axes.
-   * - ``bbox`` (default ``(0, 1, 0, 1)``)
-     - Fractional bounds of the area to fill in figure coordinates. Shrink from
-       ``(0, 1, 0, 1)`` when you need fixed space for headers or legends.
-   * - ``importance_weights`` (default ``(1, 1, 1, 1)``)
-     - Relative importance of hitting each side of the target box (left, right,
-       bottom, top). Increase a side to prioritize it during optimization.
-   * - ``bound_margin`` (default ``0.2``)
-     - How far the optimizer may move each side away from ``bbox``. Lower values
-       lock the layout tighter; higher values allow more experimentation.
-   * - ``gtol`` (default ``1e-2``) / ``verbose`` (default ``False``)
-     - Convergence tolerance and logging toggle passed to the L-BFGS-B optimizer.
+``make_offset(x, y, fig)``
+   - Parameters: ``x``/``y`` offsets in points; ``fig`` supplies DPI scaling.
+   - Returns: ``matplotlib.transforms.ScaledTranslation`` to add to an axes transform.
 
-.. list-table:: ``make_offset`` arguments
-   :header-rows: 1
-   :widths: 23 60
+``set_decimal(ax, xn=None, yn=None)``
+   - Parameters: ``ax`` plus desired decimal places for x/y ticks. Leave ``None`` to skip an axis.
+   - Returns: ``None`` (tick labels are replaced).
 
-   * - Parameter
-     - Purpose
-   * - ``x``, ``y`` (points)
-     - Offsets applied in typographic points. Positive values move right/up;
-       negative values move left/down.
-   * - ``fig``
-     - Figure whose DPI is used when converting points to screen units.
-
-.. list-table:: ``set_decimal`` and ``get_bounding_box`` arguments
-   :header-rows: 1
-   :widths: 23 60
-
-   * - Parameter
-     - Purpose
-   * - ``ax`` / ``xn`` / ``yn``
-     - Pass an axes and number of decimal places to format ticks without setting
-       locators manually.
-   * - ``boxes``
-     - Sequence of tight bounding boxes; a combined ``(min_x, min_y, width, height)``
-       tuple is returned for quick diagnostics.
+``get_bounding_box(boxes)``
+   - Parameters: iterable of boxes with ``p0``, ``width``, ``height`` (e.g., from ``get_tightbbox``).
+   - Returns: tuple ``(min_x, min_y, width, height)`` covering them all.
 
 Example
 
@@ -64,8 +36,17 @@ Example
 
    fig, ax = plt.subplots()
    ax.plot(x, y)
-   simple_layout(fig, margins=(0.08, 0.08, 0.1, 0.08))
-   ax.set_title(\"Clean title\", transform=ax.transAxes + make_offset(0, 6, fig))
+
+   # Keep slightly wider right margin for a legend slot
+   simple_layout(
+       fig,
+       margins=(0.08, 0.12, 0.1, 0.08),
+       importance_weights=(1, 2, 1, 1)
+   )
+
+   # Pixel-perfect title nudge
+   ax.set_title("Clean title", transform=ax.transAxes + make_offset(0, 6, fig))
+   set_decimal(ax, xn=2, yn=1)
 
 .. autofunction:: dartwork_mpl.simple_layout
 .. autofunction:: dartwork_mpl.make_offset

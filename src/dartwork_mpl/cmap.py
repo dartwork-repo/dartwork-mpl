@@ -52,7 +52,6 @@ def _load_colormaps():
     asset/cmap directory, parses them as colormaps, and registers both 
     normal and reversed versions with matplotlib's colormap registry.
     """
-    print('Load colormaps...')
     root_dir = Path(__file__).parent / 'asset/cmap'
     for path in root_dir.glob('*.txt'):
         cmap = _parse_colormap(path)

@@ -8,39 +8,34 @@ investment, presentation, and Korean variants) from `presets.json`, resets
 to pick a single style, layer several, or inspect what a preset changes before
 you commit it to a figure.
 
-Quick reference
+``use_style(name="dmpl")``
+   Loads one style file from ``asset/mplstyle`` after resetting ``rcParams``.
+   - Parameters: ``name`` is the style stem (e.g., ``"dmpl_light"``,
+     ``"font-presentation"``). Use a single name for a clean slate.
+   - Returns: ``None`` (updates matplotlib state).
 
-.. list-table:: ``use_style`` arguments
-   :header-rows: 1
-   :widths: 22 60
+``Style.use(style_names)``
+   Stack multiple style files in order.
+   - Parameters: ``style_names`` list/tuple of style stems; later styles override
+     earlier ones.
+   - Returns: ``None``.
 
-   * - Parameter
-     - Purpose
-   * - ``name`` (default ``"dmpl"``)
-     - Style file stem in ``asset/mplstyle``. Resets ``rcParams`` first, so pass
-       a single name if you want a clean slate or stack multiple via
-       ``Style.use``.
+``Style.use_preset(preset_name)``
+   Applies a preset key from ``presets.json`` (e.g., ``"scientific"``,
+   ``"investment"``, ``"presentation"``, ``"korean.presentation"``).
+   - Parameters: ``preset_name`` string looked up in the presets mapping.
+   - Returns: ``None``.
 
-.. list-table:: ``Style.use_preset`` arguments
-   :header-rows: 1
-   :widths: 22 60
+``list_styles()``
+   Lists every ``*.mplstyle`` file bundled with the package.
+   - Parameters: none.
+   - Returns: ``list[str]`` sorted by filename.
 
-   * - Parameter
-     - Purpose
-   * - ``preset_name``
-     - Key from ``presets.json`` such as ``"scientific"``, ``"investment"``,
-       ``"presentation"``, or ``"korean.*"``. Each preset expands to an ordered
-       list of style files applied in sequence.
-
-.. list-table:: ``load_style_dict`` arguments
-   :header-rows: 1
-   :widths: 22 60
-
-   * - Parameter
-     - Purpose
-   * - ``name``
-     - Style file stem to inspect. Returns a ``dict`` of rcParams for quick
-       diffing or programmatic tweaks.
+``load_style_dict(name)``
+   Reads a single style file into a ``dict`` so you can inspect or tweak rcParams
+   programmatically.
+   - Parameters: ``name`` style stem.
+   - Returns: ``dict`` mapping rcParam keys to values.
 
 Typical usage
 

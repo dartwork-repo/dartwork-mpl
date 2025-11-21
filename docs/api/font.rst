@@ -4,35 +4,21 @@ Font Utilities
 Custom fonts bundled in ``asset/font`` are registered with matplotlib on import,
 so they are available without manual configuration. ``fs`` and ``fw`` are small
 helpers for offsetting the global rcParams font size/weight, and the gallery
-utility ``plot_fonts`` previews every installed family. Use the quick
-references below to pick sensible arguments.
+utility ``plot_fonts`` previews every installed family.
 
-.. list-table:: ``fs`` and ``fw`` arguments
-   :header-rows: 1
-   :widths: 23 60
+``fs(n)``
+   - Parameters: ``n`` number of points to add to ``plt.rcParams["font.size"]``.
+   - Returns: new font size (float) for use in labels/titles.
 
-   * - Parameter
-     - Purpose
-   * - ``n`` (size offset)
-     - For ``fs``: adds ``n`` to the current ``plt.rcParams["font.size"]``; use a
-       small integer like ``2`` to bump titles or ``-1`` to shrink annotations.
-   * - ``n`` (weight offset)
-     - For ``fw``: increments the base font weight by ``100 * n``. Values like
-       ``1`` map Regular → Medium, ``2`` to SemiBold/Bold; negative values lighten.
+``fw(n)``
+   - Parameters: ``n`` integer weight step; multiplied by 100 and added to
+     ``plt.rcParams["font.weight"]``.
+   - Returns: integer font weight.
 
-.. list-table:: ``plot_fonts`` arguments
-   :header-rows: 1
-   :widths: 23 60
-
-   * - Parameter
-     - Purpose
-   * - ``font_dir`` (default ``None``)
-     - Folder of ``.ttf`` files to preview. Defaults to the package's bundled
-       fonts when left ``None``.
-   * - ``ncols`` (default ``3``)
-     - Number of columns in the preview grid; increase for wider monitors.
-   * - ``font_size`` (default ``11``)
-     - Sample text size. Raise to gauge display uses; lower to preview dense layouts.
+``plot_fonts(font_dir=None, ncols=3, font_size=11)``
+   - Parameters: optional ``font_dir`` of ``.ttf`` files (defaults to bundled
+     fonts), grid ``ncols``, and sample ``font_size``.
+   - Returns: ``matplotlib.figure.Figure`` containing the preview grid.
 
 Example
 
@@ -42,7 +28,8 @@ Example
    import dartwork_mpl as dm
 
    fig, ax = plt.subplots()
-   ax.set_title(\"Paper-ready\", fontsize=dm.fs(2), fontweight=dm.fw(1))
+   ax.set_title("Paper-ready", fontsize=dm.fs(2), fontweight=dm.fw(1))
+   dm.plot_fonts(ncols=4, font_size=12)  # inspect available families
 
 .. automodule:: dartwork_mpl.font
    :members:

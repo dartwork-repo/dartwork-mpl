@@ -63,7 +63,6 @@ def _load_colors():
     Primer colors are loaded with 'primer.' prefix
     (e.g., 'primer.blue:5', 'primer.red:6'). Weights range from 0 to 9.
     """
-    print('Load colors...')
     color_dict = {}
 
     root_dir = Path(__file__).parent / 'asset/color'

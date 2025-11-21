@@ -47,10 +47,17 @@ ax1.plot(x, y3, color='dm.green5', lw=0.7, marker='^',
 ax1.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax1.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax1.set_title('Lines with Markers', fontsize=dm.fs(1))
-ax1.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax1.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.1),
+    fontsize=dm.fs(-1),
+    ncol=2,
+    frameon=False,
+)
 # Set explicit ticks
 ax1.set_xticks([0, 2, 4, 6, 8, 10])
 ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
+ax1.set_ylim(-1.2, 1.2)
 
 # Panel B: Different line styles
 ax2 = fig.add_subplot(gs[0, 1])
@@ -61,10 +68,17 @@ ax2.plot(x, y3, color='dm.green5', lw=0.7, linestyle=':', label='Dotted', alpha=
 ax2.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax2.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax2.set_title('Line Styles', fontsize=dm.fs(1))
-ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax2.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.1),
+    fontsize=dm.fs(-1),
+    ncol=2,
+    frameon=False,
+)
 # Set explicit ticks
 ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
+ax2.set_ylim(-1.2, 1.2)
 
 # Panel C: Line with error band
 ax3 = fig.add_subplot(gs[1, 0])
@@ -76,10 +90,17 @@ ax3.fill_between(x, y_lower, y_upper, color='dm.blue2',
 ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax3.set_title('Error Band', fontsize=dm.fs(1))
-ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax3.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.1),
+    fontsize=dm.fs(-1),
+    ncol=2,
+    frameon=False,
+)
 # Set explicit ticks
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
+ax3.set_ylim(-1.2, 1.2)
 
 # Panel D: Smoothed trend with step overlay
 ax4 = fig.add_subplot(gs[1, 1])
@@ -93,9 +114,16 @@ ax4.step(x, np.round(y4_smooth, 1), where='mid', color='dm.gray6', lw=0.6, label
 ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax4.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax4.set_title('Smoothed & Stepped Signal', fontsize=dm.fs(1))
-ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+ax4.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.1),
+    fontsize=dm.fs(-1),
+    ncol=2,
+    frameon=False,
+)
 ax4.set_xticks([0, 2, 4, 6, 8, 10])
 ax4.set_yticks([-2, -1, 0, 1, 2])
+ax4.set_ylim(-2.2, 2.2)
 
 # Optimize layout
 dm.simple_layout(fig, gs=gs)

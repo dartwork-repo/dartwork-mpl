@@ -3,48 +3,26 @@ File I/O
 
 Thin wrappers around ``matplotlib.Figure.savefig`` for common workflows:
 export multiple formats in one call, or save-and-display SVGs sized for
-notebooks/reports. These functions accept the same ``savefig`` kwargs you're
-used to; the tables highlight the custom arguments.
+notebooks/reports. They accept the usual ``savefig`` keyword arguments; the
+custom ones are called out below.
 
-.. list-table:: ``save_formats`` arguments
-   :header-rows: 1
-   :widths: 23 60
+``save_formats(fig, image_stem, formats=("svg", "png", "pdf", "eps"), bbox_inches=None, **kwargs)``
+   - Parameters: ``fig`` to export; ``image_stem`` path without extension
+     (parent folders are created); iterable ``formats`` to write; optional
+     ``bbox_inches`` forwarded to ``savefig``; extra ``**kwargs`` go straight to
+     ``savefig``.
+   - Returns: ``None`` after writing one file per requested format.
 
-   * - Parameter
-     - Purpose
-   * - ``fig`` / ``image_stem``
-     - Figure to export and the path without extension (e.g., ``\"out/figure\"``).
-       Parent directories are created automatically.
-   * - ``formats`` (default ``(\"svg\", \"png\", \"pdf\", \"eps\")``)
-     - Iterable of extensions to write. Keep a tuple to control order.
-   * - ``bbox_inches`` (optional)
-     - Forwarded to ``savefig`` when you need ``\"tight\"`` or a custom bbox.
+``save_and_show(fig, image_path=None, size=600, unit="pt", **kwargs)``
+   - Parameters: ``fig`` to save (closed after saving); ``image_path`` file path
+     or ``None`` to use a temporary SVG; ``size`` and ``unit`` for the inline
+     display width; ``**kwargs`` forwarded to ``savefig``.
+   - Returns: ``None``; displays the SVG inline (Jupyter/HTML).
 
-.. list-table:: ``save_and_show`` arguments
-   :header-rows: 1
-   :widths: 23 60
-
-   * - Parameter
-     - Purpose
-   * - ``fig``
-     - Figure to save; closed after saving to avoid double-display in notebooks.
-   * - ``image_path`` (default ``None``)
-     - Destination file path. When ``None`` a temporary SVG is created.
-   * - ``size`` / ``unit`` (defaults ``600`` / ``\"pt\"``)
-     - Target display width and unit for Jupyter/HTML rendering. Height keeps the
-       SVG aspect ratio.
-
-.. list-table:: ``show`` arguments
-   :header-rows: 1
-   :widths: 23 60
-
-   * - Parameter
-     - Purpose
-   * - ``image_path``
-     - Path to an SVG file. Width and height inside the SVG are updated for inline
-       display.
-   * - ``size`` / ``unit``
-     - Final inline width and its unit (points by default). Height scales to fit.
+``show(image_path, size=600, unit="pt")``
+   - Parameters: ``image_path`` to an SVG; desired ``size`` and ``unit`` for the
+     display width.
+   - Returns: ``None``; shows the scaled SVG inline.
 
 Example
 
@@ -52,8 +30,8 @@ Example
 
    fig, ax = plt.subplots()
    ax.plot(x, y)
-   dm.save_formats(fig, \"report/figures/example\", formats=(\"png\", \"svg\"), dpi=300)
-   dm.save_and_show(fig, \"report/figures/example.svg\", size=520)
+   dm.save_formats(fig, "report/figures/example", formats=("png", "svg"), dpi=300)
+   dm.save_and_show(fig, "report/figures/example.svg", size=520)
 
 .. autofunction:: dartwork_mpl.save_formats
 .. autofunction:: dartwork_mpl.save_and_show

@@ -2,7 +2,7 @@
 Basic Usage
 ===========
 
-Start with the scientific preset and a simple sine/cosine pair to see the typography, spacing, and palette you get out of the box.
+Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacing on a single stylized line plot.
 """
 
 import numpy as np
@@ -13,37 +13,68 @@ import dartwork_mpl as dm
 dm.style.use_preset('scientific')
 
 # Generate sample data
-x = np.linspace(0, 10, 100)
-y1 = np.sin(x)
-y2 = np.cos(x)
+x = np.linspace(0, 8, 200)
+trend = 0.15 * x - 0.4
+signal = 0.6 * np.sin(1.4 * x) + 0.08 * np.cos(0.5 * x)
+series = trend + signal
+band = 0.18 + 0.04 * np.sin(0.6 * x)
+upper = series + band
+lower = series - band
 
-# Create figure
-# Use dm.cm2in to convert centimeters to inches for precise sizing
-fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=300)
+# Key markers to highlight peaks
+mark_x = np.array([2.0, 4.3, 6.6])
+mark_y = np.interp(mark_x, x, series)
 
-# Create axes using GridSpec with explicit margins
+# Create figure with tuned margins
+fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(8)), dpi=300)
 gs = fig.add_gridspec(
     nrows=1, ncols=1,
-    left=0.17, right=0.95,
-    top=0.95, bottom=0.17
+    left=0.14, right=0.97,
+    top=0.9, bottom=0.18
 )
 ax = fig.add_subplot(gs[0, 0])
 
-# Plot data
-# Use dartwork-mpl custom colors (dm.red5, dm.blue5)
-ax.plot(x, y1, label='Sin', color='dm.red5', lw=0.7)
-ax.plot(x, y2, label='Cos', color='dm.blue5', lw=0.7)
+# Shaded window and confidence band
+ax.axvspan(3.1, 4.4, color='dm.orange1', alpha=0.25, label='Highlight window')
+ax.fill_between(x, lower, upper, color='dm.blue2', alpha=0.22, edgecolor='none', label='Confidence band')
 
-# Set labels and title with explicit font sizes
+# Styled lines
+ax.plot(x, series, color='dm.blue8', lw=0.9, label='Main signal')
+ax.plot(x, trend, color='dm.gray6', lw=0.8, linestyle='--', label='Baseline trend')
+
+# Markers and annotations
+ax.scatter(mark_x, mark_y, color='dm.orange7', edgecolor='white', linewidth=0.8, s=32, zorder=4, label='Key points')
+ax.annotate(
+    'Inflection',
+    xy=(4.3, np.interp(4.3, x, series)),
+    xytext=(5.3, 1.05),
+    fontsize=dm.fs(-1),
+    arrowprops=dict(arrowstyle='->', color='dm.gray7', lw=0.7),
+    bbox=dict(boxstyle='round,pad=0.25', fc='white', ec='dm.gray2', lw=0.4),
+)
+
+# Axes labels, ticks, and grid
 ax.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax.set_ylabel('Amplitude', fontsize=dm.fs(0))
-ax.set_title('Basic Sine/Cosine Plot', fontsize=dm.fs(1))
+ax.set_title('Styled Signal with dartwork-mpl', fontsize=dm.fs(1))
+ax.set_xlim(0, 8)
+ax.set_ylim(-1.1, 1.35)
+ax.set_xticks([0, 2, 4, 6, 8])
+ax.set_yticks([-1, -0.5, 0, 0.5, 1, 1.5])
+ax.grid(axis='y', linestyle=':', color='dm.gray3', alpha=0.5)
 
-# Add legend with explicit parameters
-ax.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+# Legend placed above the plot to avoid overlaps
+ax.legend(
+    loc='upper center',
+    bbox_to_anchor=(0.5, 1.16),
+    ncol=3,
+    fontsize=dm.fs(-1),
+    frameon=False,
+    columnspacing=1.3,
+    handlelength=1.6,
+)
 
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
-# Show plot
 plt.show()

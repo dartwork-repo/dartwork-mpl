@@ -5,44 +5,24 @@ Importing ``dartwork_mpl`` registers a large catalog of named colors with
 matplotlib (``dm.*`` plus Tailwind ``tw.``, Material ``md.``, Ant Design
 ``ant.``, Chakra ``chakra.``, and Primer ``primer.`` prefixes). These helpers
 expose the color mixing routines used across the package and let you classify
-colormaps before plotting. The tables below clarify what to pass where.
+colormaps before plotting. Each helper lists its parameters and return value
+before jumping into examples.
 
-.. list-table:: ``mix_colors`` arguments
-   :header-rows: 1
-   :widths: 23 60
+``mix_colors(color1, color2, alpha=0.5)``
+   - Parameters: two matplotlib-compatible colors (named strings or RGB tuples);
+     ``alpha`` weights ``color1`` between 0 (all ``color2``) and 1 (all ``color1``).
+   - Returns: blended RGB tuple.
 
-   * - Parameter
-     - Purpose
-   * - ``color1`` / ``color2``
-     - Any matplotlib color string or RGB tuple (e.g., ``"dm.blue5"`` or ``(0.1, 0.2, 0.7)``).
-   * - ``alpha`` (default ``0.5``)
-     - Weight for ``color1``; set to ``0`` for pure ``color2`` or ``1`` for pure
-       ``color1``. Values between 0–1 linearly blend the two.
+``pseudo_alpha(color, alpha=1.0, background="white")``
+   - Parameters: foreground ``color`` to soften, ``alpha`` for how transparent it
+     should feel, and ``background`` color to mix toward when you cannot rely on
+     real transparency (e.g., PDF export).
+   - Returns: RGB tuple mixed against ``background``.
 
-.. list-table:: ``pseudo_alpha`` arguments
-   :header-rows: 1
-   :widths: 23 60
-
-   * - Parameter
-     - Purpose
-   * - ``color``
-     - Foreground color to soften (any matplotlib color spec).
-   * - ``alpha`` (default ``1.0``)
-     - Opacity-like weight: lower mixes in more of ``background`` without using
-       real transparency.
-   * - ``background`` (default ``"white"``)
-     - Base color to blend toward when faking transparency.
-
-.. list-table:: ``classify_colormap`` arguments
-   :header-rows: 1
-   :widths: 23 60
-
-   * - Parameter
-     - Purpose
-   * - ``cmap``
-     - ``matplotlib.colors.Colormap`` instance or name; returns a readable label
-       (Categorical, Sequential Single-Hue, Sequential Multi-Hue, Diverging, or
-       Cyclical) for quick palette choices.
+``classify_colormap(cmap)``
+   - Parameters: colormap instance or name.
+   - Returns: string label: ``"Categorical"``, ``"Sequential Single-Hue"``,
+     ``"Sequential Multi-Hue"``, ``"Diverging"``, or ``"Cyclical"``.
 
 Example
 
@@ -51,10 +31,12 @@ Example
    import matplotlib.pyplot as plt
    import dartwork_mpl as dm
 
-   plt.plot(x, y, color=\"dm.blue5\", label=\"Series A\")
-   lighter = dm.mix_colors(\"dm.blue5\", \"white\", alpha=0.35)
+   plt.plot(x, y, color="dm.blue5", label="Series A")
+   lighter = dm.mix_colors("dm.blue5", "white", alpha=0.35)
    plt.fill_between(x, y, color=lighter)
-   dm.classify_colormap(plt.colormaps[\"viridis\"])  # -> \"Sequential Multi-Hue\"
+   dm.classify_colormap(plt.colormaps["viridis"])  # -> "Sequential Multi-Hue"
+   muted_line = dm.pseudo_alpha("dm.blue7", alpha=0.6, background="white")
+   plt.plot(x, z, color=muted_line, label="Muted series")
 
 .. automodule:: dartwork_mpl.color
    :members:
