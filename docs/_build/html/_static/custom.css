@@ -80,3 +80,8 @@ div[class^="highlight"] {
     --sg-download-a-hover-background-color: transparent !important;
     --sg-download-a-hover-background-image: none !important;
 }
+
+/* Hide "Made with Sphinx and Shibuya theme" text in footer */
+.sy-foot-copyright > p:nth-child(2) {
+    display: none !important;
+}

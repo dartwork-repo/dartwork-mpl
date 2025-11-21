@@ -767,31 +767,17 @@ def plot_colormaps(cmap_list=None, ncols=3, group_by_type=True, group_spacing=0.
 
 
 def _load_color_library_names():
-    """Load color names from xkcd.txt and opencolor.txt files.
+    """Load color names from opencolor.txt file.
     
     Returns
     -------
-    xkcd_names : set
-        Set of xkcd color names (without prefix).
     opencolor_names : set
         Set of opencolor color names (without prefix).
     """
     # Get the asset/color directory path
     asset_dir = Path(__file__).parent / 'asset' / 'color'
     
-    xkcd_names = set()
     opencolor_names = set()
-    
-    # Load xkcd colors
-    xkcd_file = asset_dir / 'xkcd.txt'
-    if xkcd_file.exists():
-        with open(xkcd_file, 'r') as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith('#'):
-                    if ':' in line:
-                        name = line.split(':')[0].strip()
-                        xkcd_names.add(name)
     
     # Load opencolor colors
     opencolor_file = asset_dir / 'opencolor.txt'
@@ -804,11 +790,11 @@ def _load_color_library_names():
                         name = line.split(':')[0].strip()
                         opencolor_names.add(name)
     
-    return xkcd_names, opencolor_names
+    return opencolor_names
 
 
 # Cache the color library names
-_XKCD_NAMES, _OPENCOLOR_NAMES = _load_color_library_names()
+_OPENCOLOR_NAMES = _load_color_library_names()
 
 
 def _classify_color_library(color_name):
@@ -822,12 +808,8 @@ def _classify_color_library(color_name):
     Returns
     -------
     str
-        Library category: 'xkcd', 'opencolor', 'tw', 'md', 'ant', 'chakra', 'primer', 'other'
+        Library category: 'opencolor', 'tw', 'md', 'ant', 'chakra', 'primer', 'other'
     """
-    # Check for xkcd: prefix (matplotlib's built-in xkcd colors)
-    if color_name.startswith('xkcd:'):
-        return 'xkcd'
-    
     # Check for tw. prefix
     if color_name.startswith('tw.'):
         return 'tw'
@@ -928,7 +910,7 @@ def _extract_base_color_name(color_name):
     """
     # Remove prefixes
     name = color_name
-    for prefix in ['dm.', 'tw.', 'md.', 'ant.', 'chakra.', 'primer.', 'xkcd:']:
+    for prefix in ['dm.', 'tw.', 'md.', 'ant.', 'chakra.', 'primer.']:
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
@@ -943,7 +925,7 @@ def _extract_base_color_name(color_name):
     if match:
         return match.group(1)
     
-    # Pattern 3: xkcd or other (xkcd:dark blue) -> 'dark blue' (keep full name)
+    # Pattern 3: other colors - keep full name
     return name
 
 
@@ -962,7 +944,7 @@ def _extract_number_from_color_name(color_name):
     """
     # Remove prefixes
     name = color_name
-    for prefix in ['dm.', 'tw.', 'md.', 'ant.', 'chakra.', 'primer.', 'xkcd:']:
+    for prefix in ['dm.', 'tw.', 'md.', 'ant.', 'chakra.', 'primer.']:
         if name.startswith(prefix):
             name = name[len(prefix):]
             break
@@ -1032,7 +1014,6 @@ def _separate_colors_by_library(colors):
         Dictionary mapping library names to color dictionaries.
     """
     library_groups = {
-        'xkcd': {},
         'opencolor': {},
         'tw': {},
         'md': {},
@@ -1066,7 +1047,6 @@ def _sort_colors_by_library(colors):
     """
     # Group colors by library
     library_groups = {
-        'xkcd': [],
         'opencolor': [],
         'tw': [],
         'md': [],
@@ -1083,9 +1063,8 @@ def _sort_colors_by_library(colors):
     # Sort each library group
     sorted_names = []
     
-    # Library order: opencolor -> tw -> md -> ant -> chakra -> primer -> other -> xkcd
+    # Library order: opencolor -> tw -> md -> ant -> chakra -> primer -> other
     library_labels = {
-        'xkcd': 'XKCD Colors',
         'opencolor': 'OpenColor Colors',
         'tw': 'Tailwind Colors',
         'md': 'Material Design Colors',
@@ -1095,7 +1074,7 @@ def _sort_colors_by_library(colors):
         'other': 'Other Colors'
     }
     
-    for library in ['opencolor', 'tw', 'md', 'ant', 'chakra', 'primer', 'other', 'xkcd']:
+    for library in ['opencolor', 'tw', 'md', 'ant', 'chakra', 'primer', 'other']:
         color_list = library_groups[library]
         
         if not color_list:
@@ -1278,12 +1257,7 @@ def _plot_single_library(colors, library_name, ncols=6, sort_colors=True):
     
     # Sort colors within library
     if sort_colors:
-        # For xkcd colors, use hue-based grouping for better visual organization
-        # For other libraries (opencolor, tailwind), use name-based grouping
-        if library_name == 'xkcd':
-            color_groups = _group_colors_by_hue(colors)
-        else:
-            # Group by base color name (for opencolor, tailwind, etc.)
+        # Group by base color name (for opencolor, tailwind, etc.)
             base_color_groups = defaultdict(list)
             for color_name in colors:
                 base_color = _extract_base_color_name(color_name)
@@ -1412,7 +1386,6 @@ def _plot_single_library(colors, library_name, ncols=6, sort_colors=True):
     
     # Add library title at the top (no background, like plot_colormaps)
     library_labels = {
-        'xkcd': 'XKCD Colors',
         'opencolor': 'OpenColor Colors',
         'tw': 'Tailwind Colors',
         'md': 'Material Design Colors',
@@ -1466,7 +1439,7 @@ def _plot_single_library(colors, library_name, ncols=6, sort_colors=True):
 def plot_colors(colors=None, *, ncols=6, sort_colors=True):
     """Plot a grid of named colors with their names.
     
-    Creates separate plots for each color library (xkcd, opencolor, tw/tailwind, other).
+    Creates separate plots for each color library (opencolor, tw/tailwind, other).
     
     Parameters
     ----------
@@ -1519,8 +1492,8 @@ def plot_colors(colors=None, *, ncols=6, sort_colors=True):
         if library_name not in skip_duplicate_removal:
             library_colors[library_name] = _remove_duplicate_colors(library_colors[library_name])
     
-    # Library order: opencolor -> tw -> md -> ant -> chakra -> primer -> other -> xkcd (xkcd last)
-    library_order = ['opencolor', 'tw', 'md', 'ant', 'chakra', 'primer', 'other', 'xkcd']
+    # Library order: opencolor -> tw -> md -> ant -> chakra -> primer -> other (xkcd last)
+    library_order = ['opencolor', 'tw', 'md', 'ant', 'chakra', 'primer', 'other']
     
     # Create a separate plot for each library
     figures = []
