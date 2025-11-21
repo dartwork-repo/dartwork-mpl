@@ -27,19 +27,14 @@ Different line styles and dash patterns for data visualization.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/01_basic_plots/images/sphx_glr_plot_line_styles_001.png
+   :alt: Basic Line Styles, Custom Dash Patterns, Lines with Markers, Same Color Variants
+   :srcset: /gallery/01_basic_plots/images/sphx_glr_plot_line_styles_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -131,12 +126,12 @@ Different line styles and dash patterns for data visualization.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.679 seconds)
+   **Total running time of the script:** (0 minutes 0.810 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_line_styles.py:

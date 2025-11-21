@@ -1714,22 +1714,6 @@
    "name": "fs"
   }
  ],
- "dm.save_and_show": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "function"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "dartwork_mpl",
-   "module_short": "dartwork_mpl",
-   "name": "save_and_show"
-  }
- ],
  "dm.simple_layout": [
   {
    "is_class": false,
@@ -1992,6 +1976,22 @@
    "module": "matplotlib.pyplot",
    "module_short": "matplotlib.pyplot",
    "name": "setp"
+  }
+ ],
+ "plt.show": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.pyplot",
+   "module_short": "matplotlib.pyplot",
+   "name": "show"
   }
  ],
  "sorted_cats": [

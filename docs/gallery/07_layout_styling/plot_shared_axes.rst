@@ -27,19 +27,14 @@ Subplots with shared x or y axes for comparison.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/07_layout_styling/images/sphx_glr_plot_shared_axes_001.png
+   :alt: Shared X-axis, Shared Y-axis
+   :srcset: /gallery/07_layout_styling/images/sphx_glr_plot_shared_axes_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -82,12 +77,12 @@ Subplots with shared x or y axes for comparison.
     ax4.tick_params(labelleft=False)
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.706 seconds)
+   **Total running time of the script:** (0 minutes 0.844 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_shared_axes.py:

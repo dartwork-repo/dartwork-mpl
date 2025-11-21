@@ -27,6 +27,11 @@ Choosing appropriate color schemes for different data types.
 
 
 
+.. image-sg:: /gallery/08_colors_images/images/sphx_glr_plot_diverging_sequential_001.png
+   :alt: Sequential Data → Sequential Colormap, Sequential Data → Diverging (Wrong!), Diverging Data → Diverging Colormap, Diverging Data → Sequential (Wrong!)
+   :srcset: /gallery/08_colors_images/images/sphx_glr_plot_diverging_sequential_001.png
+   :class: sphx-glr-single-img
+
 
 .. rst-class:: sphx-glr-script-out
 
@@ -34,9 +39,6 @@ Choosing appropriate color schemes for different data types.
 
     /home/wonjun/Codes/dartwork-mpl/src/dartwork_mpl/util.py:161: UserWarning: Glyph 8594 (\N{RIGHTWARDS ARROW}) missing from font(s) Roboto.
       ax_bboxes = [ax.get_tightbbox() for ax in fig.axes]
-    /home/wonjun/Codes/dartwork-mpl/src/dartwork_mpl/util.py:432: UserWarning: Glyph 8594 (\N{RIGHTWARDS ARROW}) missing from font(s) Roboto.
-      fig.savefig(image_path, bbox_inches=None, **kwargs)
-    <IPython.core.display.HTML object>
 
 
 
@@ -97,12 +99,12 @@ Choosing appropriate color schemes for different data types.
     ax4.set_title('Diverging Data → Sequential (Wrong!)', fontsize=dm.fs(0))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.914 seconds)
+   **Total running time of the script:** (0 minutes 1.038 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_diverging_sequential.py:

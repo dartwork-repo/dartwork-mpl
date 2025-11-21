@@ -27,19 +27,14 @@ Diverging bar charts for showing positive and negative values.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/03_bar_charts/images/sphx_glr_plot_diverging_bar_001.png
+   :alt: Basic Diverging Bar, Vertical Diverging Bar, With Value Labels, Satisfaction Survey
+   :srcset: /gallery/03_bar_charts/images/sphx_glr_plot_diverging_bar_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -136,12 +131,12 @@ Diverging bar charts for showing positive and negative values.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.565 seconds)
+   **Total running time of the script:** (0 minutes 0.682 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_diverging_bar.py:

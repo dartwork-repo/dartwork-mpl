@@ -27,19 +27,14 @@ Vector field visualizations with streamlines and contours.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/04_scientific_plots/images/sphx_glr_plot_vector_field_advanced_001.png
+   :alt: Rotation Field, Damped Rotation (Colored by Magnitude), Streamlines, Vector Field with Potential
+   :srcset: /gallery/04_scientific_plots/images/sphx_glr_plot_vector_field_advanced_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -130,12 +125,12 @@ Vector field visualizations with streamlines and contours.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.045 seconds)
+   **Total running time of the script:** (0 minutes 1.079 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_vector_field_advanced.py:

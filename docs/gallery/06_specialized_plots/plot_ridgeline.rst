@@ -27,19 +27,14 @@ Visualizing distributions across categories with ridgeline plots.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/06_specialized_plots/images/sphx_glr_plot_ridgeline_001.png
+   :alt: Basic Ridgeline, Colored Ridgeline, With Data Points, Overlapping Style
+   :srcset: /gallery/06_specialized_plots/images/sphx_glr_plot_ridgeline_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -123,12 +118,12 @@ Visualizing distributions across categories with ridgeline plots.
     ax4.set_xlim(-4, 6)
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.062 seconds)
+   **Total running time of the script:** (0 minutes 1.053 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_ridgeline.py:

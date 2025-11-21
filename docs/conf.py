@@ -27,7 +27,16 @@ extensions = [
 ]
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [
+    '_build',
+    'Thumbs.db',
+    '.DS_Store',
+    # Sphinx-Gallery backfill files we don't want in the toctree
+    'gallery/plot_*',
+    # Helper READMEs inside example sources
+    'examples_source/README.rst',
+    'examples_source/*/README.rst',
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

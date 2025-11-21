@@ -27,19 +27,14 @@ ACF and PACF plots for time series analysis.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/05_time_series/images/sphx_glr_plot_autocorrelation_001.png
+   :alt: AR(1) Process, ACF of AR(1), MA(1) Process, ACF of MA(1)
+   :srcset: /gallery/05_time_series/images/sphx_glr_plot_autocorrelation_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -123,12 +118,12 @@ ACF and PACF plots for time series analysis.
     ax4.set_ylim(-0.5, 1.1)
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.892 seconds)
+   **Total running time of the script:** (0 minutes 1.054 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_autocorrelation.py:

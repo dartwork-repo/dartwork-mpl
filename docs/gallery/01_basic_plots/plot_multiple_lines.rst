@@ -27,19 +27,14 @@ Demonstrating multiple line plots with different colors and styles.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/01_basic_plots/images/sphx_glr_plot_multiple_lines_001.png
+   :alt: Multiple Lines, Different Line Widths, Tailwind CSS Colors, Color Gradients
+   :srcset: /gallery/01_basic_plots/images/sphx_glr_plot_multiple_lines_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -130,12 +125,12 @@ Demonstrating multiple line plots with different colors and styles.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.669 seconds)
+   **Total running time of the script:** (0 minutes 0.867 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_multiple_lines.py:

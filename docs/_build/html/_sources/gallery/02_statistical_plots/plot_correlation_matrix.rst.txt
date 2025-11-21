@@ -27,19 +27,14 @@ Correlation matrix visualization and scatter plot matrices.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/02_statistical_plots/images/sphx_glr_plot_correlation_matrix_001.png
+   :alt: Correlation Matrix, Strong Positive (r=0.79), Weak Positive (r=0.22), Negative (r=-0.42)
+   :srcset: /gallery/02_statistical_plots/images/sphx_glr_plot_correlation_matrix_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -121,12 +116,12 @@ Correlation matrix visualization and scatter plot matrices.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.628 seconds)
+   **Total running time of the script:** (0 minutes 0.714 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_correlation_matrix.py:

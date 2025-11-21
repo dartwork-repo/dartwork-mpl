@@ -43,4 +43,4 @@ ax4.set_xlabel('X', fontsize=dm.fs(0))
 ax4.tick_params(labelleft=False)
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

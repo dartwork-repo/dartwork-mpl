@@ -84,4 +84,4 @@ ax4.set_title('Overlapping Style', fontsize=dm.fs(1))
 ax4.set_xlim(-4, 6)
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

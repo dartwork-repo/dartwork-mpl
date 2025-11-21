@@ -95,4 +95,4 @@ ax4.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
 dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
-dm.save_and_show(fig)
+plt.show()

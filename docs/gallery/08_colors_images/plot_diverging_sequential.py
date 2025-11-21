@@ -54,4 +54,4 @@ ax4.set_ylabel('Y', fontsize=dm.fs(0))
 ax4.set_title('Diverging Data → Sequential (Wrong!)', fontsize=dm.fs(0))
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

@@ -91,4 +91,4 @@ ax4.set_ylim(-1.2, 1.2)
 dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
-dm.save_and_show(fig)
+plt.show()

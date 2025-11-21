@@ -27,19 +27,14 @@ Moving averages and rolling window statistics.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/05_time_series/images/sphx_glr_plot_rolling_stats_001.png
+   :alt: Moving Averages, Rolling Standard Deviation, Exponential Moving Average, Bollinger Bands
+   :srcset: /gallery/05_time_series/images/sphx_glr_plot_rolling_stats_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -112,12 +107,12 @@ Moving averages and rolling window statistics.
     ax4.legend(loc='upper left', fontsize=dm.fs(-1))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.013 seconds)
+   **Total running time of the script:** (0 minutes 1.176 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_rolling_stats.py:

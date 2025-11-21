@@ -83,4 +83,4 @@ ax4.view_init(elev=25, azim=45)
 dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
-dm.save_and_show(fig)
+plt.show()

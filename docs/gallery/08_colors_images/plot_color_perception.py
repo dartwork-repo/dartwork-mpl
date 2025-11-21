@@ -74,4 +74,4 @@ ax4.spines['bottom'].set_visible(False)
 ax4.spines['left'].set_visible(False)
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

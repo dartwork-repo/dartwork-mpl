@@ -27,19 +27,14 @@ Combining different plot types in a unified figure.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/07_layout_styling/images/sphx_glr_plot_mixed_subplots_001.png
+   :alt: Line Plot, Scatter + Fit, Bar Chart, Pie Chart
+   :srcset: /gallery/07_layout_styling/images/sphx_glr_plot_mixed_subplots_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -96,12 +91,12 @@ Combining different plot types in a unified figure.
     ax4.set_title('Pie Chart', fontsize=dm.fs(1))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.723 seconds)
+   **Total running time of the script:** (0 minutes 0.843 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_mixed_subplots.py:

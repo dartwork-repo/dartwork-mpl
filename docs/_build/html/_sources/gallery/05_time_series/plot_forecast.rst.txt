@@ -27,19 +27,14 @@ Visualizing time series forecasts with confidence intervals.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/05_time_series/images/sphx_glr_plot_forecast_001.png
+   :alt: Forecast with CI, Decomposition, Residual Analysis, Forecast Scenarios
+   :srcset: /gallery/05_time_series/images/sphx_glr_plot_forecast_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -134,12 +129,12 @@ Visualizing time series forecasts with confidence intervals.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.396 seconds)
+   **Total running time of the script:** (0 minutes 1.526 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_forecast.py:

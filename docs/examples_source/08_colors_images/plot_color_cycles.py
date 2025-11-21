@@ -67,4 +67,4 @@ ax4.set_ylabel('Y', fontsize=dm.fs(0))
 ax4.set_title('Combined Cycle (Color × Style)', fontsize=dm.fs(1))
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

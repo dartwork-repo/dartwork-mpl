@@ -27,19 +27,14 @@ Lollipop charts as an alternative to bar charts.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/03_bar_charts/images/sphx_glr_plot_lollipop_001.png
+   :alt: Basic Lollipop, Horizontal Lollipop, Sorted Lollipop, Comparison Lollipop
+   :srcset: /gallery/03_bar_charts/images/sphx_glr_plot_lollipop_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -134,12 +129,12 @@ Lollipop charts as an alternative to bar charts.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.591 seconds)
+   **Total running time of the script:** (0 minutes 0.690 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_lollipop.py:

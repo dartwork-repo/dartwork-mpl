@@ -27,19 +27,14 @@ Horizontal bar chart variations for categorical data.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/03_bar_charts/images/sphx_glr_plot_horizontal_bar_001.png
+   :alt: Basic Horizontal Bar, Sorted Horizontal Bar, Grouped Horizontal Bars, With Value Labels
+   :srcset: /gallery/03_bar_charts/images/sphx_glr_plot_horizontal_bar_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -124,12 +119,12 @@ Horizontal bar chart variations for categorical data.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.581 seconds)
+   **Total running time of the script:** (0 minutes 0.690 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_horizontal_bar.py:

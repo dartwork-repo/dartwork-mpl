@@ -27,19 +27,14 @@ Linear and polynomial regression visualization with confidence intervals.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/02_statistical_plots/images/sphx_glr_plot_regression_001.png
+   :alt: Linear Regression, Polynomial Regression, Residual Plot, With Confidence Interval
+   :srcset: /gallery/02_statistical_plots/images/sphx_glr_plot_regression_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -122,12 +117,12 @@ Linear and polynomial regression visualization with confidence intervals.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.837 seconds)
+   **Total running time of the script:** (0 minutes 1.064 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_regression.py:

@@ -27,19 +27,14 @@ Comparing multiple time series with different visualization techniques.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/05_time_series/images/sphx_glr_plot_time_comparison_001.png
+   :alt: Multiple Time Series, Stacked Area, Normalized Comparison, Difference Analysis
+   :srcset: /gallery/05_time_series/images/sphx_glr_plot_time_comparison_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -111,12 +106,12 @@ Comparing multiple time series with different visualization techniques.
     ax4.legend(loc='upper left', fontsize=dm.fs(-1))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.877 seconds)
+   **Total running time of the script:** (0 minutes 1.040 seconds)
 
 
 .. _sphx_glr_download_gallery_05_time_series_plot_time_comparison.py:

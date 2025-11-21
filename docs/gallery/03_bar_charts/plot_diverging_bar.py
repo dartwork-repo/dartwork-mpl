@@ -97,4 +97,4 @@ ax4.text(48, -0.7, 'Satisfied', fontsize=dm.fs(-1), ha='right')
 dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
-dm.save_and_show(fig)
+plt.show()

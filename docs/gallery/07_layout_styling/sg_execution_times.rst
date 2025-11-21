@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:07.719** total execution time for 9 files **from gallery/07_layout_styling**:
+**00:04.772** total execution time for 9 files **from gallery/07_layout_styling**:
 
 .. container::
 
@@ -33,29 +33,29 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py` (``plot_inset_axes.py``)
-     - 00:01.858
+     - 00:01.934
      - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_complex_grid.py` (``plot_complex_grid.py``)
-     - 00:01.005
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_subplots.py` (``plot_subplots.py``)
-     - 00:00.773
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_layout.py` (``plot_layout.py``)
-     - 00:00.740
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_mixed_subplots.py` (``plot_mixed_subplots.py``)
-     - 00:00.723
+     - 00:01.151
      - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_shared_axes.py` (``plot_shared_axes.py``)
-     - 00:00.706
+     - 00:00.844
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py` (``plot_custom_ticks.py``)
-     - 00:00.686
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_mixed_subplots.py` (``plot_mixed_subplots.py``)
+     - 00:00.843
      - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_annotations.py` (``plot_annotations.py``)
-     - 00:00.646
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py` (``plot_custom_ticks.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_layout.py` (``plot_layout.py``)
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_legend.py` (``plot_legend.py``)
-     - 00:00.583
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_subplots.py` (``plot_subplots.py``)
+     - 00:00.000
      - 0.0

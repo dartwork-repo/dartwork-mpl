@@ -122,5 +122,5 @@ ax4.set_yticks([0, 10, 20, 30, 40])
 dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
-dm.save_and_show(fig)
+plt.show()
 

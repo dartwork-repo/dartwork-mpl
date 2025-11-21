@@ -84,4 +84,4 @@ ax4.set_title('ACF of MA(1)', fontsize=dm.fs(1))
 ax4.set_ylim(-0.5, 1.1)
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

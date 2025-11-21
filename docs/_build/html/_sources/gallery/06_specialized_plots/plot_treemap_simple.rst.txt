@@ -27,19 +27,14 @@ Visualizing hierarchical and nested data structures.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/06_specialized_plots/images/sphx_glr_plot_treemap_simple_001.png
+   :alt: Proportional Rectangles, Nested Structure, Grid Layout, Circular Partition
+   :srcset: /gallery/06_specialized_plots/images/sphx_glr_plot_treemap_simple_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -134,12 +129,12 @@ Visualizing hierarchical and nested data structures.
     ax4.set_title('Circular Partition', fontsize=dm.fs(1))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.386 seconds)
+   **Total running time of the script:** (0 minutes 0.525 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_treemap_simple.py:

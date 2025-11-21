@@ -87,4 +87,4 @@ ax4.axis('off')
 ax4.set_title('Decision Tree', fontsize=dm.fs(1))
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

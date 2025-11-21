@@ -27,19 +27,14 @@ Using and customizing color cycles for multi-series plots.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/08_colors_images/images/sphx_glr_plot_color_cycles_001.png
+   :alt: Default Color Cycle, Blue Gradient Cycle, Tailwind Color Cycle, Combined Cycle (Color × Style)
+   :srcset: /gallery/08_colors_images/images/sphx_glr_plot_color_cycles_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -106,12 +101,12 @@ Using and customizing color cycles for multi-series plots.
     ax4.set_title('Combined Cycle (Color × Style)', fontsize=dm.fs(1))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.053 seconds)
+   **Total running time of the script:** (0 minutes 1.207 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_color_cycles.py:

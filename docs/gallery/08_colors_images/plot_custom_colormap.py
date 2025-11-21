@@ -69,4 +69,4 @@ ax4.set_title('Colormap Comparison', fontsize=dm.fs(1))
 ax4.set_yticks([])
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

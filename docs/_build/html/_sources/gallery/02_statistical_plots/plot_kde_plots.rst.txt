@@ -27,19 +27,14 @@ KDE plots for probability density estimation and comparison.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/02_statistical_plots/images/sphx_glr_plot_kde_plots_001.png
+   :alt: KDE vs Histogram, Different Bandwidths, Distribution Comparison, Bimodal Distribution
+   :srcset: /gallery/02_statistical_plots/images/sphx_glr_plot_kde_plots_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -137,12 +132,12 @@ KDE plots for probability density estimation and comparison.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.772 seconds)
+   **Total running time of the script:** (0 minutes 0.914 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_kde_plots.py:

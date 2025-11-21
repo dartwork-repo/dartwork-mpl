@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:09.126** total execution time for 9 files **from gallery/04_scientific_plots**:
+**00:03.744** total execution time for 9 files **from gallery/04_scientific_plots**:
 
 .. container::
 
@@ -32,30 +32,30 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``plot_spectral_analysis.py``)
-     - 00:03.254
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_3d_surface.py` (``plot_3d_surface.py``)
-     - 00:01.181
-     - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_vector_field_advanced.py` (``plot_vector_field_advanced.py``)
-     - 00:01.045
+     - 00:01.079
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_streamplot.py` (``plot_streamplot.py``)
-     - 00:00.856
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``plot_spectral_analysis.py``)
+     - 00:01.011
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_phase_diagram.py` (``plot_phase_diagram.py``)
-     - 00:00.808
+     - 00:00.955
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``plot_scientific_paper.py``)
-     - 00:00.555
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_3d_surface.py` (``plot_3d_surface.py``)
+     - 00:00.699
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_contour.py` (``plot_contour.py``)
-     - 00:00.524
-     - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``plot_quiver.py``)
-     - 00:00.466
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_heatmap.py` (``plot_heatmap.py``)
-     - 00:00.436
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``plot_quiver.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``plot_scientific_paper.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_streamplot.py` (``plot_streamplot.py``)
+     - 00:00.000
      - 0.0

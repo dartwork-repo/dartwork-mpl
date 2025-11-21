@@ -73,4 +73,4 @@ ax4.set_title('Bollinger Bands', fontsize=dm.fs(1))
 ax4.legend(loc='upper left', fontsize=dm.fs(-1))
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

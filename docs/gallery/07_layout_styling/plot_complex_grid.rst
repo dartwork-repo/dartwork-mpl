@@ -27,19 +27,14 @@ Advanced GridSpec layouts for complex figure arrangements.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/07_layout_styling/images/sphx_glr_plot_complex_grid_001.png
+   :alt: Main Plot (2x2), Scatter, Histogram, Bar, Box, Polar-like
+   :srcset: /gallery/07_layout_styling/images/sphx_glr_plot_complex_grid_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -99,12 +94,12 @@ Advanced GridSpec layouts for complex figure arrangements.
     ax6.tick_params(labelsize=dm.fs(-2))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.005 seconds)
+   **Total running time of the script:** (0 minutes 1.151 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_complex_grid.py:

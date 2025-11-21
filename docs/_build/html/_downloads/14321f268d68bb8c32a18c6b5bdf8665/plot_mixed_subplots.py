@@ -57,4 +57,4 @@ ax4.pie(sizes, labels=categories, colors=colors_pie, autopct='%1.0f%%',
 ax4.set_title('Pie Chart', fontsize=dm.fs(1))
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

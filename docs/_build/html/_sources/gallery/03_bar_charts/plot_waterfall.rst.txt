@@ -27,19 +27,14 @@ Waterfall charts for showing cumulative effects of sequential values.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/03_bar_charts/images/sphx_glr_plot_waterfall_001.png
+   :alt: Basic Waterfall, With Connecting Lines, With Value Labels, Detailed Breakdown
+   :srcset: /gallery/03_bar_charts/images/sphx_glr_plot_waterfall_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -147,12 +142,12 @@ Waterfall charts for showing cumulative effects of sequential values.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.481 seconds)
+   **Total running time of the script:** (0 minutes 0.615 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_waterfall.py:

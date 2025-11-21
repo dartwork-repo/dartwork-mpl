@@ -27,19 +27,14 @@ Creating and using custom colormaps for visualization.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/08_colors_images/images/sphx_glr_plot_custom_colormap_001.png
+   :alt: Custom Sequential, Custom Diverging, Discrete Colors, Colormap Comparison
+   :srcset: /gallery/08_colors_images/images/sphx_glr_plot_custom_colormap_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -108,12 +103,12 @@ Creating and using custom colormaps for visualization.
     ax4.set_yticks([])
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.824 seconds)
+   **Total running time of the script:** (0 minutes 0.915 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_custom_colormap.py:

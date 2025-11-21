@@ -60,4 +60,4 @@ ax6.set_title('Polar-like', fontsize=dm.fs(0))
 ax6.tick_params(labelsize=dm.fs(-2))
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

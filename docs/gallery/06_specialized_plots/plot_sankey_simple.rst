@@ -27,19 +27,14 @@ Visualizing flows and connections between elements.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/06_specialized_plots/images/sphx_glr_plot_sankey_simple_001.png
+   :alt: Simple Flow, Branching Flow, Circular Flow, Decision Tree
+   :srcset: /gallery/06_specialized_plots/images/sphx_glr_plot_sankey_simple_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -126,12 +121,12 @@ Visualizing flows and connections between elements.
     ax4.set_title('Decision Tree', fontsize=dm.fs(1))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.506 seconds)
+   **Total running time of the script:** (0 minutes 0.646 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_sankey_simple.py:

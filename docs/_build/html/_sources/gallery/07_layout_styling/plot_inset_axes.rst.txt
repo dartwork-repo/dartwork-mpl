@@ -27,19 +27,14 @@ Creating inset axes for zoomed views and detail plots.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/07_layout_styling/images/sphx_glr_plot_inset_axes_001.png
+   :alt: Basic Inset, Inset with Zoom Box, Multiple Insets, Histogram Inset
+   :srcset: /gallery/07_layout_styling/images/sphx_glr_plot_inset_axes_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -119,12 +114,12 @@ Creating inset axes for zoomed views and detail plots.
     axins4.set_ylabel('Count', fontsize=dm.fs(-2))
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.858 seconds)
+   **Total running time of the script:** (0 minutes 1.934 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_inset_axes.py:

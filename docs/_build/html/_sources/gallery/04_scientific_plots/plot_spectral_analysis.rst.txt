@@ -27,19 +27,14 @@ Frequency domain analysis and spectral plots.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/04_scientific_plots/images/sphx_glr_plot_spectral_analysis_001.png
+   :alt: Time Domain Signal, Frequency Spectrum (FFT), Power Spectral Density, Spectrogram (Chirp Signal)
+   :srcset: /gallery/04_scientific_plots/images/sphx_glr_plot_spectral_analysis_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -121,12 +116,12 @@ Frequency domain analysis and spectral plots.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.254 seconds)
+   **Total running time of the script:** (0 minutes 1.011 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_spectral_analysis.py:

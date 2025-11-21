@@ -27,19 +27,14 @@ Phase space and trajectory plots for dynamical systems.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/04_scientific_plots/images/sphx_glr_plot_phase_diagram_001.png
+   :alt: Pendulum Phase Portrait, Predator-Prey Dynamics, Phase Space with Vector Field, Multiple Trajectories
+   :srcset: /gallery/04_scientific_plots/images/sphx_glr_plot_phase_diagram_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -140,12 +135,12 @@ Phase space and trajectory plots for dynamical systems.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.808 seconds)
+   **Total running time of the script:** (0 minutes 0.955 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_phase_diagram.py:

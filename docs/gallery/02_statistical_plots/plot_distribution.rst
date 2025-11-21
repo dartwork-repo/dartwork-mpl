@@ -27,19 +27,14 @@ Various probability distribution visualizations.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/02_statistical_plots/images/sphx_glr_plot_distribution_001.png
+   :alt: Normal Distributions, t-Distributions, Chi-Square Distributions, Distribution Comparison
+   :srcset: /gallery/02_statistical_plots/images/sphx_glr_plot_distribution_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -138,12 +133,12 @@ Various probability distribution visualizations.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.764 seconds)
+   **Total running time of the script:** (0 minutes 0.870 seconds)
 
 
 .. _sphx_glr_download_gallery_02_statistical_plots_plot_distribution.py:

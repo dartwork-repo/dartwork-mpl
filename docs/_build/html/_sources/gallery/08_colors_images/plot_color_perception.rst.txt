@@ -27,19 +27,14 @@ Color choices for accessibility and perceptual uniformity.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/08_colors_images/images/sphx_glr_plot_color_perception_001.png
+   :alt: Perceptually Uniform (Viridis), Non-uniform (Jet - Not Recommended), Colorblind-Friendly Palette, Lightness Progression
+   :srcset: /gallery/08_colors_images/images/sphx_glr_plot_color_perception_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -113,12 +108,12 @@ Color choices for accessibility and perceptual uniformity.
     ax4.spines['left'].set_visible(False)
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.457 seconds)
+   **Total running time of the script:** (0 minutes 0.562 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_color_perception.py:

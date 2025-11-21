@@ -82,4 +82,4 @@ ax4.set_yticks([-3, -1.5, 0, 1.5, 3])
 dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
-dm.save_and_show(fig)
+plt.show()

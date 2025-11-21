@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:05.209** total execution time for 9 files **from gallery/06_specialized_plots**:
+**00:03.316** total execution time for 9 files **from gallery/06_specialized_plots**:
 
 .. container::
 
@@ -32,30 +32,30 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_ridgeline.py` (``plot_ridgeline.py``)
-     - 00:01.062
-     - 0.0
    * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_radar_chart.py` (``plot_radar_chart.py``)
-     - 00:00.973
+     - 00:01.092
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_polar.py` (``plot_polar.py``)
-     - 00:00.698
-     - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_filled.py` (``plot_filled.py``)
-     - 00:00.614
+   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_ridgeline.py` (``plot_ridgeline.py``)
+     - 00:01.053
      - 0.0
    * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py` (``plot_sankey_simple.py``)
-     - 00:00.506
+     - 00:00.646
      - 0.0
    * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py` (``plot_treemap_simple.py``)
-     - 00:00.386
-     - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_dual_axis.py` (``plot_dual_axis.py``)
-     - 00:00.369
-     - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_pie.py` (``plot_pie.py``)
-     - 00:00.308
+     - 00:00.525
      - 0.0
    * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_3d.py` (``plot_3d.py``)
-     - 00:00.294
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_dual_axis.py` (``plot_dual_axis.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_filled.py` (``plot_filled.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_pie.py` (``plot_pie.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_polar.py` (``plot_polar.py``)
+     - 00:00.000
      - 0.0

@@ -27,19 +27,14 @@ Grouped bar charts.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/03_bar_charts/images/sphx_glr_plot_grouped_bar_001.png
+   :alt: Basic Grouped Bars, With Value Labels, Custom Spacing, With Error Bars
+   :srcset: /gallery/03_bar_charts/images/sphx_glr_plot_grouped_bar_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -161,13 +156,13 @@ Grouped bar charts.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.695 seconds)
+   **Total running time of the script:** (0 minutes 0.792 seconds)
 
 
 .. _sphx_glr_download_gallery_03_bar_charts_plot_grouped_bar.py:

@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:04.750** total execution time for 6 files **from gallery/08_colors_images**:
+**00:03.722** total execution time for 6 files **from gallery/08_colors_images**:
 
 .. container::
 
@@ -32,21 +32,21 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_08_colors_images_plot_image.py` (``plot_image.py``)
-     - 00:01.121
-     - 0.0
    * - :ref:`sphx_glr_gallery_08_colors_images_plot_color_cycles.py` (``plot_color_cycles.py``)
-     - 00:01.053
+     - 00:01.207
      - 0.0
    * - :ref:`sphx_glr_gallery_08_colors_images_plot_diverging_sequential.py` (``plot_diverging_sequential.py``)
-     - 00:00.914
+     - 00:01.038
      - 0.0
    * - :ref:`sphx_glr_gallery_08_colors_images_plot_custom_colormap.py` (``plot_custom_colormap.py``)
-     - 00:00.824
+     - 00:00.915
      - 0.0
    * - :ref:`sphx_glr_gallery_08_colors_images_plot_color_perception.py` (``plot_color_perception.py``)
-     - 00:00.457
+     - 00:00.562
      - 0.0
    * - :ref:`sphx_glr_gallery_08_colors_images_plot_colors.py` (``plot_colors.py``)
-     - 00:00.381
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_08_colors_images_plot_image.py` (``plot_image.py``)
+     - 00:00.000
      - 0.0

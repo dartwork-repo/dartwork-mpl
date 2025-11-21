@@ -27,12 +27,18 @@ Filled area plots and combinations with lines.
 
 
 
+.. image-sg:: /gallery/01_basic_plots/images/sphx_glr_plot_area_plots_001.png
+   :alt: Basic Fill Between, Confidence Interval, Overlapping Areas, Stacked Areas
+   :srcset: /gallery/01_basic_plots/images/sphx_glr_plot_area_plots_001.png
+   :class: sphx-glr-single-img
+
 
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
 
-    <IPython.core.display.HTML object>
+    Load colors...
+    Load colormaps...
 
 
 
@@ -129,12 +135,12 @@ Filled area plots and combinations with lines.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.639 seconds)
+   **Total running time of the script:** (0 minutes 1.172 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_area_plots.py:

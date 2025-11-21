@@ -87,4 +87,4 @@ ax4.legend(loc='upper right', bbox_to_anchor=(1.2, 1.1), fontsize=dm.fs(-2))
 ax4.grid(True, linewidth=0.3)
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

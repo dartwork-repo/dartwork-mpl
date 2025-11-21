@@ -83,4 +83,4 @@ ax4.set_xticks([0, 2, 4, 6, 8, 10])
 dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
-dm.save_and_show(fig)
+plt.show()

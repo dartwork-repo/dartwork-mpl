@@ -27,19 +27,14 @@ Radar/spider charts for multivariate data visualization.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/06_specialized_plots/images/sphx_glr_plot_radar_chart_001.png
+   :alt: Basic Radar Chart, Comparison, Multi-series, Highlighted
+   :srcset: /gallery/06_specialized_plots/images/sphx_glr_plot_radar_chart_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -126,12 +121,12 @@ Radar/spider charts for multivariate data visualization.
     ax4.grid(True, linewidth=0.3)
 
     dm.simple_layout(fig, gs=gs)
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.973 seconds)
+   **Total running time of the script:** (0 minutes 1.092 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_radar_chart.py:

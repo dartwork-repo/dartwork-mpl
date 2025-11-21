@@ -80,4 +80,4 @@ axins4.set_xlabel('Y', fontsize=dm.fs(-2))
 axins4.set_ylabel('Count', fontsize=dm.fs(-2))
 
 dm.simple_layout(fig, gs=gs)
-dm.save_and_show(fig)
+plt.show()

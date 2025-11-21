@@ -27,19 +27,14 @@ Various marker styles and combinations with lines.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    <IPython.core.display.HTML object>
+.. image-sg:: /gallery/01_basic_plots/images/sphx_glr_plot_markers_001.png
+   :alt: Basic Markers, Markers Only, Filled vs Empty, Different Sizes
+   :srcset: /gallery/01_basic_plots/images/sphx_glr_plot_markers_001.png
+   :class: sphx-glr-single-img
 
 
 
 
-
-
-|
 
 .. code-block:: Python
 
@@ -131,12 +126,12 @@ Various marker styles and combinations with lines.
     dm.simple_layout(fig, gs=gs)
 
     # Save and show plot
-    dm.save_and_show(fig)
+    plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.699 seconds)
+   **Total running time of the script:** (0 minutes 0.825 seconds)
 
 
 .. _sphx_glr_download_gallery_01_basic_plots_plot_markers.py:
