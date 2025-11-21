@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="./">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Color and Colormap Gallery - dartwork-mpl documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Examples Gallery" href="gallery/index.html" /><link rel="prev" title="Usage Guide" href="DARTWORK_MPL_USAGE_GUIDE.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Install - dartwork-mpl documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Usage Guide" href="DARTWORK_MPL_USAGE_GUIDE.html" /><link rel="prev" title="dartwork-mpl" href="index.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
@@ -24,7 +24,7 @@
   --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
 }
 </style>
-    <meta property="og:type" content="website"/><meta property="og:title" content="Color and Colormap Gallery"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="Install"/>
     <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="sy-head">
@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="install.html">Install</a></li><li class="link"><a href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="gallery/index.html">Examples Gallery</a></li><li class="link"><a href="api/index.html">API</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="#">Install</a></li><li class="link"><a href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="gallery/index.html">Examples Gallery</a></li><li class="link"><a href="api/index.html">API</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -65,9 +65,9 @@ data-aria-dark="Switch to auto color mode">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="1"><ul class="current">
-<li class="toctree-l1 _expand"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Color and Colormap Gallery</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="COLOR_GALLERY.html">Color and Colormap Gallery</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="gallery/index.html">Examples Gallery</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="gallery/index.html#basic-plots">Basic Plots</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="gallery/index.html#statistical-plots">Statistical Plots</a></li>
@@ -186,31 +186,9 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#quick-start">Quick Start</a></li>
-<li><a class="reference internal" href="#colormaps">Colormaps</a><ul>
-<li><a class="reference internal" href="#sequential-single-hue">Sequential Single-Hue</a></li>
-<li><a class="reference internal" href="#sequential-multi-hue">Sequential Multi-Hue</a></li>
-<li><a class="reference internal" href="#diverging">Diverging</a></li>
-<li><a class="reference internal" href="#cyclical">Cyclical</a></li>
-<li><a class="reference internal" href="#categorical">Categorical</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#colors">Colors</a><ul>
-<li><a class="reference internal" href="#opencolor">OpenColor</a></li>
-<li><a class="reference internal" href="#tailwind-tw">Tailwind (tw)</a></li>
-<li><a class="reference internal" href="#material-design-md">Material Design (md)</a></li>
-<li><a class="reference internal" href="#ant-design-ant">Ant Design (ant)</a></li>
-<li><a class="reference internal" href="#chakra-ui-chakra">Chakra UI (chakra)</a></li>
-<li><a class="reference internal" href="#primer-primer">Primer (primer)</a></li>
-<li><a class="reference internal" href="#other-colors">Other Colors</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#best-practices">Best Practices</a><ul>
-<li><a class="reference internal" href="#choosing-colormaps">Choosing Colormaps</a></li>
-<li><a class="reference internal" href="#choosing-colors">Choosing Colors</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#regenerating-images">Regenerating Images</a></li>
+<li><a class="reference internal" href="#using-uv-recommended">Using uv (Recommended)</a></li>
+<li><a class="reference internal" href="#using-pip">Using pip</a></li>
+<li><a class="reference internal" href="#basic-import">Basic Import</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -228,7 +206,7 @@ data-aria-dark="Switch to auto color mode">
         <span>/</span>
         <meta itemprop="position" content="1" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Color and Colormap Gallery</strong>
+        <strong itemprop="name">Install</strong>
         <meta itemprop="position" content="2" />
       </li></ol>
     <div class="xl:hidden ml-1">
@@ -241,214 +219,41 @@ data-aria-dark="Switch to auto color mode">
 </div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue dark-code" role="main">
-          <section id="color-and-colormap-gallery">
-<h1>Color and Colormap Gallery<a class="headerlink" href="#color-and-colormap-gallery" title="Link to this heading">¶</a></h1>
-<p>This document provides visual samples of all available colors and colormaps in dartwork-mpl. These images are generated from <code class="docutils literal notranslate"><span class="pre">plot_colormaps()</span></code> and <code class="docutils literal notranslate"><span class="pre">plot_colors()</span></code> functions.</p>
-<section id="quick-start">
-<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
-<p>dartwork-mpl provides a comprehensive color system with named colors from various design systems and a wide selection of colormaps for data visualization.</p>
-<p>Colors can be used directly in matplotlib plotting functions by specifying color names (e.g., <code class="docutils literal notranslate"><span class="pre">tw.blue:500</span></code>, <code class="docutils literal notranslate"><span class="pre">md.red:700</span></code>). Colormaps are used with functions that map data values to colors (e.g., <code class="docutils literal notranslate"><span class="pre">imshow()</span></code>, <code class="docutils literal notranslate"><span class="pre">contourf()</span></code>, <code class="docutils literal notranslate"><span class="pre">scatter()</span></code> with <code class="docutils literal notranslate"><span class="pre">c</span></code> parameter). Add <code class="docutils literal notranslate"><span class="pre">_r</span></code> suffix to reverse any colormap (e.g., <code class="docutils literal notranslate"><span class="pre">viridis_r</span></code>).</p>
-</section>
-<section id="colormaps">
-<h2>Colormaps<a class="headerlink" href="#colormaps" title="Link to this heading">¶</a></h2>
-<p>Colormaps are organized by type. Each category shows all available colormaps with their names.</p>
-<section id="sequential-single-hue">
-<h3>Sequential Single-Hue<a class="headerlink" href="#sequential-single-hue" title="Link to this heading">¶</a></h3>
-<p>Sequential colormaps that use a single hue with varying lightness. Best for representing ordered data that progresses from low to high values.</p>
-<p><strong>When to use:</strong></p>
-<ul class="simple">
-<li><p>Representing magnitude or intensity (e.g., temperature, density, concentration)</p></li>
-<li><p>Data that has a natural ordering from low to high</p></li>
-<li><p>When you want a clean, professional appearance</p></li>
-</ul>
-<p><img alt="Sequential Single-Hue Colormaps" src="_images/colormaps_sequential_single-hue.png" /></p>
-</section>
-<section id="sequential-multi-hue">
-<h3>Sequential Multi-Hue<a class="headerlink" href="#sequential-multi-hue" title="Link to this heading">¶</a></h3>
-<p>Sequential colormaps that use multiple hues. Provide more visual distinction than single-hue colormaps while maintaining the sequential nature.</p>
-<p><strong>When to use:</strong></p>
-<ul class="simple">
-<li><p>When you need more visual contrast than single-hue colormaps</p></li>
-<li><p>Heatmaps and density plots</p></li>
-<li><p>Scientific visualizations where color transitions are important</p></li>
-<li><p>Popular choices: <code class="docutils literal notranslate"><span class="pre">viridis</span></code>, <code class="docutils literal notranslate"><span class="pre">plasma</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno</span></code>, <code class="docutils literal notranslate"><span class="pre">magma</span></code></p></li>
-</ul>
-<p><img alt="Sequential Multi-Hue Colormaps" src="_images/colormaps_sequential_multi-hue.png" /></p>
-</section>
-<section id="diverging">
-<h3>Diverging<a class="headerlink" href="#diverging" title="Link to this heading">¶</a></h3>
-<p>Diverging colormaps that have distinct middle values and different colors at the ends. Ideal for data centered around a meaningful zero point or threshold.</p>
-<p><strong>When to use:</strong></p>
-<ul class="simple">
-<li><p>Data with a meaningful zero point (e.g., deviations from mean, temperature anomalies)</p></li>
-<li><p>Correlation matrices</p></li>
-<li><p>Data that diverges from a central value</p></li>
-<li><p>When you need to highlight both positive and negative values</p></li>
-</ul>
-<p><img alt="Diverging Colormaps" src="_images/colormaps_diverging.png" /></p>
-</section>
-<section id="cyclical">
-<h3>Cyclical<a class="headerlink" href="#cyclical" title="Link to this heading">¶</a></h3>
-<p>Cyclical colormaps that start and end with similar colors, suitable for periodic data where the highest and lowest values should appear similar.</p>
-<p><strong>When to use:</strong></p>
-<ul class="simple">
-<li><p>Periodic or circular data (e.g., angles, time of day, phase data)</p></li>
-<li><p>Data where the endpoints are conceptually connected</p></li>
-<li><p>Wind direction, wave phase, or any circular measurement</p></li>
-</ul>
-<p><img alt="Cyclical Colormaps" src="_images/colormaps_cyclical.png" /></p>
-</section>
-<section id="categorical">
-<h3>Categorical<a class="headerlink" href="#categorical" title="Link to this heading">¶</a></h3>
-<p>Categorical colormaps with distinct colors for different categories. Use when you need to distinguish between discrete, unordered groups.</p>
-<p><strong>When to use:</strong></p>
-<ul class="simple">
-<li><p>Discrete categories without inherent ordering</p></li>
-<li><p>Classifying data into distinct groups</p></li>
-<li><p>Bar charts, pie charts, or scatter plots with categories</p></li>
-<li><p>When each category should be visually distinct</p></li>
-</ul>
-<p><img alt="Categorical Colormaps" src="_images/colormaps_categorical.png" /></p>
-</section>
-</section>
-<section id="colors">
-<h2>Colors<a class="headerlink" href="#colors" title="Link to this heading">¶</a></h2>
-<p>Colors are organized by library. Each library shows all available named colors with their names.</p>
-<section id="opencolor">
-<h3>OpenColor<a class="headerlink" href="#opencolor" title="Link to this heading">¶</a></h3>
-<p>OpenColor color palette. A carefully designed color system for user interfaces.</p>
-<p><strong>Available colors:</strong> Use <code class="docutils literal notranslate"><span class="pre">dm.plot_colors()</span></code> to see all available OpenColor colors.</p>
-<p><img alt="OpenColor Colors" src="_images/colors_opencolor.png" /></p>
-</section>
-<section id="tailwind-tw">
-<h3>Tailwind (tw)<a class="headerlink" href="#tailwind-tw" title="Link to this heading">¶</a></h3>
-<p>Tailwind CSS color palette. Colors are named with the format <code class="docutils literal notranslate"><span class="pre">tw.{color}:{weight}</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">tw.blue:500</span></code>).</p>
-<p><strong>Available colors:</strong></p>
-<ul class="simple">
-<li><p>Colors: blue, gray, red, green, yellow, purple, pink, indigo, cyan, teal, emerald, lime, amber, orange, slate, zinc, neutral, stone, etc.</p></li>
-<li><p>Weights: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950</p></li>
-</ul>
-<p><img alt="Tailwind Colors" src="_images/colors_tw.png" /></p>
-</section>
-<section id="material-design-md">
-<h3>Material Design (md)<a class="headerlink" href="#material-design-md" title="Link to this heading">¶</a></h3>
-<p>Material Design color palette. Colors are named with the format <code class="docutils literal notranslate"><span class="pre">md.{color}:{weight}</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">md.blue:500</span></code>).</p>
-<p><strong>Available colors:</strong></p>
-<ul class="simple">
-<li><p>Colors: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue grey</p></li>
-<li><p>Weights: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900</p></li>
-</ul>
-<p><img alt="Material Design Colors" src="_images/colors_md.png" /></p>
-</section>
-<section id="ant-design-ant">
-<h3>Ant Design (ant)<a class="headerlink" href="#ant-design-ant" title="Link to this heading">¶</a></h3>
-<p>Ant Design color palette. Colors are named with the format <code class="docutils literal notranslate"><span class="pre">ant.{color}:{weight}</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">ant.blue:5</span></code>).</p>
-<p><strong>Available colors:</strong></p>
-<ul class="simple">
-<li><p>Colors: red, volcano, orange, gold, yellow, lime, green, cyan, blue, geek blue, purple, magenta, grey</p></li>
-<li><p>Weights: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p></li>
-</ul>
-<p><img alt="Ant Design Colors" src="_images/colors_ant.png" /></p>
-</section>
-<section id="chakra-ui-chakra">
-<h3>Chakra UI (chakra)<a class="headerlink" href="#chakra-ui-chakra" title="Link to this heading">¶</a></h3>
-<p>Chakra UI color palette. Colors are named with the format <code class="docutils literal notranslate"><span class="pre">chakra.{color}:{weight}</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">chakra.blue:500</span></code>).</p>
-<p><strong>Available colors:</strong></p>
-<ul class="simple">
-<li><p>Colors: red, orange, yellow, green, teal, blue, cyan, purple, pink, gray</p></li>
-<li><p>Weights: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900</p></li>
-</ul>
-<p><img alt="Chakra UI Colors" src="_images/colors_chakra.png" /></p>
-</section>
-<section id="primer-primer">
-<h3>Primer (primer)<a class="headerlink" href="#primer-primer" title="Link to this heading">¶</a></h3>
-<p>Primer color palette. Colors are named with the format <code class="docutils literal notranslate"><span class="pre">primer.{color}:{weight}</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">primer.blue:5</span></code>).</p>
-<p><strong>Available colors:</strong></p>
-<ul class="simple">
-<li><p>Colors: blue, green, yellow, orange, red, purple, pink, coral, gray</p></li>
-<li><p>Weights: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9</p></li>
-</ul>
-<p><img alt="Primer Colors" src="_images/colors_primer.png" /></p>
-</section>
-<section id="other-colors">
-<h3>Other Colors<a class="headerlink" href="#other-colors" title="Link to this heading">¶</a></h3>
-<p>Other named colors from matplotlib and dartwork-mpl. Includes standard matplotlib colors and custom dartwork-mpl colors.</p>
-<p><strong>Note:</strong> Standard matplotlib color cycle colors (C0, C1, C2, etc.) and other named colors are available.</p>
-<p><img alt="Other Colors" src="_images/colors_other.png" /></p>
-</section>
-</section>
-<section id="best-practices">
-<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">¶</a></h2>
-<section id="choosing-colormaps">
-<h3>Choosing Colormaps<a class="headerlink" href="#choosing-colormaps" title="Link to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Sequential vs Diverging</strong></p>
-<ul class="simple">
-<li><p>Use <strong>sequential</strong> colormaps for data that progresses from low to high (e.g., temperature, density, counts)</p></li>
-<li><p>Use <strong>diverging</strong> colormaps for data centered around a meaningful zero point (e.g., deviations, anomalies, correlations)</p></li>
-<li><p>Use <strong>categorical</strong> colormaps for discrete, unordered categories</p></li>
-</ul>
-</li>
-<li><p><strong>Color Accessibility</strong></p>
-<ul class="simple">
-<li><p>Avoid using color as the only way to convey information</p></li>
-<li><p>Use colorblind-friendly colormaps (e.g., <code class="docutils literal notranslate"><span class="pre">viridis</span></code>, <code class="docutils literal notranslate"><span class="pre">plasma</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno</span></code>) for scientific publications</p></li>
-<li><p>Test your visualizations with colorblind simulators if possible</p></li>
-<li><p>Consider using patterns or textures in addition to color for accessibility</p></li>
-</ul>
-</li>
-<li><p><strong>Perceptual Uniformity</strong></p>
-<ul class="simple">
-<li><p>Prefer perceptually uniform colormaps (e.g., <code class="docutils literal notranslate"><span class="pre">viridis</span></code>, <code class="docutils literal notranslate"><span class="pre">plasma</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno</span></code>, <code class="docutils literal notranslate"><span class="pre">magma</span></code>) over traditional ones like <code class="docutils literal notranslate"><span class="pre">jet</span></code></p></li>
-<li><p>Perceptually uniform colormaps ensure that equal steps in data correspond to equal steps in perceived color change</p></li>
-</ul>
-</li>
-<li><p><strong>Reversing Colormaps</strong></p>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">_r</span></code> suffix to reverse any colormap when needed</p></li>
-<li><p>Sometimes reversing a colormap can better match your data or improve readability</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<section id="choosing-colors">
-<h3>Choosing Colors<a class="headerlink" href="#choosing-colors" title="Link to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Color Weights</strong></p>
-<ul class="simple">
-<li><p>Lower weights (50-300) are lighter colors, suitable for backgrounds or subtle elements</p></li>
-<li><p>Middle weights (400-600) are balanced colors, good for primary elements</p></li>
-<li><p>Higher weights (700-900) are darker colors, suitable for text or emphasis</p></li>
-</ul>
-</li>
-<li><p><strong>Consistency</strong></p>
-<ul class="simple">
-<li><p>Stick to one color library within a single visualization for consistency</p></li>
-<li><p>Use similar weights for similar elements (e.g., all primary lines use weight 500-600)</p></li>
-</ul>
-</li>
-<li><p><strong>Contrast</strong></p>
-<ul class="simple">
-<li><p>Ensure sufficient contrast between foreground and background colors</p></li>
-<li><p>Use darker colors for text and lighter colors for backgrounds</p></li>
-</ul>
-</li>
-<li><p><strong>Mixing Colors</strong></p>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">dm.mix_colors()</span></code> to create custom colors by blending existing ones</p></li>
-<li><p>Useful for creating gradients or intermediate shades</p></li>
-</ul>
-</li>
-</ol>
-</section>
-</section>
-<section id="regenerating-images">
-<h2>Regenerating Images<a class="headerlink" href="#regenerating-images" title="Link to this heading">¶</a></h2>
-<p>To regenerate these images, run the <code class="docutils literal notranslate"><span class="pre">generate_gallery.py</span></code> script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">python<span class="w"> </span>docs/generate_gallery.py
+          <section id="install">
+<h1>Install<a class="headerlink" href="#install" title="Link to this heading">¶</a></h1>
+<p>Set up dartwork-mpl locally using your preferred Python tool. The package ships
+with curated matplotlib styles and color libraries, so a clean install ensures
+those assets are available.</p>
+<section id="using-uv-recommended">
+<h2>Using uv (Recommended)<a class="headerlink" href="#using-uv-recommended" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/astral-sh/uv">uv</a> is a fast and efficient Python package manager.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Add to project (Recommended)</span>
+</span><span data-line="2">uv<span class="w"> </span>add<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+</span><span data-line="3">
+</span><span data-line="4"><span class="c1"># Or install directly</span>
+</span><span data-line="5">uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+</span><span data-line="6">
+</span><span data-line="7"><span class="c1"># Specify branch/tag</span>
+</span><span data-line="8">uv<span class="w"> </span>add<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl@main
 </span></pre></div>
 </div>
-<p>The script will generate PNG images in the <code class="docutils literal notranslate"><span class="pre">docs/images/</span></code> directory. Make sure you have dartwork-mpl installed and all dependencies are available.</p>
+</section>
+<section id="using-pip">
+<h2>Using pip<a class="headerlink" href="#using-pip" title="Link to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/dartwork-repo/dartwork-mpl
+</span></pre></div>
+</div>
+</section>
+<section id="basic-import">
+<h2>Basic Import<a class="headerlink" href="#basic-import" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
+</span><span data-line="2"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span data-line="3"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="c1"># Apply basic style (Recommended)</span>
+</span><span data-line="6"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>  <span class="c1"># Basic style for academic papers</span>
+</span></pre></div>
+</div>
 </section>
 </section>
 
@@ -458,16 +263,16 @@ data-aria-dark="Switch to auto color mode">
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="DARTWORK_MPL_USAGE_GUIDE.html">
+    <a href="index.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>Previous</span><div class="title">Usage Guide</div></div>
+        <span>Previous</span><div class="title">Home</div></div>
     </a>
   </div><div class="navigation-next">
-    <a href="gallery/index.html">
+    <a href="DARTWORK_MPL_USAGE_GUIDE.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">Examples Gallery</div>
+        <div class="title">Usage Guide</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>

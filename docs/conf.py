@@ -46,9 +46,9 @@ html_theme_options = {
     "globaltoc_expand_depth": 1,  # Allow expanding sidebar items
     "dark_code": True,  # Use dark code blocks in light mode
     "nav_links": [
-        {"title": "Install", "url": "index"},
+        {"title": "Install", "url": "install"},
         {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
-        {"title": "Gallery", "url": "gallery/index"},
+        {"title": "Examples Gallery", "url": "gallery/index"},
         {"title": "API", "url": "api/index"},
     ]
 }

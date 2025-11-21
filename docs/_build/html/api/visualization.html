@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="../index.html">Install</a></li><li class="link"><a href="../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../gallery/index.html">Gallery</a></li><li class="link"><a href="index.html">API</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="../install.html">Install</a></li><li class="link"><a href="../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../gallery/index.html">Examples Gallery</a></li><li class="link"><a href="index.html">API</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -65,6 +65,7 @@ data-aria-dark="Switch to auto color mode">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="1"><ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../install.html">Install</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="../COLOR_GALLERY.html">Color and Colormap Gallery</a></li>
 <li class="toctree-l1 _expand"><a class="reference internal" href="../gallery/index.html">Examples Gallery</a></li>
@@ -224,6 +225,15 @@ data-aria-dark="Switch to auto color mode">
         <article class="yue dark-code" role="main">
           <section id="visualization-tools">
 <h1>Visualization Tools<a class="headerlink" href="#visualization-tools" title="Link to this heading">¶</a></h1>
+<p>Quick visual diagnostics for the assets bundled with dartwork-mpl. Use them to
+review palettes, pick colormaps by category, or validate fonts before building
+plots.</p>
+<p>Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">dm</span><span class="o">.</span><span class="n">plot_colormaps</span><span class="p">(</span><span class="n">group_by_type</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Opens grouped figures</span>
+</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>                <span class="c1"># Shows named colors by library</span>
+</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">plot_fonts</span><span class="p">(</span><span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>            <span class="c1"># Preview installed font families</span>
+</span></pre></div>
+</div>
 <dl class="py function">
 <dt class="sig sig-object py" id="dartwork_mpl.plot_colormaps">
 <span class="sig-prename descclassname"><span class="pre">dartwork_mpl.</span></span><span class="sig-name descname"><span class="pre">plot_colormaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dartwork_mpl/util.html#plot_colormaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dartwork_mpl.plot_colormaps" title="Link to this definition">¶</a></dt>
