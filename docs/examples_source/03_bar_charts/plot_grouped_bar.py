@@ -20,15 +20,15 @@ group2 = np.array([15, 20, 25, 20])
 group3 = np.array([10, 15, 20, 15])
 
 # Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Double column figure: 17cm width, 2x2 layout
+fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
 
-# Create GridSpec for 3 subplots
+# Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.95, bottom=0.08,
+    wspace=0.3, hspace=0.4
 )
 
 # Panel A: Basic grouped bars
@@ -72,7 +72,7 @@ ax2.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
 ax2.set_yticks([0, 10, 20, 30])
 
 # Panel C: Custom spacing
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 # Custom spacing: width=0.2, spacing between groups
 width_custom = 0.2
 spacing = 0.1
@@ -94,9 +94,33 @@ ax3.set_xticklabels(categories, fontsize=dm.fs(-1))
 ax3.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
 ax3.set_yticks([0, 10, 20, 30])
 
+# Panel D: Grouped bars with error bars
+ax4 = fig.add_subplot(gs[1, 1])
+# Error values
+errors1 = np.array([2, 1.5, 2.5, 2])
+errors2 = np.array([1.5, 2, 1.5, 1.5])
+errors3 = np.array([1, 1.5, 2, 1.5])
+# Explicit parameters: width=0.25, alpha=0.7, capsize=2
+bars4a = ax4.bar(x_pos - width, group1, width, color='dm.blue5', alpha=0.7,
+                  edgecolor='dm.blue7', linewidth=0.3, label='Group A',
+                  yerr=errors1, capsize=2, error_kw={'linewidth': 0.5})
+bars4b = ax4.bar(x_pos, group2, width, color='dm.red5', alpha=0.7,
+                  edgecolor='dm.red7', linewidth=0.3, label='Group B',
+                  yerr=errors2, capsize=2, error_kw={'linewidth': 0.5})
+bars4c = ax4.bar(x_pos + width, group3, width, color='dm.green5', alpha=0.7,
+                  edgecolor='dm.green7', linewidth=0.3, label='Group C',
+                  yerr=errors3, capsize=2, error_kw={'linewidth': 0.5})
+ax4.set_xlabel('Quarter', fontsize=dm.fs(0))
+ax4.set_ylabel('Value', fontsize=dm.fs(0))
+ax4.set_title('With Error Bars', fontsize=dm.fs(1))
+ax4.set_xticks(x_pos)
+ax4.set_xticklabels(categories, fontsize=dm.fs(-1))
+ax4.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+ax4.set_yticks([0, 10, 20, 30, 40])
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
-# Show plot
-plt.show()
+# Save and show plot
+dm.save_and_show(fig)
 

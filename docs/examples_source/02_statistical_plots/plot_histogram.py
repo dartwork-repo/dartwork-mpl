@@ -21,15 +21,15 @@ data2 = np.random.normal(2, 1.5, 1000)
 data3 = np.random.normal(-1, 0.8, 1000)
 
 # Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=200)
+# Double column figure: 17cm width, 2x2 layout
+fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=200)
 
-# Create GridSpec for 3 subplots
+# Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.95, bottom=0.08,
+    wspace=0.3, hspace=0.4
 )
 
 # Panel A: Basic histogram
@@ -62,7 +62,7 @@ ax2.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 ax2.set_xticks([-4, -2, 0, 2, 4, 6])
 
 # Panel C: Histogram with KDE overlay
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 # Histogram: bins=30, alpha=0.5
 n3, bins3, patches3 = ax3.hist(data1, bins=30, color='dm.blue5', 
                                alpha=0.5, edgecolor='dm.blue7', 
@@ -81,9 +81,29 @@ ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 ax3.set_xticks([-4, -2, 0, 2, 4])
 ax3.set_yticks([0, 0.1, 0.2, 0.3, 0.4])
 
+# Panel D: Overlaid histograms
+ax4 = fig.add_subplot(gs[1, 1])
+# Explicit parameters: bins=30, alpha=0.6 for transparency
+n4a, bins4a, patches4a = ax4.hist(data1, bins=30, color='dm.blue5',
+                                   alpha=0.6, edgecolor='dm.blue7',
+                                   linewidth=0.3, label='Group A')
+n4b, bins4b, patches4b = ax4.hist(data2, bins=30, color='dm.red5',
+                                   alpha=0.6, edgecolor='dm.red7',
+                                   linewidth=0.3, label='Group B')
+n4c, bins4c, patches4c = ax4.hist(data3, bins=30, color='dm.green5',
+                                   alpha=0.6, edgecolor='dm.green7',
+                                   linewidth=0.3, label='Group C')
+ax4.set_xlabel('Value', fontsize=dm.fs(0))
+ax4.set_ylabel('Frequency', fontsize=dm.fs(0))
+ax4.set_title('Overlaid Histograms', fontsize=dm.fs(1))
+ax4.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
+# Set explicit ticks
+ax4.set_xticks([-4, -2, 0, 2, 4, 6])
+ax4.set_yticks([0, 50, 100, 150])
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
-# Show plot
-plt.show()
+# Save and show plot
+dm.save_and_show(fig)
 
