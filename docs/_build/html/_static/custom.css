@@ -1,37 +1,54 @@
-/* Hide the "CONTENTS:" label in the sidebar */
-.sidebar-tree .caption-text {
-    display: none;
+/* Custom refinements for Shibuya theme */
+
+/* Add a subtle shadow to the header for better separation */
+.shibuya-header {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* Make all sidebar items expandable (show chevron icons) */
-.sidebar-tree li>a {
-    display: flex;
-    align-items: center;
+/* Adjust the sidebar width slightly if needed (optional, keeping default for now) */
+/*
+.shibuya-sidebar {
+    width: 18rem;
+}
+*/
+
+/* Make the "Edit on GitHub" button more prominent */
+.edit-this-page {
+    font-weight: 600;
+    color: var(--accent-9);
 }
 
-/* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
+/* Ensure code blocks have a nice border radius */
+div[class^="highlight"] {
+    border-radius: 6px;
+}
+
+/* Furo sidebar styles removed */
+
 /* Flatten the Sphinx-Gallery download buttons to match Matplotlib style */
 .sphx-glr-download-python,
 .sphx-glr-download-jupyter,
 .sphx-glr-download-zip {
-    background-color: #e7f2fa !important;
-    border: 1px solid #e7f2fa !important;
+    background-color: var(--accent-3) !important;
+    /* Use Shibuya accent color */
+    border: 1px solid var(--accent-3) !important;
     border-radius: 4px;
     padding: 10px 14px;
     box-shadow: none !important;
     margin-bottom: 10px;
+    color: var(--accent-11) !important;
 }
 
 .sphx-glr-download-python:hover,
 .sphx-glr-download-jupyter:hover,
 .sphx-glr-download-zip:hover {
-    background-color: #dbebf6 !important;
-    border-color: #dbebf6 !important;
+    background-color: transparent !important;
+    border-color: var(--accent-8) !important;
 }
 
 /* Style the download links */
 .sphx-glr-download a {
-    color: #2c3e50 !important;
+    color: var(--accent-11) !important;
     text-decoration: none;
     font-weight: 600;
     display: flex;
@@ -39,7 +56,7 @@
 }
 
 .sphx-glr-download a:hover {
-    color: #1a252f !important;
+    color: var(--accent-12) !important;
     text-decoration: none;
 }
 
@@ -53,4 +70,11 @@
 /* Add icon styling if needed, though usually handled by Sphinx Gallery text */
 .sphx-glr-download code.xref {
     color: inherit !important;
+}
+
+/* Override sphinx-gallery default button gradient colors */
+:root {
+    --sg-download-a-background-image: none !important;
+    --sg-download-a-hover-background-color: transparent !important;
+    --sg-download-a-hover-background-image: none !important;
 }

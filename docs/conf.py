@@ -22,6 +22,8 @@ extensions = [
     'sphinx.ext.todo',
     'myst_parser',
     'sphinx_gallery.gen_gallery',
+    'sphinx_copybutton',
+    'sphinx_design',
 ]
 
 templates_path = ['_templates']
@@ -30,24 +32,25 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'furo'
+html_theme = 'shibuya'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
 # Remove version from the sidebar title
 html_title = f"{project} documentation"
 
-# -- Furo theme options ------------------------------------------------------
+# -- Shibuya theme options ---------------------------------------------------
 html_theme_options = {
-    # Enable GitHub repository link and "Edit on GitHub" button
-    "source_repository": "https://github.com/dartwork-repo/dartwork-mpl",
-    "source_branch": "main",
-    "source_directory": "docs/",
-    "top_of_page_button": "edit",  # Shows "Edit on GitHub" button
-    "footer_icons": [],  # Remove "Made with Sphinx and Furo" footer
-    "navigation_with_keys": True,  # Enable keyboard navigation
-    "globaltoc_collapse": False,  # Keep all sections expanded in sidebar
-    "globaltoc_maxdepth": 4,  # Show all levels of subsections
+    "github_url": "https://github.com/dartwork-repo/dartwork-mpl",
+    "accent_color": "teal",
+    "globaltoc_expand_depth": 1,  # Allow expanding sidebar items
+    "dark_code": True,  # Use dark code blocks in light mode
+    "nav_links": [
+        {"title": "Install", "url": "index"},
+        {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
+        {"title": "Gallery", "url": "gallery/index"},
+        {"title": "API", "url": "api/index"},
+    ]
 }
 
 # -- Sphinx Gallery configuration --------------------------------------------
