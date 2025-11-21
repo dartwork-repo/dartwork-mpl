@@ -2,8 +2,7 @@
 Scatter Plots
 =============
 
-Scatter plots with varying markers, color encodings, and density overlays to
-compare clustering patterns.
+Contrast marker shapes, color encodings, and density shading to show clusters and overlaps more clearly.
 """
 
 import numpy as np

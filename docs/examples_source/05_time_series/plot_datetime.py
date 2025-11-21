@@ -2,7 +2,7 @@
 Datetime Plots
 ==============
 
-Time series plotting with multiple date formats, rolling trends, and spans.
+Use date-aware axes with rolling trends, spans, and multiple granularities on one canvas.
 """
 
 import numpy as np

@@ -2,7 +2,7 @@
 Trend Analysis
 ==============
 
-Detecting and visualizing trends in time series data.
+Highlight local and global trends with smoothing, break annotations, and slope callouts.
 """
 
 import numpy as np

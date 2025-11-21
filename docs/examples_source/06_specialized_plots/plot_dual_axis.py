@@ -2,7 +2,7 @@
 Dual Axis
 =========
 
-Dual y-axis plots.
+Align two y-axes with matching grids, offsets, and legends to reduce reader confusion.
 """
 
 import matplotlib.pyplot as plt

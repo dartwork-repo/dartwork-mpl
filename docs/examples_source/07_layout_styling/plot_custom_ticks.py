@@ -2,7 +2,7 @@
 Custom Ticks
 ============
 
-Custom tick formatting: positions, labels, and log scales.
+Control tick placement and formatting, from numeric to log scales, with custom formatters.
 """
 
 import numpy as np

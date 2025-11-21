@@ -2,7 +2,7 @@
 Advanced Vector Fields
 ======================
 
-Vector field visualizations with streamlines and contours.
+Blend streamlines, contour backgrounds, and reference arrows to explain complex vector fields.
 """
 
 import numpy as np

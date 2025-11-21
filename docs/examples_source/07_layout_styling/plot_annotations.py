@@ -2,7 +2,7 @@
 Annotations
 ===========
 
-Advanced annotation techniques.
+Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts aligned to data or axes coords.
 """
 
 import numpy as np

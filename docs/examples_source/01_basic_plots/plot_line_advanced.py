@@ -2,8 +2,7 @@
 Advanced Line Plots
 ===================
 
-Advanced line plot styles, banded intervals, and rolling smoothing for
-publication-ready comparisons.
+Compare styling tricks for lines (bands, smoothing, markers) so you can pick a publication-ready look for noisy series.
 """
 
 import numpy as np

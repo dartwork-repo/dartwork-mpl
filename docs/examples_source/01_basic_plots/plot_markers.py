@@ -2,7 +2,7 @@
 Marker Styles
 =============
 
-Various marker styles and combinations with lines.
+Mix markers with strokes, fills, and offsets to encode categories or emphasis without clutter.
 """
 
 import numpy as np

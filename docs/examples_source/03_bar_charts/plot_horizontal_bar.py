@@ -2,7 +2,7 @@
 Horizontal Bar Charts
 =====================
 
-Horizontal bar chart variations for categorical data.
+Rotate to horizontal bars, ranking views, and long labels that would otherwise collide.
 """
 
 import numpy as np

@@ -2,7 +2,7 @@
 Layout Optimization
 ===================
 
-Layout optimization techniques.
+Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec helpers.
 """
 
 import matplotlib.pyplot as plt

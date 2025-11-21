@@ -10,7 +10,7 @@ opinionated styles, curated color libraries, and layout utilities.
 - See **API Reference** for function-level details.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :titlesonly:
 
 Installation <installation>

@@ -2,7 +2,7 @@
 Bar Charts
 ==========
 
-Basic and grouped bar charts.
+Start from basic, grouped, and labeled bars with gentle spacing so categories stay readable.
 """
 
 import matplotlib.pyplot as plt

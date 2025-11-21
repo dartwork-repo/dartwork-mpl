@@ -2,7 +2,7 @@
 Waterfall Charts
 ================
 
-Waterfall charts for showing cumulative effects of sequential values.
+Walk through stepwise gains and losses with helper lines and colors that keep running totals obvious.
 """
 
 import numpy as np

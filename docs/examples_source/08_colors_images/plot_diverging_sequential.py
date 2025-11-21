@@ -2,7 +2,7 @@
 Diverging and Sequential Colors
 ================================
 
-Choosing appropriate color schemes for different data types.
+Choose good color schemes for diverging versus sequential data and see when to use each.
 """
 
 import numpy as np

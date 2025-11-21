@@ -2,7 +2,7 @@
 Pie Charts
 ==========
 
-Pie charts, donut plots, and nested variants for share comparisons.
+Build pies, donuts, and nested rings with centered labels and contrast so proportions stay legible.
 """
 
 import matplotlib.pyplot as plt

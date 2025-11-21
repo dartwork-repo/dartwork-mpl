@@ -2,7 +2,7 @@
 Flow Diagrams
 =============
 
-Visualizing flows and connections between elements.
+Draw compact Sankey diagrams to explain flows between stages with tidy labels.
 """
 
 import numpy as np

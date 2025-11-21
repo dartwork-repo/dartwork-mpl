@@ -2,7 +2,7 @@
 Step Plots
 ==========
 
-Step plots for change detection, shift timing, and rolling summaries.
+Build step charts that expose change points, holding periods, and cumulative shifts.
 """
 
 import numpy as np

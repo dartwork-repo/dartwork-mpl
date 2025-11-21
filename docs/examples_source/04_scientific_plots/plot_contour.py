@@ -2,7 +2,7 @@
 Contour Plots
 =============
 
-Contour plots with labels.
+Label contour maps with filled and line levels plus colorbars tuned for small multiples.
 """
 
 import numpy as np

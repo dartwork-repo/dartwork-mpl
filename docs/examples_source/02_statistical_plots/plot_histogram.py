@@ -2,7 +2,7 @@
 Histograms
 ==========
 
-Histograms and density plots.
+Compare binning choices and overlays (density curves, step histograms) to pick a truthful view of your data.
 """
 
 import numpy as np
@@ -106,4 +106,3 @@ dm.simple_layout(fig, gs=gs)
 
 # Save and show plot
 plt.show()
-

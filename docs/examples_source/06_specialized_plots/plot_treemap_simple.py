@@ -2,7 +2,7 @@
 Hierarchical Visualization
 ==========================
 
-Visualizing hierarchical and nested data structures.
+Lay out treemaps with nested rectangles and inline labels for hierarchical shares.
 """
 
 import matplotlib.pyplot as plt

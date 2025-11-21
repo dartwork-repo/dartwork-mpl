@@ -2,7 +2,7 @@
 Ridgeline Plots
 ===============
 
-Visualizing distributions across categories with ridgeline plots.
+Use ridgeline (joy) plots with baseline offsets and smooth fills to compare distributions across categories.
 """
 
 import numpy as np

@@ -4,14 +4,6 @@ The original “Color Gallery” is now a dedicated **Color System** hub with sp
 for both the named colors and the colormap collection. Jump into whichever view
 you need, or skim both for a quick sense of what ships with dartwork-mpl.
 
-```{toctree}
-:maxdepth: 1
-:titlesonly:
-
-Colors <COLORS>
-Colormaps <COLORMAPS>
-```
-
 ::::{grid} 2
 :gutter: 1.2
 :margin: 0 0 1.5rem 0

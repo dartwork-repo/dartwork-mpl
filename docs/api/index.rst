@@ -1,10 +1,10 @@
 API Reference
 =============
 
-Core dartwork-mpl utilities are grouped by topic to mirror the main usage flow:
-apply a style, lay out the figure, pick colors and fonts, then export or inspect
-assets. Each section below links to functions and classes you can import
-directly from `dartwork_mpl`.
+Dartwork-mpl ships one import (`import dartwork_mpl as dm`) but several
+small domains. Jump to the area you need—styles, layout, colors, fonts,
+exports, or visual diagnostics—and each page explains the arguments in
+plain language plus defaults that work in most cases.
 
 .. toctree::
    :maxdepth: 1

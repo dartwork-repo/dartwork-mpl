@@ -2,7 +2,7 @@
 Inset Axes
 ==========
 
-Creating inset axes for zoomed views and detail plots.
+Add inset zooms and overview boxes with connectors that keep context clear.
 """
 
 import numpy as np

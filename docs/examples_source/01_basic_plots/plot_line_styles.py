@@ -2,7 +2,7 @@
 Line Styles
 ===========
 
-Different line styles and dash patterns for data visualization.
+Preview dashes, caps, and joins side by side to choose line styles that stay legible once printed or projected.
 """
 
 import numpy as np

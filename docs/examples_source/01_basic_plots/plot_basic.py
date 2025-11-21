@@ -2,7 +2,7 @@
 Basic Usage
 ===========
 
-Basic usage with style presets.
+Start with the scientific preset and a simple sine/cosine pair to see the typography, spacing, and palette you get out of the box.
 """
 
 import numpy as np

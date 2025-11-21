@@ -2,7 +2,7 @@
 Multiple Line Plots
 ====================
 
-Demonstrating multiple line plots with different colors and styles.
+Stack several series with coordinated colors and labels to learn quick defaults for multi-line comparisons.
 """
 
 import numpy as np

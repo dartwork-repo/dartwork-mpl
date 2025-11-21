@@ -2,7 +2,7 @@
 Color Cycles
 ============
 
-Using and customizing color cycles for multi-series plots.
+Preview built-in color cycles and learn how to swap or extend them for multi-series plots.
 """
 
 import numpy as np

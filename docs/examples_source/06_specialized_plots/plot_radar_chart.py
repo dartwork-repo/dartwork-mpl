@@ -2,7 +2,7 @@
 Radar Charts
 ============
 
-Radar/spider charts for multivariate data visualization.
+Design radar/spider charts with normalization, group fills, and label offsets that avoid overlaps.
 """
 
 import numpy as np

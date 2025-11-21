@@ -2,7 +2,7 @@
 Image Display
 =============
 
-Image display with multiple colormaps, interpolation modes, and edge overlays.
+Render images with different colormaps, interpolation, outlines, and grid overlays for quick QA.
 """
 
 import numpy as np

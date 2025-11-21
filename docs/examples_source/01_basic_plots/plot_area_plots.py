@@ -2,7 +2,7 @@
 Area Plots
 ==========
 
-Filled area plots and combinations with lines.
+Layer filled regions and crisp lines to highlight ranges, uncertainty bands, and stacked totals without losing clarity.
 """
 
 import numpy as np

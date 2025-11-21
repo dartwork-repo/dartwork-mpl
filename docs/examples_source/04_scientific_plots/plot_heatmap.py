@@ -2,7 +2,7 @@
 Heatmap
 =======
 
-Heatmap visualization.
+Build heatmaps with annotations, diverging palettes, and tight grids for correlation or matrix data.
 """
 
 import matplotlib.pyplot as plt
