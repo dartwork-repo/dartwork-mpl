@@ -47,7 +47,7 @@ ax1.set_xticks(angles[:-1])
 ax1.set_xticklabels(categories, fontsize=dm.fs(-1))
 ax1.set_ylim(0, 100)
 ax1.set_title('Basic Radar Chart', fontsize=dm.fs(1), pad=15)
-ax1.legend(loc='upper right', fontsize=dm.fs(-1))
+ax1.legend(loc='best', fontsize=dm.fs(-1))
 ax1.grid(True, linewidth=0.3)
 
 # Panel B: Multiple series
@@ -60,7 +60,7 @@ ax2.set_xticks(angles[:-1])
 ax2.set_xticklabels(categories, fontsize=dm.fs(-1))
 ax2.set_ylim(0, 100)
 ax2.set_title('Comparison', fontsize=dm.fs(1), pad=15)
-ax2.legend(loc='upper right', fontsize=dm.fs(-2))
+ax2.legend(loc='best', fontsize=dm.fs(-2))
 ax2.grid(True, linewidth=0.3)
 
 # Panel C: Three series
@@ -75,7 +75,7 @@ ax3.set_xticks(angles[:-1])
 ax3.set_xticklabels(categories, fontsize=dm.fs(-1))
 ax3.set_ylim(0, 100)
 ax3.set_title('Multi-series', fontsize=dm.fs(1), pad=15)
-ax3.legend(loc='upper right', fontsize=dm.fs(-2))
+ax3.legend(loc='best', fontsize=dm.fs(-2))
 ax3.grid(True, linewidth=0.3)
 
 # Panel D: Highlighted radar
@@ -91,7 +91,7 @@ ax4.set_xticks(angles[:-1])
 ax4.set_xticklabels(categories, fontsize=dm.fs(-1))
 ax4.set_ylim(0, 100)
 ax4.set_title('Highlighted', fontsize=dm.fs(1), pad=15)
-ax4.legend(loc='upper right', fontsize=dm.fs(-2))
+ax4.legend(loc='best', fontsize=dm.fs(-2))
 ax4.grid(True, linewidth=0.3)
 
 dm.simple_layout(fig, gs=gs)

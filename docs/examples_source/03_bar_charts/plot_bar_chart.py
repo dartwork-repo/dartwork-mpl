@@ -37,7 +37,7 @@ ax.set_ylabel('Scores', fontsize=dm.fs(0))
 ax.set_title('Scores by group and gender', fontsize=dm.fs(1))
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
-ax.legend(loc='upper left', fontsize=dm.fs(0), ncol=1)
+ax.legend(loc='best', fontsize=dm.fs(0), ncol=1)
 
 # Add value labels
 ax.bar_label(rects1, padding=3, fontsize=dm.fs(-1))

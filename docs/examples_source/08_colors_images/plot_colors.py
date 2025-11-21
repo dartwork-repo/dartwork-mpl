@@ -47,7 +47,7 @@ ax.set_ylabel('Y', fontsize=dm.fs(0))
 ax.set_title('dartwork-mpl Color System', fontsize=dm.fs(1))
 ax.legend(
     ncol=2,
-    loc='upper left',
+    loc='best',
     frameon=False,
     fontsize=dm.fs(-1),
 )

@@ -41,7 +41,7 @@ ax1.set_xlabel('X value', fontsize=dm.fs(0))
 ax1.set_ylabel('Y value', fontsize=dm.fs(0))
 ax1.set_title('Multiple Lines', fontsize=dm.fs(1))
 ax1.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,
@@ -60,7 +60,7 @@ ax2.set_xlabel('X value', fontsize=dm.fs(0))
 ax2.set_ylabel('Y value', fontsize=dm.fs(0))
 ax2.set_title('Different Line Widths', fontsize=dm.fs(1))
 ax2.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,
@@ -79,7 +79,7 @@ ax3.set_xlabel('X value', fontsize=dm.fs(0))
 ax3.set_ylabel('Y value', fontsize=dm.fs(0))
 ax3.set_title('Tailwind CSS Colors', fontsize=dm.fs(1))
 ax3.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,
@@ -98,7 +98,7 @@ ax4.set_xlabel('X value', fontsize=dm.fs(0))
 ax4.set_ylabel('Y value', fontsize=dm.fs(0))
 ax4.set_title('Color Gradients', fontsize=dm.fs(1))
 ax4.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-2),
     ncol=2,
     frameon=False,

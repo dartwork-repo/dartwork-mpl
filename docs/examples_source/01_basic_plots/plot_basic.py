@@ -65,7 +65,7 @@ ax.grid(axis='y', linestyle=':', color='dm.gray3', alpha=0.5)
 
 # Legend placed above the plot to avoid overlaps
 ax.legend(
-    loc='upper left',
+    loc='best',
     ncol=2,
     fontsize=dm.fs(-1),
     frameon=False,

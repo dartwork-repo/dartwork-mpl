@@ -66,7 +66,7 @@ ax.set_yticks([-1, 0, 1, 2, 3])
 ax.grid(axis='y', linestyle=':', color='dm.gray3', alpha=0.6)
 
 ax.legend(
-    loc='upper left',
+    loc='best',
     ncol=3,
     fontsize=dm.fs(-1),
     frameon=False,

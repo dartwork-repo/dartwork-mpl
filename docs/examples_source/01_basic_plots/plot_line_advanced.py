@@ -48,7 +48,7 @@ ax1.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax1.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax1.set_title('Lines with Markers', fontsize=dm.fs(1))
 ax1.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-1),
     ncol=2,
     frameon=False,
@@ -68,7 +68,7 @@ ax2.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax2.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax2.set_title('Line Styles', fontsize=dm.fs(1))
 ax2.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-1),
     ncol=2,
     frameon=False,
@@ -89,7 +89,7 @@ ax3.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax3.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax3.set_title('Error Band', fontsize=dm.fs(1))
 ax3.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-1),
     ncol=2,
     frameon=False,
@@ -112,7 +112,7 @@ ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
 ax4.set_ylabel('Amplitude', fontsize=dm.fs(0))
 ax4.set_title('Smoothed & Stepped Signal', fontsize=dm.fs(1))
 ax4.legend(
-    loc='upper right',
+    loc='best',
     fontsize=dm.fs(-1),
     ncol=2,
     frameon=False,

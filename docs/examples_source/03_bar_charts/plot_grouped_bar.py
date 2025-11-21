@@ -47,7 +47,7 @@ ax1.set_ylabel('Value', fontsize=dm.fs(0))
 ax1.set_title('Basic Grouped Bars', fontsize=dm.fs(1))
 ax1.set_xticks(x_pos)
 ax1.set_xticklabels(categories, fontsize=dm.fs(-1))
-ax1.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+ax1.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax1.set_yticks([0, 10, 20, 30])
 
 # Panel B: Grouped bars with value labels
@@ -68,7 +68,7 @@ ax2.set_ylabel('Value', fontsize=dm.fs(0))
 ax2.set_title('With Value Labels', fontsize=dm.fs(1))
 ax2.set_xticks(x_pos)
 ax2.set_xticklabels(categories, fontsize=dm.fs(-1))
-ax2.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+ax2.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax2.set_yticks([0, 10, 20, 30])
 
 # Panel C: Custom spacing
@@ -91,7 +91,7 @@ ax3.set_ylabel('Value', fontsize=dm.fs(0))
 ax3.set_title('Custom Spacing', fontsize=dm.fs(1))
 ax3.set_xticks(x_pos_custom)
 ax3.set_xticklabels(categories, fontsize=dm.fs(-1))
-ax3.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+ax3.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax3.set_yticks([0, 10, 20, 30])
 
 # Panel D: Grouped bars with error bars
@@ -115,7 +115,7 @@ ax4.set_ylabel('Value', fontsize=dm.fs(0))
 ax4.set_title('With Error Bars', fontsize=dm.fs(1))
 ax4.set_xticks(x_pos)
 ax4.set_xticklabels(categories, fontsize=dm.fs(-1))
-ax4.legend(loc='upper left', fontsize=dm.fs(-1), ncol=1)
+ax4.legend(loc='best', fontsize=dm.fs(-1), ncol=1)
 ax4.set_yticks([0, 10, 20, 30, 40])
 
 # Optimize layout
