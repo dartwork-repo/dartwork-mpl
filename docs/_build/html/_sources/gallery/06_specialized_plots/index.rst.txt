@@ -103,23 +103,6 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing hierarchical and nested data structures.">
-
-.. only:: html
-
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_treemap_simple_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Hierarchical Visualization</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Pie charts, donut plots, and nested variants for share comparisons.">
 
 .. only:: html
@@ -137,18 +120,18 @@ pie charts, and other unique plot types for specific use cases.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing flows and connections between elements.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing hierarchical and nested data structures.">
 
 .. only:: html
 
-  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_sankey_simple_thumb.png
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_treemap_simple_thumb.png
     :alt:
 
-  :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py`
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Flow Diagrams</div>
+      <div class="sphx-glr-thumbnail-title">Hierarchical Visualization</div>
     </div>
 
 
@@ -169,6 +152,23 @@ pie charts, and other unique plot types for specific use cases.
     </div>
 
 
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Visualizing flows and connections between elements.">
+
+.. only:: html
+
+  .. image:: /gallery/06_specialized_plots/images/thumb/sphx_glr_plot_sankey_simple_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Flow Diagrams</div>
+    </div>
+
+
 .. thumbnail-parent-div-close
 
 .. raw:: html
@@ -184,8 +184,8 @@ pie charts, and other unique plot types for specific use cases.
    /gallery/06_specialized_plots/plot_polar
    /gallery/06_specialized_plots/plot_ridgeline
    /gallery/06_specialized_plots/plot_radar_chart
-   /gallery/06_specialized_plots/plot_treemap_simple
    /gallery/06_specialized_plots/plot_pie
-   /gallery/06_specialized_plots/plot_sankey_simple
+   /gallery/06_specialized_plots/plot_treemap_simple
    /gallery/06_specialized_plots/plot_filled
+   /gallery/06_specialized_plots/plot_sankey_simple
 

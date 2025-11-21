@@ -23,7 +23,7 @@ Custom Colormaps
 
 Creating and using custom colormaps for visualization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-73
+.. GENERATED FROM PYTHON SOURCE LINES 7-81
 
 
 
@@ -89,18 +89,26 @@ Creating and using custom colormaps for visualization.
     # Panel D: Gradient demonstration
     ax4 = fig.add_subplot(gs[1, 1])
     gradient = np.linspace(0, 1, 256).reshape(1, -1)
-    # Show multiple gradients
-    n_gradients = 4
-    cmaps_demo = [cmap_custom, cmap_div, cmap_discrete, 'viridis']
-    labels_demo = ['Custom Seq', 'Custom Div', 'Discrete', 'Viridis']
-    for i, (cmap, label) in enumerate(zip(cmaps_demo, labels_demo)):
-        ax4.imshow(gradient, aspect='auto', cmap=cmap, extent=[0, 1, i, i+0.8])
-        ax4.text(-0.05, i+0.4, label, ha='right', va='center', fontsize=dm.fs(-1))
-    ax4.set_xlim(-0.15, 1)
-    ax4.set_ylim(-0.2, n_gradients)
+    cmaps_demo = [
+        (cmap_custom, 'Custom Seq'),
+        (cmap_div, 'Custom Div'),
+        (cmap_discrete, 'Discrete'),
+        ('viridis', 'Viridis'),
+        ('plasma', 'Plasma'),
+        ('cividis', 'Cividis'),
+    ]
+    n_gradients = len(cmaps_demo)
+    for i, (cmap, label) in enumerate(cmaps_demo):
+        ax4.imshow(gradient, aspect='auto', cmap=cmap,
+                   extent=[0, 1, i, i + 1], origin='lower')
+        ax4.text(1.05, i + 0.5, label, ha='left', va='center', fontsize=dm.fs(-1))
+    ax4.set_xlim(0, 1.25)
+    ax4.set_ylim(0, n_gradients)
     ax4.set_xlabel('Value', fontsize=dm.fs(0))
     ax4.set_title('Colormap Comparison', fontsize=dm.fs(1))
     ax4.set_yticks([])
+    for spine in ax4.spines.values():
+        spine.set_visible(False)
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -108,7 +116,7 @@ Creating and using custom colormaps for visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.989 seconds)
+   **Total running time of the script:** (0 minutes 1.052 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_custom_colormap.py:

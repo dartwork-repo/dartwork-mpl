@@ -38,9 +38,9 @@ fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 # Create GridSpec for 3 subplots
 gs = fig.add_gridspec(
     nrows=2, ncols=2,
-    left=0.08, right=0.98,
-    top=0.92, bottom=0.12,
-    wspace=0.2, hspace=0.5
+    left=0.07, right=0.93,
+    top=0.93, bottom=0.10,
+    wspace=0.16, hspace=0.38
 )
 
 # Panel A: Basic pie chart
@@ -113,4 +113,3 @@ dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

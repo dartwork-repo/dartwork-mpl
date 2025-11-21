@@ -1,6 +1,9 @@
 import os
 import sys
+from pathlib import Path
+
 sys.path.insert(0, os.path.abspath('../src'))
+sys.path.insert(0, str(Path(__file__).parent.resolve()))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -32,10 +35,6 @@ exclude_patterns = [
     '_build',
     'Thumbs.db',
     '.DS_Store',
-    # Sphinx-Gallery backfill files we don't want in the toctree
-    'gallery/plot_*',
-    # Gallery subfolder index files (prevent them from appearing as top-level items)
-    'gallery/*/index.rst',
     # Helper READMEs inside example sources
     'examples_source/README.rst',
     'examples_source/*/README.rst',
@@ -80,3 +79,15 @@ myst_enable_extensions = [
     "deflist",
 ]
 myst_heading_anchors = 3
+
+
+def _generate_gallery_assets(_app):
+    """Bake high-res color system images during the build."""
+    from generate_gallery import build_gallery_assets
+
+    build_gallery_assets(Path(__file__).parent)
+
+
+def setup(app):
+    app.connect("builder-inited", _generate_gallery_assets)
+    return {"parallel_read_safe": True}

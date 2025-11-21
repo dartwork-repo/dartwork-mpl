@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="../../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Layout &amp; Styling - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Shared Axes" href="plot_shared_axes.html" /><link rel="prev" title="Filled Plots" href="../06_specialized_plots/plot_filled.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Layout &amp; Styling - dartwork-mpl documentation</title><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Shared Axes" href="plot_shared_axes.html" /><link rel="prev" title="Flow Diagrams" href="../06_specialized_plots/plot_sankey_simple.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e1a1ceaf" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=88eaab90" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=d7c7ad49" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="../../install.html">Install</a></li><li class="link"><a href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../../COLOR_GALLERY.html">Colors</a></li><li class="link"><a href="../index.html">Examples Gallery</a></li><li class="link"><a href="../../api/index.html">API Reference</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="../../installation.html">Installation</a></li><li class="link"><a href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li><li class="link"><a href="../../COLOR_GALLERY.html">Colors</a></li><li class="link"><a href="../index.html">Examples Gallery</a></li><li class="link"><a href="../../api/index.html">API Reference</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -65,18 +65,14 @@ data-aria-dark="Switch to auto color mode">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="0"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../DARTWORK_MPL_USAGE_GUIDE.html">Usage Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../COLOR_GALLERY.html">Colors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Examples Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#basic-plots">Basic Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#statistical-plots">Statistical Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#bar-charts">Bar Charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#scientific-plots">Scientific Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#time-series">Time Series</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#specialized-plots">Specialized Plots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#layout-styling">Layout &amp; Styling</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#colors-images">Colors &amp; Images</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../COLOR_GALLERY.html">Colors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../COLORS.html">Colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../COLORMAPS.html">Colormaps</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples_gallery.html">Examples Gallery</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../01_basic_plots/index.html">Basic Plots</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_basic.html">Basic Usage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../01_basic_plots/plot_area_plots.html">Area Plots</a></li>
@@ -139,8 +135,8 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_radar_chart.html">Radar Charts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_pie.html">Pie Charts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_filled.html">Filled Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Layout &amp; Styling</a><ul>
@@ -149,18 +145,18 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="plot_complex_grid.html">Complex Grid Layouts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_mixed_subplots.html">Mixed Subplot Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_subplots.html">Subplots Layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plot_inset_axes.html">Inset Axes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_legend.html">Legends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_custom_ticks.html">Custom Ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plot_inset_axes.html">Inset Axes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plot_annotations.html">Annotations</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../08_colors_images/index.html">Colors &amp; Images</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_colors.html">Colors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_diverging_sequential.html">Diverging and Sequential Colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_cycles.html">Color Cycles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_diverging_sequential.html">Diverging and Sequential Colors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_color_perception.html">Color Perception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../08_colors_images/plot_image.html">Image Display</a></li>
 </ul>
 </li>
@@ -202,7 +198,7 @@ data-aria-dark="Switch to auto color mode">
         <span>/</span>
         <meta itemprop="position" content="1" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="../index.html"><span itemprop="name">Examples Gallery</span></a>
+        <a itemprop="item" href="../../examples_gallery.html"><span itemprop="name">Examples Gallery</span></a>
         <span>/</span>
         <meta itemprop="position" content="2" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -238,15 +234,15 @@ and advanced styling techniques for publication-quality figures.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Subplot layout techniques."><img alt="" src="../../_images/sphx_glr_plot_subplots_thumb.png" />
 <p><a class="reference internal" href="plot_subplots.html#sphx-glr-gallery-07-layout-styling-plot-subplots-py"><span class="std std-ref">Subplots Layout</span></a></p>
   <div class="sphx-glr-thumbnail-title">Subplots Layout</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Creating inset axes for zoomed views and detail plots."><img alt="" src="../../_images/sphx_glr_plot_inset_axes_thumb.png" />
-<p><a class="reference internal" href="plot_inset_axes.html#sphx-glr-gallery-07-layout-styling-plot-inset-axes-py"><span class="std std-ref">Inset Axes</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Inset Axes</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Legend customization."><img alt="" src="../../_images/sphx_glr_plot_legend_thumb.png" />
 <p><a class="reference internal" href="plot_legend.html#sphx-glr-gallery-07-layout-styling-plot-legend-py"><span class="std std-ref">Legends</span></a></p>
   <div class="sphx-glr-thumbnail-title">Legends</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Custom tick formatting: positions, labels, and log scales."><img alt="" src="../../_images/sphx_glr_plot_custom_ticks_thumb.png" />
 <p><a class="reference internal" href="plot_custom_ticks.html#sphx-glr-gallery-07-layout-styling-plot-custom-ticks-py"><span class="std std-ref">Custom Ticks</span></a></p>
   <div class="sphx-glr-thumbnail-title">Custom Ticks</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Creating inset axes for zoomed views and detail plots."><img alt="" src="../../_images/sphx_glr_plot_inset_axes_thumb.png" />
+<p><a class="reference internal" href="plot_inset_axes.html#sphx-glr-gallery-07-layout-styling-plot-inset-axes-py"><span class="std std-ref">Inset Axes</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Inset Axes</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Advanced annotation techniques."><img alt="" src="../../_images/sphx_glr_plot_annotations_thumb.png" />
 <p><a class="reference internal" href="plot_annotations.html#sphx-glr-gallery-07-layout-styling-plot-annotations-py"><span class="std std-ref">Annotations</span></a></p>
   <div class="sphx-glr-thumbnail-title">Annotations</div>
@@ -260,10 +256,10 @@ and advanced styling techniques for publication-quality figures.</p>
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="../06_specialized_plots/plot_filled.html">
+    <a href="../06_specialized_plots/plot_sankey_simple.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>Previous</span><div class="title">Filled Plots</div></div>
+        <span>Previous</span><div class="title">Flow Diagrams</div></div>
     </a>
   </div><div class="navigation-next">
     <a href="plot_shared_axes.html">

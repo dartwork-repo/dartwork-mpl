@@ -31,9 +31,9 @@ fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 # Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(
     nrows=2, ncols=2,
-    left=0.08, right=0.98,
+    left=0.07, right=0.95,
     top=0.95, bottom=0.08,
-    wspace=0.3, hspace=0.4
+    wspace=0.24, hspace=0.36
 )
 
 # Panel A: Basic quiver plot

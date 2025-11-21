@@ -17,16 +17,13 @@ dm.style.use_preset('scientific')
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
 
-# Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(6)), dpi=300)
-
-# Create GridSpec for 3 subplots
+# Create figure (2 x 2 layout, with generous top/bottom margins)
+fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(10)), dpi=300)
 gs = fig.add_gridspec(
-    nrows=1, ncols=3,
+    nrows=2, ncols=2,
     left=0.08, right=0.98,
-    top=0.92, bottom=0.15,
-    wspace=0.3
+    top=0.93, bottom=0.12,
+    wspace=0.28, hspace=0.34
 )
 
 # Panel A: Text annotations
@@ -70,7 +67,7 @@ ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel C: Custom markers with labels
-ax3 = fig.add_subplot(gs[0, 2])
+ax3 = fig.add_subplot(gs[1, 0])
 ax3.plot(x, y, color='dm.green5', lw=0.7, alpha=0.8)
 # Mark specific points: markersize=6, markeredgewidth=0.5
 peak_idx = np.argmax(y)
@@ -97,9 +94,40 @@ ax3.legend(loc='upper right', fontsize=dm.fs(-1), ncol=1)
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 
+# Panel D: Highlighted spans with inline notes
+ax4 = fig.add_subplot(gs[1, 1])
+ax4.plot(x, y, color='dm.purple5', lw=0.7, alpha=0.85)
+ax4.axhline(0, color='dm.gray6', lw=0.4, linestyle='--')
+# Highlight a time window
+ax4.axvspan(3, 7, color='dm.purple1', alpha=0.35, edgecolor='dm.purple6', lw=0.4)
+ax4.annotate(
+    'Focus window',
+    xy=(5, 0.1),
+    xytext=(5, 0.85),
+    ha='center',
+    va='center',
+    fontsize=dm.fs(-1),
+    arrowprops=dict(arrowstyle='-[,widthB=2.5', lw=0.7, color='dm.purple7'),
+    bbox=dict(boxstyle='round', facecolor='white', edgecolor='dm.purple6', linewidth=0.3),
+)
+ax4.annotate(
+    'Zero crossing',
+    xy=(np.pi, 0),
+    xytext=(1.4, -0.6),
+    fontsize=dm.fs(-1),
+    ha='center',
+    va='center',
+    arrowprops=dict(arrowstyle='->', lw=0.6, color='dm.gray7', connectionstyle='arc3,rad=-0.2'),
+    bbox=dict(boxstyle='round', facecolor='white', edgecolor='dm.gray7', linewidth=0.3),
+)
+ax4.set_xlabel('Time [s]', fontsize=dm.fs(0))
+ax4.set_ylabel('Amplitude', fontsize=dm.fs(0))
+ax4.set_title('Highlight + Notes', fontsize=dm.fs(1))
+ax4.set_xticks([0, 2, 4, 6, 8, 10])
+ax4.set_yticks([-1, -0.5, 0, 0.5, 1])
+
 # Optimize layout
 dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-

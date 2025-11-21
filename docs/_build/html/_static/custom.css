@@ -85,3 +85,23 @@ div[class^="highlight"] {
 .sy-foot-copyright > p:nth-child(2) {
     display: none !important;
 }
+
+/* Color system cards */
+.color-card,
+.colormap-card {
+    border: 1px solid #ebe9e2;
+    box-shadow: 0 8px 28px rgba(24, 31, 41, 0.05);
+    background: #fbfaf7;
+}
+
+.color-card img,
+.colormap-card img {
+    border-radius: 10px;
+    border: 1px solid #e7e5dc;
+}
+
+/* Keep the sidebar focused: hide levels deeper than 2 */
+.globaltoc .toctree-l3,
+.globaltoc .toctree-l4 {
+    display: none;
+}

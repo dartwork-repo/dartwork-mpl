@@ -23,7 +23,7 @@ Ridgeline Plots
 
 Visualizing distributions across categories with ridgeline plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-88
+.. GENERATED FROM PYTHON SOURCE LINES 7-92
 
 
 
@@ -72,6 +72,7 @@ Visualizing distributions across categories with ridgeline plots.
         ax1.fill_between(x_range, i, i + y*2, color='dm.blue5', alpha=0.6, edgecolor='dm.blue7', linewidth=0.5)
     ax1.set_yticks(range(len(categories)))
     ax1.set_yticklabels(categories, fontsize=dm.fs(-1))
+    ax1.set_ylim(-0.4, len(categories) + 0.3)
     ax1.set_xlabel('Value', fontsize=dm.fs(0))
     ax1.set_title('Basic Ridgeline', fontsize=dm.fs(1))
     ax1.set_xlim(-4, 6)
@@ -85,6 +86,7 @@ Visualizing distributions across categories with ridgeline plots.
         ax2.fill_between(x_range, i, i + y*2, color=c, alpha=0.7, edgecolor='black', linewidth=0.3)
     ax2.set_yticks(range(len(categories)))
     ax2.set_yticklabels(categories, fontsize=dm.fs(-1))
+    ax2.set_ylim(-0.4, len(categories) + 0.3)
     ax2.set_xlabel('Value', fontsize=dm.fs(0))
     ax2.set_title('Colored Ridgeline', fontsize=dm.fs(1))
     ax2.set_xlim(-4, 6)
@@ -100,6 +102,7 @@ Visualizing distributions across categories with ridgeline plots.
         ax3.scatter(sample, np.ones(len(sample))*i - 0.15, s=1, alpha=0.3, color='dm.gray7')
     ax3.set_yticks(range(4))
     ax3.set_yticklabels(categories[:4], fontsize=dm.fs(-1))
+    ax3.set_ylim(-0.5, 4.2)
     ax3.set_xlabel('Value', fontsize=dm.fs(0))
     ax3.set_title('With Data Points', fontsize=dm.fs(1))
     ax3.set_xlim(-4, 6)
@@ -113,6 +116,7 @@ Visualizing distributions across categories with ridgeline plots.
         ax4.fill_between(x_range, i*0.7, i*0.7 + y*3, color='dm.blue5', alpha=0.5)
     ax4.set_yticks(np.arange(len(categories))*0.7)
     ax4.set_yticklabels(categories, fontsize=dm.fs(-2))
+    ax4.set_ylim(-0.4, 0.7 * (len(categories) + 0.8))
     ax4.set_xlabel('Value', fontsize=dm.fs(0))
     ax4.set_title('Overlapping Style', fontsize=dm.fs(1))
     ax4.set_xlim(-4, 6)
@@ -123,7 +127,7 @@ Visualizing distributions across categories with ridgeline plots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.123 seconds)
+   **Total running time of the script:** (0 minutes 1.171 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_ridgeline.py:

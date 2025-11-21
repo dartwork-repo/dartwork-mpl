@@ -1215,6 +1215,106 @@
    "name": "Artist.set_yticks"
   }
  ],
+ "ax4.spines.values": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.spines",
+   "module_short": "matplotlib.spines",
+   "name": "Spines.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Spines.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "MutableMapping.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "MutableMapping.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Mapping.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Mapping.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Collection.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Collection.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Sized.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Sized.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Iterable.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Iterable.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections.abc",
+   "module_short": "collections.abc",
+   "name": "Container.values"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "collections",
+   "module_short": "collections",
+   "name": "Container.values"
+  }
+ ],
  "ax4.text": [
   {
    "is_class": false,
@@ -1632,15 +1732,6 @@
    "name": "str"
   }
  ],
- "labels_demo": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "builtins",
-   "module_short": "builtins",
-   "name": "list"
-  }
- ],
  "n_bins": [
   {
    "is_class": false,
@@ -1769,6 +1860,66 @@
    "module": "matplotlib.pyplot",
    "module_short": "matplotlib.pyplot",
    "name": "show"
+  }
+ ],
+ "spine": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.spines",
+   "module_short": "matplotlib.spines",
+   "name": "Spine"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Spine"
+  }
+ ],
+ "spine.set_visible": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.spines",
+   "module_short": "matplotlib.spines",
+   "name": "Spine.set_visible"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Spine.set_visible"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.patches",
+   "module_short": "matplotlib.patches",
+   "name": "Patch.set_visible"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Patch.set_visible"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.artist",
+   "module_short": "matplotlib.artist",
+   "name": "Artist.set_visible"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Artist.set_visible"
   }
  ],
  "x": [

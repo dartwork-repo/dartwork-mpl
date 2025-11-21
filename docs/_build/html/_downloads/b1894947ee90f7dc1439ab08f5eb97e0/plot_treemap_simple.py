@@ -5,7 +5,6 @@ Hierarchical Visualization
 Visualizing hierarchical and nested data structures.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import dartwork_mpl as dm
@@ -13,86 +12,107 @@ import dartwork_mpl as dm
 dm.style.use_preset('scientific')
 
 fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
-gs = fig.add_gridspec(nrows=2, ncols=2, left=0.05, right=0.98,
-                      top=0.95, bottom=0.05, wspace=0.15, hspace=0.4)
+gs = fig.add_gridspec(
+    nrows=2,
+    ncols=2,
+    left=0.06,
+    right=0.96,
+    top=0.95,
+    bottom=0.08,
+    wspace=0.16,
+    hspace=0.36,
+)
 
-# Panel A: Simple rectangles (treemap-like)
+
+def add_rect(ax, xy, w, h, color, text, fontsize=None, weight='bold'):
+    rect = Rectangle(xy, w, h, facecolor=color, edgecolor='white', linewidth=1.1)
+    ax.add_patch(rect)
+    ax.text(
+        xy[0] + w / 2,
+        xy[1] + h / 2,
+        text,
+        ha='center',
+        va='center',
+        fontsize=dm.fs(-1 if fontsize is None else fontsize),
+        color='white',
+        weight=weight,
+    )
+
+
+# Panel A: Market share treemap
 ax1 = fig.add_subplot(gs[0, 0])
-sizes = [30, 25, 20, 15, 10]
-colors = ['dm.red5', 'dm.blue5', 'dm.green5', 'dm.orange5', 'dm.violet5']
-labels = ['A', 'B', 'C', 'D', 'E']
-x, y = 0, 0
-for size, color, label in zip(sizes, colors, labels):
-    width = size / 100
-    rect = Rectangle((x, 0), width, 1, facecolor=color, edgecolor='white', linewidth=2)
-    ax1.add_patch(rect)
-    ax1.text(x + width/2, 0.5, f'{label}\n{size}%', ha='center', va='center', fontsize=dm.fs(0), color='white', weight='bold')
-    x += width
+blocks = [
+    ("Infrastructure", 0.0, 0.0, 0.55, 0.60, 'dm.blue5', 34),
+    ("Platform", 0.55, 0.0, 0.45, 0.42, 'dm.violet5', 28),
+    ("AI/ML", 0.55, 0.42, 0.45, 0.18, 'dm.green5', 12),
+    ("Security", 0.0, 0.60, 0.35, 0.40, 'dm.orange5', 16),
+    ("Other", 0.35, 0.60, 0.20, 0.40, 'dm.gray5', 10),
+]
+for label, x, y, w, h, color, pct in blocks:
+    add_rect(ax1, (x, y), w, h, color, f"{label}\n{pct}%")
 ax1.set_xlim(0, 1)
 ax1.set_ylim(0, 1)
 ax1.axis('off')
-ax1.set_title('Proportional Rectangles', fontsize=dm.fs(1))
+ax1.set_title('Market Share Treemap', fontsize=dm.fs(1))
 
-# Panel B: Nested rectangles
+# Panel B: Nested categories (Department -> Teams)
 ax2 = fig.add_subplot(gs[0, 1])
-# Outer rectangle
-ax2.add_patch(Rectangle((0, 0), 1, 1, facecolor='dm.blue2', edgecolor='dm.blue7', linewidth=1))
-ax2.text(0.5, 0.93, 'Category A', ha='center', fontsize=dm.fs(0), weight='bold')
-# Inner rectangles
-inner_sizes = [0.4, 0.3, 0.3]
-inner_colors = ['dm.blue4', 'dm.blue5', 'dm.blue6']
-x_inner = 0.05
-for size, color in zip(inner_sizes, inner_colors):
-    ax2.add_patch(Rectangle((x_inner, 0.05), size-0.02, 0.8, facecolor=color, edgecolor='white', linewidth=1))
-    x_inner += size
+add_rect(ax2, (0, 0), 1, 1, 'dm.blue2', 'Department', weight='bold', fontsize=0)
+team_sizes = [('Data', 0.05, 0.55, 0.55, 0.40, 'dm.blue5', 40),
+              ('Product', 0.62, 0.55, 0.33, 0.40, 'dm.blue4', 24),
+              ('Ops', 0.05, 0.05, 0.45, 0.45, 'dm.blue6', 20),
+              ('QA', 0.53, 0.05, 0.42, 0.45, 'dm.blue3', 16)]
+for name, x, y, w, h, c, pct in team_sizes:
+    add_rect(ax2, (x, y), w, h, c, f"{name}\n{pct}%")
 ax2.set_xlim(0, 1)
 ax2.set_ylim(0, 1)
 ax2.axis('off')
-ax2.set_title('Nested Structure', fontsize=dm.fs(1))
+ax2.set_title('Nested Categories', fontsize=dm.fs(1))
 
-# Panel C: Grid layout
+# Panel C: Icicle view (top to bottom)
 ax3 = fig.add_subplot(gs[1, 0])
-grid_data = np.array([[30, 20, 15], [10, 8, 7], [5, 3, 2]])
-colors_grid = ['dm.red5', 'dm.red4', 'dm.red3',
-               'dm.blue5', 'dm.blue4', 'dm.blue3',
-               'dm.green5', 'dm.green4', 'dm.green3']
-idx = 0
-for i in range(3):
-    for j in range(3):
-        size = grid_data[i, j]
-        rect = Rectangle((j*0.33, 1-(i+1)*0.33), 0.32, 0.32,
-                        facecolor=colors_grid[idx], edgecolor='white', linewidth=1.5)
-        ax3.add_patch(rect)
-        ax3.text(j*0.33 + 0.16, 1-(i+0.5)*0.33, f'{size}',
-                ha='center', va='center', fontsize=dm.fs(0), color='white', weight='bold')
-        idx += 1
+levels = [
+    (0.05, 0.70, 0.90, 0.25, 'dm.green5', 'Portfolio'),
+    (0.05, 0.45, 0.55, 0.22, 'dm.green4', 'Consumer'),
+    (0.62, 0.45, 0.33, 0.22, 'dm.green6', 'Enterprise'),
+    (0.05, 0.18, 0.35, 0.22, 'dm.orange5', 'Mobile'),
+    (0.42, 0.18, 0.18, 0.22, 'dm.orange4', 'Web'),
+    (0.62, 0.18, 0.33, 0.22, 'dm.orange6', 'Services'),
+]
+for x, y, w, h, c, label in levels:
+    add_rect(ax3, (x, y), w, h, c, label, fontsize=-2)
 ax3.set_xlim(0, 1)
 ax3.set_ylim(0, 1)
 ax3.axis('off')
-ax3.set_title('Grid Layout', fontsize=dm.fs(1))
+ax3.set_title('Icicle (Rectangular)', fontsize=dm.fs(1))
 
-# Panel D: Circular segments
+# Panel D: Side-by-side treemaps (Year-over-year)
 ax4 = fig.add_subplot(gs[1, 1])
-from matplotlib.patches import Wedge
-values = [35, 25, 20, 12, 8]
-colors_circ = ['dm.red5', 'dm.blue5', 'dm.green5', 'dm.orange5', 'dm.violet5']
-start_angle = 0
-for val, color in zip(values, colors_circ):
-    angle = val * 3.6  # Convert percentage to degrees
-    wedge = Wedge((0.5, 0.5), 0.4, start_angle, start_angle + angle,
-                 facecolor=color, edgecolor='white', linewidth=2)
-    ax4.add_patch(wedge)
-    # Add label
-    mid_angle = start_angle + angle/2
-    rad = np.deg2rad(mid_angle)
-    x = 0.5 + 0.25 * np.cos(rad)
-    y = 0.5 + 0.25 * np.sin(rad)
-    ax4.text(x, y, f'{val}%', ha='center', va='center', fontsize=dm.fs(-1), color='white', weight='bold')
-    start_angle += angle
+ax4.add_patch(Rectangle((0.02, 0.05), 0.46, 0.90, facecolor='dm.gray1', edgecolor='dm.gray6', linewidth=0.6))
+ax4.add_patch(Rectangle((0.52, 0.05), 0.46, 0.90, facecolor='dm.gray1', edgecolor='dm.gray6', linewidth=0.6))
+yoY_blocks = [
+    ('Infra', 0.04, 0.55, 0.26, 0.38, 'dm.blue5', '35%'),
+    ('Platform', 0.31, 0.55, 0.15, 0.38, 'dm.violet5', '18%'),
+    ('Apps', 0.04, 0.08, 0.20, 0.42, 'dm.green5', '22%'),
+    ('Other', 0.26, 0.08, 0.20, 0.42, 'dm.gray5', '12%'),
+]
+for label, x, y, w, h, c, pct in yoY_blocks:
+    add_rect(ax4, (x, y), w, h, c, f"{label}\n{pct}")
+shift = 0.50
+yoY_blocks2 = [
+    ('Infra', 0.04 + shift, 0.55, 0.22, 0.38, 'dm.blue5', '28%'),
+    ('Platform', 0.27 + shift, 0.55, 0.21, 0.38, 'dm.violet5', '26%'),
+    ('Apps', 0.04 + shift, 0.08, 0.18, 0.42, 'dm.green5', '24%'),
+    ('Data', 0.23 + shift, 0.08, 0.25, 0.42, 'dm.orange5', '16%'),
+]
+for label, x, y, w, h, c, pct in yoY_blocks2:
+    add_rect(ax4, (x, y), w, h, c, f"{label}\n{pct}")
+ax4.text(0.25, 0.96, 'Year 1', ha='center', va='center', fontsize=dm.fs(-1), weight='bold', color='dm.gray8')
+ax4.text(0.75, 0.96, 'Year 2', ha='center', va='center', fontsize=dm.fs(-1), weight='bold', color='dm.gray8')
 ax4.set_xlim(0, 1)
 ax4.set_ylim(0, 1)
 ax4.axis('off')
-ax4.set_title('Circular Partition', fontsize=dm.fs(1))
+ax4.set_title('Side-by-side Treemaps', fontsize=dm.fs(1))
 
 dm.simple_layout(fig, gs=gs)
 plt.show()

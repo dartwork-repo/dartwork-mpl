@@ -101,6 +101,60 @@
    "name": "FancyBboxPatch"
   }
  ],
+ "NODE_H": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "NODE_W": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "_": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "str"
+  }
+ ],
+ "add_flow": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ],
+ "add_node": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ],
+ "anchor": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
+  }
+ ],
  "angle": [
   {
    "is_class": false,
@@ -117,54 +171,6 @@
    "module": "numpy",
    "module_short": "numpy",
    "name": "ndarray"
-  }
- ],
- "arrow": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.patches",
-   "module_short": "matplotlib.patches",
-   "name": "FancyArrowPatch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "FancyArrowPatch"
-  }
- ],
- "arrow1": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.patches",
-   "module_short": "matplotlib.patches",
-   "name": "FancyArrowPatch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "FancyArrowPatch"
-  }
- ],
- "arrow2": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.patches",
-   "module_short": "matplotlib.patches",
-   "name": "FancyArrowPatch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "FancyArrowPatch"
   }
  ],
  "ax1": [
@@ -188,64 +194,6 @@
    "module": "matplotlib",
    "module_short": "matplotlib",
    "name": "Axes"
-  }
- ],
- "ax1.add_patch": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.add_patch"
   }
  ],
  "ax1.axis": [
@@ -480,64 +428,6 @@
    "name": "Artist.set_ylim"
   }
  ],
- "ax1.text": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.text"
-  }
- ],
  "ax2": [
   {
    "is_class": false,
@@ -559,64 +449,6 @@
    "module": "matplotlib",
    "module_short": "matplotlib",
    "name": "Axes"
-  }
- ],
- "ax2.add_patch": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.add_patch"
   }
  ],
  "ax2.axis": [
@@ -851,64 +683,6 @@
    "name": "Artist.set_ylim"
   }
  ],
- "ax2.text": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.text"
-  }
- ],
  "ax3": [
   {
    "is_class": false,
@@ -930,122 +704,6 @@
    "module": "matplotlib",
    "module_short": "matplotlib",
    "name": "Axes"
-  }
- ],
- "ax3.add_patch": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.add_patch"
-  }
- ],
- "ax3.annotate": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.annotate"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.annotate"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.annotate"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.annotate"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.annotate"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.annotate"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.annotate"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.annotate"
   }
  ],
  "ax3.axis": [
@@ -1104,6 +762,64 @@
    "module": "matplotlib",
    "module_short": "matplotlib",
    "name": "Artist.axis"
+  }
+ ],
+ "ax3.set_aspect": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes._axes",
+   "module_short": "matplotlib.axes",
+   "name": "Axes.set_aspect"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes",
+   "module_short": "matplotlib.axes",
+   "name": "Axes.set_aspect"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Axes.set_aspect"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes._base",
+   "module_short": "matplotlib.axes._base",
+   "name": "_AxesBase.set_aspect"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.axes",
+   "module_short": "matplotlib.axes",
+   "name": "_AxesBase.set_aspect"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "_AxesBase.set_aspect"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib.artist",
+   "module_short": "matplotlib.artist",
+   "name": "Artist.set_aspect"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "matplotlib",
+   "module_short": "matplotlib",
+   "name": "Artist.set_aspect"
   }
  ],
  "ax3.set_title": [
@@ -1361,64 +1077,6 @@
    "name": "Axes"
   }
  ],
- "ax4.add_patch": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.add_patch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.add_patch"
-  }
- ],
  "ax4.axis": [
   {
    "is_class": false,
@@ -1651,87 +1309,40 @@
    "name": "Artist.set_ylim"
   }
  ],
- "ax4.text": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Axes.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes._base",
-   "module_short": "matplotlib.axes._base",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.axes",
-   "module_short": "matplotlib.axes",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "_AxesBase.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.artist",
-   "module_short": "matplotlib.artist",
-   "name": "Artist.text"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "Artist.text"
-  }
- ],
- "box": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib.patches",
-   "module_short": "matplotlib.patches",
-   "name": "FancyBboxPatch"
-  },
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "matplotlib",
-   "module_short": "matplotlib",
-   "name": "FancyBboxPatch"
-  }
- ],
- "boxes": [
+ "branches": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "builtins",
    "module_short": "builtins",
    "name": "list"
+  }
+ ],
+ "center": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "curve": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
+  }
+ ],
+ "directional_anchor": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "function"
   }
  ],
  "dm.cm2in": [
@@ -1803,6 +1414,15 @@
    "module": "dartwork_mpl.style",
    "module_short": "dartwork_mpl.style",
    "name": "use_preset"
+  }
+ ],
+ "end": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
   }
  ],
  "fig": [
@@ -1943,7 +1563,7 @@
    "name": "str"
   }
  ],
- "labels": [
+ "leafs": [
   {
    "is_class": false,
    "is_explicit": false,
@@ -1952,13 +1572,74 @@
    "name": "list"
   }
  ],
- "next_angle": [
+ "loop_labels": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "loop_points": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "loop_points.append": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  }
+ ],
+ "merge": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "mid_left": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "mid_right": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "np.array": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "builtin_function_or_method"
+  },
   {
    "is_class": false,
    "is_explicit": false,
    "module": "numpy",
    "module_short": "numpy",
-   "name": "float64"
+   "name": "array"
   }
  ],
  "np.cos": [
@@ -2009,6 +1690,22 @@
    "name": "pi"
   }
  ],
+ "np.sign": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ufunc"
+  },
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "sign"
+  }
+ ],
  "np.sin": [
   {
    "is_class": false,
@@ -2023,6 +1720,42 @@
    "module": "numpy",
    "module_short": "numpy",
    "name": "sin"
+  }
+ ],
+ "nxt": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "pipeline_steps": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "list"
+  }
+ ],
+ "pipeline_x": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "pipeline_y": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
   }
  ],
  "plt.figure": [
@@ -2057,13 +1790,40 @@
    "name": "show"
   }
  ],
- "radius": [
+ "pt": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "numpy",
+   "module_short": "numpy",
+   "name": "ndarray"
+  }
+ ],
+ "r": [
   {
    "is_class": false,
    "is_explicit": false,
    "module": "builtins",
    "module_short": "builtins",
    "name": "float"
+  }
+ ],
+ "root": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
+  }
+ ],
+ "start": [
+  {
+   "is_class": false,
+   "is_explicit": false,
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "tuple"
   }
  ],
  "x": [
@@ -2075,31 +1835,13 @@
    "name": "float"
   }
  ],
- "x2": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "float64"
-  }
- ],
  "y": [
   {
    "is_class": false,
    "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "float64"
-  }
- ],
- "y2": [
-  {
-   "is_class": false,
-   "is_explicit": false,
-   "module": "numpy",
-   "module_short": "numpy",
-   "name": "float64"
+   "module": "builtins",
+   "module_short": "builtins",
+   "name": "float"
   }
  ]
 }

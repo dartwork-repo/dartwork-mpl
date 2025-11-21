@@ -23,29 +23,18 @@ Diverging and Sequential Colors
 
 Choosing appropriate color schemes for different data types.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-58
+.. GENERATED FROM PYTHON SOURCE LINES 7-76
 
 
 
 .. image-sg:: /gallery/08_colors_images/images/sphx_glr_plot_diverging_sequential_001.png
-   :alt: Sequential Data → Sequential Colormap, Sequential Data → Diverging (Wrong!), Diverging Data → Diverging Colormap, Diverging Data → Sequential (Wrong!)
+   :alt: Sequential Data $\rightarrow$ Sequential Colormap, Sequential Data $\rightarrow$ Diverging (Wrong!), Diverging Data $\rightarrow$ Diverging Colormap, Diverging Data $\rightarrow$ Sequential (Wrong!)
    :srcset: /gallery/08_colors_images/images/sphx_glr_plot_diverging_sequential_001.png
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/wonjun/Codes/dartwork-mpl/src/dartwork_mpl/util.py:161: UserWarning: Glyph 8594 (\N{RIGHTWARDS ARROW}) missing from font(s) Roboto.
-      ax_bboxes = [ax.get_tightbbox() for ax in fig.axes]
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
@@ -63,8 +52,16 @@ Choosing appropriate color schemes for different data types.
     Z_div = X * Y  # Diverging (negative to positive)
 
     fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
-    gs = fig.add_gridspec(nrows=2, ncols=2, left=0.08, right=0.92,
-                          top=0.95, bottom=0.08, wspace=0.35, hspace=0.4)
+    gs = fig.add_gridspec(
+        nrows=2,
+        ncols=2,
+        left=0.08,
+        right=0.92,
+        top=0.95,
+        bottom=0.10,
+        wspace=0.35,
+        hspace=0.4,
+    )
 
     # Panel A: Sequential data with sequential colormap
     ax1 = fig.add_subplot(gs[0, 0])
@@ -72,7 +69,7 @@ Choosing appropriate color schemes for different data types.
     plt.colorbar(im1, ax=ax1, label='Distance', fraction=0.046, pad=0.04)
     ax1.set_xlabel('X', fontsize=dm.fs(0))
     ax1.set_ylabel('Y', fontsize=dm.fs(0))
-    ax1.set_title('Sequential Data → Sequential Colormap', fontsize=dm.fs(0))
+    ax1.set_title(r'Sequential Data $\rightarrow$ Sequential Colormap', fontsize=dm.fs(0))
 
     # Panel B: Sequential with wrong colormap (diverging)
     ax2 = fig.add_subplot(gs[0, 1])
@@ -80,7 +77,7 @@ Choosing appropriate color schemes for different data types.
     plt.colorbar(im2, ax=ax2, label='Distance', fraction=0.046, pad=0.04)
     ax2.set_xlabel('X', fontsize=dm.fs(0))
     ax2.set_ylabel('Y', fontsize=dm.fs(0))
-    ax2.set_title('Sequential Data → Diverging (Wrong!)', fontsize=dm.fs(0))
+    ax2.set_title(r'Sequential Data $\rightarrow$ Diverging (Wrong!)', fontsize=dm.fs(0))
 
     # Panel C: Diverging data with diverging colormap
     ax3 = fig.add_subplot(gs[1, 0])
@@ -88,7 +85,7 @@ Choosing appropriate color schemes for different data types.
     plt.colorbar(im3, ax=ax3, label='Product', fraction=0.046, pad=0.04)
     ax3.set_xlabel('X', fontsize=dm.fs(0))
     ax3.set_ylabel('Y', fontsize=dm.fs(0))
-    ax3.set_title('Diverging Data → Diverging Colormap', fontsize=dm.fs(0))
+    ax3.set_title(r'Diverging Data $\rightarrow$ Diverging Colormap', fontsize=dm.fs(0))
 
     # Panel D: Diverging with wrong colormap (sequential)
     ax4 = fig.add_subplot(gs[1, 1])
@@ -96,7 +93,17 @@ Choosing appropriate color schemes for different data types.
     plt.colorbar(im4, ax=ax4, label='Product', fraction=0.046, pad=0.04)
     ax4.set_xlabel('X', fontsize=dm.fs(0))
     ax4.set_ylabel('Y', fontsize=dm.fs(0))
-    ax4.set_title('Diverging Data → Sequential (Wrong!)', fontsize=dm.fs(0))
+    ax4.set_title(r'Diverging Data $\rightarrow$ Sequential (Wrong!)', fontsize=dm.fs(0))
+
+    fig.text(
+        0.5,
+        0.03,
+        'Guideline: use sequential maps for 0->max data (e.g., distance) and diverging maps for values centered around zero (e.g., positive/negative products).',
+        ha='center',
+        va='center',
+        fontsize=dm.fs(-1),
+        color='dm.gray7',
+    )
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -104,7 +111,7 @@ Choosing appropriate color schemes for different data types.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.146 seconds)
+   **Total running time of the script:** (0 minutes 1.156 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_diverging_sequential.py:

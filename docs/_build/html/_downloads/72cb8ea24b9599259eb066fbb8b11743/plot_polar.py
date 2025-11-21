@@ -20,14 +20,14 @@ r2 = np.random.rand(20) * 5
 theta2 = np.linspace(0, 2 * np.pi, 20, endpoint=False)
 
 # Create figure (square-ish): 16 cm wide, 12 cm tall
-fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(13)), dpi=300)
 
 # Create GridSpec for 4 subplots with polar projection (2x2)
 gs = fig.add_gridspec(
     nrows=2, ncols=2,
-    left=0.08, right=0.98,
-    top=0.92, bottom=0.12,
-    wspace=0.25, hspace=0.5
+    left=0.07, right=0.94,
+    top=0.93, bottom=0.10,
+    wspace=0.18, hspace=0.42
 )
 
 # Panel A: Basic polar plot

@@ -18,23 +18,6 @@ and publication-quality figures for academic research.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Heatmap visualization.">
-
-.. only:: html
-
-  .. image:: /gallery/04_scientific_plots/images/thumb/sphx_glr_plot_heatmap_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_04_scientific_plots_plot_heatmap.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Heatmap</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Streamplots for vector fields.">
 
 .. only:: html
@@ -64,6 +47,23 @@ and publication-quality figures for academic research.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Contour Plots</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Heatmap visualization.">
+
+.. only:: html
+
+  .. image:: /gallery/04_scientific_plots/images/thumb/sphx_glr_plot_heatmap_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_04_scientific_plots_plot_heatmap.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Heatmap</div>
     </div>
 
 
@@ -179,9 +179,9 @@ and publication-quality figures for academic research.
 .. toctree::
    :hidden:
 
-   /gallery/04_scientific_plots/plot_heatmap
    /gallery/04_scientific_plots/plot_streamplot
    /gallery/04_scientific_plots/plot_contour
+   /gallery/04_scientific_plots/plot_heatmap
    /gallery/04_scientific_plots/plot_scientific_paper
    /gallery/04_scientific_plots/plot_vector_field_advanced
    /gallery/04_scientific_plots/plot_spectral_analysis

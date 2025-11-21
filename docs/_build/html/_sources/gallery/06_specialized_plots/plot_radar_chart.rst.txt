@@ -23,7 +23,7 @@ Radar Charts
 
 Radar/spider charts for multivariate data visualization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-91
+.. GENERATED FROM PYTHON SOURCE LINES 7-99
 
 
 
@@ -62,8 +62,16 @@ Radar/spider charts for multivariate data visualization.
     angles += angles[:1]
 
     fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
-    gs = fig.add_gridspec(nrows=2, ncols=2, left=0.05, right=0.95,
-                          top=0.95, bottom=0.05, wspace=0.25, hspace=0.45)
+    gs = fig.add_gridspec(
+        nrows=2,
+        ncols=2,
+        left=0.06,
+        right=0.94,
+        top=0.95,
+        bottom=0.07,
+        wspace=0.18,
+        hspace=0.32,
+    )
 
     # Panel A: Basic radar
     ax1 = fig.add_subplot(gs[0, 0], projection='polar')
@@ -126,7 +134,7 @@ Radar/spider charts for multivariate data visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.189 seconds)
+   **Total running time of the script:** (0 minutes 1.156 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_radar_chart.py:

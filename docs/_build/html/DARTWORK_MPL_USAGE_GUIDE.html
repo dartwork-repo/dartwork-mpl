@@ -2,7 +2,7 @@
 <html lang="en" data-accent-color="teal" data-content_root="./">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Usage Guide - dartwork-mpl documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Color and Colormap Gallery" href="COLOR_GALLERY.html" /><link rel="prev" title="Installation" href="install.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Usage Guide - dartwork-mpl documentation</title><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Color System" href="COLOR_GALLERY.html" /><link rel="prev" title="Installation" href="installation.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="_static/pygments.css?v=e1a1ceaf" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=88eaab90" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d7c7ad49" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
       <strong>dartwork-mpl</strong>
     </a>
     <div class="sy-head-nav" id="head-nav">
-      <nav class="sy-head-links"><ul><li class="link"><a href="install.html">Install</a></li><li class="link"><a href="#">Usage Guide</a></li><li class="link"><a href="COLOR_GALLERY.html">Colors</a></li><li class="link"><a href="gallery/index.html">Examples Gallery</a></li><li class="link"><a href="api/index.html">API Reference</a></li></ul></nav>
+      <nav class="sy-head-links"><ul><li class="link"><a href="installation.html">Installation</a></li><li class="link"><a href="#">Usage Guide</a></li><li class="link"><a href="COLOR_GALLERY.html">Colors</a></li><li class="link"><a href="gallery/index.html">Examples Gallery</a></li><li class="link"><a href="api/index.html">API Reference</a></li></ul></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search" />
   <kbd>/</kbd>
@@ -65,9 +65,15 @@ data-aria-dark="Switch to auto color mode">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="0"><ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="COLOR_GALLERY.html">Colors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COLOR_GALLERY.html">Color System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="COLORS.html">Colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="COLORMAPS.html">Colormaps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="COLORS.html">Colors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COLORMAPS.html">Colormaps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery/index.html">Examples Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery/index.html#basic-plots">Basic Plots</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery/index.html#statistical-plots">Statistical Plots</a></li>
@@ -76,7 +82,94 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="gallery/index.html#time-series">Time Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery/index.html#specialized-plots">Specialized Plots</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gallery/index.html#layout-styling">Layout &amp; Styling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gallery/index.html#colors-images">Colors &amp; Images</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="gallery/index.html#colors-images">Colors &amp; Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gallery/01_basic_plots/index.html">Basic Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_basic.html">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_area_plots.html">Area Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_multiple_lines.html">Multiple Line Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_markers.html">Marker Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_line_styles.html">Line Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_scatter.html">Scatter Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/01_basic_plots/plot_line_advanced.html">Advanced Line Plots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/02_statistical_plots/index.html">Statistical Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_probability_density.html">Probability Density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_violin_box.html">Violin and Box Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_correlation_matrix.html">Correlation Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_regression.html">Regression Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_errorbars.html">Error Bars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_kde_plots.html">Kernel Density Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_distribution.html">Probability Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/02_statistical_plots/plot_histogram.html">Histograms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/03_bar_charts/index.html">Bar Charts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/03_bar_charts/plot_bar_chart.html">Bar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/03_bar_charts/plot_horizontal_bar.html">Horizontal Bar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/03_bar_charts/plot_diverging_bar.html">Diverging Bar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/03_bar_charts/plot_lollipop.html">Lollipop Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/03_bar_charts/plot_waterfall.html">Waterfall Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/03_bar_charts/plot_stacked_bar.html">Stacked Bar Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/03_bar_charts/plot_grouped_bar.html">Grouped Bar Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/04_scientific_plots/index.html">Scientific Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_heatmap.html">Heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_streamplot.html">Streamplot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_contour.html">Contour Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_scientific_paper.html">Scientific Paper Figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_vector_field_advanced.html">Advanced Vector Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_spectral_analysis.html">Spectral Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_3d_surface.html">3D Surface Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_quiver.html">Quiver Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/04_scientific_plots/plot_phase_diagram.html">Phase Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/05_time_series/index.html">Time Series</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_rolling_stats.html">Rolling Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_autocorrelation.html">Autocorrelation Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_time_comparison.html">Time Series Comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_trend_analysis.html">Trend Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_forecast.html">Time Series Forecasting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_step.html">Step Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_datetime.html">Datetime Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/05_time_series/plot_stem.html">Stem Plots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/06_specialized_plots/index.html">Specialized Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_3d.html">3D Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_dual_axis.html">Dual Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_polar.html">Polar Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_ridgeline.html">Ridgeline Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_radar_chart.html">Radar Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_treemap_simple.html">Hierarchical Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_pie.html">Pie Charts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_filled.html">Filled Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/06_specialized_plots/plot_sankey_simple.html">Flow Diagrams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/07_layout_styling/index.html">Layout &amp; Styling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_shared_axes.html">Shared Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_layout.html">Layout Optimization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_complex_grid.html">Complex Grid Layouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_mixed_subplots.html">Mixed Subplot Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_subplots.html">Subplots Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_inset_axes.html">Inset Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_legend.html">Legends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_custom_ticks.html">Custom Ticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/07_layout_styling/plot_annotations.html">Annotations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/08_colors_images/index.html">Colors &amp; Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery/08_colors_images/plot_colors.html">Colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/08_colors_images/plot_color_cycles.html">Color Cycles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/08_colors_images/plot_diverging_sequential.html">Diverging and Sequential Colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/08_colors_images/plot_color_perception.html">Color Perception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/08_colors_images/plot_custom_colormap.html">Custom Colormaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery/08_colors_images/plot_image.html">Image Display</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/index.html">API Reference</a><ul>
@@ -100,42 +193,32 @@ data-aria-dark="Switch to auto color mode">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
-<li><a class="reference internal" href="#key-features">1. Key Features</a><ul>
-<li><a class="reference internal" href="#style-management">2.1 Style Management</a><ul>
-<li><a class="reference internal" href="#check-available-styles">Check Available Styles</a></li>
-<li><a class="reference internal" href="#apply-style">Apply Style</a></li>
-<li><a class="reference internal" href="#inspect-style-content">Inspect Style Content</a></li>
+<li><a class="reference internal" href="#key-features">Key Features</a></li>
+<li><a class="reference internal" href="#style-management">1. Style Management</a><ul>
+<li><a class="reference internal" href="#available-styles-and-presets">1.1 Available Styles and Presets</a></li>
+<li><a class="reference internal" href="#apply-styles">1.2 Apply Styles</a></li>
+<li><a class="reference internal" href="#inspect-styles">1.3 Inspect Styles</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#color-system">2.2 Color System</a><ul>
-<li><a class="reference internal" href="#dartwork-mpl-custom-colors">dartwork-mpl Custom Colors</a></li>
-<li><a class="reference internal" href="#tailwind-css-colors">Tailwind CSS Colors</a></li>
-<li><a class="reference internal" href="#color-utilities">Color Utilities</a></li>
+<li><a class="reference internal" href="#colors">2. Colors</a><ul>
+<li><a class="reference internal" href="#named-colors">2.1 Named Colors</a></li>
+<li><a class="reference internal" href="#color-utilities">2.2 Color Utilities</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#layout-utilities">2.3 Layout Utilities</a><ul>
-<li><a class="reference internal" href="#recommended-figure-creation-pattern">Recommended Figure Creation Pattern</a></li>
-<li><a class="reference internal" href="#automatic-layout-adjustment">Automatic Layout Adjustment</a></li>
+<li><a class="reference internal" href="#layout-utilities">3. Layout Utilities</a><ul>
+<li><a class="reference internal" href="#figure-sizing-helpers">3.1 Figure Sizing Helpers</a></li>
+<li><a class="reference internal" href="#simple-layout-optimization">3.2 Simple Layout Optimization</a></li>
+<li><a class="reference internal" href="#precise-offsets-and-formatting">3.3 Precise Offsets and Formatting</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#font-utilities">2.4 Font Utilities</a></li>
-<li><a class="reference internal" href="#save-and-display">2.5 Save and Display</a><ul>
-<li><a class="reference internal" href="#multi-format-save">Multi-format Save</a></li>
-<li><a class="reference internal" href="#save-and-display-in-jupyter">Save and Display in Jupyter</a></li>
+<li><a class="reference internal" href="#fonts">4. Fonts</a></li>
+<li><a class="reference internal" href="#saving-and-display">5. Saving and Display</a><ul>
+<li><a class="reference internal" href="#multi-format-save">5.1 Multi-format Save</a></li>
+<li><a class="reference internal" href="#save-show-notebook-friendly">5.2 Save + Show (Notebook-friendly)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#subplot-labeling">2.6 Subplot Labeling</a></li>
-<li><a class="reference internal" href="#colormap-visualization">2.7 Colormap Visualization</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#recommended-workflow">3. Recommended Workflow</a><ul>
-<li><a class="reference internal" href="#steps-for-publication-quality-graphs">Steps for Publication-Quality Graphs</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#korean-support">4. Korean Support</a></li>
-<li><a class="reference internal" href="#preset-styles">5. Preset Styles</a></li>
-<li><a class="reference internal" href="#precautions">6. Precautions</a></li>
-<li><a class="reference internal" href="#complete-example">7. Complete Example</a></li>
+<li><a class="reference internal" href="#subplot-labels">6. Subplot Labels</a></li>
+<li><a class="reference internal" href="#reference-package-defaults">Reference: Package Defaults</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -168,387 +251,173 @@ data-aria-dark="Switch to auto color mode">
         <article class="yue" role="main">
           <section id="usage-guide">
 <h1>Usage Guide<a class="headerlink" href="#usage-guide" title="Link to this heading">¶</a></h1>
+<p>dartwork-mpl packages opinionated matplotlib styles, curated color libraries, and
+layout utilities to quickly assemble publication-quality figures. Everything
+below is based on the code shipped in this repository—no imaginary presets.</p>
 <section id="key-features">
-<h2>1. Key Features<a class="headerlink" href="#key-features" title="Link to this heading">¶</a></h2>
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Style presets for papers, presentations, and Korean documents (scientific,
+investment, presentation variants + <code class="docutils literal notranslate"><span class="pre">-kr</span></code> versions).</p></li>
+<li><p>Large color catalog: <code class="docutils literal notranslate"><span class="pre">dm.*</span></code> plus Tailwind (<code class="docutils literal notranslate"><span class="pre">tw.</span></code>), Material (<code class="docutils literal notranslate"><span class="pre">md.</span></code>), Ant
+(<code class="docutils literal notranslate"><span class="pre">ant.</span></code>), Chakra (<code class="docutils literal notranslate"><span class="pre">chakra.</span></code>), Primer (<code class="docutils literal notranslate"><span class="pre">primer.</span></code>), and opencolor sets.</p></li>
+<li><p>Layout helpers (<code class="docutils literal notranslate"><span class="pre">simple_layout</span></code>, <code class="docutils literal notranslate"><span class="pre">cm2in</span></code>, <code class="docutils literal notranslate"><span class="pre">make_offset</span></code>) to control margins
+predictably.</p></li>
+<li><p>Font utilities (<code class="docutils literal notranslate"><span class="pre">fs</span></code>, <code class="docutils literal notranslate"><span class="pre">fw</span></code>) and bundled fonts auto-registered on import.</p></li>
+<li><p>Save/display helpers for multi-format export and notebook-friendly previews.</p></li>
+</ul>
+</section>
 <section id="style-management">
-<h3>2.1 Style Management<a class="headerlink" href="#style-management" title="Link to this heading">¶</a></h3>
-<section id="check-available-styles">
-<h4>Check Available Styles<a class="headerlink" href="#check-available-styles" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># List all individual styles</span>
-</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">list_styles</span><span class="p">()</span>
-</span><span data-line="3"><span class="c1"># [&#39;base&#39;, &#39;dmpl&#39;, &#39;dmpl_light&#39;, &#39;font-investment&#39;, &#39;font-presentation&#39;, </span>
-</span><span data-line="4"><span class="c1">#  &#39;font-scientific&#39;, &#39;lang-kr&#39;, &#39;spine-no&#39;, &#39;spine-yes&#39;]</span>
-</span><span data-line="5">
-</span><span data-line="6"><span class="c1"># Check available presets</span>
-</span><span data-line="7"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">presets_dict</span><span class="p">()</span>
-</span><span data-line="8"><span class="c1"># {&#39;scientific&#39;: [&#39;base&#39;, &#39;font-scientific&#39;],</span>
-</span><span data-line="9"><span class="c1">#  &#39;investment&#39;: [&#39;base&#39;, &#39;font-investment&#39;],</span>
-</span><span data-line="10"><span class="c1">#  &#39;presentation&#39;: [&#39;base&#39;, &#39;font-presentation&#39;],</span>
-</span><span data-line="11"><span class="c1">#  &#39;scientific-kr&#39;: [&#39;base&#39;, &#39;font-scientific&#39;, &#39;lang-kr&#39;],</span>
-</span><span data-line="12"><span class="c1">#  &#39;investment-kr&#39;: [&#39;base&#39;, &#39;font-investment&#39;, &#39;lang-kr&#39;],</span>
-</span><span data-line="13"><span class="c1">#  &#39;presentation-kr&#39;: [&#39;base&#39;, &#39;font-presentation&#39;, &#39;lang-kr&#39;]}</span>
+<h2>1. Style Management<a class="headerlink" href="#style-management" title="Link to this heading">¶</a></h2>
+<section id="available-styles-and-presets">
+<h3>1.1 Available Styles and Presets<a class="headerlink" href="#available-styles-and-presets" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="c1"># Individual style files (asset/mplstyle)</span>
+</span><span data-line="4"><span class="n">dm</span><span class="o">.</span><span class="n">list_styles</span><span class="p">()</span>
+</span><span data-line="5"><span class="c1"># [&#39;base&#39;, &#39;dmpl&#39;, &#39;dmpl_light&#39;, &#39;font-investment&#39;, &#39;font-presentation&#39;,</span>
+</span><span data-line="6"><span class="c1">#  &#39;font-scientific&#39;, &#39;lang-kr&#39;, &#39;spine-no&#39;, &#39;spine-yes&#39;]</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="c1"># Presets defined in presets.json (no other presets exist)</span>
+</span><span data-line="9"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">presets_dict</span><span class="p">()</span>
+</span><span data-line="10"><span class="c1"># {</span>
+</span><span data-line="11"><span class="c1">#   &#39;scientific&#39;: [&#39;base&#39;, &#39;font-scientific&#39;],</span>
+</span><span data-line="12"><span class="c1">#   &#39;investment&#39;: [&#39;base&#39;, &#39;font-investment&#39;],</span>
+</span><span data-line="13"><span class="c1">#   &#39;presentation&#39;: [&#39;base&#39;, &#39;font-presentation&#39;],</span>
+</span><span data-line="14"><span class="c1">#   &#39;scientific-kr&#39;: [&#39;base&#39;, &#39;font-scientific&#39;, &#39;lang-kr&#39;],</span>
+</span><span data-line="15"><span class="c1">#   &#39;investment-kr&#39;: [&#39;base&#39;, &#39;font-investment&#39;, &#39;lang-kr&#39;],</span>
+</span><span data-line="16"><span class="c1">#   &#39;presentation-kr&#39;: [&#39;base&#39;, &#39;font-presentation&#39;, &#39;lang-kr&#39;],</span>
+</span><span data-line="17"><span class="c1"># }</span>
 </span></pre></div>
 </div>
+<blockquote>
+<div><p>Tip: The package enables <code class="docutils literal notranslate"><span class="pre">dmpl_light</span></code> by default in <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Call
+<code class="docutils literal notranslate"><span class="pre">dm.style.use_preset(...)</span></code> or <code class="docutils literal notranslate"><span class="pre">dm.use_style(...)</span></code> to switch explicitly.</p>
+</div></blockquote>
 </section>
-<section id="apply-style">
-<h4>Apply Style<a class="headerlink" href="#apply-style" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Use preset (Recommended)</span>
-</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>  <span class="c1"># For papers</span>
-</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;presentation&#39;</span><span class="p">)</span>  <span class="c1"># For presentations</span>
-</span><span data-line="4"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific-kr&#39;</span><span class="p">)</span>  <span class="c1"># For Korean papers</span>
+<section id="apply-styles">
+<h3>1.2 Apply Styles<a class="headerlink" href="#apply-styles" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Recommended: presets</span>
+</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>      <span class="c1"># Academic papers</span>
+</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;presentation&#39;</span><span class="p">)</span>    <span class="c1"># Slides</span>
+</span><span data-line="4"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific-kr&#39;</span><span class="p">)</span>   <span class="c1"># Korean documents</span>
 </span><span data-line="5">
-</span><span data-line="6"><span class="c1"># Combine individual styles (Advanced)</span>
+</span><span data-line="6"><span class="c1"># Combine individual style files</span>
 </span><span data-line="7"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="s1">&#39;spine-no&#39;</span><span class="p">,</span> <span class="s1">&#39;font-presentation&#39;</span><span class="p">])</span>
 </span><span data-line="8">
-</span><span data-line="9"><span class="c1"># Legacy API (backward compatibility)</span>
-</span><span data-line="10"><span class="n">dm</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s1">&#39;dmpl&#39;</span><span class="p">)</span>
+</span><span data-line="9"><span class="c1"># Legacy helper</span>
+</span><span data-line="10"><span class="n">dm</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s1">&#39;dmpl_light&#39;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </section>
-<section id="inspect-style-content">
-<h4>Inspect Style Content<a class="headerlink" href="#inspect-style-content" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Check content of a style file</span>
-</span><span data-line="2"><span class="n">style_dict</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">load_style_dict</span><span class="p">(</span><span class="s1">&#39;font-presentation&#39;</span><span class="p">)</span>
-</span><span data-line="3">
-</span><span data-line="4"><span class="c1"># Check path of a style file</span>
-</span><span data-line="5"><span class="n">path</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">style_path</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span>
-</span><span data-line="6">
-</span><span data-line="7"><span class="c1"># Check path of presets definition file</span>
-</span><span data-line="8"><span class="n">preset_path</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">presets_path</span><span class="p">()</span>
+<section id="inspect-styles">
+<h3>1.3 Inspect Styles<a class="headerlink" href="#inspect-styles" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">dm</span><span class="o">.</span><span class="n">load_style_dict</span><span class="p">(</span><span class="s1">&#39;font-presentation&#39;</span><span class="p">)</span>   <span class="c1"># Key/value pairs from style file</span>
+</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">style_path</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span>                     <span class="c1"># Path to a style file</span>
+</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">presets_path</span><span class="p">()</span>                   <span class="c1"># Path to presets.json</span>
 </span></pre></div>
 </div>
 </section>
 </section>
-<section id="color-system">
-<h3>2.2 Color System<a class="headerlink" href="#color-system" title="Link to this heading">¶</a></h3>
-<section id="dartwork-mpl-custom-colors">
-<h4>dartwork-mpl Custom Colors<a class="headerlink" href="#dartwork-mpl-custom-colors" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Use with dm. prefix</span>
-</span><span data-line="2"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">)</span>
-</span><span data-line="3"><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue2&#39;</span><span class="p">)</span>
-</span></pre></div>
-</div>
-</section>
-<section id="tailwind-css-colors">
-<h4>Tailwind CSS Colors<a class="headerlink" href="#tailwind-css-colors" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Use tw. or tailwind. prefix</span>
-</span><span data-line="2"><span class="c1"># Format: tw.{color}:{weight}</span>
-</span><span data-line="3"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tw.blue:500&#39;</span><span class="p">)</span>
-</span><span data-line="4"><span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tailwind.gray:200&#39;</span><span class="p">)</span>
+<section id="colors">
+<h2>2. Colors<a class="headerlink" href="#colors" title="Link to this heading">¶</a></h2>
+<section id="named-colors">
+<h3>2.1 Named Colors<a class="headerlink" href="#named-colors" title="Link to this heading">¶</a></h3>
+<p>On import, <code class="docutils literal notranslate"><span class="pre">dartwork_mpl.color</span></code> registers many named colors:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dm.*</span></code> (opencolor + xkcd set with <code class="docutils literal notranslate"><span class="pre">dm.</span></code> prefix)</p></li>
+<li><p>Tailwind CSS: <code class="docutils literal notranslate"><span class="pre">tw.{color}:{weight}</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">tw.blue:500</span></code>)</p></li>
+<li><p>Material Design: <code class="docutils literal notranslate"><span class="pre">md.{color}:{weight}</span></code></p></li>
+<li><p>Ant Design: <code class="docutils literal notranslate"><span class="pre">ant.{color}:{weight}</span></code></p></li>
+<li><p>Chakra UI: <code class="docutils literal notranslate"><span class="pre">chakra.{color}:{weight}</span></code></p></li>
+<li><p>Primer: <code class="docutils literal notranslate"><span class="pre">primer.{color}:{weight}</span></code></p></li>
+</ul>
+<p>Use them like any matplotlib color:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">)</span>
+</span><span data-line="2"><span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tw.gray:200&#39;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </section>
 <section id="color-utilities">
-<h4>Color Utilities<a class="headerlink" href="#color-utilities" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Mix two colors</span>
-</span><span data-line="2"><span class="n">mixed</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">mix_colors</span><span class="p">(</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="s1">&#39;dm.blue5&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-</span><span data-line="3">
-</span><span data-line="4"><span class="c1"># Apply pseudo-transparency (mix with background)</span>
-</span><span data-line="5"><span class="n">transparent</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">pseudo_alpha</span><span class="p">(</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<h3>2.2 Color Utilities<a class="headerlink" href="#color-utilities" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">dm</span><span class="o">.</span><span class="n">mix_colors</span><span class="p">(</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="s1">&#39;dm.blue5&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>        <span class="c1"># Blend two colors</span>
+</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">pseudo_alpha</span><span class="p">(</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>  <span class="c1"># Fake transparency</span>
+</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">classify_colormap</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">])</span>         <span class="c1"># -&gt; category label</span>
 </span></pre></div>
 </div>
 </section>
 </section>
 <section id="layout-utilities">
-<h3>2.3 Layout Utilities<a class="headerlink" href="#layout-utilities" title="Link to this heading">¶</a></h3>
-<section id="recommended-figure-creation-pattern">
-<h4>Recommended Figure Creation Pattern<a class="headerlink" href="#recommended-figure-creation-pattern" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Create figure for papers (Unit: cm -&gt; inch conversion)</span>
-</span><span data-line="2"><span class="c1"># Single column figure: 9cm width</span>
-</span><span data-line="3"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
-</span><span data-line="4">    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)),</span>
-</span><span data-line="5">    <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span>
-</span><span data-line="6"><span class="p">)</span>
-</span><span data-line="7">
-</span><span data-line="8"><span class="c1"># Double column figure: 17cm width</span>
-</span><span data-line="9"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
-</span><span data-line="10">    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">17</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)),</span>
-</span><span data-line="11">    <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span>
-</span><span data-line="12"><span class="p">)</span>
-</span><span data-line="13">
-</span><span data-line="14"><span class="c1"># Set layout with GridSpec</span>
-</span><span data-line="15"><span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span>
-</span><span data-line="16">    <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-</span><span data-line="17">    <span class="n">left</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> 
-</span><span data-line="18">    <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> 
-</span><span data-line="19">    <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mi">0</span>
-</span><span data-line="20"><span class="p">)</span>
-</span><span data-line="21"><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<h2>3. Layout Utilities<a class="headerlink" href="#layout-utilities" title="Link to this heading">¶</a></h2>
+<section id="figure-sizing-helpers">
+<h3>3.1 Figure Sizing Helpers<a class="headerlink" href="#figure-sizing-helpers" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">17</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">12</span><span class="p">)),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># 17 cm wide</span>
+</span><span data-line="2"><span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.92</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </section>
-<section id="automatic-layout-adjustment">
-<h4>Automatic Layout Adjustment<a class="headerlink" href="#automatic-layout-adjustment" title="Link to this heading">¶</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">simple_layout</span></code> is an improved version of <code class="docutils literal notranslate"><span class="pre">plt.tight_layout()</span></code>, providing more precise margin control and predictable results.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Basic usage (Recommended)</span>
-</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-</span><span data-line="3">
-</span><span data-line="4"><span class="c1"># Adjust margins (Unit: inch, left, right, bottom, top)</span>
-</span><span data-line="5"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">))</span>
-</span><span data-line="6">
-</span><span data-line="7"><span class="c1"># Apply only to specific GridSpec</span>
-</span><span data-line="8"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="o">=</span><span class="n">gs</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">))</span>
-</span><span data-line="9">
-</span><span data-line="10"><span class="c1"># Optimize partial area using bbox (Figure coordinates: left, right, bottom, top)</span>
-</span><span data-line="11"><span class="c1"># Entire figure (Default)</span>
-</span><span data-line="12"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</span><span data-line="13">
-</span><span data-line="14"><span class="c1"># Optimize only left half</span>
-</span><span data-line="15"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</span><span data-line="16">
-</span><span data-line="17"><span class="c1"># Optimize only right half</span>
-</span><span data-line="18"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</span><span data-line="19">
-</span><span data-line="20"><span class="c1"># Optimize only top half</span>
-</span><span data-line="21"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</span><span data-line="22">
-</span><span data-line="23"><span class="c1"># Apply to all axes (When multiple GridSpecs exist)</span>
-</span><span data-line="24"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">use_all_axes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></pre></div>
-</div>
-<p><strong>Key Parameters:</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">margins</span></code>: Margins in inches (left, right, bottom, top)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bbox</span></code>: Optimization target area in figure coordinates (left, right, bottom, top)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gs</span></code>: Specific GridSpec (Uses first GridSpec if None)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_all_axes</span></code>: Consider all axes if True (Default: False)</p></li>
-</ul>
-<p><strong>bbox Usage Example:</strong>
-When multiple subplots exist, you can optimize layout for specific areas individually. For example, <code class="docutils literal notranslate"><span class="pre">bbox=(0,</span> <span class="pre">0.5,</span> <span class="pre">0,</span> <span class="pre">1)</span></code> optimizes layout only for the left half of the figure.</p>
-</section>
-</section>
-<section id="font-utilities">
-<h3>2.4 Font Utilities<a class="headerlink" href="#font-utilities" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Relative font size adjustment</span>
-</span><span data-line="2"><span class="n">title_size</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># base font size + 2</span>
-</span><span data-line="3"><span class="n">label_size</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># base font size - 1</span>
-</span><span data-line="4">
-</span><span data-line="5"><span class="c1"># Font weight adjustment (100 units)</span>
-</span><span data-line="6"><span class="n">bold_weight</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">fw</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># base weight + 200</span>
-</span><span data-line="7">
-</span><span data-line="8"><span class="c1"># Usage example</span>
-</span><span data-line="9"><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">fontweight</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fw</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</span><span data-line="10"><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<section id="simple-layout-optimization">
+<h3>3.2 Simple Layout Optimization<a class="headerlink" href="#simple-layout-optimization" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">simple_layout</span></code> adjusts margins more predictably than <code class="docutils literal notranslate"><span class="pre">tight_layout</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>  <span class="c1"># default margins</span>
+</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">))</span>  <span class="c1"># (L, R, B, T) in inches</span>
+</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="o">=</span><span class="n">gs</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>       <span class="c1"># only left half</span>
+</span><span data-line="4"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">use_all_axes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                <span class="c1"># consider all axes</span>
 </span></pre></div>
 </div>
 </section>
-<section id="save-and-display">
-<h3>2.5 Save and Display<a class="headerlink" href="#save-and-display" title="Link to this heading">¶</a></h3>
+<section id="precise-offsets-and-formatting">
+<h3>3.3 Precise Offsets and Formatting<a class="headerlink" href="#precise-offsets-and-formatting" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">offset</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">make_offset</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>  <span class="c1"># pt offsets</span>
+</span><span data-line="2"><span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">set_decimal</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xn</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">yn</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>       <span class="c1"># tick label decimals</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="fonts">
+<h2>4. Fonts<a class="headerlink" href="#fonts" title="Link to this heading">¶</a></h2>
+<p>Bundled fonts are registered automatically on import. Use utilities to offset
+sizes/weights relative to the active style:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Title&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">fontweight</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fw</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</span><span data-line="2"><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span></pre></div>
+</div>
+</section>
+<section id="saving-and-display">
+<h2>5. Saving and Display<a class="headerlink" href="#saving-and-display" title="Link to this heading">¶</a></h2>
 <section id="multi-format-save">
-<h4>Multi-format Save<a class="headerlink" href="#multi-format-save" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Save in multiple formats simultaneously</span>
-</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">save_formats</span><span class="p">(</span>
-</span><span data-line="3">    <span class="n">fig</span><span class="p">,</span> 
-</span><span data-line="4">    <span class="s1">&#39;output/figure&#39;</span><span class="p">,</span>  <span class="c1"># Without extension</span>
-</span><span data-line="5">    <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">),</span>
-</span><span data-line="6">    <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
-</span><span data-line="7">    <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span>
-</span><span data-line="8"><span class="p">)</span>
+<h3>5.1 Multi-format Save<a class="headerlink" href="#multi-format-save" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">dm</span><span class="o">.</span><span class="n">save_formats</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">&#39;output/figure&#39;</span><span class="p">,</span> <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">),</span>
+</span><span data-line="2">                <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </section>
-<section id="save-and-display-in-jupyter">
-<h4>Save and Display in Jupyter<a class="headerlink" href="#save-and-display-in-jupyter" title="Link to this heading">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Use instead of plt.show() - Save to temp file and display (Recommended)</span>
-</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-</span><span data-line="3">
-</span><span data-line="4"><span class="c1"># Save to specific path and display</span>
-</span><span data-line="5"><span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">&#39;output/figure.svg&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-</span><span data-line="6">
-</span><span data-line="7"><span class="c1"># Display existing file</span>
-</span><span data-line="8"><span class="n">dm</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;output/figure.svg&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<section id="save-show-notebook-friendly">
+<h3>5.2 Save + Show (Notebook-friendly)<a class="headerlink" href="#save-show-notebook-friendly" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>               <span class="c1"># temp file + display</span>
+</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">&#39;output/figure.svg&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</span><span data-line="3"><span class="n">dm</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;output/figure.svg&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </section>
 </section>
-<section id="subplot-labeling">
-<h3>2.6 Subplot Labeling<a class="headerlink" href="#subplot-labeling" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Add subplot labels (a, b, c...)</span>
-</span><span data-line="2"><span class="n">axs</span> <span class="o">=</span> <span class="p">[</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">]</span>
-</span><span data-line="3"><span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">):</span>
-</span><span data-line="4">    <span class="c1"># Must use make_offset for text offset</span>
-</span><span data-line="5">    <span class="n">offset</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">make_offset</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">fig</span><span class="p">)</span>  <span class="c1"># x=4pt, y=-4pt</span>
-</span><span data-line="6">    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-</span><span data-line="7">        <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> 
-</span><span data-line="8">        <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span>
-</span><span data-line="9">        <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
-</span><span data-line="10">        <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span>
-</span><span data-line="11">    <span class="p">)</span>
-</span></pre></div>
-</div>
-<p><strong>Important</strong>: Always use <code class="docutils literal notranslate"><span class="pre">dm.make_offset()</span></code> when adjusting text position. This function provides precise offsets in points (pt), ensuring consistent results regardless of DPI.</p>
-</section>
-<section id="colormap-visualization">
-<h3>2.7 Colormap Visualization<a class="headerlink" href="#colormap-visualization" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Check available colormaps</span>
-</span><span data-line="2"><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">plot_colormaps</span><span class="p">(</span>
-</span><span data-line="3">    <span class="n">cmap_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;dm.spectral&#39;</span><span class="p">],</span>  <span class="c1"># All if None</span>
-</span><span data-line="4">    <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-</span><span data-line="5">    <span class="n">group_by_type</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># Group by type</span>
-</span><span data-line="6"><span class="p">)</span>
-</span><span data-line="7">
-</span><span data-line="8"><span class="c1"># Check color palette</span>
-</span><span data-line="9"><span class="n">fig</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">()</span>  <span class="c1"># Show all colors</span>
-</span><span data-line="10">
-</span><span data-line="11"><span class="c1"># Check fonts</span>
-</span><span data-line="12"><span class="n">fig</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">plot_fonts</span><span class="p">()</span>  <span class="c1"># Show available fonts</span>
+<section id="subplot-labels">
+<h2>6. Subplot Labels<a class="headerlink" href="#subplot-labels" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">],</span> <span class="s1">&#39;ab&#39;</span><span class="p">):</span>
+</span><span data-line="2">    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span> <span class="o">+</span> <span class="n">dm</span><span class="o">.</span><span class="n">make_offset</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">fig</span><span class="p">),</span>
+</span><span data-line="3">            <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </section>
-</section>
-<section id="recommended-workflow">
-<h2>3. Recommended Workflow<a class="headerlink" href="#recommended-workflow" title="Link to this heading">¶</a></h2>
-<section id="steps-for-publication-quality-graphs">
-<h3>Steps for Publication-Quality Graphs<a class="headerlink" href="#steps-for-publication-quality-graphs" title="Link to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Separate Data Preparation and Plotting Code</strong></p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Data preparation cell</span>
-</span><span data-line="2"><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-</span><span data-line="3"><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span data-line="4"><span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span data-line="5">
-</span><span data-line="6"><span class="c1"># Plot cell (Separate)</span>
-</span><span data-line="7"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span>
-</span><span data-line="8"><span class="c1"># ...</span>
-</span></pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>GridSpec Based Layout</strong></p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span>
-</span><span data-line="2">    <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-</span><span data-line="3">    <span class="n">left</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
-</span><span data-line="4">    <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span>
-</span><span data-line="5">    <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span>
-</span><span data-line="6"><span class="p">)</span>
-</span></pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p><strong>Handle Based Legend</strong></p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-</span><span data-line="2"><span class="n">scatter1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Dummy for legend</span>
-</span><span data-line="3"><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">scatter1</span><span class="p">,</span> <span class="n">line1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;Model&#39;</span><span class="p">])</span>
-</span></pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p><strong>Explicit Tick Setting</strong></p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-</span><span data-line="2"><span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</span></pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p><strong>Check Save Result</strong></p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Use instead of plt.show() - Check actual saved result</span>
-</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-</span></pre></div>
-</div>
-</section>
-</section>
-<section id="korean-support">
-<h2>4. Korean Support<a class="headerlink" href="#korean-support" title="Link to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># Apply Korean font</span>
-</span><span data-line="2"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="s1">&#39;lang-kr&#39;</span><span class="p">])</span>
-</span><span data-line="3">
-</span><span data-line="4"><span class="c1"># Or use preset</span>
-</span><span data-line="5"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific-kr&#39;</span><span class="p">)</span>
-</span></pre></div>
-</div>
-</section>
-<section id="preset-styles">
-<h2>5. Preset Styles<a class="headerlink" href="#preset-styles" title="Link to this heading">¶</a></h2>
-<p>Available Presets:</p>
+<section id="reference-package-defaults">
+<h2>Reference: Package Defaults<a class="headerlink" href="#reference-package-defaults" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scientific</span></code>: For academic papers (Small fonts)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">investment</span></code>: For investment reports</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">presentation</span></code>: For presentations (Large fonts)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scientific-kr</span></code>, <code class="docutils literal notranslate"><span class="pre">investment-kr</span></code>, <code class="docutils literal notranslate"><span class="pre">presentation-kr</span></code>: Korean versions</p></li>
+<li><p>Default style applied on import: <code class="docutils literal notranslate"><span class="pre">dmpl_light</span></code> (<code class="docutils literal notranslate"><span class="pre">dartwork_mpl/__init__.py</span></code>).</p></li>
+<li><p>Style presets live in <code class="docutils literal notranslate"><span class="pre">asset/mplstyle/presets.json</span></code>.</p></li>
+<li><p>Color definitions live in <code class="docutils literal notranslate"><span class="pre">asset/color/*.txt</span></code> and JSON libraries.</p></li>
+<li><p>Fonts live in <code class="docutils literal notranslate"><span class="pre">asset/font</span></code> and are added via <code class="docutils literal notranslate"><span class="pre">font.py</span></code> on import.</p></li>
 </ul>
-</section>
-<section id="precautions">
-<h2>6. Precautions<a class="headerlink" href="#precautions" title="Link to this heading">¶</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Avoid tight_layout</strong>: Recommend using <code class="docutils literal notranslate"><span class="pre">dm.simple_layout()</span></code></p></li>
-<li><p><strong>Savefig Criteria</strong>: Work based on saved files, not <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></p></li>
-<li><p><strong>Check Units</strong>: matplotlib uses various units (inch, point, pixel)</p></li>
-<li><p><strong>Color Naming</strong>: Distinguish <code class="docutils literal notranslate"><span class="pre">dm.</span></code>, <code class="docutils literal notranslate"><span class="pre">tw.</span></code>, <code class="docutils literal notranslate"><span class="pre">tailwind.</span></code> prefixes</p></li>
-</ol>
-</section>
-<section id="complete-example">
-<h2>7. Complete Example<a class="headerlink" href="#complete-example" title="Link to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</span><span data-line="2"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span data-line="3"><span class="kn">import</span><span class="w"> </span><span class="nn">dartwork_mpl</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dm</span>
-</span><span data-line="4">
-</span><span data-line="5"><span class="c1"># Set style</span>
-</span><span data-line="6"><span class="n">dm</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use_preset</span><span class="p">(</span><span class="s1">&#39;scientific&#39;</span><span class="p">)</span>
-</span><span data-line="7">
-</span><span data-line="8"><span class="c1"># Generate data</span>
-</span><span data-line="9"><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-</span><span data-line="10"><span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span data-line="11"><span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span data-line="12"><span class="n">y1_data</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">y1</span><span class="p">))</span>
-</span><span data-line="13"><span class="n">y2_data</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">y2</span><span class="p">))</span>
-</span><span data-line="14">
-</span><span data-line="15"><span class="c1"># Create Figure</span>
-</span><span data-line="16"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
-</span><span data-line="17">    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">dm</span><span class="o">.</span><span class="n">cm2in</span><span class="p">(</span><span class="mi">7</span><span class="p">)),</span>
-</span><span data-line="18">    <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span>
-</span><span data-line="19"><span class="p">)</span>
-</span><span data-line="20">
-</span><span data-line="21"><span class="c1"># GridSpec Layout</span>
-</span><span data-line="22"><span class="n">gs</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span>
-</span><span data-line="23">    <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-</span><span data-line="24">    <span class="n">left</span><span class="o">=</span><span class="mf">0.17</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
-</span><span data-line="25">    <span class="n">top</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.17</span>
-</span><span data-line="26"><span class="p">)</span>
-</span><span data-line="27"><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-</span><span data-line="28">
-</span><span data-line="29"><span class="c1"># Plot Data</span>
-</span><span data-line="30"><span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-</span><span data-line="31"><span class="n">line2</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-</span><span data-line="32"><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1_data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red2&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-</span><span data-line="33"><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2_data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue2&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-</span><span data-line="34">
-</span><span data-line="35"><span class="c1"># Dummy plots for legend</span>
-</span><span data-line="36"><span class="n">scatter1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.red5&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</span><span data-line="37"><span class="n">scatter2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;dm.blue5&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</span><span data-line="38">
-</span><span data-line="39"><span class="c1"># Labels and Legend</span>
-</span><span data-line="40"><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X value [Hour]&#39;</span><span class="p">)</span>
-</span><span data-line="41"><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y value [kW]&#39;</span><span class="p">)</span>
-</span><span data-line="42"><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
-</span><span data-line="43">    <span class="p">[</span><span class="n">scatter1</span><span class="p">,</span> <span class="n">line1</span><span class="p">,</span> <span class="n">scatter2</span><span class="p">,</span> <span class="n">line2</span><span class="p">],</span>
-</span><span data-line="44">    <span class="p">[</span><span class="s1">&#39;Sin data&#39;</span><span class="p">,</span> <span class="s1">&#39;Sin model&#39;</span><span class="p">,</span> <span class="s1">&#39;Cos data&#39;</span><span class="p">,</span> <span class="s1">&#39;Cos model&#39;</span><span class="p">],</span>
-</span><span data-line="45">    <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span>
-</span><span data-line="46">    <span class="n">fontsize</span><span class="o">=</span><span class="n">dm</span><span class="o">.</span><span class="n">fs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>
-</span><span data-line="47">    <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span>
-</span><span data-line="48"><span class="p">)</span>
-</span><span data-line="49">
-</span><span data-line="50"><span class="c1"># Set Ticks</span>
-</span><span data-line="51"><span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-</span><span data-line="52"><span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</span><span data-line="53"><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
-</span><span data-line="54">
-</span><span data-line="55"><span class="c1"># Optimize Layout</span>
-</span><span data-line="56"><span class="n">dm</span><span class="o">.</span><span class="n">simple_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-</span><span data-line="57">
-</span><span data-line="58"><span class="c1"># Preview in Jupyter</span>
-</span><span data-line="59"><span class="n">dm</span><span class="o">.</span><span class="n">save_and_show</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-</span><span data-line="60">
-</span><span data-line="61"><span class="c1"># Save in multiple formats for submission</span>
-</span><span data-line="62"><span class="n">dm</span><span class="o">.</span><span class="n">save_formats</span><span class="p">(</span>
-</span><span data-line="63">    <span class="n">fig</span><span class="p">,</span>
-</span><span data-line="64">    <span class="s1">&#39;figures/example_figure&#39;</span><span class="p">,</span>  <span class="c1"># Base filename without extension</span>
-</span><span data-line="65">    <span class="n">formats</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">),</span>  <span class="c1"># Save all 4 formats</span>
-</span><span data-line="66">    <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
-</span><span data-line="67">    <span class="n">dpi</span><span class="o">=</span><span class="mi">600</span>
-</span><span data-line="68"><span class="p">)</span>
-</span></pre></div>
-</div>
 </section>
 </section>
 
@@ -558,7 +427,7 @@ When multiple subplots exist, you can optimize layout for specific areas individ
   </svg>
   <span>Back to top</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="install.html">
+    <a href="installation.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
         <span>Previous</span><div class="title">Installation</div></div>
@@ -567,7 +436,7 @@ When multiple subplots exist, you can optimize layout for specific areas individ
     <a href="COLOR_GALLERY.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">Color and Colormap Gallery</div>
+        <div class="title">Color System</div>
       </div>
       <i class="i-lucide chevron-right"></i>
     </a>

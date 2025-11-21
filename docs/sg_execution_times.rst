@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.811** total execution time for 63 files **from all galleries**:
+**00:01.190** total execution time for 63 files **from all galleries**:
 
 .. container::
 
@@ -32,8 +32,11 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``examples_source/04_scientific_plots/plot_scientific_paper.py``)
-     - 00:00.811
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_heatmap.py` (``examples_source/04_scientific_plots/plot_heatmap.py``)
+     - 00:00.709
+     - 0.0
+   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py` (``examples_source/06_specialized_plots/plot_treemap_simple.py``)
+     - 00:00.481
      - 0.0
    * - :ref:`sphx_glr_gallery_01_basic_plots_plot_area_plots.py` (``examples_source/01_basic_plots/plot_area_plots.py``)
      - 00:00.000
@@ -107,13 +110,13 @@ Computation times
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_contour.py` (``examples_source/04_scientific_plots/plot_contour.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_heatmap.py` (``examples_source/04_scientific_plots/plot_heatmap.py``)
-     - 00:00.000
-     - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_phase_diagram.py` (``examples_source/04_scientific_plots/plot_phase_diagram.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``examples_source/04_scientific_plots/plot_quiver.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``examples_source/04_scientific_plots/plot_scientific_paper.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``examples_source/04_scientific_plots/plot_spectral_analysis.py``)
@@ -171,9 +174,6 @@ Computation times
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py` (``examples_source/06_specialized_plots/plot_sankey_simple.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py` (``examples_source/06_specialized_plots/plot_treemap_simple.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_gallery_07_layout_styling_plot_annotations.py` (``examples_source/07_layout_styling/plot_annotations.py``)

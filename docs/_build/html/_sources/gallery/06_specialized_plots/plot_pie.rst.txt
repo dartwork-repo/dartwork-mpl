@@ -23,7 +23,7 @@ Pie Charts
 
 Pie charts, donut plots, and nested variants for share comparisons.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-117
+.. GENERATED FROM PYTHON SOURCE LINES 7-116
 
 
 
@@ -72,9 +72,9 @@ Pie charts, donut plots, and nested variants for share comparisons.
     # Create GridSpec for 3 subplots
     gs = fig.add_gridspec(
         nrows=2, ncols=2,
-        left=0.08, right=0.98,
-        top=0.92, bottom=0.12,
-        wspace=0.2, hspace=0.5
+        left=0.07, right=0.93,
+        top=0.93, bottom=0.10,
+        wspace=0.16, hspace=0.38
     )
 
     # Panel A: Basic pie chart
@@ -149,10 +149,9 @@ Pie charts, donut plots, and nested variants for share comparisons.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.605 seconds)
+   **Total running time of the script:** (0 minutes 0.599 seconds)
 
 
 .. _sphx_glr_download_gallery_06_specialized_plots_plot_pie.py:

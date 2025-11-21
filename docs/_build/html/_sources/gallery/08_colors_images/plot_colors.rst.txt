@@ -23,7 +23,7 @@ Colors
 
 Color palette visualization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-52
+.. GENERATED FROM PYTHON SOURCE LINES 7-58
 
 
 
@@ -33,8 +33,19 @@ Color palette visualization.
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Load colors...
+    Load colormaps...
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -47,11 +58,11 @@ Color palette visualization.
     dm.style.use_preset('scientific')
 
     # Create figure
-    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(8)), dpi=300)
+    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(8)), dpi=300)
     gs = fig.add_gridspec(
         1, 1,
-        left=0.12, right=0.95,
-        top=0.88, bottom=0.17
+        left=0.10, right=0.74,
+        top=0.9, bottom=0.12
     )
     ax = fig.add_subplot(gs[0, 0])
 
@@ -79,7 +90,13 @@ Color palette visualization.
     ax.set_xlabel('X', fontsize=dm.fs(0))
     ax.set_ylabel('Y', fontsize=dm.fs(0))
     ax.set_title('dartwork-mpl Color System', fontsize=dm.fs(1))
-    ax.legend(ncol=2, loc='upper center', bbox_to_anchor=(0.5, -0.15), fontsize=dm.fs(-1))
+    ax.legend(
+        ncol=1,
+        loc='center left',
+        bbox_to_anchor=(1.02, 0.5),
+        frameon=False,
+        fontsize=dm.fs(-1),
+    )
 
     dm.simple_layout(fig, gs=gs)
     plt.show()
@@ -87,7 +104,7 @@ Color palette visualization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.404 seconds)
+   **Total running time of the script:** (0 minutes 0.656 seconds)
 
 
 .. _sphx_glr_download_gallery_08_colors_images_plot_colors.py:

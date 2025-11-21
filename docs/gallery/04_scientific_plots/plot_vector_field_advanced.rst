@@ -33,8 +33,19 @@ Vector field visualizations with streamlines and contours.
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Load colors...
+    Load colormaps...
 
 
+
+
+
+
+|
 
 .. code-block:: Python
 
@@ -65,9 +76,9 @@ Vector field visualizations with streamlines and contours.
     # Create GridSpec for 2x2 subplots
     gs = fig.add_gridspec(
         nrows=2, ncols=2,
-        left=0.08, right=0.98,
+        left=0.07, right=0.95,
         top=0.95, bottom=0.08,
-        wspace=0.3, hspace=0.4
+        wspace=0.24, hspace=0.36
     )
 
     # Panel A: Basic quiver plot
@@ -130,7 +141,7 @@ Vector field visualizations with streamlines and contours.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.021 seconds)
+   **Total running time of the script:** (0 minutes 1.224 seconds)
 
 
 .. _sphx_glr_download_gallery_04_scientific_plots_plot_vector_field_advanced.py:

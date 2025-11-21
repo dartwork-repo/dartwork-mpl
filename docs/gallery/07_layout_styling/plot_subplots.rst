@@ -23,7 +23,7 @@ Subplots Layout
 
 Subplot layout techniques.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-81
+.. GENERATED FROM PYTHON SOURCE LINES 7-80
 
 
 
@@ -55,8 +55,8 @@ Subplot layout techniques.
     y4 = np.sin(2 * x)
 
     # Create figure
-    # Double column figure: 17cm width
-    fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(12)), dpi=300)
+    # Double column figure: 16cm width
+    fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
     # Create GridSpec for 2x2 subplots
     gs = fig.add_gridspec(
@@ -113,10 +113,9 @@ Subplot layout techniques.
     plt.show()
 
 
-
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.835 seconds)
+   **Total running time of the script:** (0 minutes 0.807 seconds)
 
 
 .. _sphx_glr_download_gallery_07_layout_styling_plot_subplots.py:

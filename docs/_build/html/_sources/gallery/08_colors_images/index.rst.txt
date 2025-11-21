@@ -35,23 +35,6 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Choosing appropriate color schemes for different data types.">
-
-.. only:: html
-
-  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_diverging_sequential_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_gallery_08_colors_images_plot_diverging_sequential.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Diverging and Sequential Colors</div>
-    </div>
-
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Using and customizing color cycles for multi-series plots.">
 
 .. only:: html
@@ -69,18 +52,18 @@ techniques showcasing dartwork-mpl's color system.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Creating and using custom colormaps for visualization.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Choosing appropriate color schemes for different data types.">
 
 .. only:: html
 
-  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_custom_colormap_thumb.png
+  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_diverging_sequential_thumb.png
     :alt:
 
-  :ref:`sphx_glr_gallery_08_colors_images_plot_custom_colormap.py`
+  :ref:`sphx_glr_gallery_08_colors_images_plot_diverging_sequential.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Custom Colormaps</div>
+      <div class="sphx-glr-thumbnail-title">Diverging and Sequential Colors</div>
     </div>
 
 
@@ -98,6 +81,23 @@ techniques showcasing dartwork-mpl's color system.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Color Perception</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Creating and using custom colormaps for visualization.">
+
+.. only:: html
+
+  .. image:: /gallery/08_colors_images/images/thumb/sphx_glr_plot_custom_colormap_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_gallery_08_colors_images_plot_custom_colormap.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Custom Colormaps</div>
     </div>
 
 
@@ -129,9 +129,9 @@ techniques showcasing dartwork-mpl's color system.
    :hidden:
 
    /gallery/08_colors_images/plot_colors
-   /gallery/08_colors_images/plot_diverging_sequential
    /gallery/08_colors_images/plot_color_cycles
-   /gallery/08_colors_images/plot_custom_colormap
+   /gallery/08_colors_images/plot_diverging_sequential
    /gallery/08_colors_images/plot_color_perception
+   /gallery/08_colors_images/plot_custom_colormap
    /gallery/08_colors_images/plot_image
 

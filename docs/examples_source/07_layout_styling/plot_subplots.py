@@ -21,8 +21,8 @@ y3 = np.sin(x) * np.cos(x)
 y4 = np.sin(2 * x)
 
 # Create figure
-# Double column figure: 17cm width
-fig = plt.figure(figsize=(dm.cm2in(17), dm.cm2in(12)), dpi=300)
+# Double column figure: 16cm width
+fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec for 2x2 subplots
 gs = fig.add_gridspec(
@@ -77,4 +77,3 @@ dm.simple_layout(fig, gs=gs)
 
 # Show plot
 plt.show()
-
