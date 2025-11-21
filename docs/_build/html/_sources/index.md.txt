@@ -9,12 +9,12 @@ opinionated styles, curated color libraries, and layout utilities.
 - See **API Reference** for function-level details.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :titlesonly:
 
 Install <install>
 Usage Guide <DARTWORK_MPL_USAGE_GUIDE>
-Color and Colormap Gallery <COLOR_GALLERY>
+Colors <COLOR_GALLERY>
 Examples Gallery <gallery/index>
 API Reference <api/index>
 ```

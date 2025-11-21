@@ -57,7 +57,7 @@ html_theme_options = {
     "nav_links": [
         {"title": "Install", "url": "install"},
         {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
-        {"title": "Color and Colormap Gallery", "url": "COLOR_GALLERY"},
+        {"title": "Colors", "url": "COLOR_GALLERY"},
         {"title": "Examples Gallery", "url": "gallery/index"},
         {"title": "API Reference", "url": "api/index"},
     ]
