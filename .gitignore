@@ -13,13 +13,6 @@ _build/
 
 # Sphinx documentation build artifacts
 docs/_build/
-docs/gallery/*/images/
-docs/gallery/*/*.zip
-docs/gallery/*/*.ipynb
-docs/gallery/*/*.rst
-docs/gallery/*/*.codeobj.json
-docs/gallery/*/*.py.md5
-docs/gallery/*/sg_execution_times.rst
-docs/gallery/sg_execution_times.rst
-docs/gallery/gallery_*.zip
+# Sphinx Gallery generates all files in gallery/ directory
+docs/gallery/
 docs/images/*.png

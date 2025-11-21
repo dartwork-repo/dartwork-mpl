@@ -1,4 +1,4 @@
-# dartwork-mpl: matplotlib wrapping library engineered by dartwork
+# dartwork-mpl: matplotlib utilities and assets library engineered by dartwork
 
 `dartwork-mpl` is a sophisticated utility collection designed to elevate `matplotlib` visuals to publication-level elegance with added convenience features. It is being developed to resolve personal inconveniences in visualization using matplotlib and to provide more intuitive customization especially to beginners.
 <br/>

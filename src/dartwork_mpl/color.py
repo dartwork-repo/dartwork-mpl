@@ -121,6 +121,13 @@ def _load_colors():
 
     # Add color dict to matplotlib internal color mapping.
     mcolors.get_named_colors_mapping().update(_color_dict)
+    
+    # Remove xkcd colors from matplotlib's color mapping since we don't use them
+    # and they clutter the 'other' category in color galleries.
+    color_mapping = mcolors.get_named_colors_mapping()
+    xkcd_keys = [k for k in list(color_mapping.keys()) if k.startswith('xkcd:')]
+    for key in xkcd_keys:
+        del color_mapping[key]
 
 
 _load_colors()

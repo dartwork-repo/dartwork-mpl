@@ -1473,7 +1473,7 @@ def plot_colors(colors=None, *, ncols=6, sort_colors=True):
     if colors is None:
         colors = {
             k: v for k, v in mcolors.get_named_colors_mapping().items()
-            if not k.startswith('dartwork_mpl.')
+            if not k.startswith('dartwork_mpl.') and not k.startswith('xkcd:')
         }
 
     # Separate colors by library first, then remove duplicates within each library

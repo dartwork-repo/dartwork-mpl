@@ -77,8 +77,8 @@ you need desaturated accents with strong contrast.
 :alt: Other and matplotlib palettes sheet with labeled swatches
 :width: 100%
 
-**Other & Matplotlib.** Everything else, including matplotlib defaults and the
-xkcd set, for quick sketches or when you want the familiar `C0`–`C9` cycle.
+**Other & Matplotlib.** Everything else, including matplotlib defaults (the xkcd
+set has been excluded), for quick sketches or when you want the familiar `C0`–`C9` cycle.
 :::
 
 ## Rendering guidance
