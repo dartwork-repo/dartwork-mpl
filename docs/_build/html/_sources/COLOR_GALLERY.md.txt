@@ -140,14 +140,6 @@ Other named colors from matplotlib and dartwork-mpl. Includes standard matplotli
 
 ![Other Colors](images/colors_other.png)
 
-### XKCD Colors
-
-XKCD color survey colors. These are named colors from the XKCD color survey, providing a wide range of intuitive color names.
-
-**Note:** XKCD colors use the `xkcd:` prefix. Use `dm.plot_colors()` to see all available XKCD color names.
-
-![XKCD Colors](images/colors_xkcd.png)
-
 ## Best Practices
 
 ### Choosing Colormaps
