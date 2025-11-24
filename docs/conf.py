@@ -82,6 +82,52 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 
+_GALLERY_TOC_OLD = """.. toctree::
+   :hidden:
+   :includehidden:
+
+
+   /gallery/01_basic_plots/index.rst
+   /gallery/02_statistical_plots/index.rst
+   /gallery/03_bar_charts/index.rst
+   /gallery/04_scientific_plots/index.rst
+   /gallery/05_time_series/index.rst
+   /gallery/06_specialized_plots/index.rst
+   /gallery/07_layout_styling/index.rst
+   /gallery/08_colors_images/index.rst
+"""
+
+_GALLERY_TOC_NEW = """.. toctree::
+   :maxdepth: 1
+   :caption: Categories
+
+   Basic Plots <gallery/01_basic_plots/index>
+   Statistical Plots <gallery/02_statistical_plots/index>
+   Bar Charts <gallery/03_bar_charts/index>
+   Scientific Plots <gallery/04_scientific_plots/index>
+   Time Series <gallery/05_time_series/index>
+   Specialized Plots <gallery/06_specialized_plots/index>
+   Layout & Styling <gallery/07_layout_styling/index>
+   Colors & Images <gallery/08_colors_images/index>
+"""
+
+
+def _patch_gallery_toc(_app, docname, source):
+    """Ensure sphinx-gallery output exposes the category toctree in nav."""
+    if docname != "gallery/index":
+        return
+
+    current = source[0]
+    if _GALLERY_TOC_NEW in current:
+        return
+
+    if _GALLERY_TOC_OLD in current:
+        source[0] = current.replace(_GALLERY_TOC_OLD, _GALLERY_TOC_NEW)
+    else:
+        # Fall back to appending so nav still appears if template changes.
+        source[0] = f"{current.strip()}\n\n{_GALLERY_TOC_NEW}"
+
+
 def _generate_gallery_assets(_app):
     """Bake high-res color system images during the build."""
     from generate_gallery import build_gallery_assets
@@ -91,4 +137,5 @@ def _generate_gallery_assets(_app):
 
 def setup(app):
     app.connect("builder-inited", _generate_gallery_assets)
+    app.connect("source-read", _patch_gallery_toc)
     return {"parallel_read_safe": True}
