@@ -37,6 +37,35 @@
     const isGalleryPage = path.endsWith('examples_gallery.html') || path.endsWith('examples_gallery/') || path.endsWith('examples_gallery');
     if (!isGalleryPage) return;
 
+  const removeColorsImagesToggle = () => {
+    const sidebar = document.querySelector('.globaltoc');
+    if (!sidebar) return;
+
+    const colorsLink =
+      sidebar.querySelector('a.reference.internal[href="#colors-images"]') ||
+      sidebar.querySelector('a.reference.internal[href$="gallery/08_colors_images/index.html"]');
+    if (!colorsLink) return;
+
+    const parentItem = colorsLink.closest('li');
+    if (!parentItem) return;
+
+    // Remove duplicated child tree so the theme stops rendering an expand/collapse control.
+    const childList = Array.from(parentItem.children).find((node) => node.tagName === 'UL');
+    if (childList) {
+      childList.remove();
+    }
+
+    const toggleButtons = parentItem.querySelectorAll('button, .toctree-toggle');
+    toggleButtons.forEach((button) => {
+      if (button.closest('li') === parentItem) {
+        button.remove();
+      }
+    });
+
+    parentItem.removeAttribute('data-has-children');
+    parentItem.classList.remove('has-children');
+  };
+
     const links = document.querySelectorAll('.globaltoc a.reference.internal');
     links.forEach((link) => {
       const href = link.getAttribute('href');
@@ -57,6 +86,8 @@
     if (window.location.hash) {
       scrollToAnchor(window.location.hash);
     }
+
+  removeColorsImagesToggle();
   };
 
   document.addEventListener('DOMContentLoaded', wireGallerySidebar);
