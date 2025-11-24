@@ -1,15 +1,8 @@
 # Examples Gallery
 
 Browse every category’s thumbnails on a single page. Use the left sidebar to jump
-to a section; the page will scroll to that spot.
-
-```{toctree}
-:hidden:
-:maxdepth: 1
-:titlesonly:
-
-Examples Gallery (full page) <gallery/index>
-```
+to a section; the page will scroll to that spot. To view all examples on a separate page,
+use the {doc}`gallery/index` link.
 
 ```{eval-rst}
 .. include:: gallery/index.rst
