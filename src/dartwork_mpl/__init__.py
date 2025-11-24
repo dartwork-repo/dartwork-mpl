@@ -6,6 +6,7 @@ __version__ = "0.1.0"
 
 from .font import *
 from .color import *
+from .color import Color, cspace, oklab, oklch, rgb, hex
 from .cmap import *
 from .util import *
 from .constant import *
