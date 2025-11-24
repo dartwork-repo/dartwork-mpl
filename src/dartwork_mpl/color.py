@@ -460,6 +460,38 @@ class Color:
         r, g, b = _parse_hex(hex_str)
         return cls.from_rgb(r, g, b)
     
+    @classmethod
+    def from_name(cls, name):
+        """
+        Create a Color from matplotlib color name.
+        
+        Supports all matplotlib color names including:
+        - Basic colors: 'red', 'blue', 'green', etc.
+        - Named colors: 'aliceblue', 'antiquewhite', etc.
+        - Custom dartwork-mpl colors: 'dm.red5', 'tw.blue:500', etc.
+        
+        Parameters
+        ----------
+        name : str
+            Matplotlib color name (e.g., 'red', 'dm.blue5', 'tw.blue:500')
+            
+        Returns
+        -------
+        Color
+            Color instance
+            
+        Raises
+        ------
+        ValueError
+            If the color name is not recognized by matplotlib
+        """
+        try:
+            # Use matplotlib's to_rgb to convert color name to RGB
+            r, g, b = mcolors.to_rgb(name)
+            return cls.from_rgb(r, g, b)
+        except ValueError as e:
+            raise ValueError(f"Invalid color name: {name}. {str(e)}")
+    
     def to_oklab(self):
         """
         Convert to OKLab coordinates.
@@ -691,3 +723,20 @@ def hex(hex_str):
         Color instance
     """
     return Color.from_hex(hex_str)
+
+
+def named(color_name):
+    """
+    Convenience function to create a Color from matplotlib color name.
+    
+    Parameters
+    ----------
+    color_name : str
+        Matplotlib color name (e.g., 'red', 'dm.blue5', 'tw.blue:500')
+        
+    Returns
+    -------
+    Color
+        Color instance
+    """
+    return Color.from_name(color_name)
