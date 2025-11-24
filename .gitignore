@@ -16,3 +16,6 @@ docs/_build/
 # Sphinx Gallery generates all files in gallery/ directory
 docs/gallery/
 docs/images/*.png
+
+# Editor specific settings
+.vscode/
