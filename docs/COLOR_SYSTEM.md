@@ -11,6 +11,7 @@ you want the complete sheets and usage details.
 
 Colors <COLORS>
 Colormaps <COLORMAPS>
+Color Space <COLOR_SPACE>
 ```
 
 :::{figure} images/colors_opencolor.png

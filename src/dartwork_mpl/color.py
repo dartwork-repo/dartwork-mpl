@@ -541,6 +541,11 @@ class Color:
         g = _linear_to_srgb(g_linear)
         b = _linear_to_srgb(b_linear)
         
+        # Convert numpy scalars/arrays to Python floats
+        r = float(np.asarray(r).item())
+        g = float(np.asarray(g).item())
+        b = float(np.asarray(b).item())
+        
         return (r, g, b)
     
     def to_hex(self):
