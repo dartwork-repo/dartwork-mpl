@@ -114,7 +114,7 @@ Use a full scientific figure template with multi-panels, shared colorbars, inset
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.660 seconds)
+   **Total running time of the script:** (0 minutes 0.641 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_scientific_plots_plot_scientific_paper.py:

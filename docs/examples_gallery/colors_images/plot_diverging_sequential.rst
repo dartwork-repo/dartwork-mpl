@@ -111,7 +111,7 @@ Choose good color schemes for diverging versus sequential data and see when to u
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.416 seconds)
+   **Total running time of the script:** (0 minutes 1.179 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_colors_images_plot_diverging_sequential.py:

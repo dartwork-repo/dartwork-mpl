@@ -136,7 +136,7 @@ Draw vertical, horizontal, and log-scale error bars with caps and intervals to r
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.009 seconds)
+   **Total running time of the script:** (0 minutes 0.988 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_statistical_plots_plot_errorbars.py:

@@ -78,7 +78,7 @@ Draw dense vector flows with streamplot spacing, color by speed, and helpful sta
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.888 seconds)
+   **Total running time of the script:** (0 minutes 0.873 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_scientific_plots_plot_streamplot.py:

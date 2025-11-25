@@ -147,7 +147,7 @@ Walk through stepwise gains and losses with helper lines and colors that keep ru
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.641 seconds)
+   **Total running time of the script:** (0 minutes 0.951 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_bar_charts_plot_waterfall.py:

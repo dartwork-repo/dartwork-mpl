@@ -113,7 +113,7 @@ Check contrast, color-blind safety, and luminance ramps before you pick a palett
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.590 seconds)
+   **Total running time of the script:** (0 minutes 0.628 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_colors_images_plot_color_perception.py:

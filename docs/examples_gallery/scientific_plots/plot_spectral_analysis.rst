@@ -121,7 +121,7 @@ Move from signals to frequency domain with windows, PSDs, spectrograms, and labe
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.172 seconds)
+   **Total running time of the script:** (0 minutes 1.190 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_scientific_plots_plot_spectral_analysis.py:

@@ -100,7 +100,7 @@ Pair boxplots and violins to show summary stats and full distributions in one gl
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.590 seconds)
+   **Total running time of the script:** (0 minutes 0.638 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_statistical_plots_plot_violin_box.py:

@@ -123,7 +123,7 @@ Render images with different colormaps, interpolation, outlines, and grid overla
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.798 seconds)
+   **Total running time of the script:** (0 minutes 1.918 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_colors_images_plot_image.py:

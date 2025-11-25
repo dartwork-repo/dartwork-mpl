@@ -138,7 +138,7 @@ Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumu
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.029 seconds)
+   **Total running time of the script:** (0 minutes 1.089 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_statistical_plots_plot_distribution.py:

@@ -115,7 +115,7 @@ Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacin
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.398 seconds)
+   **Total running time of the script:** (0 minutes 0.386 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_basic_plots_plot_basic.py:

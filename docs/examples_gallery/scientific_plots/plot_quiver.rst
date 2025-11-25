@@ -137,7 +137,7 @@ Compare radial, circular, and spiral vector fields with clear arrow scaling and 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.770 seconds)
+   **Total running time of the script:** (0 minutes 0.765 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_scientific_plots_plot_quiver.py:

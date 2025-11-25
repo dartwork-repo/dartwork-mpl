@@ -115,7 +115,7 @@ Combine baseline trends, goal bands, annotations, and highlights to show how dar
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.418 seconds)
+   **Total running time of the script:** (0 minutes 0.384 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_basic_plots_plot_reference_lines.py:

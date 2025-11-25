@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:07.712** total execution time for 9 files **from examples_gallery/layout_styling**:
+**00:08.978** total execution time for 9 files **from examples_gallery/layout_styling**:
 
 .. container::
 
@@ -33,29 +33,29 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_complex_grid.py` (``plot_complex_grid.py``)
-     - 00:01.217
+     - 00:01.256
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_custom_ticks.py` (``plot_custom_ticks.py``)
-     - 00:01.076
+     - 00:01.137
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_mixed_subplots.py` (``plot_mixed_subplots.py``)
-     - 00:01.075
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_legend.py` (``plot_legend.py``)
-     - 00:00.965
+     - 00:01.121
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_shared_axes.py` (``plot_shared_axes.py``)
-     - 00:00.955
+     - 00:01.010
      - 0.0
-   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_inset_axes.py` (``plot_inset_axes.py``)
-     - 00:00.819
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_subplots.py` (``plot_subplots.py``)
-     - 00:00.815
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_layout.py` (``plot_layout.py``)
-     - 00:00.790
+   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_legend.py` (``plot_legend.py``)
+     - 00:00.997
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_annotations.py` (``plot_annotations.py``)
-     - 00:00.000
+     - 00:00.981
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_inset_axes.py` (``plot_inset_axes.py``)
+     - 00:00.852
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_subplots.py` (``plot_subplots.py``)
+     - 00:00.830
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_layout_styling_plot_layout.py` (``plot_layout.py``)
+     - 00:00.793
      - 0.0

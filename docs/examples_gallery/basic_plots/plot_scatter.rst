@@ -156,7 +156,7 @@ Contrast marker shapes, color encodings, and density shading to show clusters an
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.698 seconds)
+   **Total running time of the script:** (0 minutes 0.703 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_basic_plots_plot_scatter.py:

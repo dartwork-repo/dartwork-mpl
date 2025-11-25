@@ -124,7 +124,7 @@ Rotate to horizontal bars, ranking views, and long labels that would otherwise c
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.751 seconds)
+   **Total running time of the script:** (0 minutes 0.770 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_bar_charts_plot_horizontal_bar.py:

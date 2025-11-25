@@ -150,7 +150,7 @@ Layer confidence bands, stacked areas, and smooth fills to emphasize ranges inst
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.957 seconds)
+   **Total running time of the script:** (0 minutes 0.928 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_specialized_plots_plot_filled.py:

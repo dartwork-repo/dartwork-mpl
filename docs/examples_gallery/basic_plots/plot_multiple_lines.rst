@@ -150,7 +150,7 @@ Stack several series with coordinated colors and labels to learn quick defaults 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.962 seconds)
+   **Total running time of the script:** (0 minutes 1.026 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_basic_plots_plot_multiple_lines.py:

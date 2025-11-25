@@ -106,7 +106,7 @@ Preview built-in color cycles and learn how to swap or extend them for multi-ser
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.270 seconds)
+   **Total running time of the script:** (0 minutes 1.282 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_colors_images_plot_color_cycles.py:

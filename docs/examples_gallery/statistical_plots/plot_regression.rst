@@ -122,7 +122,7 @@ Visualize linear and polynomial fits plus confidence bands to make model quality
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.464 seconds)
+   **Total running time of the script:** (0 minutes 1.516 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_statistical_plots_plot_regression.py:

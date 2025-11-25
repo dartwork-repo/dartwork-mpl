@@ -130,7 +130,7 @@ Control tick placement and formatting, from numeric to log scales, with custom f
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.076 seconds)
+   **Total running time of the script:** (0 minutes 1.137 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_layout_styling_plot_custom_ticks.py:

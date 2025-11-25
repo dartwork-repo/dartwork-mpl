@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:06.673** total execution time for 9 files **from examples_gallery/specialized_plots**:
+**00:06.949** total execution time for 9 files **from examples_gallery/specialized_plots**:
 
 .. container::
 
@@ -33,29 +33,29 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_radar_chart.py` (``plot_radar_chart.py``)
-     - 00:01.680
+     - 00:01.668
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_polar.py` (``plot_polar.py``)
-     - 00:01.370
+     - 00:01.434
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_ridgeline.py` (``plot_ridgeline.py``)
-     - 00:01.119
+     - 00:01.172
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_filled.py` (``plot_filled.py``)
-     - 00:00.957
+     - 00:00.944
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_pie.py` (``plot_pie.py``)
-     - 00:00.631
+     - 00:00.626
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_dual_axis.py` (``plot_dual_axis.py``)
-     - 00:00.405
+     - 00:00.387
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_3d.py` (``plot_3d.py``)
-     - 00:00.295
+     - 00:00.288
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_treemap_simple.py` (``plot_treemap_simple.py``)
      - 00:00.216
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_specialized_plots_plot_sankey_simple.py` (``plot_sankey_simple.py``)
-     - 00:00.000
+     - 00:00.214
      - 0.0

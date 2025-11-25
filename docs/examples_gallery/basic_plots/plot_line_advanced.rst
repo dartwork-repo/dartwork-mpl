@@ -164,7 +164,7 @@ Compare styling tricks for lines (bands, smoothing, markers) so you can pick a p
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.948 seconds)
+   **Total running time of the script:** (0 minutes 0.950 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_basic_plots_plot_line_advanced.py:

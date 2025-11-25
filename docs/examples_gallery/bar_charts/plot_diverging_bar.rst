@@ -140,7 +140,7 @@ Show positive and negative swings around a midpoint with color cues for directio
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.798 seconds)
+   **Total running time of the script:** (0 minutes 0.814 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_bar_charts_plot_diverging_bar.py:

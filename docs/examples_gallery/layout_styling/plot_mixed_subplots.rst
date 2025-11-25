@@ -96,7 +96,7 @@ Mix bars, lines, histograms, and tabular panels on one page with consistent sizi
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.075 seconds)
+   **Total running time of the script:** (0 minutes 1.121 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_layout_styling_plot_mixed_subplots.py:

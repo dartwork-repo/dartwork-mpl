@@ -89,7 +89,7 @@ Plot analytic PDFs with shading and annotations so you can introduce distributio
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.441 seconds)
+   **Total running time of the script:** (0 minutes 0.448 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_statistical_plots_plot_probability_density.py:

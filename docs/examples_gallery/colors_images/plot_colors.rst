@@ -92,7 +92,7 @@ Browse dartwork color libraries with labeled swatches you can drop into figures.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.395 seconds)
+   **Total running time of the script:** (0 minutes 0.427 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_colors_images_plot_colors.py:

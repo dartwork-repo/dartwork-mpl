@@ -144,7 +144,7 @@ Compare binning choices and overlays (density curves, step histograms) to pick a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.295 seconds)
+   **Total running time of the script:** (0 minutes 1.774 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_statistical_plots_plot_histogram.py:

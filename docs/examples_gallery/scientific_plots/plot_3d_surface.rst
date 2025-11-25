@@ -122,7 +122,7 @@ Render smooth 3D surfaces with contours and lighting tweaks that photograph well
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.729 seconds)
+   **Total running time of the script:** (0 minutes 0.765 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_scientific_plots_plot_3d_surface.py:

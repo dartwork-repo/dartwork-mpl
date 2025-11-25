@@ -99,7 +99,7 @@ Build dense GridSpec layouts with shared colorbars and aligned labels for multi-
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.217 seconds)
+   **Total running time of the script:** (0 minutes 1.256 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_layout_styling_plot_complex_grid.py:

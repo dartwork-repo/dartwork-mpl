@@ -150,7 +150,7 @@ Layer filled regions and crisp lines to highlight ranges, uncertainty bands, and
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.923 seconds)
+   **Total running time of the script:** (0 minutes 0.954 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_basic_plots_plot_area_plots.py:

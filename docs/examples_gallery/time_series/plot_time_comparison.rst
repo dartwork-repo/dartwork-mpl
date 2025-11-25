@@ -111,7 +111,7 @@ Compare several series with dual axes, panel splits, and color harmonies meant f
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.167 seconds)
+   **Total running time of the script:** (0 minutes 1.226 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_time_series_plot_time_comparison.py:

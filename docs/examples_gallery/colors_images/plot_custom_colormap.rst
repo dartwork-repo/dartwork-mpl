@@ -118,7 +118,7 @@ Build sequential, diverging, and discrete colormaps and compare them side by sid
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.000 seconds)
+   **Total running time of the script:** (0 minutes 0.986 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_colors_images_plot_custom_colormap.py:

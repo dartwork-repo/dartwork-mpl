@@ -123,7 +123,7 @@ Highlight local and global trends with smoothing, break annotations, and slope c
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.143 seconds)
+   **Total running time of the script:** (0 minutes 1.169 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_time_series_plot_trend_analysis.py:

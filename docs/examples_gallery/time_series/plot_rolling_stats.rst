@@ -112,7 +112,7 @@ Track rolling means and variances with window markers to show stability and vola
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.232 seconds)
+   **Total running time of the script:** (0 minutes 1.285 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_time_series_plot_rolling_stats.py:

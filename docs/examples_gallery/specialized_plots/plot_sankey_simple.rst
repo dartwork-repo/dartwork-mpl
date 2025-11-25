@@ -98,7 +98,7 @@ Show a single, clear Sankey diagram that illustrates how inputs split into sever
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.202 seconds)
+   **Total running time of the script:** (0 minutes 0.214 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_specialized_plots_plot_sankey_simple.py:

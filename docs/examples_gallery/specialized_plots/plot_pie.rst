@@ -177,7 +177,7 @@ Build pies, donuts, and nested rings with centered labels and contrast so propor
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.631 seconds)
+   **Total running time of the script:** (0 minutes 0.630 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_specialized_plots_plot_pie.py:

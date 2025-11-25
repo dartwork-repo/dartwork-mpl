@@ -123,7 +123,7 @@ Plot ACF and PACF with significance bounds to quickly judge lag structure.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.166 seconds)
+   **Total running time of the script:** (0 minutes 1.213 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_time_series_plot_autocorrelation.py:

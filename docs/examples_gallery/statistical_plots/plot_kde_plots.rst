@@ -137,7 +137,7 @@ Use kernel density estimates for single and grouped data to highlight smooth pro
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.193 seconds)
+   **Total running time of the script:** (0 minutes 1.084 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_statistical_plots_plot_kde_plots.py:

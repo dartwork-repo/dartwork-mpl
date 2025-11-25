@@ -134,7 +134,7 @@ Show forecasts with past-versus-future shading, ribbons, and quantile fans to co
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.865 seconds)
+   **Total running time of the script:** (0 minutes 1.928 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_time_series_plot_forecast.py:

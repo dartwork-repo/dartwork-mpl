@@ -87,7 +87,7 @@ Build heatmaps with annotations, diverging palettes, and tight grids for correla
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.065 seconds)
+   **Total running time of the script:** (0 minutes 1.072 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_scientific_plots_plot_heatmap.py:

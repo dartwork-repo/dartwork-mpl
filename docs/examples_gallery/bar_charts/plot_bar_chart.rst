@@ -86,7 +86,7 @@ Start from basic, grouped, and labeled bars with gentle spacing so categories st
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.694 seconds)
+   **Total running time of the script:** (0 minutes 0.719 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_bar_charts_plot_bar_chart.py:

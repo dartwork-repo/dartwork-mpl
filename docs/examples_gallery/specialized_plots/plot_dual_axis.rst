@@ -84,7 +84,7 @@ Align two y-axes with matching grids, offsets, and legends to reduce reader conf
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.405 seconds)
+   **Total running time of the script:** (0 minutes 0.382 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_specialized_plots_plot_dual_axis.py:

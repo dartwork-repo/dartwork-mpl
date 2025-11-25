@@ -130,7 +130,7 @@ Design legends with columns, geoms, backgrounds, and aligned handles that match 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.965 seconds)
+   **Total running time of the script:** (0 minutes 0.997 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_layout_styling_plot_legend.py:

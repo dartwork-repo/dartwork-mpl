@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:06.319** total execution time for 8 files **from examples_gallery/basic_plots**:
+**00:06.437** total execution time for 8 files **from examples_gallery/basic_plots**:
 
 .. container::
 
@@ -32,27 +32,27 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_line_styles.py` (``plot_line_styles.py``)
-     - 00:01.004
+   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_multiple_lines.py` (``plot_multiple_lines.py``)
+     - 00:01.026
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_markers.py` (``plot_markers.py``)
-     - 00:00.968
+     - 00:01.023
      - 0.0
-   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_multiple_lines.py` (``plot_multiple_lines.py``)
-     - 00:00.962
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_line_advanced.py` (``plot_line_advanced.py``)
-     - 00:00.948
+   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_line_styles.py` (``plot_line_styles.py``)
+     - 00:01.013
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_area_plots.py` (``plot_area_plots.py``)
-     - 00:00.923
+     - 00:00.954
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_line_advanced.py` (``plot_line_advanced.py``)
+     - 00:00.950
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_scatter.py` (``plot_scatter.py``)
-     - 00:00.698
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_reference_lines.py` (``plot_reference_lines.py``)
-     - 00:00.418
+     - 00:00.703
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_basic.py` (``plot_basic.py``)
-     - 00:00.398
+     - 00:00.386
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_basic_plots_plot_reference_lines.py` (``plot_reference_lines.py``)
+     - 00:00.384
      - 0.0

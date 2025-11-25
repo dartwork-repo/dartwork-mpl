@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:07.837** total execution time for 8 files **from examples_gallery/statistical_plots**:
+**00:04.377** total execution time for 8 files **from examples_gallery/statistical_plots**:
 
 .. container::
 
@@ -32,27 +32,27 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_regression.py` (``plot_regression.py``)
-     - 00:01.464
-     - 0.0
    * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_histogram.py` (``plot_histogram.py``)
-     - 00:01.295
+     - 00:01.774
      - 0.0
-   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_kde_plots.py` (``plot_kde_plots.py``)
-     - 00:01.193
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_distribution.py` (``plot_distribution.py``)
-     - 00:01.029
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_errorbars.py` (``plot_errorbars.py``)
-     - 00:01.009
-     - 0.0
-   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_correlation_matrix.py` (``plot_correlation_matrix.py``)
-     - 00:00.816
+   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_regression.py` (``plot_regression.py``)
+     - 00:01.516
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_violin_box.py` (``plot_violin_box.py``)
-     - 00:00.590
+     - 00:00.638
      - 0.0
    * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_probability_density.py` (``plot_probability_density.py``)
-     - 00:00.441
+     - 00:00.448
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_correlation_matrix.py` (``plot_correlation_matrix.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_distribution.py` (``plot_distribution.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_errorbars.py` (``plot_errorbars.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_examples_gallery_statistical_plots_plot_kde_plots.py` (``plot_kde_plots.py``)
+     - 00:00.000
      - 0.0

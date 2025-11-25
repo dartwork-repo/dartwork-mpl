@@ -137,7 +137,7 @@ Design radar/spider charts with normalization, group fills, and label offsets th
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.680 seconds)
+   **Total running time of the script:** (0 minutes 1.711 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_specialized_plots_plot_radar_chart.py:

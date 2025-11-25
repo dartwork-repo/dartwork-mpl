@@ -137,7 +137,7 @@ Swap solid bars for stems and dots to lighten dense comparisons while keeping pr
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.738 seconds)
+   **Total running time of the script:** (0 minutes 0.767 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_bar_charts_plot_lollipop.py:

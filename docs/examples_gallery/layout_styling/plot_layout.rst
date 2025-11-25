@@ -88,7 +88,7 @@ Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec help
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.790 seconds)
+   **Total running time of the script:** (0 minutes 0.793 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_layout_styling_plot_layout.py:

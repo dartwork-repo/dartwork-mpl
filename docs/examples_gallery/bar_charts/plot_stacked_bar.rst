@@ -154,7 +154,7 @@ Stack categories vertically or horizontally, switch to 100% shares, and add cumu
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.934 seconds)
+   **Total running time of the script:** (0 minutes 0.967 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_bar_charts_plot_stacked_bar.py:

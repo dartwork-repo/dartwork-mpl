@@ -87,7 +87,7 @@ Label contour maps with filled and line levels plus colorbars tuned for small mu
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.551 seconds)
+   **Total running time of the script:** (0 minutes 0.559 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_scientific_plots_plot_contour.py:

@@ -115,7 +115,7 @@ Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spac
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.815 seconds)
+   **Total running time of the script:** (0 minutes 0.830 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_layout_styling_plot_subplots.py:

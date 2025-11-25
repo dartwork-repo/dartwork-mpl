@@ -91,7 +91,7 @@ Combine 3D surfaces and scatters with consistent lighting and projection choices
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.295 seconds)
+   **Total running time of the script:** (0 minutes 0.289 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_specialized_plots_plot_3d.py:

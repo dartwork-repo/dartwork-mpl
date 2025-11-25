@@ -168,7 +168,7 @@ Use stem plots for impulses, grouped spikes, and categorical events with careful
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.895 seconds)
+   **Total running time of the script:** (0 minutes 0.896 seconds)
 
 
 .. _sphx_glr_download_examples_gallery_time_series_plot_stem.py:
