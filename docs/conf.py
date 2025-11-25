@@ -211,7 +211,21 @@ def _generate_gallery_assets(_app):
     build_gallery_assets()  # Outputs to color_system/images/ by default
 
 
+def _create_placeholder_index(app):
+    """Create placeholder index.rst so toctree can find it before sphinx-gallery runs."""
+    gallery_dir = Path(app.srcdir) / 'examples_gallery'
+    gallery_dir.mkdir(parents=True, exist_ok=True)
+
+    index_file = gallery_dir / 'index.rst'
+    if not index_file.exists():
+        # Write minimal placeholder that will be overwritten later
+        index_file.write_text("Examples Gallery\n================\n\nLoading...\n")
+        print("Created placeholder: examples_gallery/index.rst")
+
+
 def setup(app):
+    # Create placeholder index FIRST so toctree can find it
+    app.connect("builder-inited", _create_placeholder_index)
     app.connect("builder-inited", _generate_gallery_assets)
     # Write manual indices AFTER sphinx-gallery runs but BEFORE docs are read
     app.connect("env-before-read-docs", _write_manual_indices)

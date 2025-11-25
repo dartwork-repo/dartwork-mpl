@@ -30,9 +30,8 @@ before jumping into examples.
 
 - Parameters:
   - ``cmap``: colormap instance or name.
-- Returns:
-  - string label: ``"Categorical"``, ``"Sequential Single-Hue"``,
-    ``"Sequential Multi-Hue"``, ``"Diverging"``, or ``"Cyclical"``.
+- Returns: string label — one of ``"Categorical"``, ``"Sequential Single-Hue"``,
+  ``"Sequential Multi-Hue"``, ``"Diverging"``, or ``"Cyclical"``.
 
 Example
 
