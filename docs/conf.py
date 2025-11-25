@@ -2,6 +2,10 @@ import os
 import sys
 from pathlib import Path
 
+# Fix for PIL truncated image errors during sphinx-gallery generation
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
 sys.path.insert(0, os.path.abspath('../src'))
 sys.path.insert(0, str(Path(__file__).parent.resolve()))
 
@@ -61,10 +65,10 @@ html_theme_options = {
     "globaltoc_expand_depth": 0,  # Start with collapsed sidebar items
     "dark_code": False,  # Use light code blocks (default Shibuya style)
     "nav_links": [
-        {"title": "Installation", "url": "installation"},
-        {"title": "Usage Guide", "url": "DARTWORK_MPL_USAGE_GUIDE"},
-        {"title": "Color System", "url": "COLOR_SYSTEM"},
-        {"title": "Examples Gallery", "url": "gallery/index"},
+        {"title": "Installation", "url": "installation/index"},
+        {"title": "Usage Guide", "url": "usage_guide/index"},
+        {"title": "Color System", "url": "color_system/index"},
+        {"title": "Examples Gallery", "url": "examples_gallery/index"},
         {"title": "API Reference", "url": "api/index"},
     ]
 }
@@ -73,7 +77,7 @@ html_theme_options = {
 # -- Sphinx Gallery configuration --------------------------------------------
 sphinx_gallery_conf = {
      'examples_dirs': 'examples_source',   # path to your example scripts
-     'gallery_dirs': 'gallery',  # path to where to save gallery generated output
+     'gallery_dirs': 'examples_gallery',  # path to where to save gallery generated output
      'filename_pattern': '/plot_',
      'nested_sections': False,  # Prevent nested sections in sidebar
      'within_subsection_order': 'FileNameSortKey',
@@ -265,26 +269,26 @@ Color palette demonstrations and image display techniques.
 
 def _write_manual_indices(app, env, docnames):
     """Write manual index files AFTER sphinx-gallery but BEFORE Sphinx reads docs."""
-    gallery_dir = Path(app.srcdir) / 'gallery'
+    gallery_dir = Path(app.srcdir) / 'examples_gallery'
 
     # Write main gallery index
     main_index = gallery_dir / 'index.rst'
     main_index.write_text(_GALLERY_MAIN_INDEX)
-    print(f"Wrote manual index: gallery/index.rst")
+    print(f"Wrote manual index: examples_gallery/index.rst")
 
     # Write category indices
     for cat, content in _GALLERY_CATEGORY_INDICES.items():
         idx = gallery_dir / cat / 'index.rst'
         if idx.parent.exists():
             idx.write_text(content)
-            print(f"Wrote manual index: gallery/{cat}/index.rst")
+            print(f"Wrote manual index: examples_gallery/{cat}/index.rst")
 
 
 def _generate_gallery_assets(_app):
     """Bake high-res color system images during the build."""
-    from generate_gallery import build_gallery_assets
+    from color_system.generate_assets import build_gallery_assets
 
-    build_gallery_assets(Path(__file__).parent)
+    build_gallery_assets()  # Outputs to color_system/images/ by default
 
 
 def setup(app):

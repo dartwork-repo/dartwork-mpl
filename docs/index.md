@@ -13,9 +13,9 @@ opinionated styles, curated color libraries, and layout utilities.
 :maxdepth: 1
 :titlesonly:
 
-Installation <installation>
-Usage Guide <DARTWORK_MPL_USAGE_GUIDE>
-Color System <COLOR_SYSTEM>
-Examples Gallery <gallery/index>
+Installation <installation/index>
+Usage Guide <usage_guide/index>
+Color System <color_system/index>
+Examples Gallery <examples_gallery/index>
 API Reference <api/index>
 ```
