@@ -118,86 +118,81 @@ myst_heading_anchors = 3
 # sphinx-gallery overwrites index files, so we write our manual indices
 # AFTER sphinx-gallery runs but BEFORE Sphinx reads the rst files
 
-_GALLERY_MAIN_INDEX = """Examples Gallery
+_GALLERY_HEADER = """Examples Gallery
 ================
 
 This gallery contains examples demonstrating the features and capabilities
 of dartwork-mpl. Browse the categories below for ready-to-use patterns
 and techniques.
-
-.. grid:: 2 2 3 3
-    :gutter: 2
-
-    .. grid-item-card:: Basic Plots
-        :link: basic_plots/index
-        :link-type: doc
-
-        Fundamental plotting examples demonstrating core dartwork-mpl features.
-
-    .. grid-item-card:: Statistical Plots
-        :link: statistical_plots/index
-        :link-type: doc
-
-        Statistical visualization examples including histograms and distributions.
-
-    .. grid-item-card:: Bar Charts
-        :link: bar_charts/index
-        :link-type: doc
-
-        Various bar chart styles for categorical data visualization.
-
-    .. grid-item-card:: Scientific Plots
-        :link: scientific_plots/index
-        :link-type: doc
-
-        Advanced scientific visualizations for academic research.
-
-    .. grid-item-card:: Time Series
-        :link: time_series/index
-        :link-type: doc
-
-        Time-based data visualization examples.
-
-    .. grid-item-card:: Specialized Plots
-        :link: specialized_plots/index
-        :link-type: doc
-
-        Specialized visualization types for specific use cases.
-
-    .. grid-item-card:: Layout & Styling
-        :link: layout_styling/index
-        :link-type: doc
-
-        Layout optimization and advanced styling techniques.
-
-    .. grid-item-card:: Colors & Images
-        :link: colors_images/index
-        :link-type: doc
-
-        Color palette demonstrations and image display techniques.
-
-.. toctree::
-   :hidden:
-
-   Basic Plots <basic_plots/index>
-   Statistical Plots <statistical_plots/index>
-   Bar Charts <bar_charts/index>
-   Scientific Plots <scientific_plots/index>
-   Time Series <time_series/index>
-   Specialized Plots <specialized_plots/index>
-   Layout & Styling <layout_styling/index>
-   Colors & Images <colors_images/index>
 """
-
 
 def _write_manual_indices(app, env, docnames):
     """Write manual index files AFTER sphinx-gallery but BEFORE Sphinx reads docs."""
     gallery_dir = Path(app.srcdir) / 'examples_gallery'
+    
+    # Define the order of categories
+    categories = [
+        'basic_plots',
+        'statistical_plots',
+        'bar_charts',
+        'scientific_plots',
+        'time_series',
+        'specialized_plots',
+        'layout_styling',
+        'colors_images',
+    ]
 
-    # Write main gallery index
+    content_parts = [_GALLERY_HEADER]
+    toctree_entries = []
+
+    for cat in categories:
+        cat_index_path = gallery_dir / cat / 'index.rst'
+        if not cat_index_path.exists():
+            print(f"Warning: Category index not found: {cat_index_path}")
+            continue
+
+        # Read the generated category index
+        content = cat_index_path.read_text()
+
+        # Extract content before the toctree
+        # The generated file usually ends with a toctree or a footer
+        # We want the header, description, and thumbnail grid
+        
+        # 1. Remove :orphan: if present
+        content = content.replace(':orphan:', '')
+        
+        # 2. Find where the toctree starts and cut off
+        if '.. toctree::' in content:
+            content = content.split('.. toctree::')[0]
+        
+        # 3. Downgrade headers (=== -> ---)
+        # Assuming the first header is the title with === underline
+        lines = content.splitlines()
+        new_lines = []
+        for line in lines:
+            if line.strip() and all(c == '=' for c in line.strip()) and len(line.strip()) > 3:
+                # Replace === with --- for H2
+                new_lines.append('-' * len(line))
+            else:
+                new_lines.append(line)
+        
+        processed_content = '\n'.join(new_lines)
+        content_parts.append(processed_content)
+        
+        # Add to toctree list
+        toctree_entries.append(f"{cat}/index")
+
+    # Add the hidden toctree at the end to maintain sidebar structure
+    toctree_block = "\n.. toctree::\n   :hidden:\n\n"
+    for entry in toctree_entries:
+        toctree_block += f"   {entry}\n"
+    
+    content_parts.append(toctree_block)
+
+    # Write the concatenated main index
     main_index = gallery_dir / 'index.rst'
-    main_index.write_text(_GALLERY_MAIN_INDEX)
-    print(f"Wrote manual index: examples_gallery/index.rst")
+    main_index.write_text('\n'.join(content_parts))
+    print(f"Wrote concatenated manual index: examples_gallery/index.rst")
 
 
 def _generate_gallery_assets(_app):
