@@ -154,6 +154,11 @@ def _write_manual_indices(app, env, docnames):
         # Read the generated category index
         content = cat_index_path.read_text()
 
+        # Remove :orphan: from category index files to include them in toctree/sidebar
+        if ':orphan:' in content:
+            clean_content = content.replace(':orphan:\n', '').replace(':orphan:', '')
+            cat_index_path.write_text(clean_content)
+
         # Extract content before the toctree
         # The generated file usually ends with a toctree or a footer
         # We want the header, description, and thumbnail grid
@@ -193,6 +198,10 @@ def _write_manual_indices(app, env, docnames):
     main_index = gallery_dir / 'index.rst'
     main_index.write_text('\n'.join(content_parts))
     print(f"Wrote concatenated manual index: examples_gallery/index.rst")
+
+    # Add to docnames so Sphinx builds the newly written index
+    if 'examples_gallery/index' not in docnames:
+        docnames.append('examples_gallery/index')
 
 
 def _generate_gallery_assets(_app):
