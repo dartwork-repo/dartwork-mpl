@@ -53,7 +53,7 @@ html_css_files = ['custom.css']
 html_js_files = ['custom.js']
 
 # Prevent sections from gallery/index from appearing in the global toctree
-toctree_object_entries = False
+# toctree_object_entries = False  # Removed as it might interfere with sidebar
 
 # Remove version from the sidebar title
 html_title = f"{project} documentation"
@@ -62,7 +62,7 @@ html_title = f"{project} documentation"
 html_theme_options = {
     "github_url": "https://github.com/dartwork-repo/dartwork-mpl",
     "accent_color": "teal",
-    "globaltoc_expand_depth": 0,  # Start with collapsed sidebar items
+    "globaltoc_expand_depth": 1,  # Allow expanding sidebar items
     "dark_code": False,  # Use light code blocks (default Shibuya style)
     "nav_links": [
         {"title": "Installation", "url": "installation/index"},
@@ -75,13 +75,33 @@ html_theme_options = {
 
 
 # -- Sphinx Gallery configuration --------------------------------------------
+# -- Sphinx Gallery configuration --------------------------------------------
+
 sphinx_gallery_conf = {
-     'examples_dirs': 'examples_source',   # path to your example scripts
-     'gallery_dirs': 'examples_gallery',  # path to where to save gallery generated output
+     'examples_dirs': [
+         'examples_source/basic_plots',
+         'examples_source/statistical_plots',
+         'examples_source/bar_charts',
+         'examples_source/scientific_plots',
+         'examples_source/time_series',
+         'examples_source/specialized_plots',
+         'examples_source/layout_styling',
+         'examples_source/colors_images',
+     ],
+     'gallery_dirs': [
+         'examples_gallery/basic_plots',
+         'examples_gallery/statistical_plots',
+         'examples_gallery/bar_charts',
+         'examples_gallery/scientific_plots',
+         'examples_gallery/time_series',
+         'examples_gallery/specialized_plots',
+         'examples_gallery/layout_styling',
+         'examples_gallery/colors_images',
+     ],
      'filename_pattern': '/plot_',
-     'nested_sections': False,  # Prevent nested sections in sidebar
+     'nested_sections': False,
      'within_subsection_order': 'FileNameSortKey',
-     'backreferences_dir': None,  # Don't generate backreferences
+     'backreferences_dir': None,
      'show_signature': False,
      'remove_config_comments': True,
 }
@@ -105,9 +125,59 @@ This gallery contains examples demonstrating the features and capabilities
 of dartwork-mpl. Browse the categories below for ready-to-use patterns
 and techniques.
 
+.. grid:: 2 2 3 3
+    :gutter: 2
+
+    .. grid-item-card:: Basic Plots
+        :link: basic_plots/index
+        :link-type: doc
+
+        Fundamental plotting examples demonstrating core dartwork-mpl features.
+
+    .. grid-item-card:: Statistical Plots
+        :link: statistical_plots/index
+        :link-type: doc
+
+        Statistical visualization examples including histograms and distributions.
+
+    .. grid-item-card:: Bar Charts
+        :link: bar_charts/index
+        :link-type: doc
+
+        Various bar chart styles for categorical data visualization.
+
+    .. grid-item-card:: Scientific Plots
+        :link: scientific_plots/index
+        :link-type: doc
+
+        Advanced scientific visualizations for academic research.
+
+    .. grid-item-card:: Time Series
+        :link: time_series/index
+        :link-type: doc
+
+        Time-based data visualization examples.
+
+    .. grid-item-card:: Specialized Plots
+        :link: specialized_plots/index
+        :link-type: doc
+
+        Specialized visualization types for specific use cases.
+
+    .. grid-item-card:: Layout & Styling
+        :link: layout_styling/index
+        :link-type: doc
+
+        Layout optimization and advanced styling techniques.
+
+    .. grid-item-card:: Colors & Images
+        :link: colors_images/index
+        :link-type: doc
+
+        Color palette demonstrations and image display techniques.
+
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
+   :hidden:
 
    Basic Plots <basic_plots/index>
    Statistical Plots <statistical_plots/index>
@@ -119,153 +189,6 @@ and techniques.
    Colors & Images <colors_images/index>
 """
 
-_GALLERY_CATEGORY_INDICES = {
-    'basic_plots': """Basic Plots
-===========
-
-Fundamental plotting examples demonstrating core dartwork-mpl features.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_basic
-   plot_reference_lines
-   plot_area_plots
-   plot_multiple_lines
-   plot_markers
-   plot_line_styles
-   plot_scatter
-   plot_line_advanced
-""",
-    'statistical_plots': """Statistical Plots
-=================
-
-Statistical visualization examples including histograms and distributions.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_histogram
-   plot_distribution
-   plot_violin_box
-   plot_errorbars
-   plot_kde_plots
-   plot_probability_density
-   plot_regression
-   plot_correlation_matrix
-""",
-    'bar_charts': """Bar Charts
-==========
-
-Various bar chart styles for categorical data visualization.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_bar_chart
-   plot_grouped_bar
-   plot_stacked_bar
-   plot_horizontal_bar
-   plot_diverging_bar
-   plot_waterfall
-   plot_lollipop
-""",
-    'scientific_plots': """Scientific Plots
-================
-
-Advanced scientific visualizations for academic research.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_3d_surface
-   plot_contour
-   plot_heatmap
-   plot_phase_diagram
-   plot_quiver
-   plot_scientific_paper
-   plot_spectral_analysis
-   plot_streamplot
-   plot_vector_field_advanced
-""",
-    'time_series': """Time Series
-===========
-
-Time-based data visualization examples.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_autocorrelation
-   plot_datetime
-   plot_forecast
-   plot_rolling_stats
-   plot_stem
-   plot_step
-   plot_time_comparison
-   plot_trend_analysis
-""",
-    'specialized_plots': """Specialized Plots
-=================
-
-Specialized visualization types for specific use cases.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_3d
-   plot_dual_axis
-   plot_filled
-   plot_pie
-   plot_polar
-   plot_radar_chart
-   plot_ridgeline
-   plot_sankey_simple
-   plot_treemap_simple
-""",
-    'layout_styling': """Layout & Styling
-================
-
-Layout optimization and advanced styling techniques.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_annotations
-   plot_complex_grid
-   plot_custom_ticks
-   plot_inset_axes
-   plot_layout
-   plot_legend
-   plot_mixed_subplots
-   plot_shared_axes
-   plot_subplots
-""",
-    'colors_images': """Colors & Images
-===============
-
-Color palette demonstrations and image display techniques.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   plot_color_cycles
-   plot_color_perception
-   plot_colors
-   plot_custom_colormap
-   plot_diverging_sequential
-   plot_image
-""",
-}
-
 
 def _write_manual_indices(app, env, docnames):
     """Write manual index files AFTER sphinx-gallery but BEFORE Sphinx reads docs."""
@@ -275,13 +198,6 @@ def _write_manual_indices(app, env, docnames):
     main_index = gallery_dir / 'index.rst'
     main_index.write_text(_GALLERY_MAIN_INDEX)
     print(f"Wrote manual index: examples_gallery/index.rst")
-
-    # Write category indices
-    for cat, content in _GALLERY_CATEGORY_INDICES.items():
-        idx = gallery_dir / cat / 'index.rst'
-        if idx.parent.exists():
-            idx.write_text(content)
-            print(f"Wrote manual index: examples_gallery/{cat}/index.rst")
 
 
 def _generate_gallery_assets(_app):
