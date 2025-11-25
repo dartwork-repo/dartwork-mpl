@@ -16,6 +16,7 @@ docs/_build/
 # Sphinx Gallery generates all files in gallery/ directory
 docs/gallery/
 docs/examples_gallery/
+docs/color_system/images/
 docs/images/*.png
 
 # Editor specific settings
