@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:59.199** total execution time for 64 files **from all galleries**:
+**00:57.794** total execution time for 64 files **from all galleries**:
 
 .. container::
 
@@ -32,195 +32,195 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_forecast.py` (``examples_source/05_time_series/plot_forecast.py``)
-     - 00:01.871
+   * - :ref:`sphx_glr_gallery_colors_images_plot_image.py` (``examples_source/colors_images/plot_image.py``)
+     - 00:01.823
      - 0.0
-   * - :ref:`sphx_glr_gallery_08_colors_images_plot_image.py` (``examples_source/08_colors_images/plot_image.py``)
-     - 00:01.846
+   * - :ref:`sphx_glr_gallery_time_series_plot_forecast.py` (``examples_source/time_series/plot_forecast.py``)
+     - 00:01.770
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_radar_chart.py` (``examples_source/06_specialized_plots/plot_radar_chart.py``)
-     - 00:01.641
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_radar_chart.py` (``examples_source/specialized_plots/plot_radar_chart.py``)
+     - 00:01.583
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_regression.py` (``examples_source/02_statistical_plots/plot_regression.py``)
-     - 00:01.504
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_regression.py` (``examples_source/statistical_plots/plot_regression.py``)
+     - 00:01.422
      - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_datetime.py` (``examples_source/05_time_series/plot_datetime.py``)
-     - 00:01.366
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_polar.py` (``examples_source/specialized_plots/plot_polar.py``)
+     - 00:01.379
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_polar.py` (``examples_source/06_specialized_plots/plot_polar.py``)
-     - 00:01.317
+   * - :ref:`sphx_glr_gallery_time_series_plot_datetime.py` (``examples_source/time_series/plot_datetime.py``)
+     - 00:01.329
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_histogram.py` (``examples_source/02_statistical_plots/plot_histogram.py``)
-     - 00:01.305
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_histogram.py` (``examples_source/statistical_plots/plot_histogram.py``)
+     - 00:01.234
      - 0.0
-   * - :ref:`sphx_glr_gallery_08_colors_images_plot_color_cycles.py` (``examples_source/08_colors_images/plot_color_cycles.py``)
-     - 00:01.277
+   * - :ref:`sphx_glr_gallery_colors_images_plot_color_cycles.py` (``examples_source/colors_images/plot_color_cycles.py``)
+     - 00:01.220
      - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_rolling_stats.py` (``examples_source/05_time_series/plot_rolling_stats.py``)
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_complex_grid.py` (``examples_source/layout_styling/plot_complex_grid.py``)
      - 00:01.218
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_complex_grid.py` (``examples_source/07_layout_styling/plot_complex_grid.py``)
-     - 00:01.189
+   * - :ref:`sphx_glr_gallery_time_series_plot_rolling_stats.py` (``examples_source/time_series/plot_rolling_stats.py``)
+     - 00:01.194
      - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_autocorrelation.py` (``examples_source/05_time_series/plot_autocorrelation.py``)
-     - 00:01.162
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_spectral_analysis.py` (``examples_source/scientific_plots/plot_spectral_analysis.py``)
+     - 00:01.180
      - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_time_comparison.py` (``examples_source/05_time_series/plot_time_comparison.py``)
-     - 00:01.148
+   * - :ref:`sphx_glr_gallery_colors_images_plot_diverging_sequential.py` (``examples_source/colors_images/plot_diverging_sequential.py``)
+     - 00:01.158
      - 0.0
-   * - :ref:`sphx_glr_gallery_08_colors_images_plot_diverging_sequential.py` (``examples_source/08_colors_images/plot_diverging_sequential.py``)
-     - 00:01.140
-     - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_trend_analysis.py` (``examples_source/05_time_series/plot_trend_analysis.py``)
-     - 00:01.133
-     - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_custom_ticks.py` (``examples_source/07_layout_styling/plot_custom_ticks.py``)
+   * - :ref:`sphx_glr_gallery_time_series_plot_autocorrelation.py` (``examples_source/time_series/plot_autocorrelation.py``)
      - 00:01.131
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_ridgeline.py` (``examples_source/06_specialized_plots/plot_ridgeline.py``)
-     - 00:01.127
+   * - :ref:`sphx_glr_gallery_time_series_plot_trend_analysis.py` (``examples_source/time_series/plot_trend_analysis.py``)
+     - 00:01.114
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_spectral_analysis.py` (``examples_source/04_scientific_plots/plot_spectral_analysis.py``)
-     - 00:01.104
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_mixed_subplots.py` (``examples_source/layout_styling/plot_mixed_subplots.py``)
+     - 00:01.113
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_mixed_subplots.py` (``examples_source/07_layout_styling/plot_mixed_subplots.py``)
-     - 00:01.088
+   * - :ref:`sphx_glr_gallery_time_series_plot_time_comparison.py` (``examples_source/time_series/plot_time_comparison.py``)
+     - 00:01.101
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_distribution.py` (``examples_source/02_statistical_plots/plot_distribution.py``)
-     - 00:01.085
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_custom_ticks.py` (``examples_source/layout_styling/plot_custom_ticks.py``)
+     - 00:01.083
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_phase_diagram.py` (``examples_source/04_scientific_plots/plot_phase_diagram.py``)
-     - 00:01.084
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_phase_diagram.py` (``examples_source/scientific_plots/plot_phase_diagram.py``)
+     - 00:01.077
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_kde_plots.py` (``examples_source/02_statistical_plots/plot_kde_plots.py``)
-     - 00:01.078
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_ridgeline.py` (``examples_source/specialized_plots/plot_ridgeline.py``)
+     - 00:01.063
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_heatmap.py` (``examples_source/04_scientific_plots/plot_heatmap.py``)
-     - 00:01.075
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_heatmap.py` (``examples_source/scientific_plots/plot_heatmap.py``)
+     - 00:01.053
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_vector_field_advanced.py` (``examples_source/04_scientific_plots/plot_vector_field_advanced.py``)
-     - 00:01.064
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_kde_plots.py` (``examples_source/statistical_plots/plot_kde_plots.py``)
+     - 00:01.039
      - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_multiple_lines.py` (``examples_source/01_basic_plots/plot_multiple_lines.py``)
-     - 00:01.050
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_distribution.py` (``examples_source/statistical_plots/plot_distribution.py``)
+     - 00:01.029
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_errorbars.py` (``examples_source/02_statistical_plots/plot_errorbars.py``)
-     - 00:01.023
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_vector_field_advanced.py` (``examples_source/scientific_plots/plot_vector_field_advanced.py``)
+     - 00:01.012
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_grouped_bar.py` (``examples_source/03_bar_charts/plot_grouped_bar.py``)
-     - 00:01.014
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_multiple_lines.py` (``examples_source/basic_plots/plot_multiple_lines.py``)
+     - 00:00.995
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_legend.py` (``examples_source/07_layout_styling/plot_legend.py``)
-     - 00:00.996
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_legend.py` (``examples_source/layout_styling/plot_legend.py``)
+     - 00:00.991
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_annotations.py` (``examples_source/07_layout_styling/plot_annotations.py``)
-     - 00:00.993
-     - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_markers.py` (``examples_source/01_basic_plots/plot_markers.py``)
-     - 00:00.993
-     - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_line_styles.py` (``examples_source/01_basic_plots/plot_line_styles.py``)
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_line_styles.py` (``examples_source/basic_plots/plot_line_styles.py``)
      - 00:00.983
      - 0.0
-   * - :ref:`sphx_glr_gallery_08_colors_images_plot_custom_colormap.py` (``examples_source/08_colors_images/plot_custom_colormap.py``)
-     - 00:00.974
+   * - :ref:`sphx_glr_gallery_bar_charts_plot_grouped_bar.py` (``examples_source/bar_charts/plot_grouped_bar.py``)
+     - 00:00.973
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_shared_axes.py` (``examples_source/07_layout_styling/plot_shared_axes.py``)
-     - 00:00.951
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_annotations.py` (``examples_source/layout_styling/plot_annotations.py``)
+     - 00:00.969
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_stacked_bar.py` (``examples_source/03_bar_charts/plot_stacked_bar.py``)
+   * - :ref:`sphx_glr_gallery_colors_images_plot_custom_colormap.py` (``examples_source/colors_images/plot_custom_colormap.py``)
+     - 00:00.961
+     - 0.0
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_shared_axes.py` (``examples_source/layout_styling/plot_shared_axes.py``)
+     - 00:00.956
+     - 0.0
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_markers.py` (``examples_source/basic_plots/plot_markers.py``)
+     - 00:00.956
+     - 0.0
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_filled.py` (``examples_source/specialized_plots/plot_filled.py``)
+     - 00:00.949
+     - 0.0
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_errorbars.py` (``examples_source/statistical_plots/plot_errorbars.py``)
      - 00:00.947
      - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_line_advanced.py` (``examples_source/01_basic_plots/plot_line_advanced.py``)
-     - 00:00.945
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_area_plots.py` (``examples_source/basic_plots/plot_area_plots.py``)
+     - 00:00.946
      - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_area_plots.py` (``examples_source/01_basic_plots/plot_area_plots.py``)
-     - 00:00.942
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_line_advanced.py` (``examples_source/basic_plots/plot_line_advanced.py``)
+     - 00:00.941
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_filled.py` (``examples_source/06_specialized_plots/plot_filled.py``)
-     - 00:00.936
+   * - :ref:`sphx_glr_gallery_bar_charts_plot_stacked_bar.py` (``examples_source/bar_charts/plot_stacked_bar.py``)
+     - 00:00.918
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_streamplot.py` (``examples_source/04_scientific_plots/plot_streamplot.py``)
-     - 00:00.899
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_streamplot.py` (``examples_source/scientific_plots/plot_streamplot.py``)
+     - 00:00.862
      - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_stem.py` (``examples_source/05_time_series/plot_stem.py``)
-     - 00:00.852
+   * - :ref:`sphx_glr_gallery_time_series_plot_step.py` (``examples_source/time_series/plot_step.py``)
+     - 00:00.831
      - 0.0
-   * - :ref:`sphx_glr_gallery_05_time_series_plot_step.py` (``examples_source/05_time_series/plot_step.py``)
-     - 00:00.842
+   * - :ref:`sphx_glr_gallery_time_series_plot_stem.py` (``examples_source/time_series/plot_stem.py``)
+     - 00:00.831
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_inset_axes.py` (``examples_source/07_layout_styling/plot_inset_axes.py``)
-     - 00:00.833
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_subplots.py` (``examples_source/layout_styling/plot_subplots.py``)
+     - 00:00.814
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_correlation_matrix.py` (``examples_source/02_statistical_plots/plot_correlation_matrix.py``)
-     - 00:00.805
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_inset_axes.py` (``examples_source/layout_styling/plot_inset_axes.py``)
+     - 00:00.792
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_layout.py` (``examples_source/07_layout_styling/plot_layout.py``)
-     - 00:00.794
+   * - :ref:`sphx_glr_gallery_bar_charts_plot_diverging_bar.py` (``examples_source/bar_charts/plot_diverging_bar.py``)
+     - 00:00.777
      - 0.0
-   * - :ref:`sphx_glr_gallery_07_layout_styling_plot_subplots.py` (``examples_source/07_layout_styling/plot_subplots.py``)
-     - 00:00.790
+   * - :ref:`sphx_glr_gallery_layout_styling_plot_layout.py` (``examples_source/layout_styling/plot_layout.py``)
+     - 00:00.769
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_diverging_bar.py` (``examples_source/03_bar_charts/plot_diverging_bar.py``)
-     - 00:00.786
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_3d_surface.py` (``examples_source/scientific_plots/plot_3d_surface.py``)
+     - 00:00.745
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_quiver.py` (``examples_source/04_scientific_plots/plot_quiver.py``)
-     - 00:00.761
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_correlation_matrix.py` (``examples_source/statistical_plots/plot_correlation_matrix.py``)
+     - 00:00.745
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_horizontal_bar.py` (``examples_source/03_bar_charts/plot_horizontal_bar.py``)
-     - 00:00.758
+   * - :ref:`sphx_glr_gallery_bar_charts_plot_horizontal_bar.py` (``examples_source/bar_charts/plot_horizontal_bar.py``)
+     - 00:00.743
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_3d_surface.py` (``examples_source/04_scientific_plots/plot_3d_surface.py``)
-     - 00:00.746
+   * - :ref:`sphx_glr_gallery_bar_charts_plot_lollipop.py` (``examples_source/bar_charts/plot_lollipop.py``)
+     - 00:00.734
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_lollipop.py` (``examples_source/03_bar_charts/plot_lollipop.py``)
-     - 00:00.721
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_quiver.py` (``examples_source/scientific_plots/plot_quiver.py``)
+     - 00:00.730
      - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_scatter.py` (``examples_source/01_basic_plots/plot_scatter.py``)
-     - 00:00.676
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_scatter.py` (``examples_source/basic_plots/plot_scatter.py``)
+     - 00:00.693
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_scientific_paper.py` (``examples_source/04_scientific_plots/plot_scientific_paper.py``)
-     - 00:00.660
+   * - :ref:`sphx_glr_gallery_bar_charts_plot_bar_chart.py` (``examples_source/bar_charts/plot_bar_chart.py``)
+     - 00:00.661
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_waterfall.py` (``examples_source/03_bar_charts/plot_waterfall.py``)
-     - 00:00.653
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_scientific_paper.py` (``examples_source/scientific_plots/plot_scientific_paper.py``)
+     - 00:00.650
      - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_basic.py` (``examples_source/01_basic_plots/plot_basic.py``)
-     - 00:00.653
+   * - :ref:`sphx_glr_gallery_bar_charts_plot_waterfall.py` (``examples_source/bar_charts/plot_waterfall.py``)
+     - 00:00.627
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_violin_box.py` (``examples_source/02_statistical_plots/plot_violin_box.py``)
-     - 00:00.629
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_pie.py` (``examples_source/specialized_plots/plot_pie.py``)
+     - 00:00.625
      - 0.0
-   * - :ref:`sphx_glr_gallery_08_colors_images_plot_color_perception.py` (``examples_source/08_colors_images/plot_color_perception.py``)
-     - 00:00.611
+   * - :ref:`sphx_glr_gallery_colors_images_plot_color_perception.py` (``examples_source/colors_images/plot_color_perception.py``)
+     - 00:00.602
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_pie.py` (``examples_source/06_specialized_plots/plot_pie.py``)
-     - 00:00.604
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_violin_box.py` (``examples_source/statistical_plots/plot_violin_box.py``)
+     - 00:00.578
      - 0.0
-   * - :ref:`sphx_glr_gallery_02_statistical_plots_plot_probability_density.py` (``examples_source/02_statistical_plots/plot_probability_density.py``)
-     - 00:00.585
+   * - :ref:`sphx_glr_gallery_scientific_plots_plot_contour.py` (``examples_source/scientific_plots/plot_contour.py``)
+     - 00:00.528
      - 0.0
-   * - :ref:`sphx_glr_gallery_04_scientific_plots_plot_contour.py` (``examples_source/04_scientific_plots/plot_contour.py``)
-     - 00:00.544
+   * - :ref:`sphx_glr_gallery_colors_images_plot_colors.py` (``examples_source/colors_images/plot_colors.py``)
+     - 00:00.420
      - 0.0
-   * - :ref:`sphx_glr_gallery_03_bar_charts_plot_bar_chart.py` (``examples_source/03_bar_charts/plot_bar_chart.py``)
-     - 00:00.412
+   * - :ref:`sphx_glr_gallery_statistical_plots_plot_probability_density.py` (``examples_source/statistical_plots/plot_probability_density.py``)
+     - 00:00.415
      - 0.0
-   * - :ref:`sphx_glr_gallery_08_colors_images_plot_colors.py` (``examples_source/08_colors_images/plot_colors.py``)
-     - 00:00.400
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_reference_lines.py` (``examples_source/basic_plots/plot_reference_lines.py``)
+     - 00:00.391
      - 0.0
-   * - :ref:`sphx_glr_gallery_01_basic_plots_plot_reference_lines.py` (``examples_source/01_basic_plots/plot_reference_lines.py``)
-     - 00:00.398
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_dual_axis.py` (``examples_source/specialized_plots/plot_dual_axis.py``)
+     - 00:00.382
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_dual_axis.py` (``examples_source/06_specialized_plots/plot_dual_axis.py``)
-     - 00:00.380
+   * - :ref:`sphx_glr_gallery_basic_plots_plot_basic.py` (``examples_source/basic_plots/plot_basic.py``)
+     - 00:00.369
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_3d.py` (``examples_source/06_specialized_plots/plot_3d.py``)
-     - 00:00.295
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_3d.py` (``examples_source/specialized_plots/plot_3d.py``)
+     - 00:00.266
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_sankey_simple.py` (``examples_source/06_specialized_plots/plot_sankey_simple.py``)
-     - 00:00.208
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_sankey_simple.py` (``examples_source/specialized_plots/plot_sankey_simple.py``)
+     - 00:00.207
      - 0.0
-   * - :ref:`sphx_glr_gallery_06_specialized_plots_plot_treemap_simple.py` (``examples_source/06_specialized_plots/plot_treemap_simple.py``)
-     - 00:00.205
+   * - :ref:`sphx_glr_gallery_specialized_plots_plot_treemap_simple.py` (``examples_source/specialized_plots/plot_treemap_simple.py``)
+     - 00:00.195
      - 0.0

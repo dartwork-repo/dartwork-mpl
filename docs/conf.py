@@ -48,6 +48,9 @@ html_static_path = ['_static']
 html_css_files = ['custom.css']
 html_js_files = ['custom.js']
 
+# Prevent sections from gallery/index from appearing in the global toctree
+toctree_object_entries = False
+
 # Remove version from the sidebar title
 html_title = f"{project} documentation"
 
@@ -72,6 +75,11 @@ sphinx_gallery_conf = {
      'examples_dirs': 'examples_source',   # path to your example scripts
      'gallery_dirs': 'gallery',  # path to where to save gallery generated output
      'filename_pattern': '/plot_',
+     'nested_sections': False,  # Prevent nested sections in sidebar
+     'within_subsection_order': 'FileNameSortKey',
+     'backreferences_dir': None,  # Don't generate backreferences
+     'show_signature': False,
+     'remove_config_comments': True,
 }
 
 # -- MyST Parser configuration -----------------------------------------------
@@ -82,50 +90,194 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 
-_GALLERY_TOC_OLD = """.. toctree::
-   :hidden:
-   :includehidden:
+# -- Manual gallery index system ----------------------------------------------
+# sphinx-gallery overwrites index files, so we write our manual indices
+# AFTER sphinx-gallery runs but BEFORE Sphinx reads the rst files
 
+_GALLERY_MAIN_INDEX = """Examples Gallery
+================
 
-   /gallery/01_basic_plots/index.rst
-   /gallery/02_statistical_plots/index.rst
-   /gallery/03_bar_charts/index.rst
-   /gallery/04_scientific_plots/index.rst
-   /gallery/05_time_series/index.rst
-   /gallery/06_specialized_plots/index.rst
-   /gallery/07_layout_styling/index.rst
-   /gallery/08_colors_images/index.rst
-"""
+This gallery contains examples demonstrating the features and capabilities
+of dartwork-mpl. Browse the categories below for ready-to-use patterns
+and techniques.
 
-_GALLERY_TOC_NEW = """.. toctree::
+.. toctree::
    :maxdepth: 1
-   :caption: Categories
+   :titlesonly:
 
-   Basic Plots <gallery/01_basic_plots/index>
-   Statistical Plots <gallery/02_statistical_plots/index>
-   Bar Charts <gallery/03_bar_charts/index>
-   Scientific Plots <gallery/04_scientific_plots/index>
-   Time Series <gallery/05_time_series/index>
-   Specialized Plots <gallery/06_specialized_plots/index>
-   Layout & Styling <gallery/07_layout_styling/index>
-   Colors & Images <gallery/08_colors_images/index>
+   Basic Plots <basic_plots/index>
+   Statistical Plots <statistical_plots/index>
+   Bar Charts <bar_charts/index>
+   Scientific Plots <scientific_plots/index>
+   Time Series <time_series/index>
+   Specialized Plots <specialized_plots/index>
+   Layout & Styling <layout_styling/index>
+   Colors & Images <colors_images/index>
 """
 
+_GALLERY_CATEGORY_INDICES = {
+    'basic_plots': """Basic Plots
+===========
 
-def _patch_gallery_toc(_app, docname, source):
-    """Ensure sphinx-gallery output exposes the category toctree in nav."""
-    if docname != "gallery/index":
-        return
+Fundamental plotting examples demonstrating core dartwork-mpl features.
 
-    current = source[0]
-    if _GALLERY_TOC_NEW in current:
-        return
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
 
-    if _GALLERY_TOC_OLD in current:
-        source[0] = current.replace(_GALLERY_TOC_OLD, _GALLERY_TOC_NEW)
-    else:
-        # Fall back to appending so nav still appears if template changes.
-        source[0] = f"{current.strip()}\n\n{_GALLERY_TOC_NEW}"
+   plot_basic
+   plot_reference_lines
+   plot_area_plots
+   plot_multiple_lines
+   plot_markers
+   plot_line_styles
+   plot_scatter
+   plot_line_advanced
+""",
+    'statistical_plots': """Statistical Plots
+=================
+
+Statistical visualization examples including histograms and distributions.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   plot_histogram
+   plot_distribution
+   plot_violin_box
+   plot_errorbars
+   plot_kde_plots
+   plot_probability_density
+   plot_regression
+   plot_correlation_matrix
+""",
+    'bar_charts': """Bar Charts
+==========
+
+Various bar chart styles for categorical data visualization.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   plot_bar_chart
+   plot_grouped_bar
+   plot_stacked_bar
+   plot_horizontal_bar
+   plot_diverging_bar
+   plot_waterfall
+   plot_lollipop
+""",
+    'scientific_plots': """Scientific Plots
+================
+
+Advanced scientific visualizations for academic research.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   plot_3d_surface
+   plot_contour
+   plot_heatmap
+   plot_phase_diagram
+   plot_quiver
+   plot_scientific_paper
+   plot_spectral_analysis
+   plot_streamplot
+   plot_vector_field_advanced
+""",
+    'time_series': """Time Series
+===========
+
+Time-based data visualization examples.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   plot_autocorrelation
+   plot_datetime
+   plot_forecast
+   plot_rolling_stats
+   plot_stem
+   plot_step
+   plot_time_comparison
+   plot_trend_analysis
+""",
+    'specialized_plots': """Specialized Plots
+=================
+
+Specialized visualization types for specific use cases.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   plot_3d
+   plot_dual_axis
+   plot_filled
+   plot_pie
+   plot_polar
+   plot_radar_chart
+   plot_ridgeline
+   plot_sankey_simple
+   plot_treemap_simple
+""",
+    'layout_styling': """Layout & Styling
+================
+
+Layout optimization and advanced styling techniques.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   plot_annotations
+   plot_complex_grid
+   plot_custom_ticks
+   plot_inset_axes
+   plot_layout
+   plot_legend
+   plot_mixed_subplots
+   plot_shared_axes
+   plot_subplots
+""",
+    'colors_images': """Colors & Images
+===============
+
+Color palette demonstrations and image display techniques.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   plot_color_cycles
+   plot_color_perception
+   plot_colors
+   plot_custom_colormap
+   plot_diverging_sequential
+   plot_image
+""",
+}
+
+
+def _write_manual_indices(app, env, docnames):
+    """Write manual index files AFTER sphinx-gallery but BEFORE Sphinx reads docs."""
+    gallery_dir = Path(app.srcdir) / 'gallery'
+
+    # Write main gallery index
+    main_index = gallery_dir / 'index.rst'
+    main_index.write_text(_GALLERY_MAIN_INDEX)
+    print(f"Wrote manual index: gallery/index.rst")
+
+    # Write category indices
+    for cat, content in _GALLERY_CATEGORY_INDICES.items():
+        idx = gallery_dir / cat / 'index.rst'
+        if idx.parent.exists():
+            idx.write_text(content)
+            print(f"Wrote manual index: gallery/{cat}/index.rst")
 
 
 def _generate_gallery_assets(_app):
@@ -137,5 +289,6 @@ def _generate_gallery_assets(_app):
 
 def setup(app):
     app.connect("builder-inited", _generate_gallery_assets)
-    app.connect("source-read", _patch_gallery_toc)
+    # Write manual indices AFTER sphinx-gallery runs but BEFORE docs are read
+    app.connect("env-before-read-docs", _write_manual_indices)
     return {"parallel_read_safe": True}
