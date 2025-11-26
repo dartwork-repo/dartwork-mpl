@@ -68,6 +68,7 @@ html_theme_options = {
         {"title": "Installation", "url": "installation/index"},
         {"title": "Usage Guide", "url": "usage_guide/index"},
         {"title": "Color System", "url": "color_system/index"},
+        {"title": "Fonts", "url": "fonts/index"},
         {"title": "Examples Gallery", "url": "examples_gallery/index"},
         {"title": "API Reference", "url": "api/index"},
     ]
