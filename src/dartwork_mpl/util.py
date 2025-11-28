@@ -253,6 +253,23 @@ def fw(n):
     return plt.rcParams['font.weight'] + 100 * n
 
 
+def lw(n):
+    """
+    Return base line width + n.
+    
+    Parameters
+    ----------
+    n : int or float
+        Value to add to base line width.
+        
+    Returns
+    -------
+    float
+        Base line width + n.
+    """
+    return plt.rcParams['lines.linewidth'] + n
+
+
 def mix_colors(color1, color2, alpha=0.5):
     """
     Mix two colors.
