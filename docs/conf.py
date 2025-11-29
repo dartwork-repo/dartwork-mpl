@@ -204,7 +204,7 @@ def _write_manual_indices(app, env, docnames):
     # Write the concatenated main index
     main_index = gallery_dir / "index.rst"
     main_index.write_text("\n".join(content_parts))
-    print(f"Wrote concatenated manual index: examples_gallery/index.rst")
+    print("Wrote concatenated manual index: examples_gallery/index.rst")
 
     # Add to docnames so Sphinx builds the newly written index
     if "examples_gallery/index" not in docnames:
