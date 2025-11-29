@@ -184,7 +184,7 @@ def plot_example(
 
 ```python
 def plot_function(
-    param1: type1,
+    param1: type1 | None = None,
     param2: type2 | None = None
 ) -> tuple[Figure, Axes]:
     """
@@ -213,11 +213,13 @@ def plot_function(
     >>> import dartwork_mpl as dm
     >>> dm.style.use_preset('scientific')
     >>> 
-    >>> # Sample data - users can copy and use immediately
+    >>> # Minimal usage - uses default sample data
+    >>> fig, ax = plot_function()
+    >>> dm.save_and_show(fig)
+    >>> 
+    >>> # Custom data usage
     >>> data = np.array([1, 2, 3, 4, 5])
     >>> labels = ['A', 'B', 'C', 'D', 'E']
-    >>> 
-    >>> # Create plot
     >>> fig, ax = plot_function(data, labels)
     >>> dm.save_and_show(fig)
     
@@ -239,9 +241,10 @@ def plot_function(
 
 1. **필수 임포트**: `numpy`, `matplotlib.pyplot`, `dartwork_mpl`
 2. **스타일 설정**: `dm.style.use_preset('scientific')`
-3. **샘플 데이터**: 바로 사용 가능한 샘플 데이터 생성 코드
-4. **함수 호출**: 실제 플랏 함수 호출 예시
-5. **결과 확인**: `dm.save_and_show()` 또는 `plt.show()` 사용
+3. **최소 사용 예시**: 인자 없이 호출 가능한 예시 (기본 샘플 데이터 사용)
+4. **커스텀 데이터 사용 예시**: 사용자 데이터를 사용하는 예시
+5. **함수 호출**: 실제 플랏 함수 호출 예시
+6. **결과 확인**: `dm.save_and_show()` 또는 `plt.show()` 사용
 
 ### 6.3 상세한 주석
 
@@ -276,16 +279,79 @@ def plot_function(data: np.ndarray) -> tuple[Figure, Axes]:
     
     # Apply simple_layout for automatic margin optimization
     # This replaces tight_layout() with more predictable results
+    # If you have hardcoded elements (title, legend) in figure coordinates,
+    # use bbox to optimize only the axes area
     dm.simple_layout(fig)
     
     return fig, ax
 ```
 
+### 6.4 simple_layout과 하드코딩 레이아웃 호환성
+
+**하드코딩된 요소가 있는 경우** (title, legend가 `fig.text()`, `fig.legend()`로 배치된 경우):
+
+`simple_layout`은 기본적으로 전체 figure를 최적화하므로, figure 좌표계에 직접 배치된 요소와 겹칠 수 있습니다. 이 경우 `bbox` 파라미터를 사용하여 **axes 영역만 최적화**해야 합니다:
+
+```python
+def plot_with_hardcoded_elements(
+    data: np.ndarray,
+    title: str = "Title"
+) -> tuple[Figure, Axes]:
+    """
+    Plot with hardcoded title and legend.
+    """
+    fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(12)), dpi=200)
+    
+    # Cascading layout calculation
+    title_y = 0.98
+    legend_y = 0.93
+    figure_top = 0.87
+    figure_bottom = 0.1
+    left_margin = 0.35
+    right_margin = 0.95
+    
+    # Set up GridSpec for axes
+    gs = fig.add_gridspec(
+        nrows=1, ncols=1,
+        left=left_margin,
+        right=right_margin,
+        top=figure_top,
+        bottom=figure_bottom
+    )
+    ax = fig.add_subplot(gs[0, 0])
+    
+    # Plot data
+    ax.plot(data, color='dm.red5', linewidth=0.7)
+    
+    # Add hardcoded title (figure coordinates)
+    fig.text(0.02, title_y, title, fontsize=dm.fs(2), fontweight=dm.fw(1))
+    
+    # Add hardcoded legend (figure coordinates)
+    fig.legend(bbox_to_anchor=(0.02, legend_y), ...)
+    
+    # Apply simple_layout with bbox to protect title/legend
+    # bbox format: (left, right, bottom, top) in figure coordinates
+    # This optimizes only the axes area, leaving title/legend untouched
+    dm.simple_layout(
+        fig,
+        gs=gs,
+        bbox=(left_margin, right_margin, figure_bottom, figure_top),
+        use_all_axes=False,  # Only optimize axes in this GridSpec
+    )
+    
+    return fig, ax
+```
+
+**주요 포인트:**
+- `bbox`는 figure 좌표계에서 최적화할 영역을 지정합니다
+- title/legend가 있는 영역은 bbox 밖에 두어 보호합니다
+- `use_all_axes=False`로 지정된 GridSpec의 axes만 최적화합니다
+
 ## 7. 샘플 데이터 및 사용 예시
 
 ### 7.1 샘플 데이터 필수 포함
 
-모든 플랏 함수는 **유저가 아무런 준비 없이 바로 사용할 수 있는 샘플 데이터**를 포함해야 합니다:
+모든 플랏 함수는 **유저가 아무런 준비 없이 바로 사용할 수 있는 샘플 데이터**를 포함해야 합니다. 모든 데이터 인자는 optional로 만들고 기본 샘플 데이터를 제공하여, 함수를 인자 없이 호출해도 작동하도록 해야 합니다:
 
 ```python
 def plot_example(
@@ -301,15 +367,17 @@ def plot_example(
     >>> import dartwork_mpl as dm
     >>> dm.style.use_preset('scientific')
     >>> 
-    >>> # Sample data - ready to use without any preparation
+    >>> # Minimal usage - uses default sample data
+    >>> fig, ax = plot_example()
+    >>> dm.save_and_show(fig)
+    >>> 
+    >>> # Custom data usage
     >>> data = np.array([64, 58, 57, 54, 51, 49, 45, 43, 42])
     >>> labels = [
     ...     "Category A", "Category B", "Category C",
     ...     "Category D", "Category E", "Category F",
     ...     "Category G", "Category H", "Category I"
     ... ]
-    >>> 
-    >>> # Create plot - works immediately
     >>> fig, ax = plot_example(data, labels)
     >>> dm.save_and_show(fig)
     """
@@ -328,11 +396,12 @@ def plot_example(
 
 ### 7.2 입력 인자 기본값
 
-모든 입력 인자는 **합리적인 기본값**을 가져야 하며, 기본값만으로도 작동해야 합니다:
+모든 입력 인자는 **합리적인 기본값**을 가져야 하며, 기본값만으로도 작동해야 합니다. 특히 데이터 인자들은 모두 optional로 만들어 기본 샘플 데이터를 제공하여, 함수를 인자 없이 호출해도 작동하도록 해야 합니다:
 
 ```python
 def plot_example(
-    data: np.ndarray,
+    data: np.ndarray | None = None,
+    labels: list[str] | None = None,
     figsize: tuple[float, float] | None = None,
     dpi: int = 200,
     color: str = 'dm.red5',
@@ -347,21 +416,33 @@ def plot_example(
     >>> import dartwork_mpl as dm
     >>> dm.style.use_preset('scientific')
     >>> 
-    >>> # Minimal usage - all defaults
-    >>> data = np.array([1, 2, 3, 4, 5])
-    >>> fig, ax = plot_example(data)
+    >>> # Minimal usage - all defaults (no arguments needed)
+    >>> fig, ax = plot_example()
     >>> dm.save_and_show(fig)
     >>> 
-    >>> # Customized usage
+    >>> # Custom data usage
+    >>> data = np.array([1, 2, 3, 4, 5])
+    >>> labels = ['A', 'B', 'C', 'D', 'E']
+    >>> fig, ax = plot_example(data, labels)
+    >>> dm.save_and_show(fig)
+    >>> 
+    >>> # Customized usage with styling
     >>> fig, ax = plot_example(
     ...     data,
+    ...     labels,
     ...     figsize=(12, 8),
     ...     color='dm.blue5',
     ...     linewidth=1.2
     ... )
     >>> dm.save_and_show(fig)
     """
-    pass
+    # Use default sample data if not provided
+    if data is None:
+        data = np.array([1, 2, 3, 4, 5])
+    if labels is None:
+        labels = ['A', 'B', 'C', 'D', 'E']
+    
+    # ... rest of implementation
 ```
 
 ## 8. 소스코드 출력 함수
@@ -473,7 +554,8 @@ def get_source_code() -> str:
 - [ ] 모든 매개변수에 타입 힌트가 있는가?
 - [ ] NumPy 스타일 docstring이 완전한가?
 - [ ] 사용 예시가 포함되어 있는가?
-- [ ] 샘플 데이터가 바로 사용 가능한가?
+- [ ] 인자 없이 호출 가능한가? (기본 샘플 데이터 제공)
+- [ ] 모든 데이터 인자가 optional이고 기본값이 제공되는가?
 - [ ] 모든 하드코딩된 값이 변수화되었는가?
 - [ ] 상세한 주석이 포함되어 있는가?
 - [ ] `get_source_code()` 함수가 포함되어 있는가?
@@ -503,8 +585,8 @@ import dartwork_mpl as dm
 
 
 def plot_comparison_dotplot(
-    categories: list[str],
-    success_values: np.ndarray,
+    categories: list[str] | None = None,
+    success_values: np.ndarray | None = None,
     other_values: np.ndarray | None = None,
     figsize: tuple[float, float] | None = None,
     dpi: int = 200,
@@ -520,10 +602,12 @@ def plot_comparison_dotplot(
     
     Parameters
     ----------
-    categories : list[str]
-        List of category names to display on the y-axis.
-    success_values : np.ndarray
-        Array of success rate values (one per category).
+    categories : list[str] | None, optional
+        List of category names to display on the y-axis. If None, uses
+        default sample data. Default is None.
+    success_values : np.ndarray | None, optional
+        Array of success rate values (one per category). If None, uses
+        default sample data. Default is None.
     other_values : np.ndarray | None, optional
         Array of baseline/comparison values. If None, only success values
         are displayed. Default is None.
@@ -551,7 +635,11 @@ def plot_comparison_dotplot(
     >>> import dartwork_mpl as dm
     >>> dm.style.use_preset('scientific')
     >>> 
-    >>> # Sample data - ready to use immediately
+    >>> # Minimal usage - uses default sample data
+    >>> fig, ax = plot_comparison_dotplot()
+    >>> dm.save_and_show(fig)
+    >>> 
+    >>> # Custom data usage
     >>> categories = [
     ...     "Automated Customer Support",
     ...     "Predictive Maintenance",
@@ -561,8 +649,6 @@ def plot_comparison_dotplot(
     ... ]
     >>> success_values = np.array([64, 58, 57, 54, 51], dtype=float)
     >>> other_values = np.array([20, 23, 24, 25, 26], dtype=float)
-    >>> 
-    >>> # Create plot with default settings
     >>> fig, ax = plot_comparison_dotplot(
     ...     categories,
     ...     success_values,
@@ -591,6 +677,18 @@ def plot_comparison_dotplot(
     dartwork_mpl.style.use_preset : Apply dartwork-mpl style presets
     dartwork_mpl.simple_layout : Optimize figure layout
     """
+    # Use default sample data if not provided
+    if categories is None:
+        categories = [
+            "Automated Customer Support",
+            "Predictive Maintenance",
+            "Supply Chain Optimization",
+            "Fraud Detection",
+            "Personalized Marketing"
+        ]
+    if success_values is None:
+        success_values = np.array([64, 58, 57, 54, 51], dtype=float)
+    
     # Set default figure size using cm2in for unit conversion
     if figsize is None:
         figsize = (dm.cm2in(13), dm.cm2in(9))
