@@ -1,8 +1,13 @@
+"""Standard figure width constants for matplotlib plots.
+
+This module provides predefined figure width constants commonly used
+in scientific publications and presentations.
+"""
+
 from .util import cm2in
 
-
 # Single column figure width.
-SW = cm2in(9)
+SW: float = cm2in(9)
 
 # Double column figure width.
-DW = cm2in(17)
+DW: float = cm2in(17)
