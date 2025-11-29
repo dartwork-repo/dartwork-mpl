@@ -23,9 +23,9 @@ x = np.linspace(0, 10, 100)
 ax.plot(x, np.sin(x), color="oc.red5", lw=2, label="oc.red5")
 ax.plot(x, np.cos(x), color="oc.blue5", lw=2, label="oc.blue5")
 
-# 2. Tailwind CSS colors (tw.* or tailwind.*)
-ax.plot(x, np.sin(x) + 2, color="tw.green:500", lw=2, label="tw.green:500")
-ax.plot(x, np.cos(x) + 2, color="tw.purple:500", lw=2, label="tw.purple:500")
+# 2. Tailwind CSS colors (tw.* or tw.*)
+ax.plot(x, np.sin(x) + 2, color="tw.green500", lw=2, label="tw.green500")
+ax.plot(x, np.cos(x) + 2, color="tw.purple500", lw=2, label="tw.purple500")
 
 # 3. Color mixing
 # Mix red and blue

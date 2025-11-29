@@ -25,8 +25,8 @@ gs = fig.add_gridspec(1, 1, left=0.12, right=0.95, top=0.92, bottom=0.12)
 ax = fig.add_subplot(gs[0, 0])
 
 # Plotting with Tailwind colors
-rects1 = ax.bar(x - width / 2, men_means, width, label="Men", color="tw.sky:500")
-rects2 = ax.bar(x + width / 2, women_means, width, label="Women", color="tw.rose:500")
+rects1 = ax.bar(x - width / 2, men_means, width, label="Men", color="tw.sky500")
+rects2 = ax.bar(x + width / 2, women_means, width, label="Women", color="tw.rose500")
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel("Scores", fontsize=dm.fs(0))

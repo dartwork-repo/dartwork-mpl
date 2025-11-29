@@ -63,7 +63,7 @@ dm.style.use_preset('scientific-kr')
 
 ### Color System
 - **dartwork-mpl Colors**: Custom color palette with `oc.red5`, `oc.blue2`, etc.
-- **Tailwind CSS Integration**: Full Tailwind palette with `tw.blue:500`, `tailwind.gray:200`, etc.
+- **Tailwind CSS Integration**: Full Tailwind palette with `tw.blue500`, `tw.gray200`, etc.
 - **Color Utilities**: Mix colors and apply pseudo-transparency
 
 ### Layout & Utilities
@@ -102,7 +102,7 @@ ax = fig.add_subplot(gs[0, 0])
 # Plot with custom colors
 x = np.linspace(0, 10, 100)
 ax.plot(x, np.sin(x), c='oc.red5', lw=0.7, label='Sin')
-ax.plot(x, np.cos(x), c='tw.blue:500', lw=0.7, label='Cos')
+ax.plot(x, np.cos(x), c='tw.blue500', lw=0.7, label='Cos')
 
 # Customize
 ax.set_xlabel('X value')

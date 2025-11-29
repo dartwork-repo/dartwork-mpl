@@ -31,7 +31,7 @@ ax2.set_title("Subplot 2", fontsize=dm.fs(1))
 ax2.set_xlabel("X", fontsize=dm.fs(0))
 ax2.set_ylabel("Y", fontsize=dm.fs(0))
 
-ax3.plot([1, 2, 3], [1, 1, 1], color="tw.green:500", lw=0.7)
+ax3.plot([1, 2, 3], [1, 1, 1], color="tw.green500", lw=0.7)
 ax3.set_title("Subplot 3 (Wide)", fontsize=dm.fs(1))
 ax3.set_xlabel("X", fontsize=dm.fs(0))
 ax3.set_ylabel("Y", fontsize=dm.fs(0))

@@ -53,12 +53,12 @@ ax2.legend(loc="best", fontsize=dm.fs(-2), ncol=2)
 ax3 = fig.add_subplot(gs[1, 0])
 tw_cycle = cycler(
     color=[
-        "tw.red:500",
-        "tw.orange:500",
-        "tw.yellow:600",
-        "tw.green:500",
-        "tw.blue:500",
-        "tw.purple:500",
+        "tw.red500",
+        "tw.orange500",
+        "tw.yellow600",
+        "tw.green500",
+        "tw.blue500",
+        "tw.purple500",
     ]
 )
 ax3.set_prop_cycle(tw_cycle)

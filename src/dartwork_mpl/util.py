@@ -870,7 +870,7 @@ def plot_colormaps(
 
 def _load_color_library_names() -> set[str]:
     """
-    Load color names from opencolor.txt file.
+    Load color names from oc.txt file.
 
     Returns
     -------
@@ -883,7 +883,7 @@ def _load_color_library_names() -> set[str]:
     opencolor_names = set()
 
     # Load opencolor colors
-    opencolor_file = asset_dir / "opencolor.txt"
+    opencolor_file = asset_dir / "oc.txt"
     if opencolor_file.exists():
         with open(opencolor_file, "r") as f:
             for line in f:
@@ -913,7 +913,8 @@ def _classify_color_library(color_name: str) -> str:
     -------
     str
         Library category: 'opencolor', 'tw', 'md', 'ant', 'chakra',
-        'primer', 'other'
+        'primer', 'other'. Note: 'ad.', 'cu.', 'pr.' prefixes map to
+        'ant', 'chakra', 'primer' categories respectively.
     """
     # Check for tw. prefix
     if color_name.startswith("tw."):
@@ -923,16 +924,16 @@ def _classify_color_library(color_name: str) -> str:
     if color_name.startswith("md."):
         return "md"
 
-    # Check for ant. prefix (Ant Design)
-    if color_name.startswith("ant."):
+    # Check for ad. prefix (Ant Design)
+    if color_name.startswith("ad."):
         return "ant"
 
-    # Check for chakra. prefix (Chakra UI)
-    if color_name.startswith("chakra."):
+    # Check for cu. prefix (Chakra UI)
+    if color_name.startswith("cu."):
         return "chakra"
 
-    # Check for primer. prefix (Primer)
-    if color_name.startswith("primer."):
+    # Check for pr. prefix (Primer)
+    if color_name.startswith("pr."):
         return "primer"
 
     # Check for oc. prefix
@@ -1012,22 +1013,18 @@ def _extract_base_color_name(color_name: str) -> str:
     """
     # Remove prefixes
     name = color_name
-    for prefix in ["oc.", "tw.", "md.", "ant.", "chakra.", "primer."]:
+    for prefix in ["oc.", "tw.", "md.", "ad.", "cu.", "pr."]:
         if name.startswith(prefix):
             name = name[len(prefix) :]
             break
 
-    # Pattern 1: format with colon (tw.blue:500, md.blue:500, ant.blue:5, etc.) -> 'blue'
-    match = re.search(r"^([^:]+):", name)
-    if match:
-        return match.group(1)
-
-    # Pattern 2: opencolor format (oc.red5) -> 'red'
+    # Pattern 1: format with number (tw.blue500, md.blue500, ad.blue5, etc.) -> 'blue'
+    # Extract base color name by removing trailing digits
     match = re.search(r"^([a-z]+)\d+$", name)
     if match:
         return match.group(1)
 
-    # Pattern 3: other colors - keep full name
+    # Pattern 2: other colors - keep full name
     return name
 
 
@@ -1047,23 +1044,18 @@ def _extract_number_from_color_name(color_name: str) -> int | None:
     """
     # Remove prefixes
     name = color_name
-    for prefix in ["dm.", "tw.", "md.", "ant.", "chakra.", "primer."]:
+    for prefix in ["dm.", "tw.", "md.", "ad.", "cu.", "pr."]:
         if name.startswith(prefix):
             name = name[len(prefix) :]
             break
 
     # Try to extract number from patterns like:
     # - gray0, red1 (opencolor)
-    # - blue:500, gray:200 (tailwind, material design, chakra)
-    # - blue:5, red:6 (ant design, primer)
+    # - blue500, gray200 (tailwind, material design, chakra)
+    # - blue5, red6 (ant design, primer)
     # - red5, blue2 (opencolor)
 
-    # Pattern 1: format with colon (tw.blue:500, md.blue:500, ant.blue:5, etc.)
-    match = re.search(r":(\d+)$", name)
-    if match:
-        return int(match.group(1))
-
-    # Pattern 2: opencolor format (gray0, red1)
+    # Extract trailing digits
     match = re.search(r"(\d+)$", name)
     if match:
         return int(match.group(1))

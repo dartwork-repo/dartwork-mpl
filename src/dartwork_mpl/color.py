@@ -58,22 +58,22 @@ def _load_colors() -> None:
     to distinguish them from matplotlib's built-in colors.
 
     Tailwind CSS colors are loaded with 'tw.' prefix,
-    followed by the color name and weight (e.g., 'tw.blue:500',
-    'tw.gray:200'). Weights range from 50 to 950 in increments
+    followed by the color name and weight (e.g., 'tw.blue500',
+    'tw.gray200'). Weights range from 50 to 950 in increments
     of 50 or 100.
 
     Material Design colors are loaded with 'md.' prefix
-    (e.g., 'md.blue:500', 'md.red:700'). Weights range from 50 to 900.
+    (e.g., 'md.blue500', 'md.red700'). Weights range from 50 to 900.
 
-    Ant Design colors are loaded with 'ant.' prefix
-    (e.g., 'ant.blue:5', 'ant.red:6'). Weights range from 1 to 10.
+    Ant Design colors are loaded with 'ad.' prefix
+    (e.g., 'ad.blue5', 'ad.red6'). Weights range from 1 to 10.
 
-    Chakra UI colors are loaded with 'chakra.' prefix
-    (e.g., 'chakra.blue:500', 'chakra.red:600'). Weights range from
+    Chakra UI colors are loaded with 'cu.' prefix
+    (e.g., 'cu.blue500', 'cu.red600'). Weights range from
     50 to 900.
 
-    Primer colors are loaded with 'primer.' prefix
-    (e.g., 'primer.blue:5', 'primer.red:6'). Weights range from 0 to 9.
+    Primer colors are loaded with 'pr.' prefix
+    (e.g., 'pr.blue5', 'pr.red6'). Weights range from 0 to 9.
 
     Notes
     -----
@@ -93,11 +93,11 @@ def _load_colors() -> None:
         tailwind_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in tailwind_colors.items():
-        k_lower: str = k.lower()
+        k_lower: str = k.lower().replace(" ", "")
         for weight, hex_val in v:
-            # Only use 'tw.' prefix, skip 'tailwind.' prefix since they
+            # Only use 'tw.' prefix, skip 'tw.' prefix since they
             # are identical
-            _color_dict[f"tw.{k_lower}:{weight}"] = f"#{hex_val}"
+            _color_dict[f"tw.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Material Design colors.
     with open(root_dir / "material_colors.json", "r") as f:
@@ -107,34 +107,34 @@ def _load_colors() -> None:
         # Remove spaces (e.g., "Deep Purple" -> "deeppurple")
         k_lower: str = k.lower().replace(" ", "")
         for weight, hex_val in v:
-            _color_dict[f"md.{k_lower}:{weight}"] = f"#{hex_val}"
+            _color_dict[f"md.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Ant Design colors.
     with open(root_dir / "ant_colors.json", "r") as f:
         ant_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in ant_colors.items():
-        k_lower: str = k.lower()
+        k_lower: str = k.lower().replace(" ", "")
         for weight, hex_val in v:
-            _color_dict[f"ant.{k_lower}:{weight}"] = f"#{hex_val}"
+            _color_dict[f"ad.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Chakra UI colors.
     with open(root_dir / "chakra_colors.json", "r") as f:
         chakra_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in chakra_colors.items():
-        k_lower: str = k.lower()
+        k_lower: str = k.lower().replace(" ", "")
         for weight, hex_val in v:
-            _color_dict[f"chakra.{k_lower}:{weight}"] = f"#{hex_val}"
+            _color_dict[f"cu.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Primer colors.
     with open(root_dir / "primer_colors.json", "r") as f:
         primer_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in primer_colors.items():
-        k_lower: str = k.lower()
+        k_lower: str = k.lower().replace(" ", "")
         for weight, hex_val in v:
-            _color_dict[f"primer.{k_lower}:{weight}"] = f"#{hex_val}"
+            _color_dict[f"pr.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Add color dict to matplotlib internal color mapping.
     mcolors.get_named_colors_mapping().update(_color_dict)
@@ -518,13 +518,13 @@ class Color:
         Supports all matplotlib color names including:
         - Basic colors: 'red', 'blue', 'green', etc.
         - Named colors: 'aliceblue', 'antiquewhite', etc.
-        - Custom dartwork-mpl colors: 'oc.red5', 'tw.blue:500', etc.
+        - Custom dartwork-mpl colors: 'oc.red5', 'tw.blue500', etc.
 
         Parameters
         ----------
         name : str
             Matplotlib color name (e.g., 'red', 'oc.blue5',
-            'tw.blue:500').
+            'tw.blue500').
 
         Returns
         -------
@@ -858,7 +858,7 @@ def named(color_name: str) -> Color:
     ----------
     color_name : str
         Matplotlib color name (e.g., 'red', 'oc.blue5',
-        'tw.blue:500').
+        'tw.blue500').
 
     Returns
     -------

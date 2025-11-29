@@ -5,7 +5,7 @@ below is full-width so the swatch labels stay readable on both desktop and
 mobile.
 
 ## How to read the labels
-- Format: `library.base:weight` (`tw.blue:500`, `md.red:700`, `opencolor.gray:6`).
+- Format: `library.base:weight` (`tw.blue500`, `md.red700`, `oc.gray6`).
 - Works anywhere matplotlib accepts a color—no extra API layer required.
 - `dm.use()` loads the dartwork style so these names look consistent across
   lines, fills, markers, and legends.
@@ -17,8 +17,8 @@ import numpy as np
 
 dm.use()
 t = np.linspace(0, 2 * np.pi, 200)
-plt.plot(t, np.sin(t), color="opencolor.indigo:6", linewidth=2.4, label="Indigo 6")
-plt.scatter(t[::12], np.cos(t[::12]), color="tw.rose:500", edgecolor="none")
+plt.plot(t, np.sin(t), color="oc.indigo6", linewidth=2.4, label="Indigo 6")
+plt.scatter(t[::12], np.cos(t[::12]), color="tw.rose500", edgecolor="none")
 plt.legend()
 plt.show()
 ```

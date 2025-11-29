@@ -53,10 +53,10 @@ dm.style.use_preset("presentation")
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(8), dm.cm2in(5)), dpi=300)
 ax.plot([0, 1, 2], [1, 2, 1.5], marker="o", color="oc.green5", label="oc.*")
-ax.plot([0, 1, 2], [1.2, 1.6, 2.1], marker="s", color="tw.blue:500", label="Tailwind")
-highlight = dm.mix_colors("md.orange:600", "white", alpha=0.45)  # API › Color Utilities
+ax.plot([0, 1, 2], [1.2, 1.6, 2.1], marker="s", color="tw.blue500", label="Tailwind")
+highlight = dm.mix_colors("md.orange600", "white", alpha=0.45)  # API › Color Utilities
 ax.fill_between([0, 1, 2], 0.9, 1.3, color=highlight, label="Mixed shade")
-muted_line = dm.pseudo_alpha("primer.blue5", alpha=0.65, background="white")
+muted_line = dm.pseudo_alpha("pr.blue5", alpha=0.65, background="white")
 ax.plot([0, 1, 2], [0.8, 1.1, 1.4], color=muted_line, label="Pseudo alpha")
 ax.legend(fontsize=dm.fs(-1))
 dm.simple_layout(fig)

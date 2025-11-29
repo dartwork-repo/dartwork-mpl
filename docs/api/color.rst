@@ -3,7 +3,7 @@ Color Utilities
 
 Importing ``dartwork_mpl`` registers a large catalog of named colors with
 matplotlib (``oc.*`` plus Tailwind ``tw.``, Material ``md.``, Ant Design
-``ant.``, Chakra ``chakra.``, and Primer ``primer.`` prefixes). These helpers
+``ad.``, Chakra ``cu.``, and Primer ``pr.`` prefixes). These helpers
 expose the color mixing routines used across the package and let you classify
 colormaps before plotting. Each helper lists its parameters and return value
 before jumping into examples.

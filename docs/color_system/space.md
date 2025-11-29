@@ -73,7 +73,7 @@ import dartwork_mpl as dm
 # Works with any matplotlib color name
 color1 = dm.named("red")
 color2 = dm.named("oc.blue5")      # dartwork-mpl colors
-color3 = dm.named("tw.blue:500")    # Tailwind colors
+color3 = dm.named("tw.blue500")    # Tailwind colors
 ```
 
 :::{figure} images/color_space_creation.png

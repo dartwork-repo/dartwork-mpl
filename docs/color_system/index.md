@@ -19,7 +19,7 @@ Color Space <space>
 :width: 100%
 
 **Colors.** All named palettes ship as weight-aware labels you can drop straight
-into matplotlib (`tw.blue:500`, `md.red:700`, `opencolor.gray:6`, and more).
+into matplotlib (`tw.blue500`, `md.red700`, `oc.gray6`, and more).
 Every sheet uses generous spacing so labels stay legible.
 [Open the full color sheets →](colors.md)
 :::
@@ -45,7 +45,7 @@ dm.use()  # style + fonts
 x = np.linspace(0, 10, 200)
 signal = np.sin(x) * np.exp(-0.08 * x)
 
-plt.plot(x, signal, color="tw.emerald:500", linewidth=2.6, label="Emerald 500")
+plt.plot(x, signal, color="tw.emerald500", linewidth=2.6, label="Emerald 500")
 plt.imshow(np.outer(signal, signal), cmap="dm.sunset")
 plt.colorbar(label="normalized response")
 plt.legend()
