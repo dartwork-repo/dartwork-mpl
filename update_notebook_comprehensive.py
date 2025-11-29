@@ -71,7 +71,7 @@ function_code = """def plot_grid_square_area(
         Default is 'center'.
     colors : dict, optional
         Dictionary with keys 'default' and 'highlight' specifying colors.
-        Default uses 'dm.blue5' and 'dm.blue3'.
+        Default uses 'oc.blue5' and 'oc.blue3'.
     title : str, optional
         Title for the chart. Default is None.
     title_fontsize : float or None, optional
@@ -110,8 +110,8 @@ function_code = """def plot_grid_square_area(
     # Set default colors if not provided
     if colors is None:
         colors = {
-            'default': 'dm.blue5',      # Default square color
-            'highlight': 'dm.blue3'     # Highlighted column color
+            'default': 'oc.blue5',      # Default square color
+            'highlight': 'oc.blue3'     # Highlighted column color
         }
     
     # Set default font sizes using dartwork_mpl sizing
@@ -191,7 +191,7 @@ function_code = """def plot_grid_square_area(
                 cell_size,
                 cell_size,
                 facecolor='none',
-                edgecolor='dm.gray8',
+                edgecolor='oc.gray8',
                 linewidth=0.5,
                 zorder=1
             )
@@ -244,7 +244,7 @@ function_code = """def plot_grid_square_area(
                 ha='center',
                 va='center',
                 fontsize=value_fontsize,
-                color='dm.gray9',
+                color='oc.gray9',
                 weight=dm.fw(0),
                 zorder=3
             )
@@ -350,8 +350,8 @@ highlight_cols = [2]
 
 # Use green color scheme
 custom_colors = {
-    'default': 'dm.green5',
-    'highlight': 'dm.green3'
+    'default': 'oc.green5',
+    'highlight': 'oc.green3'
 }
 """
             example_lines = [line + "\n" for line in new_example.split("\n")]

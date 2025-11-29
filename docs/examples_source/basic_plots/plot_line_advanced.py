@@ -45,7 +45,7 @@ ax1 = fig.add_subplot(gs[0, 0])
 ax1.plot(
     x,
     y1,
-    color="dm.blue5",
+    color="oc.blue5",
     lw=0.7,
     marker="o",
     markersize=3,
@@ -56,7 +56,7 @@ ax1.plot(
 ax1.plot(
     x,
     y2,
-    color="dm.red5",
+    color="oc.red5",
     lw=0.7,
     marker="s",
     markersize=3,
@@ -67,7 +67,7 @@ ax1.plot(
 ax1.plot(
     x,
     y3,
-    color="dm.green5",
+    color="oc.green5",
     lw=0.7,
     marker="^",
     markersize=3,
@@ -92,9 +92,9 @@ ax1.set_ylim(-1.2, 1.2)
 # Panel B: Different line styles
 ax2 = fig.add_subplot(gs[0, 1])
 # Explicit parameters: lw=0.7 for all lines
-ax2.plot(x, y1, color="dm.blue5", lw=0.7, linestyle="-", label="Solid", alpha=0.8)
-ax2.plot(x, y2, color="dm.red5", lw=0.7, linestyle="--", label="Dashed", alpha=0.8)
-ax2.plot(x, y3, color="dm.green5", lw=0.7, linestyle=":", label="Dotted", alpha=0.8)
+ax2.plot(x, y1, color="oc.blue5", lw=0.7, linestyle="-", label="Solid", alpha=0.8)
+ax2.plot(x, y2, color="oc.red5", lw=0.7, linestyle="--", label="Dashed", alpha=0.8)
+ax2.plot(x, y3, color="oc.green5", lw=0.7, linestyle=":", label="Dotted", alpha=0.8)
 ax2.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax2.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax2.set_title("Line Styles", fontsize=dm.fs(1))
@@ -112,10 +112,10 @@ ax2.set_ylim(-1.2, 1.2)
 # Panel C: Line with error band
 ax3 = fig.add_subplot(gs[1, 0])
 # Main line: lw=0.7
-ax3.plot(x, y1, color="dm.blue5", lw=0.7, label="Mean", alpha=0.8)
+ax3.plot(x, y1, color="oc.blue5", lw=0.7, label="Mean", alpha=0.8)
 # Error band: alpha=0.2, edgecolors='none'
 ax3.fill_between(
-    x, y_lower, y_upper, color="dm.blue2", alpha=0.2, edgecolors="none", label="±1σ"
+    x, y_lower, y_upper, color="oc.blue2", alpha=0.2, edgecolors="none", label="±1σ"
 )
 ax3.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax3.set_ylabel("Amplitude", fontsize=dm.fs(0))
@@ -137,13 +137,13 @@ ax4 = fig.add_subplot(gs[1, 1])
 window = 5
 kernel = np.ones(window) / window
 y4_smooth = np.convolve(y4, kernel, mode="same")
-ax4.plot(x, y4, color="dm.orange5", lw=0.6, alpha=0.4, label="Raw signal")
-ax4.plot(x, y4_smooth, color="dm.orange7", lw=1.2, label="Smoothed")
+ax4.plot(x, y4, color="oc.orange5", lw=0.6, alpha=0.4, label="Raw signal")
+ax4.plot(x, y4_smooth, color="oc.orange7", lw=1.2, label="Smoothed")
 ax4.step(
     x,
     np.round(y4_smooth, 1),
     where="mid",
-    color="dm.gray6",
+    color="oc.gray6",
     lw=0.6,
     label="Step (rounded)",
 )

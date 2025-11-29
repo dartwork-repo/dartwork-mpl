@@ -37,7 +37,7 @@ gs = fig.add_gridspec(
 
 # Panel A: Custom tick positions
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(x, y1, color="dm.blue5", lw=0.7, alpha=0.8)
+ax1.plot(x, y1, color="oc.blue5", lw=0.7, alpha=0.8)
 # Explicit tick positions: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 ax1.set_xticks([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
 ax1.set_yticks([0, 1, 2, 3, 4, 5])
@@ -49,7 +49,7 @@ ax1.grid(True, linestyle="--", linewidth=0.3, alpha=0.3)
 
 # Panel B: Custom tick labels
 ax2 = fig.add_subplot(gs[0, 1])
-ax2.plot(x, y2, color="dm.red5", lw=0.7, alpha=0.8)
+ax2.plot(x, y2, color="oc.red5", lw=0.7, alpha=0.8)
 # Explicit tick positions and custom labels
 tick_positions = [0, 25, 50, 75, 100]
 tick_labels = ["Start", "Q1", "Mid", "Q3", "End"]
@@ -64,7 +64,7 @@ ax2.grid(True, linestyle="--", linewidth=0.3, alpha=0.3)
 
 # Panel C: Log scale ticks
 ax3 = fig.add_subplot(gs[1, 0])
-ax3.plot(x, y3, color="dm.green5", lw=0.7, alpha=0.8)
+ax3.plot(x, y3, color="oc.green5", lw=0.7, alpha=0.8)
 # Set log scale: basex=10
 ax3.set_xscale("log")
 # Use LogLocator for better tick spacing
@@ -84,7 +84,7 @@ ax3.grid(True, linestyle="--", linewidth=0.3, alpha=0.3, which="both")
 # Panel D: Secondary ticks and percent formatter
 ax4 = fig.add_subplot(gs[1, 1])
 t = np.linspace(0, 1, 100)
-ax4.plot(t, t**2, color="dm.orange5", lw=0.7, alpha=0.8)
+ax4.plot(t, t**2, color="oc.orange5", lw=0.7, alpha=0.8)
 ax4.yaxis.set_major_formatter(ticker.PercentFormatter(1.0, decimals=0))
 ax4.yaxis.set_minor_locator(ticker.MultipleLocator(0.05))
 ax4.tick_params(axis="y", which="minor", length=2)

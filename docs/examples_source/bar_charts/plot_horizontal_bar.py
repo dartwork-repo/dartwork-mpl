@@ -38,7 +38,7 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 y_pos = np.arange(len(categories))
 ax1.barh(
-    y_pos, values1, color="dm.blue5", alpha=0.7, edgecolor="dm.blue7", linewidth=0.3
+    y_pos, values1, color="oc.blue5", alpha=0.7, edgecolor="oc.blue7", linewidth=0.3
 )
 ax1.set_yticks(y_pos)
 ax1.set_yticklabels(categories, fontsize=dm.fs(-1))
@@ -52,9 +52,9 @@ sorted_idx = np.argsort(values1)
 ax2.barh(
     y_pos,
     values1[sorted_idx],
-    color="dm.red5",
+    color="oc.red5",
     alpha=0.7,
-    edgecolor="dm.red7",
+    edgecolor="oc.red7",
     linewidth=0.3,
 )
 ax2.set_yticks(y_pos)
@@ -70,9 +70,9 @@ ax3.barh(
     y_pos - height,
     values1,
     height,
-    color="dm.blue5",
+    color="oc.blue5",
     alpha=0.7,
-    edgecolor="dm.blue7",
+    edgecolor="oc.blue7",
     linewidth=0.3,
     label="Group 1",
 )
@@ -80,9 +80,9 @@ ax3.barh(
     y_pos,
     values2,
     height,
-    color="dm.red5",
+    color="oc.red5",
     alpha=0.7,
-    edgecolor="dm.red7",
+    edgecolor="oc.red7",
     linewidth=0.3,
     label="Group 2",
 )
@@ -90,9 +90,9 @@ ax3.barh(
     y_pos + height,
     values3,
     height,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.7,
-    edgecolor="dm.green7",
+    edgecolor="oc.green7",
     linewidth=0.3,
     label="Group 3",
 )
@@ -106,7 +106,7 @@ ax3.set_xticks([0, 20, 40, 60])
 # Panel D: Horizontal bar with value labels
 ax4 = fig.add_subplot(gs[1, 1])
 bars = ax4.barh(
-    y_pos, values1, color="dm.green5", alpha=0.7, edgecolor="dm.green7", linewidth=0.3
+    y_pos, values1, color="oc.green5", alpha=0.7, edgecolor="oc.green7", linewidth=0.3
 )
 ax4.set_yticks(y_pos)
 ax4.set_yticklabels(categories, fontsize=dm.fs(-1))

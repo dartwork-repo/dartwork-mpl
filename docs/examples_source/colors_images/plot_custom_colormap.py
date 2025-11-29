@@ -31,7 +31,7 @@ gs = fig.add_gridspec(
 
 # Panel A: Custom sequential colormap
 ax1 = fig.add_subplot(gs[0, 0])
-colors_seq = ["white", "dm.blue3", "dm.blue5", "dm.blue7"]
+colors_seq = ["white", "oc.blue3", "oc.blue5", "oc.blue7"]
 n_bins = 100
 cmap_custom = LinearSegmentedColormap.from_list("custom_blue", colors_seq, N=n_bins)
 im1 = ax1.contourf(X, Y, Z, levels=20, cmap=cmap_custom)
@@ -42,7 +42,7 @@ ax1.set_title("Custom Sequential", fontsize=dm.fs(1))
 
 # Panel B: Custom diverging colormap
 ax2 = fig.add_subplot(gs[0, 1])
-colors_div = ["dm.blue7", "dm.blue5", "white", "dm.red5", "dm.red7"]
+colors_div = ["oc.blue7", "oc.blue5", "white", "oc.red5", "oc.red7"]
 cmap_div = LinearSegmentedColormap.from_list("custom_div", colors_div, N=256)
 im2 = ax2.contourf(X, Y, Z, levels=20, cmap=cmap_div)
 plt.colorbar(im2, ax=ax2, fraction=0.046, pad=0.04)
@@ -53,12 +53,12 @@ ax2.set_title("Custom Diverging", fontsize=dm.fs(1))
 # Panel C: Discrete colormap
 ax3 = fig.add_subplot(gs[1, 0])
 colors_discrete = [
-    "dm.red5",
-    "dm.orange5",
-    "dm.yellow5",
-    "dm.green5",
-    "dm.blue5",
-    "dm.violet5",
+    "oc.red5",
+    "oc.orange5",
+    "oc.yellow5",
+    "oc.green5",
+    "oc.blue5",
+    "oc.violet5",
 ]
 cmap_discrete = ListedColormap(colors_discrete)
 im3 = ax3.contourf(X, Y, Z, levels=6, cmap=cmap_discrete)

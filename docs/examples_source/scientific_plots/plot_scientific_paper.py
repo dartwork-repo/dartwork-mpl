@@ -42,16 +42,16 @@ ax1.errorbar(
     y_data,
     yerr=y_error,
     fmt="o",
-    color="dm.gray5",
-    ecolor="dm.gray3",
+    color="oc.gray5",
+    ecolor="oc.gray3",
     elinewidth=1,
     capsize=2,
     markersize=4,
     label="Experiment",
 )
-ax1.plot(x, y_model, color="dm.blue5", lw=1.5, label="Model Prediction")
+ax1.plot(x, y_model, color="oc.blue5", lw=1.5, label="Model Prediction")
 ax1.fill_between(
-    x, y_model - 0.5, y_model + 0.5, color="dm.blue2", alpha=0.2, label="95% CI"
+    x, y_model - 0.5, y_model + 0.5, color="oc.blue2", alpha=0.2, label="95% CI"
 )
 
 ax1.set_xlabel("Time [hours]", fontsize=dm.fs(0))
@@ -75,7 +75,7 @@ bars = ax2.bar(
     values,
     yerr=errors,
     capsize=4,
-    color=["dm.gray3", "dm.blue3", "dm.blue5", "dm.red5"],
+    color=["oc.gray3", "oc.blue3", "oc.blue5", "oc.red5"],
     edgecolor="none",
 )
 

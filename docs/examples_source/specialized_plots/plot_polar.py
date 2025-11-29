@@ -46,8 +46,8 @@ def apply_theta_labels(ax, frac=1.04, pad=2):
 # Panel A: Basic polar plot
 ax1 = fig.add_subplot(gs[0, 0], projection="polar")
 # Explicit parameters: lw=0.7, marker='o', markersize=4
-ax1.plot(theta, r1, color="dm.blue5", lw=0.7, marker="o", markersize=4, label="Data")
-ax1.fill(theta, r1, color="dm.blue2", alpha=0.3)
+ax1.plot(theta, r1, color="oc.blue5", lw=0.7, marker="o", markersize=4, label="Data")
+ax1.fill(theta, r1, color="oc.blue2", alpha=0.3)
 ax1.set_title("Basic Polar Plot", fontsize=dm.fs(1), pad=20)
 ax1.set_theta_zero_location("N")
 ax1.set_theta_direction(-1)
@@ -57,7 +57,7 @@ apply_theta_labels(ax1)
 # Panel B: Polar scatter plot
 ax2 = fig.add_subplot(gs[0, 1], projection="polar")
 # Explicit parameters: s=20, alpha=0.6
-ax2.scatter(theta2, r2, c="dm.red5", s=20, alpha=0.6, edgecolors="none")
+ax2.scatter(theta2, r2, c="oc.red5", s=20, alpha=0.6, edgecolors="none")
 ax2.set_title("Polar Scatter Plot", fontsize=dm.fs(1), pad=20)
 ax2.set_theta_zero_location("N")
 ax2.set_theta_direction(-1)
@@ -72,9 +72,9 @@ bars = ax3.bar(
     theta,
     r1,
     width=width,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.7,
-    edgecolor="dm.green7",
+    edgecolor="oc.green7",
     linewidth=0.3,
 )
 ax3.set_title("Polar Bar Chart", fontsize=dm.fs(1), pad=20)
@@ -91,7 +91,7 @@ group_b = 1.5 + np.random.rand(len(theta_groups)) * 2.5
 ax4.plot(
     theta_groups,
     group_a,
-    color="dm.purple5",
+    color="oc.purple5",
     lw=1.1,
     marker="o",
     markersize=4,
@@ -100,13 +100,13 @@ ax4.plot(
 ax4.plot(
     theta_groups,
     group_b,
-    color="dm.orange5",
+    color="oc.orange5",
     lw=1.1,
     marker="s",
     markersize=4,
     label="Group B",
 )
-ax4.fill(theta_groups, group_a, color="dm.purple2", alpha=0.25)
+ax4.fill(theta_groups, group_a, color="oc.purple2", alpha=0.25)
 ax4.set_title("Radial Multi-Series", fontsize=dm.fs(1), pad=20)
 ax4.legend(loc="best", fontsize=dm.fs(-1))
 ax4.set_theta_zero_location("N")

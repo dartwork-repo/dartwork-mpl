@@ -20,8 +20,8 @@ ax = fig.add_subplot(gs[0, 0])
 x = np.linspace(0, 10, 100)
 
 # 1. dartwork-mpl custom colors (dm.*)
-ax.plot(x, np.sin(x), color="dm.red5", lw=2, label="dm.red5")
-ax.plot(x, np.cos(x), color="dm.blue5", lw=2, label="dm.blue5")
+ax.plot(x, np.sin(x), color="oc.red5", lw=2, label="oc.red5")
+ax.plot(x, np.cos(x), color="oc.blue5", lw=2, label="oc.blue5")
 
 # 2. Tailwind CSS colors (tw.* or tailwind.*)
 ax.plot(x, np.sin(x) + 2, color="tw.green:500", lw=2, label="tw.green:500")
@@ -29,12 +29,12 @@ ax.plot(x, np.cos(x) + 2, color="tw.purple:500", lw=2, label="tw.purple:500")
 
 # 3. Color mixing
 # Mix red and blue
-mixed_color = dm.mix_colors("dm.red5", "dm.blue5", alpha=0.5)
+mixed_color = dm.mix_colors("oc.red5", "oc.blue5", alpha=0.5)
 ax.plot(x, np.sin(x) + 4, color=mixed_color, lw=2, label="Mixed (Red+Blue)")
 
 # 4. Pseudo-transparency
 # Create a lighter version of red by mixing with white
-transparent_red = dm.pseudo_alpha("dm.red5", alpha=0.3, background="white")
+transparent_red = dm.pseudo_alpha("oc.red5", alpha=0.3, background="white")
 ax.fill_between(x, np.sin(x) + 4, 5.5, color=transparent_red, label="Pseudo-alpha Red")
 
 ax.set_ylim(-1.5, 6)

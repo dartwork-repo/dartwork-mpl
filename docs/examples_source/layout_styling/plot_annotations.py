@@ -32,7 +32,7 @@ gs = fig.add_gridspec(
 
 # Panel A: Text annotations
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(x, y, color="dm.blue5", lw=0.7, alpha=0.8)
+ax1.plot(x, y, color="oc.blue5", lw=0.7, alpha=0.8)
 # Text annotation: fontsize=dm.fs(-1), bbox with explicit parameters
 peak_x = x[np.argmax(y)]
 valley_x = x[np.argmin(y)]
@@ -43,9 +43,9 @@ ax1.text(
     fontsize=dm.fs(-1),
     bbox=dict(
         boxstyle="round",
-        facecolor="dm.blue2",
+        facecolor="oc.blue2",
         alpha=0.5,
-        edgecolor="dm.blue7",
+        edgecolor="oc.blue7",
         linewidth=0.3,
     ),
     ha="center",
@@ -58,9 +58,9 @@ ax1.text(
     fontsize=dm.fs(-1),
     bbox=dict(
         boxstyle="round",
-        facecolor="dm.red2",
+        facecolor="oc.red2",
         alpha=0.5,
-        edgecolor="dm.red7",
+        edgecolor="oc.red7",
         linewidth=0.3,
     ),
     ha="center",
@@ -74,14 +74,14 @@ ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel B: Arrow annotations
 ax2 = fig.add_subplot(gs[0, 1])
-ax2.plot(x, y, color="dm.red5", lw=0.7, alpha=0.8)
+ax2.plot(x, y, color="oc.red5", lw=0.7, alpha=0.8)
 # Arrow annotation: arrowprops with explicit parameters
 ax2.annotate(
     "Maximum",
     xy=(np.pi / 2, 1),
     xytext=(4, 0.5),
     arrowprops=dict(
-        arrowstyle="->", color="dm.red7", lw=0.7, connectionstyle="arc3,rad=0.3"
+        arrowstyle="->", color="oc.red7", lw=0.7, connectionstyle="arc3,rad=0.3"
     ),
     fontsize=dm.fs(-1),
     ha="center",
@@ -90,7 +90,7 @@ ax2.annotate(
         boxstyle="round",
         facecolor="white",
         alpha=0.8,
-        edgecolor="dm.red7",
+        edgecolor="oc.red7",
         linewidth=0.3,
     ),
 )
@@ -99,7 +99,7 @@ ax2.annotate(
     xy=(3 * np.pi / 2, -1),
     xytext=(7, -0.5),
     arrowprops=dict(
-        arrowstyle="->", color="dm.red7", lw=0.7, connectionstyle="arc3,rad=-0.3"
+        arrowstyle="->", color="oc.red7", lw=0.7, connectionstyle="arc3,rad=-0.3"
     ),
     fontsize=dm.fs(-1),
     ha="center",
@@ -108,7 +108,7 @@ ax2.annotate(
         boxstyle="round",
         facecolor="white",
         alpha=0.8,
-        edgecolor="dm.red7",
+        edgecolor="oc.red7",
         linewidth=0.3,
     ),
 )
@@ -120,7 +120,7 @@ ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel C: Custom markers with labels
 ax3 = fig.add_subplot(gs[1, 0])
-ax3.plot(x, y, color="dm.green5", lw=0.7, alpha=0.8)
+ax3.plot(x, y, color="oc.green5", lw=0.7, alpha=0.8)
 # Mark specific points: markersize=6, markeredgewidth=0.5
 peak_idx = np.argmax(y)
 valley_idx = np.argmin(y)
@@ -128,7 +128,7 @@ ax3.plot(
     x[peak_idx],
     y[peak_idx],
     "o",
-    color="dm.green7",
+    color="oc.green7",
     markersize=6,
     markeredgewidth=0.5,
     markeredgecolor="white",
@@ -139,7 +139,7 @@ ax3.plot(
     x[valley_idx],
     y[valley_idx],
     "s",
-    color="dm.red7",
+    color="oc.red7",
     markersize=6,
     markeredgewidth=0.5,
     markeredgecolor="white",
@@ -158,7 +158,7 @@ ax3.text(
         boxstyle="round",
         facecolor="white",
         alpha=0.8,
-        edgecolor="dm.green7",
+        edgecolor="oc.green7",
         linewidth=0.3,
     ),
 )
@@ -173,7 +173,7 @@ ax3.text(
         boxstyle="round",
         facecolor="white",
         alpha=0.8,
-        edgecolor="dm.red7",
+        edgecolor="oc.red7",
         linewidth=0.3,
     ),
 )
@@ -186,10 +186,10 @@ ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel D: Highlighted spans with inline notes
 ax4 = fig.add_subplot(gs[1, 1])
-ax4.plot(x, y, color="dm.purple5", lw=0.7, alpha=0.85)
-ax4.axhline(0, color="dm.gray6", lw=0.4, linestyle="--")
+ax4.plot(x, y, color="oc.purple5", lw=0.7, alpha=0.85)
+ax4.axhline(0, color="oc.gray6", lw=0.4, linestyle="--")
 # Highlight a time window
-ax4.axvspan(3, 7, color="dm.purple1", alpha=0.35, edgecolor="dm.purple6", lw=0.4)
+ax4.axvspan(3, 7, color="oc.purple1", alpha=0.35, edgecolor="oc.purple6", lw=0.4)
 ax4.annotate(
     "Focus window",
     xy=(5, 0.1),
@@ -197,9 +197,9 @@ ax4.annotate(
     ha="center",
     va="center",
     fontsize=dm.fs(-1),
-    arrowprops=dict(arrowstyle="-[,widthB=2.5", lw=0.7, color="dm.purple7"),
+    arrowprops=dict(arrowstyle="-[,widthB=2.5", lw=0.7, color="oc.purple7"),
     bbox=dict(
-        boxstyle="round", facecolor="white", edgecolor="dm.purple6", linewidth=0.3
+        boxstyle="round", facecolor="white", edgecolor="oc.purple6", linewidth=0.3
     ),
 )
 ax4.annotate(
@@ -210,9 +210,9 @@ ax4.annotate(
     ha="center",
     va="center",
     arrowprops=dict(
-        arrowstyle="->", lw=0.6, color="dm.gray7", connectionstyle="arc3,rad=-0.2"
+        arrowstyle="->", lw=0.6, color="oc.gray7", connectionstyle="arc3,rad=-0.2"
     ),
-    bbox=dict(boxstyle="round", facecolor="white", edgecolor="dm.gray7", linewidth=0.3),
+    bbox=dict(boxstyle="round", facecolor="white", edgecolor="oc.gray7", linewidth=0.3),
 )
 ax4.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax4.set_ylabel("Amplitude", fontsize=dm.fs(0))

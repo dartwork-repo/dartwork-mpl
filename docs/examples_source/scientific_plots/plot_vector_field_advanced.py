@@ -42,7 +42,7 @@ gs = fig.add_gridspec(
 
 # Panel A: Basic quiver plot
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.quiver(X, Y, U1, V1, alpha=0.8, width=0.004, scale=25, color="dm.blue5")
+ax1.quiver(X, Y, U1, V1, alpha=0.8, width=0.004, scale=25, color="oc.blue5")
 ax1.set_xlabel("X", fontsize=dm.fs(0))
 ax1.set_ylabel("Y", fontsize=dm.fs(0))
 ax1.set_title("Rotation Field", fontsize=dm.fs(1))
@@ -73,7 +73,7 @@ strm = ax3.streamplot(
     Y_fine,
     U_fine,
     V_fine,
-    color="dm.red5",
+    color="oc.red5",
     linewidth=0.5,
     density=1.5,
     arrowsize=0.8,
@@ -90,9 +90,9 @@ ax4 = fig.add_subplot(gs[1, 1])
 # Potential function
 potential = 0.5 * (X**2 + Y**2)
 contour = ax4.contour(
-    X, Y, potential, levels=10, colors="dm.gray5", linewidths=0.5, alpha=0.5
+    X, Y, potential, levels=10, colors="oc.gray5", linewidths=0.5, alpha=0.5
 )
-ax4.quiver(X, Y, U1, V1, alpha=0.8, width=0.004, scale=25, color="dm.green5")
+ax4.quiver(X, Y, U1, V1, alpha=0.8, width=0.004, scale=25, color="oc.green5")
 ax4.set_xlabel("X", fontsize=dm.fs(0))
 ax4.set_ylabel("Y", fontsize=dm.fs(0))
 ax4.set_title("Vector Field with Potential", fontsize=dm.fs(1))

@@ -38,7 +38,7 @@ gs = fig.add_gridspec(
 
 # Panel A: Top-left
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(x, y1, color="dm.blue5", lw=0.7, label="Sin")
+ax1.plot(x, y1, color="oc.blue5", lw=0.7, label="Sin")
 ax1.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax1.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax1.set_title("Subplot 1", fontsize=dm.fs(1))
@@ -48,7 +48,7 @@ ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel B: Top-right
 ax2 = fig.add_subplot(gs[0, 1])
-ax2.plot(x, y2, color="dm.red5", lw=0.7, label="Cos")
+ax2.plot(x, y2, color="oc.red5", lw=0.7, label="Cos")
 ax2.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax2.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax2.set_title("Subplot 2", fontsize=dm.fs(1))
@@ -58,7 +58,7 @@ ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel C: Bottom-left
 ax3 = fig.add_subplot(gs[1, 0])
-ax3.plot(x, y3, color="dm.green5", lw=0.7, label="Sin×Cos")
+ax3.plot(x, y3, color="oc.green5", lw=0.7, label="Sin×Cos")
 ax3.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax3.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax3.set_title("Subplot 3", fontsize=dm.fs(1))
@@ -68,7 +68,7 @@ ax3.set_yticks([-0.5, 0, 0.5])
 
 # Panel D: Bottom-right
 ax4 = fig.add_subplot(gs[1, 1])
-ax4.plot(x, y4, color="dm.orange5", lw=0.7, label="Sin(2x)")
+ax4.plot(x, y4, color="oc.orange5", lw=0.7, label="Sin(2x)")
 ax4.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax4.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax4.set_title("Subplot 4", fontsize=dm.fs(1))

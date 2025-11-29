@@ -20,7 +20,7 @@ gs = fig.add_gridspec(1, 1, left=0.15, right=0.85, top=0.92, bottom=0.15)
 ax1 = fig.add_subplot(gs[0, 0])
 
 # Plot on primary axis
-color1 = "dm.red5"
+color1 = "oc.red5"
 ax1.set_xlabel("Time (s)", fontsize=dm.fs(0))
 ax1.set_ylabel("Exponential", color=color1, fontsize=dm.fs(0))
 ax1.plot(x, y1, color=color1, lw=0.7, label="Exp")
@@ -28,7 +28,7 @@ ax1.tick_params(axis="y", labelcolor=color1)
 
 # Create secondary axis
 ax2 = ax1.twinx()
-color2 = "dm.blue5"
+color2 = "oc.blue5"
 ax2.set_ylabel("Sine", color=color2, fontsize=dm.fs(0))
 ax2.plot(x, y2, color=color2, lw=0.7, label="Sin")
 ax2.tick_params(axis="y", labelcolor=color2)

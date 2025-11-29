@@ -48,7 +48,7 @@ ax3 = fig.add_subplot(gs[1, 0])
 x_plot = np.arange(6)
 values = [5, 7, 3, 8, 4, 6]
 # Colorblind-friendly colors
-cb_colors = ["dm.blue5", "dm.orange5", "dm.green5", "dm.red5", "dm.violet5", "dm.gray5"]
+cb_colors = ["oc.blue5", "oc.orange5", "oc.green5", "oc.red5", "oc.violet5", "oc.gray5"]
 bars = ax3.bar(
     x_plot, values, color=cb_colors, alpha=0.7, edgecolor="black", linewidth=0.5
 )
@@ -62,11 +62,11 @@ ax3.set_xticklabels(["A", "B", "C", "D", "E", "F"], fontsize=dm.fs(-1))
 ax4 = fig.add_subplot(gs[1, 1])
 # Show different lightness levels
 colors_lightness = [
-    ("dm.blue2", "Light"),
-    ("dm.blue4", "Medium-Light"),
-    ("dm.blue5", "Medium"),
-    ("dm.blue6", "Medium-Dark"),
-    ("dm.blue8", "Dark"),
+    ("oc.blue2", "Light"),
+    ("oc.blue4", "Medium-Light"),
+    ("oc.blue5", "Medium"),
+    ("oc.blue6", "Medium-Dark"),
+    ("oc.blue8", "Dark"),
 ]
 y_pos = np.arange(len(colors_lightness))
 for i, (color, label) in enumerate(colors_lightness):

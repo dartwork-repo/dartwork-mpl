@@ -47,9 +47,9 @@ for i, (d, cat) in enumerate(zip(data, categories)):
         x_range,
         i,
         i + y * 2,
-        color="dm.blue5",
+        color="oc.blue5",
         alpha=0.6,
-        edgecolor="dm.blue7",
+        edgecolor="oc.blue7",
         linewidth=0.5,
     )
 ax1.set_yticks(range(len(categories)))
@@ -61,7 +61,7 @@ ax1.set_xlim(-4, 6)
 
 # Panel B: Colored ridgeline
 ax2 = fig.add_subplot(gs[0, 1])
-colors = ["dm.red5", "dm.blue5", "dm.green5", "dm.orange5", "dm.violet5", "dm.pink5"]
+colors = ["oc.red5", "oc.blue5", "oc.green5", "oc.orange5", "oc.violet5", "oc.pink5"]
 for i, (d, cat, c) in enumerate(zip(data, categories, colors)):
     kde = stats.gaussian_kde(d)
     y = kde(x_range)
@@ -84,15 +84,15 @@ for i, (d, cat) in enumerate(zip(data[:4], categories[:4])):
         x_range,
         i,
         i + y * 2.5,
-        color="dm.green5",
+        color="oc.green5",
         alpha=0.4,
-        edgecolor="dm.green7",
+        edgecolor="oc.green7",
         linewidth=0.5,
     )
     # Add sample points
     sample = np.random.choice(d, 50)
     ax3.scatter(
-        sample, np.ones(len(sample)) * i - 0.15, s=1, alpha=0.3, color="dm.gray7"
+        sample, np.ones(len(sample)) * i - 0.15, s=1, alpha=0.3, color="oc.gray7"
     )
 ax3.set_yticks(range(4))
 ax3.set_yticklabels(categories[:4], fontsize=dm.fs(-1))
@@ -106,8 +106,8 @@ ax4 = fig.add_subplot(gs[1, 1])
 for i, (d, cat) in enumerate(zip(data, categories)):
     kde = stats.gaussian_kde(d)
     y = kde(x_range)
-    ax4.plot(x_range, i * 0.7 + y * 3, color="dm.blue7", lw=0.5)
-    ax4.fill_between(x_range, i * 0.7, i * 0.7 + y * 3, color="dm.blue5", alpha=0.5)
+    ax4.plot(x_range, i * 0.7 + y * 3, color="oc.blue7", lw=0.5)
+    ax4.fill_between(x_range, i * 0.7, i * 0.7 + y * 3, color="oc.blue5", alpha=0.5)
 ax4.set_yticks(np.arange(len(categories)) * 0.7)
 ax4.set_yticklabels(categories, fontsize=dm.fs(-2))
 ax4.set_ylim(-0.4, 0.7 * (len(categories) + 0.8))

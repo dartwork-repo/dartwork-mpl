@@ -66,7 +66,7 @@ for i in range(4):
 
 # Panel B: Scatter plot - strong positive correlation
 ax2 = fig.add_subplot(gs[0, 1])
-ax2.scatter(data[:, 0], data[:, 1], c="dm.blue5", s=8, alpha=0.6)
+ax2.scatter(data[:, 0], data[:, 1], c="oc.blue5", s=8, alpha=0.6)
 ax2.set_xlabel("Variable 1", fontsize=dm.fs(0))
 ax2.set_ylabel("Variable 2", fontsize=dm.fs(0))
 ax2.set_title(f"Strong Positive (r={corr_matrix[0, 1]:.2f})", fontsize=dm.fs(1))
@@ -75,7 +75,7 @@ ax2.set_yticks([-3, -1.5, 0, 1.5, 3])
 
 # Panel C: Scatter plot - weak positive correlation
 ax3 = fig.add_subplot(gs[1, 0])
-ax3.scatter(data[:, 0], data[:, 2], c="dm.green5", s=8, alpha=0.6)
+ax3.scatter(data[:, 0], data[:, 2], c="oc.green5", s=8, alpha=0.6)
 ax3.set_xlabel("Variable 1", fontsize=dm.fs(0))
 ax3.set_ylabel("Variable 3", fontsize=dm.fs(0))
 ax3.set_title(f"Weak Positive (r={corr_matrix[0, 2]:.2f})", fontsize=dm.fs(1))
@@ -84,7 +84,7 @@ ax3.set_yticks([-3, -1.5, 0, 1.5, 3])
 
 # Panel D: Scatter plot - negative correlation
 ax4 = fig.add_subplot(gs[1, 1])
-ax4.scatter(data[:, 0], data[:, 3], c="dm.red5", s=8, alpha=0.6)
+ax4.scatter(data[:, 0], data[:, 3], c="oc.red5", s=8, alpha=0.6)
 ax4.set_xlabel("Variable 1", fontsize=dm.fs(0))
 ax4.set_ylabel("Variable 4", fontsize=dm.fs(0))
 ax4.set_title(f"Negative (r={corr_matrix[0, 3]:.2f})", fontsize=dm.fs(1))

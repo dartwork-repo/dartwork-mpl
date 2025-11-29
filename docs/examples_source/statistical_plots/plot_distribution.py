@@ -36,10 +36,10 @@ gs = fig.add_gridspec(
 # Panel A: Normal distributions
 ax1 = fig.add_subplot(gs[0, 0])
 for mu, sigma, color, label in [
-    (0, 0.5, "dm.red5", "μ=0, σ=0.5"),
-    (0, 1.0, "dm.blue5", "μ=0, σ=1.0"),
-    (0, 1.5, "dm.green5", "μ=0, σ=1.5"),
-    (1, 1.0, "dm.orange5", "μ=1, σ=1.0"),
+    (0, 0.5, "oc.red5", "μ=0, σ=0.5"),
+    (0, 1.0, "oc.blue5", "μ=0, σ=1.0"),
+    (0, 1.5, "oc.green5", "μ=0, σ=1.5"),
+    (1, 1.0, "oc.orange5", "μ=1, σ=1.0"),
 ]:
     y = stats.norm.pdf(x_range, mu, sigma)
     ax1.plot(x_range, y, color=color, lw=0.7, label=label)
@@ -53,10 +53,10 @@ ax1.set_yticks([0, 0.2, 0.4, 0.6, 0.8])
 # Panel B: t-distribution
 ax2 = fig.add_subplot(gs[0, 1])
 for df, color, label in [
-    (1, "dm.red5", "df=1"),
-    (2, "dm.blue5", "df=2"),
-    (5, "dm.green5", "df=5"),
-    (30, "dm.orange5", "df=30"),
+    (1, "oc.red5", "df=1"),
+    (2, "oc.blue5", "df=2"),
+    (5, "oc.green5", "df=5"),
+    (30, "oc.orange5", "df=30"),
 ]:
     y = stats.t.pdf(x_range, df)
     ax2.plot(x_range, y, color=color, lw=0.7, label=label)
@@ -73,10 +73,10 @@ ax2.set_yticks([0, 0.1, 0.2, 0.3, 0.4])
 ax3 = fig.add_subplot(gs[1, 0])
 x_chi = np.linspace(0, 15, 200)
 for df, color, label in [
-    (1, "dm.red5", "df=1"),
-    (2, "dm.blue5", "df=2"),
-    (3, "dm.green5", "df=3"),
-    (5, "dm.orange5", "df=5"),
+    (1, "oc.red5", "df=1"),
+    (2, "oc.blue5", "df=2"),
+    (3, "oc.green5", "df=3"),
+    (5, "oc.orange5", "df=5"),
 ]:
     y = stats.chi2.pdf(x_chi, df)
     ax3.plot(x_chi, y, color=color, lw=0.7, label=label)
@@ -96,9 +96,9 @@ ax4.hist(
     data_normal,
     bins=30,
     density=True,
-    color="dm.blue5",
+    color="oc.blue5",
     alpha=0.5,
-    edgecolor="dm.blue7",
+    edgecolor="oc.blue7",
     linewidth=0.3,
     label="Normal",
 )
@@ -106,9 +106,9 @@ ax4.hist(
     data_exp,
     bins=30,
     density=True,
-    color="dm.red5",
+    color="oc.red5",
     alpha=0.5,
-    edgecolor="dm.red7",
+    edgecolor="oc.red7",
     linewidth=0.3,
     label="Exponential",
 )
@@ -116,9 +116,9 @@ ax4.hist(
     data_uniform,
     bins=30,
     density=True,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.5,
-    edgecolor="dm.green7",
+    edgecolor="oc.green7",
     linewidth=0.3,
     label="Uniform",
 )

@@ -36,7 +36,7 @@ gs = fig.add_gridspec(
 # Panel A: Basic diverging bar
 ax1 = fig.add_subplot(gs[0, 0])
 y_pos = np.arange(len(categories))
-colors = ["dm.green5" if v > 0 else "dm.red5" for v in values]
+colors = ["oc.green5" if v > 0 else "oc.red5" for v in values]
 ax1.barh(y_pos, values, color=colors, alpha=0.7, edgecolor="black", linewidth=0.3)
 ax1.axvline(x=0, color="black", linewidth=0.5)
 ax1.set_xlim(-30, 30)
@@ -78,7 +78,7 @@ ax3.set_xticks([-30, -15, 0, 15, 30])
 # Panel D: Satisfaction survey style
 ax4 = fig.add_subplot(gs[1, 1])
 y_pos_survey = np.arange(len(categories))
-colors_survey = ["dm.green5" if v > 0 else "dm.red5" for v in satisfaction]
+colors_survey = ["oc.green5" if v > 0 else "oc.red5" for v in satisfaction]
 bars = ax4.barh(
     y_pos_survey,
     satisfaction,

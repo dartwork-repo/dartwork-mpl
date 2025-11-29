@@ -72,7 +72,7 @@ import dartwork_mpl as dm
 
 # Works with any matplotlib color name
 color1 = dm.named("red")
-color2 = dm.named("dm.blue5")      # dartwork-mpl colors
+color2 = dm.named("oc.blue5")      # dartwork-mpl colors
 color3 = dm.named("tw.blue:500")    # Tailwind colors
 ```
 
@@ -163,7 +163,7 @@ The function accepts Color objects or hex strings as input:
 ```python
 import dartwork_mpl as dm
 
-start = dm.named("dm.blue5")
+start = dm.named("oc.blue5")
 end = dm.hex("#ff5733")
 gradient = dm.cspace(start, end, n=20, space="oklch")
 ```
@@ -247,7 +247,7 @@ color1 = dm.oklab(L, a, b)
 color2 = dm.oklch(L, C, h)      # h in degrees
 color3 = dm.rgb(r, g, b)        # auto-detects range
 color4 = dm.hex("#ff5733")
-color5 = dm.named("dm.blue5")
+color5 = dm.named("oc.blue5")
 
 # Convert between spaces
 L, a, b = color.to_oklab()

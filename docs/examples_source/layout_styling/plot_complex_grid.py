@@ -31,14 +31,14 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0:2, 0:2])
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
-ax1.plot(x, y, color="dm.blue5", lw=0.7)
+ax1.plot(x, y, color="oc.blue5", lw=0.7)
 ax1.set_title("Main Plot (2x2)", fontsize=dm.fs(1))
 ax1.set_xlabel("X", fontsize=dm.fs(0))
 ax1.set_ylabel("Y", fontsize=dm.fs(0))
 
 # Right column - 2 plots
 ax2 = fig.add_subplot(gs[0, 2])
-ax2.scatter(np.random.randn(50), np.random.randn(50), c="dm.red5", s=10, alpha=0.6)
+ax2.scatter(np.random.randn(50), np.random.randn(50), c="oc.red5", s=10, alpha=0.6)
 ax2.set_title("Scatter", fontsize=dm.fs(0))
 ax2.tick_params(labelsize=dm.fs(-2))
 
@@ -46,9 +46,9 @@ ax3 = fig.add_subplot(gs[1, 2])
 ax3.hist(
     np.random.randn(100),
     bins=15,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.7,
-    edgecolor="dm.green7",
+    edgecolor="oc.green7",
     linewidth=0.3,
 )
 ax3.set_title("Histogram", fontsize=dm.fs(0))
@@ -59,9 +59,9 @@ ax4 = fig.add_subplot(gs[2, 0])
 ax4.bar(
     range(5),
     np.random.rand(5) * 10,
-    color="dm.orange5",
+    color="oc.orange5",
     alpha=0.7,
-    edgecolor="dm.orange7",
+    edgecolor="oc.orange7",
     linewidth=0.3,
 )
 ax4.set_title("Bar", fontsize=dm.fs(0))
@@ -76,8 +76,8 @@ ax5.tick_params(labelsize=dm.fs(-2))
 ax6 = fig.add_subplot(gs[2, 2])
 theta = np.linspace(0, 2 * np.pi, 50)
 r = np.abs(np.sin(2 * theta))
-ax6.fill(theta, r, color="dm.violet5", alpha=0.5)
-ax6.plot(theta, r, color="dm.violet7", lw=0.5)
+ax6.fill(theta, r, color="oc.violet5", alpha=0.5)
+ax6.plot(theta, r, color="oc.violet7", lw=0.5)
 ax6.set_title("Polar-like", fontsize=dm.fs(0))
 ax6.tick_params(labelsize=dm.fs(-2))
 

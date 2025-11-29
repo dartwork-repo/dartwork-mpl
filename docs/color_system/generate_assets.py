@@ -199,7 +199,7 @@ def _scale_figure(fig: plt.Figure, scale: float) -> None:
 
 
 def _save_color_sheets(images_dir: Path) -> List[Path]:
-    figs = dm.plot_colors(ncols=7, sort_colors=True)
+    figs = dm.plot_colors(ncols=4, sort_colors=True)
     paths: List[Path] = []
 
     for fig, library_name in zip(figs, COLOR_LIBRARY_ORDER):
@@ -232,7 +232,7 @@ def _save_color_space_creation(images_dir: Path) -> Path:
         ("OKLCH", dm.oklch(0.7, 0.2, 120), "dm.oklch(0.7, 0.2, 120)"),
         ("RGB", dm.rgb(0.8, 0.2, 0.3), "dm.rgb(0.8, 0.2, 0.3)"),
         ("Hex", dm.hex("#ff5733"), "dm.hex('#ff5733')"),
-        ("Named", dm.named("dm.blue5"), "dm.named('dm.blue5')"),
+        ("Named", dm.named("oc.blue5"), "dm.named('oc.blue5')"),
         ("RGB 255", dm.rgb(200, 50, 75), "dm.rgb(200, 50, 75)"),
     ]
 

@@ -41,7 +41,7 @@ ax1.step(
     x,
     y1,
     where="pre",
-    color="dm.blue5",
+    color="oc.blue5",
     lw=0.7,
     marker="o",
     markersize=3,
@@ -63,7 +63,7 @@ ax2.step(
     x,
     y2,
     where="post",
-    color="dm.red5",
+    color="oc.red5",
     lw=0.7,
     marker="s",
     markersize=3,
@@ -85,7 +85,7 @@ ax3.step(
     x,
     y1,
     where="mid",
-    color="dm.blue5",
+    color="oc.blue5",
     lw=0.7,
     marker="o",
     markersize=3,
@@ -96,7 +96,7 @@ ax3.step(
     x,
     y2,
     where="mid",
-    color="dm.red5",
+    color="oc.red5",
     lw=0.7,
     marker="s",
     markersize=3,
@@ -107,7 +107,7 @@ ax3.step(
     x,
     y3,
     where="mid",
-    color="dm.green5",
+    color="oc.green5",
     lw=0.7,
     marker="^",
     markersize=3,
@@ -127,11 +127,11 @@ ax4 = fig.add_subplot(gs[1, 1])
 window = 3
 kernel = np.ones(window) / window
 rolling = np.convolve(y1, kernel, mode="same")
-ax4.step(x, y1, where="mid", color="dm.gray5", lw=0.7, alpha=0.4, label="Raw")
+ax4.step(x, y1, where="mid", color="oc.gray5", lw=0.7, alpha=0.4, label="Raw")
 ax4.plot(
     x,
     rolling,
-    color="dm.orange7",
+    color="oc.orange7",
     lw=1.2,
     marker="o",
     markersize=3,
@@ -141,7 +141,7 @@ ax4.fill_between(
     x,
     rolling,
     where=rolling >= 2.5,
-    color="dm.orange3",
+    color="oc.orange3",
     alpha=0.3,
     interpolate=True,
     label="Above 2.5",

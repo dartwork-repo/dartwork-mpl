@@ -809,10 +809,10 @@ def plot_colormaps(
         gradient = np.linspace(0, 1, 256)
         gradient = np.vstack((gradient, gradient))
 
-        # Sort colormaps: dm prefix first, then alphabetical order
+        # Sort colormaps: oc prefix first, then alphabetical order
         cmap_list.sort(
             key=lambda cmap: (
-                0 if cmap.name.startswith("dm.") else 1,
+                0 if cmap.name.startswith("oc.") else 1,
                 cmap.name.lower(),
             )
         )
@@ -935,15 +935,10 @@ def _classify_color_library(color_name: str) -> str:
     if color_name.startswith("primer."):
         return "primer"
 
-    # Check for dm. prefix
-    if color_name.startswith("dm."):
-        name_without_prefix = color_name[3:]  # Remove 'dm.' prefix
+    # Check for oc. prefix
+    if color_name.startswith("oc."):
 
-        # Check if it's an opencolor color (pattern: {color}{number})
-        # Match pattern like gray0, red1, blue2, etc.
-        if re.match(r"^[a-z]+\d+$", name_without_prefix):
-            if name_without_prefix in _OPENCOLOR_NAMES:
-                return "opencolor"
+        return "opencolor"
 
     return "other"
 
@@ -1017,7 +1012,7 @@ def _extract_base_color_name(color_name: str) -> str:
     """
     # Remove prefixes
     name = color_name
-    for prefix in ["dm.", "tw.", "md.", "ant.", "chakra.", "primer."]:
+    for prefix in ["oc.", "tw.", "md.", "ant.", "chakra.", "primer."]:
         if name.startswith(prefix):
             name = name[len(prefix) :]
             break
@@ -1027,7 +1022,7 @@ def _extract_base_color_name(color_name: str) -> str:
     if match:
         return match.group(1)
 
-    # Pattern 2: opencolor format (dm.red5) -> 'red'
+    # Pattern 2: opencolor format (oc.red5) -> 'red'
     match = re.search(r"^([a-z]+)\d+$", name)
     if match:
         return match.group(1)
@@ -1582,7 +1577,7 @@ def _plot_single_library(
 def plot_colors(
     colors: dict[str, str | tuple[float, float, float]] | None = None,
     *,
-    ncols: int = 6,
+    ncols: int = 4,
     sort_colors: bool = True,
 ) -> list[Figure]:
     """

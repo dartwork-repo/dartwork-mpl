@@ -31,32 +31,32 @@ gs = fig.add_gridspec(
 ax = fig.add_subplot(gs[0, 0])
 
 # Goal band and period highlight
-ax.axhspan(1.8, 2.2, color="dm.green1", alpha=0.35, label="Target band")
-ax.axvspan(8, 10, color="dm.orange1", alpha=0.25, label="Event window")
+ax.axhspan(1.8, 2.2, color="oc.green1", alpha=0.35, label="Target band")
+ax.axvspan(8, 10, color="oc.orange1", alpha=0.25, label="Event window")
 
 # Series, smooth trend, and reference line
-ax.plot(x, y, color="dm.blue7", lw=0.9, label="Observed")
-ax.plot(x, smooth, color="dm.blue9", lw=1.2, label="Smoothed (9-pt)")
-ax.hlines(0, 0, 12, color="dm.gray4", lw=0.6, linestyle="--", label="Zero baseline")
+ax.plot(x, y, color="oc.blue7", lw=0.9, label="Observed")
+ax.plot(x, smooth, color="oc.blue9", lw=1.2, label="Smoothed (9-pt)")
+ax.hlines(0, 0, 12, color="oc.gray4", lw=0.6, linestyle="--", label="Zero baseline")
 
 # Annotations for peak and slope start
 peak_idx = np.argmax(y)
-ax.scatter(x[peak_idx], y[peak_idx], color="dm.red7", s=36, zorder=4, label="Local max")
+ax.scatter(x[peak_idx], y[peak_idx], color="oc.red7", s=36, zorder=4, label="Local max")
 ax.annotate(
     "Local max",
     xy=(x[peak_idx], y[peak_idx]),
     xytext=(x[peak_idx] + 0.7, y[peak_idx] + 0.5),
-    arrowprops=dict(arrowstyle="->", color="dm.gray7", lw=0.7),
+    arrowprops=dict(arrowstyle="->", color="oc.gray7", lw=0.7),
     fontsize=dm.fs(-1),
-    bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="dm.gray2", lw=0.4),
+    bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="oc.gray2", lw=0.4),
 )
 ax.annotate(
     "Acceleration",
     xy=(2.5, y[np.searchsorted(x, 2.5)]),
     xytext=(1.0, 2.6),
-    arrowprops=dict(arrowstyle="->", color="dm.gray7", lw=0.7),
+    arrowprops=dict(arrowstyle="->", color="oc.gray7", lw=0.7),
     fontsize=dm.fs(-1),
-    bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="dm.gray2", lw=0.4),
+    bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="oc.gray2", lw=0.4),
 )
 
 ax.set_xlabel("Time [s]", fontsize=dm.fs(0))
@@ -66,7 +66,7 @@ ax.set_xlim(0, 12)
 ax.set_ylim(-1.2, 3)
 ax.set_xticks([0, 3, 6, 9, 12])
 ax.set_yticks([-1, 0, 1, 2, 3])
-ax.grid(axis="y", linestyle=":", color="dm.gray3", alpha=0.6)
+ax.grid(axis="y", linestyle=":", color="oc.gray3", alpha=0.6)
 
 ax.legend(
     loc="best",

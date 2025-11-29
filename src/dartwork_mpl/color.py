@@ -54,7 +54,7 @@ def _load_colors() -> None:
     Load all color definitions from asset files and register them.
 
     This function loads colors from text files and JSON files in the
-    asset/color directory. It adds 'dm.' and 'dartwork_mpl.' prefixes
+    asset/color directory. It adds 'oc.' prefix
     to distinguish them from matplotlib's built-in colors.
 
     Tailwind CSS colors are loaded with 'tw.' prefix,
@@ -86,8 +86,7 @@ def _load_colors() -> None:
         color_dict.update(_parse_color_data(path))
 
     # Append prefix to distinguish them from matplotlib colors.
-    _color_dict: dict[str, str] = {f"dm.{k}": v for k, v in color_dict.items()}
-    _color_dict.update({f"dartwork_mpl.{k}": v for k, v in color_dict.items()})
+    _color_dict: dict[str, str] = {f"oc.{k}": v for k, v in color_dict.items()}
 
     # Tailwind colors.
     with open(root_dir / "tailwind_colors.json", "r") as f:
@@ -519,12 +518,12 @@ class Color:
         Supports all matplotlib color names including:
         - Basic colors: 'red', 'blue', 'green', etc.
         - Named colors: 'aliceblue', 'antiquewhite', etc.
-        - Custom dartwork-mpl colors: 'dm.red5', 'tw.blue:500', etc.
+        - Custom dartwork-mpl colors: 'oc.red5', 'tw.blue:500', etc.
 
         Parameters
         ----------
         name : str
-            Matplotlib color name (e.g., 'red', 'dm.blue5',
+            Matplotlib color name (e.g., 'red', 'oc.blue5',
             'tw.blue:500').
 
         Returns
@@ -858,7 +857,7 @@ def named(color_name: str) -> Color:
     Parameters
     ----------
     color_name : str
-        Matplotlib color name (e.g., 'red', 'dm.blue5',
+        Matplotlib color name (e.g., 'red', 'oc.blue5',
         'tw.blue:500').
 
     Returns

@@ -62,7 +62,7 @@ ax2.view_init(elev=25, azim=60)
 
 # Panel C: Wireframe
 ax3 = fig.add_subplot(gs[1, 0], projection="3d")
-ax3.plot_wireframe(X, Y, Z3, color="dm.blue5", alpha=0.6, linewidth=0.3)
+ax3.plot_wireframe(X, Y, Z3, color="oc.blue5", alpha=0.6, linewidth=0.3)
 ax3.set_xlabel("X", fontsize=dm.fs(-1), labelpad=0)
 ax3.set_ylabel("Y", fontsize=dm.fs(-1), labelpad=0)
 ax3.set_zlabel("Z", fontsize=dm.fs(-1), labelpad=0)

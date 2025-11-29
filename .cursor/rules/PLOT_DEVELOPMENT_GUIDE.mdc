@@ -74,7 +74,7 @@ src/dartwork_mpl/xplot/
 2. **USAGE_GUIDE 준수**
    - `.cursor/rules/USAGE_GUIDE.mdc`의 모든 규칙을 준수합니다
    - 스타일 적용: `dm.style.use_preset('scientific')` 등
-   - 색상 시스템: `dm.red5`, `tw.blue:500` 등
+   - 색상 시스템: `oc.red5`, `tw.blue:500` 등
    - 레이아웃 유틸리티: `dm.simple_layout()`, `dm.cm2in()` 등
    - 폰트 유틸리티: `dm.fs()`, `dm.fw()` 등
 
@@ -118,14 +118,14 @@ src/dartwork_mpl/xplot/
 ```python
 # ❌ 노트북 예시 (하드코딩)
 fig = plt.figure(figsize=(9, 7))
-ax.plot(x, y, color='dm.red5', linewidth=0.7)
+ax.plot(x, y, color='oc.red5', linewidth=0.7)
 
 # ✅ 리팩토링된 함수
 def plot_example(
     data: dict[str, np.ndarray],
     figsize: tuple[float, float] | None = None,
     linewidth: float = 0.7,
-    color: str = 'dm.red5',
+    color: str = 'oc.red5',
     dpi: int = 200
 ) -> tuple[Figure, Axes]:
     """
@@ -140,7 +140,7 @@ def plot_example(
     linewidth : float, optional
         Line width for the plot. Default is 0.7.
     color : str, optional
-        Color specification. Default is 'dm.red5'.
+        Color specification. Default is 'oc.red5'.
     dpi : int, optional
         Figure resolution. Default is 200.
     
@@ -274,8 +274,8 @@ def plot_function(data: np.ndarray) -> tuple[Figure, Axes]:
     ax = fig.add_subplot(gs[0, 0])
     
     # Plot data with dartwork-mpl color system
-    # Using dm.red5 for consistent color palette
-    ax.plot(data, color='dm.red5', linewidth=0.7)
+    # Using oc.red5 for consistent color palette
+    ax.plot(data, color='oc.red5', linewidth=0.7)
     
     # Apply simple_layout for automatic margin optimization
     # This replaces tight_layout() with more predictable results
@@ -321,7 +321,7 @@ def plot_with_hardcoded_elements(
     ax = fig.add_subplot(gs[0, 0])
     
     # Plot data
-    ax.plot(data, color='dm.red5', linewidth=0.7)
+    ax.plot(data, color='oc.red5', linewidth=0.7)
     
     # Add hardcoded title (figure coordinates)
     fig.text(0.02, title_y, title, fontsize=dm.fs(2), fontweight=dm.fw(1))
@@ -404,7 +404,7 @@ def plot_example(
     labels: list[str] | None = None,
     figsize: tuple[float, float] | None = None,
     dpi: int = 200,
-    color: str = 'dm.red5',
+    color: str = 'oc.red5',
     linewidth: float = 0.7
 ) -> tuple[Figure, Axes]:
     """
@@ -431,7 +431,7 @@ def plot_example(
     ...     data,
     ...     labels,
     ...     figsize=(12, 8),
-    ...     color='dm.blue5',
+    ...     color='oc.blue5',
     ...     linewidth=1.2
     ... )
     >>> dm.save_and_show(fig)
@@ -662,7 +662,7 @@ def plot_comparison_dotplot(
     ...     success_values,
     ...     other_values,
     ...     title="AI Adoption Success Rates",
-    ...     colors={'success': 'dm.green3', 'other': 'dm.gray4'}
+    ...     colors={'success': 'oc.green3', 'other': 'oc.gray4'}
     ... )
     >>> dm.save_and_show(fig)
     
@@ -696,8 +696,8 @@ def plot_comparison_dotplot(
     # Set default colors using dartwork-mpl color system
     if colors is None:
         colors = {
-            'success': 'dm.green3',
-            'other': 'dm.gray4'
+            'success': 'oc.green3',
+            'other': 'oc.gray4'
         }
     
     # Create figure with publication-ready settings

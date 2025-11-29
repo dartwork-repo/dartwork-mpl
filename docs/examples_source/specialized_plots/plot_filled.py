@@ -46,10 +46,10 @@ gs = fig.add_gridspec(
 # Panel A: fill_between
 ax1 = fig.add_subplot(gs[0, 0])
 # Main line: lw=0.7
-ax1.plot(x, y1, color="dm.blue5", lw=0.7, label="Mean", alpha=0.8)
+ax1.plot(x, y1, color="oc.blue5", lw=0.7, label="Mean", alpha=0.8)
 # Fill between: alpha=0.2, edgecolors='none'
 ax1.fill_between(
-    x, y_lower, y_upper, color="dm.blue2", alpha=0.2, edgecolors="none", label="Range"
+    x, y_lower, y_upper, color="oc.blue2", alpha=0.2, edgecolors="none", label="Range"
 )
 ax1.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax1.set_ylabel("Value", fontsize=dm.fs(0))
@@ -63,13 +63,13 @@ ax1.set_yticks([0, 1, 2, 3, 4])
 ax2 = fig.add_subplot(gs[0, 1])
 # Stacked areas: alpha=0.7 for each, edgecolors='none'
 ax2.fill_between(
-    x, 0, y_stack1, color="dm.blue5", alpha=0.7, edgecolors="none", label="Layer 1"
+    x, 0, y_stack1, color="oc.blue5", alpha=0.7, edgecolors="none", label="Layer 1"
 )
 ax2.fill_between(
     x,
     y_stack1,
     y_stack1 + y_stack2,
-    color="dm.red5",
+    color="oc.red5",
     alpha=0.7,
     edgecolors="none",
     label="Layer 2",
@@ -78,7 +78,7 @@ ax2.fill_between(
     x,
     y_stack1 + y_stack2,
     y_stack1 + y_stack2 + y_stack3,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.7,
     edgecolors="none",
     label="Layer 3",
@@ -98,9 +98,9 @@ ax3.fill_between(
     x,
     0,
     y1,
-    color="dm.blue5",
+    color="oc.blue5",
     alpha=0.3,
-    edgecolors="dm.blue7",
+    edgecolors="oc.blue7",
     linewidth=0.3,
     label="Region 1",
 )
@@ -108,9 +108,9 @@ ax3.fill_between(
     x,
     y1,
     y2,
-    color="dm.red5",
+    color="oc.red5",
     alpha=0.3,
-    edgecolors="dm.red7",
+    edgecolors="oc.red7",
     linewidth=0.3,
     label="Region 2",
 )
@@ -118,16 +118,16 @@ ax3.fill_between(
     x,
     y2,
     y3,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.3,
-    edgecolors="dm.green7",
+    edgecolors="oc.green7",
     linewidth=0.3,
     label="Region 3",
 )
 # Overlay lines: lw=0.7
-ax3.plot(x, y1, color="dm.blue5", lw=0.7, alpha=0.8)
-ax3.plot(x, y2, color="dm.red5", lw=0.7, alpha=0.8)
-ax3.plot(x, y3, color="dm.green5", lw=0.7, alpha=0.8)
+ax3.plot(x, y1, color="oc.blue5", lw=0.7, alpha=0.8)
+ax3.plot(x, y2, color="oc.red5", lw=0.7, alpha=0.8)
+ax3.plot(x, y3, color="oc.green5", lw=0.7, alpha=0.8)
 ax3.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax3.set_ylabel("Value", fontsize=dm.fs(0))
 ax3.set_title("Multiple Filled Regions", fontsize=dm.fs(1))
@@ -143,9 +143,9 @@ ax4.fill_between(
     x,
     baseline,
     baseline + 0.8,
-    color="dm.gray3",
+    color="oc.gray3",
     alpha=0.3,
-    edgecolors="dm.gray6",
+    edgecolors="oc.gray6",
     linewidth=0.3,
     label="Band A",
 )
@@ -153,9 +153,9 @@ ax4.fill_between(
     x,
     baseline + 0.8,
     baseline + 1.6,
-    color="dm.orange5",
+    color="oc.orange5",
     alpha=0.25,
-    edgecolors="dm.orange7",
+    edgecolors="oc.orange7",
     linewidth=0.3,
     hatch="//",
     label="Band B",

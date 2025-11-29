@@ -68,7 +68,7 @@ fig.text(
     ha="center",
     va="center",
     fontsize=dm.fs(-1),
-    color="dm.gray7",
+    color="oc.gray7",
 )
 
 dm.simple_layout(fig, gs=gs)

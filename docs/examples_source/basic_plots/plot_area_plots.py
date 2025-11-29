@@ -38,8 +38,8 @@ gs = fig.add_gridspec(
 
 # Panel A: Basic fill_between
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.fill_between(x, y_lower, y1, color="dm.blue5", alpha=0.3)
-ax1.plot(x, y1, color="dm.blue7", lw=0.7, label="Upper bound")
+ax1.fill_between(x, y_lower, y1, color="oc.blue5", alpha=0.3)
+ax1.plot(x, y1, color="oc.blue7", lw=0.7, label="Upper bound")
 ax1.set_xlabel("X value", fontsize=dm.fs(0))
 ax1.set_ylabel("Y value", fontsize=dm.fs(0))
 ax1.set_title("Basic Fill Between", fontsize=dm.fs(1))
@@ -57,9 +57,9 @@ ax2 = fig.add_subplot(gs[0, 1])
 y_mean = np.sin(x) + 2
 y_std = 0.3
 ax2.fill_between(
-    x, y_mean - y_std, y_mean + y_std, color="dm.red5", alpha=0.2, label="±1σ"
+    x, y_mean - y_std, y_mean + y_std, color="oc.red5", alpha=0.2, label="±1σ"
 )
-ax2.plot(x, y_mean, color="dm.red5", lw=0.7, label="Mean")
+ax2.plot(x, y_mean, color="oc.red5", lw=0.7, label="Mean")
 ax2.set_xlabel("X value", fontsize=dm.fs(0))
 ax2.set_ylabel("Y value", fontsize=dm.fs(0))
 ax2.set_title("Confidence Interval", fontsize=dm.fs(1))
@@ -74,10 +74,10 @@ ax2.set_ylim(0, 3.4)
 
 # Panel C: Multiple overlapping areas
 ax3 = fig.add_subplot(gs[1, 0])
-ax3.fill_between(x, 0, y1, color="dm.blue5", alpha=0.3, label="Sin")
-ax3.fill_between(x, 0, y2, color="dm.red5", alpha=0.3, label="Cos")
-ax3.plot(x, y1, color="dm.blue7", lw=0.5)
-ax3.plot(x, y2, color="dm.red7", lw=0.5)
+ax3.fill_between(x, 0, y1, color="oc.blue5", alpha=0.3, label="Sin")
+ax3.fill_between(x, 0, y2, color="oc.red5", alpha=0.3, label="Cos")
+ax3.plot(x, y1, color="oc.blue7", lw=0.5)
+ax3.plot(x, y2, color="oc.red7", lw=0.5)
 ax3.set_xlabel("X value", fontsize=dm.fs(0))
 ax3.set_ylabel("Y value", fontsize=dm.fs(0))
 ax3.set_title("Overlapping Areas", fontsize=dm.fs(1))
@@ -96,10 +96,10 @@ y_base = y1 - 2
 y_stack1 = y_base + 0.5
 y_stack2 = y_stack1 + 0.5
 y_stack3 = y_stack2 + 0.5
-ax4.fill_between(x, 0, y_base, color="dm.red5", alpha=0.6, label="Layer 1")
-ax4.fill_between(x, y_base, y_stack1, color="dm.blue5", alpha=0.6, label="Layer 2")
-ax4.fill_between(x, y_stack1, y_stack2, color="dm.green5", alpha=0.6, label="Layer 3")
-ax4.fill_between(x, y_stack2, y_stack3, color="dm.orange5", alpha=0.6, label="Layer 4")
+ax4.fill_between(x, 0, y_base, color="oc.red5", alpha=0.6, label="Layer 1")
+ax4.fill_between(x, y_base, y_stack1, color="oc.blue5", alpha=0.6, label="Layer 2")
+ax4.fill_between(x, y_stack1, y_stack2, color="oc.green5", alpha=0.6, label="Layer 3")
+ax4.fill_between(x, y_stack2, y_stack3, color="oc.orange5", alpha=0.6, label="Layer 4")
 ax4.set_xlabel("X value", fontsize=dm.fs(0))
 ax4.set_ylabel("Y value", fontsize=dm.fs(0))
 ax4.set_title("Stacked Areas", fontsize=dm.fs(1))

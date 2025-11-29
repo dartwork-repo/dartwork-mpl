@@ -49,7 +49,7 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 # Explicit parameters: scale=5, width=0.003, color
 ax1.quiver(
-    X, Y, U, V, color="dm.blue5", scale=5, width=0.003, angles="xy", scale_units="xy"
+    X, Y, U, V, color="oc.blue5", scale=5, width=0.003, angles="xy", scale_units="xy"
 )
 ax1.set_xlabel("X", fontsize=dm.fs(0))
 ax1.set_ylabel("Y", fontsize=dm.fs(0))
@@ -63,7 +63,7 @@ ax1.grid(True, linestyle="--", linewidth=0.3, alpha=0.3)
 ax2 = fig.add_subplot(gs[0, 1])
 # Explicit parameters: scale=8, width=0.003
 ax2.quiver(
-    X, Y, U2, V2, color="dm.red5", scale=8, width=0.003, angles="xy", scale_units="xy"
+    X, Y, U2, V2, color="oc.red5", scale=8, width=0.003, angles="xy", scale_units="xy"
 )
 ax2.set_xlabel("X", fontsize=dm.fs(0))
 ax2.set_ylabel("Y", fontsize=dm.fs(0))
@@ -77,7 +77,7 @@ ax2.grid(True, linestyle="--", linewidth=0.3, alpha=0.3)
 ax3 = fig.add_subplot(gs[1, 0])
 # Explicit parameters: scale=6, width=0.003
 ax3.quiver(
-    X, Y, U3, V3, color="dm.green5", scale=6, width=0.003, angles="xy", scale_units="xy"
+    X, Y, U3, V3, color="oc.green5", scale=6, width=0.003, angles="xy", scale_units="xy"
 )
 ax3.set_xlabel("X", fontsize=dm.fs(0))
 ax3.set_ylabel("Y", fontsize=dm.fs(0))
@@ -96,7 +96,7 @@ ax4.quiver(
     Y,
     U4,
     V4,
-    color="dm.purple5",
+    color="oc.purple5",
     scale=8,
     width=0.003,
     angles="xy",

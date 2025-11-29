@@ -1,5 +1,5 @@
 lines.linewidth: 0.5               # line width in points
-lines.color:     dm.blue4                # has no affect on plot(); see axes.prop_cycle
+lines.color:     oc.blue4                # has no affect on plot(); see axes.prop_cycle
 lines.dashed_pattern: 3, 1.5
 lines.dashdot_pattern: 1, 1.25, 4, 1.25
 lines.dotted_pattern: 1.0, 1.25
@@ -74,7 +74,7 @@ ytick.labelsize:     7  # font size of the tick labels
 ytick.direction:     out     # direction: {in, out, inout}
 ytick.minor.visible: False   # visibility of minor ticks on y-axis
 
-grid.color:    dm.gray3        # grid color
+grid.color:    oc.gray3        # grid color
 grid.linestyle: -      # solid
 grid.linewidth: 0.3         # in points
 

@@ -49,13 +49,13 @@ gs = fig.add_gridspec(
 
 # Panel A: Forecast with confidence interval
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(dates, observed, color="dm.blue5", lw=0.5, label="Observed")
-ax1.plot(dates_future, forecast, color="dm.red5", lw=0.7, label="Forecast")
+ax1.plot(dates, observed, color="oc.blue5", lw=0.5, label="Observed")
+ax1.plot(dates_future, forecast, color="oc.red5", lw=0.7, label="Forecast")
 ax1.fill_between(
     dates_future,
     forecast_lower,
     forecast_upper,
-    color="dm.red5",
+    color="oc.red5",
     alpha=0.2,
     label="95% CI",
 )
@@ -67,8 +67,8 @@ ax1.tick_params(axis="x", rotation=45, labelsize=dm.fs(-2))
 
 # Panel B: Components decomposition
 ax2 = fig.add_subplot(gs[0, 1])
-ax2.plot(dates, trend[:100], color="dm.red5", lw=0.7, label="Trend")
-ax2.plot(dates, seasonal, color="dm.green5", lw=0.7, label="Seasonal")
+ax2.plot(dates, trend[:100], color="oc.red5", lw=0.7, label="Trend")
+ax2.plot(dates, seasonal, color="oc.green5", lw=0.7, label="Seasonal")
 ax2.set_xlabel("Date", fontsize=dm.fs(0))
 ax2.set_ylabel("Component value", fontsize=dm.fs(0))
 ax2.set_title("Decomposition", fontsize=dm.fs(1))
@@ -78,8 +78,8 @@ ax2.tick_params(axis="x", rotation=45, labelsize=dm.fs(-2))
 # Panel C: Residuals
 ax3 = fig.add_subplot(gs[1, 0])
 residuals = observed - (trend[:100] + seasonal)
-ax3.scatter(dates, residuals, c="dm.blue5", s=3, alpha=0.6)
-ax3.axhline(y=0, color="dm.red5", lw=0.5, linestyle="--")
+ax3.scatter(dates, residuals, c="oc.blue5", s=3, alpha=0.6)
+ax3.axhline(y=0, color="oc.red5", lw=0.5, linestyle="--")
 ax3.set_xlabel("Date", fontsize=dm.fs(0))
 ax3.set_ylabel("Residuals", fontsize=dm.fs(0))
 ax3.set_title("Residual Analysis", fontsize=dm.fs(1))
@@ -89,12 +89,12 @@ ax3.tick_params(axis="x", rotation=45, labelsize=dm.fs(-2))
 ax4 = fig.add_subplot(gs[1, 1])
 forecast_optimistic = forecast + 8
 forecast_pessimistic = forecast - 8
-ax4.plot(dates, observed, color="dm.blue5", lw=0.5, label="Observed")
-ax4.plot(dates_future, forecast, color="dm.gray7", lw=0.7, label="Base")
+ax4.plot(dates, observed, color="oc.blue5", lw=0.5, label="Observed")
+ax4.plot(dates_future, forecast, color="oc.gray7", lw=0.7, label="Base")
 ax4.plot(
     dates_future,
     forecast_optimistic,
-    color="dm.green5",
+    color="oc.green5",
     lw=0.5,
     linestyle="--",
     label="Optimistic",
@@ -102,7 +102,7 @@ ax4.plot(
 ax4.plot(
     dates_future,
     forecast_pessimistic,
-    color="dm.red5",
+    color="oc.red5",
     lw=0.5,
     linestyle="--",
     label="Pessimistic",

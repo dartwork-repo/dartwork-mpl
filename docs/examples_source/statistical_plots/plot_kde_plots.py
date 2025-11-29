@@ -43,15 +43,15 @@ ax1.hist(
     data1,
     bins=30,
     density=True,
-    color="dm.blue5",
+    color="oc.blue5",
     alpha=0.3,
-    edgecolor="dm.blue7",
+    edgecolor="oc.blue7",
     linewidth=0.3,
     label="Histogram",
 )
 kde1 = stats.gaussian_kde(data1)
 x_range1 = np.linspace(data1.min(), data1.max(), 200)
-ax1.plot(x_range1, kde1(x_range1), color="dm.red5", lw=0.7, label="KDE")
+ax1.plot(x_range1, kde1(x_range1), color="oc.red5", lw=0.7, label="KDE")
 ax1.set_xlabel("Value", fontsize=dm.fs(0))
 ax1.set_ylabel("Density", fontsize=dm.fs(0))
 ax1.set_title("KDE vs Histogram", fontsize=dm.fs(1))
@@ -65,9 +65,9 @@ kde_small = stats.gaussian_kde(data1, bw_method=0.1)
 kde_medium = stats.gaussian_kde(data1, bw_method=0.3)
 kde_large = stats.gaussian_kde(data1, bw_method=0.5)
 x_range = np.linspace(-4, 4, 200)
-ax2.plot(x_range, kde_small(x_range), color="dm.red5", lw=0.7, label="BW=0.1")
-ax2.plot(x_range, kde_medium(x_range), color="dm.blue5", lw=0.7, label="BW=0.3")
-ax2.plot(x_range, kde_large(x_range), color="dm.green5", lw=0.7, label="BW=0.5")
+ax2.plot(x_range, kde_small(x_range), color="oc.red5", lw=0.7, label="BW=0.1")
+ax2.plot(x_range, kde_medium(x_range), color="oc.blue5", lw=0.7, label="BW=0.3")
+ax2.plot(x_range, kde_large(x_range), color="oc.green5", lw=0.7, label="BW=0.5")
 ax2.set_xlabel("Value", fontsize=dm.fs(0))
 ax2.set_ylabel("Density", fontsize=dm.fs(0))
 ax2.set_title("Different Bandwidths", fontsize=dm.fs(1))
@@ -81,13 +81,13 @@ kde1 = stats.gaussian_kde(data1)
 kde2 = stats.gaussian_kde(data2)
 x_range_comp = np.linspace(-5, 8, 200)
 ax3.fill_between(
-    x_range_comp, 0, kde1(x_range_comp), color="dm.blue5", alpha=0.3, label="Group A"
+    x_range_comp, 0, kde1(x_range_comp), color="oc.blue5", alpha=0.3, label="Group A"
 )
 ax3.fill_between(
-    x_range_comp, 0, kde2(x_range_comp), color="dm.red5", alpha=0.3, label="Group B"
+    x_range_comp, 0, kde2(x_range_comp), color="oc.red5", alpha=0.3, label="Group B"
 )
-ax3.plot(x_range_comp, kde1(x_range_comp), color="dm.blue7", lw=0.7)
-ax3.plot(x_range_comp, kde2(x_range_comp), color="dm.red7", lw=0.7)
+ax3.plot(x_range_comp, kde1(x_range_comp), color="oc.blue7", lw=0.7)
+ax3.plot(x_range_comp, kde2(x_range_comp), color="oc.red7", lw=0.7)
 ax3.set_xlabel("Value", fontsize=dm.fs(0))
 ax3.set_ylabel("Density", fontsize=dm.fs(0))
 ax3.set_title("Distribution Comparison", fontsize=dm.fs(1))
@@ -101,15 +101,15 @@ ax4.hist(
     data_bimodal,
     bins=40,
     density=True,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.3,
-    edgecolor="dm.green7",
+    edgecolor="oc.green7",
     linewidth=0.3,
     label="Histogram",
 )
 kde_bimodal = stats.gaussian_kde(data_bimodal)
 x_range_bi = np.linspace(data_bimodal.min(), data_bimodal.max(), 200)
-ax4.plot(x_range_bi, kde_bimodal(x_range_bi), color="dm.red5", lw=0.7, label="KDE")
+ax4.plot(x_range_bi, kde_bimodal(x_range_bi), color="oc.red5", lw=0.7, label="KDE")
 ax4.set_xlabel("Value", fontsize=dm.fs(0))
 ax4.set_ylabel("Density", fontsize=dm.fs(0))
 ax4.set_title("Bimodal Distribution", fontsize=dm.fs(1))

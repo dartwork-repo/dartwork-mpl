@@ -12,7 +12,7 @@ import numpy as np
 dm.style.use_preset("scientific")  # preset keys: see API › Style Management
 fig, ax = plt.subplots(figsize=(dm.cm2in(9), dm.cm2in(6)), dpi=300)
 x = np.linspace(0, 10, 200)
-ax.plot(x, np.sin(x), color="dm.blue5", label="signal")
+ax.plot(x, np.sin(x), color="oc.blue5", label="signal")
 ax.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax.set_ylabel("Amplitude", fontsize=dm.fs(0))
 dm.simple_layout(fig)           # API › Layout Utilities
@@ -52,7 +52,7 @@ import dartwork_mpl as dm
 dm.style.use_preset("presentation")
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(8), dm.cm2in(5)), dpi=300)
-ax.plot([0, 1, 2], [1, 2, 1.5], marker="o", color="dm.green5", label="dm.*")
+ax.plot([0, 1, 2], [1, 2, 1.5], marker="o", color="oc.green5", label="oc.*")
 ax.plot([0, 1, 2], [1.2, 1.6, 2.1], marker="s", color="tw.blue:500", label="Tailwind")
 highlight = dm.mix_colors("md.orange:600", "white", alpha=0.45)  # API › Color Utilities
 ax.fill_between([0, 1, 2], 0.9, 1.3, color=highlight, label="Mixed shade")
@@ -86,7 +86,7 @@ fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=300)
 gs = fig.add_gridspec(2, 2, left=0.08, right=0.98, top=0.9, bottom=0.12, hspace=0.35, wspace=0.25)
 axes = [fig.add_subplot(gs[i, j]) for i in range(2) for j in range(2)]
 for ax, label in zip(axes, "ABCD"):
-    ax.plot(np.linspace(0, 1, 40), np.random.rand(40), color="dm.blue6", lw=0.8)
+    ax.plot(np.linspace(0, 1, 40), np.random.rand(40), color="oc.blue6", lw=0.8)
     ax.text(0, 1, label, transform=ax.transAxes + dm.make_offset(4, -4, fig),
             weight="bold", va="top", fontsize=dm.fs(0))
     dm.set_decimal(ax, xn=2, yn=1)
@@ -116,7 +116,7 @@ import dartwork_mpl as dm
 dm.style.use_preset("scientific-kr")  # English/Korean fonts set together
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(10), dm.cm2in(6)), dpi=300)
-ax.plot([0, 1, 2], [0, 1, 0.4], color="dm.green6", lw=1.0)
+ax.plot([0, 1, 2], [0, 1, 0.4], color="oc.green6", lw=1.0)
 ax.set_title("Experiment result", fontsize=dm.fs(2), fontweight=dm.fw(1))
 ax.set_xlabel("Time", fontsize=dm.fs(0))
 ax.set_ylabel("Response", fontsize=dm.fs(0))
@@ -140,7 +140,7 @@ import numpy as np
 dm.style.use_preset("investment")
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(11), dm.cm2in(7)), dpi=300)
-ax.plot(np.arange(50), np.cumsum(np.random.randn(50)) + 20, color="dm.blue6")
+ax.plot(np.arange(50), np.cumsum(np.random.randn(50)) + 20, color="oc.blue6")
 dm.simple_layout(fig)
 
 dm.save_formats(

@@ -27,7 +27,7 @@ n, bins, patches = ax.hist(
     data,
     bins=30,
     density=True,
-    color="dm.gray3",
+    color="oc.gray3",
     alpha=0.6,
     edgecolor="white",
     label="Histogram",
@@ -36,12 +36,12 @@ n, bins, patches = ax.hist(
 # Kernel Density Estimation (KDE)
 kde = stats.gaussian_kde(data)
 x_grid = np.linspace(data.min() - 1, data.max() + 1, 200)
-ax.plot(x_grid, kde(x_grid), color="dm.blue5", lw=2, label="KDE")
+ax.plot(x_grid, kde(x_grid), color="oc.blue5", lw=2, label="KDE")
 
 # Normal Distribution Fit (for comparison)
 mu, std = stats.norm.fit(data)
 p = stats.norm.pdf(x_grid, mu, std)
-ax.plot(x_grid, p, color="dm.red5", lw=1.5, linestyle="--", label="Normal Fit")
+ax.plot(x_grid, p, color="oc.red5", lw=1.5, linestyle="--", label="Normal Fit")
 
 ax.set_xlabel("Value", fontsize=dm.fs(0))
 ax.set_ylabel("Probability Density", fontsize=dm.fs(0))

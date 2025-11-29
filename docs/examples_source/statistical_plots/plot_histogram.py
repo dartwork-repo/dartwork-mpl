@@ -42,9 +42,9 @@ ax1 = fig.add_subplot(gs[0, 0])
 n1, bins1, patches1 = ax1.hist(
     data1,
     bins=30,
-    color="dm.blue5",
+    color="oc.blue5",
     alpha=0.7,
-    edgecolor="dm.blue7",
+    edgecolor="oc.blue7",
     linewidth=0.3,
     label="Distribution",
 )
@@ -62,9 +62,9 @@ ax2 = fig.add_subplot(gs[0, 1])
 n2, bins2, patches2 = ax2.hist(
     [data1, data2, data3],
     bins=30,
-    color=["dm.blue5", "dm.red5", "dm.green5"],
+    color=["oc.blue5", "oc.red5", "oc.green5"],
     alpha=0.7,
-    edgecolor="dm.gray7",
+    edgecolor="oc.gray7",
     linewidth=0.3,
     label=["Group A", "Group B", "Group C"],
     stacked=True,
@@ -82,9 +82,9 @@ ax3 = fig.add_subplot(gs[1, 0])
 n3, bins3, patches3 = ax3.hist(
     data1,
     bins=30,
-    color="dm.blue5",
+    color="oc.blue5",
     alpha=0.5,
-    edgecolor="dm.blue7",
+    edgecolor="oc.blue7",
     linewidth=0.3,
     density=True,
     label="Histogram",
@@ -94,7 +94,7 @@ x_kde = np.linspace(data1.min(), data1.max(), 200)
 kde = stats.gaussian_kde(data1)
 y_kde = kde(x_kde)
 # KDE line: lw=0.7
-ax3.plot(x_kde, y_kde, color="dm.red5", lw=0.7, label="KDE")
+ax3.plot(x_kde, y_kde, color="oc.red5", lw=0.7, label="KDE")
 ax3.set_xlabel("Value", fontsize=dm.fs(0))
 ax3.set_ylabel("Density", fontsize=dm.fs(0))
 ax3.set_title("Histogram with KDE", fontsize=dm.fs(1))
@@ -109,27 +109,27 @@ ax4 = fig.add_subplot(gs[1, 1])
 n4a, bins4a, patches4a = ax4.hist(
     data1,
     bins=30,
-    color="dm.blue5",
+    color="oc.blue5",
     alpha=0.6,
-    edgecolor="dm.blue7",
+    edgecolor="oc.blue7",
     linewidth=0.3,
     label="Group A",
 )
 n4b, bins4b, patches4b = ax4.hist(
     data2,
     bins=30,
-    color="dm.red5",
+    color="oc.red5",
     alpha=0.6,
-    edgecolor="dm.red7",
+    edgecolor="oc.red7",
     linewidth=0.3,
     label="Group B",
 )
 n4c, bins4c, patches4c = ax4.hist(
     data3,
     bins=30,
-    color="dm.green5",
+    color="oc.green5",
     alpha=0.6,
-    edgecolor="dm.green7",
+    edgecolor="oc.green7",
     linewidth=0.3,
     label="Group C",
 )

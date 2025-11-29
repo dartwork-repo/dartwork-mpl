@@ -37,8 +37,8 @@ gs = fig.add_gridspec(
 
 # Panel A: Multiple legend locations
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(x, y1, color="dm.blue5", lw=0.7, label="Sin", alpha=0.8)
-ax1.plot(x, y2, color="dm.red5", lw=0.7, label="Cos", alpha=0.8)
+ax1.plot(x, y1, color="oc.blue5", lw=0.7, label="Sin", alpha=0.8)
+ax1.plot(x, y2, color="oc.red5", lw=0.7, label="Cos", alpha=0.8)
 # Legend: loc='best', fontsize=dm.fs(-1), ncol=1
 ax1.legend(loc="best", fontsize=dm.fs(-1), ncol=1, framealpha=0.9)
 ax1.set_xlabel("Time [s]", fontsize=dm.fs(0))
@@ -49,15 +49,15 @@ ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel B: Custom legend handles
 ax2 = fig.add_subplot(gs[0, 1])
-(line1,) = ax2.plot(x, y1, color="dm.blue5", lw=0.7, alpha=0.8)
-(line2,) = ax2.plot(x, y2, color="dm.red5", lw=0.7, alpha=0.8)
+(line1,) = ax2.plot(x, y1, color="oc.blue5", lw=0.7, alpha=0.8)
+(line2,) = ax2.plot(x, y2, color="oc.red5", lw=0.7, alpha=0.8)
 # Create custom handles: explicit marker and line styles
 from matplotlib.lines import Line2D
 
 custom_handles = [
-    Line2D([0], [0], color="dm.blue5", lw=0.7, marker="o", markersize=4, label="Sin"),
-    Line2D([0], [0], color="dm.red5", lw=0.7, marker="s", markersize=4, label="Cos"),
-    Line2D([0], [0], color="dm.green5", lw=0.7, linestyle="--", label="Custom"),
+    Line2D([0], [0], color="oc.blue5", lw=0.7, marker="o", markersize=4, label="Sin"),
+    Line2D([0], [0], color="oc.red5", lw=0.7, marker="s", markersize=4, label="Cos"),
+    Line2D([0], [0], color="oc.green5", lw=0.7, linestyle="--", label="Custom"),
 ]
 ax2.legend(
     handles=custom_handles, loc="best", fontsize=dm.fs(-1), ncol=1, framealpha=0.9
@@ -70,9 +70,9 @@ ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 
 # Panel C: Legend inside axes (kept compact for thumbnails)
 ax3 = fig.add_subplot(gs[1, 0])
-ax3.plot(x, y1, color="dm.blue5", lw=0.7, label="Sin", alpha=0.8)
-ax3.plot(x, y2, color="dm.red5", lw=0.7, label="Cos", alpha=0.8)
-ax3.plot(x, y3, color="dm.green5", lw=0.7, label="Sin×Cos", alpha=0.8)
+ax3.plot(x, y1, color="oc.blue5", lw=0.7, label="Sin", alpha=0.8)
+ax3.plot(x, y2, color="oc.red5", lw=0.7, label="Cos", alpha=0.8)
+ax3.plot(x, y3, color="oc.green5", lw=0.7, label="Sin×Cos", alpha=0.8)
 # Legend tucked inside to avoid overflow
 ax3.legend(loc="best", fontsize=dm.fs(-1), ncol=1, framealpha=0.9)
 ax3.set_xlabel("Time [s]", fontsize=dm.fs(0))
@@ -86,10 +86,10 @@ ax4 = fig.add_subplot(gs[1, 1])
 cats = ["A", "B", "C", "D"]
 idx = np.arange(len(cats))
 bar1 = ax4.bar(
-    idx - 0.18, [3, 4.2, 2.8, 3.6], width=0.36, color="dm.orange5", label="2023"
+    idx - 0.18, [3, 4.2, 2.8, 3.6], width=0.36, color="oc.orange5", label="2023"
 )
 bar2 = ax4.bar(
-    idx + 0.18, [3.4, 3.6, 3.1, 4.0], width=0.36, color="dm.violet5", label="2024"
+    idx + 0.18, [3.4, 3.6, 3.1, 4.0], width=0.36, color="oc.violet5", label="2024"
 )
 ax4.set_xticks(idx)
 ax4.set_xticklabels(cats, fontsize=dm.fs(-1))

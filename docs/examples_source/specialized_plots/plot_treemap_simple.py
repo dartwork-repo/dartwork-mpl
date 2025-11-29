@@ -69,11 +69,11 @@ def draw_treemap(ax, values):
 
 
 values = [
-    ("Product", 35, "dm.blue6"),
-    ("Services", 22, "dm.green6"),
-    ("Platform", 18, "dm.violet6"),
-    ("Research", 15, "dm.orange6"),
-    ("Other", 10, "dm.gray6"),
+    ("Product", 35, "oc.blue6"),
+    ("Services", 22, "oc.green6"),
+    ("Platform", 18, "oc.violet6"),
+    ("Research", 15, "oc.orange6"),
+    ("Other", 10, "oc.gray6"),
 ]
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(16), dm.cm2in(10)), dpi=300)

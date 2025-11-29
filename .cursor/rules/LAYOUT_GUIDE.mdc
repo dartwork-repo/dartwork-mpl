@@ -82,7 +82,7 @@ gs = fig.add_gridspec(
 ax = fig.add_subplot(gs[0, 0])
 
 # 플롯
-ax.plot(x, y, color='dm.red5', linewidth=0.7)
+ax.plot(x, y, color='oc.red5', linewidth=0.7)
 ax.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
@@ -154,7 +154,7 @@ gs = fig.add_gridspec(
 ax = fig.add_subplot(gs[0, 0])
 
 # 플롯
-ax.plot(x, y, color='dm.red5', linewidth=0.7)
+ax.plot(x, y, color='oc.red5', linewidth=0.7)
 ax.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
@@ -231,8 +231,8 @@ gs = fig.add_gridspec(
 ax = fig.add_subplot(gs[0, 0])
 
 # 플롯
-line1, = ax.plot(x, y1, color='dm.red5', linewidth=0.7, label='Sin')
-line2, = ax.plot(x, y2, color='dm.blue5', linewidth=0.7, label='Cos')
+line1, = ax.plot(x, y1, color='oc.red5', linewidth=0.7, label='Sin')
+line2, = ax.plot(x, y2, color='oc.blue5', linewidth=0.7, label='Cos')
 ax.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
@@ -374,7 +374,7 @@ ax_title.text(0.5, 0.5, 'Title',
 
 # Plot axes
 ax = fig.add_subplot(gs[1, 0])
-ax.plot(x, y, color='dm.red5', linewidth=0.7)
+ax.plot(x, y, color='oc.red5', linewidth=0.7)
 ax.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
@@ -428,10 +428,10 @@ ax_legend = fig.add_subplot(gs[1, 0])
 ax_legend.axis('off')
 # 더미 플롯 (legend용)
 line1_dummy, = ax_legend.plot(
-    [], [], color='dm.red5', linewidth=0.7, label='Sin'
+    [], [], color='oc.red5', linewidth=0.7, label='Sin'
 )
 line2_dummy, = ax_legend.plot(
-    [], [], color='dm.blue5', linewidth=0.7, label='Cos'
+    [], [], color='oc.blue5', linewidth=0.7, label='Cos'
 )
 ax_legend.legend([line1_dummy, line2_dummy], ['Sin', 'Cos'],
                  loc='center', ncol=2,
@@ -439,8 +439,8 @@ ax_legend.legend([line1_dummy, line2_dummy], ['Sin', 'Cos'],
 
 # Plot axes
 ax = fig.add_subplot(gs[2, 0])
-line1, = ax.plot(x, y1, color='dm.red5', linewidth=0.7)
-line2, = ax.plot(x, y2, color='dm.blue5', linewidth=0.7)
+line1, = ax.plot(x, y1, color='oc.red5', linewidth=0.7)
+line2, = ax.plot(x, y2, color='oc.blue5', linewidth=0.7)
 ax.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
@@ -492,7 +492,7 @@ gs_left = fig.add_gridspec(
     top=0.95, bottom=0.15
 )
 ax_left = fig.add_subplot(gs_left[0, 0])
-ax_left.plot(x, y1, color='dm.red5', linewidth=0.7)
+ax_left.plot(x, y1, color='oc.red5', linewidth=0.7)
 ax_left.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_left.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 ax_left.set_title('Left Plot', fontsize=dm.fs(1))
@@ -504,7 +504,7 @@ gs_right = fig.add_gridspec(
     top=0.95, bottom=0.15
 )
 ax_right = fig.add_subplot(gs_right[0, 0])
-ax_right.plot(x, y2, color='dm.blue5', linewidth=0.7)
+ax_right.plot(x, y2, color='oc.blue5', linewidth=0.7)
 ax_right.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_right.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 ax_right.set_title('Right Plot', fontsize=dm.fs(1))
@@ -553,7 +553,7 @@ gs_top = fig.add_gridspec(
     top=0.95, bottom=0.52  # 상단 절반
 )
 ax_top = fig.add_subplot(gs_top[0, 0])
-ax_top.plot(x, y1, color='dm.red5', linewidth=0.7)
+ax_top.plot(x, y1, color='oc.red5', linewidth=0.7)
 ax_top.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_top.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 ax_top.set_title('Top Plot', fontsize=dm.fs(1))
@@ -565,7 +565,7 @@ gs_bottom = fig.add_gridspec(
     top=0.48, bottom=0.1  # 하단 절반
 )
 ax_bottom = fig.add_subplot(gs_bottom[0, 0])
-ax_bottom.plot(x, y2, color='dm.blue5', linewidth=0.7)
+ax_bottom.plot(x, y2, color='oc.blue5', linewidth=0.7)
 ax_bottom.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_bottom.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 ax_bottom.set_title('Bottom Plot', fontsize=dm.fs(1))
@@ -726,7 +726,7 @@ ax_title.text(0.5, 0.5, 'Complex Layout Example',
 ax_legend = fig.add_subplot(gs[1, 0])
 ax_legend.axis('off')
 line_dummy, = ax_legend.plot(
-    [], [], color='dm.red5', linewidth=0.7, label='Data'
+    [], [], color='oc.red5', linewidth=0.7, label='Data'
 )
 ax_legend.legend([line_dummy], ['Data'],
                  loc='center', ncol=1,
@@ -734,13 +734,13 @@ ax_legend.legend([line_dummy], ['Data'],
 
 # Plot axes
 ax = fig.add_subplot(gs[2, 0])
-line, = ax.plot(x, y, color='dm.red5', linewidth=0.7)
+line, = ax.plot(x, y, color='oc.red5', linewidth=0.7)
 ax.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
 # Annotation (axes 좌표계 사용 - axes 내부에 배치)
 ax.annotate('Peak', xy=(np.pi/2, 1), xytext=(np.pi/2, 0.5),
-            arrowprops=dict(arrowstyle='->', color='dm.gray5'),
+            arrowprops=dict(arrowstyle='->', color='oc.gray5'),
             fontsize=dm.fs(-1), ha='center')
 
 # 레이아웃 최적화
@@ -835,14 +835,14 @@ gs = fig.add_gridspec(
 
 # 첫 번째 axes
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(x, y1, color='dm.red5', linewidth=0.7)
+ax1.plot(x, y1, color='oc.red5', linewidth=0.7)
 ax1.set_ylabel('Y1 value', fontsize=dm.fs(0))
 ax1.set_title('Top Plot', fontsize=dm.fs(1))
 ax1.tick_params(labelbottom=False)  # x축 라벨 숨김
 
 # 두 번째 axes (x축 공유)
 ax2 = fig.add_subplot(gs[1, 0], sharex=ax1)
-ax2.plot(x, y2, color='dm.blue5', linewidth=0.7)
+ax2.plot(x, y2, color='oc.blue5', linewidth=0.7)
 ax2.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax2.set_ylabel('Y2 value', fontsize=dm.fs(0))
 ax2.set_title('Bottom Plot', fontsize=dm.fs(1))
@@ -882,7 +882,7 @@ gs_left = fig.add_gridspec(
     top=0.95, bottom=0.15
 )
 ax_left = fig.add_subplot(gs_left[0, 0])
-ax_left.plot(x, y1, color='dm.red5', linewidth=0.7)
+ax_left.plot(x, y1, color='oc.red5', linewidth=0.7)
 ax_left.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_left.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 ax_left.set_title('Left Plot', fontsize=dm.fs(1))
@@ -894,7 +894,7 @@ gs_right = fig.add_gridspec(
     top=0.95, bottom=0.15
 )
 ax_right = fig.add_subplot(gs_right[0, 0])
-ax_right.plot(x, y2, color='dm.blue5', linewidth=0.7)
+ax_right.plot(x, y2, color='oc.blue5', linewidth=0.7)
 ax_right.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_right.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 ax_right.set_title('Right Plot', fontsize=dm.fs(1))
@@ -949,7 +949,7 @@ gs_left = fig.add_gridspec(
     top=0.95, bottom=0.15
 )
 ax_left = fig.add_subplot(gs_left[0, 0])
-ax_left.plot(x, y1, color='dm.red5', linewidth=0.7)
+ax_left.plot(x, y1, color='oc.red5', linewidth=0.7)
 ax_left.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_left.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
@@ -960,7 +960,7 @@ gs_right = fig.add_gridspec(
     top=0.95, bottom=0.15
 )
 ax_right = fig.add_subplot(gs_right[0, 0])
-ax_right.plot(x, y2, color='dm.blue5', linewidth=0.7)
+ax_right.plot(x, y2, color='oc.blue5', linewidth=0.7)
 ax_right.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax_right.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 
@@ -1079,7 +1079,7 @@ gs = fig.add_gridspec(
 ax = fig.add_subplot(gs[0, 0])
 
 # 플롯
-ax.plot(x, y, color='dm.red5', linewidth=0.7)
+ax.plot(x, y, color='oc.red5', linewidth=0.7)
 ax.set_xlabel('X value [Hour]', fontsize=dm.fs(0))
 ax.set_ylabel('Y value [kW]', fontsize=dm.fs(0))
 

@@ -36,9 +36,9 @@ gs = fig.add_gridspec(
 # Panel A: Basic waterfall
 ax1 = fig.add_subplot(gs[0, 0])
 x_pos = np.arange(len(categories))
-colors = ["dm.blue5" if v >= 0 else "dm.red5" for v in values]
-colors[0] = "dm.gray5"  # Start
-colors[-1] = "dm.gray5"  # End
+colors = ["oc.blue5" if v >= 0 else "oc.red5" for v in values]
+colors[0] = "oc.gray5"  # Start
+colors[-1] = "oc.gray5"  # End
 # Calculate bottom positions
 bottom = np.zeros(len(categories))
 bottom[1:] = cumulative[:-1]
@@ -124,13 +124,13 @@ detailed_vals = [100, 30, -20, 0, 25, -15, 0]
 detailed_cum = [100, 130, 110, 110, 135, 120, 120]
 x_detailed = np.arange(len(detailed_cats))
 detailed_colors = [
-    "dm.gray5",
-    "dm.green5",
-    "dm.red5",
-    "dm.gray5",
-    "dm.green5",
-    "dm.red5",
-    "dm.gray5",
+    "oc.gray5",
+    "oc.green5",
+    "oc.red5",
+    "oc.gray5",
+    "oc.green5",
+    "oc.red5",
+    "oc.gray5",
 ]
 detailed_bottom = np.zeros(len(detailed_cats))
 for i in range(1, len(detailed_cats)):

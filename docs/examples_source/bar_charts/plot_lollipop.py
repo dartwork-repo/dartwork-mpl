@@ -36,18 +36,18 @@ gs = fig.add_gridspec(
 # Panel A: Basic lollipop chart (vertical)
 ax1 = fig.add_subplot(gs[0, 0])
 x_pos = np.arange(len(categories))
-ax1.stem(x_pos, values1, linefmt="dm.blue5", markerfmt="o", basefmt=" ")
+ax1.stem(x_pos, values1, linefmt="oc.blue5", markerfmt="o", basefmt=" ")
 # Customize stem lines and markers
 markerline, stemlines, baseline = ax1.stem(x_pos, values1, basefmt=" ")
-plt.setp(stemlines, "color", "dm.blue5", "linewidth", 0.7)
+plt.setp(stemlines, "color", "oc.blue5", "linewidth", 0.7)
 plt.setp(
     markerline,
     "color",
-    "dm.blue7",
+    "oc.blue7",
     "markersize",
     5,
     "markerfacecolor",
-    "dm.blue5",
+    "oc.blue5",
     "markeredgewidth",
     0.5,
 )
@@ -60,14 +60,14 @@ ax1.set_yticks([0, 20, 40, 60])
 # Panel B: Horizontal lollipop chart
 ax2 = fig.add_subplot(gs[0, 1])
 y_pos = np.arange(len(categories))
-ax2.hlines(y=y_pos, xmin=0, xmax=values1, color="dm.red5", linewidth=0.7)
+ax2.hlines(y=y_pos, xmin=0, xmax=values1, color="oc.red5", linewidth=0.7)
 ax2.plot(
     values1,
     y_pos,
     "o",
-    color="dm.red7",
+    color="oc.red7",
     markersize=5,
-    markerfacecolor="dm.red5",
+    markerfacecolor="oc.red5",
     markeredgewidth=0.5,
 )
 ax2.set_yticks(y_pos)
@@ -82,14 +82,14 @@ sorted_idx = np.argsort(values1)
 sorted_values = values1[sorted_idx]
 sorted_cats = [categories[i] for i in sorted_idx]
 y_pos_sorted = np.arange(len(sorted_cats))
-ax3.hlines(y=y_pos_sorted, xmin=0, xmax=sorted_values, color="dm.green5", linewidth=0.7)
+ax3.hlines(y=y_pos_sorted, xmin=0, xmax=sorted_values, color="oc.green5", linewidth=0.7)
 ax3.plot(
     sorted_values,
     y_pos_sorted,
     "o",
-    color="dm.green7",
+    color="oc.green7",
     markersize=5,
-    markerfacecolor="dm.green5",
+    markerfacecolor="oc.green5",
     markeredgewidth=0.5,
 )
 ax3.set_yticks(y_pos_sorted)
@@ -103,15 +103,15 @@ ax4 = fig.add_subplot(gs[1, 1])
 y_pos_comp = np.arange(len(categories))
 # Draw lines connecting the two values
 for i, (v1, v2) in enumerate(zip(values1, values2)):
-    ax4.plot([v1, v2], [i, i], "o-", color="dm.gray5", linewidth=0.5, markersize=0)
+    ax4.plot([v1, v2], [i, i], "o-", color="oc.gray5", linewidth=0.5, markersize=0)
 # Draw lollipops
 ax4.plot(
     values1,
     y_pos_comp,
     "o",
-    color="dm.blue7",
+    color="oc.blue7",
     markersize=5,
-    markerfacecolor="dm.blue5",
+    markerfacecolor="oc.blue5",
     markeredgewidth=0.5,
     label="Group A",
 )
@@ -119,9 +119,9 @@ ax4.plot(
     values2,
     y_pos_comp,
     "s",
-    color="dm.red7",
+    color="oc.red7",
     markersize=4,
-    markerfacecolor="dm.red5",
+    markerfacecolor="oc.red5",
     markeredgewidth=0.5,
     label="Group B",
 )

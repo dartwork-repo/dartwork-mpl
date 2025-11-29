@@ -62,7 +62,7 @@ dm.style.use_preset('scientific-kr')
 - **Korean Language Support**: Built-in Korean font support with `-kr` presets
 
 ### Color System
-- **dartwork-mpl Colors**: Custom color palette with `dm.red5`, `dm.blue2`, etc.
+- **dartwork-mpl Colors**: Custom color palette with `oc.red5`, `oc.blue2`, etc.
 - **Tailwind CSS Integration**: Full Tailwind palette with `tw.blue:500`, `tailwind.gray:200`, etc.
 - **Color Utilities**: Mix colors and apply pseudo-transparency
 
@@ -101,7 +101,7 @@ ax = fig.add_subplot(gs[0, 0])
 
 # Plot with custom colors
 x = np.linspace(0, 10, 100)
-ax.plot(x, np.sin(x), c='dm.red5', lw=0.7, label='Sin')
+ax.plot(x, np.sin(x), c='oc.red5', lw=0.7, label='Sin')
 ax.plot(x, np.cos(x), c='tw.blue:500', lw=0.7, label='Cos')
 
 # Customize

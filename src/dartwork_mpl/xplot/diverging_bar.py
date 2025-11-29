@@ -146,7 +146,7 @@ def plot_diverging_bar(
     ...     pos_values,
     ...     add_total=False,
     ...     title="Custom Title",
-    ...     colors={'neg': 'dm.red5', 'pos': 'dm.green5'}
+    ...     colors={'neg': 'oc.red5', 'pos': 'oc.green5'}
     ... )
     >>> dm.save_and_show(fig)
 
@@ -360,7 +360,12 @@ def plot_diverging_bar(
         fig,
         gs=gs,
         bbox=(left_margin, right_margin, figure_bottom, figure_top),
-        margins=(0.0, 0.0, 0.0, 0.0),  # Zero margins to preserve original# Extremely low weights to minimize changes
+        margins=(
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+        ),  # Zero margins to preserve original# Extremely low weights to minimize changes
         bound_margin=0.001,  # Very small bound margin to limit changes
         gtol=1e-1,  # Higher tolerance for early convergence
         use_all_axes=False,  # Only optimize axes in this GridSpec

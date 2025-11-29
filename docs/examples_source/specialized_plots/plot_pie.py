@@ -19,20 +19,20 @@ sizes1 = [30, 25, 20, 15, 10]
 labels1 = ["Category A", "Category B", "Category C", "Category D", "Category E"]
 # Convert dartwork-mpl color strings to RGB tuples for pie() function
 colors1 = [
-    mcolors.to_rgb("dm.blue5"),
-    mcolors.to_rgb("dm.red5"),
-    mcolors.to_rgb("dm.green5"),
-    mcolors.to_rgb("dm.orange5"),
-    mcolors.to_rgb("dm.violet5"),
+    mcolors.to_rgb("oc.blue5"),
+    mcolors.to_rgb("oc.red5"),
+    mcolors.to_rgb("oc.green5"),
+    mcolors.to_rgb("oc.orange5"),
+    mcolors.to_rgb("oc.violet5"),
 ]
 
 sizes2 = [35, 25, 20, 20]
 labels2 = ["Group 1", "Group 2", "Group 3", "Group 4"]
 colors2 = [
-    mcolors.to_rgb("dm.blue5"),
-    mcolors.to_rgb("dm.red5"),
-    mcolors.to_rgb("dm.green5"),
-    mcolors.to_rgb("dm.orange5"),
+    mcolors.to_rgb("oc.blue5"),
+    mcolors.to_rgb("oc.red5"),
+    mcolors.to_rgb("oc.green5"),
+    mcolors.to_rgb("oc.orange5"),
 ]
 
 # Explode values
@@ -123,8 +123,8 @@ ax3.set_title("Exploded Pie Chart", fontsize=dm.fs(1))
 ax4 = fig.add_subplot(gs[1, 1])
 outer_sizes = [0.5, 0.3, 0.2]
 inner_sizes = [0.6, 0.4]
-colors_outer = ["dm.blue5", "dm.orange5", "dm.gray3"]
-colors_inner = ["dm.purple5", "dm.purple2"]
+colors_outer = ["oc.blue5", "oc.orange5", "oc.gray3"]
+colors_inner = ["oc.purple5", "oc.purple2"]
 ax4.pie(
     outer_sizes,
     radius=1.0,

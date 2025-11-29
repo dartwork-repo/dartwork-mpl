@@ -30,36 +30,36 @@ fig, axs = plt.subplots(
 
 # Left: time series with zoomed transient
 ax1 = axs[0]
-ax1.plot(time, series, color="dm.blue6", lw=0.85)
+ax1.plot(time, series, color="oc.blue6", lw=0.85)
 ax1.set_xlabel("Time", fontsize=dm.fs(0))
 ax1.set_ylabel("Signal", fontsize=dm.fs(0))
 ax1.set_title("Zoomed Transient", fontsize=dm.fs(1))
 axins1 = inset_axes(ax1, width="48%", height="48%", loc="upper right")
-axins1.plot(time, series, color="dm.blue6", lw=0.65)
+axins1.plot(time, series, color="oc.blue6", lw=0.65)
 axins1.set_xlim(4.9, 5.9)
 axins1.set_ylim(
     series[(time >= 4.9) & (time <= 5.9)].min() - 0.2,
     series[(time >= 4.9) & (time <= 5.9)].max() + 0.2,
 )
 axins1.tick_params(labelsize=dm.fs(-2))
-mark_inset(ax1, axins1, loc1=2, loc2=4, fc="none", ec="dm.gray7", lw=0.6)
+mark_inset(ax1, axins1, loc1=2, loc2=4, fc="none", ec="oc.gray7", lw=0.6)
 
 # Right: scatter with inset on dense cluster
 ax2 = axs[1]
 ax2.scatter(
-    points[:, 0], points[:, 1], s=12, color="dm.green6", alpha=0.7, edgecolor="none"
+    points[:, 0], points[:, 1], s=12, color="oc.green6", alpha=0.7, edgecolor="none"
 )
 ax2.set_xlabel("Feature 1", fontsize=dm.fs(0))
 ax2.set_ylabel("Feature 2", fontsize=dm.fs(0))
 ax2.set_title("Cluster Detail", fontsize=dm.fs(1))
 axins2 = inset_axes(ax2, width="48%", height="48%", loc="upper right")
 axins2.scatter(
-    points[:, 0], points[:, 1], s=10, color="dm.green6", alpha=0.7, edgecolor="none"
+    points[:, 0], points[:, 1], s=10, color="oc.green6", alpha=0.7, edgecolor="none"
 )
 axins2.set_xlim(-1.0, 1.0)
 axins2.set_ylim(-1.0, 1.0)
 axins2.tick_params(labelsize=dm.fs(-2))
-mark_inset(ax2, axins2, loc1=2, loc2=4, fc="none", ec="dm.gray7", lw=0.6)
+mark_inset(ax2, axins2, loc1=2, loc2=4, fc="none", ec="oc.gray7", lw=0.6)
 
 dm.simple_layout(fig)
 plt.show()

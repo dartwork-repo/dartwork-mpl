@@ -51,7 +51,7 @@ ax1 = fig.add_subplot(gs[0, 0])
 ax1.scatter(
     x1,
     y1,
-    c="dm.blue5",
+    c="oc.blue5",
     s=20,
     marker="o",
     edgecolors="none",
@@ -59,7 +59,7 @@ ax1.scatter(
     label="Group A",
 )
 ax1.scatter(
-    x2, y2, c="dm.red5", s=20, marker="s", edgecolors="none", alpha=0.6, label="Group B"
+    x2, y2, c="oc.red5", s=20, marker="s", edgecolors="none", alpha=0.6, label="Group B"
 )
 ax1.set_xlabel("X value", fontsize=dm.fs(0))
 ax1.set_ylabel("Y value", fontsize=dm.fs(0))
@@ -94,9 +94,9 @@ ax2.set_ylim(-3, 3)
 
 # Panel C: Scatter with size mapping
 ax3 = fig.add_subplot(gs[1, 0])
-# Size mapping: s=sizes, c='dm.green5', alpha=0.6
+# Size mapping: s=sizes, c='oc.green5', alpha=0.6
 scatter3 = ax3.scatter(
-    x1, y1, s=sizes, c="dm.green5", edgecolors="dm.green7", linewidths=0.3, alpha=0.6
+    x1, y1, s=sizes, c="oc.green5", edgecolors="oc.green7", linewidths=0.3, alpha=0.6
 )
 ax3.set_xlabel("X value", fontsize=dm.fs(0))
 ax3.set_ylabel("Y value", fontsize=dm.fs(0))
@@ -117,8 +117,8 @@ dens = np.exp(-((grid_x - 1) ** 2 + (grid_y + 0.5) ** 2)) + 0.6 * np.exp(
     -((grid_x + 1) ** 2 + (grid_y - 0.5) ** 2)
 )
 ax4.contourf(grid_x, grid_y, dens, cmap="dm.Spectral", alpha=0.7, levels=12)
-ax4.contour(grid_x, grid_y, dens, colors="dm.gray6", linewidths=0.3, levels=12)
-ax4.scatter(x2, y2, c="white", s=12, edgecolors="dm.gray7", linewidths=0.4, alpha=0.8)
+ax4.contour(grid_x, grid_y, dens, colors="oc.gray6", linewidths=0.3, levels=12)
+ax4.scatter(x2, y2, c="white", s=12, edgecolors="oc.gray7", linewidths=0.4, alpha=0.8)
 ax4.set_xlabel("X value", fontsize=dm.fs(0))
 ax4.set_ylabel("Y value", fontsize=dm.fs(0))
 ax4.set_title("Density + Scatter Overlay", fontsize=dm.fs(1))

@@ -24,10 +24,10 @@ ax1 = fig.add_subplot(gs[0])
 ax1.boxplot(
     data,
     patch_artist=True,
-    boxprops=dict(facecolor="dm.blue3", color="dm.blue7"),
+    boxprops=dict(facecolor="oc.blue3", color="oc.blue7"),
     medianprops=dict(color="white"),
-    whiskerprops=dict(color="dm.gray7"),
-    capprops=dict(color="dm.gray7"),
+    whiskerprops=dict(color="oc.gray7"),
+    capprops=dict(color="oc.gray7"),
 )
 ax1.set_title("Box Plot", fontsize=dm.fs(1))
 ax1.set_xlabel("Category", fontsize=dm.fs(0))
@@ -39,13 +39,13 @@ parts = ax2.violinplot(data, showmeans=False, showmedians=True)
 
 # Customize violin plot colors
 for pc in parts["bodies"]:
-    pc.set_facecolor("dm.red5")
-    pc.set_edgecolor("dm.red7")
+    pc.set_facecolor("oc.red5")
+    pc.set_edgecolor("oc.red7")
     pc.set_alpha(0.7)
 
 for partname in ("cbars", "cmins", "cmaxes", "cmedians"):
     vp = parts[partname]
-    vp.set_edgecolor("dm.gray7")
+    vp.set_edgecolor("oc.gray7")
     vp.set_linewidth(1)
 
 ax2.set_title("Violin Plot", fontsize=dm.fs(1))

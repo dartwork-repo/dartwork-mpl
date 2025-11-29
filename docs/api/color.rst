@@ -2,7 +2,7 @@ Color Utilities
 ===============
 
 Importing ``dartwork_mpl`` registers a large catalog of named colors with
-matplotlib (``dm.*`` plus Tailwind ``tw.``, Material ``md.``, Ant Design
+matplotlib (``oc.*`` plus Tailwind ``tw.``, Material ``md.``, Ant Design
 ``ant.``, Chakra ``chakra.``, and Primer ``primer.`` prefixes). These helpers
 expose the color mixing routines used across the package and let you classify
 colormaps before plotting. Each helper lists its parameters and return value
@@ -40,11 +40,11 @@ Example
    import matplotlib.pyplot as plt
    import dartwork_mpl as dm
 
-   plt.plot(x, y, color="dm.blue5", label="Series A")
-   lighter = dm.mix_colors("dm.blue5", "white", alpha=0.35)
+   plt.plot(x, y, color="oc.blue5", label="Series A")
+   lighter = dm.mix_colors("oc.blue5", "white", alpha=0.35)
    plt.fill_between(x, y, color=lighter)
    dm.classify_colormap(plt.colormaps["viridis"])  # -> "Sequential Multi-Hue"
-   muted_line = dm.pseudo_alpha("dm.blue7", alpha=0.6, background="white")
+   muted_line = dm.pseudo_alpha("oc.blue7", alpha=0.6, background="white")
    plt.plot(x, z, color=muted_line, label="Muted series")
 
 .. automodule:: dartwork_mpl.color

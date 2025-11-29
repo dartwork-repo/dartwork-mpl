@@ -49,7 +49,7 @@ for theta0 in [-3, -2, -1, 0, 1, 2, 3]:
     for omega0 in [-2, 0, 2]:
         y0 = [theta0, omega0]
         sol = odeint(pendulum, y0, t, args=(0.1, 1.0))
-        ax1.plot(sol[:, 0], sol[:, 1], color="dm.blue5", lw=0.3, alpha=0.7)
+        ax1.plot(sol[:, 0], sol[:, 1], color="oc.blue5", lw=0.3, alpha=0.7)
 ax1.set_xlabel("θ [rad]", fontsize=dm.fs(0))
 ax1.set_ylabel("ω [rad/s]", fontsize=dm.fs(0))
 ax1.set_title("Pendulum Phase Portrait", fontsize=dm.fs(1))
@@ -61,8 +61,8 @@ ax2 = fig.add_subplot(gs[0, 1])
 t_lv = np.linspace(0, 50, 1000)
 y0_lv = [10, 5]
 sol_lv = odeint(lotka_volterra, y0_lv, t_lv, args=(1.0, 0.1, 1.5, 0.075))
-ax2.plot(sol_lv[:, 0], sol_lv[:, 1], color="dm.red5", lw=0.7)
-ax2.plot(sol_lv[0, 0], sol_lv[0, 1], "o", color="dm.green5", ms=4, label="Start")
+ax2.plot(sol_lv[:, 0], sol_lv[:, 1], color="oc.red5", lw=0.7)
+ax2.plot(sol_lv[0, 0], sol_lv[0, 1], "o", color="oc.green5", ms=4, label="Start")
 ax2.set_xlabel("Prey population", fontsize=dm.fs(0))
 ax2.set_ylabel("Predator population", fontsize=dm.fs(0))
 ax2.set_title("Predator-Prey Dynamics", fontsize=dm.fs(1))
@@ -76,13 +76,13 @@ y_vec = np.linspace(-3, 3, 15)
 X, Y = np.meshgrid(x_vec, y_vec)
 U = Y
 V = -0.1 * Y - np.sin(X)
-ax3.quiver(X, Y, U, V, alpha=0.6, width=0.003, scale=30, color="dm.gray5")
+ax3.quiver(X, Y, U, V, alpha=0.6, width=0.003, scale=30, color="oc.gray5")
 # Add trajectory
 t_traj = np.linspace(0, 20, 500)
 y0_traj = [2, 1]
 sol_traj = odeint(pendulum, y0_traj, t_traj, args=(0.1, 1.0))
-ax3.plot(sol_traj[:, 0], sol_traj[:, 1], color="dm.red5", lw=0.7, label="Trajectory")
-ax3.plot(sol_traj[0, 0], sol_traj[0, 1], "o", color="dm.green5", ms=4)
+ax3.plot(sol_traj[:, 0], sol_traj[:, 1], color="oc.red5", lw=0.7, label="Trajectory")
+ax3.plot(sol_traj[0, 0], sol_traj[0, 1], "o", color="oc.green5", ms=4)
 ax3.set_xlabel("θ [rad]", fontsize=dm.fs(0))
 ax3.set_ylabel("ω [rad/s]", fontsize=dm.fs(0))
 ax3.set_title("Phase Space with Vector Field", fontsize=dm.fs(1))
@@ -92,7 +92,7 @@ ax3.set_ylim(-3, 3)
 
 # Panel D: Multiple trajectories
 ax4 = fig.add_subplot(gs[1, 1])
-colors = ["dm.red5", "dm.blue5", "dm.green5", "dm.orange5"]
+colors = ["oc.red5", "oc.blue5", "oc.green5", "oc.orange5"]
 initial_conditions = [[1.5, 0], [2.5, 0.5], [1.0, -1], [0.5, 1.5]]
 for ic, color in zip(initial_conditions, colors):
     sol = odeint(pendulum, ic, t, args=(0.1, 1.0))

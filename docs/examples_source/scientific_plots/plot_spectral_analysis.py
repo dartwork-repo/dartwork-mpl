@@ -43,7 +43,7 @@ gs = fig.add_gridspec(
 
 # Panel A: Time domain signal
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(t[:200], signal_noisy[:200], color="dm.blue5", lw=0.5)
+ax1.plot(t[:200], signal_noisy[:200], color="oc.blue5", lw=0.5)
 ax1.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax1.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax1.set_title("Time Domain Signal", fontsize=dm.fs(1))
@@ -56,7 +56,7 @@ fft_vals = np.fft.fft(signal_noisy)
 fft_freq = np.fft.fftfreq(len(signal_noisy), 1 / fs)
 positive_freq = fft_freq[: len(fft_freq) // 2]
 magnitude = 2 * np.abs(fft_vals[: len(fft_vals) // 2]) / len(signal_noisy)
-ax2.plot(positive_freq, magnitude, color="dm.red5", lw=0.5)
+ax2.plot(positive_freq, magnitude, color="oc.red5", lw=0.5)
 ax2.set_xlabel("Frequency [Hz]", fontsize=dm.fs(0))
 ax2.set_ylabel("Magnitude", fontsize=dm.fs(0))
 ax2.set_title("Frequency Spectrum (FFT)", fontsize=dm.fs(1))
@@ -67,7 +67,7 @@ ax2.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
 # Panel C: Power spectral density
 ax3 = fig.add_subplot(gs[1, 0])
 f_psd, psd = signal.periodogram(signal_noisy, fs)
-ax3.semilogy(f_psd, psd, color="dm.green5", lw=0.5)
+ax3.semilogy(f_psd, psd, color="oc.green5", lw=0.5)
 ax3.set_xlabel("Frequency [Hz]", fontsize=dm.fs(0))
 ax3.set_ylabel("PSD [V²/Hz]", fontsize=dm.fs(0))
 ax3.set_title("Power Spectral Density", fontsize=dm.fs(1))
