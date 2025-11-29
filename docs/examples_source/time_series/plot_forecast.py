@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 import dartwork_mpl as dm
 
 # Apply scientific style preset
-dm.style.use_preset('scientific')
+dm.style.use_preset("scientific")
 
 # Generate time series data
 np.random.seed(42)
@@ -37,59 +37,81 @@ fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 
 # Create GridSpec
 gs = fig.add_gridspec(
-    nrows=2, ncols=2,
-    left=0.10, right=0.98,
-    top=0.95, bottom=0.10,
-    wspace=0.3, hspace=0.4
+    nrows=2,
+    ncols=2,
+    left=0.10,
+    right=0.98,
+    top=0.95,
+    bottom=0.10,
+    wspace=0.3,
+    hspace=0.4,
 )
 
 # Panel A: Forecast with confidence interval
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.plot(dates, observed, color='dm.blue5', lw=0.5, label='Observed')
-ax1.plot(dates_future, forecast, color='dm.red5', lw=0.7, label='Forecast')
-ax1.fill_between(dates_future, forecast_lower, forecast_upper,
-                 color='dm.red5', alpha=0.2, label='95% CI')
-ax1.set_xlabel('Date', fontsize=dm.fs(0))
-ax1.set_ylabel('Value', fontsize=dm.fs(0))
-ax1.set_title('Forecast with CI', fontsize=dm.fs(1))
-ax1.legend(loc='best', fontsize=dm.fs(-2))
-ax1.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
+ax1.plot(dates, observed, color="dm.blue5", lw=0.5, label="Observed")
+ax1.plot(dates_future, forecast, color="dm.red5", lw=0.7, label="Forecast")
+ax1.fill_between(
+    dates_future,
+    forecast_lower,
+    forecast_upper,
+    color="dm.red5",
+    alpha=0.2,
+    label="95% CI",
+)
+ax1.set_xlabel("Date", fontsize=dm.fs(0))
+ax1.set_ylabel("Value", fontsize=dm.fs(0))
+ax1.set_title("Forecast with CI", fontsize=dm.fs(1))
+ax1.legend(loc="best", fontsize=dm.fs(-2))
+ax1.tick_params(axis="x", rotation=45, labelsize=dm.fs(-2))
 
 # Panel B: Components decomposition
 ax2 = fig.add_subplot(gs[0, 1])
-ax2.plot(dates, trend[:100], color='dm.red5', lw=0.7, label='Trend')
-ax2.plot(dates, seasonal, color='dm.green5', lw=0.7, label='Seasonal')
-ax2.set_xlabel('Date', fontsize=dm.fs(0))
-ax2.set_ylabel('Component value', fontsize=dm.fs(0))
-ax2.set_title('Decomposition', fontsize=dm.fs(1))
-ax2.legend(loc='best', fontsize=dm.fs(-1))
-ax2.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
+ax2.plot(dates, trend[:100], color="dm.red5", lw=0.7, label="Trend")
+ax2.plot(dates, seasonal, color="dm.green5", lw=0.7, label="Seasonal")
+ax2.set_xlabel("Date", fontsize=dm.fs(0))
+ax2.set_ylabel("Component value", fontsize=dm.fs(0))
+ax2.set_title("Decomposition", fontsize=dm.fs(1))
+ax2.legend(loc="best", fontsize=dm.fs(-1))
+ax2.tick_params(axis="x", rotation=45, labelsize=dm.fs(-2))
 
 # Panel C: Residuals
 ax3 = fig.add_subplot(gs[1, 0])
 residuals = observed - (trend[:100] + seasonal)
-ax3.scatter(dates, residuals, c='dm.blue5', s=3, alpha=0.6)
-ax3.axhline(y=0, color='dm.red5', lw=0.5, linestyle='--')
-ax3.set_xlabel('Date', fontsize=dm.fs(0))
-ax3.set_ylabel('Residuals', fontsize=dm.fs(0))
-ax3.set_title('Residual Analysis', fontsize=dm.fs(1))
-ax3.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
+ax3.scatter(dates, residuals, c="dm.blue5", s=3, alpha=0.6)
+ax3.axhline(y=0, color="dm.red5", lw=0.5, linestyle="--")
+ax3.set_xlabel("Date", fontsize=dm.fs(0))
+ax3.set_ylabel("Residuals", fontsize=dm.fs(0))
+ax3.set_title("Residual Analysis", fontsize=dm.fs(1))
+ax3.tick_params(axis="x", rotation=45, labelsize=dm.fs(-2))
 
 # Panel D: Multiple forecast scenarios
 ax4 = fig.add_subplot(gs[1, 1])
 forecast_optimistic = forecast + 8
 forecast_pessimistic = forecast - 8
-ax4.plot(dates, observed, color='dm.blue5', lw=0.5, label='Observed')
-ax4.plot(dates_future, forecast, color='dm.gray7', lw=0.7, label='Base')
-ax4.plot(dates_future, forecast_optimistic, color='dm.green5',
-         lw=0.5, linestyle='--', label='Optimistic')
-ax4.plot(dates_future, forecast_pessimistic, color='dm.red5',
-         lw=0.5, linestyle='--', label='Pessimistic')
-ax4.set_xlabel('Date', fontsize=dm.fs(0))
-ax4.set_ylabel('Value', fontsize=dm.fs(0))
-ax4.set_title('Forecast Scenarios', fontsize=dm.fs(1))
-ax4.legend(loc='best', fontsize=dm.fs(-2))
-ax4.tick_params(axis='x', rotation=45, labelsize=dm.fs(-2))
+ax4.plot(dates, observed, color="dm.blue5", lw=0.5, label="Observed")
+ax4.plot(dates_future, forecast, color="dm.gray7", lw=0.7, label="Base")
+ax4.plot(
+    dates_future,
+    forecast_optimistic,
+    color="dm.green5",
+    lw=0.5,
+    linestyle="--",
+    label="Optimistic",
+)
+ax4.plot(
+    dates_future,
+    forecast_pessimistic,
+    color="dm.red5",
+    lw=0.5,
+    linestyle="--",
+    label="Pessimistic",
+)
+ax4.set_xlabel("Date", fontsize=dm.fs(0))
+ax4.set_ylabel("Value", fontsize=dm.fs(0))
+ax4.set_title("Forecast Scenarios", fontsize=dm.fs(1))
+ax4.legend(loc="best", fontsize=dm.fs(-2))
+ax4.tick_params(axis="x", rotation=45, labelsize=dm.fs(-2))
 
 # Optimize layout
 dm.simple_layout(fig, gs=gs)

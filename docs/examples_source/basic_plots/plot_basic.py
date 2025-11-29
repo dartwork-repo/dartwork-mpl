@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # Apply scientific style preset
-dm.style.use_preset('scientific')
+dm.style.use_preset("scientific")
 
 # Generate sample data
 x = np.linspace(0, 8, 200)
@@ -27,45 +27,58 @@ mark_y = np.interp(mark_x, x, series)
 
 # Create figure with tuned margins
 fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(8)), dpi=300)
-gs = fig.add_gridspec(
-    nrows=1, ncols=1,
-    left=0.14, right=0.97,
-    top=0.9, bottom=0.18
-)
+gs = fig.add_gridspec(nrows=1, ncols=1, left=0.14, right=0.97, top=0.9, bottom=0.18)
 ax = fig.add_subplot(gs[0, 0])
 
 # Shaded window and confidence band
-ax.axvspan(3.1, 4.4, color='dm.orange1', alpha=0.25, label='Highlight window')
-ax.fill_between(x, lower, upper, color='dm.blue2', alpha=0.22, edgecolor='none', label='Confidence band')
+ax.axvspan(3.1, 4.4, color="dm.orange1", alpha=0.25, label="Highlight window")
+ax.fill_between(
+    x,
+    lower,
+    upper,
+    color="dm.blue2",
+    alpha=0.22,
+    edgecolor="none",
+    label="Confidence band",
+)
 
 # Styled lines
-ax.plot(x, series, color='dm.blue8', lw=0.9, label='Main signal')
-ax.plot(x, trend, color='dm.gray6', lw=0.8, linestyle='--', label='Baseline trend')
+ax.plot(x, series, color="dm.blue8", lw=0.9, label="Main signal")
+ax.plot(x, trend, color="dm.gray6", lw=0.8, linestyle="--", label="Baseline trend")
 
 # Markers and annotations
-ax.scatter(mark_x, mark_y, color='dm.orange7', edgecolor='white', linewidth=0.8, s=32, zorder=4, label='Key points')
+ax.scatter(
+    mark_x,
+    mark_y,
+    color="dm.orange7",
+    edgecolor="white",
+    linewidth=0.8,
+    s=32,
+    zorder=4,
+    label="Key points",
+)
 ax.annotate(
-    'Inflection',
+    "Inflection",
     xy=(4.3, np.interp(4.3, x, series)),
     xytext=(5.3, 1.05),
     fontsize=dm.fs(-1),
-    arrowprops=dict(arrowstyle='->', color='dm.gray7', lw=0.7),
-    bbox=dict(boxstyle='round,pad=0.25', fc='white', ec='dm.gray2', lw=0.4),
+    arrowprops=dict(arrowstyle="->", color="dm.gray7", lw=0.7),
+    bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="dm.gray2", lw=0.4),
 )
 
 # Axes labels, ticks, and grid
-ax.set_xlabel('Time [s]', fontsize=dm.fs(0))
-ax.set_ylabel('Amplitude', fontsize=dm.fs(0))
-ax.set_title('Styled Signal with dartwork-mpl', fontsize=dm.fs(1))
+ax.set_xlabel("Time [s]", fontsize=dm.fs(0))
+ax.set_ylabel("Amplitude", fontsize=dm.fs(0))
+ax.set_title("Styled Signal with dartwork-mpl", fontsize=dm.fs(1))
 ax.set_xlim(0, 8)
 ax.set_ylim(-1.1, 1.35)
 ax.set_xticks([0, 2, 4, 6, 8])
 ax.set_yticks([-1, -0.5, 0, 0.5, 1, 1.5])
-ax.grid(axis='y', linestyle=':', color='dm.gray3', alpha=0.5)
+ax.grid(axis="y", linestyle=":", color="dm.gray3", alpha=0.5)
 
 # Legend placed above the plot to avoid overlaps
 ax.legend(
-    loc='best',
+    loc="best",
     ncol=2,
     fontsize=dm.fs(-1),
     frameon=False,

@@ -1,16 +1,18 @@
 import json
 
-notebook_path = '/home/wonjun/Codes/dartwork-mpl/test/new_features/[plot] grid_square_area.ipynb'
+notebook_path = (
+    "/home/wonjun/Codes/dartwork-mpl/test/new_features/[plot] grid_square_area.ipynb"
+)
 
-with open(notebook_path, 'r', encoding='utf-8') as f:
+with open(notebook_path, "r", encoding="utf-8") as f:
     nb = json.load(f)
 
 # Find the function cell
 func_cell_idx = -1
-for i, cell in enumerate(nb['cells']):
-    if cell['cell_type'] == 'code':
-        source = ''.join(cell['source'])
-        if 'def plot_grid_square_area' in source:
+for i, cell in enumerate(nb["cells"]):
+    if cell["cell_type"] == "code":
+        source = "".join(cell["source"])
+        if "def plot_grid_square_area" in source:
             func_cell_idx = i
             break
 
@@ -306,16 +308,16 @@ function_code = """def plot_grid_square_area(
 
 # Update function cell
 if func_cell_idx != -1:
-    func_lines = [line + '\n' for line in function_code.split('\n')]
+    func_lines = [line + "\n" for line in function_code.split("\n")]
     if func_lines:
-        func_lines[-1] = func_lines[-1].rstrip('\n')
-    nb['cells'][func_cell_idx]['source'] = func_lines
+        func_lines[-1] = func_lines[-1].rstrip("\n")
+    nb["cells"][func_cell_idx]["source"] = func_lines
 
 # Find example cell and update with new data
-for i, cell in enumerate(nb['cells']):
-    if cell['cell_type'] == 'code' and i > func_cell_idx:
-        source = ''.join(cell['source'])
-        if 'row_labels' in source and 'col_labels' in source and '=' in source:
+for i, cell in enumerate(nb["cells"]):
+    if cell["cell_type"] == "code" and i > func_cell_idx:
+        source = "".join(cell["source"])
+        if "row_labels" in source and "col_labels" in source and "=" in source:
             # This is likely the data definition cell
             new_example = """# Data: Product satisfaction survey by customer segment
 # Each row represents a satisfaction metric, each column a customer segment
@@ -352,136 +354,150 @@ custom_colors = {
     'highlight': 'dm.green3'
 }
 """
-            example_lines = [line + '\n' for line in new_example.split('\n')]
+            example_lines = [line + "\n" for line in new_example.split("\n")]
             if example_lines:
-                example_lines[-1] = example_lines[-1].rstrip('\n')
-            nb['cells'][i]['source'] = example_lines
+                example_lines[-1] = example_lines[-1].rstrip("\n")
+            nb["cells"][i]["source"] = example_lines
             break
 
 # Add new cells demonstrating different alignment options
 new_cells = []
 
 # Add markdown cell
-new_cells.append({
-    "cell_type": "markdown",
-    "metadata": {},
-    "source": [
-        "## Alignment Options Demo\\n",
-        "\\n",
-        "The `square_align` parameter allows you to control how squares are positioned within each cell. Below are examples of different alignment options."
-    ]
-})
+new_cells.append(
+    {
+        "cell_type": "markdown",
+        "metadata": {},
+        "source": [
+            "## Alignment Options Demo\\n",
+            "\\n",
+            "The `square_align` parameter allows you to control how squares are positioned within each cell. Below are examples of different alignment options.",
+        ],
+    }
+)
 
 # Example 1: Center alignment (default)
-new_cells.append({
-    "cell_type": "code",
-    "execution_count": None,
-    "metadata": {},
-    "outputs": [],
-    "source": [
-        "# Example 1: Center alignment (default)\\n",
-        "fig, ax = plot_grid_square_area(\\n",
-        "    data=data[:2, :3],  # Subset for clarity\\n",
-        "    row_labels=row_labels[:2],\\n",
-        "    col_labels=col_labels[:3],\\n",
-        "    square_align='center',\\n",
-        "    colors=custom_colors,\\n",
-        "    title='Center Alignment',\\n",
-        "    highlight_cols=[1]\\n",
-        ")\\n",
-        "plt.show()"
-    ]
-})
+new_cells.append(
+    {
+        "cell_type": "code",
+        "execution_count": None,
+        "metadata": {},
+        "outputs": [],
+        "source": [
+            "# Example 1: Center alignment (default)\\n",
+            "fig, ax = plot_grid_square_area(\\n",
+            "    data=data[:2, :3],  # Subset for clarity\\n",
+            "    row_labels=row_labels[:2],\\n",
+            "    col_labels=col_labels[:3],\\n",
+            "    square_align='center',\\n",
+            "    colors=custom_colors,\\n",
+            "    title='Center Alignment',\\n",
+            "    highlight_cols=[1]\\n",
+            ")\\n",
+            "plt.show()",
+        ],
+    }
+)
 
 # Example 2: Bottom-left alignment
-new_cells.append({
-    "cell_type": "code",
-    "execution_count": None,
-    "metadata": {},
-    "outputs": [],
-    "source": [
-        "# Example 2: Bottom-left alignment\\n",
-        "fig, ax = plot_grid_square_area(\\n",
-        "    data=data[:2, :3],\\n",
-        "    row_labels=row_labels[:2],\\n",
-        "    col_labels=col_labels[:3],\\n",
-        "    square_align='bottom-left',\\n",
-        "    colors=custom_colors,\\n",
-        "    title='Bottom-Left Alignment',\\n",
-        "    highlight_cols=[1]\\n",
-        ")\\n",
-        "plt.show()"
-    ]
-})
+new_cells.append(
+    {
+        "cell_type": "code",
+        "execution_count": None,
+        "metadata": {},
+        "outputs": [],
+        "source": [
+            "# Example 2: Bottom-left alignment\\n",
+            "fig, ax = plot_grid_square_area(\\n",
+            "    data=data[:2, :3],\\n",
+            "    row_labels=row_labels[:2],\\n",
+            "    col_labels=col_labels[:3],\\n",
+            "    square_align='bottom-left',\\n",
+            "    colors=custom_colors,\\n",
+            "    title='Bottom-Left Alignment',\\n",
+            "    highlight_cols=[1]\\n",
+            ")\\n",
+            "plt.show()",
+        ],
+    }
+)
 
 # Example 3: Top-right alignment
-new_cells.append({
-    "cell_type": "code",
-    "execution_count": None,
-    "metadata": {},
-    "outputs": [],
-    "source": [
-        "# Example 3: Top-right alignment\\n",
-        "fig, ax = plot_grid_square_area(\\n",
-        "    data=data[:2, :3],\\n",
-        "    row_labels=row_labels[:2],\\n",
-        "    col_labels=col_labels[:3],\\n",
-        "    square_align='top-right',\\n",
-        "    colors=custom_colors,\\n",
-        "    title='Top-Right Alignment',\\n",
-        "    highlight_cols=[1]\\n",
-        ")\\n",
-        "plt.show()"
-    ]
-})
+new_cells.append(
+    {
+        "cell_type": "code",
+        "execution_count": None,
+        "metadata": {},
+        "outputs": [],
+        "source": [
+            "# Example 3: Top-right alignment\\n",
+            "fig, ax = plot_grid_square_area(\\n",
+            "    data=data[:2, :3],\\n",
+            "    row_labels=row_labels[:2],\\n",
+            "    col_labels=col_labels[:3],\\n",
+            "    square_align='top-right',\\n",
+            "    colors=custom_colors,\\n",
+            "    title='Top-Right Alignment',\\n",
+            "    highlight_cols=[1]\\n",
+            ")\\n",
+            "plt.show()",
+        ],
+    }
+)
 
 # Full example with all features
-new_cells.append({
-    "cell_type": "markdown",
-    "metadata": {},
-    "source": [
-        "## Complete Example\\n",
-        "\\n",
-        "Full chart demonstrating all customization options."
-    ]
-})
+new_cells.append(
+    {
+        "cell_type": "markdown",
+        "metadata": {},
+        "source": [
+            "## Complete Example\\n",
+            "\\n",
+            "Full chart demonstrating all customization options.",
+        ],
+    }
+)
 
-new_cells.append({
-    "cell_type": "code",
-    "execution_count": None,
-    "metadata": {},
-    "outputs": [],
-    "source": [
-        "# Complete example with all data\\n",
-        "fig, ax = plot_grid_square_area(\\n",
-        "    data=data,\\n",
-        "    row_labels=row_labels,\\n",
-        "    col_labels=col_labels,\\n",
-        "    highlight_cols=highlight_cols,\\n",
-        "    square_align='center',\\n",
-        "    colors=custom_colors,\\n",
-        "    title='Product Satisfaction by Customer Segment',\\n",
-        "    row_label_wrap_length=20,  # Longer wrap length\\n",
-        "    row_label_margin=0.15      # More margin\\n",
-        ")\\n",
-        "plt.show()"
-    ]
-})
+new_cells.append(
+    {
+        "cell_type": "code",
+        "execution_count": None,
+        "metadata": {},
+        "outputs": [],
+        "source": [
+            "# Complete example with all data\\n",
+            "fig, ax = plot_grid_square_area(\\n",
+            "    data=data,\\n",
+            "    row_labels=row_labels,\\n",
+            "    col_labels=col_labels,\\n",
+            "    highlight_cols=highlight_cols,\\n",
+            "    square_align='center',\\n",
+            "    colors=custom_colors,\\n",
+            "    title='Product Satisfaction by Customer Segment',\\n",
+            "    row_label_wrap_length=20,  # Longer wrap length\\n",
+            "    row_label_margin=0.15      # More margin\\n",
+            ")\\n",
+            "plt.show()",
+        ],
+    }
+)
 
 # Insert new cells after the first example
 insert_position = -1
-for i, cell in enumerate(nb['cells']):
-    if cell['cell_type'] == 'code' and i > func_cell_idx:
-        source = ''.join(cell['source'])
-        if 'plot_grid_square_area' in source:
+for i, cell in enumerate(nb["cells"]):
+    if cell["cell_type"] == "code" and i > func_cell_idx:
+        source = "".join(cell["source"])
+        if "plot_grid_square_area" in source:
             insert_position = i + 1
             break
 
 if insert_position != -1:
-    nb['cells'] = nb['cells'][:insert_position] + new_cells + nb['cells'][insert_position:]
+    nb["cells"] = (
+        nb["cells"][:insert_position] + new_cells + nb["cells"][insert_position:]
+    )
 
 # Save updated notebook
-with open(notebook_path, 'w', encoding='utf-8') as f:
+with open(notebook_path, "w", encoding="utf-8") as f:
     json.dump(nb, f, indent=2)
 
 print("Notebook updated successfully with comprehensive comments and new examples")

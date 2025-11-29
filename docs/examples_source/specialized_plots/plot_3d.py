@@ -9,15 +9,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import dartwork_mpl as dm
 
-dm.style.use_preset('presentation')
+dm.style.use_preset("presentation")
 
 fig = plt.figure(figsize=(dm.cm2in(12), dm.cm2in(10)), dpi=300)
-gs = fig.add_gridspec(
-    1, 1,
-    left=0.05, right=0.95,
-    top=0.95, bottom=0.05
-)
-ax = fig.add_subplot(gs[0, 0], projection='3d')
+gs = fig.add_gridspec(1, 1, left=0.05, right=0.95, top=0.95, bottom=0.05)
+ax = fig.add_subplot(gs[0, 0], projection="3d")
 
 # Make data
 X = np.arange(-5, 5, 0.25)
@@ -27,14 +23,13 @@ R = np.sqrt(X**2 + Y**2)
 Z = np.sin(R)
 
 # Plot the surface
-surf = ax.plot_surface(X, Y, Z, cmap='dm.Spectral',
-                       linewidth=0, antialiased=False)
+surf = ax.plot_surface(X, Y, Z, cmap="dm.Spectral", linewidth=0, antialiased=False)
 
 # Customize axis labels with font size utilities
-ax.set_xlabel('X Label', fontsize=dm.fs(0))
-ax.set_ylabel('Y Label', fontsize=dm.fs(0))
-ax.set_zlabel('Z Label', fontsize=dm.fs(0))
-ax.set_title('3D Surface Plot', fontsize=dm.fs(1))
+ax.set_xlabel("X Label", fontsize=dm.fs(0))
+ax.set_ylabel("Y Label", fontsize=dm.fs(0))
+ax.set_zlabel("Z Label", fontsize=dm.fs(0))
+ax.set_title("3D Surface Plot", fontsize=dm.fs(1))
 
 # Add a color bar which maps values to colors.
 fig.colorbar(surf, shrink=0.5, aspect=5)

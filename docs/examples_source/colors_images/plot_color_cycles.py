@@ -10,61 +10,78 @@ import matplotlib.pyplot as plt
 from cycler import cycler
 import dartwork_mpl as dm
 
-dm.style.use_preset('scientific')
+dm.style.use_preset("scientific")
 
 np.random.seed(42)
 x = np.linspace(0, 10, 100)
 
 fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
-gs = fig.add_gridspec(nrows=2, ncols=2, left=0.08, right=0.98,
-                      top=0.95, bottom=0.08, wspace=0.3, hspace=0.4)
+gs = fig.add_gridspec(
+    nrows=2,
+    ncols=2,
+    left=0.08,
+    right=0.98,
+    top=0.95,
+    bottom=0.08,
+    wspace=0.3,
+    hspace=0.4,
+)
 
 # Panel A: Default dartwork-mpl cycle
 ax1 = fig.add_subplot(gs[0, 0])
 for i in range(6):
-    y = np.sin(x + i*0.5) + i*0.3
-    ax1.plot(x, y, lw=0.7, label=f'Line {i+1}')
-ax1.set_xlabel('X', fontsize=dm.fs(0))
-ax1.set_ylabel('Y', fontsize=dm.fs(0))
-ax1.set_title('Default Color Cycle', fontsize=dm.fs(1))
-ax1.legend(loc='best', fontsize=dm.fs(-2), ncol=2)
+    y = np.sin(x + i * 0.5) + i * 0.3
+    ax1.plot(x, y, lw=0.7, label=f"Line {i + 1}")
+ax1.set_xlabel("X", fontsize=dm.fs(0))
+ax1.set_ylabel("Y", fontsize=dm.fs(0))
+ax1.set_title("Default Color Cycle", fontsize=dm.fs(1))
+ax1.legend(loc="best", fontsize=dm.fs(-2), ncol=2)
 
 # Panel B: Custom color cycle (blues)
 ax2 = fig.add_subplot(gs[0, 1])
-blue_cycle = cycler(color=['dm.blue2', 'dm.blue4', 'dm.blue5', 'dm.blue6', 'dm.blue8'])
+blue_cycle = cycler(color=["dm.blue2", "dm.blue4", "dm.blue5", "dm.blue6", "dm.blue8"])
 ax2.set_prop_cycle(blue_cycle)
 for i in range(5):
-    y = np.sin(x + i*0.6) + i*0.4
-    ax2.plot(x, y, lw=0.7, label=f'Blue {i+1}')
-ax2.set_xlabel('X', fontsize=dm.fs(0))
-ax2.set_ylabel('Y', fontsize=dm.fs(0))
-ax2.set_title('Blue Gradient Cycle', fontsize=dm.fs(1))
-ax2.legend(loc='best', fontsize=dm.fs(-2), ncol=2)
+    y = np.sin(x + i * 0.6) + i * 0.4
+    ax2.plot(x, y, lw=0.7, label=f"Blue {i + 1}")
+ax2.set_xlabel("X", fontsize=dm.fs(0))
+ax2.set_ylabel("Y", fontsize=dm.fs(0))
+ax2.set_title("Blue Gradient Cycle", fontsize=dm.fs(1))
+ax2.legend(loc="best", fontsize=dm.fs(-2), ncol=2)
 
 # Panel C: Tailwind color cycle
 ax3 = fig.add_subplot(gs[1, 0])
-tw_cycle = cycler(color=['tw.red:500', 'tw.orange:500', 'tw.yellow:600',
-                         'tw.green:500', 'tw.blue:500', 'tw.purple:500'])
+tw_cycle = cycler(
+    color=[
+        "tw.red:500",
+        "tw.orange:500",
+        "tw.yellow:600",
+        "tw.green:500",
+        "tw.blue:500",
+        "tw.purple:500",
+    ]
+)
 ax3.set_prop_cycle(tw_cycle)
 for i in range(6):
-    y = np.sin(x + i*0.5) + i*0.3
-    ax3.plot(x, y, lw=0.7, label=f'TW {i+1}')
-ax3.set_xlabel('X', fontsize=dm.fs(0))
-ax3.set_ylabel('Y', fontsize=dm.fs(0))
-ax3.set_title('Tailwind Color Cycle', fontsize=dm.fs(1))
-ax3.legend(loc='best', fontsize=dm.fs(-2), ncol=2)
+    y = np.sin(x + i * 0.5) + i * 0.3
+    ax3.plot(x, y, lw=0.7, label=f"TW {i + 1}")
+ax3.set_xlabel("X", fontsize=dm.fs(0))
+ax3.set_ylabel("Y", fontsize=dm.fs(0))
+ax3.set_title("Tailwind Color Cycle", fontsize=dm.fs(1))
+ax3.legend(loc="best", fontsize=dm.fs(-2), ncol=2)
 
 # Panel D: Combined style cycle (color + linestyle)
 ax4 = fig.add_subplot(gs[1, 1])
-combined_cycle = (cycler(color=['dm.red5', 'dm.blue5', 'dm.green5']) *
-                  cycler(linestyle=['-', '--', '-.']))
+combined_cycle = cycler(color=["dm.red5", "dm.blue5", "dm.green5"]) * cycler(
+    linestyle=["-", "--", "-."]
+)
 ax4.set_prop_cycle(combined_cycle)
 for i in range(9):
-    y = np.sin(x + i*0.3) + (i//3)*0.5
+    y = np.sin(x + i * 0.3) + (i // 3) * 0.5
     ax4.plot(x, y, lw=0.7)
-ax4.set_xlabel('X', fontsize=dm.fs(0))
-ax4.set_ylabel('Y', fontsize=dm.fs(0))
-ax4.set_title('Combined Cycle (Color × Style)', fontsize=dm.fs(1))
+ax4.set_xlabel("X", fontsize=dm.fs(0))
+ax4.set_ylabel("Y", fontsize=dm.fs(0))
+ax4.set_title("Combined Cycle (Color × Style)", fontsize=dm.fs(1))
 
 dm.simple_layout(fig, gs=gs)
 plt.show()

@@ -119,6 +119,7 @@ def _collect_fonts() -> Dict[str, List[str]]:
 
 def _sort_fonts(fonts: List[str]) -> List[str]:
     """Sort fonts by weight and style."""
+
     def get_weight_score(font):
         base_weight = 4  # Regular default
         italic_score = 0.5 if "Italic" in font else 0
@@ -363,15 +364,29 @@ def _save_utilities_demo(images_dir: Path) -> Path:
     ax1.set_xlim(0, 10)
     ax1.set_ylim(0, 6)
     ax1.axis("off")
-    ax1.set_title("fs(n) - Font Size Adjustment", fontsize=14, fontweight="bold", pad=10)
+    ax1.set_title(
+        "fs(n) - Font Size Adjustment", fontsize=14, fontweight="bold", pad=10
+    )
 
     base_size = plt.rcParams["font.size"]
-    sizes = [("fs(-2)", dm.fs(-2)), ("fs(0)", dm.fs(0)), ("fs(2)", dm.fs(2)), ("fs(4)", dm.fs(4))]
+    sizes = [
+        ("fs(-2)", dm.fs(-2)),
+        ("fs(0)", dm.fs(0)),
+        ("fs(2)", dm.fs(2)),
+        ("fs(4)", dm.fs(4)),
+    ]
 
     for idx, (label, size) in enumerate(sizes):
         y_pos = 5 - idx * 1.2
         ax1.text(0.5, y_pos, label, size=10, color="#666", va="center")
-        ax1.text(2.5, y_pos, f"Sample Text (size={size:.1f})", size=size, color="#333", va="center")
+        ax1.text(
+            2.5,
+            y_pos,
+            f"Sample Text (size={size:.1f})",
+            size=size,
+            color="#333",
+            va="center",
+        )
 
     # fw() demo
     ax2 = axes[1]
@@ -379,14 +394,30 @@ def _save_utilities_demo(images_dir: Path) -> Path:
     ax2.set_xlim(0, 10)
     ax2.set_ylim(0, 6)
     ax2.axis("off")
-    ax2.set_title("fw(n) - Font Weight Adjustment", fontsize=14, fontweight="bold", pad=10)
+    ax2.set_title(
+        "fw(n) - Font Weight Adjustment", fontsize=14, fontweight="bold", pad=10
+    )
 
-    weights = [("fw(-1)", 200), ("fw(0)", 300), ("fw(1)", 400), ("fw(2)", 500), ("fw(4)", 700)]
+    weights = [
+        ("fw(-1)", 200),
+        ("fw(0)", 300),
+        ("fw(1)", 400),
+        ("fw(2)", 500),
+        ("fw(4)", 700),
+    ]
 
     for idx, (label, weight) in enumerate(weights):
         y_pos = 5.5 - idx * 1.1
         ax2.text(0.5, y_pos, label, size=10, color="#666", va="center")
-        ax2.text(2.5, y_pos, f"Sample Text (weight={weight})", size=12, weight=weight, color="#333", va="center")
+        ax2.text(
+            2.5,
+            y_pos,
+            f"Sample Text (weight={weight})",
+            size=12,
+            weight=weight,
+            color="#333",
+            va="center",
+        )
 
     plt.tight_layout()
     path = images_dir / "font_utilities.png"

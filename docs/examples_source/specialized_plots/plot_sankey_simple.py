@@ -10,16 +10,16 @@ from matplotlib.sankey import Sankey
 import dartwork_mpl as dm
 
 # Apply consistent styling
-dm.style.use_preset('scientific')
+dm.style.use_preset("scientific")
 
 # Flows sum to zero: inflow = 100, outflows = -40, -25, -20, -15
 flows = [100, -40, -25, -20, -15]
 labels = [
-    'Total Inflow',
-    'Storage',
-    'Processing',
-    'Losses',
-    'Delivered',
+    "Total Inflow",
+    "Storage",
+    "Processing",
+    "Losses",
+    "Delivered",
 ]
 # Orientation controls label/arrow direction for readability
 orientations = [0, 1, -1, 1, -1]
@@ -28,10 +28,10 @@ fig, ax = plt.subplots(figsize=(dm.cm2in(16), dm.cm2in(9)), dpi=300)
 
 sankey = Sankey(
     ax=ax,
-    unit='%',
-    format='%.0f%%',
-    scale=1.0,      # keep values literal (100 == 100%)
-    gap=0.5,        # breathing room between flows
+    unit="%",
+    format="%.0f%%",
+    scale=1.0,  # keep values literal (100 == 100%)
+    gap=0.5,  # breathing room between flows
     shoulder=0.02,  # tighter joints
 )
 sankey.add(
@@ -44,8 +44,8 @@ sankey.add(
 )
 sankey.finish()
 
-ax.set_title('Simple Sankey Diagram', fontsize=dm.fs(1))
-ax.axis('off')
+ax.set_title("Simple Sankey Diagram", fontsize=dm.fs(1))
+ax.axis("off")
 dm.simple_layout(fig)
 
 plt.show()
