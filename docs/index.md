@@ -15,6 +15,7 @@ opinionated styles, curated color libraries, and layout utilities.
 :titlesonly:
 
 Installation <installation/index>
+Design Philosophy <philosophy/index>
 Usage Guide <usage_guide/index>
 Color System <color_system/index>
 Fonts <fonts/index>
