@@ -5,9 +5,10 @@ Histograms
 Compare binning choices and overlays (density curves, step histograms) to pick a truthful view of your data.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import stats
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

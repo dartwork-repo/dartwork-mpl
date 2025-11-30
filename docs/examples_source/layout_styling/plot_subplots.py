@@ -5,8 +5,9 @@ Subplots Layout
 Starter recipes for common subplot grids (1x2, 2x2, and more) with balanced spacing.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

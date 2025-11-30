@@ -110,10 +110,7 @@ sphinx_gallery_conf = {
 }
 
 # -- MyST Parser configuration -----------------------------------------------
-myst_enable_extensions = [
-    "colon_fence",
-    "deflist",
-]
+myst_enable_extensions = ["colon_fence", "deflist"]
 myst_heading_anchors = 3
 
 
@@ -160,7 +157,9 @@ def _write_manual_indices(app, env, docnames):
 
         # Remove :orphan: from category index files to include them in toctree/sidebar
         if ":orphan:" in content:
-            clean_content = content.replace(":orphan:\n", "").replace(":orphan:", "")
+            clean_content = content.replace(":orphan:\n", "").replace(
+                ":orphan:", ""
+            )
             cat_index_path.write_text(clean_content)
 
         # Extract content before the toctree
@@ -227,7 +226,9 @@ def _create_placeholder_index(app):
     index_file = gallery_dir / "index.rst"
     if not index_file.exists():
         # Write minimal placeholder that will be overwritten later
-        index_file.write_text("Examples Gallery\n================\n\nLoading...\n")
+        index_file.write_text(
+            "Examples Gallery\n================\n\nLoading...\n"
+        )
         print("Created placeholder: examples_gallery/index.rst")
 
 

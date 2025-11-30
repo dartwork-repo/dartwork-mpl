@@ -5,9 +5,10 @@ Probability Distributions
 Put histograms, ECDFs, and PDFs together so readers see both raw counts and cumulative behavior at a glance.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import stats
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

@@ -7,6 +7,7 @@ Show a clean, proportional treemap for a single hierarchy using a slice-and-dice
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -48,12 +49,7 @@ def draw_treemap(ax, values):
         h -= 2 * padding
         ax.add_patch(
             Rectangle(
-                (x, y),
-                w,
-                h,
-                facecolor=color,
-                edgecolor="white",
-                linewidth=1.0,
+                (x, y), w, h, facecolor=color, edgecolor="white", linewidth=1.0
             )
         )
         ax.text(

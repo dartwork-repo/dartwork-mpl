@@ -5,9 +5,9 @@
 Render smooth 3D surfaces with contours and lighting tweaks that photograph well in papers.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

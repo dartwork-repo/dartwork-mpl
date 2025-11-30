@@ -5,8 +5,9 @@ Trend Analysis
 Highlight local and global trends with smoothing, break annotations, and slope callouts.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -23,11 +24,14 @@ linear_trend = 20 + 0.5 * t + np.random.randn(n) * 2
 quad_trend = 10 + 0.1 * t + 0.01 * t**2 + np.random.randn(n) * 3
 
 # Seasonal + trend
-seasonal_trend = 30 + 0.3 * t + 8 * np.sin(2 * np.pi * t / 20) + np.random.randn(n) * 2
+seasonal_trend = (
+    30 + 0.3 * t + 8 * np.sin(2 * np.pi * t / 20) + np.random.randn(n) * 2
+)
 
 # Changepoint
 change_trend = (
-    np.concatenate([30 + 0.2 * t[:50], 40 + 0.8 * t[50:]]) + np.random.randn(n) * 2
+    np.concatenate([30 + 0.2 * t[:50], 40 + 0.8 * t[50:]])
+    + np.random.randn(n) * 2
 )
 
 fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
@@ -69,7 +73,9 @@ ax3 = fig.add_subplot(gs[1, 0])
 z3 = np.polyfit(t, seasonal_trend, 1)
 p3 = np.poly1d(z3)
 detrended = seasonal_trend - p3(t)
-ax3.plot(t, seasonal_trend, color="oc.gray5", lw=0.5, alpha=0.5, label="Original")
+ax3.plot(
+    t, seasonal_trend, color="oc.gray5", lw=0.5, alpha=0.5, label="Original"
+)
 ax3.plot(t, detrended, color="oc.violet5", lw=0.7, label="Detrended")
 ax3.axhline(y=0, color="k", lw=0.3, linestyle="--")
 ax3.set_xlabel("Time", fontsize=dm.fs(0))

@@ -4,10 +4,10 @@ This module provides a function to create diverging bar graphs that display
 positive and negative values on opposite sides of a central axis.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.figure import Figure
+import numpy as np
 from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 from matplotlib.transforms import blended_transform_factory
 
 import dartwork_mpl as dm
@@ -213,7 +213,9 @@ def plot_diverging_bar(
 
     # Set default title
     if title is None:
-        title = "Engineering hours shifted by AI assistants, % of sprint capacity"
+        title = (
+            "Engineering hours shifted by AI assistants, % of sprint capacity"
+        )
 
     # Create figure with publication-ready settings
     fig = plt.figure(figsize=figsize, dpi=dpi)
@@ -391,8 +393,8 @@ def get_source_code() -> str:
     >>> source = get_source_code()
     >>> print(source)
     """
-    import inspect
     import importlib
+    import inspect
 
     # Get the current module
     module_name = __name__
@@ -402,5 +404,5 @@ def get_source_code() -> str:
     source_file = inspect.getfile(module)
 
     # Read and return the source code
-    with open(source_file, "r", encoding="utf-8") as f:
+    with open(source_file, encoding="utf-8") as f:
         return f.read()

@@ -5,8 +5,9 @@ Rolling Statistics
 Track rolling means and variances with window markers to show stability and volatility over time.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -19,7 +20,9 @@ data = 50 + np.cumsum(np.random.randn(n)) + 10 * np.sin(t / 10)
 
 # Calculate rolling statistics
 window_sizes = [5, 10, 20]
-rolling_means = [np.convolve(data, np.ones(w) / w, mode="valid") for w in window_sizes]
+rolling_means = [
+    np.convolve(data, np.ones(w) / w, mode="valid") for w in window_sizes
+]
 
 fig = plt.figure(figsize=(dm.cm2in(16), dm.cm2in(12)), dpi=300)
 gs = fig.add_gridspec(
@@ -37,7 +40,9 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 ax1.plot(t, data, color="oc.gray3", lw=0.3, alpha=0.5, label="Raw")
 colors = ["oc.red5", "oc.blue5", "oc.green5"]
-for i, (rm, w, c) in enumerate(zip(rolling_means, window_sizes, colors)):
+for _, (rm, w, c) in enumerate(
+    zip(rolling_means, window_sizes, colors, strict=False)
+):
     ax1.plot(t[w - 1 :], rm, color=c, lw=0.7, label=f"MA-{w}")
 ax1.set_xlabel("Time", fontsize=dm.fs(0))
 ax1.set_ylabel("Value", fontsize=dm.fs(0))
@@ -46,7 +51,9 @@ ax1.legend(loc="best", fontsize=dm.fs(-2), ncol=2)
 
 # Panel B: Rolling standard deviation
 ax2 = fig.add_subplot(gs[0, 1])
-rolling_std = np.array([np.std(data[max(0, i - 20) : i + 1]) for i in range(len(data))])
+rolling_std = np.array(
+    [np.std(data[max(0, i - 20) : i + 1]) for i in range(len(data))]
+)
 ax2.plot(t, rolling_std, color="oc.orange5", lw=0.7)
 ax2.set_xlabel("Time", fontsize=dm.fs(0))
 ax2.set_ylabel("Rolling std (window=20)", fontsize=dm.fs(0))
@@ -74,7 +81,9 @@ upper = ma + 2 * std
 lower = ma - 2 * std
 ax4.plot(t[: len(ma)], data[: len(ma)], color="oc.gray3", lw=0.3, alpha=0.5)
 ax4.plot(t[: len(ma)], ma, color="oc.blue5", lw=0.7, label="MA")
-ax4.fill_between(t[: len(ma)], lower, upper, color="oc.blue5", alpha=0.2, label="±2σ")
+ax4.fill_between(
+    t[: len(ma)], lower, upper, color="oc.blue5", alpha=0.2, label="±2σ"
+)
 ax4.set_xlabel("Time", fontsize=dm.fs(0))
 ax4.set_ylabel("Value", fontsize=dm.fs(0))
 ax4.set_title("Bollinger Bands", fontsize=dm.fs(1))

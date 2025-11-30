@@ -5,8 +5,9 @@ Colors
 Browse dartwork color libraries with labeled swatches you can drop into figures.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply style
@@ -35,18 +36,15 @@ ax.plot(x, np.sin(x) + 4, color=mixed_color, lw=2, label="Mixed (Red+Blue)")
 # 4. Pseudo-transparency
 # Create a lighter version of red by mixing with white
 transparent_red = dm.pseudo_alpha("oc.red5", alpha=0.3, background="white")
-ax.fill_between(x, np.sin(x) + 4, 5.5, color=transparent_red, label="Pseudo-alpha Red")
+ax.fill_between(
+    x, np.sin(x) + 4, 5.5, color=transparent_red, label="Pseudo-alpha Red"
+)
 
 ax.set_ylim(-1.5, 6)
 ax.set_xlabel("X", fontsize=dm.fs(0))
 ax.set_ylabel("Y", fontsize=dm.fs(0))
 ax.set_title("dartwork-mpl Color System", fontsize=dm.fs(1))
-ax.legend(
-    ncol=2,
-    loc="best",
-    frameon=False,
-    fontsize=dm.fs(-1),
-)
+ax.legend(ncol=2, loc="best", frameon=False, fontsize=dm.fs(-1))
 
 dm.simple_layout(fig, gs=gs)
 plt.show()

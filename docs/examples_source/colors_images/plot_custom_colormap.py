@@ -5,9 +5,10 @@ Custom Colormaps
 Build sequential, diverging, and discrete colormaps and compare them side by side.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -33,7 +34,9 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 colors_seq = ["white", "oc.blue3", "oc.blue5", "oc.blue7"]
 n_bins = 100
-cmap_custom = LinearSegmentedColormap.from_list("custom_blue", colors_seq, N=n_bins)
+cmap_custom = LinearSegmentedColormap.from_list(
+    "custom_blue", colors_seq, N=n_bins
+)
 im1 = ax1.contourf(X, Y, Z, levels=20, cmap=cmap_custom)
 plt.colorbar(im1, ax=ax1, fraction=0.046, pad=0.04)
 ax1.set_xlabel("X", fontsize=dm.fs(0))
@@ -84,7 +87,11 @@ for spine in ax4.spines.values():
     spine.set_visible(True)
 for i, (cmap, label) in enumerate(cmaps_demo):
     ax4.imshow(
-        gradient, aspect="auto", cmap=cmap, extent=[0, 1, i, i + 1], origin="lower"
+        gradient,
+        aspect="auto",
+        cmap=cmap,
+        extent=[0, 1, i, i + 1],
+        origin="lower",
     )
     ax4.text(1.02, i + 0.5, label, ha="left", va="center", fontsize=dm.fs(-1))
 ax4.set_xlim(0, 1.1)

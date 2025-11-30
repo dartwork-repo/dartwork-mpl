@@ -116,7 +116,9 @@ def classify_colormap(cmap: "Colormap") -> str:
             plateau_positions = [np.mean(run) for run in significant_plateaus]
             position_range = max(plateau_positions) - min(plateau_positions)
 
-            if position_range > n_samples * 0.3:  # Plateaus are well distributed
+            if (
+                position_range > n_samples * 0.3
+            ):  # Plateaus are well distributed
                 return "Categorical"
 
     # Additional check for categorical: large jumps in color
@@ -181,7 +183,8 @@ def classify_colormap(cmap: "Colormap") -> str:
 
     # Check for monotonic value change (typical for sequential)
     is_monotonic = np.all(
-        np.diff(values[: n_samples // 2]) * np.diff(values[n_samples // 2 :]) >= 0
+        np.diff(values[: n_samples // 2]) * np.diff(values[n_samples // 2 :])
+        >= 0
     )
 
     if hue_range < 0.01 and is_monotonic:
@@ -241,7 +244,9 @@ def plot_colormaps(
         cmap_list = [c for c in cmap_list if not c.endswith("_r")]
 
     # Convert colormaps to matplotlib colormaps if cmap is a string.
-    cmap_list = [mpl.cm.get_cmap(c) if isinstance(c, str) else c for c in cmap_list]
+    cmap_list = [
+        mpl.cm.get_cmap(c) if isinstance(c, str) else c for c in cmap_list
+    ]
 
     if group_by_type:
         # Define category order
@@ -372,7 +377,10 @@ def plot_colormaps(
         figh = 0.35 + 0.15 + (nrows + (nrows - 1) * 0.1) * 0.44
         fig, axs = plt.subplots(nrows=nrows, ncols=ncols, figsize=(figw, figh))
         fig.subplots_adjust(
-            top=1 - 0.35 / figh, bottom=0.15 / figh, left=0.2 / ncols, right=0.99
+            top=1 - 0.35 / figh,
+            bottom=0.15 / figh,
+            left=0.2 / ncols,
+            right=0.99,
         )
 
         # Handle case when axs is a single Axes object (when nrows=ncols=1)
@@ -432,7 +440,7 @@ def _load_color_library_names() -> set[str]:
     # Load opencolor colors
     opencolor_file = asset_dir / "oc.txt"
     if opencolor_file.exists():
-        with open(opencolor_file, "r") as f:
+        with open(opencolor_file) as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#"):
@@ -516,9 +524,7 @@ def _detect_color_weight_system(color_names: list[str]) -> int | None:
     return None
 
 
-def _detect_weight_range(
-    color_names: list[str],
-) -> tuple[int, int] | None:
+def _detect_weight_range(color_names: list[str]) -> tuple[int, int] | None:
     """
     Detect the weight range used in a group of color names.
 
@@ -679,7 +685,9 @@ def _separate_colors_by_library(
 
     # Remove empty libraries
     return {
-        lib: colors_dict for lib, colors_dict in library_groups.items() if colors_dict
+        lib: colors_dict
+        for lib, colors_dict in library_groups.items()
+        if colors_dict
     }
 
 
@@ -728,7 +736,15 @@ def _sort_colors_by_library(
         "other": "Other Colors",
     }
 
-    for library in ["opencolor", "tw", "md", "ant", "chakra", "primer", "other"]:
+    for library in [
+        "opencolor",
+        "tw",
+        "md",
+        "ant",
+        "chakra",
+        "primer",
+        "other",
+    ]:
         color_list = library_groups[library]
 
         if not color_list:
@@ -753,7 +769,7 @@ def _sort_colors_by_library(
         sorted_base_colors = sorted(base_color_groups.items())
 
         # Sort within each base color group
-        for base_color, color_items in sorted_base_colors:
+        for _, color_items in sorted_base_colors:
             # Sort by: number (if present), otherwise by HSV value (brightness)
             def sort_key(x):
                 color_name, hsv = x
@@ -767,7 +783,9 @@ def _sort_colors_by_library(
 
             color_items.sort(key=sort_key)
 
-            sorted_names.extend([(name, colors[name]) for name, _ in color_items])
+            sorted_names.extend(
+                [(name, colors[name]) for name, _ in color_items]
+            )
 
     return sorted_names
 
@@ -775,7 +793,10 @@ def _sort_colors_by_library(
 def _group_colors_by_hue(
     colors: dict[str, str | tuple[float, float, float]],
 ) -> list[
-    dict[str, str | list[tuple[str, str | tuple[float, float, float]]] | None | float]
+    dict[
+        str,
+        str | list[tuple[str, str | tuple[float, float, float]]] | None | float,
+    ]
 ]:
     """
     Group colors by HSV hue ranges for better visual organization.
@@ -859,7 +880,9 @@ def _group_colors_by_hue(
 
         # Calculate average hue for group (for sorting)
         if group_name == "grayscale":
-            avg_hue = -1  # Grayscale goes first (negative to sort before others)
+            avg_hue = (
+                -1
+            )  # Grayscale goes first (negative to sort before others)
         elif group_name == "other":
             avg_hue = 1000  # Other goes last
         else:
@@ -872,7 +895,9 @@ def _group_colors_by_hue(
                 avg_hue = sum(hues) / len(hues)
 
         # Sort within group by brightness/value (light to dark)
-        items.sort(key=lambda x: -x[2][2])  # Sort by value (brightness), descending
+        items.sort(
+            key=lambda x: -x[2][2]
+        )  # Sort by value (brightness), descending
 
         color_groups.append(
             {
@@ -993,7 +1018,7 @@ def _plot_single_library(
         None
     ] * ncols  # Track previous base_color for each column
 
-    for group_idx, group in enumerate(color_groups):
+    for _group_idx, group in enumerate(color_groups):
         group_colors = group["colors"]
         current_weight_range = group.get("weight_range")
         current_base_color = group.get("base_color")
@@ -1030,7 +1055,7 @@ def _plot_single_library(
         # The first color (lightest, weight 0) will be at the start of the
         # column
         # The last color (darkest, weight 9) will be at the end of the column
-        for color_idx, (name, color_spec) in enumerate(group_colors):
+        for _color_idx, (name, color_spec) in enumerate(group_colors):
             row = column_heights[target_col]
             color_grid.append((target_col, row, name, color_spec))
             column_heights[target_col] += 1
@@ -1047,7 +1072,12 @@ def _plot_single_library(
     total_title_height = title_height + title_margin * cell_height
     # Add extra space at bottom to ensure last row is fully visible
     bottom_extra_margin = 0.5 * cell_height
-    height = cell_height * nrows + 2 * margin + total_title_height + bottom_extra_margin
+    height = (
+        cell_height * nrows
+        + 2 * margin
+        + total_title_height
+        + bottom_extra_margin
+    )
     dpi = 72
 
     fig, ax = plt.subplots(figsize=(width / dpi, height / dpi), dpi=dpi)
@@ -1186,7 +1216,15 @@ def plot_colors(
 
     # Library order: opencolor -> tw -> md -> ant -> chakra -> primer -> other
     # (xkcd last)
-    library_order = ["opencolor", "tw", "md", "ant", "chakra", "primer", "other"]
+    library_order = [
+        "opencolor",
+        "tw",
+        "md",
+        "ant",
+        "chakra",
+        "primer",
+        "other",
+    ]
 
     # Create a separate plot for each library
     figures = []
@@ -1312,7 +1350,9 @@ def plot_fonts(
 
         # 패밀리 제목 출력 (밑줄 추가)
         title_y = base_y_pos + max_fonts_in_family + 0.5
-        ax.text(x_pos, title_y, f"Font Family: {family}", size=12, weight="bold")
+        ax.text(
+            x_pos, title_y, f"Font Family: {family}", size=12, weight="bold"
+        )
         ax.plot(
             [x_pos, x_pos + 6],
             [title_y - 0.3, title_y - 0.3],

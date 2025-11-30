@@ -22,7 +22,9 @@ def main() -> None:
         description="dartwork-mpl CLI tools", prog="dmpl"
     )
 
-    subparsers = parser.add_subparsers(dest="command", help="Available commands")
+    subparsers = parser.add_subparsers(
+        dest="command", help="Available commands"
+    )
 
     # Install command
     install_parser = subparsers.add_parser(

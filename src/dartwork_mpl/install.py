@@ -49,7 +49,7 @@ def install_llm_txt(project_dir: str | Path | None = None) -> None:
     cursor_file: Path = cursor_dir / "dartwork-mpl-usage.md"
 
     # Read the original usage guide
-    with open(usage_guide_path, "r", encoding="utf-8") as f:
+    with open(usage_guide_path, encoding="utf-8") as f:
         content: str = f.read()
 
     # Create Claude Code version with command prefix

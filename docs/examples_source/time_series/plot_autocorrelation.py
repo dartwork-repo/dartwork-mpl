@@ -5,8 +5,9 @@ Autocorrelation Analysis
 Plot ACF and PACF with significance bounds to quickly judge lag structure.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -84,7 +85,9 @@ ax3.axhline(y=0, color="k", lw=0.3)
 # Panel D: ACF of MA(1)
 ax4 = fig.add_subplot(gs[1, 1])
 ax4.stem(range(lags + 1), acf_ma, basefmt=" ")
-markerline2, stemlines2, baseline2 = ax4.stem(range(lags + 1), acf_ma, basefmt=" ")
+markerline2, stemlines2, baseline2 = ax4.stem(
+    range(lags + 1), acf_ma, basefmt=" "
+)
 plt.setp(stemlines2, "color", "oc.green5", "linewidth", 0.7)
 plt.setp(markerline2, "color", "oc.green7", "markersize", 3)
 ax4.axhline(y=0, color="k", lw=0.3)

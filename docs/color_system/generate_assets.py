@@ -12,8 +12,8 @@ from __future__ import annotations
 
 import math
 import sys
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Dict, Iterable, List
 
 import matplotlib
 
@@ -39,7 +39,7 @@ CATEGORY_ORDER = [
     "Categorical",
 ]
 
-CATEGORY_BLURBS: Dict[str, str] = {
+CATEGORY_BLURBS: dict[str, str] = {
     "Sequential Single-Hue": "One hue that ramps value cleanly. Great for magnitude and density.",
     "Sequential Multi-Hue": "Colorful ramps that stay perceptually smooth. Ideal for heatmaps.",
     "Diverging": "Two anchored hues split around a midpoint. Perfect for anomalies or signed values.",
@@ -47,7 +47,15 @@ CATEGORY_BLURBS: Dict[str, str] = {
     "Categorical": "Distinct steps with little interpolation. Use for discrete classes.",
 }
 
-COLOR_LIBRARY_ORDER = ["opencolor", "tw", "md", "ant", "chakra", "primer", "other"]
+COLOR_LIBRARY_ORDER = [
+    "opencolor",
+    "tw",
+    "md",
+    "ant",
+    "chakra",
+    "primer",
+    "other",
+]
 COLOR_LIBRARY_LABELS = {
     "opencolor": "OpenColor",
     "tw": "Tailwind",
@@ -66,14 +74,14 @@ def _prepare_images_dir(base_dir: Path | None = None) -> Path:
     return images_dir
 
 
-def _collect_colormaps() -> Dict[str, List[mpl.colors.Colormap]]:
+def _collect_colormaps() -> dict[str, list[mpl.colors.Colormap]]:
     """Bucket colormaps by category."""
     cmap_list: Iterable[str] = (
         name for name in mpl.colormaps if not str(name).endswith("_r")
     )
     cmaps = [mpl.colormaps[name] for name in cmap_list]
 
-    categories: Dict[str, List[mpl.colors.Colormap]] = {
+    categories: dict[str, list[mpl.colors.Colormap]] = {
         category: [] for category in CATEGORY_ORDER
     }
     for cmap in cmaps:
@@ -83,7 +91,10 @@ def _collect_colormaps() -> Dict[str, List[mpl.colors.Colormap]]:
 
     for values in categories.values():
         values.sort(
-            key=lambda cmap: (0 if cmap.name.startswith("dm.") else 1, cmap.name)
+            key=lambda cmap: (
+                0 if cmap.name.startswith("dm.") else 1,
+                cmap.name,
+            )
         )
 
     return {k: v for k, v in categories.items() if v}
@@ -95,7 +106,7 @@ def _gradient(resolution: int = 720, height: int = 28) -> np.ndarray:
 
 
 def _save_colormap_category(
-    category: str, cmaps: List[mpl.colors.Colormap], images_dir: Path
+    category: str, cmaps: list[mpl.colors.Colormap], images_dir: Path
 ) -> Path:
     """Draw a wide, high-DPI panel for a single category."""
     ncols = 2
@@ -149,12 +160,12 @@ def _save_colormap_category(
             ha="left",
             va="bottom",
             transform=ax.transAxes,
-            bbox=dict(
-                boxstyle="round,pad=0.2",
-                facecolor="#ffffff",
-                edgecolor="#e4e2dd",
-                linewidth=0.8,
-            ),
+            bbox={
+                "boxstyle": "round,pad=0.2",
+                "facecolor": "#ffffff",
+                "edgecolor": "#e4e2dd",
+                "linewidth": 0.8,
+            },
         )
         if tag:
             ax.text(
@@ -166,12 +177,12 @@ def _save_colormap_category(
                 va="bottom",
                 transform=ax.transAxes,
                 color="#03675f",
-                bbox=dict(
-                    boxstyle="round,pad=0.2",
-                    facecolor="#e1f4f1",
-                    edgecolor="#b9e2dc",
-                    linewidth=0.8,
-                ),
+                bbox={
+                    "boxstyle": "round,pad=0.2",
+                    "facecolor": "#e1f4f1",
+                    "edgecolor": "#b9e2dc",
+                    "linewidth": 0.8,
+                },
             )
 
     filename = f"colormaps_{category.lower().replace(' ', '_')}.png"
@@ -181,9 +192,9 @@ def _save_colormap_category(
     return path
 
 
-def _save_colormap_panels(images_dir: Path) -> List[Path]:
+def _save_colormap_panels(images_dir: Path) -> list[Path]:
     categories = _collect_colormaps()
-    output: List[Path] = []
+    output: list[Path] = []
 
     for category in CATEGORY_ORDER:
         colormaps = categories.get(category)
@@ -198,11 +209,11 @@ def _scale_figure(fig: plt.Figure, scale: float) -> None:
     fig.set_size_inches(width * scale, height * scale)
 
 
-def _save_color_sheets(images_dir: Path) -> List[Path]:
+def _save_color_sheets(images_dir: Path) -> list[Path]:
     figs = dm.plot_colors(ncols=4, sort_colors=True)
-    paths: List[Path] = []
+    paths: list[Path] = []
 
-    for fig, library_name in zip(figs, COLOR_LIBRARY_ORDER):
+    for fig, library_name in zip(figs, COLOR_LIBRARY_ORDER, strict=False):
         _scale_figure(fig, 1.08)
         fig.patch.set_facecolor("#fbfaf7")
         for ax in fig.get_axes():
@@ -224,7 +235,9 @@ def _save_color_space_creation(images_dir: Path) -> Path:
     fig.subplots_adjust(
         left=0.05, right=0.98, top=0.88, bottom=0.12, hspace=0.4, wspace=0.25
     )
-    fig.suptitle("Creating Color Objects", fontsize=16, fontweight="bold", y=0.95)
+    fig.suptitle(
+        "Creating Color Objects", fontsize=16, fontweight="bold", y=0.95
+    )
 
     # Examples
     examples = [
@@ -243,7 +256,12 @@ def _save_color_space_creation(images_dir: Path) -> Path:
         rgb_val = color.to_rgb()
         ax.add_patch(
             plt.Rectangle(
-                (0, 0), 1, 1, facecolor=rgb_val, edgecolor="#e4e2dd", linewidth=1.5
+                (0, 0),
+                1,
+                1,
+                facecolor=rgb_val,
+                edgecolor="#e4e2dd",
+                linewidth=1.5,
             )
         )
         ax.set_xlim(0, 1)
@@ -288,7 +306,9 @@ def _save_color_space_conversion(images_dir: Path) -> Path:
     gs = fig.add_gridspec(
         1, 5, left=0.05, right=0.98, top=0.85, bottom=0.15, wspace=0.15
     )
-    fig.suptitle("Color Space Conversion", fontsize=16, fontweight="bold", y=0.92)
+    fig.suptitle(
+        "Color Space Conversion", fontsize=16, fontweight="bold", y=0.92
+    )
 
     # Start with one color
     color = dm.hex("#ff5733")
@@ -301,7 +321,11 @@ def _save_color_space_conversion(images_dir: Path) -> Path:
 
     conversions = [
         ("Original\n(Hex)", hex_str, f"'{hex_str}'"),
-        ("OKLab", f"L={L:.3f}\na={a:.3f}\nb={b:.3f}", f"({L:.3f}, {a:.3f}, {b:.3f})"),
+        (
+            "OKLab",
+            f"L={L:.3f}\na={a:.3f}\nb={b:.3f}",
+            f"({L:.3f}, {a:.3f}, {b:.3f})",
+        ),
         (
             "OKLCH",
             f"L={L_ch:.3f}\nC={C:.3f}\nh={h:.1f}°",
@@ -321,7 +345,12 @@ def _save_color_space_conversion(images_dir: Path) -> Path:
         rgb_val = color.to_rgb()
         ax.add_patch(
             plt.Rectangle(
-                (0, 0.3), 1, 0.4, facecolor=rgb_val, edgecolor="#e4e2dd", linewidth=1.5
+                (0, 0.3),
+                1,
+                0.4,
+                facecolor=rgb_val,
+                edgecolor="#e4e2dd",
+                linewidth=1.5,
             )
         )
         ax.set_xlim(0, 1)
@@ -373,7 +402,9 @@ def _save_color_space_interpolation(images_dir: Path) -> Path:
 
     fig, axes = plt.subplots(3, 1, figsize=(dm.cm2in(14), dm.cm2in(6)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
-    fig.subplots_adjust(left=0.08, right=0.98, top=0.88, bottom=0.12, hspace=0.35)
+    fig.subplots_adjust(
+        left=0.08, right=0.98, top=0.88, bottom=0.12, hspace=0.35
+    )
     fig.suptitle(
         "Color Interpolation Comparison", fontsize=16, fontweight="bold", y=0.94
     )
@@ -388,7 +419,7 @@ def _save_color_space_interpolation(images_dir: Path) -> Path:
         ("RGB", "rgb"),
     ]
 
-    for ax, (label, space) in zip(axes, spaces):
+    for ax, (label, space) in zip(axes, spaces, strict=False):
         colors = dm.cspace(start_color, end_color, n=n, space=space)
         gradient = np.array([c.to_rgb() for c in colors])
         gradient = gradient[np.newaxis, :, :]
@@ -434,7 +465,14 @@ def _save_color_space_colormap(images_dir: Path) -> Path:
     fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(7)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
     gs = fig.add_gridspec(
-        2, 2, left=0.08, right=0.98, top=0.92, bottom=0.1, hspace=0.35, wspace=0.25
+        2,
+        2,
+        left=0.08,
+        right=0.98,
+        top=0.92,
+        bottom=0.1,
+        hspace=0.35,
+        wspace=0.25,
     )
     fig.suptitle(
         "Custom Colormaps with cspace()", fontsize=16, fontweight="bold", y=0.96
@@ -506,7 +544,11 @@ cmap = mpl.colors.ListedColormap(
         family="monospace",
         va="top",
         ha="left",
-        bbox=dict(boxstyle="round", facecolor="#f8f8f8", edgecolor="#e4e2dd"),
+        bbox={
+            "boxstyle": "round",
+            "facecolor": "#f8f8f8",
+            "edgecolor": "#e4e2dd",
+        },
     )
     ax3.set_xlim(0, 1)
     ax3.set_ylim(0, 1)
@@ -525,7 +567,11 @@ cmap = mpl.colors.ListedColormap(
         family="monospace",
         va="top",
         ha="left",
-        bbox=dict(boxstyle="round", facecolor="#f8f8f8", edgecolor="#e4e2dd"),
+        bbox={
+            "boxstyle": "round",
+            "facecolor": "#f8f8f8",
+            "edgecolor": "#e4e2dd",
+        },
     )
     ax4.set_xlim(0, 1)
     ax4.set_ylim(0, 1)
@@ -540,7 +586,7 @@ cmap = mpl.colors.ListedColormap(
     return path
 
 
-def _save_color_space_examples(images_dir: Path) -> List[Path]:
+def _save_color_space_examples(images_dir: Path) -> list[Path]:
     """Generate all Color Space example images."""
     paths = [
         _save_color_space_creation(images_dir),
@@ -551,7 +597,7 @@ def _save_color_space_examples(images_dir: Path) -> List[Path]:
     return paths
 
 
-def build_gallery_assets(base_dir: Path | None = None) -> Dict[str, List[Path]]:
+def build_gallery_assets(base_dir: Path | None = None) -> dict[str, list[Path]]:
     """Generate all gallery assets and return their paths."""
     images_dir = _prepare_images_dir(base_dir)
     print(f"[gallery] generating assets to {images_dir}")

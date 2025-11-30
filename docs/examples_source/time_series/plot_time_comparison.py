@@ -5,8 +5,9 @@ Time Series Comparison
 Compare several series with dual axes, panel splits, and color harmonies meant for dashboards.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -45,7 +46,12 @@ ax1.legend(loc="best", fontsize=dm.fs(-1))
 ax2 = fig.add_subplot(gs[0, 1])
 ax2.fill_between(t, 0, ts1 - 40, color="oc.red5", alpha=0.6, label="Series A")
 ax2.fill_between(
-    t, ts1 - 40, ts1 - 40 + ts2 - 40, color="oc.blue5", alpha=0.6, label="Series B"
+    t,
+    ts1 - 40,
+    ts1 - 40 + ts2 - 40,
+    color="oc.blue5",
+    alpha=0.6,
+    label="Series B",
 )
 ax2.fill_between(
     t,
@@ -82,10 +88,22 @@ ax4.plot(t, diff_ab, color="oc.violet5", lw=0.7, label="A - B")
 ax4.plot(t, diff_ac, color="oc.orange5", lw=0.7, label="A - C")
 ax4.axhline(y=0, color="k", lw=0.3, linestyle="--")
 ax4.fill_between(
-    t, 0, diff_ab, where=(diff_ab > 0), color="oc.violet5", alpha=0.2, interpolate=True
+    t,
+    0,
+    diff_ab,
+    where=(diff_ab > 0),
+    color="oc.violet5",
+    alpha=0.2,
+    interpolate=True,
 )
 ax4.fill_between(
-    t, 0, diff_ab, where=(diff_ab < 0), color="oc.violet5", alpha=0.2, interpolate=True
+    t,
+    0,
+    diff_ab,
+    where=(diff_ab < 0),
+    color="oc.violet5",
+    alpha=0.2,
+    interpolate=True,
 )
 ax4.set_xlabel("Time", fontsize=dm.fs(0))
 ax4.set_ylabel("Difference", fontsize=dm.fs(0))

@@ -5,9 +5,10 @@ Kernel Density Estimation
 Use kernel density estimates for single and grouped data to highlight smooth probability ridges.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import stats
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -81,10 +82,20 @@ kde1 = stats.gaussian_kde(data1)
 kde2 = stats.gaussian_kde(data2)
 x_range_comp = np.linspace(-5, 8, 200)
 ax3.fill_between(
-    x_range_comp, 0, kde1(x_range_comp), color="oc.blue5", alpha=0.3, label="Group A"
+    x_range_comp,
+    0,
+    kde1(x_range_comp),
+    color="oc.blue5",
+    alpha=0.3,
+    label="Group A",
 )
 ax3.fill_between(
-    x_range_comp, 0, kde2(x_range_comp), color="oc.red5", alpha=0.3, label="Group B"
+    x_range_comp,
+    0,
+    kde2(x_range_comp),
+    color="oc.red5",
+    alpha=0.3,
+    label="Group B",
 )
 ax3.plot(x_range_comp, kde1(x_range_comp), color="oc.blue7", lw=0.7)
 ax3.plot(x_range_comp, kde2(x_range_comp), color="oc.red7", lw=0.7)
@@ -109,7 +120,9 @@ ax4.hist(
 )
 kde_bimodal = stats.gaussian_kde(data_bimodal)
 x_range_bi = np.linspace(data_bimodal.min(), data_bimodal.max(), 200)
-ax4.plot(x_range_bi, kde_bimodal(x_range_bi), color="oc.red5", lw=0.7, label="KDE")
+ax4.plot(
+    x_range_bi, kde_bimodal(x_range_bi), color="oc.red5", lw=0.7, label="KDE"
+)
 ax4.set_xlabel("Value", fontsize=dm.fs(0))
 ax4.set_ylabel("Density", fontsize=dm.fs(0))
 ax4.set_title("Bimodal Distribution", fontsize=dm.fs(1))

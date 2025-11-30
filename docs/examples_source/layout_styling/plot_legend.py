@@ -5,8 +5,9 @@ Legends
 Design legends with columns, geoms, backgrounds, and aligned handles that match publication styles.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -55,12 +56,26 @@ ax2 = fig.add_subplot(gs[0, 1])
 from matplotlib.lines import Line2D
 
 custom_handles = [
-    Line2D([0], [0], color="oc.blue5", lw=0.7, marker="o", markersize=4, label="Sin"),
-    Line2D([0], [0], color="oc.red5", lw=0.7, marker="s", markersize=4, label="Cos"),
+    Line2D(
+        [0],
+        [0],
+        color="oc.blue5",
+        lw=0.7,
+        marker="o",
+        markersize=4,
+        label="Sin",
+    ),
+    Line2D(
+        [0], [0], color="oc.red5", lw=0.7, marker="s", markersize=4, label="Cos"
+    ),
     Line2D([0], [0], color="oc.green5", lw=0.7, linestyle="--", label="Custom"),
 ]
 ax2.legend(
-    handles=custom_handles, loc="best", fontsize=dm.fs(-1), ncol=1, framealpha=0.9
+    handles=custom_handles,
+    loc="best",
+    fontsize=dm.fs(-1),
+    ncol=1,
+    framealpha=0.9,
 )
 ax2.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax2.set_ylabel("Amplitude", fontsize=dm.fs(0))
@@ -89,7 +104,11 @@ bar1 = ax4.bar(
     idx - 0.18, [3, 4.2, 2.8, 3.6], width=0.36, color="oc.orange5", label="2023"
 )
 bar2 = ax4.bar(
-    idx + 0.18, [3.4, 3.6, 3.1, 4.0], width=0.36, color="oc.violet5", label="2024"
+    idx + 0.18,
+    [3.4, 3.6, 3.1, 4.0],
+    width=0.36,
+    color="oc.violet5",
+    label="2024",
 )
 ax4.set_xticks(idx)
 ax4.set_xticklabels(cats, fontsize=dm.fs(-1))

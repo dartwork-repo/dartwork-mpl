@@ -5,8 +5,9 @@ Error Bars
 Draw vertical, horizontal, and log-scale error bars with caps and intervals to report uncertainty clearly.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

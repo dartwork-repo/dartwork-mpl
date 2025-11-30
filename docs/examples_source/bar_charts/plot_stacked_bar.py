@@ -5,8 +5,9 @@ Stacked Bar Chart
 Stack categories vertically or horizontally, switch to 100% shares, and add cumulative views to tell composition stories.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

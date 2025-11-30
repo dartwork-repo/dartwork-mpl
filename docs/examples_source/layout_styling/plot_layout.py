@@ -6,6 +6,7 @@ Tweak margins, spacings, and aspect ratios using simple_layout and GridSpec help
 """
 
 import matplotlib.pyplot as plt
+
 import dartwork_mpl as dm
 
 # Apply style
@@ -37,7 +38,7 @@ ax3.set_xlabel("X", fontsize=dm.fs(0))
 ax3.set_ylabel("Y", fontsize=dm.fs(0))
 
 # Add subplot labels (a, b, c)
-for ax, label in zip([ax1, ax2, ax3], "abc"):
+for ax, label in zip([ax1, ax2, ax3], "abc", strict=False):
     offset = dm.make_offset(0, 8, fig)
     ax.text(
         0,

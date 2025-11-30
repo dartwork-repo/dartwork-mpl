@@ -5,9 +5,10 @@ Regression Analysis
 Visualize linear and polynomial fits plus confidence bands to make model quality and spread visible.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import stats
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -76,7 +77,9 @@ y_upper = y_fit + 1.96 * predict_err
 y_lower = y_fit - 1.96 * predict_err
 ax4.scatter(x, y_linear, c="oc.blue5", s=5, alpha=0.6, label="Data")
 ax4.plot(x, y_fit, color="oc.red5", lw=0.7, label="Fit")
-ax4.fill_between(x, y_lower, y_upper, color="oc.red5", alpha=0.2, label="95% CI")
+ax4.fill_between(
+    x, y_lower, y_upper, color="oc.red5", alpha=0.2, label="95% CI"
+)
 ax4.set_xlabel("X value", fontsize=dm.fs(0))
 ax4.set_ylabel("Y value", fontsize=dm.fs(0))
 ax4.set_title("With Confidence Interval", fontsize=dm.fs(1))

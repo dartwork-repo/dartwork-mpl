@@ -5,8 +5,9 @@ Radar Charts
 Design radar/spider charts with normalization, group fills, and label offsets that avoid overlaps.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -90,8 +91,12 @@ ax4.fill(angles, values1, color="oc.violet5", alpha=0.3)
 # Highlight max and min
 max_idx = values1[:-1].index(max(values1[:-1]))
 min_idx = values1[:-1].index(min(values1[:-1]))
-ax4.plot(angles[max_idx], values1[max_idx], "o", color="oc.green5", ms=6, label="Max")
-ax4.plot(angles[min_idx], values1[min_idx], "o", color="oc.red5", ms=6, label="Min")
+ax4.plot(
+    angles[max_idx], values1[max_idx], "o", color="oc.green5", ms=6, label="Max"
+)
+ax4.plot(
+    angles[min_idx], values1[min_idx], "o", color="oc.red5", ms=6, label="Min"
+)
 apply_theta_labels(ax4)
 ax4.set_ylim(0, 100)
 ax4.set_title("Highlighted", fontsize=dm.fs(1), pad=15)

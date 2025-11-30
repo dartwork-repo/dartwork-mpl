@@ -5,8 +5,9 @@ Mixed Subplot Types
 Mix bars, lines, histograms, and tabular panels on one page with consistent sizing.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")

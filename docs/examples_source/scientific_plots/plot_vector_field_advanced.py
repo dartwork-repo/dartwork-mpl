@@ -5,8 +5,9 @@ Advanced Vector Fields
 Blend streamlines, contour backgrounds, and reference arrows to explain complex vector fields.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -53,7 +54,9 @@ ax1.set_yticks([-2, -1, 0, 1, 2])
 # Panel B: Colored by magnitude
 ax2 = fig.add_subplot(gs[0, 1])
 magnitude = np.sqrt(U2**2 + V2**2)
-ax2.quiver(X, Y, U2, V2, magnitude, alpha=0.8, width=0.004, scale=25, cmap="viridis")
+ax2.quiver(
+    X, Y, U2, V2, magnitude, alpha=0.8, width=0.004, scale=25, cmap="viridis"
+)
 ax2.set_xlabel("X", fontsize=dm.fs(0))
 ax2.set_ylabel("Y", fontsize=dm.fs(0))
 ax2.set_title("Damped Rotation (Colored by Magnitude)", fontsize=dm.fs(1))

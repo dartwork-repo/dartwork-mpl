@@ -5,8 +5,9 @@ Grouped Bar Chart
 Lay out grouped bars with shared baselines, tuned spacing, and legends that scale to many categories.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

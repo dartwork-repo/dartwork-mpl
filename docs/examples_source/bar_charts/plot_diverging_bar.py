@@ -5,8 +5,9 @@ Diverging Bar Charts
 Show positive and negative swings around a midpoint with color cues for direction.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -37,7 +38,9 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 y_pos = np.arange(len(categories))
 colors = ["oc.green5" if v > 0 else "oc.red5" for v in values]
-ax1.barh(y_pos, values, color=colors, alpha=0.7, edgecolor="black", linewidth=0.3)
+ax1.barh(
+    y_pos, values, color=colors, alpha=0.7, edgecolor="black", linewidth=0.3
+)
 ax1.axvline(x=0, color="black", linewidth=0.5)
 ax1.set_xlim(-30, 30)
 ax1.set_yticks(y_pos)
@@ -49,7 +52,9 @@ ax1.set_xticks([-30, -15, 0, 15, 30])
 # Panel B: Vertical diverging bar
 ax2 = fig.add_subplot(gs[0, 1])
 x_pos = np.arange(len(categories))
-ax2.bar(x_pos, values, color=colors, alpha=0.7, edgecolor="black", linewidth=0.3)
+ax2.bar(
+    x_pos, values, color=colors, alpha=0.7, edgecolor="black", linewidth=0.3
+)
 ax2.axhline(y=0, color="black", linewidth=0.5)
 ax2.set_xticks(x_pos)
 ax2.set_xticklabels(categories, fontsize=dm.fs(-1))
@@ -65,10 +70,12 @@ bars = ax3.barh(
 ax3.axvline(x=0, color="black", linewidth=0.5)
 ax3.set_xlim(-30, 30)
 # Add value labels
-for i, (bar, val) in enumerate(zip(bars, values)):
+for i, (_bar, val) in enumerate(zip(bars, values, strict=False)):
     x_pos_label = val + (1 if val > 0 else -1)
     ha = "left" if val > 0 else "right"
-    ax3.text(x_pos_label, i, f"{val:+.0f}%", va="center", ha=ha, fontsize=dm.fs(-1))
+    ax3.text(
+        x_pos_label, i, f"{val:+.0f}%", va="center", ha=ha, fontsize=dm.fs(-1)
+    )
 ax3.set_yticks(y_pos)
 ax3.set_yticklabels(categories, fontsize=dm.fs(-1))
 ax3.set_xlabel("Change (%)", fontsize=dm.fs(0))
@@ -89,7 +96,7 @@ bars = ax4.barh(
 )
 ax4.axvline(x=0, color="black", linewidth=0.7)
 # Add percentage labels on bars
-for i, (bar, val) in enumerate(zip(bars, satisfaction)):
+for i, (_bar, val) in enumerate(zip(bars, satisfaction, strict=False)):
     abs_val = abs(val)
     x_label = val / 2
     ax4.text(

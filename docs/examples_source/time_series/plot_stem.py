@@ -5,9 +5,10 @@ Stem Plots
 Use stem plots for impulses, grouped spikes, and categorical events with careful labeling.
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
+import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

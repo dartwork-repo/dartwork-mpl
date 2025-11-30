@@ -5,9 +5,10 @@ Probability Density
 Plot analytic PDFs with shading and annotations so you can introduce distributions without heavy math.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import stats
+
 import dartwork_mpl as dm
 
 # Apply scientific style
@@ -15,7 +16,9 @@ dm.style.use("scientific")
 
 # Generate synthetic data
 np.random.seed(42)
-data = np.concatenate([np.random.normal(0, 1, 1000), np.random.normal(4, 1.5, 500)])
+data = np.concatenate(
+    [np.random.normal(0, 1, 1000), np.random.normal(4, 1.5, 500)]
+)
 
 fig = plt.figure(figsize=(dm.cm2in(10), dm.cm2in(7)), dpi=300)
 gs = fig.add_gridspec(1, 1, left=0.15, right=0.95, top=0.92, bottom=0.15)

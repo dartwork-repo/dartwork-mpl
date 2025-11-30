@@ -5,8 +5,9 @@ Line Styles
 Preview dashes, caps, and joins side by side to choose line styles that stay legible once printed or projected.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -44,12 +45,7 @@ ax1.plot(x, y4, ":", color="oc.orange5", lw=0.7, label="Dotted")
 ax1.set_xlabel("X value", fontsize=dm.fs(0))
 ax1.set_ylabel("Y value", fontsize=dm.fs(0))
 ax1.set_title("Basic Line Styles", fontsize=dm.fs(1))
-ax1.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax1.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 ax1.set_xticks([0, 2, 4, 6, 8, 10])
 ax1.set_yticks([-3, -1, 1, 3, 5])
 
@@ -58,18 +54,20 @@ ax2 = fig.add_subplot(gs[0, 1])
 ax2.plot(x, y1, color="oc.red5", lw=0.7, linestyle=(0, (5, 1)), label="(5, 1)")
 ax2.plot(x, y2, color="oc.blue5", lw=0.7, linestyle=(0, (5, 2)), label="(5, 2)")
 ax2.plot(
-    x, y3, color="oc.green5", lw=0.7, linestyle=(0, (5, 1, 1, 1)), label="(5, 1, 1, 1)"
+    x,
+    y3,
+    color="oc.green5",
+    lw=0.7,
+    linestyle=(0, (5, 1, 1, 1)),
+    label="(5, 1, 1, 1)",
 )
-ax2.plot(x, y4, color="oc.orange5", lw=0.7, linestyle=(0, (1, 1)), label="(1, 1)")
+ax2.plot(
+    x, y4, color="oc.orange5", lw=0.7, linestyle=(0, (1, 1)), label="(1, 1)"
+)
 ax2.set_xlabel("X value", fontsize=dm.fs(0))
 ax2.set_ylabel("Y value", fontsize=dm.fs(0))
 ax2.set_title("Custom Dash Patterns", fontsize=dm.fs(1))
-ax2.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax2.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([-3, -1, 1, 3, 5])
 
@@ -80,19 +78,34 @@ y1_sparse = np.sin(x_sparse) + 3
 y2_sparse = np.sin(x_sparse + 0.5) + 1.5
 y3_sparse = np.sin(x_sparse + 1.0)
 y4_sparse = np.sin(x_sparse + 1.5) - 1.5
-ax3.plot(x_sparse, y1_sparse, "o-", color="oc.red5", lw=0.5, ms=3, label="Solid")
-ax3.plot(x_sparse, y2_sparse, "s--", color="oc.blue5", lw=0.5, ms=3, label="Dashed")
-ax3.plot(x_sparse, y3_sparse, "^-.", color="oc.green5", lw=0.5, ms=3, label="Dash-dot")
-ax3.plot(x_sparse, y4_sparse, "D:", color="oc.orange5", lw=0.5, ms=2.5, label="Dotted")
+ax3.plot(
+    x_sparse, y1_sparse, "o-", color="oc.red5", lw=0.5, ms=3, label="Solid"
+)
+ax3.plot(
+    x_sparse, y2_sparse, "s--", color="oc.blue5", lw=0.5, ms=3, label="Dashed"
+)
+ax3.plot(
+    x_sparse,
+    y3_sparse,
+    "^-.",
+    color="oc.green5",
+    lw=0.5,
+    ms=3,
+    label="Dash-dot",
+)
+ax3.plot(
+    x_sparse,
+    y4_sparse,
+    "D:",
+    color="oc.orange5",
+    lw=0.5,
+    ms=2.5,
+    label="Dotted",
+)
 ax3.set_xlabel("X value", fontsize=dm.fs(0))
 ax3.set_ylabel("Y value", fontsize=dm.fs(0))
 ax3.set_title("Lines with Markers", fontsize=dm.fs(1))
-ax3.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax3.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([-3, -1, 1, 3, 5])
 
@@ -105,12 +118,7 @@ ax4.plot(x, y4, ":", color="oc.blue5", lw=0.7, label="Model 4")
 ax4.set_xlabel("X value", fontsize=dm.fs(0))
 ax4.set_ylabel("Y value", fontsize=dm.fs(0))
 ax4.set_title("Same Color Variants", fontsize=dm.fs(1))
-ax4.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax4.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 ax4.set_xticks([0, 2, 4, 6, 8, 10])
 ax4.set_yticks([-3, -1, 1, 3, 5])
 

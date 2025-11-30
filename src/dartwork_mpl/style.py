@@ -67,7 +67,7 @@ def load_style_dict(name: str) -> dict[str, float | str]:
     # Load key, value pair from mplstyle files.
     path: Path = style_path(name)
     style_dict: dict[str, float | str] = {}
-    with open(path, "r") as f:
+    with open(path) as f:
         for line in f:
             if line.strip().startswith("#"):
                 continue
@@ -127,7 +127,7 @@ class Style:
         This method reads the presets.json file and stores the preset
         definitions in the instance's presets attribute.
         """
-        with open(self.presets_path(), "r") as f:
+        with open(self.presets_path()) as f:
             self.presets = json.load(f)
 
     @staticmethod
@@ -195,7 +195,7 @@ class Style:
             Dictionary mapping preset names to their style configuration
             lists.
         """
-        return {k: v for k, v in self.presets.items()}
+        return dict(self.presets.items())
 
 
 style: Style = Style()

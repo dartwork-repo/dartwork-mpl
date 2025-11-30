@@ -5,8 +5,9 @@ Correlation Matrix
 Build correlation heatmaps and scatter matrices with consistent ticks and color mapping to explain relationships quickly.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

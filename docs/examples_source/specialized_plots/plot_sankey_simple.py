@@ -7,6 +7,7 @@ Show a single, clear Sankey diagram that illustrates how inputs split into sever
 
 import matplotlib.pyplot as plt
 from matplotlib.sankey import Sankey
+
 import dartwork_mpl as dm
 
 # Apply consistent styling
@@ -14,13 +15,7 @@ dm.style.use("scientific")
 
 # Flows sum to zero: inflow = 100, outflows = -40, -25, -20, -15
 flows = [100, -40, -25, -20, -15]
-labels = [
-    "Total Inflow",
-    "Storage",
-    "Processing",
-    "Losses",
-    "Delivered",
-]
+labels = ["Total Inflow", "Storage", "Processing", "Losses", "Delivered"]
 # Orientation controls label/arrow direction for readability
 orientations = [0, 1, -1, 1, -1]
 

@@ -5,8 +5,9 @@ Lollipop Charts
 Swap solid bars for stems and dots to lighten dense comparisons while keeping precise positions.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -82,7 +83,9 @@ sorted_idx = np.argsort(values1)
 sorted_values = values1[sorted_idx]
 sorted_cats = [categories[i] for i in sorted_idx]
 y_pos_sorted = np.arange(len(sorted_cats))
-ax3.hlines(y=y_pos_sorted, xmin=0, xmax=sorted_values, color="oc.green5", linewidth=0.7)
+ax3.hlines(
+    y=y_pos_sorted, xmin=0, xmax=sorted_values, color="oc.green5", linewidth=0.7
+)
 ax3.plot(
     sorted_values,
     y_pos_sorted,
@@ -102,8 +105,10 @@ ax3.set_xticks([0, 20, 40, 60])
 ax4 = fig.add_subplot(gs[1, 1])
 y_pos_comp = np.arange(len(categories))
 # Draw lines connecting the two values
-for i, (v1, v2) in enumerate(zip(values1, values2)):
-    ax4.plot([v1, v2], [i, i], "o-", color="oc.gray5", linewidth=0.5, markersize=0)
+for i, (v1, v2) in enumerate(zip(values1, values2, strict=False)):
+    ax4.plot(
+        [v1, v2], [i, i], "o-", color="oc.gray5", linewidth=0.5, markersize=0
+    )
 # Draw lollipops
 ax4.plot(
     values1,

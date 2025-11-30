@@ -29,7 +29,7 @@ def _parse_color_data(path: str | Path) -> dict[str, str]:
         Dictionary mapping color names to color values.
     """
     color_dict: dict[str, str] = {}
-    with open(path, "r") as f:
+    with open(path) as f:
         lines: list[str] = f.readlines()
 
     for line in lines:
@@ -89,7 +89,7 @@ def _load_colors() -> None:
     _color_dict: dict[str, str] = {f"oc.{k}": v for k, v in color_dict.items()}
 
     # Tailwind colors.
-    with open(root_dir / "tailwind_colors.json", "r") as f:
+    with open(root_dir / "tailwind_colors.json") as f:
         tailwind_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in tailwind_colors.items():
@@ -100,7 +100,7 @@ def _load_colors() -> None:
             _color_dict[f"tw.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Material Design colors.
-    with open(root_dir / "material_colors.json", "r") as f:
+    with open(root_dir / "material_colors.json") as f:
         material_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in material_colors.items():
@@ -110,7 +110,7 @@ def _load_colors() -> None:
             _color_dict[f"md.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Ant Design colors.
-    with open(root_dir / "ant_colors.json", "r") as f:
+    with open(root_dir / "ant_colors.json") as f:
         ant_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in ant_colors.items():
@@ -119,7 +119,7 @@ def _load_colors() -> None:
             _color_dict[f"ad.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Chakra UI colors.
-    with open(root_dir / "chakra_colors.json", "r") as f:
+    with open(root_dir / "chakra_colors.json") as f:
         chakra_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in chakra_colors.items():
@@ -128,7 +128,7 @@ def _load_colors() -> None:
             _color_dict[f"cu.{k_lower}{weight}"] = f"#{hex_val}"
 
     # Primer colors.
-    with open(root_dir / "primer_colors.json", "r") as f:
+    with open(root_dir / "primer_colors.json") as f:
         primer_colors: dict[str, list[tuple[int, str]]] = json.load(f)
 
     for k, v in primer_colors.items():
@@ -195,7 +195,9 @@ def _linear_to_srgb(c: float | np.ndarray) -> float | np.ndarray:
     return np.where(mask, 12.92 * c_arr, 1.055 * (c_arr ** (1.0 / 2.4)) - 0.055)
 
 
-def _linear_srgb_to_oklab(r: float, g: float, b: float) -> tuple[float, float, float]:
+def _linear_srgb_to_oklab(
+    r: float, g: float, b: float
+) -> tuple[float, float, float]:
     """
     Convert linear sRGB to OKLab.
 
@@ -241,7 +243,9 @@ def _linear_srgb_to_oklab(r: float, g: float, b: float) -> tuple[float, float, f
     return (L, a, b_val)
 
 
-def _oklab_to_linear_srgb(L: float, a: float, b: float) -> tuple[float, float, float]:
+def _oklab_to_linear_srgb(
+    L: float, a: float, b: float
+) -> tuple[float, float, float]:
     """
     Convert OKLab to linear sRGB.
 
@@ -268,9 +272,15 @@ def _oklab_to_linear_srgb(L: float, a: float, b: float) -> tuple[float, float, f
     lms_s: float = lms_s_cbrt * lms_s_cbrt * lms_s_cbrt
 
     # Matrix multiplication to linear RGB
-    r: float = +4.0767416621 * lms_l - 3.3077115913 * lms_m + 0.2309699292 * lms_s
-    g: float = -1.2684380046 * lms_l + 2.6097574011 * lms_m - 0.3413193965 * lms_s
-    b_val: float = -0.0041960863 * lms_l - 0.7034186147 * lms_m + 1.7076147010 * lms_s
+    r: float = (
+        +4.0767416621 * lms_l - 3.3077115913 * lms_m + 0.2309699292 * lms_s
+    )
+    g: float = (
+        -1.2684380046 * lms_l + 2.6097574011 * lms_m - 0.3413193965 * lms_s
+    )
+    b_val: float = (
+        -0.0041960863 * lms_l - 0.7034186147 * lms_m + 1.7076147010 * lms_s
+    )
 
     return (r, g, b_val)
 
@@ -425,7 +435,7 @@ class OklabView:
         color : Color
             The Color instance to view.
         """
-        self._color: "Color" = color
+        self._color: Color = color
 
     @property
     def L(self) -> float:
@@ -643,7 +653,7 @@ class OklchView:
         color : Color
             The Color instance to view.
         """
-        self._color: "Color" = color
+        self._color: Color = color
 
     def _get_oklch(self) -> tuple[float, float, float]:
         """
@@ -900,7 +910,7 @@ class RgbView:
         color : Color
             The Color instance to view.
         """
-        self._color: "Color" = color
+        self._color: Color = color
 
     def _get_rgb(self) -> tuple[float, float, float]:
         """
@@ -1375,7 +1385,7 @@ class Color:
             r, g, b = mcolors.to_rgb(name)
             return cls.from_rgb(r, g, b)
         except ValueError as e:
-            raise ValueError(f"Invalid color name: {name}. {str(e)}")
+            raise ValueError(f"Invalid color name: {name}. {e!s}") from e
 
     def to_oklab(self) -> tuple[float, float, float]:
         """
@@ -1420,7 +1430,9 @@ class Color:
         r_linear: float
         g_linear: float
         b_linear: float
-        r_linear, g_linear, b_linear = _oklab_to_linear_srgb(self._L, self._a, self._b)
+        r_linear, g_linear, b_linear = _oklab_to_linear_srgb(
+            self._L, self._a, self._b
+        )
 
         # Clamp to valid range
         r_linear_clamped: float = max(0.0, min(1.0, r_linear))
@@ -1583,7 +1595,8 @@ def cspace(
 
         # Convert back to Color objects
         colors: list[Color] = [
-            Color.from_oklch(L, C, h) for L, C, h in zip(L_values, C_values, h_values)
+            Color.from_oklch(L, C, h)
+            for L, C, h in zip(L_values, C_values, h_values, strict=False)
         ]
 
     elif space == "oklab":
@@ -1597,7 +1610,8 @@ def cspace(
 
         # Convert back to Color objects
         colors = [
-            Color.from_oklab(L, a, b) for L, a, b in zip(L_values, a_values, b_values)
+            Color.from_oklab(L, a, b)
+            for L, a, b in zip(L_values, a_values, b_values, strict=False)
         ]
 
     elif space == "rgb":
@@ -1617,7 +1631,8 @@ def cspace(
 
         # Convert back to Color objects
         colors = [
-            Color.from_rgb(r, g, b) for r, g, b in zip(r_values, g_values, b_values)
+            Color.from_rgb(r, g, b)
+            for r, g, b in zip(r_values, g_values, b_values, strict=False)
         ]
 
     else:

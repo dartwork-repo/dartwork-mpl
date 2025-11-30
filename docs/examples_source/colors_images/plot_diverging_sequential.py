@@ -5,8 +5,9 @@ Diverging and Sequential Colors
 Choose good color schemes for diverging versus sequential data and see when to use each.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -35,7 +36,9 @@ im1 = ax1.contourf(X, Y, Z_seq, levels=15, cmap="viridis")
 plt.colorbar(im1, ax=ax1, label="Distance", fraction=0.046, pad=0.04)
 ax1.set_xlabel("X", fontsize=dm.fs(0))
 ax1.set_ylabel("Y", fontsize=dm.fs(0))
-ax1.set_title(r"Sequential Data $\rightarrow$ Sequential Colormap", fontsize=dm.fs(0))
+ax1.set_title(
+    r"Sequential Data $\rightarrow$ Sequential Colormap", fontsize=dm.fs(0)
+)
 
 # Panel B: Sequential with wrong colormap (diverging)
 ax2 = fig.add_subplot(gs[0, 1])
@@ -43,7 +46,9 @@ im2 = ax2.contourf(X, Y, Z_seq, levels=15, cmap="RdBu_r")
 plt.colorbar(im2, ax=ax2, label="Distance", fraction=0.046, pad=0.04)
 ax2.set_xlabel("X", fontsize=dm.fs(0))
 ax2.set_ylabel("Y", fontsize=dm.fs(0))
-ax2.set_title(r"Sequential Data $\rightarrow$ Diverging (Wrong!)", fontsize=dm.fs(0))
+ax2.set_title(
+    r"Sequential Data $\rightarrow$ Diverging (Wrong!)", fontsize=dm.fs(0)
+)
 
 # Panel C: Diverging data with diverging colormap
 ax3 = fig.add_subplot(gs[1, 0])
@@ -51,7 +56,9 @@ im3 = ax3.contourf(X, Y, Z_div, levels=15, cmap="RdBu_r", vmin=-9, vmax=9)
 plt.colorbar(im3, ax=ax3, label="Product", fraction=0.046, pad=0.04)
 ax3.set_xlabel("X", fontsize=dm.fs(0))
 ax3.set_ylabel("Y", fontsize=dm.fs(0))
-ax3.set_title(r"Diverging Data $\rightarrow$ Diverging Colormap", fontsize=dm.fs(0))
+ax3.set_title(
+    r"Diverging Data $\rightarrow$ Diverging Colormap", fontsize=dm.fs(0)
+)
 
 # Panel D: Diverging with wrong colormap (sequential)
 ax4 = fig.add_subplot(gs[1, 1])
@@ -59,7 +66,9 @@ im4 = ax4.contourf(X, Y, Z_div, levels=15, cmap="viridis")
 plt.colorbar(im4, ax=ax4, label="Product", fraction=0.046, pad=0.04)
 ax4.set_xlabel("X", fontsize=dm.fs(0))
 ax4.set_ylabel("Y", fontsize=dm.fs(0))
-ax4.set_title(r"Diverging Data $\rightarrow$ Sequential (Wrong!)", fontsize=dm.fs(0))
+ax4.set_title(
+    r"Diverging Data $\rightarrow$ Sequential (Wrong!)", fontsize=dm.fs(0)
+)
 
 fig.text(
     0.5,

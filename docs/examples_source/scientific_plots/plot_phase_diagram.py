@@ -5,9 +5,10 @@ Phase Diagrams
 Trace trajectories and vector fields to explain stability and cycles in dynamical systems.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy.integrate import odeint
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -62,7 +63,9 @@ t_lv = np.linspace(0, 50, 1000)
 y0_lv = [10, 5]
 sol_lv = odeint(lotka_volterra, y0_lv, t_lv, args=(1.0, 0.1, 1.5, 0.075))
 ax2.plot(sol_lv[:, 0], sol_lv[:, 1], color="oc.red5", lw=0.7)
-ax2.plot(sol_lv[0, 0], sol_lv[0, 1], "o", color="oc.green5", ms=4, label="Start")
+ax2.plot(
+    sol_lv[0, 0], sol_lv[0, 1], "o", color="oc.green5", ms=4, label="Start"
+)
 ax2.set_xlabel("Prey population", fontsize=dm.fs(0))
 ax2.set_ylabel("Predator population", fontsize=dm.fs(0))
 ax2.set_title("Predator-Prey Dynamics", fontsize=dm.fs(1))
@@ -81,7 +84,9 @@ ax3.quiver(X, Y, U, V, alpha=0.6, width=0.003, scale=30, color="oc.gray5")
 t_traj = np.linspace(0, 20, 500)
 y0_traj = [2, 1]
 sol_traj = odeint(pendulum, y0_traj, t_traj, args=(0.1, 1.0))
-ax3.plot(sol_traj[:, 0], sol_traj[:, 1], color="oc.red5", lw=0.7, label="Trajectory")
+ax3.plot(
+    sol_traj[:, 0], sol_traj[:, 1], color="oc.red5", lw=0.7, label="Trajectory"
+)
 ax3.plot(sol_traj[0, 0], sol_traj[0, 1], "o", color="oc.green5", ms=4)
 ax3.set_xlabel("θ [rad]", fontsize=dm.fs(0))
 ax3.set_ylabel("ω [rad/s]", fontsize=dm.fs(0))
@@ -94,7 +99,7 @@ ax3.set_ylim(-3, 3)
 ax4 = fig.add_subplot(gs[1, 1])
 colors = ["oc.red5", "oc.blue5", "oc.green5", "oc.orange5"]
 initial_conditions = [[1.5, 0], [2.5, 0.5], [1.0, -1], [0.5, 1.5]]
-for ic, color in zip(initial_conditions, colors):
+for ic, color in zip(initial_conditions, colors, strict=False):
     sol = odeint(pendulum, ic, t, args=(0.1, 1.0))
     ax4.plot(sol[:, 0], sol[:, 1], color=color, lw=0.5, alpha=0.8)
     ax4.plot(ic[0], ic[1], "o", color=color, ms=3)

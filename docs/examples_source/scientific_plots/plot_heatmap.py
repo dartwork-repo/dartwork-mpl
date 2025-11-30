@@ -7,6 +7,7 @@ Build heatmaps with annotations, diverging palettes, and tight grids for correla
 
 import matplotlib.pyplot as plt
 import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -20,7 +21,14 @@ corr = np.corrcoef(cov, rowvar=False)
 
 fig = plt.figure(figsize=(dm.cm2in(18), dm.cm2in(9)), dpi=300)
 gs = fig.add_gridspec(
-    1, 2, width_ratios=[1, 1], left=0.08, right=0.94, top=0.92, bottom=0.12, wspace=0.28
+    1,
+    2,
+    width_ratios=[1, 1],
+    left=0.08,
+    right=0.94,
+    top=0.92,
+    bottom=0.12,
+    wspace=0.28,
 )
 
 # Panel A: Diverging heatmap
@@ -45,7 +53,9 @@ ax2.set_xticklabels(
     rotation=45,
     ha="right",
 )
-ax2.set_yticklabels([f"F{i + 1}" for i in range(corr.shape[0])], fontsize=dm.fs(-2))
+ax2.set_yticklabels(
+    [f"F{i + 1}" for i in range(corr.shape[0])], fontsize=dm.fs(-2)
+)
 ax2.set_title("Feature Correlation Matrix", fontsize=dm.fs(1))
 
 dm.simple_layout(fig, gs=gs)

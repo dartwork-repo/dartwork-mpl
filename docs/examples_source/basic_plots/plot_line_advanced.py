@@ -5,8 +5,9 @@ Advanced Line Plots
 Compare styling tricks for lines (bands, smoothing, markers) so you can pick a publication-ready look for noisy series.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -78,12 +79,7 @@ ax1.plot(
 ax1.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax1.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax1.set_title("Lines with Markers", fontsize=dm.fs(1))
-ax1.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax1.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 # Set explicit ticks
 ax1.set_xticks([0, 2, 4, 6, 8, 10])
 ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
@@ -92,18 +88,19 @@ ax1.set_ylim(-1.2, 1.2)
 # Panel B: Different line styles
 ax2 = fig.add_subplot(gs[0, 1])
 # Explicit parameters: lw=0.7 for all lines
-ax2.plot(x, y1, color="oc.blue5", lw=0.7, linestyle="-", label="Solid", alpha=0.8)
-ax2.plot(x, y2, color="oc.red5", lw=0.7, linestyle="--", label="Dashed", alpha=0.8)
-ax2.plot(x, y3, color="oc.green5", lw=0.7, linestyle=":", label="Dotted", alpha=0.8)
+ax2.plot(
+    x, y1, color="oc.blue5", lw=0.7, linestyle="-", label="Solid", alpha=0.8
+)
+ax2.plot(
+    x, y2, color="oc.red5", lw=0.7, linestyle="--", label="Dashed", alpha=0.8
+)
+ax2.plot(
+    x, y3, color="oc.green5", lw=0.7, linestyle=":", label="Dotted", alpha=0.8
+)
 ax2.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax2.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax2.set_title("Line Styles", fontsize=dm.fs(1))
-ax2.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax2.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 # Set explicit ticks
 ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
@@ -115,17 +112,18 @@ ax3 = fig.add_subplot(gs[1, 0])
 ax3.plot(x, y1, color="oc.blue5", lw=0.7, label="Mean", alpha=0.8)
 # Error band: alpha=0.2, edgecolors='none'
 ax3.fill_between(
-    x, y_lower, y_upper, color="oc.blue2", alpha=0.2, edgecolors="none", label="±1σ"
+    x,
+    y_lower,
+    y_upper,
+    color="oc.blue2",
+    alpha=0.2,
+    edgecolors="none",
+    label="±1σ",
 )
 ax3.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax3.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax3.set_title("Error Band", fontsize=dm.fs(1))
-ax3.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax3.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 # Set explicit ticks
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
@@ -150,12 +148,7 @@ ax4.step(
 ax4.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax4.set_ylabel("Amplitude", fontsize=dm.fs(0))
 ax4.set_title("Smoothed & Stepped Signal", fontsize=dm.fs(1))
-ax4.legend(
-    loc="best",
-    fontsize=dm.fs(-1),
-    ncol=2,
-    frameon=False,
-)
+ax4.legend(loc="best", fontsize=dm.fs(-1), ncol=2, frameon=False)
 ax4.set_xticks([0, 2, 4, 6, 8, 10])
 ax4.set_yticks([-2, -1, 0, 1, 2])
 ax4.set_ylim(-2.2, 2.2)

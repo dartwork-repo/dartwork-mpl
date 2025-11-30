@@ -10,7 +10,9 @@ import matplotlib as mpl
 import matplotlib.colors as mcolors
 
 
-def _parse_colormap(path: str | Path, reverse: bool = False) -> mcolors.ListedColormap:
+def _parse_colormap(
+    path: str | Path, reverse: bool = False
+) -> mcolors.ListedColormap:
     """
     Parse a colormap from a text file and create a matplotlib ListedColormap.
 
@@ -31,7 +33,7 @@ def _parse_colormap(path: str | Path, reverse: bool = False) -> mcolors.ListedCo
     path_obj: Path = Path(path)
 
     colors: list[list[float]] = []
-    with open(path_obj, "r") as f:
+    with open(path_obj) as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith("#"):

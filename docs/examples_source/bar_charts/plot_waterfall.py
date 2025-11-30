@@ -5,8 +5,9 @@ Waterfall Charts
 Walk through stepwise gains and losses with helper lines and colors that keep running totals obvious.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -96,7 +97,7 @@ bars = ax3.bar(
     linewidth=0.3,
 )
 # Add value labels
-for i, (bar, val) in enumerate(zip(bars, values)):
+for i, (_bar, val) in enumerate(zip(bars, values, strict=False)):
     if i in [0, len(values) - 1]:
         label = f"{cumulative[i]:.0f}"
     else:

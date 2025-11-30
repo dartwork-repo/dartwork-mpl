@@ -5,11 +5,13 @@ Datetime Plots
 Use date-aware axes with rolling trends, spans, and multiple granularities on one canvas.
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-from datetime import datetime, timedelta
 import locale
+from datetime import datetime, timedelta
+
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Set locale to 'C' to prevent Korean date formatting
@@ -85,7 +87,9 @@ ax4 = fig.add_subplot(gs[1, 1])
 rolling = np.convolve(values1, np.ones(7) / 7, mode="same")
 ax4.plot(dates, values1, color="oc.gray5", lw=0.6, alpha=0.4, label="Raw")
 ax4.plot(dates, rolling, color="oc.orange7", lw=1.4, label="7-day mean")
-ax4.axvspan(dates[20], dates[45], color="oc.orange3", alpha=0.2, label="Event span")
+ax4.axvspan(
+    dates[20], dates[45], color="oc.orange3", alpha=0.2, label="Event span"
+)
 ax4.set_xlabel("Date", fontsize=dm.fs(0))
 ax4.set_ylabel("Smoothed Value", fontsize=dm.fs(0))
 ax4.set_title("Rolling Trend & Highlight", fontsize=dm.fs(1))

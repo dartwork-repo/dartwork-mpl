@@ -5,8 +5,9 @@ Filled Plots
 Layer confidence bands, stacked areas, and smooth fills to emphasize ranges instead of lines.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -49,7 +50,13 @@ ax1 = fig.add_subplot(gs[0, 0])
 ax1.plot(x, y1, color="oc.blue5", lw=0.7, label="Mean", alpha=0.8)
 # Fill between: alpha=0.2, edgecolors='none'
 ax1.fill_between(
-    x, y_lower, y_upper, color="oc.blue2", alpha=0.2, edgecolors="none", label="Range"
+    x,
+    y_lower,
+    y_upper,
+    color="oc.blue2",
+    alpha=0.2,
+    edgecolors="none",
+    label="Range",
 )
 ax1.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax1.set_ylabel("Value", fontsize=dm.fs(0))
@@ -63,7 +70,13 @@ ax1.set_yticks([0, 1, 2, 3, 4])
 ax2 = fig.add_subplot(gs[0, 1])
 # Stacked areas: alpha=0.7 for each, edgecolors='none'
 ax2.fill_between(
-    x, 0, y_stack1, color="oc.blue5", alpha=0.7, edgecolors="none", label="Layer 1"
+    x,
+    0,
+    y_stack1,
+    color="oc.blue5",
+    alpha=0.7,
+    edgecolors="none",
+    label="Layer 1",
 )
 ax2.fill_between(
     x,

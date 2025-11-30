@@ -5,8 +5,9 @@ Image Display
 Render images with different colormaps, interpolation, outlines, and grid overlays for quick QA.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -38,7 +39,11 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 # Explicit parameters: cmap='dm.Spectral', interpolation='bilinear'
 im1 = ax1.imshow(
-    data1, cmap="dm.Spectral", interpolation="bilinear", aspect="auto", origin="lower"
+    data1,
+    cmap="dm.Spectral",
+    interpolation="bilinear",
+    aspect="auto",
+    origin="lower",
 )
 ax1.set_xlabel("X index", fontsize=dm.fs(0))
 ax1.set_ylabel("Y index", fontsize=dm.fs(0))
@@ -52,7 +57,11 @@ cbar1.ax.tick_params(labelsize=dm.fs(-1))
 ax2 = fig.add_subplot(gs[0, 1])
 # Explicit parameters: cmap='dm.coolwarm', interpolation='nearest'
 im2 = ax2.imshow(
-    data2, cmap="dm.coolwarm", interpolation="nearest", aspect="auto", origin="lower"
+    data2,
+    cmap="dm.coolwarm",
+    interpolation="nearest",
+    aspect="auto",
+    origin="lower",
 )
 ax2.set_xlabel("X index", fontsize=dm.fs(0))
 ax2.set_ylabel("Y index", fontsize=dm.fs(0))
@@ -66,7 +75,11 @@ cbar2.ax.tick_params(labelsize=dm.fs(-1))
 ax3 = fig.add_subplot(gs[1, 0])
 # Explicit parameters: cmap='viridis', interpolation='bicubic'
 im3 = ax3.imshow(
-    data3, cmap="viridis", interpolation="bicubic", aspect="auto", origin="lower"
+    data3,
+    cmap="viridis",
+    interpolation="bicubic",
+    aspect="auto",
+    origin="lower",
 )
 ax3.set_xlabel("X index", fontsize=dm.fs(0))
 ax3.set_ylabel("Y index", fontsize=dm.fs(0))
@@ -81,7 +94,11 @@ cbar3.ax.tick_params(labelsize=dm.fs(-1))
 ax4 = fig.add_subplot(gs[1, 1])
 edges = np.abs(np.gradient(data1, axis=0)) + np.abs(np.gradient(data1, axis=1))
 im4 = ax4.imshow(
-    edges, cmap="dm.Greys", interpolation="nearest", aspect="auto", origin="lower"
+    edges,
+    cmap="dm.Greys",
+    interpolation="nearest",
+    aspect="auto",
+    origin="lower",
 )
 ax4.set_title("Edge Map Overlay", fontsize=dm.fs(1))
 ax4.set_xlabel("X index", fontsize=dm.fs(0))

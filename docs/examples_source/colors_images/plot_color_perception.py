@@ -5,8 +5,9 @@ Color Perception
 Check contrast, color-blind safety, and luminance ramps before you pick a palette.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -48,7 +49,14 @@ ax3 = fig.add_subplot(gs[1, 0])
 x_plot = np.arange(6)
 values = [5, 7, 3, 8, 4, 6]
 # Colorblind-friendly colors
-cb_colors = ["oc.blue5", "oc.orange5", "oc.green5", "oc.red5", "oc.violet5", "oc.gray5"]
+cb_colors = [
+    "oc.blue5",
+    "oc.orange5",
+    "oc.green5",
+    "oc.red5",
+    "oc.violet5",
+    "oc.gray5",
+]
 bars = ax3.bar(
     x_plot, values, color=cb_colors, alpha=0.7, edgecolor="black", linewidth=0.5
 )

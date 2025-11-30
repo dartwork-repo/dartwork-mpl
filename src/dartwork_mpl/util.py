@@ -147,7 +147,9 @@ def simple_layout(
             ax_bboxes = [ax.get_tightbbox() for ax in fig.axes]
         else:
             ax_bboxes = [
-                ax.get_tightbbox() for ax in fig.axes if id(ax.get_gridspec()) == id(gs)
+                ax.get_tightbbox()
+                for ax in fig.axes
+                if id(ax.get_gridspec()) == id(gs)
             ]
 
         all_bbox = get_bounding_box(ax_bboxes)
@@ -165,14 +167,7 @@ def simple_layout(
             ]
         )
 
-        scales = np.array(
-            [
-                fbox.width,
-                fbox.height,
-                fbox.width,
-                fbox.height,
-            ]
-        )
+        scales = np.array([fbox.width, fbox.height, fbox.width, fbox.height])
 
         loss = np.square((values - targets) / scales * importance_weights).sum()
 
@@ -195,7 +190,7 @@ def simple_layout(
         # # Relax convergence criteria.
         # options=dict(xatol=1e-3),
         method="L-BFGS-B",
-        options=dict(gtol=gtol),
+        options={"gtol": gtol},
     )
 
     return result
@@ -278,7 +273,10 @@ def mix_colors(
     color1 = mcolors.to_rgb(color1)
     color2 = mcolors.to_rgb(color2)
 
-    return tuple(alpha * c1 + (1 - alpha) * c2 for c1, c2 in zip(color1, color2))
+    return tuple(
+        alpha * c1 + (1 - alpha) * c2
+        for c1, c2 in zip(color1, color2, strict=False)
+    )
 
 
 def pseudo_alpha(

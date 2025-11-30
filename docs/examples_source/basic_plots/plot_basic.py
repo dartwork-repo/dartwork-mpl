@@ -5,8 +5,9 @@ Basic Usage
 Showcase dartwork-mpl presets with custom colors, bands, annotations, and spacing on a single stylized line plot.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -27,7 +28,9 @@ mark_y = np.interp(mark_x, x, series)
 
 # Create figure with tuned margins
 fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(8)), dpi=300)
-gs = fig.add_gridspec(nrows=1, ncols=1, left=0.14, right=0.97, top=0.9, bottom=0.18)
+gs = fig.add_gridspec(
+    nrows=1, ncols=1, left=0.14, right=0.97, top=0.9, bottom=0.18
+)
 ax = fig.add_subplot(gs[0, 0])
 
 # Shaded window and confidence band
@@ -44,7 +47,9 @@ ax.fill_between(
 
 # Styled lines
 ax.plot(x, series, color="oc.blue8", lw=0.9, label="Main signal")
-ax.plot(x, trend, color="oc.gray6", lw=0.8, linestyle="--", label="Baseline trend")
+ax.plot(
+    x, trend, color="oc.gray6", lw=0.8, linestyle="--", label="Baseline trend"
+)
 
 # Markers and annotations
 ax.scatter(
@@ -62,8 +67,13 @@ ax.annotate(
     xy=(4.3, np.interp(4.3, x, series)),
     xytext=(5.3, 1.05),
     fontsize=dm.fs(-1),
-    arrowprops=dict(arrowstyle="->", color="oc.gray7", lw=0.7),
-    bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="oc.gray2", lw=0.4),
+    arrowprops={"arrowstyle": "->", "color": "oc.gray7", "lw": 0.7},
+    bbox={
+        "boxstyle": "round,pad=0.25",
+        "fc": "white",
+        "ec": "oc.gray2",
+        "lw": 0.4,
+    },
 )
 
 # Axes labels, ticks, and grid

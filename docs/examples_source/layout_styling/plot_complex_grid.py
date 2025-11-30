@@ -5,8 +5,9 @@ Complex Grid Layouts
 Build dense GridSpec layouts with shared colorbars and aligned labels for multi-panel figures.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")
@@ -38,7 +39,9 @@ ax1.set_ylabel("Y", fontsize=dm.fs(0))
 
 # Right column - 2 plots
 ax2 = fig.add_subplot(gs[0, 2])
-ax2.scatter(np.random.randn(50), np.random.randn(50), c="oc.red5", s=10, alpha=0.6)
+ax2.scatter(
+    np.random.randn(50), np.random.randn(50), c="oc.red5", s=10, alpha=0.6
+)
 ax2.set_title("Scatter", fontsize=dm.fs(0))
 ax2.tick_params(labelsize=dm.fs(-2))
 

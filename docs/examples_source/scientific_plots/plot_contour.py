@@ -5,8 +5,9 @@ Contour Plots
 Label contour maps with filled and line levels plus colorbars tuned for small multiples.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style

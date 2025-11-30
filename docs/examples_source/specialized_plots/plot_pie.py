@@ -5,9 +5,9 @@ Pie Charts
 Build pies, donuts, and nested rings with centered labels and contrast so proportions stay legible.
 """
 
-import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
-import numpy as np
+import matplotlib.pyplot as plt
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -87,7 +87,7 @@ wedges2, texts2, autotexts2 = ax2.pie(
     labeldistance=1.04,
     pctdistance=0.72,
     textprops={"fontsize": dm.fs(-1)},
-    wedgeprops=dict(width=0.5, edgecolor="white", linewidth=0.5),
+    wedgeprops={"width": 0.5, "edgecolor": "white", "linewidth": 0.5},
 )
 # Set autopct text color and size
 for autotext in autotexts2:
@@ -129,14 +129,14 @@ ax4.pie(
     outer_sizes,
     radius=1.0,
     colors=colors_outer,
-    wedgeprops=dict(width=0.4, edgecolor="white"),
+    wedgeprops={"width": 0.4, "edgecolor": "white"},
     startangle=60,
 )
 ax4.pie(
     inner_sizes,
     radius=0.6,
     colors=colors_inner,
-    wedgeprops=dict(width=0.4, edgecolor="white"),
+    wedgeprops={"width": 0.4, "edgecolor": "white"},
     startangle=-30,
 )
 ax4.set_title("Nested Donut Variations", fontsize=dm.fs(1))

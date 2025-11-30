@@ -5,9 +5,10 @@ Spectral Analysis
 Move from signals to frequency domain with windows, PSDs, spectrograms, and labelled peaks.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import signal
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

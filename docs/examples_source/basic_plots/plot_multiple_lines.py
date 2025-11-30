@@ -5,8 +5,9 @@ Multiple Line Plots
 Stack several series with coordinated colors and labels to learn quick defaults for multi-line comparisons.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -44,12 +45,7 @@ ax1.plot(x, y4, color="oc.orange5", lw=0.7, label="Sin(x+3π/4)")
 ax1.set_xlabel("X value", fontsize=dm.fs(0))
 ax1.set_ylabel("Y value", fontsize=dm.fs(0))
 ax1.set_title("Multiple Lines", fontsize=dm.fs(1))
-ax1.legend(
-    loc="best",
-    fontsize=dm.fs(-2),
-    ncol=2,
-    frameon=False,
-)
+ax1.legend(loc="best", fontsize=dm.fs(-2), ncol=2, frameon=False)
 ax1.set_xticks([0, 2, 4, 6, 8, 10])
 ax1.set_yticks([-1, -0.5, 0, 0.5, 1])
 ax1.set_ylim(-1.2, 1.2)
@@ -63,12 +59,7 @@ ax2.plot(x, y4, color="oc.orange5", lw=1.5, label="LW=1.5")
 ax2.set_xlabel("X value", fontsize=dm.fs(0))
 ax2.set_ylabel("Y value", fontsize=dm.fs(0))
 ax2.set_title("Different Line Widths", fontsize=dm.fs(1))
-ax2.legend(
-    loc="best",
-    fontsize=dm.fs(-2),
-    ncol=2,
-    frameon=False,
-)
+ax2.legend(loc="best", fontsize=dm.fs(-2), ncol=2, frameon=False)
 ax2.set_xticks([0, 2, 4, 6, 8, 10])
 ax2.set_yticks([-1, -0.5, 0, 0.5, 1])
 ax2.set_ylim(-1.2, 1.2)
@@ -82,12 +73,7 @@ ax3.plot(x, y4, color="tw.purple500", lw=0.7, label="Purple")
 ax3.set_xlabel("X value", fontsize=dm.fs(0))
 ax3.set_ylabel("Y value", fontsize=dm.fs(0))
 ax3.set_title("Tailwind CSS Colors", fontsize=dm.fs(1))
-ax3.legend(
-    loc="best",
-    fontsize=dm.fs(-2),
-    ncol=2,
-    frameon=False,
-)
+ax3.legend(loc="best", fontsize=dm.fs(-2), ncol=2, frameon=False)
 ax3.set_xticks([0, 2, 4, 6, 8, 10])
 ax3.set_yticks([-1, -0.5, 0, 0.5, 1])
 ax3.set_ylim(-1.2, 1.2)
@@ -101,12 +87,7 @@ ax4.plot(x, y4, color="oc.red8", lw=0.7, label="Red8")
 ax4.set_xlabel("X value", fontsize=dm.fs(0))
 ax4.set_ylabel("Y value", fontsize=dm.fs(0))
 ax4.set_title("Color Gradients", fontsize=dm.fs(1))
-ax4.legend(
-    loc="best",
-    fontsize=dm.fs(-2),
-    ncol=2,
-    frameon=False,
-)
+ax4.legend(loc="best", fontsize=dm.fs(-2), ncol=2, frameon=False)
 ax4.set_xticks([0, 2, 4, 6, 8, 10])
 ax4.set_yticks([-1, -0.5, 0, 0.5, 1])
 ax4.set_ylim(-1.2, 1.2)

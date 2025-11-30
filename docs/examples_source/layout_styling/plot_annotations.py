@@ -5,8 +5,9 @@ Annotations
 Grab-and-go annotation snippets: arrows, text boxes, highlights, and callouts aligned to data or axes coords.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -41,13 +42,13 @@ ax1.text(
     np.sin(peak_x),
     "Peak",
     fontsize=dm.fs(-1),
-    bbox=dict(
-        boxstyle="round",
-        facecolor="oc.blue2",
-        alpha=0.5,
-        edgecolor="oc.blue7",
-        linewidth=0.3,
-    ),
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "oc.blue2",
+        "alpha": 0.5,
+        "edgecolor": "oc.blue7",
+        "linewidth": 0.3,
+    },
     ha="center",
     va="center",
 )
@@ -56,13 +57,13 @@ ax1.text(
     np.sin(valley_x),
     "Valley",
     fontsize=dm.fs(-1),
-    bbox=dict(
-        boxstyle="round",
-        facecolor="oc.red2",
-        alpha=0.5,
-        edgecolor="oc.red7",
-        linewidth=0.3,
-    ),
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "oc.red2",
+        "alpha": 0.5,
+        "edgecolor": "oc.red7",
+        "linewidth": 0.3,
+    },
     ha="center",
     va="center",
 )
@@ -80,37 +81,43 @@ ax2.annotate(
     "Maximum",
     xy=(np.pi / 2, 1),
     xytext=(4, 0.5),
-    arrowprops=dict(
-        arrowstyle="->", color="oc.red7", lw=0.7, connectionstyle="arc3,rad=0.3"
-    ),
+    arrowprops={
+        "arrowstyle": "->",
+        "color": "oc.red7",
+        "lw": 0.7,
+        "connectionstyle": "arc3,rad=0.3",
+    },
     fontsize=dm.fs(-1),
     ha="center",
     va="center",
-    bbox=dict(
-        boxstyle="round",
-        facecolor="white",
-        alpha=0.8,
-        edgecolor="oc.red7",
-        linewidth=0.3,
-    ),
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "white",
+        "alpha": 0.8,
+        "edgecolor": "oc.red7",
+        "linewidth": 0.3,
+    },
 )
 ax2.annotate(
     "Minimum",
     xy=(3 * np.pi / 2, -1),
     xytext=(7, -0.5),
-    arrowprops=dict(
-        arrowstyle="->", color="oc.red7", lw=0.7, connectionstyle="arc3,rad=-0.3"
-    ),
+    arrowprops={
+        "arrowstyle": "->",
+        "color": "oc.red7",
+        "lw": 0.7,
+        "connectionstyle": "arc3,rad=-0.3",
+    },
     fontsize=dm.fs(-1),
     ha="center",
     va="center",
-    bbox=dict(
-        boxstyle="round",
-        facecolor="white",
-        alpha=0.8,
-        edgecolor="oc.red7",
-        linewidth=0.3,
-    ),
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "white",
+        "alpha": 0.8,
+        "edgecolor": "oc.red7",
+        "linewidth": 0.3,
+    },
 )
 ax2.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax2.set_ylabel("Amplitude", fontsize=dm.fs(0))
@@ -154,13 +161,13 @@ ax3.text(
     fontsize=dm.fs(-1),
     ha="left",
     va="bottom",
-    bbox=dict(
-        boxstyle="round",
-        facecolor="white",
-        alpha=0.8,
-        edgecolor="oc.green7",
-        linewidth=0.3,
-    ),
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "white",
+        "alpha": 0.8,
+        "edgecolor": "oc.green7",
+        "linewidth": 0.3,
+    },
 )
 ax3.text(
     x[valley_idx] + 0.5,
@@ -169,13 +176,13 @@ ax3.text(
     fontsize=dm.fs(-1),
     ha="left",
     va="top",
-    bbox=dict(
-        boxstyle="round",
-        facecolor="white",
-        alpha=0.8,
-        edgecolor="oc.red7",
-        linewidth=0.3,
-    ),
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "white",
+        "alpha": 0.8,
+        "edgecolor": "oc.red7",
+        "linewidth": 0.3,
+    },
 )
 ax3.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax3.set_ylabel("Amplitude", fontsize=dm.fs(0))
@@ -189,7 +196,9 @@ ax4 = fig.add_subplot(gs[1, 1])
 ax4.plot(x, y, color="oc.purple5", lw=0.7, alpha=0.85)
 ax4.axhline(0, color="oc.gray6", lw=0.4, linestyle="--")
 # Highlight a time window
-ax4.axvspan(3, 7, color="oc.purple1", alpha=0.35, edgecolor="oc.purple6", lw=0.4)
+ax4.axvspan(
+    3, 7, color="oc.purple1", alpha=0.35, edgecolor="oc.purple6", lw=0.4
+)
 ax4.annotate(
     "Focus window",
     xy=(5, 0.1),
@@ -197,10 +206,17 @@ ax4.annotate(
     ha="center",
     va="center",
     fontsize=dm.fs(-1),
-    arrowprops=dict(arrowstyle="-[,widthB=2.5", lw=0.7, color="oc.purple7"),
-    bbox=dict(
-        boxstyle="round", facecolor="white", edgecolor="oc.purple6", linewidth=0.3
-    ),
+    arrowprops={
+        "arrowstyle": "-[,widthB=2.5",
+        "lw": 0.7,
+        "color": "oc.purple7",
+    },
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "white",
+        "edgecolor": "oc.purple6",
+        "linewidth": 0.3,
+    },
 )
 ax4.annotate(
     "Zero crossing",
@@ -209,10 +225,18 @@ ax4.annotate(
     fontsize=dm.fs(-1),
     ha="center",
     va="center",
-    arrowprops=dict(
-        arrowstyle="->", lw=0.6, color="oc.gray7", connectionstyle="arc3,rad=-0.2"
-    ),
-    bbox=dict(boxstyle="round", facecolor="white", edgecolor="oc.gray7", linewidth=0.3),
+    arrowprops={
+        "arrowstyle": "->",
+        "lw": 0.6,
+        "color": "oc.gray7",
+        "connectionstyle": "arc3,rad=-0.2",
+    },
+    bbox={
+        "boxstyle": "round",
+        "facecolor": "white",
+        "edgecolor": "oc.gray7",
+        "linewidth": 0.3,
+    },
 )
 ax4.set_xlabel("Time [s]", fontsize=dm.fs(0))
 ax4.set_ylabel("Amplitude", fontsize=dm.fs(0))

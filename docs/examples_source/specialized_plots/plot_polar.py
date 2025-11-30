@@ -5,8 +5,9 @@ Polar Plots
 Create polar lines, scatters, and radial bars tuned for angle grids and clear radial labels.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
@@ -46,7 +47,9 @@ def apply_theta_labels(ax, frac=1.04, pad=2):
 # Panel A: Basic polar plot
 ax1 = fig.add_subplot(gs[0, 0], projection="polar")
 # Explicit parameters: lw=0.7, marker='o', markersize=4
-ax1.plot(theta, r1, color="oc.blue5", lw=0.7, marker="o", markersize=4, label="Data")
+ax1.plot(
+    theta, r1, color="oc.blue5", lw=0.7, marker="o", markersize=4, label="Data"
+)
 ax1.fill(theta, r1, color="oc.blue2", alpha=0.3)
 ax1.set_title("Basic Polar Plot", fontsize=dm.fs(1), pad=20)
 ax1.set_theta_zero_location("N")

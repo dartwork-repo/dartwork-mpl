@@ -7,6 +7,7 @@ Combine 3D surfaces and scatters with consistent lighting and projection choices
 
 import matplotlib.pyplot as plt
 import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("presentation")
@@ -23,7 +24,9 @@ R = np.sqrt(X**2 + Y**2)
 Z = np.sin(R)
 
 # Plot the surface
-surf = ax.plot_surface(X, Y, Z, cmap="dm.Spectral", linewidth=0, antialiased=False)
+surf = ax.plot_surface(
+    X, Y, Z, cmap="dm.Spectral", linewidth=0, antialiased=False
+)
 
 # Customize axis labels with font size utilities
 ax.set_xlabel("X Label", fontsize=dm.fs(0))

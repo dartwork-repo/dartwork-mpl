@@ -5,9 +5,10 @@ Custom Ticks
 Control tick placement and formatting, from numeric to log scales, with custom formatters.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset

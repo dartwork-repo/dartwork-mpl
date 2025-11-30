@@ -5,15 +5,22 @@ Horizontal Bar Charts
 Rotate to horizontal bars, ranking views, and long labels that would otherwise collide.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style preset
 dm.style.use("scientific")
 
 # Sample data
-categories = ["Category A", "Category B", "Category C", "Category D", "Category E"]
+categories = [
+    "Category A",
+    "Category B",
+    "Category C",
+    "Category D",
+    "Category E",
+]
 values1 = np.array([23, 45, 56, 33, 41])
 values2 = np.array([17, 35, 42, 28, 38])
 values3 = np.array([12, 25, 30, 20, 27])
@@ -38,7 +45,12 @@ gs = fig.add_gridspec(
 ax1 = fig.add_subplot(gs[0, 0])
 y_pos = np.arange(len(categories))
 ax1.barh(
-    y_pos, values1, color="oc.blue5", alpha=0.7, edgecolor="oc.blue7", linewidth=0.3
+    y_pos,
+    values1,
+    color="oc.blue5",
+    alpha=0.7,
+    edgecolor="oc.blue7",
+    linewidth=0.3,
 )
 ax1.set_yticks(y_pos)
 ax1.set_yticklabels(categories, fontsize=dm.fs(-1))
@@ -106,14 +118,19 @@ ax3.set_xticks([0, 20, 40, 60])
 # Panel D: Horizontal bar with value labels
 ax4 = fig.add_subplot(gs[1, 1])
 bars = ax4.barh(
-    y_pos, values1, color="oc.green5", alpha=0.7, edgecolor="oc.green7", linewidth=0.3
+    y_pos,
+    values1,
+    color="oc.green5",
+    alpha=0.7,
+    edgecolor="oc.green7",
+    linewidth=0.3,
 )
 ax4.set_yticks(y_pos)
 ax4.set_yticklabels(categories, fontsize=dm.fs(-1))
 ax4.set_xlabel("Value", fontsize=dm.fs(0))
 ax4.set_title("With Value Labels", fontsize=dm.fs(1))
 # Add value labels
-for i, (bar, val) in enumerate(zip(bars, values1)):
+for i, (_bar, val) in enumerate(zip(bars, values1, strict=False)):
     ax4.text(val + 1, i, f"{val}", va="center", fontsize=dm.fs(-1))
 ax4.set_xticks([0, 20, 40, 60])
 

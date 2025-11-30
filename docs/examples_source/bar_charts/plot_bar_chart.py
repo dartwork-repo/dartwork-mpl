@@ -7,6 +7,7 @@ Start from basic, grouped, and labeled bars with gentle spacing so categories st
 
 import matplotlib.pyplot as plt
 import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply presentation style for bolder look
@@ -26,7 +27,9 @@ ax = fig.add_subplot(gs[0, 0])
 
 # Plotting with Tailwind colors
 rects1 = ax.bar(x - width / 2, men_means, width, label="Men", color="tw.sky500")
-rects2 = ax.bar(x + width / 2, women_means, width, label="Women", color="tw.rose500")
+rects2 = ax.bar(
+    x + width / 2, women_means, width, label="Women", color="tw.rose500"
+)
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel("Scores", fontsize=dm.fs(0))

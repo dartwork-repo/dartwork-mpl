@@ -15,13 +15,12 @@ import os
 import sys
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict, List
 
 import matplotlib
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
 
 # Make sure the source tree is importable when running the script directly.
 ROOT = Path(__file__).resolve().parents[2]  # docs/fonts -> docs -> project root
@@ -104,7 +103,7 @@ def _get_font_dir() -> Path:
     return ROOT / "src" / "dartwork_mpl" / "asset" / "font"
 
 
-def _collect_fonts() -> Dict[str, List[str]]:
+def _collect_fonts() -> dict[str, list[str]]:
     """Collect and group font files by family."""
     font_dir = _get_font_dir()
     font_files = [f for f in os.listdir(font_dir) if f.endswith(".ttf")]
@@ -117,7 +116,7 @@ def _collect_fonts() -> Dict[str, List[str]]:
     return dict(sorted(font_families.items()))
 
 
-def _sort_fonts(fonts: List[str]) -> List[str]:
+def _sort_fonts(fonts: list[str]) -> list[str]:
     """Sort fonts by weight and style."""
 
     def get_weight_score(font):
@@ -157,10 +156,7 @@ def _save_all_fonts_preview(images_dir: Path) -> Path:
     ax.axis("off")
 
     fig.suptitle(
-        "All Available Font Families",
-        fontsize=20,
-        fontweight="bold",
-        y=0.98,
+        "All Available Font Families", fontsize=20, fontweight="bold", y=0.98
     )
 
     sorted_families = list(font_families.items())
@@ -173,7 +169,9 @@ def _save_all_fonts_preview(images_dir: Path) -> Path:
         base_y_pos = family_row * (max_fonts_in_family + family_spacing)
 
         title_y = base_y_pos + max_fonts_in_family + 0.5
-        ax.text(x_pos, title_y, f"{family}", size=13, weight="bold", color="#333")
+        ax.text(
+            x_pos, title_y, f"{family}", size=13, weight="bold", color="#333"
+        )
         ax.plot(
             [x_pos, x_pos + 5.5],
             [title_y - 0.3, title_y - 0.3],
@@ -207,7 +205,9 @@ def _save_all_fonts_preview(images_dir: Path) -> Path:
     return path
 
 
-def _save_family_preview(family: str, fonts: List[str], images_dir: Path) -> Path:
+def _save_family_preview(
+    family: str, fonts: list[str], images_dir: Path
+) -> Path:
     """Generate a detailed preview for a single font family."""
     font_dir = _get_font_dir()
     sorted_fonts = _sort_fonts(fonts)
@@ -226,12 +226,7 @@ def _save_family_preview(family: str, fonts: List[str], images_dir: Path) -> Pat
 
     # Title
     meta = FONT_FAMILIES.get(family, {})
-    fig.suptitle(
-        f"{family}",
-        fontsize=18,
-        fontweight="bold",
-        y=0.96,
-    )
+    fig.suptitle(f"{family}", fontsize=18, fontweight="bold", y=0.96)
 
     if meta.get("description"):
         fig.text(
@@ -352,10 +347,7 @@ def _save_utilities_demo(images_dir: Path) -> Path:
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     fig.patch.set_facecolor("#fbfaf7")
     fig.suptitle(
-        "Font Utility Functions",
-        fontsize=18,
-        fontweight="bold",
-        y=0.98,
+        "Font Utility Functions", fontsize=18, fontweight="bold", y=0.98
     )
 
     # fs() demo
@@ -368,7 +360,7 @@ def _save_utilities_demo(images_dir: Path) -> Path:
         "fs(n) - Font Size Adjustment", fontsize=14, fontweight="bold", pad=10
     )
 
-    base_size = plt.rcParams["font.size"]
+    plt.rcParams["font.size"]
     sizes = [
         ("fs(-2)", dm.fs(-2)),
         ("fs(0)", dm.fs(0)),
@@ -426,7 +418,7 @@ def _save_utilities_demo(images_dir: Path) -> Path:
     return path
 
 
-def build_font_assets(base_dir: Path | None = None) -> Dict[str, List[Path]]:
+def build_font_assets(base_dir: Path | None = None) -> dict[str, list[Path]]:
     """Generate all font gallery assets and return their paths."""
     images_dir = _prepare_images_dir(base_dir)
     print(f"[fonts] generating assets to {images_dir}")

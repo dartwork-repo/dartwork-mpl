@@ -5,8 +5,9 @@ Streamplot
 Draw dense vector flows with streamplot spacing, color by speed, and helpful start points.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style

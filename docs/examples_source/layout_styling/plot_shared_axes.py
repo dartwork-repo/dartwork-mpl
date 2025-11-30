@@ -5,8 +5,9 @@ Shared Axes
 Share axes for fair comparisons and control label visibility to avoid duplication.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 dm.style.use("scientific")

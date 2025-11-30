@@ -5,8 +5,9 @@ Scientific Paper Figure
 Use a full scientific figure template with multi-panels, shared colorbars, inset annotations, and consistent typography.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 import dartwork_mpl as dm
 
 # Apply scientific style
@@ -64,7 +65,7 @@ ax1.annotate(
     "Peak Response",
     xy=(1.5, 1.5),
     xytext=(3, 3),
-    arrowprops=dict(arrowstyle="->", color="black", lw=0.7),
+    arrowprops={"arrowstyle": "->", "color": "black", "lw": 0.7},
     fontsize=dm.fs(-1),
 )
 
@@ -96,7 +97,7 @@ for bar in bars:
     )
 
 # Add subplot labels
-for ax, label in zip([ax1, ax2], "ab"):
+for ax, label in zip([ax1, ax2], "ab", strict=False):
     offset = dm.make_offset(4, -4, fig)
     ax.text(
         0,

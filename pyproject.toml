@@ -53,3 +53,28 @@ addopts = [
     "--strict-markers",
     "--tb=short",
 ]
+
+[tool.ruff]
+line-length = 80
+target-version = "py310"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true
+line-ending = "auto"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["dartwork_mpl"]
+split-on-trailing-comma = false
+
+[tool.ruff.lint.per-file-ignores]
+# E402: Module level import not at top of file
+# These files intentionally modify sys.path before importing
+"docs/color_system/generate_assets.py" = ["E402"]
+"docs/fonts/generate_assets.py" = ["E402"]
+"docs/examples_source/layout_styling/plot_legend.py" = ["E402"]
