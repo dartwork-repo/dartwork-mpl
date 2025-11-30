@@ -26,6 +26,9 @@ from . import cmap  # noqa: F401
 # Import util module exports
 from .util import *  # noqa: F403
 
+# Import asset_viz module exports
+from .asset_viz import *  # noqa: F403
+
 # Import constant module exports
 from .constant import DW, SW
 
