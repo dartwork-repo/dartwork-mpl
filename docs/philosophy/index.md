@@ -4,6 +4,20 @@ dartwork-mpl takes a fundamentally different approach from typical visualization
 
 This document explains the reasoning behind this design and how it benefits both human developers and AI coding agents.
 
+### Core Ideas
+
+| Traditional Wrappers | dartwork-mpl |
+|---------------------|--------------|
+| New API to learn | matplotlib API + thin utilities |
+| Hidden transformations | Transparent operations |
+| Dependency on library internals | Copy-paste ready code |
+| AI agents struggle with unfamiliar APIs | AI agents work efficiently with familiar matplotlib |
+| "What does this function do internally?" | "I can read and understand the source in 30 seconds" |
+
+Our goal is simple: matplotlib knowledge combined with minimal dartwork-mpl familiarity should be enough to create publication-quality visualizations with efficient AI assistance.
+
+We believe the best library is one you could stop using tomorrow—by simply copying the utilities you need into your own codebase.
+
 ---
 
 ## The Problem with Wrapper Libraries
@@ -368,17 +382,32 @@ When something doesn't work as expected, you can:
 
 ## Summary
 
-dartwork-mpl is built on these core beliefs:
+This document covered the following topics:
 
-| Traditional Wrappers | dartwork-mpl |
-|---------------------|--------------|
-| New API to learn | matplotlib API + thin utilities |
-| Hidden transformations | Transparent operations |
-| Dependency on library internals | Copy-paste ready code |
-| AI agents struggle with unfamiliar APIs | AI agents work efficiently with familiar matplotlib |
-| "What does this function do internally?" | "I can read and understand the source in 30 seconds" |
+**The Problem with Wrapper Libraries**
+- Additional abstraction layers require understanding both the wrapper's API and matplotlib's API
+- Diminishing returns as customization needs increase
+- AI coding agents face challenges due to limited training data for less popular libraries
+- Dependency concerns: maintenance, version compatibility, debugging complexity
 
-**Our goal**: matplotlib knowledge + minimal dartwork-mpl familiarity = publication-quality visualizations with efficient AI assistance.
+**Why matplotlib Directly**
+- Predictable behavior and low-level control over every element
+- Extensive documentation, community resources, and stable API
+- Agent-friendly code that AI can generate and modify reliably
 
-We believe the best library is one you could stop using tomorrow—by simply copying the utilities you need into your own codebase.
+**The shadcn/ui Approach**
+- Ownable code: utilities can be copied into your project and modified freely
+- Copy-paste ready: each utility works independently
+- Future plan: pure matplotlib export feature
+
+**Design Principles**
+- Thin and Simple: avoid over-engineered abstractions
+- Minimal Inter-Module Dependencies: each utility works without importing others
+- Clarity Over Extensibility: prioritize readable code over edge case handling
+- Utilities, Not Wrappers: enhance matplotlib rather than replace it
+
+**dartwork-mpl in Practice**
+- Your code remains fundamentally matplotlib code
+- Minimal learning curve: a few utility functions and color name extensions
+- Designed for modern AI-assisted development workflows
 
