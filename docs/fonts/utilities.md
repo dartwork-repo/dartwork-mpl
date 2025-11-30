@@ -56,7 +56,7 @@ def fs(n):
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
 
-dm.use_style("dmpl")  # Base font size is 8.5
+dm.style.use("scientific")  # Base font size is 8.5
 
 fig, ax = plt.subplots()
 ax.set_title("Main Title", fontsize=dm.fs(6))      # 14.5pt
@@ -106,7 +106,7 @@ def fw(n):
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
 
-dm.use_style("dmpl")  # Base weight is 300 (Light)
+dm.style.use("scientific")  # Base weight is 300 (Light)
 
 fig, ax = plt.subplots()
 ax.set_title("Bold Title", fontweight=dm.fw(4))    # 700 (Bold)
@@ -198,12 +198,9 @@ mathtext.tt: Noto Sans Math
 ```python
 import dartwork_mpl as dm
 
-# Apply the default dartwork style
-dm.use_style("dmpl")
-
-# Or use a preset
-dm.style.use_preset("scientific")
-dm.style.use_preset("presentation")
+# Apply a preset (recommended)
+dm.style.use("scientific")
+dm.style.use("presentation")
 ```
 
 ### Custom Font Configuration
@@ -214,7 +211,7 @@ Override defaults for specific needs:
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
-dm.use_style("dmpl")
+dm.style.use("scientific")
 
 # Change font family
 plt.rcParams['font.family'] = 'Inter'

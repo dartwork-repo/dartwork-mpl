@@ -217,7 +217,7 @@ def _save_color_sheets(images_dir: Path) -> List[Path]:
 
 def _save_color_space_creation(images_dir: Path) -> Path:
     """Generate example showing different ways to create Color objects."""
-    dm.style.use_preset("scientific")
+    dm.style.use("scientific")
 
     fig, axes = plt.subplots(2, 3, figsize=(dm.cm2in(14), dm.cm2in(6)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
@@ -281,7 +281,7 @@ def _save_color_space_creation(images_dir: Path) -> Path:
 
 def _save_color_space_conversion(images_dir: Path) -> Path:
     """Generate example showing color space conversions."""
-    dm.style.use_preset("scientific")
+    dm.style.use("scientific")
 
     fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(5)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
@@ -369,7 +369,7 @@ def _save_color_space_conversion(images_dir: Path) -> Path:
 
 def _save_color_space_interpolation(images_dir: Path) -> Path:
     """Generate example comparing interpolation in different color spaces."""
-    dm.style.use_preset("scientific")
+    dm.style.use("scientific")
 
     fig, axes = plt.subplots(3, 1, figsize=(dm.cm2in(14), dm.cm2in(6)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
@@ -429,7 +429,7 @@ def _save_color_space_interpolation(images_dir: Path) -> Path:
 
 def _save_color_space_colormap(images_dir: Path) -> Path:
     """Generate example showing custom colormap creation."""
-    dm.style.use_preset("scientific")
+    dm.style.use("scientific")
 
     fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(7)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")

@@ -11,7 +11,7 @@ import dartwork_mpl as dm
 
 # Apply scientific style preset
 # Default: font.size=7.5, lines.linewidth=0.5, axes.linewidth=0.3
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Sample data
 categories = ["Q1", "Q2", "Q3", "Q4"]

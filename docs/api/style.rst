@@ -2,34 +2,27 @@ Style Management
 ================
 
 Helpers for discovering and applying the packaged matplotlib styles. The
-`Style` manager reads `asset/mplstyle` and preset combinations (scientific,
-investment, presentation, and Korean variants) from `presets.json`, resets
-`rcParams`, and stacks multiple style files when needed. Use the helpers below
-to pick a single style, layer several, or inspect what a preset changes before
-you commit it to a figure.
+``Style`` manager reads ``asset/mplstyle`` and preset combinations (scientific,
+investment, presentation, and Korean variants) from ``presets.json``, resets
+``rcParams``, and stacks multiple style files when needed. Use the helpers below
+to apply a preset, stack multiple styles, or inspect what a preset changes
+before you commit it to a figure.
 
-``use_style(name="dmpl")``
-Loads one style file from ``asset/mplstyle`` after resetting ``rcParams``.
-
-- Parameters:
-  - ``name``: style stem (e.g., ``"dmpl_light"``, ``"font-presentation"``).
-- Returns:
-  - ``None``; updates matplotlib state.
-
-``Style.use(style_names)``
-Stack multiple style files in order.
-
-- Parameters:
-  - ``style_names``: list/tuple of style stems; later styles override earlier ones.
-- Returns:
-  - ``None``.
-
-``Style.use_preset(preset_name)``
+``Style.use(preset_name)``
 Applies a preset key from ``presets.json`` (e.g., ``"scientific"``,
-``"investment"``, ``"presentation"``, ``"korean.presentation"``).
+``"investment"``, ``"presentation"``, ``"scientific-kr"``). This is the
+recommended way to apply styles.
 
 - Parameters:
   - ``preset_name``: string looked up in the presets mapping.
+- Returns:
+  - ``None``.
+
+``Style.stack(style_names)``
+Stack multiple style files in order. Use this for advanced customization.
+
+- Parameters:
+  - ``style_names``: list/tuple of style stems; later styles override earlier ones.
 - Returns:
   - ``None``.
 
@@ -56,9 +49,12 @@ Typical usage
 
    import dartwork_mpl as dm
 
-   # Single style or bundled presets
-   dm.use_style("dmpl_light")
-   dm.style.use_preset("scientific")
+   # Apply a preset (recommended)
+   dm.style.use("scientific")
+   dm.style.use("presentation-kr")
+
+   # Stack multiple styles for advanced customization
+   dm.style.stack(["base", "font-scientific", "lang-kr"])
 
    # Inspect what a style will set
    available = dm.list_styles()

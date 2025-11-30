@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # Apply style
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Create a figure with multiple subplots
 fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=300)

@@ -46,10 +46,10 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # Apply scientific publication style
-dm.style.use_preset('scientific')
+dm.style.use('scientific')
 
 # For Korean text support
-dm.style.use_preset('scientific-kr')
+dm.style.use('scientific-kr')
 ```
 <br/>
 
@@ -88,7 +88,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # Set style
-dm.style.use_preset('scientific')
+dm.style.use('scientific')
 
 # Create figure with precise sizing (single-column paper figure)
 fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=200)

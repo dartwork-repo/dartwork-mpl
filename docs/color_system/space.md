@@ -136,7 +136,7 @@ import dartwork_mpl as dm
 import matplotlib.pyplot as plt
 import numpy as np
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Interpolate in OKLCH (default, perceptually uniform)
 colors_oklch = dm.cspace("#ff5733", "#33ff57", n=10, space="oklch")
@@ -188,7 +188,7 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import numpy as np
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Create a custom sequential colormap
 colors = dm.cspace("#1a237e", "#ff6f00", n=256, space="oklch")

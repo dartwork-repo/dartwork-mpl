@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Generate time series with different trends
 np.random.seed(42)

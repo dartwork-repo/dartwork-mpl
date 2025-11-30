@@ -36,21 +36,6 @@ def style_path(name: str) -> Path:
     return path
 
 
-def use_style(name: str = "dmpl") -> None:
-    """
-    Use a matplotlib style from the package's style library.
-
-    Parameters
-    ----------
-    name : str, optional
-        Name of the style to use. Default is "dmpl".
-    """
-    plt.rcParams.update(plt.rcParamsDefault)
-    path: Path = style_path(name)
-
-    plt.style.use(path)
-
-
 def list_styles() -> list[str]:
     """
     List all available styles.
@@ -102,22 +87,18 @@ def load_style_dict(name: str) -> dict[str, float | str]:
     return style_dict
 
 
-def use_dmpl_style() -> None:
-    """
-    Use the default dmpl style.
-
-    This is a convenience function that applies the 'dmpl' style,
-    which is the default style provided by the dartwork_mpl package.
-    """
-    use_style("dmpl")
-
-
 class Style:
     """
     A class for managing and applying multiple matplotlib styles.
 
     This class provides functionality to load style presets and apply
     multiple styles in sequence.
+
+    Examples
+    --------
+    >>> import dartwork_mpl as dm
+    >>> dm.style.use("scientific")  # Apply a preset
+    >>> dm.style.stack(["base", "lang-kr"])  # Stack multiple styles
     """
 
     def __init__(self) -> None:
@@ -150,36 +131,59 @@ class Style:
             self.presets = json.load(f)
 
     @staticmethod
-    def use(style_names: list[str]) -> None:
+    def stack(style_names: list[str]) -> None:
         """
-        Use multiple styles.
+        Stack multiple styles in order.
+
+        This method applies multiple style files in sequence. Later styles
+        override earlier ones for conflicting settings.
 
         Parameters
         ----------
         style_names : list[str]
-            List of style names to use.
+            List of style names to stack. Styles are applied in order,
+            with later styles taking precedence.
+
+        Examples
+        --------
+        >>> import dartwork_mpl as dm
+        >>> dm.style.stack(["base", "font-scientific", "lang-kr"])
         """
         plt.rcParams.update(plt.rcParamsDefault)
         plt.style.use(style_path(style_name) for style_name in style_names)
 
-    def use_preset(self, preset_name: str) -> None:
+    def use(self, preset_name: str) -> None:
         """
         Apply a preset style configuration.
+
+        This is the recommended way to apply styles. Presets are predefined
+        combinations of styles optimized for specific use cases.
 
         Parameters
         ----------
         preset_name : str
-            Name of the preset to apply. Must be a key in the loaded
-            presets dictionary.
+            Name of the preset to apply. Available presets:
+            - "scientific": For academic papers
+            - "investment": For investment reports
+            - "presentation": For presentations
+            - "scientific-kr": Scientific with Korean font
+            - "investment-kr": Investment with Korean font
+            - "presentation-kr": Presentation with Korean font
 
         Raises
         ------
         KeyError
             If the preset name is not found in the presets dictionary.
+
+        Examples
+        --------
+        >>> import dartwork_mpl as dm
+        >>> dm.style.use("scientific")
+        >>> dm.style.use("presentation-kr")
         """
         if preset_name not in self.presets:
             raise KeyError(f"Preset '{preset_name}' not found")
-        self.use(self.presets[preset_name])
+        self.stack(self.presets[preset_name])
 
     def presets_dict(self) -> dict[str, list[str]]:
         """

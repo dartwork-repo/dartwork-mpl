@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # Apply style
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Create figure
 fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(8)), dpi=300)

@@ -113,7 +113,7 @@ def plot_diverging_bar(
     -----
     >>> import numpy as np
     >>> import dartwork_mpl as dm
-    >>> dm.style.use_preset('scientific')
+    >>> dm.style.use('scientific')
     >>>
     >>> # Minimal usage - uses default sample data
     >>> fig, ax = plot_diverging_bar()
@@ -162,7 +162,7 @@ def plot_diverging_bar(
 
     See Also
     -----
-    dartwork_mpl.style.use_preset : Apply dartwork-mpl style presets
+    dartwork_mpl.style.use : Apply dartwork-mpl style presets
     dartwork_mpl.simple_layout : Optimize figure layout
     matplotlib.transforms.blended_transform_factory : Create mixed
         coordinate transforms

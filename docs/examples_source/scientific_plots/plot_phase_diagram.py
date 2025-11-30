@@ -11,7 +11,7 @@ from scipy.integrate import odeint
 import dartwork_mpl as dm
 
 # Apply scientific style preset
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 
 # Define dynamical systems

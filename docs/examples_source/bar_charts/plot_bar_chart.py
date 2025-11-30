@@ -10,7 +10,7 @@ import numpy as np
 import dartwork_mpl as dm
 
 # Apply presentation style for bolder look
-dm.style.use_preset("presentation")
+dm.style.use("presentation")
 
 # Data
 labels = ["Q1", "Q2", "Q3", "Q4"]

@@ -63,7 +63,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Apply a style preset (Recommended)
-dm.style.use_preset('scientific')  # Academic papers
+dm.style.use('scientific')  # Academic papers
 ```
 
 Available presets (from `presets.json`) are:

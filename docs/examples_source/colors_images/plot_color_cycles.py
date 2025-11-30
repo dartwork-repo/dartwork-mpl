@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from cycler import cycler
 import dartwork_mpl as dm
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 np.random.seed(42)
 x = np.linspace(0, 10, 100)

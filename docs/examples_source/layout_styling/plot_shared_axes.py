@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 np.random.seed(42)
 x = np.linspace(0, 10, 100)

@@ -32,12 +32,10 @@ from .constant import DW, SW
 # Import style module exports
 from .style import (
     Style,
-    load_style_dict,
     list_styles,
+    load_style_dict,
     style,
     style_path,
-    use_dmpl_style,
-    use_style,
 )
 
 # Import install module exports
@@ -61,16 +59,11 @@ __all__ = [
     "SW",
     # Style module
     "Style",
-    "load_style_dict",
     "list_styles",
+    "load_style_dict",
     "style",
     "style_path",
-    "use_dmpl_style",
-    "use_style",
     # Install module
     "install_llm_txt",
     "uninstall_llm_txt",
 ]
-
-# Apply default style
-use_style("dmpl_light")

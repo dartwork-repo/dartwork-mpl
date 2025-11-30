@@ -11,7 +11,7 @@ from scipy import signal
 import dartwork_mpl as dm
 
 # Apply scientific style preset
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Generate signals
 np.random.seed(42)

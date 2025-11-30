@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import dartwork_mpl as dm
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 
 def slice_dice(values, x=0.0, y=0.0, w=1.0, h=1.0, vertical=True):

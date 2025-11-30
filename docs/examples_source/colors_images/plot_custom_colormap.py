@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
 import dartwork_mpl as dm
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Generate data
 x = y = np.linspace(-3, 3, 100)

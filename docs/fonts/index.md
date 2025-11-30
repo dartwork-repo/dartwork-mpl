@@ -44,7 +44,7 @@ and weighting, plus `plot_fonts()` for previewing all available fonts.
 import dartwork_mpl as dm
 import matplotlib.pyplot as plt
 
-dm.use_style("dmpl")  # Apply dartwork style (includes Roboto font)
+dm.style.use("scientific")  # Apply dartwork style (includes Roboto font)
 
 fig, ax = plt.subplots()
 ax.set_title("Publication-Ready Title", fontsize=dm.fs(4), fontweight=dm.fw(2))

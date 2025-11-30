@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 import numpy as np
 
-dm.style.use_preset("scientific")  # preset keys: see API › Style Management
+dm.style.use("scientific")  # preset keys: see API › Style Management
 fig, ax = plt.subplots(figsize=(dm.cm2in(9), dm.cm2in(6)), dpi=300)
 x = np.linspace(0, 10, 200)
 ax.plot(x, np.sin(x), color="oc.blue5", label="signal")
@@ -19,7 +19,7 @@ dm.simple_layout(fig)           # API › Layout Utilities
 dm.save_and_show(fig, size=720) # API › File I/O
 ```
 
-- `style.use_preset` configures palette, fonts, and line weights in one shot (API › Style Management)
+- `style.use` configures palette, fonts, and line weights in one shot (API › Style Management)
 - `cm2in` and `fs` keep figures to scale and fonts relative to the active preset (API › Font Utilities)
 - `simple_layout` and `save_and_show` handle margin cleanup plus preview/export (API › Layout Utilities, File I/O)
 
@@ -28,12 +28,11 @@ dm.save_and_show(fig, size=720) # API › File I/O
 ```python
 import dartwork_mpl as dm
 
-dm.use_style("dmpl_light")                    # load one .mplstyle file
-dm.Style.use(["grid.clean", "font-modern"])   # stack multiple styles
-dm.style.use_preset("presentation")           # slides/reports
-dm.style.use_preset("scientific")             # papers/technical
-dm.style.use_preset("investment")             # finance decks
-dm.style.use_preset("scientific-kr")          # includes KR fonts
+dm.style.use("scientific")             # papers/technical (recommended)
+dm.style.use("presentation")           # slides/reports
+dm.style.use("investment")             # finance decks
+dm.style.use("scientific-kr")          # includes KR fonts
+dm.style.stack(["base", "font-modern"])  # stack multiple styles (advanced)
 
 available_styles = dm.list_styles()
 style_dict = dm.load_style_dict("font-presentation")
@@ -41,7 +40,6 @@ style_dict = dm.load_style_dict("font-presentation")
 
 - Style files: `asset/mplstyle/*.mplstyle`
 - Preset definitions: `asset/mplstyle/presets.json`
-- Default applied on import: `dmpl_light`
 - See **API › Style Management** for every helper and argument
 
 ## Colors and colormaps
@@ -49,7 +47,7 @@ style_dict = dm.load_style_dict("font-presentation")
 ```python
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
-dm.style.use_preset("presentation")
+dm.style.use("presentation")
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(8), dm.cm2in(5)), dpi=300)
 ax.plot([0, 1, 2], [1, 2, 1.5], marker="o", color="oc.green5", label="oc.*")
@@ -80,7 +78,7 @@ print(cmap.name, dm.classify_colormap(cmap))
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 import numpy as np
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 fig = plt.figure(figsize=(dm.cm2in(15), dm.cm2in(10)), dpi=300)
 gs = fig.add_gridspec(2, 2, left=0.08, right=0.98, top=0.9, bottom=0.12, hspace=0.35, wspace=0.25)
@@ -113,7 +111,7 @@ bbox = dm.get_bounding_box(
 ```python
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
-dm.style.use_preset("scientific-kr")  # English/Korean fonts set together
+dm.style.use("scientific-kr")  # English/Korean fonts set together
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(10), dm.cm2in(6)), dpi=300)
 ax.plot([0, 1, 2], [0, 1, 0.4], color="oc.green6", lw=1.0)
@@ -137,7 +135,7 @@ dm.plot_fonts(ncols=4, font_size=12)
 import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 import numpy as np
-dm.style.use_preset("investment")
+dm.style.use("investment")
 
 fig, ax = plt.subplots(figsize=(dm.cm2in(11), dm.cm2in(7)), dpi=300)
 ax.plot(np.arange(50), np.cumsum(np.random.randn(50)) + 20, color="oc.blue6")

@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import dartwork_mpl as dm
 
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Generate data
 rng = np.random.default_rng(4)

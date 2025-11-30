@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 기본 스타일 적용 (권장)
-dm.style.use_preset('scientific')  # 논문용 기본 스타일
+dm.style.use('scientific')  # 논문용 기본 스타일
 ```
 
 ## 2. 주요 기능
@@ -55,15 +55,12 @@ dm.style.presets_dict()
 #### 스타일 적용
 ```python
 # 프리셋 사용 (권장)
-dm.style.use_preset('scientific')  # 논문용
-dm.style.use_preset('presentation')  # 프레젠테이션용
-dm.style.use_preset('scientific-kr')  # 한국어 논문용
+dm.style.use('scientific')  # 논문용
+dm.style.use('presentation')  # 프레젠테이션용
+dm.style.use('scientific-kr')  # 한국어 논문용
 
 # 개별 스타일 조합 (고급 사용자용)
-dm.style.use(['base', 'spine-no', 'font-presentation'])
-
-# 레거시 API (backward compatibility)
-dm.use_style('dmpl')  # 이전 버전 호환용
+dm.style.stack(['base', 'spine-no', 'font-presentation'])
 ```
 
 #### 스타일 내용 확인
@@ -296,10 +293,10 @@ dm.save_and_show(fig)
 
 ```python
 # 한국어 폰트 적용
-dm.style.use(['base', 'lang-kr'])
+dm.style.stack(['base', 'lang-kr'])
 
-# 또는 프리셋 사용
-dm.style.use_preset('scientific-kr')
+# 또는 프리셋 사용 (권장)
+dm.style.use('scientific-kr')
 ```
 
 ## 5. 프리셋 스타일
@@ -325,7 +322,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # 스타일 설정
-dm.style.use_preset('scientific')
+dm.style.use('scientific')
 
 # 데이터 생성
 x = np.linspace(0, 10, 100)

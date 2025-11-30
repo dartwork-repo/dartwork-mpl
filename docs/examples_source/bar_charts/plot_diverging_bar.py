@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # Apply scientific style preset
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Sample data
 categories = ["Item A", "Item B", "Item C", "Item D", "Item E"]

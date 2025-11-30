@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import dartwork_mpl as dm
 
 # Apply scientific style
-dm.style.use_preset("scientific")
+dm.style.use("scientific")
 
 # Generate data
 np.random.seed(10)

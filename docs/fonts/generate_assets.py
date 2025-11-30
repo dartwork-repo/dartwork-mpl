@@ -347,7 +347,7 @@ def _save_weight_comparison(images_dir: Path) -> Path:
 
 def _save_utilities_demo(images_dir: Path) -> Path:
     """Generate a demo of font utility functions."""
-    dm.use_style("dmpl")
+    dm.style.use("scientific")
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     fig.patch.set_facecolor("#fbfaf7")
