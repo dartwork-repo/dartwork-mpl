@@ -3,7 +3,8 @@
 dartwork-mpl provides a powerful `Color` class for working with colors in different
 color spaces, with a focus on OKLab and OKLCH for perceptually uniform color
 operations. This page covers creating Color objects, converting between color
-spaces, interpolating colors, and generating custom colormaps.
+spaces, modifying color components, copying colors, interpolating colors, and
+generating custom colormaps.
 
 ## Color object
 
@@ -18,6 +19,11 @@ import dartwork_mpl as dm
 color = dm.oklab(0.7, 0.1, 0.2)
 print(color)  # Color(oklab=(0.7000, 0.1000, 0.2000))
 ```
+
+**View objects:** Color objects provide view properties (`oklab`, `oklch`, `rgb`)
+for convenient attribute-based access to color components. These views support
+reading, writing, unpacking, and indexing operations, making it easy to work
+with individual color channels.
 
 ## Creating Color objects
 
@@ -88,18 +94,128 @@ converted to any supported color space.
 ## Color space conversion
 
 Once you have a Color object, you can convert it to any supported color space
-using conversion methods.
+using conversion methods or view objects for convenient access.
+
+### Using conversion methods
 
 ```python
 import dartwork_mpl as dm
 
 color = dm.hex("#ff5733")
 
-# Convert to different color spaces
+# Convert to different color spaces (returns tuples)
 L, a, b = color.to_oklab()        # OKLab coordinates
 L, C, h = color.to_oklch()         # OKLCH (h in degrees)
 r, g, b = color.to_rgb()           # RGB (0-1 range)
 hex_str = color.to_hex()           # Hex string
+```
+
+### Using view objects (recommended)
+
+View objects provide intuitive attribute-based access to color space components,
+supporting both reading and writing operations:
+
+```python
+import dartwork_mpl as dm
+
+color = dm.hex("#ff5733")
+
+# Attribute-based access
+L = color.oklab.L
+a = color.oklab.a
+b = color.oklab.b
+
+# Unpacking (same as tuple unpacking)
+L, a, b = color.oklab
+L, C, h = color.oklch
+r, g, b = color.rgb
+
+# Index access (alternative to attribute access)
+a = color.oklab[1]  # Same as color.oklab.a
+C = color.oklch[1]  # Same as color.oklch.C
+g = color.rgb[1]    # Same as color.rgb.g
+```
+
+### Modifying color components
+
+View objects support direct modification of color components using assignment
+and arithmetic operations:
+
+```python
+import dartwork_mpl as dm
+
+color = dm.oklab(0.7, 0.1, 0.2)
+
+# Direct assignment
+color.oklab.L = 0.8
+color.oklab.a = 0.2
+
+# Arithmetic operations
+color.oklab.L += 0.1    # Increase lightness
+color.oklab.a -= 0.05   # Decrease green-red component
+color.oklab.b *= 1.5    # Multiply blue-yellow component
+color.oklab.L /= 2.0    # Divide lightness
+
+# OKLCH modifications
+color.oklch.C += 0.1    # Increase chroma (saturation)
+color.oklch.h += 30     # Rotate hue by 30 degrees
+color.oklch.C *= 1.2    # Multiply chroma
+
+# RGB modifications
+color.rgb.r = 0.9       # Set red component
+color.rgb.g += 0.1      # Increase green component
+color.rgb.b *= 1.5      # Multiply blue component
+```
+
+**Note:** When modifying OKLCH or RGB components, the color is automatically
+converted back to OKLab (the internal storage format) to maintain consistency.
+
+### Copying colors
+
+The `copy()` method creates an independent copy of a Color object. This is useful
+when you want to modify a color without affecting the original:
+
+```python
+import dartwork_mpl as dm
+
+# Create a color
+color = dm.oklab(0.7, 0.1, 0.2)
+
+# Create a copy
+new_color = color.copy()
+
+# Modify the copy without affecting the original
+new_color.oklab.L += 0.1
+new_color.oklab.a = 0.3
+
+print(color.oklab.L)      # 0.7 (unchanged)
+print(new_color.oklab.L)  # 0.8 (modified)
+```
+
+The copied color preserves all color space values and can be modified
+independently:
+
+```python
+import dartwork_mpl as dm
+
+# Create color from any space
+color = dm.oklch(0.7, 0.2, 120)
+
+# Copy it
+new_color = color.copy()
+
+# Both have the same values in all spaces
+L1, C1, h1 = color.oklch
+L2, C2, h2 = new_color.oklch
+assert L1 == L2 and C1 == C2 and h1 == h2
+
+# Modify independently
+color.oklch.C += 0.1
+new_color.oklch.h += 30
+
+# Now they differ
+assert color.oklch.C != new_color.oklch.C
+assert color.oklch.h != new_color.oklch.h
 ```
 
 ### Color space overview
@@ -249,11 +365,26 @@ color3 = dm.rgb(r, g, b)        # auto-detects range
 color4 = dm.hex("#ff5733")
 color5 = dm.named("oc.blue5")
 
-# Convert between spaces
+# Convert between spaces (method-based)
 L, a, b = color.to_oklab()
 L, C, h = color.to_oklch()      # h in degrees
 r, g, b = color.to_rgb()        # 0-1 range
 hex_str = color.to_hex()
+
+# Access color components (view-based, recommended)
+L = color.oklab.L               # Attribute access
+a = color.oklab.a
+L, a, b = color.oklab           # Unpacking
+a = color.oklab[1]              # Index access
+
+# Modify color components
+color.oklab.L += 0.1            # Arithmetic operations
+color.oklab.a = 0.2             # Direct assignment
+color.oklch.C *= 1.2             # Modify chroma
+color.rgb.r = 0.9                # Modify RGB
+
+# Copy colors
+new_color = color.copy()         # Create independent copy
 
 # Interpolate colors
 gradient = dm.cspace(start, end, n=10, space="oklch")  # default
