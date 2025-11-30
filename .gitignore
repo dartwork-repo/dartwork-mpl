@@ -21,3 +21,15 @@ docs/images/*.png
 
 # Editor specific settings
 .vscode/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.env
+.venv/
+venv/
+*.swp
+*.swo
+*~
+.DS_Store
