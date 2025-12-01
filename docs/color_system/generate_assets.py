@@ -21,6 +21,7 @@ matplotlib.use("Agg")
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 # Make sure the source tree is importable when running the script directly.
 ROOT = Path(__file__).resolve().parents[2]  # docs/color -> docs -> project root
@@ -230,13 +231,36 @@ def _save_color_space_creation(images_dir: Path) -> Path:
     """Generate example showing different ways to create Color objects."""
     dm.style.use("scientific")
 
-    fig, axes = plt.subplots(2, 3, figsize=(dm.cm2in(14), dm.cm2in(6)), dpi=300)
+    # Figure 생성
+    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(8)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
-    fig.subplots_adjust(
-        left=0.05, right=0.98, top=0.88, bottom=0.12, hspace=0.4, wspace=0.25
+
+    # GridSpec 구성: title 행 + 2x3 색상 샘플
+    # height_ratios: title 12%, 각 샘플 행 44%
+    gs = fig.add_gridspec(
+        nrows=3,
+        ncols=3,
+        left=0.05,
+        right=0.98,
+        top=0.95,
+        bottom=0.08,
+        hspace=0.5,
+        wspace=0.25,
+        height_ratios=[0.12, 0.44, 0.44],
     )
-    fig.suptitle(
-        "Creating Color Objects", fontsize=16, fontweight="bold", y=0.95
+
+    # Title axes (첫 행 전체 사용)
+    ax_title = fig.add_subplot(gs[0, :])
+    ax_title.axis("off")
+    ax_title.text(
+        0.5,
+        0.5,
+        "Creating Color Objects",
+        fontsize=16,
+        fontweight="bold",
+        ha="center",
+        va="center",
+        transform=ax_title.transAxes,
     )
 
     # Examples
@@ -249,11 +273,139 @@ def _save_color_space_creation(images_dir: Path) -> Path:
         ("RGB 255", dm.rgb(200, 50, 75), "dm.rgb(200, 50, 75)"),
     ]
 
-    axes_flat = axes.ravel()
+    # 2x3 배열로 axes 생성
     for idx, (label, color, code) in enumerate(examples):
-        ax = axes_flat[idx]
+        row = idx // 3 + 1  # 1 또는 2 (title 행 이후)
+        col = idx % 3  # 0, 1, 2
+        ax = fig.add_subplot(gs[row, col])
         ax.set_facecolor("#ffffff")
+
         rgb_val = color.to_rgb()
+        # 색상 박스를 axes 상단 35%-100% 영역에 배치 (하단 35%는 라벨 공간)
+        ax.add_patch(
+            plt.Rectangle(
+                (0, 0.35),
+                1,
+                0.65,
+                facecolor=rgb_val,
+                edgecolor="#e4e2dd",
+                linewidth=1.5,
+            )
+        )
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.set_frame_on(False)
+
+        # 라벨 (axes 내부)
+        ax.text(
+            0.5,
+            0.22,
+            label,
+            ha="center",
+            va="top",
+            transform=ax.transAxes,
+            fontsize=10,
+            fontweight="bold",
+        )
+        # 코드 (axes 내부)
+        ax.text(
+            0.5,
+            0.08,
+            code,
+            ha="center",
+            va="top",
+            transform=ax.transAxes,
+            fontsize=8,
+            family="monospace",
+            color="#555",
+        )
+
+    # 레이아웃 최적화 (GridSpec 지정)
+    dm.simple_layout(fig, gs=gs)
+
+    path = images_dir / "color_space_creation.png"
+    fig.savefig(path, dpi=220, bbox_inches="tight")
+    plt.close(fig)
+    return path
+
+
+def _save_color_space_conversion(images_dir: Path) -> Path:
+    """Generate example showing color space conversions."""
+    dm.style.use("scientific")
+
+    # Figure 생성 (높이 줄임)
+    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(4.5)), dpi=300)
+    fig.patch.set_facecolor("#fbfaf7")
+
+    # GridSpec 구성: title 행 + 라벨 행 + 박스 행
+    # height_ratios: title 18%, 라벨 15%, 박스 67%
+    gs = fig.add_gridspec(
+        nrows=3,
+        ncols=4,
+        left=0.05,
+        right=0.98,
+        top=0.95,
+        bottom=0.08,
+        hspace=0.08,
+        wspace=0.18,
+        height_ratios=[0.18, 0.15, 0.67],
+    )
+
+    # Title axes (첫 행 전체 사용)
+    ax_title = fig.add_subplot(gs[0, :])
+    ax_title.axis("off")
+    ax_title.text(
+        0.5,
+        0.5,
+        "Color Space Conversion",
+        fontsize=16,
+        fontweight="bold",
+        ha="center",
+        va="bottom",
+        transform=ax_title.transAxes,
+    )
+
+    # Start with one color (밝은 색상)
+    color = dm.named("tw.blue600")
+
+    # Convert to different spaces
+    L, a, b = color.to_oklab()
+    L_ch, C, h = color.to_oklch()
+    r, g, b_rgb = color.to_rgb()
+    hex_str = color.to_hex()
+
+    # 포맷 수정: OKLCH는 내부 왼쪽정렬 (multialignment), RGB는 유효숫자 3개
+    conversions = [
+        ("OKLab", f"L = {L: .3f}\na = {a: .3f}\nb = {b: .3f}", "center"),
+        ("OKLCH", f"L = {L_ch:.3f}\nC = {C:.3f}\nh = {h:.1f}°", "left"),
+        ("RGB", f"r = {r:.3f}\ng = {g:.3f}\nb = {b_rgb:.3f}", "center"),
+        ("Hex", hex_str, "center"),
+    ]
+
+    # 텍스트 색상 결정 (밝기에 따라 흰색 또는 검정색)
+    text_color = "white" if L < 0.6 else "#333333"
+
+    for idx, (label, values, align) in enumerate(conversions):
+        # 라벨 axes (박스 위)
+        ax_label = fig.add_subplot(gs[1, idx])
+        ax_label.axis("off")
+        ax_label.text(
+            0.5,
+            0.5,
+            label,
+            ha="center",
+            va="center",
+            transform=ax_label.transAxes,
+            fontsize=11,
+            fontweight="bold",
+        )
+
+        # 박스 axes
+        ax = fig.add_subplot(gs[2, idx])
+        rgb_val = color.to_rgb()
+        # 색상 박스를 axes 전체에 배치
         ax.add_patch(
             plt.Rectangle(
                 (0, 0),
@@ -268,128 +420,25 @@ def _save_color_space_creation(images_dir: Path) -> Path:
         ax.set_ylim(0, 1)
         ax.set_xticks([])
         ax.set_yticks([])
+        ax.set_frame_on(False)
+
+        # 값 (박스 안, 중앙 배치 + 내부 정렬)
         ax.text(
             0.5,
-            -0.15,
-            label,
-            ha="center",
-            va="top",
-            transform=ax.transAxes,
-            fontsize=10,
-            fontweight="bold",
-        )
-        ax.text(
             0.5,
-            -0.3,
-            code,
-            ha="center",
-            va="top",
-            transform=ax.transAxes,
-            fontsize=8,
-            family="monospace",
-            color="#555",
-        )
-
-    dm.simple_layout(fig, use_all_axes=True)
-    path = images_dir / "color_space_creation.png"
-    fig.savefig(path, dpi=220, bbox_inches="tight")
-    plt.close(fig)
-    return path
-
-
-def _save_color_space_conversion(images_dir: Path) -> Path:
-    """Generate example showing color space conversions."""
-    dm.style.use("scientific")
-
-    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(5)), dpi=300)
-    fig.patch.set_facecolor("#fbfaf7")
-    gs = fig.add_gridspec(
-        1, 5, left=0.05, right=0.98, top=0.85, bottom=0.15, wspace=0.15
-    )
-    fig.suptitle(
-        "Color Space Conversion", fontsize=16, fontweight="bold", y=0.92
-    )
-
-    # Start with one color
-    color = dm.hex("#ff5733")
-
-    # Convert to different spaces
-    L, a, b = color.to_oklab()
-    L_ch, C, h = color.to_oklch()
-    r, g, b_rgb = color.to_rgb()
-    hex_str = color.to_hex()
-
-    conversions = [
-        ("Original\n(Hex)", hex_str, f"'{hex_str}'"),
-        (
-            "OKLab",
-            f"L={L:.3f}\na={a:.3f}\nb={b:.3f}",
-            f"({L:.3f}, {a:.3f}, {b:.3f})",
-        ),
-        (
-            "OKLCH",
-            f"L={L_ch:.3f}\nC={C:.3f}\nh={h:.1f}°",
-            f"({L_ch:.3f}, {C:.3f}, {h:.1f}°)",
-        ),
-        (
-            "RGB",
-            f"r={r:.3f}\ng={g:.3f}\nb={b_rgb:.3f}",
-            f"({r:.3f}, {g:.3f}, {b_rgb:.3f})",
-        ),
-        ("Hex", hex_str, f"'{hex_str}'"),
-    ]
-
-    for idx, (label, values, code) in enumerate(conversions):
-        ax = fig.add_subplot(gs[0, idx])
-        ax.set_facecolor("#ffffff")
-        rgb_val = color.to_rgb()
-        ax.add_patch(
-            plt.Rectangle(
-                (0, 0.3),
-                1,
-                0.4,
-                facecolor=rgb_val,
-                edgecolor="#e4e2dd",
-                linewidth=1.5,
-            )
-        )
-        ax.set_xlim(0, 1)
-        ax.set_ylim(0, 1)
-        ax.set_xticks([])
-        ax.set_yticks([])
-        ax.text(
-            0.5,
-            0.85,
-            label,
-            ha="center",
-            va="bottom",
-            transform=ax.transAxes,
-            fontsize=11,
-            fontweight="bold",
-        )
-        ax.text(
-            0.5,
-            0.1,
             values,
             ha="center",
-            va="top",
+            va="center",
+            multialignment=align,  # 여러 줄 텍스트 내부 정렬
             transform=ax.transAxes,
             fontsize=9,
             family="monospace",
-        )
-        ax.text(
-            0.5,
-            -0.05,
-            code,
-            ha="center",
-            va="top",
-            transform=ax.transAxes,
-            fontsize=7,
-            family="monospace",
-            color="#555",
+            color=text_color,
         )
 
-    dm.simple_layout(fig, gs=gs, use_all_axes=True)
+    # 레이아웃 최적화 (GridSpec 지정)
+    dm.simple_layout(fig, gs=gs)
+
     path = images_dir / "color_space_conversion.png"
     fig.savefig(path, dpi=220, bbox_inches="tight")
     plt.close(fig)
@@ -400,26 +449,72 @@ def _save_color_space_interpolation(images_dir: Path) -> Path:
     """Generate example comparing interpolation in different color spaces."""
     dm.style.use("scientific")
 
-    fig, axes = plt.subplots(3, 1, figsize=(dm.cm2in(14), dm.cm2in(6)), dpi=300)
+    # Figure 생성
+    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(9)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
-    fig.subplots_adjust(
-        left=0.08, right=0.98, top=0.88, bottom=0.12, hspace=0.35
-    )
-    fig.suptitle(
-        "Color Interpolation Comparison", fontsize=16, fontweight="bold", y=0.94
+
+    # GridSpec 구성: title + 3x(gradient + Lightness) = 7행
+    # 그룹 내 간격(hspace)은 좁게, 그룹 간 간격은 height_ratios로 조절
+    gs = fig.add_gridspec(
+        nrows=7,
+        ncols=2,
+        left=0.15,
+        right=0.98,
+        top=0.92,
+        bottom=0.05,
+        hspace=0.05,
+        wspace=0.02,
+        height_ratios=[0.08, 0.18, 0.06, 0.18, 0.06, 0.18, 0.06],
+        width_ratios=[0.10, 0.9],
     )
 
-    start_color = dm.hex("#1a237e")
-    end_color = dm.hex("#ff6f00")
+    # Title axes (첫 행 전체 사용)
+    ax_title = fig.add_subplot(gs[0, :])
+    ax_title.axis("off")
+    ax_title.text(
+        0.5,
+        0.5,
+        "Color Interpolation Comparison",
+        fontsize=16,
+        fontweight="bold",
+        ha="center",
+        va="center",
+        transform=ax_title.transAxes,
+    )
+
+    # RGB에서 보간 문제가 잘 보이는 색상 (보라-노랑, 보색 관계)
+    start_color = dm.hex("#7c3aed")  # 보라색
+    end_color = dm.hex("#fbbf24")  # 노란색
     n = 20
 
     spaces = [
-        ("OKLCH (perceptually uniform)", "oklch"),
-        ("OKLab (perceptually uniform)", "oklab"),
+        ("OKLCH", "oklch"),
+        ("OKLab", "oklab"),
         ("RGB", "rgb"),
     ]
 
-    for ax, (label, space) in zip(axes, spaces, strict=False):
+    for space_idx, (label, space) in enumerate(spaces):
+        # gradient 행 인덱스: 1, 3, 5
+        # Lightness 행 인덱스: 2, 4, 6
+        grad_row = 1 + space_idx * 2
+        lval_row = 2 + space_idx * 2
+
+        # 라벨 axes (왼쪽 열, gradient 행에만)
+        ax_label = fig.add_subplot(gs[grad_row, 0])
+        ax_label.axis("off")
+        ax_label.text(
+            0.95,
+            0.5,
+            label,
+            ha="right",
+            va="center",
+            transform=ax_label.transAxes,
+            fontsize=11,
+            fontweight="bold",
+        )
+
+        # Gradient axes (오른쪽 열)
+        ax = fig.add_subplot(gs[grad_row, 1])
         colors = dm.cspace(start_color, end_color, n=n, space=space)
         gradient = np.array([c.to_rgb() for c in colors])
         gradient = gradient[np.newaxis, :, :]
@@ -429,29 +524,37 @@ def _save_color_space_interpolation(images_dir: Path) -> Path:
         ax.set_xticks([])
         ax.set_yticks([])
         ax.set_frame_on(False)
-        ax.text(
-            -0.02,
+
+        # Lightness 라벨 axes (왼쪽 열)
+        ax_l_label = fig.add_subplot(gs[lval_row, 0])
+        ax_l_label.axis("off")
+        ax_l_label.text(
+            0.95,
             0.5,
-            label,
+            "Lightness",
             ha="right",
             va="center",
-            transform=ax.transAxes,
-            fontsize=11,
-            fontweight="bold",
-        )
-        ax.text(
-            0.5,
-            -0.15,
-            f"space='{space}'",
-            ha="center",
-            va="top",
-            transform=ax.transAxes,
-            fontsize=9,
-            family="monospace",
-            color="#555",
+            transform=ax_l_label.transAxes,
+            fontsize=8,
+            style="italic",
+            color="#666",
         )
 
-    dm.simple_layout(fig, use_all_axes=True)
+        # Lightness 박스 axes (오른쪽 열)
+        ax_l = fig.add_subplot(gs[lval_row, 1])
+        # 각 색상의 L값을 grayscale로 시각화
+        l_values = np.array([c.oklab.L for c in colors])
+        l_gradient = np.stack([l_values, l_values, l_values], axis=1)
+        l_gradient = l_gradient[np.newaxis, :, :]
+
+        ax_l.imshow(l_gradient, aspect="auto", extent=[0, 1, 0, 1])
+        ax_l.set_xticks([])
+        ax_l.set_yticks([])
+        ax_l.set_frame_on(False)
+
+    # 레이아웃 최적화 (GridSpec 지정)
+    dm.simple_layout(fig, gs=gs)
+
     path = images_dir / "color_space_interpolation.png"
     fig.savefig(path, dpi=220, bbox_inches="tight")
     plt.close(fig)
@@ -462,20 +565,36 @@ def _save_color_space_colormap(images_dir: Path) -> Path:
     """Generate example showing custom colormap creation."""
     dm.style.use("scientific")
 
-    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(7)), dpi=300)
+    # Figure 생성
+    fig = plt.figure(figsize=(dm.cm2in(14), dm.cm2in(9)), dpi=300)
     fig.patch.set_facecolor("#fbfaf7")
+
+    # GridSpec 구성: title 행 + 2x2 (이미지 행 + 코드 행)
+    # height_ratios: title 10%, 이미지 45%, 코드 45%
     gs = fig.add_gridspec(
-        2,
-        2,
+        nrows=3,
+        ncols=2,
         left=0.08,
-        right=0.98,
-        top=0.92,
-        bottom=0.1,
+        right=0.92,
+        top=0.95,
+        bottom=0.08,
         hspace=0.35,
-        wspace=0.25,
+        wspace=0.30,
+        height_ratios=[0.10, 0.45, 0.45],
     )
-    fig.suptitle(
-        "Custom Colormaps with cspace()", fontsize=16, fontweight="bold", y=0.96
+
+    # Title axes (첫 행 전체 사용)
+    ax_title = fig.add_subplot(gs[0, :])
+    ax_title.axis("off")
+    ax_title.text(
+        0.5,
+        0.5,
+        "Custom Colormaps with cspace()",
+        fontsize=16,
+        fontweight="bold",
+        ha="center",
+        va="center",
+        transform=ax_title.transAxes,
     )
 
     # Sequential colormap
@@ -492,22 +611,34 @@ def _save_color_space_colormap(images_dir: Path) -> Path:
     data = np.random.randn(100, 100)
 
     # Sequential example
-    ax1 = fig.add_subplot(gs[0, 0])
+    ax1 = fig.add_subplot(gs[1, 0])
     ax1.set_facecolor("#ffffff")
     im1 = ax1.imshow(data, cmap=cmap_seq, aspect="auto")
     ax1.set_title("Sequential Colormap", fontsize=12, fontweight="bold", pad=10)
     ax1.set_xticks([])
     ax1.set_yticks([])
-    plt.colorbar(im1, ax=ax1, label="Value", fraction=0.046, pad=0.04)
+
+    # Colorbar using axes_divider (axes에 상대적 위치)
+    divider1 = make_axes_locatable(ax1)
+    cax1 = divider1.append_axes("right", size="5%", pad=0.08)
+    cbar1 = fig.colorbar(im1, cax=cax1)
+    cbar1.set_label("Value", fontsize=9)
+    cbar1.ax.tick_params(labelsize=8)
 
     # Diverging example
-    ax2 = fig.add_subplot(gs[0, 1])
+    ax2 = fig.add_subplot(gs[1, 1])
     ax2.set_facecolor("#ffffff")
     im2 = ax2.imshow(data, cmap=cmap_div, aspect="auto", vmin=-3, vmax=3)
     ax2.set_title("Diverging Colormap", fontsize=12, fontweight="bold", pad=10)
     ax2.set_xticks([])
     ax2.set_yticks([])
-    plt.colorbar(im2, ax=ax2, label="Value", fraction=0.046, pad=0.04)
+
+    # Colorbar using axes_divider (axes에 상대적 위치)
+    divider2 = make_axes_locatable(ax2)
+    cax2 = divider2.append_axes("right", size="5%", pad=0.08)
+    cbar2 = fig.colorbar(im2, cax=cax2)
+    cbar2.set_label("Value", fontsize=9)
+    cbar2.ax.tick_params(labelsize=8)
 
     # Code examples
     code1 = """# Sequential
@@ -533,7 +664,7 @@ cmap = mpl.colors.ListedColormap(
     [c.to_rgb() for c in colors]
 )"""
 
-    ax3 = fig.add_subplot(gs[1, 0])
+    ax3 = fig.add_subplot(gs[2, 0])
     ax3.set_facecolor("#ffffff")
     ax3.text(
         0.05,
@@ -556,7 +687,7 @@ cmap = mpl.colors.ListedColormap(
     ax3.set_yticks([])
     ax3.set_frame_on(False)
 
-    ax4 = fig.add_subplot(gs[1, 1])
+    ax4 = fig.add_subplot(gs[2, 1])
     ax4.set_facecolor("#ffffff")
     ax4.text(
         0.05,
@@ -579,7 +710,9 @@ cmap = mpl.colors.ListedColormap(
     ax4.set_yticks([])
     ax4.set_frame_on(False)
 
-    dm.simple_layout(fig, gs=gs, use_all_axes=True)
+    # 레이아웃 최적화 (GridSpec 지정)
+    dm.simple_layout(fig, gs=gs)
+
     path = images_dir / "color_space_colormap.png"
     fig.savefig(path, dpi=220, bbox_inches="tight")
     plt.close(fig)
