@@ -18,53 +18,35 @@ AI assistants need context about dartwork-mpl's conventions and best practices. 
 
 ### Available Prompt Guides
 
-dartwork-mpl includes two comprehensive prompt guides:
+dartwork-mpl includes two comprehensive prompt guides stored as **Markdown (`.md`) files**:
 
 - **`general-guide`**: Complete library usage guide covering styles, colors, layout utilities, and workflows
 - **`layout-guide`**: Detailed guide for using `simple_layout` and handling complex layouts
 
-### Method 1: Copy to Cursor Rules (Recommended for Cursor IDE)
+These guides are provided in standard Markdown format and can be used with various AI assistants and tools.
 
-The easiest way to provide context to Cursor IDE is to copy prompt guides to your `.cursor/rules/` directory:
+### Method 1: Copy to Your Project
 
-```python
-import dartwork_mpl as dm
-from pathlib import Path
-
-# Copy layout guide to Cursor rules
-layout_path = dm.copy_prompt('layout-guide', '.cursor/rules/')
-
-# Copy general guide to Cursor rules
-general_path = dm.copy_prompt('general-guide', '.cursor/rules/')
-
-# Note: Cursor rules use .mdc extension, but copy_prompt copies as .md
-# Rename to .mdc if needed for Cursor IDE compatibility
-if layout_path.suffix == '.md':
-    layout_path.rename(layout_path.with_suffix('.mdc'))
-if general_path.suffix == '.md':
-    general_path.rename(general_path.with_suffix('.mdc'))
-```
-
-**Note**: The `copy_prompt()` function copies files with `.md` extension. If you're using Cursor IDE, you may want to rename them to `.mdc` extension for better compatibility. Alternatively, you can copy directly to `.mdc` files:
+You can copy prompt guides to any location in your project where your AI assistant can access them:
 
 ```python
 import dartwork_mpl as dm
 
-# Copy directly to .mdc files
-dm.copy_prompt('layout-guide', '.cursor/rules/layout-guide.mdc')
-dm.copy_prompt('general-guide', '.cursor/rules/general-guide.mdc')
+# Copy to your desired location
+dm.copy_prompt('layout-guide', 'path/to/your/directory/layout-guide.md')
+dm.copy_prompt('general-guide', 'path/to/your/directory/general-guide.md')
 ```
 
-After copying, Cursor will automatically have access to these guides when generating code. The AI will understand dartwork-mpl conventions and generate appropriate code.
+The `copy_prompt()` function copies the Markdown files to your specified destination. You can copy them to any directory your AI assistant reads from, and format them as needed for your specific AI assistant's requirements.
 
 ### Method 2: Programmatic Access
 
-You can also access prompt guides programmatically to include in your own prompts:
+You can also access prompt guides programmatically to include in your own prompts. The guides are provided as **Markdown (`.md`) format**:
 
 ```python
 import dartwork_mpl as dm
 
-# Get prompt guide content as string
+# Get prompt guide content as string (Markdown format)
 layout_guide = dm.get_prompt('layout-guide')
 general_guide = dm.get_prompt('general-guide')
 
@@ -72,7 +54,7 @@ general_guide = dm.get_prompt('general-guide')
 available_prompts = dm.list_prompts()
 # ['general-guide', 'layout-guide']
 
-# Get file path for custom processing
+# Get file path for custom processing (returns .md file)
 prompt_path = dm.prompt_path('layout-guide')
 ```
 
@@ -83,38 +65,34 @@ This is useful when:
 
 ### Method 3: Direct File Access
 
-Prompt guides are stored in the package assets and can be accessed directly:
+Prompt guides are stored in the package assets as **Markdown (`.md`) files** and can be accessed directly:
 
 ```python
 from pathlib import Path
 import dartwork_mpl as dm
 
-# Get the path to a prompt guide
+# Get the path to a prompt guide (returns .md file)
 prompt_path = dm.prompt_path('layout-guide')
 print(prompt_path)
 # /path/to/dartwork_mpl/asset/prompt/layout-guide.md
 
-# Read directly
+# Read directly (standard Markdown format)
 content = prompt_path.read_text(encoding='utf-8')
 ```
 
 ### Best Practice: Set Up Once
 
-For Cursor IDE users, we recommend setting up prompt guides once at the start of your project:
+We recommend copying prompt guides to your project once at the start. Copy them to wherever your AI assistant reads context from:
 
 ```python
 import dartwork_mpl as dm
 
-# One-time setup: copy both guides to Cursor rules as .mdc files
-dm.copy_prompt('layout-guide', '.cursor/rules/layout-guide.mdc')
-dm.copy_prompt('general-guide', '.cursor/rules/general-guide.mdc')
-
-print("✅ Prompt guides installed for Cursor IDE")
+# Copy both guides to your desired location
+dm.copy_prompt('layout-guide', 'your/path/layout-guide.md')
+dm.copy_prompt('general-guide', 'your/path/general-guide.md')
 ```
 
-**Note**: Cursor IDE uses `.mdc` extension for rule files. The `copy_prompt()` function defaults to `.md` extension, so specify `.mdc` explicitly in the destination path (as shown above) for Cursor compatibility.
-
-After this setup, Cursor will automatically use these guides when generating matplotlib code.
+The guides are provided as standard Markdown (`.md`) files. Copy them to your preferred location and format them as needed for your AI assistant's requirements.
 
 ## 2. Create Plot Functions with Arguments
 
@@ -196,11 +174,7 @@ fig, ax = plot_signal(data, color='oc.red5', linewidth=1.2)
 dm.save_and_show(fig)
 ```
 
-**Benefits:**
-- Clear, explicit changes: `color='oc.red5'` instead of "change color slightly"
-- Fast iteration: just change arguments
-- No code modification needed
-- AI can easily understand and suggest changes
+This approach provides clear, explicit changes (`color='oc.red5'` instead of "change color slightly"), enables fast iteration by changing arguments, and makes it easy for AI to understand and suggest modifications.
 
 ### ❌ Bad: Direct Code Modification
 
@@ -366,7 +340,7 @@ def plot_signal(
 **2. Use autoreload in your notebook to test the function**:
 
 ```python
-# notebook.ipynb - Cell 1: Setup
+# notebook.ipynb - Cell 1: Setup autoreload
 %load_ext autoreload
 %autoreload 2
 
@@ -384,58 +358,21 @@ dm.save_and_show(fig)
 
 **3. Modify the function in `plotting.py` and see changes immediately**:
 
-When you modify `plot_signal()` in `plotting.py`, autoreload automatically reloads the module. Just re-run the notebook cell to see the updated function in action—no need to restart the kernel or re-import.
+When you modify `plot_signal()` in `plotting.py`, autoreload automatically reloads the module. Just re-run the notebook cell to see the updated function—no kernel restart needed.
 
 ### Setup: Enable Autoreload
 
-In Jupyter or IPython, enable autoreload at the start of your notebook:
-
-```python
-%load_ext autoreload
-%autoreload 2
-```
-
-The `%autoreload 2` setting automatically reloads all modules (except those excluded by `%aimport`) before executing code. This means:
-1. Define plot functions in external `.py` files
-2. Import them in your notebook
-3. Modify functions in the `.py` files
-4. Re-run notebook cells to see changes immediately (no kernel restart needed)
+Enable autoreload at the start of your notebook with `%load_ext autoreload` and `%autoreload 2`. This automatically reloads all modules before executing code, so changes to external `.py` files are immediately reflected when you re-run notebook cells—no kernel restart needed.
 
 ### Use `save_and_show()` for Consistent Results
 
-Always use `dm.save_and_show()` instead of `plt.show()`:
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-import dartwork_mpl as dm
-
-def plot_example(data: np.ndarray, color: str = 'oc.blue5'):
-    """Plot example with configurable color."""
-    dm.style.use('scientific')
-    fig = plt.figure(figsize=(dm.cm2in(9), dm.cm2in(7)), dpi=200)
-    # ... plotting code ...
-    dm.simple_layout(fig)
-    dm.save_and_show(fig)  # ✅ Use this instead of plt.show()
-
-# Test with different arguments
-data = np.random.randn(100).cumsum()
-plot_example(data, color='oc.red5')  # Change argument, re-run cell
-plot_example(data, color='oc.green5')  # Change argument, re-run cell
-```
-
-**Why `save_and_show()`?**
-- Shows the **actual saved result**, not just a preview
-- Consistent with final exported figure
-- Works better in notebooks
-- Can specify display size
+Always use `dm.save_and_show()` instead of `plt.show()` in your notebook cells. This function shows the actual saved result (matching your final exported figure) rather than just a preview, ensuring consistency between what you see in the notebook and what gets saved.
 
 ### Complete Workflow Example
 
-Here's a complete example of the recommended workflow using external Python files:
+Here's a complete example showing how to iterate on a visualization function:
 
-**Step 1: Create `plotting.py` file** (outside notebook):
-
+**In `plotting.py`** (external file):
 ```python
 # plotting.py
 import numpy as np
@@ -451,82 +388,26 @@ def plot_comparison(
     title: str | None = None,
     figsize: tuple[float, float] | None = None
 ) -> tuple[plt.Figure, plt.Axes]:
-    """
-    Plot two signals for comparison.
-    
-    Parameters
-    ----
-    data1 : np.ndarray
-        First signal data.
-    data2 : np.ndarray
-        Second signal data.
-    color1 : str, optional
-        Color for first signal. Default is 'oc.red5'.
-    color2 : str, optional
-        Color for second signal. Default is 'oc.blue5'.
-    linewidth : float, optional
-        Line width for both signals. Default is 0.7.
-    title : str | None, optional
-        Plot title. If None, no title is shown.
-    figsize : tuple[float, float] | None, optional
-        Figure size in inches. If None, uses (9cm, 7cm).
-    
-    Returns
-    ----
-    fig : matplotlib.figure.Figure
-        The created figure.
-    ax : matplotlib.axes.Axes
-        The axes containing the plot.
-    """
-    dm.style.use('scientific')
-    
-    if figsize is None:
-        figsize = (dm.cm2in(9), dm.cm2in(7))
-    
-    fig = plt.figure(figsize=figsize, dpi=200)
-    gs = fig.add_gridspec(
-        nrows=1, ncols=1,
-        left=0.17, right=0.95,
-        top=0.95, bottom=0.17
-    )
-    ax = fig.add_subplot(gs[0, 0])
-    
-    x = np.arange(len(data1))
-    ax.plot(x, data1, color=color1, linewidth=linewidth, label='Signal 1')
-    ax.plot(x, data2, color=color2, linewidth=linewidth, label='Signal 2')
-    
-    ax.set_xlabel('Time [s]', fontsize=dm.fs(0))
-    ax.set_ylabel('Amplitude', fontsize=dm.fs(0))
-    
-    if title:
-        ax.set_title(title, fontsize=dm.fs(1), fontweight=dm.fw(1))
-    
-    ax.legend(fontsize=dm.fs(-1))
-    dm.simple_layout(fig)
-    
-    return fig, ax
+    """Plot two signals for comparison."""
+    # ... implementation (same as above) ...
 ```
 
-**Step 2: Use in notebook** (`notebook.ipynb`):
-
+**In notebook** (testing and iteration):
 ```python
-# Cell 1: Setup autoreload
+# Cell 1: Setup
 %load_ext autoreload
 %autoreload 2
-
 import numpy as np
 import dartwork_mpl as dm
-from plotting import plot_comparison  # Import from external file
+from plotting import plot_comparison
 
-# Cell 2: Generate test data
+# Cell 2: Test with default arguments
 data1 = np.random.randn(100).cumsum()
 data2 = np.random.randn(100).cumsum() + 5
-
-# Cell 3: Test the function
 fig, ax = plot_comparison(data1, data2)
 dm.save_and_show(fig)
 
-# Cell 4: Iterate by changing arguments
+# Cell 3: Iterate by changing arguments
 fig, ax = plot_comparison(
     data1, data2,
     color1='oc.green5',  # Change argument
@@ -537,48 +418,38 @@ fig, ax = plot_comparison(
 dm.save_and_show(fig)
 ```
 
-**Step 3: Modify function in `plotting.py` and test**:
-
-When you modify `plot_comparison()` in `plotting.py` (e.g., add new parameters, change default values), autoreload automatically reloads the module. Just re-run the notebook cells to see the updated function—no kernel restart needed!
+When you modify `plot_comparison()` in `plotting.py` (add parameters, change defaults), autoreload automatically picks up the changes. Re-run notebook cells to see updates—no kernel restart needed.
 
 ### Benefits of This Workflow
 
-1. **Fast iteration**: Modify functions in external files, autoreload updates automatically, re-run cell to see results immediately
-2. **Better AI compatibility**: AI assistants work more reliably with separate Python files than notebook cells
-3. **No code modification needed**: Function stays the same, only arguments change for visual tweaks
-4. **Consistent results**: `save_and_show()` shows actual saved output, matching final exported figures
-5. **AI-friendly**: Clear, explicit argument changes that AI can understand and suggest
-6. **Version control friendly**: Track function changes independently in `.py` files, separate from notebook outputs
-7. **Less error-prone**: No risk of breaking code when making visual changes via arguments
-8. **Reusable**: Import the same functions across multiple notebooks
+This workflow combines the advantages of external files with rapid iteration:
+- **Fast iteration**: Modify functions in external files, autoreload updates automatically, re-run cell to see results immediately
+- **Consistent visualization**: `save_and_show()` ensures notebook output matches saved files
+- **AI-friendly**: Clear, explicit argument changes that AI can understand and suggest
+- **Version control friendly**: Track function changes independently in `.py` files, separate from notebook outputs
+- **Reusable**: Import the same functions across multiple notebooks
 
 ## Summary: Best Practices
 
-1. **Set up context prompts once**:
+1. **Set up context prompts once** (guides are provided as `.md` files):
    ```python
-   dm.copy_prompt('layout-guide', '.cursor/rules/layout-guide.mdc')
-   dm.copy_prompt('general-guide', '.cursor/rules/general-guide.mdc')
+   # Copy to your desired location
+   dm.copy_prompt('layout-guide', 'your/path/layout-guide.md')
+   dm.copy_prompt('general-guide', 'your/path/general-guide.md')
    ```
+   Copy the guides to wherever your AI assistant reads context from, and format them as needed.
 
-2. **Create plot functions with arguments**:
-   - Make all visual parameters configurable
-   - Provide sensible defaults
+2. **Create plot functions with configurable arguments**:
+   - Make all visual parameters configurable with sensible defaults
    - Use type hints and documentation
+   - Define functions in external `.py` files (better AI compatibility and version control)
 
-3. **Define functions in external `.py` files**:
-   - Better AI assistant compatibility
-   - Improved version control
-   - Cleaner notebooks (focus on testing)
-   - Reusable across multiple notebooks
-
-4. **Work in autoreload-enabled notebooks**:
+3. **Work in autoreload-enabled notebooks**:
    - Enable `%autoreload 2` to automatically reload external modules
-   - Import functions from `.py` files
-   - Modify functions in external files and see changes immediately
-   - Use `dm.save_and_show()` instead of `plt.show()`
-   - Iterate by changing function arguments
+   - Use `dm.save_and_show()` for consistent visualization
+   - Iterate by changing function arguments, not modifying code
 
-5. **Ask AI to change arguments, not code**:
+4. **Ask AI to change arguments, not code**:
    - ✅ "Change color to 'oc.red5'"
    - ❌ "Make it a bit redder"
 
