@@ -2,6 +2,14 @@
 
 dartwork-mpl bundles stylistic presets, curated colors/colormaps, and layout/font helpers so you get **predictable results** fast. The snippets below keep only the core code—check the Examples Gallery if you need to see the rendered figures.
 
+```{toctree}
+:maxdepth: 1
+:titlesonly:
+:hidden:
+
+AI-Assisted Development <ai_assisted>
+```
+
 ## Quick start
 
 ```python
@@ -164,6 +172,15 @@ dm.show("output/forecast.svg", size=540)
 - Fonts: `asset/font/*` (loaded by `dartwork_mpl.font`)
 - Utilities: `simple_layout`, `cm2in`, `make_offset`, `set_decimal`, `save_formats`, `save_and_show` (all in `dartwork_mpl`)
 - Every function/argument is cataloged in `docs/api/index.rst`
+
+## AI-Assisted Development
+
+dartwork-mpl is designed to work seamlessly with AI coding assistants. Learn how to efficiently create publication-quality graphs with AI assistance:
+
+- **[AI-Assisted Graph Development](ai_assisted.md)**: Best practices for using AI assistants with dartwork-mpl
+  - Setting up context prompts for Cursor IDE and other tools
+  - Creating plot functions with configurable arguments
+  - Rapid iteration in autoreload-enabled notebooks
 
 ## See more
 

@@ -53,4 +53,9 @@ __all__ = [
     # Install module
     "install_llm_txt",
     "uninstall_llm_txt",
+    # Prompt utilities (from util module)
+    "prompt_path",
+    "get_prompt",
+    "list_prompts",
+    "copy_prompt",
 ]

@@ -1,4 +1,5 @@
 from pathlib import Path
+from shutil import copy2
 from tempfile import NamedTemporaryFile
 from xml.dom import minidom
 
@@ -465,3 +466,123 @@ def save_and_show(
         plt.close(fig)
 
         show(image_path, size=size, unit=unit)
+
+
+def prompt_path(name: str) -> Path:
+    """
+    Get the path to a prompt guide file.
+
+    Parameters
+    ----
+    name : str
+        Name of the prompt guide ('layout-guide' or 'general-guide').
+
+    Returns
+    ----
+    Path
+        Path to the prompt guide file.
+
+    Raises
+    ----
+    ValueError
+        If the prompt guide is not found.
+    """
+    path: Path = Path(__file__).parent / f"asset/prompt/{name}.md"
+    if not path.exists():
+        raise ValueError(f"Prompt guide not found: {name}")
+
+    return path
+
+
+def get_prompt(name: str) -> str:
+    """
+    Read and return the content of a prompt guide file.
+
+    Parameters
+    ----
+    name : str
+        Name of the prompt guide ('layout-guide' or 'general-guide').
+
+    Returns
+    ----
+    str
+        Content of the prompt guide file.
+
+    Raises
+    ----
+    ValueError
+        If the prompt guide is not found.
+    """
+    path = prompt_path(name)
+    return path.read_text(encoding="utf-8")
+
+
+def list_prompts() -> list[str]:
+    """
+    List all available prompt guide files.
+
+    Returns
+    ----
+    list[str]
+        List of available prompt guide names.
+    """
+    path: Path = Path(__file__).parent / "asset/prompt"
+    if not path.exists():
+        return []
+    return sorted([p.stem for p in path.glob("*.md")])
+
+
+def copy_prompt(name: str, destination: str | Path) -> Path:
+    """
+    Copy a prompt guide file to the specified destination.
+
+    Parameters
+    ----
+    name : str
+        Name of the prompt guide ('layout-guide' or 'general-guide').
+    destination : str or Path
+        Destination path where the prompt file should be copied.
+        If a directory path is provided, the file will be copied with
+        its original name. If a file path is provided, the file will
+        be copied to that exact location.
+
+    Returns
+    ----
+    Path
+        Path to the copied file.
+
+    Raises
+    ----
+    ValueError
+        If the prompt guide is not found.
+    FileNotFoundError
+        If the destination directory does not exist and cannot be created.
+
+    Examples
+    -----
+    >>> import dartwork_mpl as dm
+    >>> 
+    >>> # Copy to a directory (keeps original filename)
+    >>> copied_path = dm.copy_prompt('layout-guide', '.cursor/rules/')
+    >>> print(copied_path)
+    PosixPath('.cursor/rules/layout-guide.md')
+    >>> 
+    >>> # Copy to a specific file path
+    >>> copied_path = dm.copy_prompt('general-guide', '.cursor/rules/my-guide.md')
+    >>> print(copied_path)
+    PosixPath('.cursor/rules/my-guide.md')
+    """
+    source_path = prompt_path(name)
+    dest_path = Path(destination)
+
+    # If destination is a directory, append the source filename
+    if dest_path.is_dir() or (not dest_path.exists() and not dest_path.suffix):
+        dest_path = dest_path / f"{name}.md"
+
+    # Ensure parent directory exists
+    _create_parent_path_if_not_exists(dest_path)
+
+    # Copy the file
+    copy2(source_path, dest_path)
+
+    return dest_path
