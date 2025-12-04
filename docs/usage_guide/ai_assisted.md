@@ -1,4 +1,4 @@
-# AI-Assisted Graph Development
+# AI-Assisted Development
 
 dartwork-mpl is designed to work seamlessly with AI coding assistants like Cursor, GitHub Copilot, and Claude Code. This guide explains best practices for efficiently creating publication-quality graphs with AI assistance.
 
@@ -6,93 +6,43 @@ dartwork-mpl is designed to work seamlessly with AI coding assistants like Curso
 
 When working with AI assistants to create graphs, follow these three key principles:
 
-1. **Use context prompts** to provide AI with dartwork-mpl guidelines
+1. **Set up MCP server** to provide AI with dartwork-mpl guidelines
 2. **Create plot functions** with configurable arguments instead of modifying code directly
 3. **Work in an autoreload-enabled notebook** for rapid iteration
 
 Following these practices will dramatically speed up your workflow and reduce errors.
 
-## 1. Using Context Prompts
+## 1. MCP Server Setup (Recommended)
 
-AI assistants need context about dartwork-mpl's conventions and best practices. dartwork-mpl provides several ways to make prompt guides available to your AI assistant.
+The **recommended way** to provide dartwork-mpl context to AI assistants is through the Model Context Protocol (MCP). MCP allows AI assistants to automatically access the latest dartwork-mpl documentation and guidelines without manual setup or updates.
 
-### Available Prompt Guides
+### Why Use MCP?
 
-dartwork-mpl includes two comprehensive prompt guides stored as **Markdown (`.md`) files**:
+- **Automatic access**: AI assistants can directly access the latest dartwork-mpl documentation
+- **No manual updates**: Documentation updates are automatically available to your AI assistant
+- **Seamless integration**: Works seamlessly with Cursor and other MCP-compatible AI assistants
+- **Always up-to-date**: Your AI assistant always has access to the latest library information
 
-- **`general-guide`**: Complete library usage guide covering styles, colors, layout utilities, and workflows
-- **`layout-guide`**: Detailed guide for using `simple_layout` and handling complex layouts
+### Setup Instructions
 
-These guides are provided in standard Markdown format and can be used with various AI assistants and tools.
+To use dartwork-mpl's MCP server with Cursor, add the following configuration to your MCP settings file:
 
-### Method 1: Copy to Your Project
-
-You can copy prompt guides to any location in your project where your AI assistant can access them:
-
-```python
-import dartwork_mpl as dm
-
-# Copy to your desired location
-dm.copy_prompt('layout-guide', 'path/to/your/directory/layout-guide.md')
-dm.copy_prompt('general-guide', 'path/to/your/directory/general-guide.md')
+```json
+{
+  "mcpServers": {
+    "dartwork-mpl": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/dartworklabs/dartwork-mpl.git#egg=dartwork-mpl[mcp]",
+        "mcp"
+      ]
+    }
+  }
+}
 ```
 
-The `copy_prompt()` function copies the Markdown files to your specified destination. You can copy them to any directory your AI assistant reads from, and format them as needed for your specific AI assistant's requirements.
-
-### Method 2: Programmatic Access
-
-You can also access prompt guides programmatically to include in your own prompts. The guides are provided as **Markdown (`.md`) format**:
-
-```python
-import dartwork_mpl as dm
-
-# Get prompt guide content as string (Markdown format)
-layout_guide = dm.get_prompt('layout-guide')
-general_guide = dm.get_prompt('general-guide')
-
-# List all available prompts
-available_prompts = dm.list_prompts()
-# ['general-guide', 'layout-guide']
-
-# Get file path for custom processing (returns .md file)
-prompt_path = dm.prompt_path('layout-guide')
-```
-
-This is useful when:
-- Building custom AI workflows
-- Creating project-specific documentation
-- Integrating with other AI tools
-
-### Method 3: Direct File Access
-
-Prompt guides are stored in the package assets as **Markdown (`.md`) files** and can be accessed directly:
-
-```python
-from pathlib import Path
-import dartwork_mpl as dm
-
-# Get the path to a prompt guide (returns .md file)
-prompt_path = dm.prompt_path('layout-guide')
-print(prompt_path)
-# /path/to/dartwork_mpl/asset/prompt/layout-guide.md
-
-# Read directly (standard Markdown format)
-content = prompt_path.read_text(encoding='utf-8')
-```
-
-### Best Practice: Set Up Once
-
-We recommend copying prompt guides to your project once at the start. Copy them to wherever your AI assistant reads context from:
-
-```python
-import dartwork_mpl as dm
-
-# Copy both guides to your desired location
-dm.copy_prompt('layout-guide', 'your/path/layout-guide.md')
-dm.copy_prompt('general-guide', 'your/path/general-guide.md')
-```
-
-The guides are provided as standard Markdown (`.md`) files. Copy them to your preferred location and format them as needed for your AI assistant's requirements.
+After adding this configuration, your AI assistant will then have automatic access to dartwork-mpl's documentation and guidelines.
 
 ## 2. Create Plot Functions with Arguments
 
@@ -431,13 +381,7 @@ This workflow combines the advantages of external files with rapid iteration:
 
 ## Summary: Best Practices
 
-1. **Set up context prompts once** (guides are provided as `.md` files):
-   ```python
-   # Copy to your desired location
-   dm.copy_prompt('layout-guide', 'your/path/layout-guide.md')
-   dm.copy_prompt('general-guide', 'your/path/general-guide.md')
-   ```
-   Copy the guides to wherever your AI assistant reads context from, and format them as needed.
+1. **Set up MCP server**: Add dartwork-mpl MCP server to your MCP settings file for automatic access to latest documentation
 
 2. **Create plot functions with configurable arguments**:
    - Make all visual parameters configurable with sensible defaults
