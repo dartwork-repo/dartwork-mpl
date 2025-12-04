@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent.resolve()))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "dartwork-mpl"
-copyright = "2025 Sangwon Lee & Wonjun Choi"
+copyright = "2025 Dartwork"
 author = " Sangwon Lee, Wonjun Choi"
 
 version = "0.1.1"
@@ -61,7 +61,7 @@ html_title = f"{project} documentation"
 
 # -- Shibuya theme options ---------------------------------------------------
 html_theme_options = {
-    "github_url": "https://github.com/dartwork-repo/dartwork-mpl",
+    "github_url": "https://github.com/dartworklabs/dartwork-mpl",
     "accent_color": "teal",
     "globaltoc_expand_depth": 1,  # Allow expanding sidebar items
     "dark_code": False,  # Use light code blocks (default Shibuya style)
