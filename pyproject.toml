@@ -10,6 +10,7 @@ authors = [
 requires-python = ">=3.10"
 dependencies = [
     "colorspacious>=1.1.2",
+    "ipython>=8.32.0",
     "matplotlib>=3.10.1",
     "numpy>=1.26",
     "palettable>=3.3.3",
@@ -35,6 +36,7 @@ dev = [
     "sphinx-copybutton>=0.5.2",
     "sphinx-design>=0.6.1",
     "sphinx-gallery>=0.19.0",
+    "sphinx-markdown-builder>=0.6.8",
     "sphinx-tabs>=3.4.7",
 ]
 
