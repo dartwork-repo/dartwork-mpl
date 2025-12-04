@@ -9,7 +9,7 @@
 
 - **Enhanced Aesthetics**: Apply our curated themes to make your charts visually appealing.
 - **Easy Customization**: Effortlessly adjust plot styles to fit your publication's needs.
-- **Advanced Color System**: Use custom colors with simple prefixes (`dm.`, `tw.`) and extended Tailwind CSS palette.
+- **Advanced Color System**: Use custom colors with simple prefixes (`oc.`, `tw.`) and extended Tailwind CSS palette.
 - **Streamlined Workflow**: Simplify your plotting code with our intuitive interface, saving time and reducing complexity.
 - **Publication-Ready Layout**: Automatic layout optimization with `simple_layout()` for professional results.
 <br/>
@@ -25,16 +25,16 @@
 
 ```shell
 # Add to your project
-uv add git+https://github.com/dartwork-repo/dartwork-mpl
+uv add git+https://github.com/dartworklabs/dartwork-mpl
 
 # Or install directly
-uv pip install git+https://github.com/dartwork-repo/dartwork-mpl
+uv pip install git+https://github.com/dartworklabs/dartwork-mpl
 ```
 
 #### Using pip
 
 ```shell
-pip install git+https://github.com/dartwork-repo/dartwork-mpl
+pip install git+https://github.com/dartworklabs/dartwork-mpl
 ```
 
 ### Quick Start
@@ -124,18 +124,18 @@ dm.save_formats(fig, 'output/figure',
 
 ## Documentation
 
-📚 **[Full Documentation](https://dartwork-repo.github.io/dartwork-mpl/)** - Complete Sphinx documentation with:
-- **[Usage Guide](https://dartwork-repo.github.io/dartwork-mpl/DARTWORK_MPL_USAGE_GUIDE.html)** - Comprehensive guide to all features
-- **[Example Gallery](https://dartwork-repo.github.io/dartwork-mpl/gallery/index.html)** - Interactive examples with code and plots
-- **[Color System](https://dartwork-repo.github.io/dartwork-mpl/COLOR_SYSTEM.html)** - Full-width Colors and Colormaps reference
-- **[API Reference](https://dartwork-repo.github.io/dartwork-mpl/API_REFERENCE.html)** - Detailed API documentation
+📚 **[Full Documentation](https://dartworklabs.github.io/dartwork-mpl/)** - Complete Sphinx documentation with:
+- **[Usage Guide](https://dartworklabs.github.io/dartwork-mpl/DARTWORK_MPL_USAGE_GUIDE.html)** - Comprehensive guide to all features
+- **[Example Gallery](https://dartworklabs.github.io/dartwork-mpl/gallery/index.html)** - Interactive examples with code and plots
+- **[Color System](https://dartworklabs.github.io/dartwork-mpl/COLOR_SYSTEM.html)** - Full-width Colors and Colormaps reference
+- **[API Reference](https://dartworklabs.github.io/dartwork-mpl/API_REFERENCE.html)** - Detailed API documentation
 
 <br/>
 
 
 ## Example Gallery
 
-Explore our comprehensive [example gallery](https://dartwork-repo.github.io/dartwork-mpl/gallery/index.html) featuring:
+Explore our comprehensive [example gallery](https://dartworklabs.github.io/dartwork-mpl/gallery/index.html) featuring:
 
 - **Basic Usage** - Getting started with dartwork-mpl
 - **Color System** - Custom colors and Tailwind CSS integration
@@ -163,5 +163,41 @@ Each example includes complete source code and rendered output.
 <br/>
 
 
+## AI-Assisted Development
+
+dartwork-mpl provides an **MCP (Model Context Protocol) server** that enables AI coding assistants like Cursor, GitHub Copilot, and Claude Code to automatically access the latest dartwork-mpl documentation and guidelines.
+
+### Why Use MCP?
+
+- **Automatic access**: AI assistants can directly access the latest dartwork-mpl documentation
+- **No manual updates**: Documentation updates are automatically available to your AI assistant
+- **Seamless integration**: Works seamlessly with Cursor and other MCP-compatible AI assistants
+- **Always up-to-date**: Your AI assistant always has access to the latest library information
+
+### Setup Instructions
+
+To use dartwork-mpl's MCP server with Cursor, add the following configuration to your MCP settings file:
+
+```json
+{
+  "mcpServers": {
+    "dartwork-mpl": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/dartworklabs/dartwork-mpl.git#egg=dartwork-mpl[mcp]",
+        "mcp"
+      ]
+    }
+  }
+}
+```
+
+After adding this configuration, your AI assistant will have automatic access to dartwork-mpl's documentation and guidelines.
+
+For more details on AI-assisted development best practices, see the [AI-Assisted Development Guide](https://dartworklabs.github.io/dartwork-mpl/usage_guide/ai_assisted.html).
+
+<br/>
+
 ## Reporting Issues
-Encountered a bug or have a feature request? Please open an issue through our [GitHub issue tracker](https://github.com/dartwork-repo/dartwork-mpl/issues). We appreciate your feedback and contributions.
+Encountered a bug or have a feature request? Please open an issue through our [GitHub issue tracker](https://github.com/dartworklabs/dartwork-mpl/issues). We appreciate your feedback and contributions.
